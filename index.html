@@ -367,6 +367,16 @@ a:hover { text-decoration: underline; }
 }
 .rich .session-pdf a.sp-view:hover { background: var(--navy); border-color: var(--navy); text-decoration: none; }
 .rich .session-pdf a.sp-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.rich .session-pdf.sp-pending { background: var(--surface-2); border-color: var(--line); }
+.rich .session-pdf.sp-pending .sp-ico { color: var(--hint); }
+.rich .session-pdf.sp-pending .sp-label { color: var(--muted); }
+.rich .session-pdf .sp-wip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 13px; border-radius: 20px; font-size: 13.5px; font-weight: 600;
+  white-space: nowrap; color: var(--hint);
+  background: var(--line-2); border: 1px solid var(--line);
+  cursor: default; pointer-events: none;
+}
 
 /* taules — clau per a la temporalització i les graelles de sessió */
 .rich table {
@@ -842,15 +852,18 @@ function collapsibleByH2(html, udNum) {
   return out;
 }
 
-/* Panell de material (PDF) d'una sessió. Es genera amagat (hidden) i
-   s'activa més tard si el fitxer existeix (vegeu revealSessionPdfs). */
+/* Panell de material (PDF) d'una sessió. Es mostra sempre:
+   - Si el fitxer existeix: botó blau "Veure PDF" (revealSessionPdfs ho activa).
+   - Si no existeix: insígnia grisa "PDF en construcció", no clicable. */
 function pdfPanel(udNum, sessNum) {
   const c = course();
   const file = `${c.dir}/${c.pdfPrefix}-ud${udNum}-${sessNum}.pdf`;
   const viewSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2"/></svg>';
-  return `<div class="session-pdf" data-pdf="${escHtml(file)}" hidden>` +
-           `<span class="sp-label"><span class="sp-ico">PDF</span>Material de la sessió</span>` +
-           `<a class="sp-btn sp-view" href="${escHtml(file)}" target="_blank" rel="noopener">${viewSvg} Veure PDF</a>` +
+  const wipSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 1.5"/></svg>';
+  return `<div class="session-pdf sp-pending" data-pdf="${escHtml(file)}">` +
+           `<span class="sp-label"><span class="sp-ico">PDF</span>Material de la sessi\u00f3</span>` +
+           `<a class="sp-btn sp-view" href="${escHtml(file)}" target="_blank" rel="noopener" hidden>${viewSvg} Veure PDF</a>` +
+           `<span class="sp-wip">${wipSvg} PDF en construcci\u00f3</span>` +
          `</div>`;
 }
 
@@ -946,11 +959,13 @@ function wireToggleAll() {
   });
 }
 
-/* ─── Material PDF per sessió: mostra el panell si el fitxer existeix ──
-   Cada sessió duu un panell .session-pdf amagat que apunta a
-   1bat-ud{x}-{y}.pdf. Comprovem amb HEAD quins existeixen i només
-   revelem els que hi són. El resultat es memoritza per no repetir
-   peticions en reobrir el mateix document. */
+/* ─── Material PDF per sessió: activa el panell segons si el fitxer existeix ──
+   Cada sessió duu un panell .session-pdf visible per defecte en estat
+   "sp-pending" (insígnia grisa "PDF en construcció").
+   Comprovem amb HEAD quins fitxers existeixen:
+   · Si existeix  → es treu sp-pending, s'amaga la insígnia i es mostra el botó.
+   · Si no existeix → es manté l'estat sp-pending tal com estava.
+   El resultat es memoritza per no repetir peticions en reobrir el document. */
 const pdfExistCache = {};
 async function pdfExists(url) {
   if (url in pdfExistCache) return pdfExistCache[url];
@@ -967,7 +982,13 @@ function revealSessionPdfs() {
   const panels = document.querySelectorAll('.rich .session-pdf[data-pdf]');
   panels.forEach(async (panel) => {
     const url = panel.getAttribute('data-pdf');
-    if (await pdfExists(url)) panel.hidden = false;
+    if (await pdfExists(url)) {
+      panel.classList.remove('sp-pending');
+      const btn = panel.querySelector('.sp-view');
+      const wip = panel.querySelector('.sp-wip');
+      if (btn) btn.hidden = false;
+      if (wip) wip.hidden = true;
+    }
   });
 }
 
