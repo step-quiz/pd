@@ -855,18 +855,23 @@ function collapsibleByH2(html, udNum) {
   return out;
 }
 
-/* Panell de material (PDF) d'una sessió. Es mostra sempre:
-   - Si el fitxer existeix: botó blau "Veure PDF" (revealSessionPdfs ho activa).
-   - Si no existeix: insígnia grisa "PDF en construcció", no clicable. */
+/* Panell de material (PDF) d'una sessió. L'estat es decideix en el moment
+   del render, consultant pdfManifest (carregat a loadCourse() des de
+   {dir}/pdfs.json — la llista dels PDF que realment existeixen). No es fa
+   cap petició de xarxa per sessió ni cap canvi d'estat posterior:
+   - Si el nom hi és al manifest: botó blau "Veure PDF".
+   - Si no hi és: insígnia grisa "PDF en construcció", no clicable. */
 function pdfPanel(udNum, sessNum) {
   const c = course();
-  const file = `${c.dir}/${c.pdfPrefix}-ud${udNum}-${sessNum}.pdf`;
+  const filename = `${c.pdfPrefix}-ud${udNum}-${sessNum}.pdf`;
+  const file = `${c.dir}/${filename}`;
+  const exists = pdfManifest.has(filename);
   const viewSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2"/></svg>';
   const wipSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 1.5"/></svg>';
-  return `<div class="session-pdf sp-pending" data-pdf="${escHtml(file)}">` +
+  return `<div class="session-pdf${exists ? '' : ' sp-pending'}" data-pdf="${escHtml(file)}">` +
            `<span class="sp-label"><span class="sp-ico">PDF</span>Material de la sessi\u00f3</span>` +
-           `<a class="sp-btn sp-view" href="${escHtml(file)}" target="_blank" rel="noopener" hidden>${viewSvg} Veure PDF</a>` +
-           `<span class="sp-wip">${wipSvg} PDF en construcci\u00f3</span>` +
+           `<a class="sp-btn sp-view" href="${escHtml(file)}" target="_blank" rel="noopener"${exists ? '' : ' hidden'}>${viewSvg} Veure PDF</a>` +
+           `<span class="sp-wip"${exists ? ' hidden' : ''}>${wipSvg} PDF en construcci\u00f3</span>` +
          `</div>`;
 }
 
@@ -913,7 +918,6 @@ async function select(id) {
   if (cache[id]) {
     main.innerHTML = `<div class="doc-wrap">${headHtml}<div class="rich">${cache[id]}</div></div>`;
     wireToggleAll();
-    revealSessionPdfs();
     return;
   }
 
@@ -934,7 +938,6 @@ async function select(id) {
     if (activeId === id) {
       main.innerHTML = `<div class="doc-wrap">${headHtml}<div class="rich">${inner}</div></div>`;
       wireToggleAll();
-      revealSessionPdfs();
     }
   } catch (err) {
     main.innerHTML = `<div class="doc-wrap">${headHtml}
@@ -962,37 +965,23 @@ function wireToggleAll() {
   });
 }
 
-/* ─── Material PDF per sessió: activa el panell segons si el fitxer existeix ──
-   Cada sessió duu un panell .session-pdf visible per defecte en estat
-   "sp-pending" (insígnia grisa "PDF en construcció").
-   Comprovem amb HEAD quins fitxers existeixen:
-   · Si existeix  → es treu sp-pending, s'amaga la insígnia i es mostra el botó.
-   · Si no existeix → es manté l'estat sp-pending tal com estava.
-   El resultat es memoritza per no repetir peticions en reobrir el document. */
-const pdfExistCache = {};
-async function pdfExists(url) {
-  if (url in pdfExistCache) return pdfExistCache[url];
-  let ok = false;
+/* ─── Material PDF per sessió: quins fitxers existeixen ───────────────
+   En lloc de comprovar cada PDF amb una petició HEAD (fràgil: cau pel
+   cau del navegador, condicions de carrera entre cursos, peculiaritats
+   del servidor estàtic...), llegim un cop per curs el fitxer
+   {dir}/pdfs.json amb la llista exacta dels PDF que existeixen.
+   pdfPanel() consulta aquest Set de manera síncrona en pintar cada
+   sessió, així que l'estat ja surt correcte al primer render. */
+let pdfManifest = new Set();
+async function loadPdfManifest() {
+  const c = course();
   try {
-    let r = await fetch(url, { method: 'HEAD' });
-    if (r.ok) ok = true;
-    else if (r.status === 405 || r.status === 501) { r = await fetch(url); ok = r.ok; }
-  } catch (_) { ok = false; }
-  pdfExistCache[url] = ok;
-  return ok;
-}
-function revealSessionPdfs() {
-  const panels = document.querySelectorAll('.rich .session-pdf[data-pdf]');
-  panels.forEach(async (panel) => {
-    const url = panel.getAttribute('data-pdf');
-    if (await pdfExists(url)) {
-      panel.classList.remove('sp-pending');
-      const btn = panel.querySelector('.sp-view');
-      const wip = panel.querySelector('.sp-wip');
-      if (btn) btn.hidden = false;
-      if (wip) wip.hidden = true;
-    }
-  });
+    const r = await fetch(`${c.dir}/pdfs.json`, { cache: 'no-store' });
+    const arr = r.ok ? await r.json() : [];
+    pdfManifest = new Set(Array.isArray(arr) ? arr : []);
+  } catch (_) {
+    pdfManifest = new Set();
+  }
 }
 
 /* ─── NAV mòbil ───────────────────────────────────────────────────── */
@@ -1032,7 +1021,7 @@ async function loadCourse() {
   activeId = null;
   document.getElementById('main').innerHTML =
     '<div class="state"><div class="spinner"></div><div>Carregant…</div></div>';
-  DOCS = await discover();
+  DOCS = await Promise.all([discover(), loadPdfManifest()]).then(([docs]) => docs);
   renderSidebar();
   if (DOCS.length) {
     select(DOCS[0].id);
