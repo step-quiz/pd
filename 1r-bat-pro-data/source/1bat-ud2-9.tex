@@ -1,0 +1,196 @@
+% =====================================================================
+%  1bat-ud2-9.tex  —  HORA 9: Consolidació d'operacions amb polinomis
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 9 — Consolidació d'operacions amb polinomis}%
+{Detectar errors típics en restes i productes, treballar casos difícils
+i autoavaluar el domini de les operacions algebraiques.}
+
+\subsection{Idea clau}
+
+A les sessions anteriors hem après a sumar, restar i multiplicar polinomis.
+Avui repassem els \textbf{dos errors més freqüents} i practiquem els casos
+que més costen, per arribar a les arrels de la propera sessió amb la mecànica
+ben assentada.
+
+\begin{idea}
+\textbf{Errors típics en operacions amb polinomis:}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Resta: no canviar tots els signes.}
+        $(3x^2+5x-2)-(x^2-4x+1)$: el terme $-4x$ es converteix en $+4x$
+        i el terme $+1$ es converteix en $-1$. Oblidar algun d'aquests
+        canvis és l'error més habitual.
+  \item \textbf{Producte: confondre el grau.}
+        $2x\per 3x = 6x^2$ (grau~2), \emph{no} $6x$ (grau~1). En
+        multiplicar, els exponents se sumen: $x^1\per x^1 = x^2$.
+  \item \textbf{Repte amb truc:} si dos polinomis són idèntics, la seva
+        diferència és sempre $0$ (el polinomi nul), independentment de la
+        $x$. Si en sumar dos polinomis desapareix el terme de grau màxim,
+        el resultat té un grau inferior.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error — tres operacions amb polinomis]
+Observa les tres resolucions. Decideix quines són correctes i, en les
+errònies, identifica \emph{exactament} on s'ha comes l'error.
+
+\medskip
+\begin{tabular}{@{}p{0.90\linewidth}@{}}
+\textbf{Cas A.} $(4x^2 - 3x + 5) - (x^2 + 2x - 1)$ \\
+\quad Resolució: $4x^2-3x+5-x^2+2x-1 = 3x^2-x+4$. \\[5pt]
+\textbf{Cas B.} $(2x^2 + x - 3) - (2x^2 - x + 3)$ \\
+\quad Resolució: $2x^2+x-3-2x^2-x+3 = 0$. \\[5pt]
+\textbf{Cas C.} $3\per(x^2 - 2x + 4) - (x^2 + 5)$ \\
+\quad Resolució: $3x^2-6x+12-x^2+5 = 2x^2-6x+17$.
+\end{tabular}
+
+\medskip
+\textbf{Resposta:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Cas A — Error!} En restar el terme $-1$ del segon polinomi,
+        s'obté $-(-1)=+1$, de manera que el terme independent hauria de
+        ser $5+1=6$. El resultat correcte és $3x^2-x+6$.
+  \item \textbf{Cas B — Error!} En restar el segon polinomi, $-(-x)=+x$ i
+        $-(+3)=-3$: el resultat correcte és $2x^2+x-3-2x^2+x-3=2x-6$.
+  \item \textbf{Cas C — Correcte.} Distributiva aplicada bé ($3\per 4=12$);
+        la resta del segon polinomi canvia $-x^2$ i $-5$, però com que el
+        terme $+5$ ja va precedit de «$-$», queda $+5$: tot correcte.
+\end{itemize}
+\end{exemple}
+
+\begin{exemple}[repte amb truc — suma que cancel·la el terme de grau 2]
+Calcula $(5x^2 - 3x + 2) + (-5x^2 + 7x - 8)$.
+\begin{align*}
+&(5x^2-3x+2)+(-5x^2+7x-8) \\
+&= 5x^2-3x+2-5x^2+7x-8 \\
+&= (5-5)x^2 + (-3+7)x + (2-8) \\
+&= 0 \cdot x^2 + 4x - 6 \\
+&= 4x - 6.
+\end{align*}
+El terme de segon grau ha desaparegut: el resultat és un polinomi de
+\emph{grau~1}, tot i que els dos sumands eren de grau~2.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[resta encadenada amb tres polinomis]
+Calcula $A(x) - B(x) - C(x)$, on $A(x)=6x^2+4x-1$,
+$B(x)=2x^2-x+3$ i $C(x)=x^2+3x-2$.
+\solucio
+Restant d'esquerra a dreta, canviant els signes en cada resta:
+\begin{align*}
+&A(x)-B(x)-C(x) \\
+&= (6x^2+4x-1)-(2x^2-x+3)-(x^2+3x-2) \\
+&= 6x^2+4x-1-2x^2+x-3-x^2-3x+2
+   &&\text{(canvio els signes de $B$ i de $C$)} \\
+&= (6-2-1)x^2+(4+1-3)x+(-1-3+2) \\
+&= 3x^2+2x-2.
+\end{align*}
+\resposta{$A(x)-B(x)-C(x) = 3x^2+2x-2$}
+\end{exresolt}
+
+\begin{exresolt}[producte i simplificació posterior]
+Calcula $2\per(3x^2-x+5)-(4x^2+x-1)$ i simplifica el resultat.
+\solucio
+\begin{align*}
+&2\per(3x^2-x+5)-(4x^2+x-1) \\
+&= (6x^2-2x+10)-(4x^2+x-1)
+   &&\text{(distributiva)} \\
+&= 6x^2-2x+10-4x^2-x+1
+   &&\text{(canvio tots els signes del segon)} \\
+&= (6-4)x^2+(-2-1)x+(10+1) \\
+&= 2x^2-3x+11.
+\end{align*}
+\resposta{$2x^2-3x+11$}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} En cadascun dels casos, hi ha un error.
+        Troba'l i escriu la resolució correcta.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $(5x^2-2x+3)-(3x^2+4x-6) = 2x^2-6x-3$ \quad \emph{(incorrecte)}
+      \item $4\per(x^2-3x+2) = 4x^2-3x+8$ \quad \emph{(incorrecte)}
+    \end{enumerate}
+
+  \item Calcula les restes encadenades:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $(7x^2+3x-5)-(2x^2+x-1)-(x^2-2x+3)$
+      \item $(10x^2-4x+8)-(3x^2-4x+8)-(7x^2+1)$
+    \end{enumerate}
+
+  \item Calcula i simplifica:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $3\per(2x^2-x+1)-(x^2+5x-4)$
+      \item $\num{0,5}\per(4x^2+6x-2)+2\per(x^2-3x+1)$
+    \end{enumerate}
+
+  \item \textbf{(Reptes amb truc)} Calcula sense desenvolupar si pots,
+        i explica el resultat:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $(3x^2+7x-4)-(3x^2+7x-4)$
+      \item $(x^2+5x-3)+(-x^2+2x+1)$
+    \end{enumerate}
+
+  \item \textbf{(Compte amb el signe)} Calcula $P(x)-2\per Q(x)$ amb
+        $P(x)=5x^2-4x+6$ i $Q(x)=x^2-2x+3$.
+        Resol-ho primer \emph{correctament}, i després torna-ho a fer
+        \emph{oblidant} de multiplicar el terme independent de $Q(x)$
+        per~$2$. Compara els resultats i assenyala en quin terme es
+        produeix la diferència.
+
+  \item \textbf{(Autoavaluació)} Marca amb una creu la casella que millor
+        descriu el teu nivell a cada habilitat d'operacions amb polinomis.
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|p{6.5cm}|c|c|c|}
+        \hline
+        \textbf{Habilitat} & \textbf{Domino} & \textbf{Quasi} & \textbf{Em costa} \\
+        \hline
+        Identificar i agrupar termes semblants & $\square$ & $\square$ & $\square$ \\
+        \hline
+        Canviar tots els signes en una resta & $\square$ & $\square$ & $\square$ \\
+        \hline
+        Aplicar la distributiva (producte) & $\square$ & $\square$ & $\square$ \\
+        \hline
+        Fer restes encadenades & $\square$ & $\square$ & $\square$ \\
+        \hline
+        Combinar producte i suma/resta & $\square$ & $\square$ & $\square$ \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+\textbf{Atenció a la diversitat:} Si marques «em costa» a les dues
+primeres habilitats, treballa l'exercici~9.2a pas a pas anotant el signe
+de \emph{cada terme} abans de sumar-los. Si ja domines tot el bloc, fes
+l'exercici~9.3b també per a $\num{0,5}\per P(x) - \num{0,25}\per Q(x)$
+amb els mateixos polinomis \textbf{(Ampliació)}.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item (a) Error al terme independent: $-(- 6)=+6$, de manera que el resultat
+        correcte és $2x^2-6x+9$. \quad
+        (b) La distributiva no ha afectat el terme $-3x$: el resultat
+        correcte és $4x^2-12x+8$.
+  \item (a) $(7-2-1)x^2+(3-1+2)x+(-5+1-3) = 4x^2+4x-7$ \quad
+        (b) $(10-3-7)x^2+(-4+4)x+(8-8-1) = -1$
+        (el resultat és un polinomi de grau~0, una constant)
+  \item (a) $5x^2-8x+7$ \quad (b) $4x^2$
+        (els termes en $x$ es cancel·len i el terme independent també)
+  \item (a) $0$ (polinomi menys ell mateix). \quad
+        (b) $7x-2$ (el terme $x^2$ desapareix: el grau baixa a~1).
+  \item Correcte: $P(x)-2Q(x)=5x^2-4x+6-2x^2+4x-6=3x^2$. \\
+        Amb l'error (terme independent sense multiplicar per~2):
+        $5x^2-4x+6-2x^2+4x-3=3x^2+3$. La diferència és en el terme
+        independent: $0$ vs. $+3$.
+  \item Autoavaluació personal (no hi ha una resposta única).
+\end{sollist}
+\end{solucions}
