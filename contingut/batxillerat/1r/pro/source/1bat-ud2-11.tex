@@ -1,0 +1,162 @@
+% =====================================================================
+%  1bat-ud2-11.tex  —  HORA 11: Arrels de segon grau: la fórmula
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 11 — Arrels de segon grau: la fórmula}%
+{Aplicar la fórmula general de l'equació de segon grau i interpretar el discriminant.}
+
+\subsection{Idea clau}
+
+A la sessió anterior hem trobat arrels de polinomis de primer grau, aïllant
+directament la $x$. Avui treballem amb polinomis de \textbf{segon grau} (amb un
+terme $x^2$, com el copagament de la sessió 4): aquí ja no n'hi ha prou
+d'aïllar la $x$, i necessitem una \textbf{fórmula general}.
+
+\begin{idea}
+\textbf{Fórmula general de l'equació de segon grau.}
+Donat el polinomi $P(x)=ax^2+bx+c$ (amb $a\neq 0$), les seves arrels són:
+\[
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+\]
+El valor $\Delta=b^2-4ac$ s'anomena \textbf{discriminant} i en determina el
+nombre de solucions:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $\Delta>0$: \textbf{dues} solucions diferents.
+  \item $\Delta=0$: \textbf{una} única solució (arrel doble).
+  \item $\Delta<0$: \textbf{cap} solució real.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[aplicar la fórmula per primera vegada]
+Resolem $x^2-5x+6=0$. Identifiquem $a=1$, $b=-5$, $c=6$:
+\[
+\Delta=(-5)^2-4\per1\per6=25-24=1.
+\]
+Com que $\Delta=1>0$, hi ha dues solucions:
+\[
+x=\frac{5\pm\sqrt{1}}{2}=\frac{5\pm1}{2} \;\Longrightarrow\; x_1=3,\quad x_2=2.
+\]
+\end{exemple}
+
+\begin{exemple}[el copagament de la sessió 4, revisitat]
+A la sessió 4 vam calcular $C(100)=0$ per al copagament
+$C(x)=\num{0,05}\,x^2-10x+500$, substituint directament. Avui ho confirmem
+amb la fórmula general i descobrim que és la \emph{única} arrel. Identifiquem
+$a=\num{0,05}$, $b=-10$, $c=500$:
+\[
+\Delta=(-10)^2-4\per\num{0,05}\per500=100-100=0.
+\]
+Com que $\Delta=0$, hi ha una única arrel (arrel doble):
+\[
+x=\frac{-(-10)}{2\per\num{0,05}}=\frac{10}{\num{0,1}}=100.
+\]
+La gràfica del copagament toca l'eix horitzontal exactament en aquest punt i
+és positiva (o zero) per a qualsevol altra renda: el copagament mai és
+negatiu.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[dos llindars en el cost net d'una activitat]
+Un casal de joves modelitza el cost net (cost menys subvenció) d'una
+activitat amb $M(x)=x^2-14x+40$, on $x$ és el nombre de participants. Troba
+els valors de $x$ pels quals el cost net s'anul·la, i interpreta què passa
+\emph{entre} aquests dos valors.
+\solucio
+Identifiquem $a=1$, $b=-14$, $c=40$:
+\begin{align*}
+\Delta&=(-14)^2-4\per1\per40=196-160=36, &&\sqrt{\Delta}=6.\\
+x&=\frac{14\pm6}{2} \;\Longrightarrow\; x_1=10,\quad x_2=4.
+\end{align*}
+Amb $4$ o amb $10$ participants, el cost net és exactament $0\eur$.
+Comprovem què passa entremig amb $x=7$:
+\[
+M(7)=7^2-14\per7+40=49-98+40=-9.
+\]
+Com que la paràbola s'obre cap amunt i val $0$ exactament a les arrels,
+\textbf{entre $4$ i $10$ participants el cost net és negatiu}: l'activitat
+genera superàvit. Per sota de $4$ o per sobre de $10$, cal aportar la
+diferència.
+\resposta{$x=4$ i $x=10$; entre aquests valors, l'activitat surt amb
+superàvit.}
+\end{exresolt}
+
+\begin{exresolt}[quan no hi ha cap arrel real]
+Un servei vol saber si existeix algun nombre d'usuaris pel qual el seu cost
+net s'anul·la, segons $D(x)=2x^2-4x+10$. Calcula el discriminant i interpreta
+el resultat.
+\solucio
+Identifiquem $a=2$, $b=-4$, $c=10$:
+\[
+\Delta=(-4)^2-4\per2\per10=16-80=-64.
+\]
+Com que $\Delta<0$, \textbf{no hi ha cap solució real}: no existeix cap
+valor de $x$ que faci $D(x)=0$. Com que $a=2>0$, la paràbola no toca mai
+l'eix horitzontal i el cost net és sempre positiu.
+\resposta{$\Delta=-64<0$: el cost net no s'anul·la mai per a cap nombre
+d'usuaris.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula el discriminant i, segons el cas, les arrels de cada
+        polinomi:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $x^2-7x+10=0$
+      \item $x^2-6x+9=0$
+      \item $x^2+2x+5=0$
+    \end{enumerate}
+
+  \item Aplica la fórmula general (ara amb $a\neq1$):
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $2x^2-3x-2=0$
+      \item $3x^2+5x-2=0$
+    \end{enumerate}
+
+  \item Un programa de suport calcula un índex net amb
+        $F(x)=x^2-4x-32$, on $x$ representa els ingressos familiars, en
+        centenars d'euros (per tant, $x\geq0$). Troba les arrels del
+        polinomi i indica quina de les dues té sentit en aquest context.
+
+  \item Un servei de teleassistència aplica un copagament
+        $T(x)=\num{0,05}\,x^2-8x+320$, on $x$ és la renda mensual
+        disponible de la persona usuària, en euros. Troba l'arrel (o les
+        arrels) d'aquest polinomi i interpreta el resultat.
+
+  \item \textbf{(Compte amb el signe)} Resol $x^2+3x-10=0$ amb la fórmula
+        general. Vés amb compte en calcular $-4ac$ quan $c$ és negatiu (un
+        error freqüent és oblidar que «menys per menys» dona positiu).
+
+  \item \textbf{(Raonament)} Calcula únicament el discriminant de
+        $E(x)=x^2-2x+5$, sense arribar a resoldre l'equació completa.
+        Explica, en un context de copagament, què vol dir que aquest
+        polinomi no tingui cap arrel real: pot arribar a valer $0$ el
+        copagament en algun moment?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $\Delta=9$; $x_1=5$, $x_2=2$ \quad
+        (b) $\Delta=0$; $x=3$ (arrel doble) \quad
+        (c) $\Delta=-16$; cap solució real
+  \item (a) $\Delta=25$; $x_1=2$, $x_2=-\dfrac12$ \quad
+        (b) $\Delta=49$; $x_1=\dfrac13$, $x_2=-2$
+  \item $\Delta=144$; $x_1=8$, $x_2=-4$. Com que els ingressos no poden ser
+        negatius, només $x=8$ (centenars d'euros, és a dir $800\eur$) té
+        sentit en aquest context.
+  \item $\Delta=0$; arrel doble $x=80$. El copagament val $0$ exactament en
+        aquesta renda i és positiu (mai negatiu) per a qualsevol altra.
+  \item $\Delta=9+40=49$; $x_1=2$, $x_2=-5$ (l'error freqüent seria
+        calcular $-4ac=-40$ en lloc de $+40$, i obtenir $\Delta=-31$).
+  \item $\Delta=4-20=-16<0$: el polinomi no té cap arrel real, és a dir, el
+        copagament que modelitza mai val exactament $0$ (és sempre positiu,
+        per a qualsevol renda).
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,15 @@
+{
+  "brand": "Matemàtiques Aplicades II",
+  "brandSub": "2n Batxillerat PRO · Serveis a la Comunitat",
+  "pdfPrefix": "2bat",
+  "docx": null,
+  "udMax": 6,
+  "udTitles": {
+    "1": "Matrices: organitzar i operar amb dades",
+    "2": "Programació lineal: decidir amb recursos limitats",
+    "3": "Límits i continuïtat: tendències i llindars",
+    "4": "Derivades i optimització",
+    "5": "Probabilitat i distribucions",
+    "6": "Inferència estadística"
+  }
+}

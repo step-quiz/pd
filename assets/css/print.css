@@ -1,0 +1,12 @@
+/* print.css — @media print */
+
+@media print {
+  .topbar, .sidebar { display: none !important; }
+  .layout { display: block; }
+  .main { overflow: visible; }
+  .doc-wrap { max-width: none; padding: 0; }
+  .rich table { box-shadow: none; }
+  .rich thead th { background: #eaf1fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  /* tots els blocs plegables desplegats en imprimir */
+  .rich .sec-body { display: block !important; }
+}

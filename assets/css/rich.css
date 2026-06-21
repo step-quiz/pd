@@ -1,0 +1,176 @@
+/* rich.css — estils del contingut renderitzat (DOCX i MD comparteixen .rich) */
+
+.rich { color: var(--ink); }
+.rich h1, .rich h2, .rich h3, .rich h4 { color: var(--navy); line-height: 1.25; }
+.rich h1 { font-size: 23px; margin: 30px 0 12px; }
+.rich h2 {
+  font-size: 20px; margin: 30px 0 12px;
+  padding-bottom: 7px; border-bottom: 1px solid var(--line);
+}
+.rich h3 { font-size: 17px; margin: 22px 0 8px; }
+.rich h4 { font-size: 15px; margin: 18px 0 6px; color: var(--blue); }
+.rich p { margin: 0 0 12px; }
+.rich ul, .rich ol { margin: 0 0 14px; padding-left: 26px; }
+.rich li { margin-bottom: 5px; }
+.rich strong { font-weight: 700; color: var(--ink); }
+.rich em { font-style: italic; }
+.rich a { color: var(--blue); }
+.rich hr { border: none; border-top: 1px solid var(--line); margin: 26px 0; }
+.rich code {
+  font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .9em;
+  background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 5px;
+}
+.rich blockquote {
+  margin: 0 0 14px; padding: 10px 16px;
+  background: var(--blue-bg); border-left: 3px solid var(--blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--muted);
+}
+.rich blockquote p:last-child { margin-bottom: 0; }
+
+/* ── Seccions plegables (details/summary) ─────────────────────────── */
+.rich .sec {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 0 0 12px;
+  box-shadow: var(--sh);
+  overflow: hidden;
+}
+.rich .sec > summary {
+  display: flex; align-items: center; gap: 11px;
+  padding: 14px 18px;
+  cursor: pointer; list-style: none;
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  transition: background .12s;
+  user-select: none;
+}
+.rich .sec > summary::-webkit-details-marker { display: none; }
+.rich .sec > summary:hover { background: var(--blue-bg); }
+.rich .sec[open] > summary { border-bottom: 1px solid var(--line-2); }
+.rich .sec-caret {
+  flex-shrink: 0; width: 9px; height: 9px;
+  border-right: 2.4px solid var(--blue); border-bottom: 2.4px solid var(--blue);
+  transform: rotate(-45deg); transition: transform .18s var(--ease);
+  margin-left: 2px;
+}
+.rich .sec[open] > summary .sec-caret { transform: rotate(45deg); }
+.rich .sec-title { flex: 1; min-width: 0; }
+.rich .sec-body { padding: 6px 18px 18px; }
+.rich .sec-subtitle {
+  font-size: 18px; font-weight: 700; color: var(--navy);
+  margin: 6px 0 14px;
+}
+/* subplegables niats (H3 dins d'un bloc) */
+.rich .sec .sec.sub {
+  border: 1px solid var(--line-2);
+  box-shadow: none;
+  margin: 12px 0;
+  background: var(--surface-2);
+}
+.rich .sec.sub > summary {
+  padding: 11px 15px;
+  font-size: 15px; color: var(--blue);
+}
+.rich .sec.sub > summary:hover { background: rgba(46,117,182,.06); }
+.rich .sec.sub .sec-caret { border-color: var(--blue); }
+.rich .sec.sub > .sec-body { padding: 4px 15px 14px; }
+/* dins d'un bloc plegat, el primer encapçalament no necessita marge superior */
+.rich .sec-body > h3:first-child,
+.rich .sec-body > h4:first-child { margin-top: 12px; }
+
+/* ── Proposta A: format de fitxa per als camps de cada hora ───────── */
+.rich .hour-card {
+  display: grid; grid-template-columns: 152px 1fr;
+  border: 1px solid var(--line-2); border-radius: var(--radius-sm);
+  overflow: hidden; margin: 4px 0 18px; font-size: 14.5px;
+}
+.rich .hour-card .hc-key {
+  background: var(--surface-2); padding: 9px 13px;
+  font-weight: 700; color: var(--navy);
+  border-bottom: 1px solid var(--line-2);
+}
+.rich .hour-card .hc-val {
+  padding: 9px 13px; border-bottom: 1px solid var(--line-2);
+  border-left: 1px solid var(--line-2);
+}
+.rich .hour-card .hc-key:nth-last-child(2),
+.rich .hour-card .hc-val:last-child { border-bottom: none; }
+
+.rich .hour-devel { margin: 4px 0 18px; }
+.rich .hour-devel .hd-title {
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 700; color: var(--navy); font-size: 14.5px; margin-bottom: 8px;
+}
+.rich .hour-devel .hd-bar {
+  width: 4px; height: 16px; background: var(--blue);
+  border-radius: 2px; flex-shrink: 0;
+}
+.rich .hour-devel .hd-body p { margin: 0 0 9px; }
+.rich .hour-devel .hd-body p:last-child { margin-bottom: 0; }
+
+.rich .hour-foot {
+  border-top: 1px solid var(--line-2); padding-top: 12px;
+  font-size: 14px;
+}
+.rich .hour-foot p { margin: 0 0 7px; line-height: 1.5; }
+.rich .hour-foot p:last-child { margin-bottom: 0; }
+.rich .hour-foot .hf-key { font-weight: 700; color: var(--navy); }
+
+/* ── Panell de material de la sessió (PDF: veure / descarregar) ────── */
+.rich .session-pdf {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+  margin: 0 0 16px; padding: 12px 14px;
+  background: var(--blue-bg); border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.rich .session-pdf .sp-label {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13.5px; font-weight: 700; color: var(--navy);
+  margin-right: auto;
+}
+.rich .session-pdf .sp-ico {
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 7px;
+  background: #fff; border: 1px solid var(--line);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; color: #b5341a;
+}
+.rich .session-pdf a.sp-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 13px; border-radius: 20px; font-size: 13.5px; font-weight: 600;
+  text-decoration: none; transition: .12s; white-space: nowrap;
+}
+.rich .session-pdf a.sp-view {
+  background: var(--blue); color: #fff; border: 1px solid var(--blue);
+}
+.rich .session-pdf a.sp-view:hover { background: var(--navy); border-color: var(--navy); text-decoration: none; }
+.rich .session-pdf a.sp-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.rich .session-pdf.sp-pending { background: var(--surface-2); border-color: var(--line); }
+.rich .session-pdf.sp-pending .sp-ico { color: var(--hint); }
+.rich .session-pdf.sp-pending .sp-label { color: var(--muted); }
+.rich .session-pdf .sp-wip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 13px; border-radius: 20px; font-size: 13.5px; font-weight: 600;
+  white-space: nowrap; color: var(--hint);
+  background: var(--line-2); border: 1px solid var(--line);
+  cursor: default; pointer-events: none;
+}
+
+/* ── Taules — clau per a la temporalització i les graelles de sessió ── */
+.rich table {
+  width: 100%; border-collapse: collapse; margin: 6px 0 20px;
+  font-size: 14.5px; background: var(--blue-bg);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--sh);
+}
+.rich thead th {
+  background: var(--blue-bg); color: var(--ink); font-weight: 700;
+  text-align: left; padding: 9px 13px; font-size: 13.5px;
+  border-bottom: 2px solid var(--blue);
+}
+.rich tbody td { padding: 9px 13px; border-top: 1px solid var(--line-2); vertical-align: top; color: var(--ink); }
+.rich tbody tr:hover { background: var(--accent-soft); }
+.rich table p { margin: 0; }
+.table-scroll { overflow-x: auto; margin: 6px 0 20px; }
+.table-scroll table { margin: 0; }
+
+.rich img { max-width: 100%; height: auto; border-radius: var(--radius-sm); margin: 8px 0; }
