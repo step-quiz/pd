@@ -384,18 +384,17 @@ a:hover { text-decoration: underline; }
 /* taules — clau per a la temporalització i les graelles de sessió */
 .rich table {
   width: 100%; border-collapse: collapse; margin: 6px 0 20px;
-  font-size: 14.5px; background: var(--card);
+  font-size: 14.5px; background: var(--blue-bg);
   border: 1px solid var(--line); border-radius: var(--radius);
   overflow: hidden; box-shadow: var(--sh);
 }
 .rich thead th {
-  background: var(--navy); color: #fff; font-weight: 600;
+  background: var(--blue-bg); color: var(--ink); font-weight: 700;
   text-align: left; padding: 9px 13px; font-size: 13.5px;
-  border-bottom: 1px solid var(--navy);
+  border-bottom: 2px solid var(--blue);
 }
-.rich tbody td { padding: 9px 13px; border-top: 1px solid var(--line-2); vertical-align: top; }
-.rich tbody tr:nth-child(even) { background: var(--surface-2); }
-.rich tbody tr:hover { background: var(--blue-bg); }
+.rich tbody td { padding: 9px 13px; border-top: 1px solid var(--line-2); vertical-align: top; color: var(--ink); }
+.rich tbody tr:hover { background: var(--accent-soft); }
 .rich table p { margin: 0; }
 .table-scroll { overflow-x: auto; margin: 6px 0 20px; }
 .table-scroll table { margin: 0; }
@@ -409,7 +408,7 @@ a:hover { text-decoration: underline; }
   .main { overflow: visible; }
   .doc-wrap { max-width: none; padding: 0; }
   .rich table { box-shadow: none; }
-  .rich thead th { background: #1f3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .rich thead th { background: #eaf1fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
 /* ── Responsiu ──────────────────────────────────────────────────────── */
@@ -483,7 +482,6 @@ const COURSES = {
     label: '1r Bat PRO',
     dir: '1r-bat-pro-data',
     pdfPrefix: '1bat',
-    progFile: '1r-batxi-pro-v4.docx',
     brand: 'Matemàtiques Aplicades I',
     brandSub: '1r Batxillerat PRO · Serveis a la Comunitat',
     udTitles: {
@@ -499,7 +497,6 @@ const COURSES = {
     label: '2n Bat PRO',
     dir: '2n-bat-pro-data',
     pdfPrefix: '2bat',
-    progFile: '2n-batxi-pro-v4.docx',
     brand: 'Matemàtiques Aplicades II',
     brandSub: '2n Batxillerat PRO · Serveis a la Comunitat',
     udTitles: {
@@ -546,11 +543,11 @@ async function discover() {
   const c = course();
   const docs = [];
 
-  // Programació general (DOCX) del curs, si existeix
-  const progFile = `${c.dir}/${c.progFile}`;
-  if (await exists(progFile)) {
+  // Programació general (DOCX) del curs: el nom del fitxer el diu
+  // manifest.json (camp "docx"), no cal que es digui res en concret.
+  if (manifestDocx) {
     docs.push({
-      id: 'prog', kind: 'docx', file: progFile,
+      id: 'prog', kind: 'docx', file: `${c.dir}/${manifestDocx}`,
       title: 'Programació general', sub: 'Curs · 6 unitats · avaluació',
     });
   }
@@ -857,7 +854,7 @@ function collapsibleByH2(html, udNum) {
 
 /* Panell de material (PDF) d'una sessió. L'estat es decideix en el moment
    del render, consultant pdfManifest (carregat a loadCourse() des de
-   {dir}/pdfs.json — la llista dels PDF que realment existeixen). No es fa
+   {dir}/manifest.json — la llista dels PDF que realment existeixen). No es fa
    cap petició de xarxa per sessió ni cap canvi d'estat posterior:
    - Si el nom hi és al manifest: botó blau "Veure PDF".
    - Si no hi és: insígnia grisa "PDF en construcció", no clicable. */
@@ -965,22 +962,26 @@ function wireToggleAll() {
   });
 }
 
-/* ─── Material PDF per sessió: quins fitxers existeixen ───────────────
-   En lloc de comprovar cada PDF amb una petició HEAD (fràgil: cau pel
-   cau del navegador, condicions de carrera entre cursos, peculiaritats
-   del servidor estàtic...), llegim un cop per curs el fitxer
-   {dir}/pdfs.json amb la llista exacta dels PDF que existeixen.
-   pdfPanel() consulta aquest Set de manera síncrona en pintar cada
-   sessió, així que l'estat ja surt correcte al primer render. */
+/* ─── Contingut del curs: quins fitxers existeixen ─────────────────────
+   En lloc de fer petites peticions de xarxa per endevinar quins fitxers
+   hi ha (fràgil: cau del navegador, peculiaritats del servidor estàtic,
+   condicions de carrera...), llegim un cop per curs {dir}/manifest.json:
+     { "docx": "nom-del-fitxer.docx", "pdfs": ["1bat-ud2-1.pdf", ...] }
+   "docx" pot ser qualsevol nom (o null si encara no hi ha programació
+   general); discover() i pdfPanel() consulten aquestes dades de manera
+   síncrona en pintar, així que l'estat ja surt correcte al primer render. */
 let pdfManifest = new Set();
-async function loadPdfManifest() {
+let manifestDocx = null;
+async function loadManifest() {
   const c = course();
   try {
-    const r = await fetch(`${c.dir}/pdfs.json`, { cache: 'no-store' });
-    const arr = r.ok ? await r.json() : [];
-    pdfManifest = new Set(Array.isArray(arr) ? arr : []);
+    const r = await fetch(`${c.dir}/manifest.json`, { cache: 'no-store' });
+    const data = r.ok ? await r.json() : {};
+    pdfManifest = new Set(Array.isArray(data.pdfs) ? data.pdfs : []);
+    manifestDocx = typeof data.docx === 'string' && data.docx ? data.docx : null;
   } catch (_) {
     pdfManifest = new Set();
+    manifestDocx = null;
   }
 }
 
@@ -1021,7 +1022,8 @@ async function loadCourse() {
   activeId = null;
   document.getElementById('main').innerHTML =
     '<div class="state"><div class="spinner"></div><div>Carregant…</div></div>';
-  DOCS = await Promise.all([discover(), loadPdfManifest()]).then(([docs]) => docs);
+  await loadManifest();
+  DOCS = await discover();
   renderSidebar();
   if (DOCS.length) {
     select(DOCS[0].id);

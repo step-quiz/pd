@@ -288,8 +288,8 @@ Exercicis per fer en format de simulacre de prova: 4 blocs (C1–C4), un ítem p
 
 1. L'usuari diu `ok, sN` (o equivalent).
 2. La IA genera `1bat-ud2-N.tex` **i** el PDF `1bat-ud2-N.pdf` en el mateix torn.
-3. **Afegeix `"1bat-ud2-N.pdf"` a la llista de `1r-bat-pro-data/pdfs.json`** (mantenir-lo ordenat). Aquest fitxer és la **font de veritat** que fa servir `index.html` per decidir si mostra el botó "Veure PDF" o la insígnia "PDF en construcció" — si s'oblida aquest pas, el PDF existirà però la web seguirà mostrant-lo com a pendent.
-4. Lliura els tres fitxers (`.tex`, `.pdf`, `pdfs.json` actualitzat) i espera confirmació abans de passar a `N+1`.
+3. **Afegeix `"1bat-ud2-N.pdf"` a la llista `pdfs` de `1r-bat-pro-data/manifest.json`** (mantenir-la ordenada). Aquest fitxer és la **font de veritat** que fa servir `index.html` per decidir si mostra el botó "Veure PDF" o la insígnia "PDF en construcció" — si s'oblida aquest pas, el PDF existirà però la web seguirà mostrant-lo com a pendent. (El mateix `manifest.json` també declara, al camp `docx`, quin és el fitxer de la programació general; no cal tocar-lo en aquest flux.)
+4. Lliura els tres fitxers (`.tex`, `.pdf`, `manifest.json` actualitzat) i espera confirmació abans de passar a `N+1`.
 
 Cada fitxer ha de:
 - No tenir preàmbul (fragment pur).
