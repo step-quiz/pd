@@ -872,6 +872,36 @@ function pdfPanel(udNum, sessNum) {
          `</div>`;
 }
 
+/* mammoth no distingeix mai la fila de capçalera: totes les files de
+   totes les taules surten com a <tr><td>...</td></tr> planes, sense
+   <thead>/<th>. Convertim la primera fila de cada taula en capçalera
+   real perquè el CSS (.rich thead th / .rich tbody td) hi pugui aplicar
+   un estil consistent, independent del format (negreta o no) que tingui
+   aquella fila al document Word original. */
+function markTableHeaders(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  tmp.querySelectorAll('table').forEach(table => {
+    const rows = Array.from(table.rows);
+    if (rows.length < 2) return;
+    const [headerRow, ...bodyRows] = rows;
+    const thead = document.createElement('thead');
+    const headTr = document.createElement('tr');
+    Array.from(headerRow.cells).forEach(cell => {
+      const th = document.createElement('th');
+      th.innerHTML = cell.innerHTML;
+      headTr.appendChild(th);
+    });
+    thead.appendChild(headTr);
+    const tbody = document.createElement('tbody');
+    bodyRows.forEach(tr => tbody.appendChild(tr));
+    table.innerHTML = '';
+    table.appendChild(thead);
+    table.appendChild(tbody);
+  });
+  return tmp.innerHTML;
+}
+
 /* ─── RENDER: DOCX → HTML (mammoth) ───────────────────────────────── */
 async function renderDocx(doc) {
   const resp = await fetch(doc.file);
@@ -884,7 +914,7 @@ async function renderDocx(doc) {
     "p[style-name='Heading 3'] => h4:fresh",
   ];
   const res = await mammoth.convertToHtml({ arrayBuffer: buf }, { styleMap });
-  return res.value;
+  return markTableHeaders(res.value);
 }
 
 /* ─── SELECCIÓ I PINTAT ───────────────────────────────────────────── */
