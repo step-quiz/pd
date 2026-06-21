@@ -49,6 +49,9 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Assegura que l'atribut HTML `hidden` sempre oculta l'element,
+   independentment de qualsevol regla CSS `display` amb més especificitat. */
+[hidden] { display: none !important; }
 
 html, body {
   height: 100%;
