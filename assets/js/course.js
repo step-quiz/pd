@@ -157,9 +157,11 @@ window.addEventListener('afterprint', () => {
 
 /* ─── INIT ────────────────────────────────────────────────────────── */
 function wireChrome() {
-  document.getElementById('menuToggle').addEventListener('click', () =>
+  const toggle = document.getElementById('menuToggle');
+  const scrim  = document.getElementById('scrim');
+  if (toggle) toggle.addEventListener('click', () =>
     document.getElementById('app').classList.toggle('nav-open'));
-  document.getElementById('scrim').addEventListener('click', closeNav);
+  if (scrim) scrim.addEventListener('click', closeNav);
 }
 
 async function loadApp() {

@@ -41,6 +41,7 @@ function renderSidebar(docs, activeId, onSelect) {
 }
 
 function renderBrand(brand, brandSub) {
-  document.getElementById('brand').innerHTML =
-    `${escHtml(brand)} <small>${escHtml(brandSub)}</small>`;
+  const el = document.getElementById('brand');
+  if (!el) return;
+  el.innerHTML = `${escHtml(brand)} <small>${escHtml(brandSub)}</small>`;
 }
