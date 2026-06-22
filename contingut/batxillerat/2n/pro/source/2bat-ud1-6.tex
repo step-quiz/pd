@@ -1,0 +1,161 @@
+% =====================================================================
+%  2bat-ud1-6.tex  —  SESSIÓ 6: Consolidació: suma, resta i escalar
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteri: C2 (sumar/restar i escalar amb interpretació). Consolidació.
+% =====================================================================
+\horatitol{Sessió 6 — Consolidació: suma, resta i producte per un escalar}%
+{Assentar les operacions additives amb una caça de l'error i una bateria graduada abans del producte de matrices.}
+
+\subsection{Idea clau}
+
+Abans de fer un pas més (el producte de matrices, més exigent), val la pena
+deixar \emph{ben sòlides} les tres operacions que ja coneixes: sumar, restar i
+multiplicar per un escalar. Totes tres es fan \textbf{casella a casella} i
+totes tres demanen una mateixa rutina de comprovació.
+
+\begin{idea}
+\textbf{Rutina abans d'operar (i errors a evitar)}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Comprova la dimensió:} per sumar o restar, les dues matrices han
+        de tenir \emph{exactament} la mateixa dimensió. \emph{Error típic:} sumar
+        una $2\times 3$ amb una $3\times 2$.
+  \item \textbf{Respecta la posició:} cada element s'opera amb el de la
+        \emph{mateixa} fila i columna. \emph{Error típic:} barrejar posicions.
+  \item \textbf{Escalar a TOTES les caselles:} el nombre multiplica \emph{cada}
+        element. \emph{Error típic:} aplicar-lo només a la primera fila o columna.
+  \item \textbf{Vigila el signe a la resta:} $a-b$ pot donar negatiu.
+        \emph{Error típic:} oblidar el signe o restar al revés.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: una suma mal feta]
+Algú ha escrit:
+\[
+\begin{pmatrix} 5 & 2 \\ 3 & 4 \end{pmatrix}+\begin{pmatrix} 1 & 6 \\ 0 & 2 \end{pmatrix}
+\overset{?}{=}\begin{pmatrix} 6 & 2 \\ 3 & 6 \end{pmatrix}.
+\]
+L'error és que no s'han sumat \emph{totes} les caselles: la posició fila 1,
+columna 2 hauria de ser $2+6=8$ (no $2$), i la fila 2, columna 1 hauria de ser
+$3+0=3$ (aquesta sí). El resultat correcte és
+$\begin{pmatrix} 6 & 8 \\ 3 & 6 \end{pmatrix}$.
+\end{exemple}
+
+\begin{exemple}[caça l'error: un escalar a mitges]
+Algú multiplica per $3$ així:
+\[
+3\cdot\begin{pmatrix} 2 & 5 \\ 4 & 1 \end{pmatrix}
+\overset{?}{=}\begin{pmatrix} 6 & 15 \\ 4 & 1 \end{pmatrix}.
+\]
+L'error és que l'escalar només s'ha aplicat a la primera fila. Cal multiplicar
+\emph{totes} les caselles per $3$:
+\[
+3\cdot\begin{pmatrix} 2 & 5 \\ 4 & 1 \end{pmatrix}=\begin{pmatrix} 6 & 15 \\ 12 & 3 \end{pmatrix}.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[combinar dos inventaris i restar baixes]
+Un banc d'aliments té dos magatzems amb el mateix tipus de productes (files:
+arròs i oli; columnes: caixes i paquets):
+\[
+A=\begin{pmatrix} 30 & 50 \\ 20 & 40 \end{pmatrix},\qquad
+B=\begin{pmatrix} 25 & 45 \\ 15 & 30 \end{pmatrix}.
+\]
+\begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+  \item Troba l'inventari total $A+B$.
+  \item Durant la setmana se'n reparteixen $S=\begin{pmatrix} 20 & 40 \\ 10 & 25 \end{pmatrix}$.
+        Quant queda? (Calcula $(A+B)-S$.)
+\end{enumerate}
+\solucio
+a) Sumem casella a casella (totes dues són $2\times 2$):
+\[
+A+B=\begin{pmatrix} 55 & 95 \\ 35 & 70 \end{pmatrix}.
+\]
+b) Restem el que s'ha repartit:
+\[
+(A+B)-S=\begin{pmatrix} 55-20 & 95-40 \\ 35-10 & 70-25 \end{pmatrix}
+       =\begin{pmatrix} 35 & 55 \\ 25 & 45 \end{pmatrix}.
+\]
+\resposta{$A+B=\begin{pmatrix} 55 & 95 \\ 35 & 70 \end{pmatrix}$; \;queda $(A+B)-S=\begin{pmatrix} 35 & 55 \\ 25 & 45 \end{pmatrix}$.}
+\end{exresolt}
+
+\begin{exresolt}[un increment global a un quadre d'hores]
+El quadre d'hores setmanals de dos professionals (files) en tres serveis
+(columnes) és
+\[
+H=\begin{pmatrix} 10 & 6 & 4 \\ 8 & 5 & 7 \end{pmatrix}.
+\]
+De cara a l'estiu, totes les hores s'incrementen un $50\%$. Troba el nou quadre
+i digues quantes hores fa en total el primer professional després de l'increment.
+\solucio
+Un increment del $50\%$ vol dir multiplicar per l'escalar $1{,}5$ (totes les
+caselles):
+\[
+1{,}5\cdot H=\begin{pmatrix} 1{,}5\per 10 & 1{,}5\per 6 & 1{,}5\per 4 \\ 1{,}5\per 8 & 1{,}5\per 5 & 1{,}5\per 7 \end{pmatrix}
+            =\begin{pmatrix} 15 & 9 & 6 \\ 12 & 7{,}5 & 10{,}5 \end{pmatrix}.
+\]
+El primer professional (fila 1) fa $15+9+6=30$ hores en total.
+\resposta{$1{,}5\cdot H=\begin{pmatrix} 15 & 9 & 6 \\ 12 & 7{,}5 & 10{,}5 \end{pmatrix}$; \;el primer professional fa $30$ hores.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\textit{Itinerari bàsic: exercicis 1 a 4. Ampliació: exercicis 5 a 7.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula, amb
+        $A=\begin{pmatrix} 6 & 2 \\ 3 & 5 \end{pmatrix}$ i
+        $B=\begin{pmatrix} 1 & 4 \\ 2 & 0 \end{pmatrix}$:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $A+B$ \quad b) $A-B$ \quad c) $2\cdot A$
+        \end{enumerate}
+  \item Un magatzem té l'estoc $E=\begin{pmatrix} 40 & 25 \\ 30 & 18 \end{pmatrix}$
+        i n'arriben $\begin{pmatrix} 10 & 15 \\ 20 & 12 \end{pmatrix}$ unitats més.
+        Troba el nou estoc.
+  \item Multiplica $C=\begin{pmatrix} 8 & 10 \\ 6 & 4 \end{pmatrix}$ per l'escalar
+        $0{,}5$ i digues què representaria si $C$ fos un pressupost.
+  \item Una plantilla té $P=\begin{pmatrix} 12 & 8 \\ 10 & 6 \end{pmatrix}$
+        treballadors per torn i centre. Hi ha $S=\begin{pmatrix} 2 & 1 \\ 3 & 0 \end{pmatrix}$
+        baixes. Quants en queden? (Calcula $P-S$.)
+  \item \textbf{(Caça l'error)} Algú ha escrit
+        \[ \begin{pmatrix} 7 & 3 \\ 5 & 9 \end{pmatrix}-\begin{pmatrix} 2 & 4 \\ 5 & 1 \end{pmatrix}
+           \overset{?}{=}\begin{pmatrix} 5 & 1 \\ 0 & 8 \end{pmatrix}. \]
+        Hi ha una casella mal calculada. Troba-la, explica l'error i escriu el
+        resultat correcte.
+  \item Calcula $2\cdot A - B$ amb
+        $A=\begin{pmatrix} 3 & 5 \\ 1 & 4 \end{pmatrix}$ i
+        $B=\begin{pmatrix} 2 & 6 \\ 0 & 3 \end{pmatrix}$.
+        (Primer multiplica $A$ per $2$, després resta $B$.)
+  \item \textbf{(Raonament)} Tenim
+        $A=\begin{pmatrix} 4 & 1 & 5 \end{pmatrix}$ (dimensió $1\times 3$) i
+        $B=\begin{pmatrix} 2 \\ 3 \\ 6 \end{pmatrix}$ (dimensió $3\times 1$).
+        Es pot calcular $A+B$? Justifica-ho i digues quina condició caldria que
+        es complís.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $A+B=\begin{pmatrix} 7 & 6 \\ 5 & 5 \end{pmatrix}$ \quad
+        (b) $A-B=\begin{pmatrix} 5 & -2 \\ 1 & 5 \end{pmatrix}$ \quad
+        (c) $2\cdot A=\begin{pmatrix} 12 & 4 \\ 6 & 10 \end{pmatrix}$
+  \item Nou estoc $=\begin{pmatrix} 50 & 40 \\ 50 & 30 \end{pmatrix}$.
+  \item $0{,}5\cdot C=\begin{pmatrix} 4 & 5 \\ 3 & 2 \end{pmatrix}$;
+        \;representaria reduir el pressupost a la meitat ($50\%$).
+  \item $P-S=\begin{pmatrix} 10 & 7 \\ 7 & 6 \end{pmatrix}$.
+  \item La casella mal calculada és la de la fila 1, columna 2: $3-4=-1$, no $1$.
+        L'error és haver oblidat el signe negatiu de la resta. El resultat correcte
+        és $\begin{pmatrix} 5 & -1 \\ 0 & 8 \end{pmatrix}$.
+  \item $2\cdot A-B=\begin{pmatrix} 6 & 10 \\ 2 & 8 \end{pmatrix}-\begin{pmatrix} 2 & 6 \\ 0 & 3 \end{pmatrix}
+        =\begin{pmatrix} 4 & 4 \\ 2 & 5 \end{pmatrix}$.
+  \item No es pot calcular $A+B$: $A$ és $1\times 3$ i $B$ és $3\times 1$, que són
+        dimensions diferents. Caldria que totes dues tinguessin la mateixa
+        dimensió (mateixes files i columnes).
+\end{sollist}
+\end{solucions}

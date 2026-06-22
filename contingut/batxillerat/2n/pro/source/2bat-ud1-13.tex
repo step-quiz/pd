@@ -1,0 +1,155 @@
+% =====================================================================
+%  2bat-ud1-13.tex  —  SESSIÓ 13: Quan es pot multiplicar? Compatibilitat
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteris: C3 (producte) i C4 (interpretar). Ampliació conceptual.
+% =====================================================================
+\horatitol{Sessió 13 — Quan es pot multiplicar? Compatibilitat i interpretació}%
+{Decidir si un producte de matrices té sentit, anticipar-ne la dimensió i interpretar què representa el resultat.}
+
+\subsection{Idea clau}
+
+Saber \emph{calcular} un producte de matrices no és tot: cal saber \textbf{quan es
+pot fer} i \textbf{què significa} el resultat. De fet, decidir si un producte té
+sentit i interpretar-lo és tan important com fer els números. Aquesta sessió posa
+el focus en aquestes dues coses.
+
+\begin{idea}
+\textbf{Compatibilitat, dimensió i interpretació}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Compatibilitat:} per multiplicar $A\cdot B$, el nombre de
+        \textbf{columnes} de $A$ ha de coincidir amb el nombre de \textbf{files}
+        de $B$. Si no, el producte \emph{no es pot fer}.
+  \item \textbf{Dimensió del resultat:} si $A$ és $m\times n$ i $B$ és $n\times p$,
+        el resultat $A\cdot B$ és $m\times p$ (files de la primera, columnes de la
+        segona).
+  \item \textbf{Regla visual:} $\;(m\times \underline{n})\cdot(\underline{n}\times p)
+        \rightarrow m\times p$. Les dues $n$ del mig han de coincidir; les de fora
+        donen la dimensió del resultat.
+  \item \textbf{Interpretació:} les files del resultat hereten el \emph{significat}
+        de les files de la primera matriu; les columnes, el de les columnes de la
+        segona.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[quins productes es poden fer]
+Mirem només les dimensions:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $(2\times 3)\cdot(3\times 4)$: les dues $3$ coincideixen $\rightarrow$
+        \textbf{es pot fer}, resultat $2\times 4$.
+  \item $(2\times 3)\cdot(2\times 3)$: $3\neq 2$ $\rightarrow$ \textbf{no es pot fer}.
+  \item $(3\times 1)\cdot(1\times 2)$: les dues $1$ coincideixen $\rightarrow$
+        \textbf{es pot fer}, resultat $3\times 2$.
+\end{itemize}
+\end{exemple}
+
+\begin{exemple}[què representa el resultat]
+Una matriu $U$ recull, per a cada usuari (files), quantes sessions de cada servei
+(columnes) necessita: és $3\times 2$ (3 usuaris, 2 serveis). Una matriu $C$ recull,
+per a cada servei (files), el cost i les hores (columnes): és $2\times 2$.
+El producte $U\cdot C$ és compatible ($2=2$) i dona una matriu $3\times 2$: per a
+cada \textbf{usuari} (files, heretades de $U$), el \textbf{cost} i les \textbf{hores}
+totals (columnes, heretades de $C$).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[decidir, anticipar i interpretar]
+Una matriu $A$ de dimensió $4\times 3$ recull, per a quatre centres (files), les
+places de tres serveis (columnes). Una matriu $B$ de dimensió $3\times 2$ recull,
+per a cada servei (files), el cost i el personal necessari (columnes).
+\begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+  \item Es pot calcular $A\cdot B$? Quina dimensió tindria?
+  \item Què representarien les files i les columnes del resultat?
+  \item Es pot calcular $B\cdot A$?
+\end{enumerate}
+\solucio
+a) $A$ és $4\times 3$ i $B$ és $3\times 2$: les columnes de $A$ ($3$) coincideixen
+amb les files de $B$ ($3$). Sí, es pot fer, i el resultat és $4\times 2$.
+
+b) Les files (heretades de $A$) són els \textbf{centres}; les columnes (heretades
+de $B$) són el \textbf{cost} i el \textbf{personal} totals de cada centre.
+
+c) $B$ és $3\times 2$ i $A$ és $4\times 3$: les columnes de $B$ ($2$) no
+coincideixen amb les files de $A$ ($4$). $B\cdot A$ \emph{no} es pot fer.
+\resposta{$A\cdot B$ sí (dimensió $4\times 2$): files $=$ centres, columnes $=$ cost i personal totals. $B\cdot A$ no es pot fer.}
+\end{exresolt}
+
+\begin{exresolt}[l'ordre canvia el significat]
+Amb $U=\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$ (usuaris $\times$ tipus de
+sessió) i $D=\begin{pmatrix} 2 & 10 \\ 1 & 8 \end{pmatrix}$ (tipus de sessió
+$\times$ hores i cost), calcula $U\cdot D$ i explica per què $D\cdot U$, tot i que
+es pot calcular, \emph{no} tindria el mateix significat.
+\solucio
+\[
+U\cdot D=\begin{pmatrix} 2\per 2+1\per 1 & 2\per 10+1\per 8 \\ 1\per 2+3\per 1 & 1\per 10+3\per 8 \end{pmatrix}
+=\begin{pmatrix} 5 & 28 \\ 5 & 34 \end{pmatrix}.
+\]
+Aquí les files són els usuaris i les columnes, les hores i el cost: és la lectura
+que té sentit. En $D\cdot U$ es creuarien tipus de sessió amb usuaris d'una manera
+que no respon a cap pregunta real; encara que els números surtin, no representen
+res interpretable. Per això l'ordre dels factors importa també en el \emph{significat}.
+\resposta{$U\cdot D=\begin{pmatrix} 5 & 28 \\ 5 & 34 \end{pmatrix}$ (usuaris $\times$ hores i cost). $D\cdot U$ no té lectura social.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Digues, \emph{només mirant les dimensions}, quins d'aquests productes es
+        poden fer i quina dimensió tindria el resultat:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $(3\times 2)\cdot(2\times 5)$
+          \item $(2\times 4)\cdot(2\times 4)$
+          \item $(1\times 3)\cdot(3\times 1)$
+          \item $(4\times 1)\cdot(1\times 3)$
+        \end{enumerate}
+  \item Una matriu d'usuaris per serveis és $5\times 3$ i una de serveis per cost
+        és $3\times 1$. Es pot fer el producte? Quina dimensió tindria i què
+        representaria?
+  \item Per a cadascun, digues si $A\cdot B$ es pot fer, si $B\cdot A$ es pot fer,
+        o totes dues coses:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $A$ és $2\times 3$, $B$ és $3\times 2$
+          \item $A$ és $2\times 2$, $B$ és $2\times 2$
+          \item $A$ és $3\times 2$, $B$ és $2\times 4$
+        \end{enumerate}
+  \item Una matriu $T$ de tallers per casal és $2\times 3$ (2 tallers, 3 casals) i
+        una matriu $H$ d'hores és $3\times 1$. Calcula $T\cdot H$ amb
+        $T=\begin{pmatrix} 2 & 1 & 3 \\ 1 & 4 & 0 \end{pmatrix}$ i
+        $H=\begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}$, i digues què representa cada
+        número del resultat.
+  \item Una companya vol multiplicar una matriu de places ($3\times 4$) per una de
+        costos ($3\times 1$) per saber el cost de cada centre. Per què no funciona?
+        Com hauria de ser la matriu de costos perquè el producte tingués sentit?
+  \item \textbf{(Raonament)} Tens una matriu $A$ de dimensió $2\times 3$. Quina
+        dimensió ha de tenir una matriu $B$ perquè $A\cdot B$ es pugui fer i el
+        resultat sigui una matriu $2\times 2$? Justifica-ho amb la regla visual.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item (a) es pot fer, $3\times 5$ \quad (b) no es pot fer ($4\neq 2$) \quad
+        (c) es pot fer, $1\times 1$ \quad (d) es pot fer, $4\times 3$.
+  \item Sí: $5\times 3$ per $3\times 1$ dona $5\times 1$. Representaria, per a cada
+        usuari (files), el cost total (única columna).
+  \item (a) totes dues ($A\cdot B$ és $2\times 2$, $B\cdot A$ és $3\times 3$) \quad
+        (b) totes dues (les dues $2\times 2$) \quad (c) només $A\cdot B$ ($3\times 4$);
+        $B\cdot A$ no ($4\neq 3$).
+  \item $T\cdot H=\begin{pmatrix} 2\per 2+1\per 1+3\per 3 \\ 1\per 2+4\per 1+0\per 3 \end{pmatrix}
+        =\begin{pmatrix} 14 \\ 6 \end{pmatrix}$. Cada número són les hores totals
+        d'un taller sumant els tres casals.
+  \item No funciona perquè $(3\times 4)\cdot(3\times 1)$ té $4\neq 3$: no és
+        compatible. Perquè tingui sentit, la matriu de costos ha de ser
+        $4\times 1$ (un cost per cada servei), de manera que
+        $(3\times 4)\cdot(4\times 1)$ doni un cost per centre ($3\times 1$).
+  \item $B$ ha de ser $3\times 2$: la regla visual és
+        $(2\times \underline{3})\cdot(\underline{3}\times 2)\rightarrow 2\times 2$.
+        Les columnes de $A$ ($3$) i les files de $B$ han de coincidir, i les files
+        de $A$ ($2$) amb les columnes de $B$ ($2$) donen el resultat.
+\end{sollist}
+\end{solucions}

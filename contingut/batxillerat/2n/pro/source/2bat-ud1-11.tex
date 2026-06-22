@@ -1,0 +1,119 @@
+% =====================================================================
+%  2bat-ud1-11.tex  —  SESSIÓ 11: Full de càlcul: primer contacte
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteris: C1 i C2. Sessió TECNOLÒGICA (guia pràctica de full de càlcul).
+% =====================================================================
+\horatitol{Sessió 11 — Full de càlcul: primer contacte amb matrices}%
+{Reproduir amb el full de càlcul el que ja saps fer a mà: introduir matrices, sumar-les i aplicar un escalar.}
+
+\subsection{Idea clau}
+
+El full de càlcul (Excel o Google Sheets) és una eina ideal per treballar amb
+matrices: una matriu \emph{és} una taula de cel·les organitzada en files i
+columnes. En aquesta sessió no aprendràs res de matemàtiques nou; el que faràs és
+\textbf{reproduir amb l'ordinador} operacions que ja domines a mà (sumar matrices
+i multiplicar per un escalar) i \textbf{comprovar} que la màquina dona el mateix
+resultat. Així guanyaràs confiança en l'eina i estalviaràs feina repetitiva.
+
+\begin{idea}
+\textbf{Vocabulari del full de càlcul}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Cel·la:} cada caseta, identificada per una lletra (columna) i un
+        número (fila): \texttt{A1}, \texttt{B2}, \texttt{C3}\dots
+  \item \textbf{Rang:} un bloc rectangular de cel·les, s'escriu amb dos punts:
+        \texttt{A1:B2} és el bloc de $2\times 2$ que va de \texttt{A1} a \texttt{B2}.
+  \item \textbf{Fórmula:} comença sempre amb el signe \texttt{=}. Per exemple,
+        \texttt{=A1+D1} suma el contingut de dues cel·les.
+  \item \textbf{Arrossegar:} després d'escriure una fórmula en una cel·la, es pot
+        \emph{arrossegar} (des de la cantonada inferior dreta) per copiar-la a tot
+        un bloc; les referències s'ajusten soles.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[on van les dades]
+Per representar la matriu $A=\begin{pmatrix} 40 & 22 \\ 18 & 30 \end{pmatrix}$
+en el full de càlcul, posem cada número en una cel·la:
+\begin{center}
+\begin{tabular}{c|cc}
+ & \textbf{A} & \textbf{B} \\
+\hline
+\textbf{1} & 40 & 22 \\
+\textbf{2} & 18 & 30 \\
+\end{tabular}
+\end{center}
+La matriu ocupa el rang \texttt{A1:B2}. La cel·la \texttt{A1} és l'element de la
+fila 1, columna 1 ($40$); la cel·la \texttt{B2}, el de la fila 2, columna 2 ($30$).
+\end{exemple}
+
+\begin{exemple}[la fórmula de la suma]
+Si tenim la matriu $A$ al rang \texttt{A1:B2} i la matriu $B$ al rang
+\texttt{D1:E2}, per sumar-les escrivim a la cel·la \texttt{A4} la fórmula
+\[
+\texttt{=A1+D1}
+\]
+i l'arrosseguem a tot el bloc \texttt{A4:B5}. Cada cel·la del resultat suma les
+dues cel·les de la mateixa posició, exactament com la suma casella a casella que
+fem a mà.
+\end{exemple}
+
+% ---------------------------------------------------------------------
+\subsection{Guia pràctica (pas a pas)}
+
+Treballaràs amb dues matrices que ja vas operar a mà:
+\[
+A=\begin{pmatrix} 40 & 22 \\ 18 & 30 \end{pmatrix},\qquad
+B=\begin{pmatrix} 45 & 20 \\ 16 & 28 \end{pmatrix}.
+\]
+
+\begin{idea}
+\textbf{Passos a l'ordinador}
+\begin{enumerate}[leftmargin=1.8em, itemsep=3pt]
+  \item Obre un full de càlcul nou. Escriu la matriu $A$ al rang \texttt{A1:B2}
+        (un número a cada cel·la) i la matriu $B$ al rang \texttt{D1:E2}.
+  \item \textbf{Suma.} A la cel·la \texttt{A4} escriu \texttt{=A1+D1} i prem Retorn.
+        Després selecciona \texttt{A4} i \emph{arrossega} la fórmula fins a omplir
+        el bloc \texttt{A4:B5}. Ja tens la matriu $A+B$.
+  \item \textbf{Producte per un escalar.} Suposa que s'aplica una retallada del
+        $10\%$ a la matriu suma (multiplicar per $0{,}9$). A la cel·la \texttt{A7}
+        escriu \texttt{=A4*0,9} i arrossega-la al bloc \texttt{A7:B8}. Ja tens
+        $0{,}9\cdot(A+B)$.
+  \item \textbf{Comprova.} Calcula $A+B$ i $0{,}9\cdot(A+B)$ \emph{a mà} a la
+        llibreta i compara-ho amb el que mostra la pantalla. Han de coincidir.
+\end{enumerate}
+\end{idea}
+
+\textbf{Tasques per lliurar}
+\begin{exercicis}
+\begin{exlist}
+  \item Reprodueix els passos anteriors amb les matrices $A$ i $B$ donades i
+        anota a la llibreta la matriu $A+B$ i la matriu $0{,}9\cdot(A+B)$ que
+        mostra el full de càlcul.
+  \item Canvia un sol número de la matriu $A$ (per exemple, posa $50$ a la cel·la
+        \texttt{A1}) i observa què passa amb els blocs de la suma i de l'escalar.
+        Explica, en una frase, per què canvien sols.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item Resultats esperats al full de càlcul:
+        \[ A+B=\begin{pmatrix} 85 & 42 \\ 34 & 58 \end{pmatrix},\qquad
+           0{,}9\cdot(A+B)=\begin{pmatrix} 76{,}5 & 37{,}8 \\ 30{,}6 & 52{,}2 \end{pmatrix}. \]
+        Han de coincidir amb el càlcul manual.
+  \item En posar $50$ a \texttt{A1}, la cel·la \texttt{A4} (suma) passa a
+        $50+45=95$ i la cel·la \texttt{A7} (escalar) a $0{,}9\per 95=85{,}5$.
+        Canvien soles perquè les fórmules fan \emph{referència} a les cel·les
+        d'origen: si canvia una dada, tot el que en depèn es recalcula
+        automàticament.
+\end{sollist}
+
+\noindent\textbf{Nota per al professorat.} S'avalua la \emph{correcció tècnica}
+(introduir les matrices en rangs, escriure i arrossegar les fórmules, usar
+referències) i la \emph{interpretació} (entendre que el full de càlcul reprodueix
+el càlcul manual i que el recàlcul automàtic ve de les referències). Aquesta
+sessió alimenta l'instrument «Treballs pràctics i tecnològics» (15\%).
+\end{solucions}

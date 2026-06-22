@@ -1,0 +1,119 @@
+% =====================================================================
+%  2bat-ud1-12.tex  —  SESSIÓ 12: Full de càlcul de gestió
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteris: C2 i C3. Sessió TECNOLÒGICA (full de gestió "viu").
+% =====================================================================
+\horatitol{Sessió 12 — Full de càlcul de gestió}%
+{Muntar un full "viu" que enllaça matrices amb fórmules i recalcula sol en canviar una dada.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vas fer operacions soltes amb el full de càlcul. Ara faràs un
+pas més: muntar un \textbf{full de gestió} on totes les dades estiguin
+\emph{enllaçades} amb fórmules. L'objectiu és un full \textbf{viu}: quan canvies
+una sola dada d'entrada (l'ocupació d'un servei, el percentatge de retallada, les
+hores d'una sessió), \emph{tots} els totals, sumes i productes es recalculen sols
+a l'instant. Aquesta és la potència real del full de càlcul com a eina de gestió i
+de simulació d'escenaris, la mateixa que faràs servir als cicles formatius.
+
+\begin{idea}
+\textbf{Idees clau d'un full de gestió}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Dades d'entrada} separades dels \textbf{resultats}: les dades es
+        posen una sola vegada; els resultats es calculen amb fórmules que hi fan
+        referència.
+  \item \textbf{Fórmules enllaçades:} cap resultat es tecleja a mà; tot surt de
+        fórmules. Així el full es manté coherent.
+  \item \textbf{Recàlcul automàtic:} si canvia una dada d'entrada, tot el que en
+        depèn s'actualitza sol.
+  \item \textbf{Producte de matrices:} moltes fulls de càlcul tenen una funció per
+        multiplicar matrices (per exemple \texttt{=MMULT(rang1;rang2)}), però
+        també es pot fer cel·la a cel·la amb sumes de productes.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[un total que es recalcula sol]
+Tens l'ocupació de places d'un servei a les cel·les \texttt{B2:B4}. Si a la cel·la
+\texttt{B5} escrius la fórmula
+\[
+\texttt{=B2+B3+B4}
+\]
+obtens el total. Si després canvies qualsevol valor de \texttt{B2:B4}, el total de
+\texttt{B5} es \textbf{recalcula sol}: no cal tornar a sumar res a mà.
+\end{exemple}
+
+\begin{exemple}[un producte amb referència a un percentatge]
+Si tens un pressupost total al rang \texttt{A1:B2} i el percentatge de retallada a
+la cel·la \texttt{D1} (per exemple, $0{,}9$ per a una retallada del $10\%$), pots
+escriure a \texttt{A4} la fórmula
+\[
+\texttt{=A1*\$D\$1}
+\]
+i arrossegar-la al bloc \texttt{A4:B5}. El símbol \texttt{\$} \emph{fixa} la cel·la
+\texttt{D1} perquè no es desplaci en arrossegar. Si canvies \texttt{D1} a $0{,}8$,
+tot el pressupost retallat es recalcula sol.
+\end{exemple}
+
+% ---------------------------------------------------------------------
+\subsection{Guia pràctica (pas a pas)}
+
+Muntaràs un full de gestió de la dedicació professional, reprenent el cas de la
+sessió 8: una matriu de sessions per usuari i una columna d'hores per sessió.
+\[
+S=\begin{pmatrix} 3 & 2 & 1 \\ 1 & 4 & 2 \\ 2 & 1 & 3 \end{pmatrix},\qquad
+H=\begin{pmatrix} 2 \\ 1 \\ 1 \end{pmatrix}.
+\]
+
+\begin{idea}
+\textbf{Passos a l'ordinador}
+\begin{enumerate}[leftmargin=1.8em, itemsep=3pt]
+  \item Escriu la matriu $S$ al rang \texttt{A1:C3} i la columna d'hores $H$ al
+        rang \texttt{E1:E3}.
+  \item \textbf{Hores de cada usuari (producte).} A la cel·la \texttt{G1} escriu
+        la suma de productes de la fila 1 de $S$ per la columna $H$:
+        \texttt{=A1*\$E\$1+B1*\$E\$2+C1*\$E\$3}. Arrossega-la fins a \texttt{G3}
+        per obtenir les hores dels tres usuaris. (Si la coneixes, pots usar
+        \texttt{=MMULT(A1:C3;E1:E3)}.)
+  \item \textbf{Total d'hores.} A la cel·la \texttt{G5} escriu \texttt{=G1+G2+G3}
+        per saber les hores de professional que cal preveure en total.
+  \item \textbf{Prova un escenari.} Canvia la durada de la primera sessió: posa $3$
+        a la cel·la \texttt{E1}. Observa com es recalculen soles totes les hores i
+        el total. Anota el nou total.
+  \item \textbf{Comprova} que els resultats coincideixen amb el càlcul a mà de la
+        sessió 8.
+\end{enumerate}
+\end{idea}
+
+\textbf{Tasques per lliurar}
+\begin{exercicis}
+\begin{exlist}
+  \item Munta el full descrit i anota les hores de cada usuari ($G1$ a $G3$) i el
+        total ($G5$) amb les dades originals.
+  \item Prova l'escenari del pas 4 (durada de la primera sessió $=3$) i anota el
+        nou total. Explica, en una frase, per què ha canviat sense tornar a
+        escriure cap fórmula.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item Amb les dades originals ($H=\begin{pmatrix} 2 \\ 1 \\ 1 \end{pmatrix}$), les
+        hores de cada usuari són $\begin{pmatrix} 9 \\ 8 \\ 8 \end{pmatrix}$ i el
+        total és $9+8+8=25$ hores. Coincideix amb el càlcul a mà de la sessió 8.
+  \item Amb la durada de la primera sessió a $3$ ($H=\begin{pmatrix} 3 \\ 1 \\ 1 \end{pmatrix}$),
+        les hores passen a $\begin{pmatrix} 12 \\ 9 \\ 10 \end{pmatrix}$ i el total
+        a $12+9+10=31$ hores. Ha canviat sol perquè les fórmules fan referència a
+        la cel·la \texttt{E1}: en modificar-la, tots els productes i el total es
+        recalculen automàticament.
+\end{sollist}
+
+\noindent\textbf{Nota per al professorat.} S'avalua la \emph{correcció tècnica}
+(matrices en rangs, fórmules de producte amb referències fixes \texttt{\$}, full
+enllaçat i coherent) i la \emph{interpretació} (entendre el recàlcul automàtic i
+saber llegir l'efecte d'un escenari sobre el conjunt). És la pràctica principal de
+la unitat per a l'instrument «Treballs pràctics i tecnològics» (15\%).
+\end{solucions}

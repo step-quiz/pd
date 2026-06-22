@@ -1,0 +1,177 @@
+% =====================================================================
+%  2bat-ud1-4.tex  —  SESSIÓ 4: Sumar dues taules: la suma de matrices
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteris: C2 (sumar/restar amb interpretació). Pas previ a l'escalar.
+% =====================================================================
+\horatitol{Sessió 4 — Sumar dues taules: la suma de matrices}%
+{Combinar dues taules del mateix tipus en una de sola: la suma i la resta de matrices, casella a casella.}
+
+\subsection{Idea clau}
+
+Sovint tenim dues taules que recullen \emph{el mateix tipus de dades} però en
+moments o conceptes diferents: l'ocupació d'uns centres al gener i al febrer, les
+despeses de personal i de materials, els àpats servits en dos torns\dots Quan
+volem ajuntar-les en una sola taula, no cal tornar a comptar res: n'hi ha prou de
+\textbf{sumar les caselles que ocupen la mateixa posició}.
+
+Aquesta és tota la idea de la \textbf{suma de matrices}. La \textbf{resta}
+funciona igual i serveix per veure una \emph{diferència} (què ha baixat, què
+queda, quina és la variació respecte d'un total).
+
+\begin{idea}
+\textbf{Regles bàsiques (suma i resta de matrices)}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Mateixa posició:} se sumen (o es resten) els elements que ocupen
+        la mateixa fila i la mateixa columna a totes dues matrices.
+  \item \textbf{Mateixa dimensió:} només es poden sumar o restar matrices que
+        tenen \emph{exactament} la mateixa dimensió (mateix nombre de files i de
+        columnes). Si no coincideixen, l'operació \textbf{no es pot fer}.
+  \item \textbf{Mateixa dimensió del resultat:} la matriu resultat té la mateixa
+        dimensió que les de partida.
+  \item \textbf{Lectura social:} sumar acumula (per exemple, el total de dos
+        mesos); restar compara (per exemple, què queda després de les baixes).
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[acumular dos mesos]
+L'ocupació de places de dos centres (files) en dos serveis (columnes) al gener i
+al febrer és
+\[
+G=\begin{pmatrix} 40 & 22 \\ 35 & 28 \end{pmatrix},\qquad
+F=\begin{pmatrix} 45 & 25 \\ 30 & 32 \end{pmatrix}.
+\]
+Per obtenir l'ocupació acumulada del bimestre sumem casella a casella:
+\[
+G+F=\begin{pmatrix} 40+45 & 22+25 \\ 35+30 & 28+32 \end{pmatrix}
+    =\begin{pmatrix} 85 & 47 \\ 65 & 60 \end{pmatrix}.
+\]
+Cada casella del resultat és el total dels dos mesos en aquell centre i servei.
+\end{exemple}
+
+\begin{exemple}[veure una diferència amb la resta]
+El nombre de places \emph{ofertes} i les \emph{ocupades} d'un casal en tres
+tallers són
+\[
+O=\begin{pmatrix} 30 & 25 & 40 \end{pmatrix},\qquad
+U=\begin{pmatrix} 24 & 25 & 33 \end{pmatrix}.
+\]
+Les places que queden \textbf{lliures} són la resta:
+\[
+O-U=\begin{pmatrix} 30-24 & 25-25 & 40-33 \end{pmatrix}
+    =\begin{pmatrix} 6 & 0 & 7 \end{pmatrix}.
+\]
+El segon taller està ple ($0$ places lliures); el tercer és el que en té més de
+lliures.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[integrar dos trimestres]
+Una entitat anota les persones ateses en dos serveis (files: acollida i menjador)
+durant dos trimestres (columnes):
+\[
+T_1=\begin{pmatrix} 120 & 140 \\ 200 & 180 \end{pmatrix},\qquad
+T_2=\begin{pmatrix} 135 & 150 \\ 210 & 190 \end{pmatrix}.
+\]
+Troba el total de persones ateses sumant els dos trimestres i digues quin servei
+n'ha atès més en conjunt.
+\solucio
+Totes dues matrices són $2\times 2$, així que sumem casella a casella:
+\[
+T_1+T_2=\begin{pmatrix} 120+135 & 140+150 \\ 200+210 & 180+190 \end{pmatrix}
+       =\begin{pmatrix} 255 & 290 \\ 410 & 370 \end{pmatrix}.
+\]
+Per veure quin servei n'ha atès més, sumem cada fila. Acollida (fila 1):
+$255 + 290 = 545$. Menjador (fila 2): $410 + 370 = 780$. El menjador n'ha atès més.
+\resposta{$T_1+T_2=\begin{pmatrix} 255 & 290 \\ 410 & 370 \end{pmatrix}$; \;el menjador n'ha atès més en conjunt ($780$ contra $545$).}
+\end{exresolt}
+
+\begin{exresolt}[què queda després de les sortides]
+Un banc d'aliments té un estoc inicial de tres productes en dos magatzems
+(files: magatzem A i B; columnes: arròs, oli i llegums):
+\[
+E=\begin{pmatrix} 80 & 50 & 60 \\ 90 & 40 & 70 \end{pmatrix}.
+\]
+Durant la setmana se'n reparteixen les quantitats
+\[
+R=\begin{pmatrix} 35 & 20 & 25 \\ 50 & 15 & 30 \end{pmatrix}.
+\]
+Troba l'estoc que queda i digues si algun producte d'algun magatzem ha quedat per
+sota de $30$ unitats.
+\solucio
+Restem casella a casella (totes dues són $2\times 3$):
+\[
+E-R=\begin{pmatrix} 80-35 & 50-20 & 60-25 \\ 90-50 & 40-15 & 70-30 \end{pmatrix}
+   =\begin{pmatrix} 45 & 30 & 35 \\ 40 & 25 & 40 \end{pmatrix}.
+\]
+Revisem cada casella: l'únic valor per sota de $30$ és l'oli del magatzem B,
+que queda a $25$ unitats.
+\resposta{$E-R=\begin{pmatrix} 45 & 30 & 35 \\ 40 & 25 & 40 \end{pmatrix}$; \;l'oli del magatzem B queda a $25$, per sota de $30$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Donades
+        \[ A=\begin{pmatrix} 12 & 7 \\ 9 & 4 \end{pmatrix},\qquad
+           B=\begin{pmatrix} 5 & 8 \\ 3 & 6 \end{pmatrix}, \]
+        calcula:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $A+B$ \qquad b) $A-B$
+        \end{enumerate}
+  \item L'ocupació de places de tres centres (files) en dos mesos (columnes) és
+        \[ M_1=\begin{pmatrix} 30 & 28 \\ 45 & 50 \\ 20 & 22 \end{pmatrix},\qquad
+           M_2=\begin{pmatrix} 32 & 26 \\ 40 & 55 \\ 25 & 18 \end{pmatrix}. \]
+        Troba l'ocupació acumulada $M_1+M_2$ i digues quin centre n'acumula més en
+        total.
+  \item Un menjador social ofereix àpats i n'anota els servits realment, en dos
+        torns (migdia i vespre) durant tres dies:
+        \[ \text{Oferts: } O=\begin{pmatrix} 60 & 40 \\ 62 & 45 \\ 58 & 42 \end{pmatrix},\qquad
+           \text{Servits: } S=\begin{pmatrix} 55 & 38 \\ 60 & 41 \\ 50 & 39 \end{pmatrix}. \]
+        Troba els àpats \textbf{no} servits, $O-S$.
+  \item Dues associacions volen ajuntar les seves dades de voluntariat. La primera
+        les té en una matriu $2\times 4$ i la segona en una matriu $2\times 3$.
+        Es poden sumar? Per què?
+  \item Les hores de dedicació de dos professionals (files) en tres serveis
+        (columnes) a la primera quinzena i a la segona són
+        \[ Q_1=\begin{pmatrix} 10 & 8 & 6 \\ 7 & 9 & 5 \end{pmatrix},\qquad
+           Q_2=\begin{pmatrix} 9 & 10 & 8 \\ 6 & 11 & 7 \end{pmatrix}. \]
+        Troba el total d'hores del mes, $Q_1+Q_2$.
+  \item Una matriu de places ocupades aquest curs i la del curs passat són
+        \[ \text{Enguany: } C=\begin{pmatrix} 100 & 120 \\ 90 & 110 \end{pmatrix},\qquad
+           \text{Curs passat: } D=\begin{pmatrix} 95 & 130 \\ 85 & 105 \end{pmatrix}. \]
+        Calcula la variació $C-D$ i interpreta què signifiquen els valors negatius.
+  \item \textbf{(Raonament)} Una companya diu: «per sumar dues matrices, n'hi ha
+        prou que totes dues tinguin el mateix nombre d'elements». Posa un exemple
+        que mostri que això \emph{no} és suficient i explica quina és la condició
+        correcta.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $A+B=\begin{pmatrix} 17 & 15 \\ 12 & 10 \end{pmatrix}$ \quad
+        (b) $A-B=\begin{pmatrix} 7 & -1 \\ 6 & -2 \end{pmatrix}$
+  \item $M_1+M_2=\begin{pmatrix} 62 & 54 \\ 85 & 105 \\ 45 & 40 \end{pmatrix}$;
+        \;el segon centre n'acumula més ($85+105=190$).
+  \item $O-S=\begin{pmatrix} 5 & 2 \\ 2 & 4 \\ 8 & 3 \end{pmatrix}$
+        (àpats no servits).
+  \item No es poden sumar: $2\times 4$ i $2\times 3$ tenen un nombre de columnes
+        diferent, i cal la \textbf{mateixa dimensió} (mateixes files i columnes).
+  \item $Q_1+Q_2=\begin{pmatrix} 19 & 18 & 14 \\ 13 & 20 & 12 \end{pmatrix}$.
+  \item $C-D=\begin{pmatrix} 5 & -10 \\ 5 & 5 \end{pmatrix}$. Els valors positius
+        indiquen que enguany hi ha hagut més places ocupades que el curs passat; el
+        valor negatiu ($-10$) indica que en aquella posició n'hi ha hagut $10$
+        menys que el curs passat.
+  \item Resposta oberta. Exemple: $\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$
+        (dimensió $2\times 3$) i $\begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix}$
+        (dimensió $3\times 2$) tenen totes dues $6$ elements, però \textbf{no} es
+        poden sumar. La condició correcta és tenir la mateixa dimensió: el mateix
+        nombre de files \emph{i} el mateix nombre de columnes.
+\end{sollist}
+\end{solucions}

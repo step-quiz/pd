@@ -1,0 +1,160 @@
+% =====================================================================
+%  2bat-ud1-8.tex  —  SESSIÓ 8: Quantes hores de cada professional?
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteris: C3 (producte) i C4 (interpretar). Estudi de cas (Activitat 3).
+% =====================================================================
+\horatitol{Sessió 8 — Quantes hores de cada professional?}%
+{Un cas real: multiplicar dues taules per saber les hores de dedicació que genera cada usuari d'un servei.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vam aprendre \emph{com} es fa el producte de matrices (fila
+per columna). Ara el posem a treballar en un cas real de planificació. Imagina un
+servei d'atenció a les persones on cada usuari necessita un nombre determinat de
+sessions de diferents tipus (educativa, d'acompanyament, administrativa), i cada
+tipus de sessió té una durada fixa en hores.
+
+Si volem saber \textbf{quantes hores de dedicació} genera cada usuari, multipliquem
+la matriu de sessions per la matriu d'hores. Cada número del resultat ens diu la
+\emph{càrrega de treball total} que suposa un usuari concret per al servei.
+
+\begin{idea}
+\textbf{Llegir el resultat d'un producte}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Si una fila són les \textbf{sessions} d'un usuari i una columna són les
+        \textbf{hores} per sessió, el producte fila $\times$ columna és el
+        \textbf{total d'hores} d'aquell usuari.
+  \item Cada element del resultat té un significat concret: no és un número
+        abstracte, és \emph{dedicació real} que cal preveure.
+  \item Aquesta eina serveix per \textbf{dimensionar la plantilla}: quins usuaris
+        generen més càrrega i quantes hores de professional caldrà en total.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[les hores totals d'un usuari]
+Un usuari necessita, cada setmana, $2$ sessions educatives, $1$ d'acompanyament i
+$3$ administratives. Les durades respectives són $2$, $3$ i $1$ hores. Les hores
+totals de dedicació són el producte fila per columna:
+\[
+\begin{pmatrix} 2 & 1 & 3 \end{pmatrix}\cdot\begin{pmatrix} 2 \\ 3 \\ 1 \end{pmatrix}
+= 2\per 2 + 1\per 3 + 3\per 1 = 4 + 3 + 3 = 10 \text{ hores}.
+\]
+Aquest usuari genera $10$ hores de dedicació setmanal per al servei.
+\end{exemple}
+
+\begin{exemple}[dos usuaris alhora]
+Si afegim un segon usuari (que necessita $1$ educativa, $2$ d'acompanyament i $1$
+administrativa), posem cada usuari en una fila:
+\[
+S=\begin{pmatrix} 2 & 1 & 3 \\ 1 & 2 & 1 \end{pmatrix},\qquad
+H=\begin{pmatrix} 2 \\ 3 \\ 1 \end{pmatrix}.
+\]
+El producte dona les hores totals de cada usuari:
+\[
+S\cdot H=\begin{pmatrix} 2\per 2+1\per 3+3\per 1 \\ 1\per 2+2\per 3+1\per 1 \end{pmatrix}
+        =\begin{pmatrix} 10 \\ 9 \end{pmatrix}.
+\]
+El primer usuari genera $10$ hores i el segon, $9$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[planificar la dedicació de tres usuaris]
+Un servei atén tres usuaris. La matriu recull quantes sessions de cada tipus
+(columnes: educativa, acompanyament, administrativa) necessita cada usuari (files):
+\[
+S=\begin{pmatrix} 3 & 2 & 1 \\ 1 & 4 & 2 \\ 2 & 1 & 3 \end{pmatrix}.
+\]
+Les durades de cada tipus de sessió són $2$, $1$ i $1$ hores:
+\[
+H=\begin{pmatrix} 2 \\ 1 \\ 1 \end{pmatrix}.
+\]
+\begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+  \item Calcula les hores totals de dedicació de cada usuari, $S\cdot H$.
+  \item Quin usuari genera més càrrega de treball?
+  \item Quantes hores de professional caldrà preveure en total per als tres usuaris?
+\end{enumerate}
+\solucio
+a) Multipliquem fila per columna:
+\[
+S\cdot H=\begin{pmatrix} 3\per 2+2\per 1+1\per 1 \\ 1\per 2+4\per 1+2\per 1 \\ 2\per 2+1\per 1+3\per 1 \end{pmatrix}
+        =\begin{pmatrix} 9 \\ 8 \\ 8 \end{pmatrix}.
+\]
+b) El primer usuari genera més càrrega: $9$ hores (els altres dos, $8$ cadascun).
+
+c) En total cal preveure $9 + 8 + 8 = 25$ hores de professional a la setmana.
+\resposta{$S\cdot H=\begin{pmatrix} 9 \\ 8 \\ 8 \end{pmatrix}$; \;el primer usuari genera més càrrega ($9$ h); \;en total, $25$ hores setmanals.}
+\end{exresolt}
+
+\begin{exresolt}[hores i cost alhora]
+La matriu de sessions de dos usuaris (files) en dos tipus de sessió (columnes) és
+\[
+S=\begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}.
+\]
+Cada tipus de sessió té una durada (hores) i un cost (euros):
+\[
+D=\begin{pmatrix} 2 & 10 \\ 1 & 8 \end{pmatrix}.
+\]
+Calcula $S\cdot D$ i interpreta cada columna del resultat.
+\solucio
+Multipliquem fila per columna:
+\[
+S\cdot D=\begin{pmatrix} 3\per 2+2\per 1 & 3\per 10+2\per 8 \\ 1\per 2+4\per 1 & 1\per 10+4\per 8 \end{pmatrix}
+        =\begin{pmatrix} 8 & 46 \\ 6 & 42 \end{pmatrix}.
+\]
+La primera columna són les \textbf{hores} totals de cada usuari ($8$ i $6$); la
+segona columna és el \textbf{cost} total en euros ($46\eur$ i $42\eur$).
+\resposta{$S\cdot D=\begin{pmatrix} 8 & 46 \\ 6 & 42 \end{pmatrix}$: \;usuari 1, $8$ h i $46\eur$; \;usuari 2, $6$ h i $42\eur$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Un usuari necessita $4$ sessions educatives, $2$ d'acompanyament i $1$
+        administrativa, amb durades de $2$, $1$ i $3$ hores respectivament. Escriu
+        el producte fila per columna i calcula les hores totals de dedicació.
+  \item Un servei atén dos usuaris amb tres tipus de sessió:
+        \[ S=\begin{pmatrix} 2 & 3 & 1 \\ 4 & 1 & 2 \end{pmatrix},\qquad
+           H=\begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}. \]
+        Calcula $S\cdot H$ i digues quin usuari genera més hores de dedicació.
+  \item Tres usuaris necessiten dos tipus de sessió (educativa i d'acompanyament):
+        \[ S=\begin{pmatrix} 3 & 1 \\ 2 & 2 \\ 1 & 4 \end{pmatrix},\qquad
+           H=\begin{pmatrix} 2 \\ 1 \end{pmatrix}. \]
+        Troba les hores de cada usuari i el total d'hores que cal preveure.
+  \item Amb la matriu de sessions $S=\begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix}$
+        i la taula de durada i cost $D=\begin{pmatrix} 2 & 12 \\ 1 & 9 \end{pmatrix}$,
+        calcula $S\cdot D$ i digues quantes hores i quin cost genera cada usuari.
+  \item Un casal té quatre usuaris i dos tipus de taller (manualitats i esport):
+        \[ S=\begin{pmatrix} 2 & 1 \\ 1 & 3 \\ 0 & 2 \\ 3 & 1 \end{pmatrix},\qquad
+           H=\begin{pmatrix} 1 \\ 2 \end{pmatrix}. \]
+        Calcula les hores de cada usuari i digues quin en genera menys.
+  \item \textbf{(Raonament)} En el cas de l'exercici 3, un company calcula
+        $H\cdot S$ en lloc de $S\cdot H$ i diu que «és igual». Sense fer tot el
+        càlcul, explica per què l'ordre importa i si $H\cdot S$ es pot fer (mira
+        les dimensions: $S$ és $3\times 2$ i $H$ és $2\times 1$).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item $\begin{pmatrix} 4 & 2 & 1 \end{pmatrix}\cdot\begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}
+        =4\per 2+2\per 1+1\per 3=8+2+3=13$ hores.
+  \item $S\cdot H=\begin{pmatrix} 10 \\ 10 \end{pmatrix}$;
+        \;els dos usuaris generen les mateixes hores ($10$ cadascun).
+  \item $S\cdot H=\begin{pmatrix} 7 \\ 6 \\ 6 \end{pmatrix}$;
+        \;cal preveure $7+6+6=19$ hores en total.
+  \item $S\cdot D=\begin{pmatrix} 5 & 33 \\ 8 & 54 \end{pmatrix}$;
+        \;usuari 1: $5$ h i $33\eur$; usuari 2: $8$ h i $54\eur$.
+  \item $S\cdot H=\begin{pmatrix} 4 \\ 7 \\ 4 \\ 5 \end{pmatrix}$;
+        \;el primer i el tercer usuari en generen menys ($4$ hores cadascun).
+  \item L'ordre importa perquè en el producte de matrices, en general,
+        $S\cdot H\neq H\cdot S$. A més, $H\cdot S$ \emph{no} es pot fer: $H$ és
+        $2\times 1$ i $S$ és $3\times 2$, i les columnes de $H$ ($1$) no coincideixen
+        amb les files de $S$ ($3$). Per tant $H\cdot S$ no és compatible.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,117 @@
+% =====================================================================
+%  2bat-ud1-9.tex  —  SESSIÓ 9: El producte pas a pas (mecanització)
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteri: C3 (producte de matrices). Mecanització: bateria graduada.
+% =====================================================================
+\horatitol{Sessió 9 — El producte pas a pas (mecanització)}%
+{Guanyar destresa amb una bateria graduada de productes, de matrices petites a rectangulars.}
+
+\subsection{Idea clau}
+
+Ja saps què significa el producte de matrices i per a què serveix. Aquesta sessió
+té un únic objectiu: que el \textbf{mecanisme} fila-per-columna et surti de manera
+segura i ràpida, sense errors, encara que el problema tingui números més grans o
+matrices rectangulars.
+
+\begin{idea}
+\textbf{Recordatori del mecanisme (i els dos paranys)}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Cada casella del resultat surt de creuar una \textbf{fila} de la primera
+        matriu amb una \textbf{columna} de la segona: es multiplica element a
+        element i se \emph{sumen} els productes.
+  \item La casella de la \textbf{fila $i$, columna $j$} del resultat surt de la
+        fila $i$ de la primera i la columna $j$ de la segona.
+  \item \textbf{Parany 1:} equivocar-se en la correspondència fila-columna (creuar
+        una fila amb la fila enlloc de la columna).
+  \item \textbf{Parany 2:} perdre's en la suma de productes (oblidar un terme o
+        sumar malament). Escriu sempre tots els productes abans de sumar.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[un producte $2\times 2$ recordant el mecanisme]
+\[
+\begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix}\cdot\begin{pmatrix} 5 & 0 \\ 2 & 6 \end{pmatrix}
+=\begin{pmatrix} 2\per 5+3\per 2 & 2\per 0+3\per 6 \\ 1\per 5+4\per 2 & 1\per 0+4\per 6 \end{pmatrix}
+=\begin{pmatrix} 16 & 18 \\ 13 & 24 \end{pmatrix}.
+\]
+\end{exemple}
+
+\begin{exemple}[un producte rectangular]
+Una matriu $2\times 3$ per una $3\times 2$ dona una matriu $2\times 2$:
+\[
+\begin{pmatrix} 1 & 2 & 0 \\ 3 & 1 & 2 \end{pmatrix}\cdot\begin{pmatrix} 2 & 1 \\ 0 & 4 \\ 3 & 1 \end{pmatrix}
+=\begin{pmatrix} 1\per 2+2\per 0+0\per 3 & 1\per 1+2\per 4+0\per 1 \\ 3\per 2+1\per 0+2\per 3 & 3\per 1+1\per 4+2\per 1 \end{pmatrix}
+=\begin{pmatrix} 2 & 9 \\ 12 & 9 \end{pmatrix}.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[producte $2\times 2$ amb tots els passos]
+Calcula $\begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}\cdot\begin{pmatrix} 1 & 5 \\ 2 & 0 \end{pmatrix}$.
+\solucio
+Escrivim cada casella com a suma de productes:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Fila 1 $\times$ columna 1: $4\per 1+2\per 2=4+4=8$.
+  \item Fila 1 $\times$ columna 2: $4\per 5+2\per 0=20+0=20$.
+  \item Fila 2 $\times$ columna 1: $1\per 1+3\per 2=1+6=7$.
+  \item Fila 2 $\times$ columna 2: $1\per 5+3\per 0=5+0=5$.
+\end{itemize}
+\[
+\begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}\cdot\begin{pmatrix} 1 & 5 \\ 2 & 0 \end{pmatrix}=\begin{pmatrix} 8 & 20 \\ 7 & 5 \end{pmatrix}.
+\]
+\resposta{$\begin{pmatrix} 8 & 20 \\ 7 & 5 \end{pmatrix}$.}
+\end{exresolt}
+
+\begin{exresolt}[un producte rectangular $2\times 3$ per $3\times 1$]
+Calcula $\begin{pmatrix} 2 & 1 & 3 \\ 0 & 4 & 1 \end{pmatrix}\cdot\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$.
+\solucio
+El resultat serà $2\times 1$ (files de la primera, columnes de la segona):
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Fila 1 $\times$ columna: $2\per 1+1\per 2+3\per 3=2+2+9=13$.
+  \item Fila 2 $\times$ columna: $0\per 1+4\per 2+1\per 3=0+8+3=11$.
+\end{itemize}
+\[
+\begin{pmatrix} 2 & 1 & 3 \\ 0 & 4 & 1 \end{pmatrix}\cdot\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}=\begin{pmatrix} 13 \\ 11 \end{pmatrix}.
+\]
+\resposta{$\begin{pmatrix} 13 \\ 11 \end{pmatrix}$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\textit{Bateria graduada: de més senzill (1) a més complet (7). Escriu tots els productes abans de sumar.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\cdot\begin{pmatrix} 7 & 3 \\ 2 & 5 \end{pmatrix}$
+  \item $\begin{pmatrix} 2 & 1 \\ 3 & 0 \end{pmatrix}\cdot\begin{pmatrix} 4 & 2 \\ 1 & 5 \end{pmatrix}$
+  \item $\begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}\cdot\begin{pmatrix} 2 & 0 \\ 3 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 5 & 1 \\ 2 & 3 \end{pmatrix}\cdot\begin{pmatrix} 1 & 2 \\ 4 & 0 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 2 & 1 \\ 0 & 3 & 2 \end{pmatrix}\cdot\begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}$
+  \item $\begin{pmatrix} 2 & 0 & 1 \\ 1 & 3 & 2 \end{pmatrix}\cdot\begin{pmatrix} 1 & 2 \\ 0 & 1 \\ 4 & 1 \end{pmatrix}$
+  \item \textbf{(Raonament)} Calcula $A\cdot B$ i $B\cdot A$ amb
+        $A=\begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}$ i
+        $B=\begin{pmatrix} 3 & 0 \\ 1 & 2 \end{pmatrix}$. Surten iguals? Què en
+        conclous sobre l'ordre dels factors?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item $\begin{pmatrix} 7 & 3 \\ 2 & 5 \end{pmatrix}$ (multiplicar per la matriu
+        identitat deixa la matriu igual).
+  \item $\begin{pmatrix} 9 & 9 \\ 12 & 6 \end{pmatrix}$.
+  \item $\begin{pmatrix} 12 & 2 \\ 14 & 4 \end{pmatrix}$.
+  \item $\begin{pmatrix} 9 & 10 \\ 14 & 4 \end{pmatrix}$.
+  \item $\begin{pmatrix} 7 \\ 9 \end{pmatrix}$.
+  \item $\begin{pmatrix} 6 & 5 \\ 9 & 7 \end{pmatrix}$.
+  \item $A\cdot B=\begin{pmatrix} 5 & 4 \\ 1 & 2 \end{pmatrix}$,
+        \;$B\cdot A=\begin{pmatrix} 3 & 6 \\ 1 & 4 \end{pmatrix}$. No surten iguals:
+        en el producte de matrices l'ordre dels factors importa (en general
+        $A\cdot B\neq B\cdot A$).
+\end{sollist}
+\end{solucions}

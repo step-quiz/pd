@@ -1,0 +1,163 @@
+% =====================================================================
+%  2bat-ud1-7.tex  —  SESSIÓ 7: El producte de matrices: la idea
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteri: C3 (producte de matrices i compatibilitat). CONCEPTE DELICAT.
+% =====================================================================
+\horatitol{Sessió 7 — El producte de matrices: la idea}%
+{D'on surt cada número quan multipliquem dues taules: el producte fila per columna, pas a pas.}
+
+\subsection{Idea clau}
+
+Fins ara hem sumat, restat i escalat matrices, i totes aquestes operacions es
+feien \emph{casella a casella}. Però hi ha preguntes que això no resol. Imagina
+que saps \textbf{quantes sessions} de cada tipus necessita un usuari i
+\textbf{quantes hores} dura cada tipus de sessió. Per saber les \emph{hores
+totals} de dedicació, no n'hi ha prou de sumar ni d'escalar: cal \textbf{combinar}
+les dues taules d'una manera nova. Aquesta combinació és el \textbf{producte de
+matrices}.
+
+La regla és \emph{fila per columna}: per obtenir un número del resultat, agafem
+una \textbf{fila} de la primera matriu i una \textbf{columna} de la segona,
+multipliquem els seus elements \emph{un a un} i \emph{sumem} els productes.
+
+\begin{idea}
+\textbf{El producte, pas a pas}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Cada element del resultat surt de creuar una \textbf{fila} de la primera
+        amb una \textbf{columna} de la segona.
+  \item Es multiplica element a element (primer amb primer, segon amb segon\dots)
+        i després se \emph{sumen} tots aquests productes.
+  \item \textbf{Compatibilitat:} per poder fer-ho, la fila i la columna han de
+        tenir la \emph{mateixa longitud}. És a dir, el nombre de \textbf{columnes}
+        de la primera matriu ha de coincidir amb el nombre de \textbf{files} de la
+        segona. (Ho treballarem a fons més endavant.)
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[d'on surt un número del resultat]
+Un usuari necessita, a la setmana, $2$ sessions individuals i $3$ sessions
+grupals. Cada sessió individual dura $1$ hora i cada sessió grupal, $2$ hores.
+Quantes hores de dedicació són, en total?
+
+Ho posem com a fila (sessions) i columna (hores):
+\[
+\begin{pmatrix} 2 & 3 \end{pmatrix}\cdot\begin{pmatrix} 1 \\ 2 \end{pmatrix}
+= 2\per 1 + 3\per 2 = 2 + 6 = 8 \text{ hores}.
+\]
+Multipliquem cada tipus de sessió per la seva durada i sumem: $8$ hores setmanals.
+\end{exemple}
+
+\begin{exemple}[un producte de dues matrices $2\times 2$]
+Dos usuaris necessiten sessions individuals i grupals (files: usuaris; columnes:
+tipus de sessió):
+\[
+S=\begin{pmatrix} 2 & 3 \\ 4 & 1 \end{pmatrix}.
+\]
+Cada tipus de sessió té una durada en hores i un cost en euros (files: tipus de
+sessió; columnes: hores i cost):
+\[
+D=\begin{pmatrix} 1 & 20 \\ 2 & 15 \end{pmatrix}.
+\]
+El producte $S\cdot D$ dona, per a cada usuari, les hores totals i el cost total.
+Per exemple, l'element fila 1, columna 1 (hores de l'usuari 1) surt de creuar la
+\textbf{fila 1} de $S$ amb la \textbf{columna 1} de $D$:
+\[
+2\per 1 + 3\per 2 = 8 \text{ hores}.
+\]
+Fent-ho per a totes les posicions:
+\[
+S\cdot D=\begin{pmatrix} 2\per 1+3\per 2 & 2\per 20+3\per 15 \\ 4\per 1+1\per 2 & 4\per 20+1\per 15 \end{pmatrix}
+        =\begin{pmatrix} 8 & 85 \\ 6 & 95 \end{pmatrix}.
+\]
+L'usuari 1 ocupa $8$ hores i costa $85\eur$; l'usuari 2, $6$ hores i $95\eur$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[fila per columna, un número cada vegada]
+Calcula el producte
+\[
+\begin{pmatrix} 3 & 2 \end{pmatrix}\cdot\begin{pmatrix} 4 \\ 5 \end{pmatrix}
+\]
+i explica què representaria si la fila fossin «$3$ àpats de migdia i $2$ de vespre»
+i la columna «$4\eur$ el migdia i $5\eur$ el vespre».
+\solucio
+Creuem la fila amb la columna, multiplicant element a element i sumant:
+\[
+3\per 4 + 2\per 5 = 12 + 10 = 22.
+\]
+Representa el cost total: $3$ àpats a $4\eur$ més $2$ àpats a $5\eur$ fan $22\eur$.
+\resposta{El producte és $22$; representa un cost total de $22\eur$.}
+\end{exresolt}
+
+\begin{exresolt}[un producte $2\times 2$ guiat]
+Calcula $A\cdot B$ amb
+\[
+A=\begin{pmatrix} 1 & 2 \\ 3 & 0 \end{pmatrix},\qquad
+B=\begin{pmatrix} 5 & 1 \\ 4 & 2 \end{pmatrix}.
+\]
+\solucio
+Cada element surt de creuar una fila de $A$ amb una columna de $B$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Fila 1 $\times$ columna 1: $1\per 5 + 2\per 4 = 5 + 8 = 13$.
+  \item Fila 1 $\times$ columna 2: $1\per 1 + 2\per 2 = 1 + 4 = 5$.
+  \item Fila 2 $\times$ columna 1: $3\per 5 + 0\per 4 = 15 + 0 = 15$.
+  \item Fila 2 $\times$ columna 2: $3\per 1 + 0\per 2 = 3 + 0 = 3$.
+\end{itemize}
+Col·loquem cada número a la seva posició:
+\[
+A\cdot B=\begin{pmatrix} 13 & 5 \\ 15 & 3 \end{pmatrix}.
+\]
+\resposta{$A\cdot B=\begin{pmatrix} 13 & 5 \\ 15 & 3 \end{pmatrix}$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula els productes fila per columna:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $\begin{pmatrix} 2 & 4 \end{pmatrix}\cdot\begin{pmatrix} 3 \\ 1 \end{pmatrix}$
+          \item $\begin{pmatrix} 5 & 2 \end{pmatrix}\cdot\begin{pmatrix} 2 \\ 6 \end{pmatrix}$
+        \end{enumerate}
+  \item Un usuari fa $3$ sessions individuals (de $1$ hora) i $2$ grupals (de
+        $2$ hores) cada setmana. Escriu-ho com un producte fila per columna i
+        calcula les hores totals de dedicació.
+  \item Calcula $A\cdot B$ amb
+        $A=\begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$ i
+        $B=\begin{pmatrix} 4 & 2 \\ 1 & 5 \end{pmatrix}$.
+        (Fes-ho posició a posició, com a l'exercici resolt 2.)
+  \item Un centre atén dos usuaris amb sessions individuals i grupals:
+        \[ S=\begin{pmatrix} 4 & 2 \\ 1 & 5 \end{pmatrix}, \]
+        i cada tipus de sessió dura unes hores i té un cost:
+        \[ D=\begin{pmatrix} 1 & 10 \\ 2 & 8 \end{pmatrix}. \]
+        Calcula $S\cdot D$ i digues quantes hores i quin cost té cada usuari.
+  \item Calcula $\begin{pmatrix} 1 & 2 & 3 \end{pmatrix}\cdot\begin{pmatrix} 2 \\ 1 \\ 4 \end{pmatrix}$.
+        (Aquí la fila i la columna tenen $3$ elements: es multiplica i se sumen
+        els tres productes.)
+  \item \textbf{(Raonament)} Volem multiplicar una matriu de dimensió $2\times 3$
+        per una altra. Mirant la regla de compatibilitat (les columnes de la
+        primera han de coincidir amb les files de la segona), quantes files ha de
+        tenir la segona matriu perquè el producte es pugui fer? Posa un exemple de
+        dimensió vàlida per a la segona.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $2\per 3+4\per 1=6+4=10$ \quad (b) $5\per 2+2\per 6=10+12=22$
+  \item $\begin{pmatrix} 3 & 2 \end{pmatrix}\cdot\begin{pmatrix} 1 \\ 2 \end{pmatrix}
+        =3\per 1+2\per 2=3+4=7$ hores.
+  \item $A\cdot B=\begin{pmatrix} 9 & 9 \\ 3 & 15 \end{pmatrix}$.
+  \item $S\cdot D=\begin{pmatrix} 8 & 56 \\ 11 & 50 \end{pmatrix}$;
+        \;l'usuari 1: $8$ hores i $56\eur$; l'usuari 2: $11$ hores i $50\eur$.
+  \item $1\per 2+2\per 1+3\per 4=2+2+12=16$.
+  \item La segona matriu ha de tenir $3$ files (per coincidir amb les $3$ columnes
+        de la primera). Un exemple vàlid és una matriu $3\times 2$; el producte
+        resultant seria $2\times 2$.
+\end{sollist}
+\end{solucions}
