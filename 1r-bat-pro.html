@@ -16,18 +16,15 @@
 <div class="app" id="app">
 
   <header class="topbar">
-    <button class="pill-btn menu-toggle" id="menuToggle" title="Menú">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4h12M2 8h12M2 12h12"/></svg>
-    </button>
     <a class="pill-btn" href="index.html">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 4l-5 4 5 4"/></svg>
-      Inici
+      Índex
     </a>
-    <div class="brand" id="brand"></div>
-    <button class="pill-btn" onclick="window.print()" title="Imprimeix el document actual">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="6" rx="1"/><path d="M5 7V3.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V7M5 13v-2h6v2"/></svg>
-      Imprimir
-    </button>
+    <div class="topbar-spacer"></div>
+    <nav class="course-nav">
+      <a class="course-nav-btn active" href="https://pd.step-quiz.net/1r-bat-pro">Mat 1r Bat PRO</a>
+      <a class="course-nav-btn" href="https://pd.step-quiz.net/2n-bat-pro">Mat 2n Bat PRO</a>
+    </nav>
   </header>
 
   <div class="layout">
@@ -37,7 +34,6 @@
     </main>
   </div>
 
-  <div class="scrim" id="scrim"></div>
 </div>
 
 <script src="assets/lib/mammoth.browser.min.js"></script>
