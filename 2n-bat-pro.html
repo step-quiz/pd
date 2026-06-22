@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matemàtiques Aplicades II — 2n Bat PRO</title>
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/rich.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/print.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="topbar">
+    <button class="pill-btn menu-toggle" id="menuToggle" title="Menú">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4h12M2 8h12M2 12h12"/></svg>
+    </button>
+    <a class="pill-btn" href="index.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 4l-5 4 5 4"/></svg>
+      Inici
+    </a>
+    <div class="brand" id="brand"></div>
+    <button class="pill-btn" onclick="window.print()" title="Imprimeix el document actual">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="6" rx="1"/><path d="M5 7V3.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V7M5 13v-2h6v2"/></svg>
+      Imprimir
+    </button>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar" id="sidebar"></nav>
+    <main class="main" id="main">
+      <div class="state"><div class="spinner"></div><div>Carregant…</div></div>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+</div>
+
+<script src="assets/lib/mammoth.browser.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/md.js"></script>
+<script src="assets/js/docx.js"></script>
+<script src="assets/js/fields.js"></script>
+<script src="assets/js/collapsible.js"></script>
+<script src="assets/js/pdf-panel.js"></script>
+<script src="assets/js/sidebar.js"></script>
+<script>
+  window.COURSE_PATH = 'contingut/batxillerat/2n/pro';
+</script>
+<script src="assets/js/course.js"></script>
+</body>
+</html>

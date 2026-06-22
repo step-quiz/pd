@@ -1,2 +1,3 @@
-# SPA: totes les rutes apunten a index.html
-/*  /index.html  200
+# No cal regla SPA catch-all: cada URL és un fitxer HTML real.
+# Redirecció de les URL antigues per si algú les tenia guardades.
+/index.html   /          301

@@ -9,9 +9,6 @@
   Cache-Control: public, max-age=86400
 
 # Canvia sovint → sense caché
-/data/courses.json
-  Cache-Control: no-store
-
 /contingut/*/pdfs/manifest.json
   Cache-Control: no-store
 

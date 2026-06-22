@@ -16,10 +16,9 @@
   .app.nav-open .scrim { opacity: 1; pointer-events: auto; }
   .doc-wrap { padding: 22px 18px 70px; }
   .doc-head .dh-actions { display: none; }
-  /* La topbar prioritza els botons de curs: amaguem la marca i el text "Inici"/"Imprimir" */
+  /* La topbar prioritza la marca: amaguem el text dels botons laterals */
   .brand { display: none; }
   .topbar .pill-btn:not(.menu-toggle) { font-size: 0; padding: 7px 10px; }
   .topbar .pill-btn:not(.menu-toggle) svg { width: 15px; height: 15px; }
-  .course-btn { padding: 7px 12px; font-size: 14px; }
 }
 @media (min-width: 821px) { .scrim { display: none; } }

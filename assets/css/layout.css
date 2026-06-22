@@ -15,29 +15,6 @@
   border-bottom: 1px solid var(--line);
 }
 
-/* ── Selector de curs (botons grans, estil segmentat) ─────────────── */
-.course-switch {
-  display: inline-flex; flex-shrink: 0;
-  background: var(--surface-2); border: 1px solid var(--line);
-  border-radius: 22px; padding: 3px; gap: 2px;
-}
-.course-btn {
-  padding: 7px 16px; border-radius: 18px;
-  font-size: 14.5px; font-weight: 700; color: var(--muted);
-  white-space: nowrap; transition: .14s var(--ease);
-}
-.course-btn:hover { color: var(--navy); }
-.course-btn.active {
-  background: var(--blue); color: #fff;
-  box-shadow: 0 1px 3px rgba(46,117,182,.35);
-}
-.course-btn:disabled,
-.course-btn[aria-disabled="true"] {
-  color: var(--hint); cursor: not-allowed; opacity: .55;
-}
-.course-btn:disabled:hover,
-.course-btn[aria-disabled="true"]:hover { color: var(--hint); }
-
 .brand {
   font-size: 16px; font-weight: 800; color: var(--navy); flex: 1;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -53,7 +30,7 @@
   flex: 1 1 auto;
   display: grid;
   grid-template-columns: 260px 1fr;
-  align-items: start;   /* perquè la sidebar sticky no s'estiri */
+  align-items: start;
 }
 
 /* ── Sidebar (contenidor) ───────────────────────────────────────────── */
@@ -61,8 +38,6 @@
   border-right: 1px solid var(--line);
   background: var(--surface-2);
   padding: 16px 12px 60px;
-  /* Flotant: es manté visible en fer scroll del contingut.
-     54px = alçada de la topbar; la barra té el seu propi scroll intern. */
   position: sticky;
   top: 54px;
   align-self: start;
