@@ -1,0 +1,131 @@
+% =====================================================================
+%  2bat-ud1-2.tex  —  SESSIÓ 2: Sumar, restar i escalar matrices
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 2 — Sumar, restar i escalar matrices}%
+{Combinar i transformar quadres de dades: la suma, la resta i el producte per un nombre.}
+
+\subsection{Idea clau}
+
+Quan tenim dues matrices que representen el mateix tipus de dades, les podem
+\textbf{combinar}. Les operacions es fan \emph{casella a casella}, i cadascuna té
+una lectura social clara.
+
+\begin{idea}
+\textbf{Regles bàsiques (matrices de la mateixa dimensió)}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Suma:} se sumen els elements de la mateixa posició. Serveix per
+        \emph{integrar} dues partides (per exemple, dos mesos o dos conceptes).
+  \item \textbf{Resta:} es resten els elements de la mateixa posició. Serveix per
+        veure la \emph{diferència} (per exemple, les baixes respecte d'un total).
+  \item \textbf{Producte per un escalar:} es multiplica \emph{cada} element pel
+        mateix nombre. Serveix per aplicar un canvi \emph{global} (un increment
+        o una retallada a tot el quadre alhora).
+\end{itemize}
+\textit{Important:} per sumar o restar, les dues matrices han de tenir la
+\textbf{mateixa dimensió}.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[sumar dos mesos]
+Les places ocupades de dos serveis al gener i al febrer són
+\[
+G=\begin{pmatrix} 40 & 22 \\ 18 & 30 \end{pmatrix},\qquad
+F=\begin{pmatrix} 45 & 20 \\ 16 & 28 \end{pmatrix}.
+\]
+La suma dona l'ocupació acumulada del bimestre:
+\[
+G+F=\begin{pmatrix} 40+45 & 22+20 \\ 18+16 & 30+28 \end{pmatrix}
+    =\begin{pmatrix} 85 & 42 \\ 34 & 58 \end{pmatrix}.
+\]
+\end{exemple}
+
+\begin{exemple}[aplicar una retallada del 10\%]
+Si el pressupost d'un servei és la matriu $P=\begin{pmatrix} 2000 & 500 \\ 1500 & 800 \end{pmatrix}$
+i s'aplica una retallada lineal del $10\%$, el nou pressupost és el $90\%$ de
+l'anterior, és a dir, multipliquem per l'escalar $0{,}9$:
+\[
+0{,}9\cdot P=\begin{pmatrix} 0{,}9\per 2000 & 0{,}9\per 500 \\ 0{,}9\per 1500 & 0{,}9\per 800 \end{pmatrix}
+            =\begin{pmatrix} 1800 & 450 \\ 1350 & 720 \end{pmatrix}.
+\]
+Multiplicar per un escalar aplica el mateix percentatge a \emph{tots} els conceptes alhora.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[integrar dues partides]
+Una entitat divideix el pressupost mensual de dos serveis en despeses de
+personal i de materials:
+\[
+\text{Personal: } A=\begin{pmatrix} 1200 & 900 \\ 1000 & 600 \end{pmatrix},\qquad
+\text{Materials: } B=\begin{pmatrix} 300 & 250 \\ 400 & 150 \end{pmatrix}.
+\]
+Cada fila és un servei i cada columna, un concepte. Troba la matriu de despesa
+total $A+B$.
+\solucio
+Sumem casella a casella (totes dues matrices són $2\times 2$):
+\[
+A+B=\begin{pmatrix} 1200+300 & 900+250 \\ 1000+400 & 600+150 \end{pmatrix}
+    =\begin{pmatrix} 1500 & 1150 \\ 1400 & 750 \end{pmatrix}.
+\]
+\resposta{$A+B=\begin{pmatrix} 1500 & 1150 \\ 1400 & 750 \end{pmatrix}$ (despesa total per servei i concepte).}
+\end{exresolt}
+
+\begin{exresolt}[un increment global]
+El quadre d'hores setmanals de tres monitors en dos casals és
+$H=\begin{pmatrix} 10 & 8 \\ 6 & 12 \\ 9 & 5 \end{pmatrix}$.
+De cara a l'estiu, totes les hores s'incrementen un $20\%$. Troba el nou quadre d'hores.
+\solucio
+Un increment del $20\%$ vol dir multiplicar per l'escalar $1{,}2$:
+\[
+1{,}2\cdot H=\begin{pmatrix} 1{,}2\per 10 & 1{,}2\per 8 \\ 1{,}2\per 6 & 1{,}2\per 12 \\ 1{,}2\per 9 & 1{,}2\per 5 \end{pmatrix}
+            =\begin{pmatrix} 12 & 9{,}6 \\ 7{,}2 & 14{,}4 \\ 10{,}8 & 6 \end{pmatrix}.
+\]
+\resposta{$1{,}2\cdot H=\begin{pmatrix} 12 & 9{,}6 \\ 7{,}2 & 14{,}4 \\ 10{,}8 & 6 \end{pmatrix}$ (hores després de l'increment).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Donades $A=\begin{pmatrix} 5 & 3 \\ 2 & 7 \end{pmatrix}$ i
+        $B=\begin{pmatrix} 1 & 4 \\ 6 & 2 \end{pmatrix}$, calcula:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $A+B$ \qquad b) $A-B$
+        \end{enumerate}
+  \item Les places ocupades de tres serveis al primer i al segon trimestre són
+        \[ T_1=\begin{pmatrix} 30 \\ 25 \\ 40 \end{pmatrix},\qquad
+           T_2=\begin{pmatrix} 35 \\ 22 \\ 45 \end{pmatrix}. \]
+        Troba l'ocupació acumulada $T_1+T_2$ i digues quin servei n'acumula més.
+  \item Multiplica la matriu $C=\begin{pmatrix} 200 & 150 \\ 80 & 120 \end{pmatrix}$
+        per l'escalar $0{,}5$ i explica què representaria, si $C$ fos un pressupost.
+  \item Un magatzem té l'estoc inicial $E=\begin{pmatrix} 50 & 30 \\ 20 & 40 \end{pmatrix}$
+        i durant la setmana en surten $S=\begin{pmatrix} 12 & 10 \\ 5 & 18 \end{pmatrix}$
+        unitats. Troba l'estoc que queda, $E-S$.
+  \item Un pressupost és $P=\begin{pmatrix} 1000 & 600 \\ 800 & 400 \end{pmatrix}$.
+        S'hi aplica una retallada lineal del $15\%$. Per quin escalar cal
+        multiplicar? Troba el nou pressupost.
+  \item \textbf{(Raonament)} Dues entitats volen sumar les seves dades, però una
+        les té organitzades en una matriu $2\times 3$ i l'altra en una $3\times 2$.
+        Es poden sumar? Justifica la resposta.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $A+B=\begin{pmatrix} 6 & 7 \\ 8 & 9 \end{pmatrix}$ \quad
+        (b) $A-B=\begin{pmatrix} 4 & -1 \\ -4 & 5 \end{pmatrix}$
+  \item $T_1+T_2=\begin{pmatrix} 65 \\ 47 \\ 85 \end{pmatrix}$;
+        \;el tercer servei n'acumula més ($85$).
+  \item $0{,}5\cdot C=\begin{pmatrix} 100 & 75 \\ 40 & 60 \end{pmatrix}$;
+        \;representaria reduir el pressupost a la meitat ($50\%$).
+  \item $E-S=\begin{pmatrix} 38 & 20 \\ 15 & 22 \end{pmatrix}$.
+  \item Cal multiplicar per l'escalar $0{,}85$ (es manté el $85\%$);
+        \;nou pressupost $=\begin{pmatrix} 850 & 510 \\ 680 & 340 \end{pmatrix}$.
+  \item No es poden sumar: per sumar matrices cal que tinguin la mateixa
+        dimensió, i $2\times 3$ i $3\times 2$ són diferents.
+\end{sollist}
+\end{solucions}
