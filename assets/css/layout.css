@@ -15,15 +15,25 @@
   border-bottom: 1px solid var(--line);
 }
 
-.brand {
-  font-size: 16px; font-weight: 800; color: var(--navy); flex: 1;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  text-align: right;
-}
-.brand small { font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 8px; }
+.topbar-spacer { flex: 1; }
 
-/* hamburger (només mòbil) */
-.menu-toggle { display: none; }
+/* ── Navegació entre cursos ─────────────────────────────────────────── */
+.course-nav {
+  display: inline-flex; flex-shrink: 0;
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: 22px; padding: 3px; gap: 2px;
+}
+.course-nav-btn {
+  padding: 6px 15px; border-radius: 18px;
+  font-size: 14px; font-weight: 700; color: var(--muted);
+  white-space: nowrap; transition: .14s var(--ease);
+  text-decoration: none;
+}
+.course-nav-btn:hover { color: var(--navy); text-decoration: none; }
+.course-nav-btn.active {
+  background: var(--blue); color: #fff;
+  box-shadow: 0 1px 3px rgba(46,117,182,.35);
+}
 
 /* ── Layout: sidebar + contingut ───────────────────────────────────── */
 .layout {
