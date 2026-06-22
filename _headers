@@ -15,6 +15,9 @@
 /contingut/*/pdfs/manifest.json
   Cache-Control: no-store
 
+/contingut/*/course.json
+  Cache-Control: no-store
+
 # Fitxers de contingut → caché curt
 /contingut/*
   Cache-Control: public, max-age=3600
