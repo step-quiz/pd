@@ -2,7 +2,7 @@
   "brand": "Matemàtiques Aplicades II",
   "brandSub": "2n Batxillerat PRO · Serveis a la Comunitat",
   "pdfPrefix": "2bat",
-  "docx": null,
+  "docx": "programacio.docx",
   "udMax": 6,
   "udTitles": {
     "1": "Matrices: organitzar i operar amb dades",
