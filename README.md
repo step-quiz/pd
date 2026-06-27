@@ -15,10 +15,13 @@ HTML + CSS + JS vanilla, sense build. Es desplega a Cloudflare Pages.
 
 ```
 index.html                      SPA shell (minimalista)
+repartiment.html                Repartiment de continguts ESO (taula per curs/sentit)
 404.html                        pàgina d'error
+seguiment-link.txt              URL del Google Doc/Drive de Seguiment (només la URL)
 assets/
-  css/  tokens · layout · components · rich · responsive · print
+  css/  tokens · layout · components · rich · responsive · print · repartiment
   js/   utils · md · docx · fields · collapsible · pdf-panel · sidebar · app
+        repartiment-data · repartiment · seguiment · index-menu
   lib/  mammoth.browser.min.js
 data/
   courses.json                  registre global de cursos
@@ -31,6 +34,19 @@ contingut/
     source/  fonts LaTeX (no servides; noindex)
 _dev/                           material intern (no publicat)
 ```
+
+## Continguts: Repartiment i Seguiment
+
+L'índex inclou un desplegable **Continguts** amb dues opcions:
+
+- **Repartiment** (`repartiment.html`) — taula del repartiment de continguts
+  d'ESO per curs i sentit matemàtic, amb mode edició integrat que permet
+  reordenar, afegir o suprimir temes i continguts i descarregar un
+  `repartiment-data.js` actualitzat. Les dades viuen a
+  `assets/js/repartiment-data.js`.
+- **Seguiment** — enllaç a un Google Doc/Drive. L'adreça es llegeix de
+  `seguiment-link.txt` (un fitxer de text pla amb només la URL). Per
+  canviar-la, edita només aquell fitxer; cap línia de codi.
 
 ## Contractes de dades
 
