@@ -1,0 +1,181 @@
+% =====================================================================
+%  1bat-ud3-4.tex  —  HORA 4: Funcions lineals: l'equació de la recta
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 4 — Funcions lineals: l'equació de la recta}%
+{Llegir les expressions de primer grau com a funcions: el pendent $m$ i el terme independent $n$, i el seu sentit social.}
+
+\subsection{Idea clau}
+
+A la sessió anterior trobàvem talls amb els eixos d'expressions com $-20x+600$.
+Aquelles expressions de primer grau, que ja sabíem construir a la UD2, són
+\textbf{funcions lineals}: la seva gràfica és una \textbf{recta}. Tota recta es pot
+escriure com $y=mx+n$, i els dos números $m$ i $n$ ens expliquen tota la història.
+
+\begin{idea}
+\textbf{Equació de la recta:} $\quad y=mx+n$
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{$m$ és el pendent}: el \emph{ritme de creixement}. Indica quant puja
+        (o baixa) $y$ cada cop que $x$ augmenta en $1$.
+        Si $m>0$ la recta \textbf{creix}; si $m<0$ \textbf{decreix}; si $m=0$ és
+        \textbf{horitzontal}.
+  \item \textbf{$n$ és el terme independent} (l'\emph{ordenada a l'origen}): el valor
+        de $y$ quan $x=0$. És el \textbf{punt de partida} i coincideix amb el tall amb
+        l'eix vertical, $(0,n)$.
+\end{itemize}
+\textbf{Lectura social:} en una tarifa $C=mx+n$, el terme $n$ és la
+\emph{quota fixa} (el que pagues encara que no consumeixis res) i el pendent $m$ és
+el \emph{preu per unitat} (el que s'afegeix per cada unitat consumida).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la tarifa d'un servei: quota fixa més consum]
+Un servei d'atenció domiciliària cobra una \textbf{quota fixa} de $30\eur$ al mes,
+més $5\eur$ per cada hora de visita. El cost mensual segons les hores $x$ és
+\[
+C(x)=5x+30.
+\]
+Aquí $m=5$ (cada hora afegeix $5\eur$) i $n=30$ (la quota fixa, el que es paga amb
+$0$ hores). La gràfica és una recta que surt de $(0,30)$ i puja $5$ per cada hora:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.4cm,
+    xlabel={\small hores ($x$)}, ylabel={\small cost (\euro)},
+    xmin=-0.3, xmax=9, ymin=0, ymax=75,
+    xtick={0,2,4,6,8}, ytick={0,30,50,70}]
+  \addplot[udblue, domain=0:8, samples=2]{5*x+30};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(0,30)};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:0,30) {$(0,\,30)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La quota fixa $n=30$ és on la recta talla l'eix vertical; el pendent $m=5$ n'és la inclinació.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[el signe del pendent: una prestació que baixa]
+Una prestació es redueix a mesura que augmenten els ingressos: $B(x)=-20x+600$.
+Ara $m=-20$ és \textbf{negatiu}, així que la recta \textbf{decreix}: per cada miler
+d'euros d'ingressos més, l'ajut baixa $20\eur$. El terme $n=600$ continua sent el
+punt de partida: amb $0$ ingressos, l'ajut és de $600\eur$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[identificar $m$ i $n$ i interpretar-los]
+Un casal de joves té un cost mensual $C(x)=8x+120$, on $x$ és el nombre d'inscrits.
+Identifica $m$ i $n$, digues què signifiquen i calcula el cost amb $25$ inscrits.
+\solucio
+Comparant $C(x)=8x+120$ amb $y=mx+n$:
+\[
+m=8, \qquad n=120.
+\]
+\textbf{Interpretació:} $n=120\eur$ és el cost fix mensual (lloguer, subministraments…),
+el que es paga amb $0$ inscrits. $m=8$ vol dir que cada inscrit nou afegeix $8\eur$
+al cost. Per a $x=25$:
+\[
+C(25)=8\per 25+120=200+120=320.
+\]
+\resposta{$m=8$ (cost per inscrit), $n=120\eur$ (cost fix). Amb $25$ inscrits, $C=320\eur$.}
+\end{exresolt}
+
+\begin{exresolt}[escriure l'equació a partir d'una taula]
+Una entitat anota els diners recaptats en una rifa solidària segons els bitllets
+venuts:
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+Bitllets $x$ & $0$ & $10$ & $20$ \\
+\midrule
+Recaptació $y$ ($\eur$) & $50$ & $90$ & $130$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Troba l'equació $y=mx+n$.
+\solucio
+El \textbf{punt de partida} (quan $x=0$) és $y=50$, per tant $n=50$. Per trobar el
+\textbf{pendent}, mirem quant puja $y$ quan $x$ augmenta: de $x=0$ a $x=10$, la
+recaptació passa de $50$ a $90$, és a dir, puja $40\eur$ en $10$ bitllets:
+\[
+m=\frac{40}{10}=4.
+\]
+Cada bitllet aporta $4\eur$ i hi havia una donació inicial de $50\eur$:
+\[
+y=4x+50.
+\]
+Comprovació amb $x=20$: $y=4\per 20+50=130$. Coincideix amb la taula.
+\resposta{$y=4x+50$ (cada bitllet, $4\eur$; donació inicial, $50\eur$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a cada funció lineal, indica el pendent $m$, el terme independent $n$ i
+        si creix o decreix:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $y=3x+2$
+      \item $y=-x+7$
+      \item $y=0,5x$
+    \end{enumerate}
+  \item Una tarifa de transport adaptat costa $2\eur$ per viatge més una quota fixa
+        de $15\eur$ al mes. Escriu la funció $C(x)$ del cost mensual segons els
+        viatges $x$ i digues qui és $m$ i qui és $n$.
+  \item Observa les dues rectes de la gràfica. Per a cadascuna, indica el terme
+        independent $n$ (on talla l'eix vertical) i si el pendent és positiu o negatiu.
+
+        \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[udaxis, width=9cm, height=5.4cm,
+            xlabel={\small $x$}, ylabel={\small $y$},
+            xmin=-0.3, xmax=9, ymin=0, ymax=9,
+            xtick={0,2,4,6,8}, ytick={0,2,4,6,8}]
+          \addplot[udblue, domain=0:8, samples=2]{0.7*x+1};
+          \addplot[udnavy, domain=0:8, samples=2]{-0.6*x+8};
+          \node[udblue, font=\scriptsize, anchor=north west] at (axis cs:6,5.2) {recta A};
+          \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:5.6,4.6) {recta B};
+        \end{axis}
+        \end{tikzpicture}
+
+        \figcap{Recta A i recta B: llegeix $n$ i el signe del pendent de cadascuna.}
+        \end{center}
+
+  \item Completa la taula d'una funció lineal sabent que $y=6x+10$:
+        \begin{center}
+        \begin{tabular}{c c c c c}
+        \toprule
+        $x$ & $0$ & $1$ & $2$ & $5$ \\
+        \midrule
+        $y$ & \rule{1.2cm}{0.4pt} & \rule{1.2cm}{0.4pt} & \rule{1.2cm}{0.4pt} & \rule{1.2cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Interpretació)} Dues tarifes de telèfon social: la tarifa P és
+        $C(x)=0,10x+5$ i la tarifa Q és $C(x)=0,20x+2$, on $x$ són els minuts. Quina
+        té la quota fixa més alta? Quina cobra més car cada minut? Explica què
+        signifiquen $m$ i $n$ en cada cas.
+  \item \textbf{(Raonament)} Una recta passa pels punts $(0,4)$ i $(2,10)$. Troba
+        l'equació $y=mx+n$. (Pista: $n$ és el valor amb $x=0$; per a $m$, mira quant
+        puja $y$ quan $x$ passa de $0$ a $2$.)
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $m=3$, $n=2$, creix. \quad (b) $m=-1$, $n=7$, decreix. \quad
+        (c) $m=0,5$, $n=0$, creix (passa per l'origen).
+  \item $C(x)=2x+15$; $m=2$ (preu per viatge), $n=15\eur$ (quota fixa mensual).
+  \item Recta A: $n=1$, pendent positiu (creix). \quad
+        Recta B: $n=8$, pendent negatiu (decreix).
+  \item $y$: \quad $10,\ 16,\ 22,\ 40$ \quad (per a $x=0,1,2,5$).
+  \item La tarifa P té la quota fixa més alta ($n=5$ contra $n=2$). La tarifa Q
+        cobra més car cada minut ($m=0,20$ contra $m=0,10$). $n$ és el que es paga
+        sense consumir res; $m$ és el preu de cada minut.
+  \item $n=4$ (valor amb $x=0$); de $x=0$ a $x=2$, $y$ puja de $4$ a $10$, és a dir
+        $6$ en $2$ passos: $m=\dfrac{6}{2}=3$. Equació: $y=3x+4$.
+\end{sollist}
+\end{solucions}
