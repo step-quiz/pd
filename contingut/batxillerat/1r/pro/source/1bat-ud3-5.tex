@@ -1,0 +1,165 @@
+% =====================================================================
+%  1bat-ud3-5.tex  —  HORA 5: Primer contacte amb GeoGebra: famílies de funcions
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 5 — Primer contacte amb GeoGebra: famílies de funcions}%
+{Aprendre les accions bàsiques de GeoGebra i explorar com el pendent $m$ i el terme independent $n$ transformen una recta.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vam veure que tota recta s'escriu $y=mx+n$ i que $m$ i $n$ tenen
+un sentit social (ritme i punt de partida). Avui ho comprovem \textbf{en moviment}
+amb \textbf{GeoGebra}: en lloc de dibuixar a mà, deixarem que l'ordinador dibuixi i
+\emph{nosaltres} mourem $m$ i $n$ per veure com reacciona la gràfica. Aquesta sessió
+és pràctica: el full guia us porta pas a pas. No cal saber-ne abans.
+
+\begin{idea}
+\textbf{Tres accions bàsiques de GeoGebra}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Introduir una funció:} a la \emph{barra d'entrada} escriviu, per
+        exemple, \texttt{f(x)=2x+1} i premeu \textsf{Retorn}. La recta apareix sola.
+  \item \textbf{Moure i ajustar la finestra:} arrossegueu el full amb el ratolí per
+        desplaçar-vos; useu la roda (o els botons $+$/$-$) per acostar o allunyar.
+  \item \textbf{Crear un \emph{lliscador}} (paràmetre que es pot moure): escriviu
+        \texttt{m=1} i premeu \textsf{Retorn}; apareix un lliscador. Després escriviu
+        \texttt{f(x)=m*x+1} i, en moure el lliscador \texttt{m}, la recta canviarà
+        \textbf{en directe}.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[variar el pendent $m$ (mateixa $n$)]
+Introduïu a GeoGebra la família $f(x)=mx+2$ amb un lliscador per a \texttt{m}. En
+moure'l, totes les rectes passen pel mateix punt $(0,2)$, però s'\textbf{inclinen}
+de manera diferent. Això és el que veureu (tres valors de $m$ amb $n=2$ fix):
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.4cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-4.5, xmax=4.5, ymin=-3, ymax=8,
+    xtick={-4,-2,0,2,4}, ytick={-2,0,2,4,6}]
+  \addplot[udblue, domain=-4:4, samples=2]{0.5*x+2};
+  \addplot[udnavy, domain=-4:3, samples=2]{2*x+2};
+  \addplot[udgrey, domain=-4:4, samples=2]{-1*x+2};
+  \addplot[black, only marks, mark=*, mark size=1.5pt] coordinates {(0,2)};
+  \node[font=\scriptsize, anchor=south west] at (axis cs:0,2) {$(0,2)$};
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:2.3,6.6) {$m=2$};
+  \node[udblue, font=\scriptsize, anchor=west] at (axis cs:3.3,3.7) {$m=0,5$};
+  \node[udgrey, font=\scriptsize, anchor=east] at (axis cs:-3.2,5.2) {$m=-1$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La família $f(x)=mx+2$: canviant $m$, la recta s'inclina, però sempre passa per $(0,2)$.}
+\end{center}
+
+\noindent Com més gran és $m$, més \textbf{dreta} (inclinada) puja la recta; si $m$
+és negatiu, \textbf{baixa}.
+\end{exemple}
+
+\begin{exemple}[variar el terme independent $n$ (mateixa $m$)]
+Ara fixeu el pendent i moveu \texttt{n}: introduïu $f(x)=x+n$ amb un lliscador per a
+\texttt{n}. Totes les rectes tenen la \textbf{mateixa inclinació} (són paral·leles),
+però estan \textbf{a altures diferents}: pugen o baixen segons $n$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-4.5, xmax=4.5, ymin=-4, ymax=7,
+    xtick={-4,-2,0,2,4}, ytick={-3,0,3}]
+  \addplot[udblue, domain=-4:4, samples=2]{x+3};
+  \addplot[udnavy, domain=-4:4, samples=2]{x+0};
+  \addplot[udgrey, domain=-4:4, samples=2]{x-3};
+  \node[udblue, font=\scriptsize, anchor=south] at (axis cs:1.6,5.2) {$n=3$};
+  \node[udnavy, font=\scriptsize, anchor=south] at (axis cs:2.6,3.2) {$n=0$};
+  \node[udgrey, font=\scriptsize, anchor=north] at (axis cs:3.4,-0.2) {$n=-3$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La família $f(x)=x+n$: canviant $n$, la recta puja o baixa sense canviar la inclinació.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[anticipar el moviment de la recta]
+A GeoGebra teniu $f(x)=mx+2$ amb \texttt{m} en un lliscador. Sense tocar res, digeu
+què passarà amb la recta si moveu \texttt{m} de $1$ a $3$, i comproveu-ho després.
+\solucio
+Augmentar \texttt{m} fa créixer el \textbf{ritme de pujada}: la recta es torna més
+\textbf{inclinada} (puja més de pressa). El punt $(0,2)$ no es mou, perquè $n=2$
+segueix igual; només canvia la inclinació. En passar de $m=1$ a $m=3$, la recta
+gira al voltant de $(0,2)$ fent-se més vertical.
+\resposta{La recta s'inclina més (puja més ràpid) i continua passant per $(0,2)$.}
+\end{exresolt}
+
+\begin{exresolt}[traduir un canvi social a un paràmetre]
+Una tarifa social és $C(x)=0,10x+5$ (€), on $x$ són els minuts. Si l'administració
+decideix \textbf{apujar la part fixa} de $5\eur$ a $8\eur$ sense tocar el preu per
+minut, quin paràmetre canvia a GeoGebra i com es mou la gràfica?
+\solucio
+La «part fixa» és el terme independent $n$. Passa de $n=5$ a $n=8$: canvia
+\textbf{només $n$}, no $m$. A la gràfica, la recta \textbf{puja} $3$ unitats sencera,
+sense canviar la inclinació (queda paral·lela a l'anterior). El preu per minut
+($m=0,10$) no s'altera.
+\resposta{Canvia $n$ (de $5$ a $8$); la recta puja $3$ i es manté paral·lela.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Fes aquestes exploracions a GeoGebra i registra el que observes a la
+teva llibreta o al full guia.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Exploració)} Introdueix $f(x)=mx+1$ amb un lliscador per a \texttt{m}.
+        Mou \texttt{m} i completa: quan $m>0$ la recta \rule{2.5cm}{0.4pt}; quan
+        $m<0$ la recta \rule{2.5cm}{0.4pt}; quan $m=0$ la recta és \rule{2.5cm}{0.4pt}.
+  \item \textbf{(Exploració)} Introdueix $f(x)=2x+n$ amb un lliscador per a \texttt{n}.
+        Mou \texttt{n} entre $-3$ i $3$ i descriu amb les teves paraules què li passa
+        a la recta. On talla l'eix vertical en cada cas?
+  \item Anticipa \emph{abans} de fer-ho a GeoGebra: si tens $f(x)=3x+1$ i la canvies
+        per $g(x)=3x+4$, com es mourà la gràfica? I si la canvies per $h(x)=5x+1$?
+        Comprova-ho després.
+  \item Escriu a GeoGebra aquestes dues funcions alhora i digues quina puja més de
+        pressa i quina té el punt de partida més alt:
+        \[
+        f(x)=2x+1 \qquad\text{i}\qquad g(x)=x+4.
+        \]
+  \item \textbf{(Interpretació social)} Un impost es modelitza amb $T(x)=0,2x+10$.
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Si el govern n'\textbf{apuja el pendent} a $0,3$, què vol dir
+                socialment? Com es mou la gràfica?
+          \item Si en lloc d'això \textbf{apuja la part fixa} a $20$, què canvia per a
+                qui té ingressos baixos? Com es mou la gràfica?
+        \end{enumerate}
+  \item \textbf{(Síntesi)} Escriu, amb les teves paraules, una frase que resumeixi
+        \emph{què fa cada paràmetre}: una per a $m$ i una per a $n$. Aquesta serà la
+        conclusió que tancarem en comú a classe.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item Quan $m>0$ la recta \textbf{creix} (puja cap a la dreta); quan $m<0$
+        \textbf{decreix} (baixa); quan $m=0$ és \textbf{horitzontal}.
+  \item En moure \texttt{n}, totes les rectes són paral·leles (mateix pendent $2$)
+        però pugen o baixen; cadascuna talla l'eix vertical al punt $(0,n)$.
+  \item De $f(x)=3x+1$ a $g(x)=3x+4$: la recta \textbf{puja} $3$ unitats, paral·lela
+        (només canvia $n$). A $h(x)=5x+1$: mateix punt de partida $(0,1)$ però
+        \textbf{més inclinada} (puja més de pressa, canvia $m$).
+  \item $f(x)=2x+1$ puja més de pressa (pendent $2>1$); $g(x)=x+4$ té el punt de
+        partida més alt ($n=4>1$).
+  \item (a) Apujar el pendent significa que l'impost creix més de pressa amb els
+        ingressos (els qui més tenen paguen proporcionalment més); la recta s'inclina
+        més. (b) Apujar la part fixa fa que \emph{tothom}, també qui té ingressos
+        baixos, pagui més des del principi; la recta puja sencera (paral·lela).
+  \item Resposta oberta. Idea esperada: «$m$ controla la \emph{inclinació} (com de
+        ràpid puja o baixa la recta)» i «$n$ controla l'\emph{altura} (on talla l'eix
+        vertical, el punt de partida)».
+\end{sollist}
+\end{solucions}

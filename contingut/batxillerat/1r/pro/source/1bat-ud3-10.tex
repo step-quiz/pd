@@ -1,0 +1,186 @@
+% =====================================================================
+%  1bat-ud3-10.tex  —  HORA 10: La progressivitat fiscal: funcions a trossos (descoberta)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — La progressivitat fiscal: funcions a trossos (descoberta)}%
+{Calcular un impost per trams, descobrir el «salt» injust i connectar la continuïtat d'una funció amb una qüestió de justícia.}
+
+\subsection{Idea clau}
+
+Avui treballem a les pissarres en grup, com a investigadors. Tenim un sistema
+d'impostos \textbf{per trams}: la renda es divideix en franges i cada franja tributa
+a un percentatge diferent. El repte no és només calcular: és \textbf{descobrir un
+problema} amagat en una manera ingènua d'aplicar-lo.
+
+\begin{idea}
+\textbf{Un sistema impositiu per trams (simplificat)}
+\begin{center}
+\begin{tabular}{l c}
+\toprule
+\textbf{Tram de renda anual} & \textbf{Percentatge} \\
+\midrule
+Fins a $\num{15000}\eur$ & $10\%$ \\
+De $\num{15000}$ a $\num{30000}\eur$ & $20\%$ \\
+Més de $\num{30000}\eur$ & $30\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{La pregunta del dia:} si apliquem el percentatge del tram \emph{a tota la
+renda}, què passa quan algú passa just d'un tram al següent? És just?
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el càlcul ingenu: percentatge sobre tota la renda]
+Imaginem que apliquem el percentatge del tram \textbf{a tota} la renda (la manera
+\emph{ingènua}, que avui posarem a prova):
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Renda $\num{14000}\eur$ (tram del $10\%$): impost $=0,10\cdot\num{14000}=\num{1400}\eur$;
+        \textbf{net} $=\num{14000}-\num{1400}=\num{12600}\eur$.
+  \item Renda $\num{16000}\eur$ (tram del $20\%$): impost $=0,20\cdot\num{16000}=\num{3200}\eur$;
+        \textbf{net} $=\num{16000}-\num{3200}=\num{12800}\eur$.
+\end{itemize}
+De moment sembla raonable: qui cobra més, es queda amb una mica més. Però vigilem
+els valors \emph{just al límit} del tram\dots
+\end{exemple}
+
+\begin{exemple}[el salt injust apareix]
+Comparem dues persones molt a prop de la frontera dels $\num{15000}\eur$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Renda $\num{15000}\eur$ ($10\%$): net $=\num{15000}-\num{1500}=\num{13500}\eur$.
+  \item Renda $\num{15001}\eur$ ($20\%$): net $=\num{15001}-\num{3000{,}20}=\num{12000{,}80}\eur$.
+\end{itemize}
+\textbf{Resultat paradoxal:} per guanyar $1\eur$ més de renda, la segona persona
+acaba amb \textbf{$\num{1499}\eur$ menys} a la butxaca! Això és el \textbf{«salt»
+injust}: la funció del net \emph{baixa de cop} en passar de tram.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10cm, height=5.6cm,
+    xlabel={\small renda (milers \euro)}, ylabel={\small net (milers \euro)},
+    xmin=10, xmax=20, ymin=10, ymax=16,
+    xtick={10,12,15,18,20}, ytick={11,12,13,14},
+    xticklabel style={/pgf/number format/assume math mode=true},
+    yticklabel style={/pgf/number format/assume math mode=true}]
+  % tram 10%: net = 0.9 r  (r en milers)
+  \addplot[udblue, domain=10:15, samples=2]{0.9*x};
+  % tram 20%: net = 0.8 r
+  \addplot[udblue, domain=15:20, samples=2]{0.8*x};
+  % marca el salt
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(15,13.5)};
+  \addplot[udnavy, only marks, mark=o, mark size=1.6pt] coordinates {(15,12)};
+  \draw[udgrey, dashed] (axis cs:15,12) -- (axis cs:15,13.5);
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:15.2,12.7) {salt $\approx 1500\eur$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Aplicant el \% a tota la renda, el net fa un salt cap avall als $\num{15000}\eur$: una discontinuïtat injusta.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[calcular i comparar nets]
+Amb el càlcul ingenu (percentatge del tram sobre tota la renda), calcula el net de
+dues persones: una amb $\num{29000}\eur$ i una altra amb $\num{31000}\eur$. Hi torna
+a haver salt?
+\solucio
+\textbf{Renda $\num{29000}\eur$} (tram del $20\%$):
+\[
+\text{impost}=0,20\cdot\num{29000}=\num{5800}\eur,\quad
+\text{net}=\num{29000}-\num{5800}=\num{23200}\eur.
+\]
+\textbf{Renda $\num{31000}\eur$} (tram del $30\%$):
+\[
+\text{impost}=0,30\cdot\num{31000}=\num{9300}\eur,\quad
+\text{net}=\num{31000}-\num{9300}=\num{21700}\eur.
+\]
+La persona que cobra $\num{2000}\eur$ \emph{més} de renda es queda amb
+$\num{23200}-\num{21700}=\num{1500}\eur$ \textbf{menys} de net. Sí: hi torna a haver
+un salt injust a la frontera dels $\num{30000}\eur$.
+\resposta{Net: $\num{23200}\eur$ contra $\num{21700}\eur$. Guanyar més de renda fa baixar el net: salt injust.}
+\end{exresolt}
+
+\begin{exresolt}[on és exactament el problema]
+Explica, amb les teves paraules, per què aquest sistema (ingenu) és injust i què
+hauria de complir la funció del net perquè no ho fos.
+\solucio
+El problema és que, en passar de tram, el percentatge més alt s'aplica
+\textbf{de cop a tota la renda}, no només a la part nova. Això fa que la funció del
+net \textbf{salti cap avall}: deixa de pujar de manera contínua. Perquè fos just,
+la funció no hauria de fer cap salt: si algú guanya una mica més de renda, hauria de
+quedar-se sempre amb \emph{una mica més} (o com a mínim mai menys) de net. És a dir,
+la funció hauria de ser \textbf{contínua} (sense salts).
+\resposta{És injust perquè la funció del net salta cap avall en canviar de tram;
+caldria que fos contínua perquè guanyar més no perjudiqui mai.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballeu en grup a la pissarra. Useu el sistema de trams de la idea
+clau ($10\%$ / $20\%$ / $30\%$).}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Amb el càlcul ingenu, completa la taula del net de cada perfil:
+        \begin{center}
+        \begin{tabular}{c c c c}
+        \toprule
+        Renda ($\eur$) & Tram & Impost ($\eur$) & Net ($\eur$) \\
+        \midrule
+        $\num{12000}$ & $10\%$ & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} \\
+        $\num{20000}$ & $20\%$ & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} \\
+        $\num{40000}$ & $30\%$ & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item Calcula el net (càlcul ingenu) d'algú amb $\num{30000}\eur$ i d'algú amb
+        $\num{30100}\eur$. Quants euros de net perd el segon per guanyar $100\eur$ més
+        de renda?
+  \item \textbf{(Detecció)} Un company diu: «com més guanyes, més net et queda
+        sempre». Amb els teus càlculs de l'exercici anterior, mostra que això és fals
+        amb aquest sistema ingenu.
+  \item \textbf{(Discussió de grup)} Si tu fossis just per sota d'una frontera de tram
+        (per exemple, $\num{14900}\eur$), t'interessaria que et pugessin el sou fins a
+        $\num{15100}\eur$? Per què? Què en penses, com a qüestió de justícia?
+  \item \textbf{(Cap a la solució)} A la pissarra, proposeu en grup una manera
+        d'arreglar el sistema perquè \textbf{ningú surti perjudicat} per guanyar una
+        mica més. Pista: i si cada percentatge s'apliqués \emph{només a la part de
+        renda dins de cada tram}, i no a tota?
+  \item \textbf{(Connexió matemàtica)} Quina propietat hauria de tenir la gràfica de
+        la funció «net segons renda» perquè el sistema fos just? Dibuixa a mà com
+        hauria de ser (sense salts) en comparació amb la del salt que has vist avui.
+\end{exlist}
+\end{exercicis}
+
+\begin{idea}
+\textbf{Cap a la sessió següent.} El problema que heu descobert té solució: en lloc
+d'aplicar el percentatge a tota la renda, s'aplica \textbf{tram a tram} (la
+\emph{quota íntegra}). Així la funció no fa salts: és una \textbf{funció a trossos
+contínua}. La sessió 11 la construirem i la representarem.
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item $\num{12000}$: impost $\num{1200}\eur$, net $\num{10800}\eur$. \quad
+        $\num{20000}$: impost $\num{4000}\eur$, net $\num{16000}\eur$. \quad
+        $\num{40000}$: impost $\num{12000}\eur$, net $\num{28000}\eur$.
+  \item $\num{30000}$ ($20\%$): net $=\num{30000}-\num{6000}=\num{24000}\eur$.
+        $\num{30100}$ ($30\%$): net $=\num{30100}-\num{9030}=\num{21070}\eur$. El segon
+        perd $\num{24000}-\num{21070}=\num{2930}\eur$ de net per guanyar $100\eur$ més.
+  \item Amb les dades anteriors, qui guanya $100\eur$ més de renda es queda amb
+        $\num{2930}\eur$ menys de net: per tant «com més guanyes, més net» és fals en
+        aquest sistema; el salt ho desmenteix.
+  \item Resposta oberta. Idea esperada: \emph{no} interessaria, perquè passaries a un
+        tram superior i el net baixaria; és clarament injust que pujar de sou et
+        perjudiqui.
+  \item Resposta oberta (treball de pissarra). Solució correcta: aplicar cada
+        percentatge \textbf{només a la part de renda de cada tram} (quota íntegra per
+        trams), de manera que el net pugi sempre i no hi hagi salts.
+  \item La gràfica hauria de ser \textbf{contínua} (sense salts ni interrupcions):
+        una línia que puja sempre, encara que canviï de pendent en cada tram. Es
+        contrasta amb la gràfica «amb salt» de l'exemple 10.2.
+\end{sollist}
+\end{solucions}

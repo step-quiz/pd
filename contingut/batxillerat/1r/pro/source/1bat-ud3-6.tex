@@ -1,0 +1,172 @@
+% =====================================================================
+%  1bat-ud3-6.tex  —  HORA 6: Repartiment de la pobresa: proporcionalitat inversa
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 6 — Repartiment de la pobresa: proporcionalitat inversa}%
+{Estudi de cas (Activitat 2): un fons repartit entre famílies, la hipèrbola i la idea d'asímptota, amb doble lectura matemàtica i social.}
+
+\subsection{Idea clau}
+
+Fins ara hem treballat funcions lineals (rectes). Avui apareix un tipus nou de
+relació amb un fort sentit social: la \textbf{proporcionalitat inversa}. El cas és
+real (Activitat 2): un \textbf{fons d'emergència} de $\num{120000}\eur$ s'ha de
+repartir \textbf{a parts iguals} entre les famílies afectades per un desnonament. El
+que rep cada família depèn de \emph{quantes} famílies se'l reparteixin.
+
+\begin{idea}
+\textbf{Proporcionalitat inversa:} $\quad f(x)=\dfrac{k}{x}$
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Com més gran és $x$, més \textbf{petit} és $f(x)$: el producte
+        $x\cdot f(x)=k$ es manté \textbf{constant} (aquí $k=\num{120000}$).
+  \item La gràfica és una \textbf{hipèrbola}: decreix de pressa i després cada cop
+        més a poc a poc.
+  \item \textbf{Asímptota:} quan $x$ es fa molt gran, $f(x)$ s'acosta a $0$ \emph{sense
+        arribar-hi mai}. La recta $y=0$ (l'eix horitzontal) és una \textbf{asímptota}.
+\end{itemize}
+\textbf{Domini lògic:} no es pot repartir entre $0$ famílies ($x\neq 0$) i el nombre
+de famílies ha de ser un \textbf{enter positiu}: $\mathrm{Dom}\,f=\{1,2,3,\dots\}$.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el fons de l'Activitat 2]
+Amb $f(x)=\dfrac{\num{120000}}{x}$, calculem què rep cada família segons quantes
+n'hi hagi:
+\begin{center}
+\begin{tabular}{c c c c c c}
+\toprule
+Famílies $x$ & $1$ & $2$ & $4$ & $10$ & $100$ \\
+\midrule
+Per família $f(x)$ ($\eur$) & $\num{120000}$ & $\num{60000}$ & $\num{30000}$ & $\num{12000}$ & $\num{1200}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+A mesura que augmenten les famílies, l'ajut per família \textbf{cau de pressa} al
+principi i després cada cop més lentament. Mai no arriba a $0$: sempre queda alguna
+cosa, però pot ser tan petita que pràcticament desaparegui.
+\end{exemple}
+
+\begin{exemple}[la forma de la hipèrbola i la seva asímptota]
+Aquesta és la gràfica que veureu a GeoGebra (en escala reduïda). Fixeu-vos com la
+corba s'acosta a l'eix horitzontal sense tocar-lo:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9.4cm, height=5.6cm,
+    xlabel={\small famílies ($x$)}, ylabel={\small \euro\ per família (en milers)},
+    xmin=0, xmax=12, ymin=0, ymax=70,
+    xtick={0,2,4,6,8,10}, ytick={0,20,40,60}]
+  \addplot[udblue, domain=1.8:12, samples=120]{120/x};
+  \addplot[udgrey, dashed, domain=0:12, samples=2]{0};
+  \node[udgrey, font=\scriptsize, anchor=south] at (axis cs:6,2) {asímptota $y=0$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{$f(x)=\num{120000}/x$: la corba decreix i s'acosta a l'eix horitzontal (asímptota) sense arribar-hi.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[domini lògic i lectura de valors]
+Per al fons $f(x)=\dfrac{\num{120000}}{x}$:
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item Per què $x$ no pot valer $0$? I per què no pot ser $2,5$?
+  \item Quant rep cada família si n'hi ha $6$? I si n'hi ha $50$?
+\end{enumerate}
+\solucio
+\textbf{a)} No es pot dividir entre $0$: repartir un fons «entre cap família» no té
+sentit (ni matemàtic ni real). I $x=2,5$ tampoc val, perquè no hi pot haver «dues
+famílies i mitja»: $x$ ha de ser un \textbf{enter positiu}.
+
+\textbf{b)} Substituïm:
+\[
+f(6)=\frac{\num{120000}}{6}=\num{20000}\eur,\qquad
+f(50)=\frac{\num{120000}}{50}=\num{2400}\eur.
+\]
+\resposta{a) $x\neq 0$ i $x$ enter positiu. \quad b) $\num{20000}\eur$ amb $6$ famílies; $\num{2400}\eur$ amb $50$.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar l'asímptota socialment]
+Què passa amb l'ajut per família si el nombre de famílies es fa \emph{molt gran}
+(per exemple, $\num{1000}$ o $\num{5000}$ famílies)? Quina lectura social en fas?
+\solucio
+Calculem-ne un parell:
+\[
+f(\num{1000})=\frac{\num{120000}}{\num{1000}}=120\eur,\qquad
+f(\num{5000})=\frac{\num{120000}}{\num{5000}}=24\eur.
+\]
+Com més famílies, menys rep cadascuna: l'ajut s'acosta a $0$ sense arribar-hi
+(l'asímptota $y=0$). \textbf{Lectura social:} un fons fix, per gran que sigui, es
+dilueix si s'ha de repartir entre moltíssima gent; arriba un punt en què l'ajut per
+família és tan petit que deixa de ser útil. És una metàfora de l'\textbf{esgotament
+dels recursos} quan la necessitat creix.
+\resposta{L'ajut tendeix a $0$ (asímptota); socialment, el fons es dilueix i deixa de
+fer efecte si hi ha massa famílies a atendre.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Pots fer les gràfiques a GeoGebra escrivint, per exemple,
+\texttt{f(x)=120000/x} i ajustant la finestra.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Completa la taula de valors de $f(x)=\dfrac{\num{120000}}{x}$:
+        \begin{center}
+        \begin{tabular}{c c c c c}
+        \toprule
+        $x$ & $3$ & $8$ & $20$ & $200$ \\
+        \midrule
+        $f(x)$ ($\eur$) & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item Un altre fons, més petit, és $g(x)=\dfrac{\num{6000}}{x}$, on $x$ són les
+        persones beneficiàries. Calcula $g(1)$, $g(5)$, $g(20)$ i $g(100)$, i digues
+        què li passa a l'ajut quan augmenten les persones.
+  \item Indica el \textbf{domini lògic} de cada funció segons el seu context:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=\dfrac{\num{120000}}{x}$, on $x$ és el nombre de famílies.
+          \item $h(x)=\dfrac{900}{x}$, on $x$ és el nombre de torns de voluntariat per
+                repartir $900$ àpats.
+        \end{enumerate}
+  \item Dibuixa a GeoGebra $f(x)=\dfrac{\num{120000}}{x}$ i respon: cap a quin valor
+        s'acosta la corba quan $x$ es fa molt gran? Com es diu aquesta recta a la qual
+        s'acosta?
+  \item \textbf{(Comparació)} Tens dos fons: $A(x)=\dfrac{\num{120000}}{x}$ i
+        $B(x)=\dfrac{\num{60000}}{x}$. Amb el mateix nombre de famílies, quin reparteix
+        més per família? Per què? Què tenen en comú les dues gràfiques quan $x$ és molt
+        gran?
+  \item \textbf{(Raonament social)} Algú proposa: «com que sempre queda alguna cosa
+        per repartir, podem atendre tantes famílies com vulguem». Explica per què
+        aquest raonament és matemàticament cert però socialment problemàtic, fent
+        servir la idea d'asímptota.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item $f(3)=\num{40000}\eur$; \quad $f(8)=\num{15000}\eur$; \quad
+        $f(20)=\num{6000}\eur$; \quad $f(200)=600\eur$.
+  \item $g(1)=\num{6000}\eur$, $g(5)=\num{1200}\eur$, $g(20)=300\eur$,
+        $g(100)=60\eur$. Quan augmenten les persones, l'ajut per persona decreix i
+        s'acosta a $0$.
+  \item (a) $\mathrm{Dom}=\{1,2,3,\dots\}$ (enter positiu de famílies). \quad
+        (b) $\mathrm{Dom}=\{1,2,3,\dots\}$ (enter positiu de torns; a més, ha de ser
+        un divisor raonable de $900$ si es vol repartiment exacte).
+  \item S'acosta a $y=0$ (l'eix horitzontal); aquesta recta és l'\textbf{asímptota}
+        horitzontal.
+  \item Amb el mateix $x$, el fons $A$ reparteix \emph{el doble} per família, perquè
+        té el doble de diners ($\num{120000}$ contra $\num{60000}$). Totes dues
+        gràfiques, però, s'acosten a $0$ (la mateixa asímptota $y=0$) quan $x$ és molt
+        gran.
+  \item Matemàticament $f(x)$ mai no és exactament $0$, per tant «sempre queda alguna
+        cosa». Però socialment, quan l'ajut per família s'acosta a $0$, esdevé tan
+        petit que ja no cobreix cap necessitat real: repartir entre massa famílies
+        equival, a la pràctica, a no ajudar ningú. L'asímptota mostra el límit real
+        del fons.
+\end{sollist}
+\end{solucions}

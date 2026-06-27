@@ -1,0 +1,168 @@
+% =====================================================================
+%  1bat-ud3-7.tex  —  HORA 7: Funcions quadràtiques: la paràbola
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 7 — Funcions quadràtiques: la paràbola}%
+{D'on surt una corba amb un màxim: l'equació de la paràbola, el vèrtex com a punt òptim i els punts de tall.}
+
+\subsection{Idea clau}
+
+Hi ha situacions que ja no es modelitzen amb una recta. Pensem en el benefici d'una
+venda: si apugem el preu, al principi guanyem més, però si l'apugem massa, la gent
+deixa de comprar i el benefici \textbf{baixa}. La gràfica puja, fa un \textbf{cim} i
+baixa: és una \textbf{paràbola}, la gràfica d'una \textbf{funció quadràtica}.
+
+\begin{idea}
+\textbf{Funció quadràtica:} $\quad f(x)=ax^2+bx+c \quad (a\neq 0)$
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item La seva gràfica és una \textbf{paràbola}. Si $a>0$ s'obre cap amunt
+        ($\cup$, té un \textbf{mínim}); si $a<0$ s'obre cap avall
+        ($\cap$, té un \textbf{màxim}).
+  \item \textbf{Vèrtex:} el punt més alt (o més baix) de la corba. La seva abscissa és
+        \[
+        x_V=\frac{-b}{2a},
+        \]
+        i la seva ordenada s'obté calculant $f(x_V)$.
+  \item \textbf{Punts de tall amb l'eix $X$:} es resol $ax^2+bx+c=0$ (equació de segon
+        grau de la UD2). Poden ser dos, un o cap.
+  \item \textbf{Tall amb l'eix $Y$:} es fa $x=0$; és el punt $(0,c)$.
+\end{itemize}
+\textbf{Lectura social:} en molts problemes el vèrtex és el \textbf{punt òptim} (el
+preu que dóna el màxim benefici, el nombre d'inscrits que minimitza el cost…).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[una paràbola amb màxim: el benefici]
+El benefici d'una parada solidària segons el preu $x$ (en euros) és
+$B(x)=-x^2+6x$. Com que $a=-1<0$, la paràbola s'obre cap avall i té un \textbf{màxim}.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.6cm,
+    xlabel={\small preu ($x$)}, ylabel={\small benefici},
+    xmin=-0.5, xmax=6.7, ymin=-1, ymax=11,
+    xtick={0,1,2,3,4,5,6}, ytick={0,3,6,9}]
+  \addplot[udblue, domain=0:6, samples=80]{-x^2+6*x};
+  \addplot[udnavy, only marks, mark=*, mark size=1.7pt] coordinates {(3,9) (0,0) (6,0)};
+  \node[udnavy, font=\scriptsize, anchor=south] at (axis cs:3,9) {vèrtex $(3,9)$};
+  \node[udnavy, font=\scriptsize, anchor=north west] at (axis cs:0,0) {$(0,0)$};
+  \node[udnavy, font=\scriptsize, anchor=north east] at (axis cs:6,0) {$(6,0)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{$B(x)=-x^2+6x$: talla l'eix a $x=0$ i $x=6$; el vèrtex $(3,9)$ és el benefici màxim.}
+\end{center}
+
+\noindent El vèrtex està a $x_V=\dfrac{-6}{2\cdot(-1)}=3$, amb $B(3)=-9+18=9$. És a dir,
+el preu $3\eur$ dóna el benefici màxim de $9$ (el \textbf{punt òptim}).
+\end{exemple}
+
+\begin{exemple}[una paràbola amb mínim: el cost]
+El cost d'organitzar una activitat segons el nombre de monitors $x$ és
+$C(x)=x^2-4x+7$. Ara $a=1>0$: la paràbola s'obre cap amunt i té un \textbf{mínim}.
+El vèrtex és a $x_V=\dfrac{-(-4)}{2\cdot 1}=2$, amb $C(2)=4-8+7=3$. Amb $2$ monitors
+el cost és mínim ($3$). Aquí el vèrtex és el punt de \textbf{menor cost}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[vèrtex i talls d'una paràbola]
+Per a $f(x)=-x^2+4x+5$, troba el vèrtex, els talls amb l'eix $X$ i el tall amb
+l'eix $Y$. Digues si el vèrtex és màxim o mínim.
+\solucio
+Com que $a=-1<0$, la paràbola s'obre cap avall: el vèrtex serà un \textbf{màxim}.
+
+\textbf{Vèrtex:}
+\[
+x_V=\frac{-b}{2a}=\frac{-4}{2\cdot(-1)}=2,\qquad
+f(2)=-4+8+5=9.
+\]
+Vèrtex $(2,9)$, que és un màxim.
+
+\textbf{Talls amb l'eix $X$} ($f(x)=0$): resolem $-x^2+4x+5=0$, o bé
+$x^2-4x-5=0$. Factoritzant (o amb la fórmula): $(x-5)(x+1)=0$, d'on $x=5$ o $x=-1$.
+Talls: $(5,0)$ i $(-1,0)$.
+
+\textbf{Tall amb l'eix $Y$} ($x=0$): $f(0)=5$. Tall: $(0,5)$.
+\resposta{Vèrtex $(2,9)$ (màxim); talls amb $X$: $(-1,0)$ i $(5,0)$; tall amb $Y$: $(0,5)$.}
+\end{exresolt}
+
+\begin{exresolt}[intervals de creixement i decreixement]
+Per a la paràbola $f(x)=x^2-6x+8$ (que s'obre cap amunt), troba el vèrtex i digues
+en quin interval creix i en quin decreix.
+\solucio
+$a=1>0$, s'obre cap amunt (té un mínim). Vèrtex:
+\[
+x_V=\frac{-(-6)}{2\cdot 1}=3,\qquad f(3)=9-18+8=-1.
+\]
+Vèrtex $(3,-1)$. En una paràbola cap amunt, la corba \textbf{decreix} fins al vèrtex
+i \textbf{creix} a partir d'ell:
+\[
+\text{decreix per } x<3, \qquad \text{creix per } x>3.
+\]
+\resposta{Vèrtex $(3,-1)$; decreix si $x<3$ i creix si $x>3$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a cada paràbola, digues si s'obre cap amunt o cap avall i si el vèrtex és
+        un màxim o un mínim (mira només el signe de $a$):
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=2x^2-3x+1$
+      \item $f(x)=-x^2+5$
+      \item $f(x)=-3x^2+2x$
+    \end{enumerate}
+  \item Troba el vèrtex de cada paràbola amb la fórmula $x_V=\dfrac{-b}{2a}$:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=x^2-4x+3$
+      \item $f(x)=-x^2+2x+8$
+    \end{enumerate}
+  \item Troba els punts de tall amb l'eix $X$ de $f(x)=x^2-5x+6$ (resol l'equació de
+        segon grau) i el tall amb l'eix $Y$.
+  \item Observa la paràbola de la gràfica. Indica, llegint-la: el vèrtex, si és màxim
+        o mínim, i els punts de tall amb l'eix horitzontal.
+
+        \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[udaxis, width=8.6cm, height=5cm,
+            xlabel={\small $x$}, ylabel={\small $y$},
+            xmin=-1.5, xmax=5.5, ymin=-5, ymax=5,
+            xtick={-1,0,1,2,3,4,5}, ytick={-4,-2,0,2,4}]
+          \addplot[udblue, domain=-1:5, samples=80]{x^2-4*x};
+        \end{axis}
+        \end{tikzpicture}
+
+        \figcap{Llegeix el vèrtex i els talls directament de la gràfica.}
+        \end{center}
+
+  \item \textbf{(Optimització)} El benefici d'una rifa segons el preu del bitllet $x$
+        és $B(x)=-2x^2+12x$. Troba el preu que dóna el \textbf{benefici màxim} (l'abscissa
+        del vèrtex) i quin és aquest benefici màxim.
+  \item \textbf{(Interpretació)} En una paràbola de cost $C(x)=x^2-8x+20$, què
+        significa, en el context d'un problema social, el punt vèrtex? Per què sovint
+        és el punt que ens interessa trobar?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item (a) Cap amunt ($a=2>0$), mínim. \quad (b) Cap avall ($a=-1<0$), màxim. \quad
+        (c) Cap avall ($a=-3<0$), màxim.
+  \item (a) $x_V=\dfrac{4}{2}=2$, $f(2)=4-8+3=-1$: vèrtex $(2,-1)$. \quad
+        (b) $x_V=\dfrac{-2}{-2}=1$, $f(1)=-1+2+8=9$: vèrtex $(1,9)$.
+  \item $x^2-5x+6=0 \Rightarrow (x-2)(x-3)=0 \Rightarrow x=2,\ x=3$. Talls amb $X$:
+        $(2,0)$ i $(3,0)$. Tall amb $Y$: $(0,6)$.
+  \item Vèrtex $(2,-4)$, que és un \textbf{mínim} (s'obre cap amunt); talls amb l'eix
+        horitzontal: $(0,0)$ i $(4,0)$.
+  \item $x_V=\dfrac{-12}{2\cdot(-2)}=3$. El preu òptim és $3\eur$, amb benefici màxim
+        $B(3)=-18+36=18$.
+  \item El vèrtex és el punt de \textbf{cost mínim}: aquí $x_V=\dfrac{8}{2}=4$, amb
+        $C(4)=16-32+20=4$. Interessa perquè indica amb quants recursos (monitors,
+        unitats…) el cost és el més baix possible: és el \emph{punt òptim} de decisió.
+\end{sollist}
+\end{solucions}

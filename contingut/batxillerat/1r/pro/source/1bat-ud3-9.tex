@@ -1,0 +1,170 @@
+% =====================================================================
+%  1bat-ud3-9.tex  —  HORA 9: Consolidació: punts de tall i vèrtex
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 9 — Consolidació: punts de tall i vèrtex}%
+{Reforç dels dos procediments clau abans de la prova: punts de tall amb els eixos i vèrtex d'una paràbola, caçant els errors típics.}
+
+\subsection{Idea clau}
+
+Abans de passar a les funcions a trossos, consolidem els dos procediments que més es
+repetiran: trobar els \textbf{punts de tall} amb els eixos i localitzar el
+\textbf{vèrtex} d'una paràbola. No hi ha matèria nova: avui es tracta de fer-ho bé,
+ràpid i \emph{amb sentit}, evitant els errors de sempre.
+
+\begin{idea}
+\textbf{Recordatori exprés}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Tall amb l'eix $Y$:} fes $x=0$ i calcula $f(0)$. Dóna el punt $(0,f(0))$.
+  \item \textbf{Talls amb l'eix $X$:} fes $y=0$ i resol $f(x)=0$ (recta: una solució;
+        paràbola: dues, una o cap).
+  \item \textbf{Vèrtex (paràbola):} $x_V=\dfrac{-b}{2a}$, i després $y_V=f(x_V)$.
+        Compte amb el \textbf{signe} de $b$.
+  \item \textbf{Sentit del context:} restringeix el domini si cal (no hi ha
+        $-3$ persones ni «mig casal»).
+\end{itemize}
+\textbf{Els tres errors que cacem avui:} (1) confondre el tall vertical amb
+l'horitzontal; (2) equivocar-se de signe al calcular el vèrtex; (3) oblidar de
+restringir el domini al context.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: tall vertical contra horitzontal]
+Algú afirma: «la funció $f(x)=2x-6$ talla l'eix \emph{horitzontal} a $(0,-6)$».
+\textbf{És incorrecte.} El punt $(0,-6)$ s'obté fent $x=0$, així que és el tall amb
+l'eix \emph{vertical} ($Y$). El tall amb l'eix \emph{horitzontal} ($X$) s'obté fent
+$y=0$: $2x-6=0 \Rightarrow x=3$, és a dir $(3,0)$. \textbf{Correcció:} tall amb $Y$:
+$(0,-6)$; tall amb $X$: $(3,0)$.
+\end{exemple}
+
+\begin{exemple}[caça l'error: signe al vèrtex]
+Algú calcula el vèrtex de $f(x)=x^2-6x+5$ així: «$x_V=\dfrac{-6}{2}=-3$».
+\textbf{És incorrecte:} ha oblidat que $b=-6$, i a la fórmula va $-b$. El correcte és
+\[
+x_V=\frac{-b}{2a}=\frac{-(-6)}{2\cdot 1}=\frac{6}{2}=3,\qquad
+f(3)=9-18+5=-4.
+\]
+\textbf{Correcció:} vèrtex $(3,-4)$, no $(-3,\dots)$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[cas lineal complet amb context]
+Una subvenció que es va gastant és $S(x)=-40x+800$ (€), on $x$ són les setmanes.
+Troba els dos talls, el domini lògic i interpreta'ls.
+\solucio
+\textbf{Tall amb $Y$} ($x=0$): $S(0)=800$, punt $(0,800)$: són els diners inicials.
+
+\textbf{Tall amb $X$} ($S(x)=0$): $-40x+800=0 \Rightarrow 40x=800 \Rightarrow x=20$,
+punt $(20,0)$: a la setmana $20$ s'esgota la subvenció.
+
+\textbf{Domini lògic:} $x$ són setmanes des de l'inici i fins que s'acaba el diner,
+i ha de ser un valor no negatiu: $0\le x\le 20$ (no té sentit $x$ negatiu ni passat
+el punt on ja no queda res).
+\resposta{Tall $Y$: $(0,800)$; tall $X$: $(20,0)$; domini lògic $0\le x\le 20$.}
+\end{exresolt}
+
+\begin{exresolt}[cas quadràtic complet]
+Per a $f(x)=-x^2+4x+12$, troba: tall amb $Y$, talls amb $X$, vèrtex (digues si és
+màxim o mínim) i els intervals de creixement i decreixement.
+\solucio
+\textbf{Tall amb $Y$:} $f(0)=12$, punt $(0,12)$.
+
+\textbf{Talls amb $X$:} $-x^2+4x+12=0 \Rightarrow x^2-4x-12=0 \Rightarrow (x-6)(x+2)=0$,
+d'on $x=6$ i $x=-2$. Punts $(6,0)$ i $(-2,0)$.
+
+\textbf{Vèrtex:} $a=-1<0$, s'obre cap avall (\textbf{màxim}).
+$x_V=\dfrac{-4}{2\cdot(-1)}=2$, $f(2)=-4+8+12=16$. Vèrtex $(2,16)$.
+
+\textbf{Creixement:} en una paràbola cap avall, creix abans del vèrtex i decreix
+després: creix per $x<2$, decreix per $x>2$.
+\resposta{Tall $Y$: $(0,12)$; talls $X$: $(-2,0)$ i $(6,0)$; vèrtex $(2,16)$ (màxim);
+creix si $x<2$ i decreix si $x>2$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari: els exercicis 1–4 són la base; el 5 i el 6 són ampliació.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} En cada afirmació, digues si és correcta i, si no ho
+        és, corregeix-la:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item «$f(x)=3x-9$ talla l'eix vertical a $(3,0)$.»
+      \item «El vèrtex de $f(x)=x^2-8x+1$ és a $x_V=-4$.»
+      \item «$f(x)=x^2+9$ talla l'eix horitzontal a $(3,0)$ i $(-3,0)$.»
+    \end{enumerate}
+  \item Per a cada recta, troba els dos talls amb els eixos:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=5x-10$
+      \item $f(x)=-2x+8$
+    \end{enumerate}
+  \item Per a cada paràbola, troba el vèrtex i digues si és màxim o mínim:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=x^2-2x-3$
+      \item $f(x)=-x^2+6x$
+    \end{enumerate}
+  \item Per a $f(x)=x^2-7x+10$, fes-ho tot: tall amb $Y$, talls amb $X$ (resol
+        l'equació de segon grau) i vèrtex.
+  \item \textbf{(Ampliació amb context)} El benefici d'una venda solidària és
+        $B(x)=-3x^2+24x-36$ (€), on $x$ és el preu.
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Troba els preus d'equilibri (talls amb l'eix $X$).
+          \item Troba el preu de benefici màxim i quin és aquest benefici.
+          \item Quin és el domini que té sentit per a $x$ en aquest problema?
+        \end{enumerate}
+  \item \textbf{(Ampliació)} D'una paràbola $f(x)=ax^2+bx+c$ sabem que talla l'eix $X$
+        a $x=1$ i $x=5$. Sense conèixer $a$, quina ha de ser l'abscissa del vèrtex?
+        Justifica-ho amb la simetria de la paràbola.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació} — marca amb sinceritat com et trobes en cada
+procediment, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.2cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Trobar el tall amb l'eix vertical ($x=0$) & \rule{0.7cm}{0pt} & & \\
+Trobar els talls amb l'eix horitzontal ($y=0$) & & & \\
+Calcular el vèrtex amb $x_V=\dfrac{-b}{2a}$ (signe inclòs) & & & \\
+Dir si una paràbola té màxim o mínim & & & \\
+Restringir el domini al context del problema & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{Incorrecta}: $(3,0)$ és el tall horitzontal; el vertical és
+        $f(0)=-9$, és a dir $(0,-9)$. \quad
+        (b) \textbf{Incorrecta}: $x_V=\dfrac{-(-8)}{2}=4$, no $-4$. \quad
+        (c) \textbf{Incorrecta}: $x^2+9=0$ no té solució real ($x^2=-9$), per tant la
+        paràbola \emph{no} talla l'eix horitzontal.
+  \item (a) Tall $Y$: $(0,-10)$; tall $X$: $(2,0)$. \quad
+        (b) Tall $Y$: $(0,8)$; tall $X$: $(4,0)$.
+  \item (a) $x_V=\dfrac{2}{2}=1$, $f(1)=1-2-3=-4$: vèrtex $(1,-4)$, \textbf{mínim}. \quad
+        (b) $x_V=\dfrac{-6}{-2}=3$, $f(3)=-9+18=9$: vèrtex $(3,9)$, \textbf{màxim}.
+  \item Tall $Y$: $(0,10)$. Talls $X$: $x^2-7x+10=0 \Rightarrow (x-2)(x-5)=0
+        \Rightarrow x=2,\ x=5$, punts $(2,0)$ i $(5,0)$. Vèrtex:
+        $x_V=\dfrac{7}{2}=3,5$, $f(3,5)=12,25-24,5+10=-2,25$: vèrtex $(3,5;\,-2,25)$.
+  \item (a) $-3x^2+24x-36=0 \Rightarrow x^2-8x+12=0 \Rightarrow (x-2)(x-6)=0
+        \Rightarrow x=2\eur$ i $x=6\eur$. \quad
+        (b) $x_V=\dfrac{-24}{2\cdot(-3)}=4$; $B(4)=-48+96-36=12\eur$. Preu òptim
+        $4\eur$, benefici màxim $12\eur$. \quad
+        (c) Té sentit $2\le x\le 6$ (entre els preus d'equilibri el benefici és
+        positiu; fora, es perd diner).
+  \item L'abscissa del vèrtex és el \textbf{punt mitjà} dels dos talls, per simetria:
+        $x_V=\dfrac{1+5}{2}=3$. La paràbola és simètrica respecte a la recta vertical
+        que passa pel vèrtex, equidistant dels dos talls.
+\end{sollist}
+\end{solucions}
