@@ -1,0 +1,146 @@
+% =====================================================================
+%  1bat-ud3-12.tex  —  HORA 12: Gimnàstica d'anàlisi de funcions (mecanització)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 12 — Gimnàstica d'anàlisi de funcions (mecanització)}%
+{Treball simbòlic per automatitzar dos procediments: el domini teòric i els punts de tall amb els eixos.}
+
+\subsection{Idea clau}
+
+Després de donar sentit a les funcions en contextos reals, avui toca
+\textbf{guanyar destresa}. Treballarem de manera \emph{simbòlica} (sense
+històries): es tracta que el càlcul del \textbf{domini} i dels \textbf{punts de
+tall} surti automàtic. És com fer escales abans de tocar una peça.
+
+\begin{idea}
+\textbf{Domini teòric: quins valors de $x$ \emph{no} es poden posar?}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Polinomis} (rectes, paràboles, $x^3$\dots): es pot posar
+        \textbf{qualsevol} $x$. Domini $=\mathbb{R}$.
+  \item \textbf{Fraccions} $\dfrac{P(x)}{Q(x)}$: el denominador \textbf{no pot ser
+        zero}. S'exclouen els valors que anul·len $Q(x)$.
+  \item \textbf{Arrels quadrades} $\sqrt{P(x)}$: el que hi ha dins \textbf{no pot ser
+        negatiu}. Cal $P(x)\ge 0$.
+\end{itemize}
+\textbf{Punts de tall:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Amb l'eix $Y$: fes $x=0$ (si $0$ és al domini), punt $(0,f(0))$.
+  \item Amb l'eix $X$: fes $f(x)=0$ i resol.
+\end{itemize}
+\textbf{Paranys de sempre:} oblidar les restriccions del domini i confondre quin eix
+dóna cada tall.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[domini d'una fracció]
+Sigui $f(x)=\dfrac{x+1}{x-3}$. El denominador s'anul·la quan $x-3=0$, és a dir
+$x=3$. Per tant, \textbf{tots els valors menys el $3$}:
+\[
+\mathrm{Dom}\,f=\mathbb{R}\setminus\{3\}.
+\]
+El tall amb l'eix $Y$ ($x=0$): $f(0)=\dfrac{1}{-3}=-\dfrac{1}{3}$, punt
+$\left(0,-\tfrac{1}{3}\right)$. El tall amb l'eix $X$ ($f(x)=0$): una fracció és
+zero quan el \emph{numerador} ho és, $x+1=0 \Rightarrow x=-1$, punt $(-1,0)$.
+\end{exemple}
+
+\begin{exemple}[domini d'una arrel]
+Sigui $g(x)=\sqrt{x-2}$. El que hi ha dins l'arrel ha de ser $\ge 0$:
+$x-2\ge 0 \Rightarrow x\ge 2$. Per tant
+\[
+\mathrm{Dom}\,g=[2,+\infty).
+\]
+No hi ha tall amb l'eix $Y$ ($x=0$ no és al domini). Tall amb l'eix $X$:
+$\sqrt{x-2}=0 \Rightarrow x-2=0 \Rightarrow x=2$, punt $(2,0)$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[anàlisi completa d'una paràbola]
+Per a $f(x)=x^2-x-6$, troba el domini, el tall amb l'eix $Y$ i els talls amb l'eix
+$X$.
+\solucio
+\textbf{Domini:} és un polinomi, així que $\mathrm{Dom}\,f=\mathbb{R}$.
+
+\textbf{Tall amb $Y$} ($x=0$): $f(0)=-6$, punt $(0,-6)$.
+
+\textbf{Talls amb $X$} ($f(x)=0$): $x^2-x-6=0$. Factoritzem buscant dos nombres que
+multiplicats donin $-6$ i sumats $-1$: són $-3$ i $2$. Així $(x-3)(x+2)=0$, d'on
+$x=3$ i $x=-2$. Punts $(3,0)$ i $(-2,0)$.
+\resposta{$\mathrm{Dom}=\mathbb{R}$; tall $Y$: $(0,-6)$; talls $X$: $(-2,0)$ i $(3,0)$.}
+\end{exresolt}
+
+\begin{exresolt}[anàlisi d'una funció racional]
+Per a $f(x)=\dfrac{2x-4}{x+1}$, troba el domini i els punts de tall amb els dos eixos.
+\solucio
+\textbf{Domini:} el denominador s'anul·la si $x+1=0 \Rightarrow x=-1$. Per tant
+$\mathrm{Dom}\,f=\mathbb{R}\setminus\{-1\}$.
+
+\textbf{Tall amb $Y$} ($x=0$): $f(0)=\dfrac{-4}{1}=-4$, punt $(0,-4)$.
+
+\textbf{Tall amb $X$} ($f(x)=0$): la fracció és zero quan el numerador ho és:
+$2x-4=0 \Rightarrow x=2$ (i $2$ sí que és al domini). Punt $(2,0)$.
+\resposta{$\mathrm{Dom}=\mathbb{R}\setminus\{-1\}$; tall $Y$: $(0,-4)$; tall $X$: $(2,0)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Bateria graduada. Per a cada funció: domini, tall amb l'eix $Y$ i
+talls amb l'eix $X$. Treballa sense calculadora sempre que puguis.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{Nivell bàsic (rectes i paràboles).}
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=2x-6$
+      \item $f(x)=x^2-9$
+      \item $f(x)=x^2-5x+6$
+    \end{enumerate}
+  \item \textbf{Nivell mitjà (més paràboles).}
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=-x^2+4x$
+      \item $f(x)=x^2+2x-8$
+      \item $f(x)=2x^2-8$
+    \end{enumerate}
+  \item \textbf{Nivell avançat (fraccions).} Recorda: denominador $\neq 0$.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=\dfrac{x-5}{x-2}$
+      \item $f(x)=\dfrac{3x}{x+4}$
+    \end{enumerate}
+  \item \textbf{Nivell avançat (arrels).} Recorda: el radicand $\ge 0$.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=\sqrt{x+3}$
+      \item $f(x)=\sqrt{2x-6}$
+    \end{enumerate}
+  \item \textbf{(Parany)} Un company diu que $f(x)=\dfrac{x+2}{x^2-4}$ té domini
+        $\mathbb{R}\setminus\{4\}$. Troba el domini correcte. (Pista: factoritza el
+        denominador.)
+  \item \textbf{(Correcció creuada)} Intercanvia la teva bateria amb la d'una altra
+        parella i corregiu-vos mútuament. Anoteu els errors que trobeu i classifiqueu-los:
+        són de \emph{domini} (oblidar una restricció) o de \emph{talls} (confondre els
+        eixos o equivocar-se en resoldre l'equació)?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $\mathrm{Dom}=\mathbb{R}$; $Y$: $(0,-6)$; $X$: $(3,0)$. \quad
+        (b) $\mathrm{Dom}=\mathbb{R}$; $Y$: $(0,-9)$; $X$: $(3,0)$ i $(-3,0)$. \quad
+        (c) $\mathrm{Dom}=\mathbb{R}$; $Y$: $(0,6)$; $X$: $(2,0)$ i $(3,0)$.
+  \item (a) $\mathrm{Dom}=\mathbb{R}$; $Y$: $(0,0)$; $X$: $(0,0)$ i $(4,0)$. \quad
+        (b) $\mathrm{Dom}=\mathbb{R}$; $Y$: $(0,-8)$; $X$: $(-4,0)$ i $(2,0)$. \quad
+        (c) $\mathrm{Dom}=\mathbb{R}$; $Y$: $(0,-8)$; $X$: $(2,0)$ i $(-2,0)$.
+  \item (a) $\mathrm{Dom}=\mathbb{R}\setminus\{2\}$; $Y$: $\left(0,\tfrac{5}{2}\right)$;
+        $X$: $(5,0)$. \quad
+        (b) $\mathrm{Dom}=\mathbb{R}\setminus\{-4\}$; $Y$: $(0,0)$; $X$: $(0,0)$.
+  \item (a) $\mathrm{Dom}=[-3,+\infty)$; $Y$: $(0,\sqrt{3})$; $X$: $(-3,0)$. \quad
+        (b) $\mathrm{Dom}=[3,+\infty)$; $Y$: no en té ($0\notin\mathrm{Dom}$);
+        $X$: $(3,0)$.
+  \item El denominador és $x^2-4=(x-2)(x+2)$, que s'anul·la a $x=2$ i $x=-2$. Per
+        tant $\mathrm{Dom}=\mathbb{R}\setminus\{-2,2\}$ (no $\{4\}$).
+  \item Resposta oberta (correcció entre parelles). Es valora classificar bé cada
+        error com a error de domini o de talls.
+\end{sollist}
+\end{solucions}

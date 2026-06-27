@@ -1,0 +1,141 @@
+% =====================================================================
+%  1bat-ud3-16.tex  —  HORA 16: Prova escrita de la Unitat 3
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 3}%
+{Prova individual: quatre blocs alineats amb els criteris C1–C4. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 3 — Estudi de funcions i modelització de fenòmens socials}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també la
+\textbf{representació gràfica acurada}, el marcatge correcte dels \textbf{punts
+oberts i tancats}, la \textbf{restricció del domini al context} i la
+\textbf{interpretació} dels resultats. Mostra tots els càlculs.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Domini i punts de tall \hfill \normalfont\itshape (2,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Domini i punts de tall}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt]
+  \item Determina el \textbf{domini} de cadascuna d'aquestes funcions, justificant-ho:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=\dfrac{x+3}{x-1}$ \hfill \item $g(x)=\sqrt{x-4}$
+    \end{enumerate}
+  \item Troba els punts de tall amb els \textbf{dos eixos} de $f(x)=\dfrac{2x-6}{x+2}$.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Funcions lineals i quadràtiques \hfill \normalfont\itshape (2,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Funcions lineals i quadràtiques}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=3]
+  \item Donada la recta $g(x)=-2x+6$: indica el \textbf{pendent} i el \textbf{terme
+        independent}, troba els \textbf{dos talls} amb els eixos i fes-ne un esbós.
+  \item Per a la paràbola $f(x)=x^2-6x+8$: troba el \textbf{tall amb l'eix $Y$}, els
+        \textbf{talls amb l'eix $X$} i el \textbf{vèrtex} (digues si és màxim o mínim).
+        Fes un esbós de la gràfica.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Funcions a trossos \hfill \normalfont\itshape (2,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Funcions a trossos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=5]
+  \item Donada la funció
+    \[
+    f(x)=
+    \begin{cases}
+    x+2 & \text{si } x\le 1,\\[2pt]
+    -x+4 & \text{si } x>1,
+    \end{cases}
+    \]
+    calcula $f(-2)$, $f(1)$ i $f(3)$, \textbf{representa-la} marcant els punts oberts
+    i tancats a la frontera, i digues si és \textbf{contínua}.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 4 (C4) — Modelització i interpretació \hfill \normalfont\itshape (2,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 4 (C4) — Modelització i interpretació}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=6]
+  \item Un fons de $\num{36000}\eur$ es reparteix a parts iguals entre $x$ entitats:
+        $f(x)=\dfrac{\num{36000}}{x}$.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Quant rep cada entitat si n'hi ha $6$? I si n'hi ha $30$?
+      \item Quin és el \textbf{domini lògic} de $x$ en aquest context?
+      \item Què passa amb l'ajut per entitat quan el nombre d'entitats creix molt?
+            Com es diu la recta a què s'acosta la gràfica?
+    \end{enumerate}
+  \item El benefici d'una venda solidària segons el preu $x$ (€) és
+        $B(x)=-2x^2+16x-24$.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Troba els \textbf{preus d'equilibri} (talls amb l'eix $X$).
+      \item Troba el \textbf{preu de benefici màxim} i quin és aquest benefici.
+      \item Entre quins preus es guanya diner? Quin preu recomanaries i per què?
+    \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD3 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item (a) Denominador $x-1=0 \Rightarrow x=1$; $\mathrm{Dom}\,f=\mathbb{R}\setminus\{1\}$. \quad
+        (b) Radicand $x-4\ge 0 \Rightarrow x\ge 4$; $\mathrm{Dom}\,g=[4,+\infty)$.
+  \item Tall amb $Y$ ($x=0$): $f(0)=\dfrac{-6}{2}=-3$, punt $(0,-3)$. Tall amb $X$
+        (numerador zero): $2x-6=0 \Rightarrow x=3$, punt $(3,0)$.
+        (Nota: $x=-2$ queda exclòs del domini, no és cap tall.)
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{2}
+  \item Pendent $m=-2$, terme independent $n=6$. Tall amb $Y$: $(0,6)$; tall amb $X$
+        ($-2x+6=0 \Rightarrow x=3$): $(3,0)$. Esbós: recta decreixent que passa per
+        $(0,6)$ i $(3,0)$.
+  \item Tall amb $Y$: $(0,8)$. Talls amb $X$: $x^2-6x+8=0 \Rightarrow (x-2)(x-4)=0
+        \Rightarrow x=2,\ x=4$, punts $(2,0)$ i $(4,0)$. Vèrtex:
+        $x_V=\dfrac{6}{2}=3$, $f(3)=9-18+8=-1$, vèrtex $(3,-1)$, \textbf{mínim}
+        (s'obre cap amunt).
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{4}
+  \item $f(-2)=-2+2=0$ (tros $x+2$); $f(1)=1+2=3$ (tros $x+2$, perquè $x\le 1$);
+        $f(3)=-3+4=1$ (tros $-x+4$). A la frontera $x=1$: el tros esquerre arriba a
+        $(1,3)$ \textbf{tancat}; el tros dret, just després de $1$, surt de
+        $-1+4=3$, és a dir un punt \textbf{obert} a $(1,3)$ amb el \emph{mateix}
+        valor. Com que coincideixen en $3$, la funció \textbf{és contínua} (els
+        trossos s'enganxen, sense salt).
+\end{sollist}
+
+\noindent\textbf{Bloc 4 (C4)}
+\begin{sollist}\setcounter{enumi}{5}
+  \item (a) $f(6)=\dfrac{\num{36000}}{6}=\num{6000}\eur$;
+        $f(30)=\dfrac{\num{36000}}{30}=\num{1200}\eur$. \quad
+        (b) $\mathrm{Dom}=\{1,2,3,\dots\}$ (enter positiu d'entitats; $x\neq 0$). \quad
+        (c) L'ajut per entitat \textbf{decreix} i s'acosta a $0$ sense arribar-hi; la
+        recta és l'\textbf{asímptota horitzontal} $y=0$.
+  \item (a) $-2x^2+16x-24=0 \Rightarrow x^2-8x+12=0 \Rightarrow (x-2)(x-6)=0
+        \Rightarrow x=2\eur$ i $x=6\eur$ (preus d'equilibri). \quad
+        (b) $x_V=\dfrac{-16}{2\cdot(-2)}=4$; $B(4)=-32+64-24=8\eur$. Preu òptim
+        $4\eur$, benefici màxim $8\eur$. \quad
+        (c) Es guanya diner entre $2\eur$ i $6\eur$; preu recomanat $4\eur$ perquè és
+        el que dóna el benefici màxim ($8\eur$).
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): cada bloc puntua sobre
+$2,5$. Es reparteix entre el procediment correcte, la representació gràfica acurada
+(amb punts oberts/tancats i talls ben marcats) i la interpretació dins del context.
+Total: $10$ punts.}

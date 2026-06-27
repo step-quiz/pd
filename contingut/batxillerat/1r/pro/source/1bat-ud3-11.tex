@@ -1,0 +1,242 @@
+% =====================================================================
+%  1bat-ud3-11.tex  —  HORA 11: Representar funcions a trossos
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 11 — Representar funcions a trossos}%
+{La notació amb claus de sistema, la representació amb punts oberts i tancats, i el tancament matemàtic del debat fiscal: la continuïtat.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vau descobrir el «salt» injust del sistema fiscal ingenu. Avui
+li posem nom i el resolem. Una \textbf{funció definida a trossos} és una funció que
+té \textbf{expressions diferents en intervals diferents}. S'escriu amb una
+\textbf{clau de sistema}, indicant per a cada tros la seva fórmula i el seu interval.
+
+\begin{idea}
+\textbf{Funció a trossos:} cada tram té expressió i interval. Exemple:
+\[
+f(x)=
+\begin{cases}
+2x+1 & \text{si } x<2,\\[2pt]
+x+3 & \text{si } x\ge 2.
+\end{cases}
+\]
+\textbf{Punts oberts i tancats a les fronteres:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Un \textbf{punt tancat} ($\bullet$) indica que aquell valor \textbf{sí} que
+        pertany al tros (desigualtat $\le$ o $\ge$).
+  \item Un \textbf{punt obert} ($\circ$) indica que aquell valor \textbf{no} pertany
+        al tros (desigualtat $<$ o $>$).
+\end{itemize}
+\textbf{Continuïtat:} si en una frontera els dos trossos \emph{s'enganxen} (acaben i
+comencen al mateix punt), la funció és \textbf{contínua} (no fa salt). Si queden a
+altures diferents, hi ha un \textbf{salt} (discontinuïtat).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[una funció a trossos contínua]
+Representem
+\[
+f(x)=
+\begin{cases}
+x+1 & \text{si } x\le 2,\\[2pt]
+-x+5 & \text{si } x>2.
+\end{cases}
+\]
+A la frontera $x=2$: el primer tros arriba a $f(2)=3$ (punt \textbf{tancat}, perquè
+$x\le 2$); el segon tros, just després de $2$, també surt de $3$ (punt \textbf{obert}
+en $x=2$, però amb el mateix valor). Com que tots dos coincideixen en $3$, la funció
+és \textbf{contínua}.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.2cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-2.5, xmax=6, ymin=-1, ymax=5,
+    xtick={-2,0,2,4,6}, ytick={0,1,3,5}]
+  \addplot[udblue, domain=-2:2, samples=2]{x+1};
+  \addplot[udblue, domain=2:5, samples=2]{-x+5};
+  \addplot[udnavy, only marks, mark=*, mark size=1.8pt] coordinates {(2,3)};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:2,3) {$(2,3)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Funció contínua: els dos trossos s'enganxen al punt $(2,3)$, sense salt.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[una funció a trossos amb salt]
+Ara
+\[
+g(x)=
+\begin{cases}
+x+1 & \text{si } x\le 2,\\[2pt]
+x+3 & \text{si } x>2.
+\end{cases}
+\]
+A $x=2$: el primer tros acaba (tancat) a $g(2)=3$; el segon tros comença (obert) just
+després de $2$ a un valor proper a $5$. Els dos trossos \textbf{no s'enganxen}: hi ha
+un \textbf{salt} de $3$ a $5$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.2cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-2.5, xmax=6, ymin=-1, ymax=9,
+    xtick={-2,0,2,4,6}, ytick={0,3,5,7}]
+  \addplot[udblue, domain=-2:2, samples=2]{x+1};
+  \addplot[udblue, domain=2:5, samples=2]{x+3};
+  \addplot[udnavy, only marks, mark=*, mark size=1.8pt] coordinates {(2,3)};
+  \addplot[udnavy, only marks, mark=o, mark size=1.8pt] coordinates {(2,5)};
+  \draw[udgrey, dashed] (axis cs:2,3) -- (axis cs:2,5);
+  \node[udnavy, font=\scriptsize, anchor=east] at (axis cs:1.9,4) {salt};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Funció amb salt: punt tancat $(2,3)$ i punt obert $(2,5)$; la gràfica es trenca.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[avaluar una funció a trossos]
+Donada
+\[
+f(x)=
+\begin{cases}
+-2x & \text{si } x<0,\\[2pt]
+x+1 & \text{si } 0\le x<3,\\[2pt]
+4 & \text{si } x\ge 3,
+\end{cases}
+\]
+calcula $f(-2)$, $f(0)$, $f(2)$ i $f(3)$.
+\solucio
+Triem el tros segons on cau cada $x$:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item $f(-2)$: com que $-2<0$, fem servir $-2x$: $f(-2)=-2\cdot(-2)=4$.
+  \item $f(0)$: com que $0\le 0<3$, fem servir $x+1$: $f(0)=0+1=1$.
+  \item $f(2)$: com que $0\le 2<3$, fem servir $x+1$: $f(2)=2+1=3$.
+  \item $f(3)$: com que $3\ge 3$, fem servir $4$: $f(3)=4$.
+\end{itemize}
+\resposta{$f(-2)=4$, \quad $f(0)=1$, \quad $f(2)=3$, \quad $f(3)=4$.}
+\end{exresolt}
+
+\begin{exresolt}[el tancament del cas fiscal: la quota íntegra]
+Expliquem com s'arregla el sistema fiscal de la sessió 10 perquè sigui \emph{just}
+(continu). Amb els trams $10\%$ (fins a $\num{15000}$) i $20\%$ (de $\num{15000}$ a
+$\num{30000}$), l'impost \textbf{per trams} (quota íntegra) és:
+\[
+I(x)=
+\begin{cases}
+0,10\,x & \text{si } 0\le x\le \num{15000},\\[2pt]
+\num{1500}+0,20\,(x-\num{15000}) & \text{si } \num{15000}< x\le \num{30000}.
+\end{cases}
+\]
+\solucio
+La clau és que en el segon tram el $20\%$ s'aplica \textbf{només a la part que passa
+de $\num{15000}$}, i s'hi suma el que ja s'havia pagat pel primer tram
+($0,10\cdot\num{15000}=\num{1500}\eur$). Comprovem la frontera $x=\num{15000}$:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item Primer tram: $I(\num{15000})=0,10\cdot\num{15000}=\num{1500}\eur$.
+  \item Segon tram, just a $\num{15000}$: $\num{1500}+0,20\cdot 0=\num{1500}\eur$.
+\end{itemize}
+Coincideixen: la funció \textbf{s'enganxa} a $\num{15000}$, és \textbf{contínua} i ja
+\textbf{no hi ha salt}. Guanyar una mica més de renda ja no fa baixar el net.
+\resposta{Aplicant el \% només a la part de cada tram (quota íntegra), els trossos
+s'enganxen a la frontera: la funció és contínua i justa.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a la funció
+        \[
+        f(x)=
+        \begin{cases}
+        x+2 & \text{si } x<1,\\[2pt]
+        3x & \text{si } x\ge 1,
+        \end{cases}
+        \]
+        calcula $f(-3)$, $f(0)$, $f(1)$ i $f(4)$.
+  \item Representa en paper mil·limetrat la funció
+        \[
+        f(x)=
+        \begin{cases}
+        2 & \text{si } x<0,\\[2pt]
+        x+2 & \text{si } x\ge 0,
+        \end{cases}
+        \]
+        i marca amb cura el punt obert i el punt tancat a la frontera $x=0$. És
+        contínua?
+  \item Mira la gràfica i digues si la funció és contínua o té un salt a la frontera.
+        Indica quin punt és obert i quin és tancat.
+
+        \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[udaxis, width=8.6cm, height=4.8cm,
+            xlabel={\small $x$}, ylabel={\small $y$},
+            xmin=-3, xmax=5, ymin=-1, ymax=6,
+            xtick={-2,0,2,4}, ytick={0,2,4}]
+          \addplot[udblue, domain=-2:1, samples=2]{0.5*x+1};
+          \addplot[udblue, domain=1:4, samples=2]{x+2};
+          \addplot[udnavy, only marks, mark=*, mark size=1.7pt] coordinates {(1,1.5)};
+          \addplot[udnavy, only marks, mark=o, mark size=1.7pt] coordinates {(1,3)};
+          \draw[udgrey, dashed] (axis cs:1,1.5) -- (axis cs:1,3);
+        \end{axis}
+        \end{tikzpicture}
+
+        \figcap{Llegeix la frontera: punt obert, punt tancat i continuïtat.}
+        \end{center}
+
+  \item Un ajut social es concedeix per trams segons els ingressos mensuals $x$:
+        \[
+        A(x)=
+        \begin{cases}
+        300 & \text{si } x<500,\\[2pt]
+        200 & \text{si } 500\le x<1000,\\[2pt]
+        0 & \text{si } x\ge 1000.
+        \end{cases}
+        \]
+        Calcula l'ajut per a $x=400$, $x=500$, $x=900$ i $x=1000$, i digues si la
+        funció té salts (i a on).
+  \item \textbf{(Continuïtat)} Per a la funció
+        \[
+        f(x)=
+        \begin{cases}
+        x+1 & \text{si } x\le 2,\\[2pt]
+        2x+k & \text{si } x>2,
+        \end{cases}
+        \]
+        troba el valor de $k$ perquè la funció sigui \textbf{contínua} a $x=2$.
+        (Pista: els dos trossos han de donar el mateix valor a $x=2$.)
+  \item \textbf{(Interpretació)} A l'ajut social de l'exercici 4, què signifiquen els
+        salts en el context real? És just que algú que cobra $999\eur$ rebi $200\eur$
+        i algú que cobra $\num{1000}\eur$ no rebi res? Relaciona-ho amb el debat fiscal
+        de la sessió anterior.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item $f(-3)=-3+2=-1$ (tros $x+2$); $f(0)=0+2=2$ (tros $x+2$, perquè $0<1$);
+        $f(1)=3\cdot 1=3$ (tros $3x$, perquè $1\ge 1$); $f(4)=3\cdot 4=12$.
+  \item A $x=0$: el tros $2$ (per $x<0$) deixa un punt \textbf{obert} a $(0,2)$; el
+        tros $x+2$ (per $x\ge 0$) dóna un punt \textbf{tancat} a $(0,2)$. Com que tots
+        dos valen $2$, \textbf{sí que és contínua} (s'enganxen).
+  \item Hi ha un \textbf{salt}: punt tancat $(1;\,1,5)$ (tros de l'esquerra, $x\le 1$)
+        i punt obert $(1,3)$ (tros de la dreta). No és contínua.
+  \item $A(400)=300$; $A(500)=200$; $A(900)=200$; $A(1000)=0$. Té salts a $x=500$
+        (de $300$ a $200$) i a $x=\num{1000}$ (de $200$ a $0$).
+  \item A $x=2$: tros esquerre $f(2)=2+1=3$; tros dret $2\cdot 2+k=4+k$. Perquè
+        coincideixin: $4+k=3 \Rightarrow k=-1$.
+  \item Els salts signifiquen que un canvi mínim d'ingressos fa perdre de cop una part
+        de l'ajut (o tot). No és just que $1\eur$ més de sou faci perdre $200\eur$
+        d'ajut: és el mateix problema dels «salts» fiscals: caldria un disseny continu
+        (l'ajut que disminueixi gradualment) perquè ningú surti perjudicat per guanyar
+        una mica més.
+\end{sollist}
+\end{solucions}

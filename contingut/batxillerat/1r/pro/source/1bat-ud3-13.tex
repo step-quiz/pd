@@ -1,0 +1,152 @@
+% =====================================================================
+%  1bat-ud3-13.tex  —  HORA 13: Validació amb GeoGebra
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 13 — Validació amb GeoGebra}%
+{Comprovar amb l'ordinador el treball fet a mà: domini, punts de tall i forma de la gràfica. L'eina com a autocorrecció, no com a drecera.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vau analitzar funcions \textbf{a mà}. Avui les portem a
+\textbf{GeoGebra} per \emph{validar} aquell treball. La idea important: GeoGebra
+\textbf{no fa la feina per tu}; serveix per \textbf{comprovar} si el que has calculat
+és correcte. Quan coincideix, guanyes confiança; quan \emph{no} coincideix, has de
+tornar al paper i \textbf{trobar l'error}.
+
+\begin{idea}
+\textbf{Com validar una funció amb GeoGebra}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Introdueix la funció} a la barra d'entrada, p.\,ex. \texttt{f(x)=(x-5)/(x-2)}.
+  \item \textbf{Domini:} mira on la gràfica \emph{s'interromp} (asímptotes verticals,
+        forats). Hauria de coincidir amb els valors que vas excloure a mà.
+  \item \textbf{Tall amb l'eix $Y$:} mira on la corba creua l'eix vertical. Pots
+        escriure \texttt{f(0)} per veure'n el valor exacte.
+  \item \textbf{Talls amb l'eix $X$:} usa l'eina \emph{Intersecció} o escriu
+        \texttt{Arrel(f)} per obtenir on creua l'eix horitzontal.
+  \item \textbf{Compara} cada resultat amb el teu càlcul. Si hi ha desajust, l'error
+        és (gairebé sempre) a l'àlgebra: revisa-la.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[validació correcta: una paràbola]
+A mà havíem trobat que $f(x)=x^2-x-6$ té domini $\mathbb{R}$, tall amb $Y$ a
+$(0,-6)$ i talls amb $X$ a $(-2,0)$ i $(3,0)$. A GeoGebra, la gràfica confirma tot:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.4cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-4, xmax=5, ymin=-7, ymax=4,
+    xtick={-2,0,3}, ytick={-6,0}]
+  \addplot[udblue, domain=-3.2:4.2, samples=80]{x^2-x-6};
+  \addplot[udnavy, only marks, mark=*, mark size=1.7pt] coordinates {(-2,0) (3,0) (0,-6)};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:-2,0) {$(-2,0)$};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:3,0) {$(3,0)$};
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:0.15,-6) {$(0,-6)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La gràfica de GeoGebra creua els eixos exactament als punts calculats a mà: validació correcta.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[la validació detecta un error]
+Suposem que algú, a mà, havia escrit que $f(x)=\dfrac{x-5}{x-2}$ talla l'eix
+horitzontal a $x=2$. En portar-ho a GeoGebra, veu que la gràfica \textbf{no} creua
+l'eix a $x=2$: justament allà hi ha una \textbf{asímptota vertical} (la funció no hi
+està definida!). La corba creua l'eix horitzontal a $x=5$. \textbf{Conclusió:} hi
+havia un error: $x=2$ és el valor \emph{exclòs del domini}, no un tall. El tall amb
+l'eix $X$ és a $(5,0)$. La validació ha funcionat com a autocorrecció.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[interpretar el que mostra GeoGebra]
+En introduir $f(x)=\dfrac{2x-4}{x+1}$, GeoGebra dibuixa una corba que s'enfila cap a
+l'infinit a prop de $x=-1$ i que creua l'eix horitzontal en un punt. Quins valors
+hauries de veure i com els llegeixes?
+\solucio
+\textbf{Domini:} la corba s'interromp a $x=-1$ (asímptota vertical): confirma
+$\mathrm{Dom}\,f=\mathbb{R}\setminus\{-1\}$, com havíem calculat a mà (denominador
+zero a $x=-1$).
+
+\textbf{Tall amb $X$:} la corba creua l'eix horitzontal on el numerador s'anul·la,
+$2x-4=0 \Rightarrow x=2$: punt $(2,0)$.
+
+\textbf{Tall amb $Y$:} escrivint \texttt{f(0)} obtenim $\dfrac{-4}{1}=-4$: punt
+$(0,-4)$.
+\resposta{GeoGebra confirma domini $\mathbb{R}\setminus\{-1\}$, tall $X$ a $(2,0)$ i tall $Y$ a $(0,-4)$.}
+\end{exresolt}
+
+\begin{exresolt}[quan el càlcul i la gràfica no coincideixen]
+A mà has obtingut que $g(x)=\sqrt{x-2}$ té domini $\mathbb{R}$. Però a GeoGebra la
+gràfica \textbf{només apareix a la dreta de $x=2$}. Què ha passat i com ho corregeixes?
+\solucio
+La gràfica de GeoGebra és la pista: si la corba només existeix per a $x\ge 2$, vol
+dir que el domini \textbf{no} és tot $\mathbb{R}$. L'error a mà va ser oblidar que el
+\textbf{radicand ha de ser $\ge 0$}: $x-2\ge 0 \Rightarrow x\ge 2$. El domini correcte
+és $[2,+\infty)$. La gràfica ha permès detectar i corregir l'error.
+\resposta{Domini correcte: $[2,+\infty)$. L'error era oblidar la restricció de l'arrel;
+la gràfica de GeoGebra ho ha fet evident.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Full de pràctica tecnològica. Per a cada funció: escriu el que vas
+calcular a mà (sessió 12), comprova-ho a GeoGebra i marca si coincideix o si has
+trobat un error.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Introdueix a GeoGebra $f(x)=x^2-9$ i comprova: el domini, el tall amb l'eix
+        $Y$ i els talls amb l'eix $X$. Coincideix amb el teu càlcul a mà?
+  \item Introdueix $f(x)=\dfrac{x-5}{x-2}$ i localitza l'asímptota vertical. Quin
+        valor del domini queda exclòs? On talla l'eix horitzontal?
+  \item Introdueix $f(x)=\sqrt{x+3}$ i observa a partir de quin valor de $x$ apareix
+        la gràfica. Quin és el domini? On talla l'eix $X$?
+  \item Completa el full de validació amb tres funcions a la teva elecció de la
+        sessió 12:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.2cm} p{3.2cm} p{2.2cm} p{2.6cm}}
+        \toprule
+        \textbf{Funció} & \textbf{El que vaig calcular a mà} & \textbf{Coincideix?} & \textbf{Error trobat (si n'hi ha)} \\
+        \midrule
+         & & & \\[10pt]
+         & & & \\[10pt]
+         & & & \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Autocorrecció)} Si en alguna funció el resultat de GeoGebra
+        \emph{no} coincideix amb el teu, torna al paper, troba l'error i escriu en una
+        frase quin va ser (de domini? de tall? de signe en resoldre l'equació?).
+  \item \textbf{(Coherència)} Explica, amb les teves paraules, per què una asímptota
+        vertical a GeoGebra correspon sempre a un valor \textbf{exclòs del domini} i
+        \textbf{mai} a un tall amb l'eix horitzontal.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item $\mathrm{Dom}=\mathbb{R}$; tall $Y$: $(0,-9)$; talls $X$: $(3,0)$ i $(-3,0)$.
+        La gràfica (paràbola cap amunt) ho confirma.
+  \item Asímptota vertical a $x=2$: queda exclòs el $2$
+        ($\mathrm{Dom}=\mathbb{R}\setminus\{2\}$). Talla l'eix horitzontal a $(5,0)$
+        (numerador zero).
+  \item La gràfica apareix a partir de $x=-3$: $\mathrm{Dom}=[-3,+\infty)$. Talla
+        l'eix $X$ a $(-3,0)$.
+  \item Resposta oberta (full de validació personal). Es valora que el càlcul a mà i
+        la lectura de GeoGebra siguin coherents i que els desajustos quedin anotats.
+  \item Resposta oberta. Es valora identificar correctament el tipus d'error
+        (domini, tall o signe) i corregir-lo.
+  \item Una asímptota vertical apareix on la funció \textbf{no està definida} (p.\,ex.
+        denominador zero): és un valor que \emph{no} pertany al domini, i per tant no
+        pot ser-hi cap punt de la gràfica, ni un tall. Un tall amb l'eix horitzontal, en
+        canvi, és un punt \emph{real} de la gràfica on $y=0$; són coses oposades.
+\end{sollist}
+\end{solucions}
