@@ -1,0 +1,163 @@
+% =====================================================================
+%  1bat-ud3-1.tex  —  HORA 1: Què és una funció? Relacions de la vida quotidiana
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — Què és una funció? Relacions de la vida quotidiana}%
+{De les relacions de dependència quotidianes a la idea de funció: una magnitud que depèn d'una altra.}
+
+\subsection{Idea clau}
+
+A la UD2 vam aprendre a posar una \textbf{lletra} a una quantitat desconeguda i a
+escriure expressions com $2x$ o $8x+100$. Ara fem un pas més: moltes vegades una
+magnitud \textbf{depèn} d'una altra. El cost de la llum depèn dels kWh consumits;
+l'ajut que rep cada família depèn de quantes famílies se'l reparteixen. Quan una
+magnitud queda determinada per una altra, diem que hi ha una \textbf{funció}.
+
+\begin{idea}
+\textbf{Què és una funció (de manera intuïtiva)}\\
+Una \textbf{funció} és una relació entre dues magnituds en què, per a cada valor de
+la primera (la variable de què \emph{depenem}, sovint $x$), n'obtenim
+\textbf{un de determinat} de la segona (la que \emph{depèn}, sovint $y$).
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item «$y$ \textbf{depèn de} $x$» \quad s'escriu \quad $y=f(x)$.
+  \item La mateixa dependència es pot llegir de \textbf{tres maneres}: amb una
+        \textbf{frase}, amb una \textbf{taula} de valors o amb una \textbf{gràfica}.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el cost del menjador depèn dels àpats]
+Un menjador comunitari cobra $2\eur$ per àpat. La recaptació $R$ \textbf{depèn} del
+nombre d'àpats $x$:
+\[
+R = f(x) = 2x \quad(\text{en euros}).
+\]
+Per a cada valor de $x$ n'obtenim \emph{un} de $R$: si $x=10$, aleshores $R=20\eur$;
+si $x=120$, aleshores $R=240\eur$. La taula de valors ho deixa clar:
+
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+Àpats $x$ & $10$ & $50$ & $120$ \\
+\midrule
+Recaptació $R$ ($\eur$) & $20$ & $100$ & $240$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Aquí $x$ és la \textbf{variable independent} (la que decidim) i $R$ la
+\textbf{variable dependent} (la que en surt).
+\end{exemple}
+
+\begin{exemple}[l'ajut per família depèn del nombre de famílies]
+Un fons d'emergència de $\num{1200}\eur$ es reparteix a parts iguals entre les
+famílies afectades. Els diners $D$ que rep cada família \textbf{depenen} del nombre
+de famílies $x$:
+\[
+D = f(x) = \frac{\num{1200}}{x} \quad(\text{en euros}).
+\]
+Si $x=2$ famílies, cadascuna rep $600\eur$; si $x=4$, en rep $300\eur$; si n'hi ha
+moltes, cadascuna en rep cada cop menys. Una mateixa relació, escrita en una sola
+expressió, val per a \emph{qualsevol} nombre de famílies.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[identificar qui depèn de qui]
+En cada situació, digues quina magnitud és la \textbf{variable independent} ($x$) i
+quina és la \textbf{dependent} ($y$):
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item El cost mensual de la llum segons els kWh consumits.
+  \item El temps total d'atenció segons el nombre de visites a domicili.
+  \item Els diners recaptats en una rifa solidària segons els bitllets venuts.
+\end{enumerate}
+\solucio
+La variable independent és \emph{la causa} (allò que fem variar) i la dependent és
+\emph{el resultat} (allò que en surt):
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item Independent: kWh consumits. Dependent: cost de la llum.
+  \item Independent: nombre de visites. Dependent: temps total d'atenció.
+  \item Independent: bitllets venuts. Dependent: diners recaptats.
+\end{enumerate}
+\resposta{En els tres casos, el \emph{resultat} (cost, temps, diners) depèn de la \emph{causa} (kWh, visites, bitllets).}
+\end{exresolt}
+
+\begin{exresolt}[de la frase a la taula]
+Una treballadora familiar fa visites a domicili de $45$ minuts cadascuna. El temps
+total $T$ depèn del nombre de visites $x$. Escriu la relació com a funció i completa
+la taula per a $x=1,2,3,4$ visites.
+\solucio
+Cada visita són $45$ minuts, i en fa $x$, per tant $T=f(x)=45x$ (en minuts).
+Substituïm cada valor de $x$:
+\[
+f(1)=45,\quad f(2)=90,\quad f(3)=135,\quad f(4)=180.
+\]
+\begin{center}
+\begin{tabular}{c c c c c}
+\toprule
+Visites $x$ & $1$ & $2$ & $3$ & $4$ \\
+\midrule
+Temps $T$ (min) & $45$ & $90$ & $135$ & $180$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\resposta{$T=f(x)=45x$; la taula dóna $45,\ 90,\ 135,\ 180$ minuts.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item En cada cas, indica quina és la variable \textbf{independent} i quina la
+        \textbf{dependent}:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item El preu total de la compra segons el nombre de productes.
+      \item La nota d'un treball segons les hores dedicades.
+      \item L'aigua que consumeix un casal segons el nombre d'infants.
+    \end{enumerate}
+  \item Un casal cobra $4\eur$ per infant i activitat. El cost total $C$ depèn del
+        nombre d'infants $x$. Escriu $C=f(x)$ i calcula $f(5)$, $f(20)$ i $f(35)$.
+  \item Una associació ven samarretes solidàries a $8\eur$ cadascuna. Els diners
+        recaptats $D$ depenen de les samarretes venudes $x$. Escriu $D=f(x)$ i
+        completa una taula per a $x=10,25,50$.
+  \item Un fons de $\num{600}\eur$ es reparteix a parts iguals entre $x$ persones
+        voluntàries. Els diners $D$ que rep cadascuna depenen de $x$. Escriu
+        $D=f(x)$ i calcula què rep cada persona si $x=3$, $x=6$ i $x=12$.
+  \item \textbf{(Interpretació)} Mira la taula següent, que relaciona el nombre
+        d'usuaris d'un servei amb el cost mensual:
+        \begin{center}
+        \begin{tabular}{c c c c}
+        \toprule
+        Usuaris $x$ & $10$ & $20$ & $30$ \\
+        \midrule
+        Cost $C$ ($\eur$) & $250$ & $450$ & $650$ \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+        Quants euros augmenta el cost cada cop que entren $10$ usuaris nous? Quin
+        creus que seria el cost amb $0$ usuaris?
+  \item \textbf{(Raonament)} Escriu \emph{amb les teves paraules} què és per a tu una
+        funció i posa un exemple propi, de l'àmbit social o de la vida diària, de
+        dues magnituds en què una depengui de l'altra. Indica quina és la variable
+        independent i quina la dependent.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item (a) Indep.: nombre de productes; dep.: preu total. \quad
+        (b) Indep.: hores dedicades; dep.: nota. \quad
+        (c) Indep.: nombre d'infants; dep.: aigua consumida.
+  \item $C=f(x)=4x$; \quad $f(5)=20\eur$, \quad $f(20)=80\eur$, \quad $f(35)=140\eur$.
+  \item $D=f(x)=8x$; \quad taula: $x=10\rightarrow 80\eur$, \quad
+        $x=25\rightarrow 200\eur$, \quad $x=50\rightarrow 400\eur$.
+  \item $D=f(x)=\dfrac{\num{600}}{x}$; \quad $f(3)=200\eur$, \quad
+        $f(6)=100\eur$, \quad $f(12)=50\eur$.
+  \item El cost augmenta $200\eur$ cada $10$ usuaris nous. Amb $0$ usuaris, el cost
+        seria $50\eur$ (la part fixa: $250-200=50$).
+  \item Resposta oberta. Exemple vàlid: «els diners d'una guardiola segons les
+        setmanes que hi estalvio» $\rightarrow$ indep.: setmanes; dep.: diners.
+\end{sollist}
+\end{solucions}

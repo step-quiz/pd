@@ -117,3 +117,25 @@
 \setlist[sollist]{label=\textbf{\thesection.\arabic*}, leftmargin=2.6em,
   itemsep=3pt, topsep=3pt}
 
+% =====================================================================
+%  Gràfiques de funcions (pgfplots) — estil comú de la col·lecció
+%  Requereix tikz + pgfplots carregats al preàmbul (main.tex / wrapper).
+%  Es defineix aquí perquè usa els colors udgrey i udline ja existents.
+% =====================================================================
+\pgfplotsset{
+  udaxis/.style={
+    axis lines=middle,
+    axis line style={-{Stealth[length=2mm]}, udgrey},
+    tick style={udgrey},
+    label style={font=\small\color{udgrey}},
+    tick label style={font=\scriptsize\color{udgrey}},
+    grid=both,
+    major grid style={line width=0.2pt, draw=udline},
+    minor tick num=0,
+    every axis plot/.append style={line width=1.1pt},
+    width=8.4cm, height=6cm,
+  },
+}
+
+% Peu de figura breu i sobri (s'escriu dins d'un center, després del dibuix).
+\newcommand{\figcap}[1]{\par\smallskip{\small\color{udgrey}\itshape #1}}

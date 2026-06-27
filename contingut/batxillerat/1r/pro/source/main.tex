@@ -35,6 +35,14 @@
 \tcbuselibrary{breakable,skins}
 \usepackage{graphicx}
 
+% ------- Gràfiques (funcions, eixos, corbes) ------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+% (l'estil comú d'eixos "udaxis" es defineix a defs.tex, on ja
+%  existeixen els colors udgrey i udline)
+
 \usepackage[colorlinks=true, linkcolor=udnavy, urlcolor=udblue,
             citecolor=udnavy]{hyperref}
 

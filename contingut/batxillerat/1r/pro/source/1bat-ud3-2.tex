@@ -1,0 +1,226 @@
+% =====================================================================
+%  1bat-ud3-2.tex  —  HORA 2: Gràfiques mudes: llegir fenòmens socials
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 2 — Gràfiques mudes: llegir fenòmens socials}%
+{Aparellar cada gràfica amb el fenomen que representa i fer emergir el vocabulari de l'anàlisi de funcions.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vam veure que una funció és una magnitud que \textbf{depèn}
+d'una altra, i que es pot llegir amb una frase, una taula o una \textbf{gràfica}.
+Avui ens centrem en la gràfica: la \emph{forma} d'una corba ja explica moltes coses
+del fenomen, encara sense números. Una gràfica «muda» (sense valors als eixos) ens
+permet preguntar-nos si una magnitud \textbf{creix} o \textbf{decreix}, si arriba a
+un \textbf{màxim}, o si s'acosta a un límit sense tocar-lo.
+
+\begin{idea}
+\textbf{Vocabulari que farem servir per descriure una gràfica}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Creix}: a mesura que avancem cap a la dreta, la corba puja.
+  \item \textbf{Decreix}: a mesura que avancem cap a la dreta, la corba baixa.
+  \item \textbf{Màxim} (o mínim): un punt més alt (o més baix) que els del voltant.
+  \item \textbf{S'acosta a un límit}: la corba s'aproxima a un valor sense arribar-hi
+        mai (més endavant en direm \emph{asímptota}).
+\end{itemize}
+La regla d'or de la lectura social: \textbf{la forma ha de tenir sentit}. Un cost no
+pot ser negatiu; un nombre de persones no pot baixar de zero.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[quatre formes per a quatre fenòmens]
+Aquestes són quatre gràfiques mudes típiques. Fixa't només en la \emph{forma}:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=6.6cm, height=4.6cm, xtick=\empty, ytick=\empty,
+    xmin=0, xmax=10, ymin=0, ymax=10, title={\small\color{udnavy}(A)}]
+  \addplot[udblue, domain=0:9.5]{0.9*x+0.5};
+\end{axis}
+\begin{axis}[udaxis, width=6.6cm, height=4.6cm, xtick=\empty, ytick=\empty,
+    xmin=0, xmax=10, ymin=0, ymax=10, xshift=6.4cm, title={\small\color{udnavy}(B)}]
+  \addplot[udblue, domain=0:10, samples=80]{-0.34*(x-5)^2+9};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=6.6cm, height=4.6cm, xtick=\empty, ytick=\empty,
+    xmin=0, xmax=10, ymin=0, ymax=10, title={\small\color{udnavy}(C)}]
+  \addplot[udblue, domain=0.6:10, samples=100]{5/x+0.3};
+\end{axis}
+\begin{axis}[udaxis, width=6.6cm, height=4.6cm, xtick=\empty, ytick=\empty,
+    xmin=0, xmax=10, ymin=0, ymax=10, xshift=6.4cm, title={\small\color{udnavy}(D)}]
+  \addplot[udblue, domain=0:10, samples=120]{5+2.6*sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\figcap{Quatre formes bàsiques: recta creixent, corba amb màxim, decreixent cap a un límit, i amb pujades i baixades.}
+\end{center}
+
+\noindent Llegim-les: \textbf{(A)} creix sempre al mateix ritme (una recta);
+\textbf{(B)} creix, arriba a un \textbf{màxim} i després decreix; \textbf{(C)}
+decreix de pressa i després s'acosta a un límit sense arribar-hi; \textbf{(D)}
+puja i baixa diverses vegades.
+\end{exemple}
+
+\begin{exemple}[de la forma al fenomen]
+Quin fenomen social podria correspondre a cada forma de l'exemple anterior?
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{(A)} El cost de la llum segons els kWh consumits: com més consum,
+        més cost, i sempre al mateix preu per kWh $\rightarrow$ \emph{recta creixent}.
+  \item \textbf{(C)} Un fons repartit entre cada cop més famílies: com més famílies,
+        menys rep cadascuna, acostant-se a zero $\rightarrow$ \emph{decreixent cap a un límit}.
+\end{itemize}
+La mateixa forma matemàtica pot descriure realitats molt diferents; per això cal
+\textbf{argumentar} per què una forma encaixa amb un fenomen.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[aparellar gràfica i fenomen]
+Tenim tres fenòmens i tres gràfiques mudes. Aparella'ls i justifica:
+\begin{enumerate}[label=\arabic*., leftmargin=1.6em]
+  \item L'estalvi acumulat en una guardiola si hi poso la mateixa quantitat cada setmana.
+  \item La temperatura d'un cafè que es va refredant fins a la temperatura de l'habitació.
+  \item El nombre de contagiats d'un brot que creix, fa cim i després baixa.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=5.2cm, height=4cm, xtick=\empty, ytick=\empty,
+    xmin=0, xmax=10, ymin=0, ymax=10, title={\small\color{udnavy}(I)}]
+  \addplot[udblue, domain=0:9.5]{0.95*x+0.3};
+\end{axis}
+\begin{axis}[udaxis, width=5.2cm, height=4cm, xtick=\empty, ytick=\empty,
+    xmin=0, xmax=10, ymin=0, ymax=10, xshift=5.0cm, title={\small\color{udnavy}(II)}]
+  \addplot[udblue, domain=0:10, samples=100]{2+7*exp(-0.5*x)};
+\end{axis}
+\begin{axis}[udaxis, width=5.2cm, height=4cm, xtick=\empty, ytick=\empty,
+    xmin=0, xmax=10, ymin=0, ymax=10, xshift=10.0cm, title={\small\color{udnavy}(III)}]
+  \addplot[udblue, domain=0:10, samples=80]{-0.34*(x-5)^2+9};
+\end{axis}
+\end{tikzpicture}
+\figcap{Tres gràfiques mudes per aparellar.}
+\end{center}
+
+\solucio
+Mirem quina \emph{forma} té sentit per a cada història:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item L'estalvi puja sempre al mateix ritme (mateixa quantitat cada setmana):
+        forma de \textbf{recta creixent} $\rightarrow$ \textbf{(I)}.
+  \item El cafè baixa de pressa al principi i s'acosta a la temperatura de
+        l'habitació sense baixar-ne més: \textbf{decreix cap a un límit}
+        $\rightarrow$ \textbf{(II)}.
+  \item El brot puja, fa \textbf{màxim} i baixa: corba amb un cim $\rightarrow$ \textbf{(III)}.
+\end{itemize}
+\resposta{$1\rightarrow$ (I), \quad $2\rightarrow$ (II), \quad $3\rightarrow$ (III).}
+\end{exresolt}
+
+\begin{exresolt}[descriure amb el vocabulari correcte]
+Observa la gràfica del repartiment d'un fons d'emergència entre $x$ famílies.
+Descriu-la amb el vocabulari de la idea clau i interpreta-la socialment.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=5cm, xtick=\empty, ytick=\empty,
+    xlabel={\small nombre de famílies}, ylabel={\small \euro\ per família},
+    xmin=0, xmax=10, ymin=0, ymax=10]
+  \addplot[udblue, domain=0.55:10, samples=120]{5/x};
+  \draw[udline, dashed] (axis cs:0,0) -- (axis cs:10,0);
+\end{axis}
+\end{tikzpicture}
+\figcap{Diners que rep cada família segons el nombre de famílies.}
+\end{center}
+
+\solucio
+La corba \textbf{decreix} sempre: com més famílies, menys rep cadascuna. Al
+principi baixa molt de pressa i després cada cop més a poc a poc, \textbf{acostant-se
+a zero} sense arribar-hi mai. Socialment: si el fons s'ha de repartir entre moltes
+famílies, l'ajut per família es fa tan petit que pràcticament desapareix; els
+recursos «s'esgoten» en repartir-los massa.
+\resposta{Funció \emph{decreixent} que s'acosta a zero sense tocar-lo; com més
+famílies, menys ajut per cadascuna.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a cada gràfica, digues si \textbf{creix}, \textbf{decreix} o té un
+        \textbf{màxim}:
+
+        \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[udaxis, width=5cm, height=3.8cm, xtick=\empty, ytick=\empty,
+            xmin=0, xmax=10, ymin=0, ymax=10, title={\small\color{udnavy}(a)}]
+          \addplot[udblue, domain=0:10, samples=80]{-0.32*(x-6)^2+9.5};
+        \end{axis}
+        \begin{axis}[udaxis, width=5cm, height=3.8cm, xtick=\empty, ytick=\empty,
+            xmin=0, xmax=10, ymin=0, ymax=10, xshift=4.8cm, title={\small\color{udnavy}(b)}]
+          \addplot[udblue, domain=0:9.5]{-0.85*x+9};
+        \end{axis}
+        \begin{axis}[udaxis, width=5cm, height=3.8cm, xtick=\empty, ytick=\empty,
+            xmin=0, xmax=10, ymin=0, ymax=10, xshift=9.6cm, title={\small\color{udnavy}(c)}]
+          \addplot[udblue, domain=0:9.5]{0.8*x+1};
+        \end{axis}
+        \end{tikzpicture}
+        \figcap{Tres gràfiques per descriure.}
+\end{center}
+
+  \item Dibuixa \emph{tu} (a mà, en la teva llibreta) una gràfica muda que
+        representi cada situació, sense números:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item El cost total d'un casal segons el nombre d'infants (preu fix per infant).
+          \item L'aigua que queda en un dipòsit que es va buidant.
+        \end{enumerate}
+  \item Associa cada frase amb la forma que li correspon (recta creixent,
+        decreixent cap a un límit, o corba amb màxim):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «Els diners recaptats en una rifa segons els bitllets venuts.»
+          \item «El rendiment d'una activitat segons les hores: millora, fa cim i
+                empitjora per cansament.»
+          \item «La concentració d'un medicament al cos, que va baixant amb les hores.»
+        \end{enumerate}
+  \item Mira la gràfica de l'evolució de l'atur en una comarca durant uns anys.
+        Indica \textbf{un} tram en què creix i \textbf{un} tram en què decreix.
+
+        \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[udaxis, width=8.6cm, height=4.6cm, xtick=\empty, ytick=\empty,
+            xlabel={\small anys}, ylabel={\small atur},
+            xmin=0, xmax=10, ymin=0, ymax=10]
+          \addplot[udblue, domain=0:10, samples=160]{5+2.6*sin(deg(0.9*x))-0.15*x+1};
+        \end{axis}
+        \end{tikzpicture}
+        \figcap{Evolució de l'atur al llarg dels anys (gràfica muda).}
+\end{center}
+
+  \item \textbf{(Compte amb la lectura)} Algú diu: «aquesta gràfica baixa, per tant
+        el fenomen és dolent». Explica per què aquesta afirmació pot ser falsa, posant
+        un exemple social en què una gràfica \emph{decreixent} sigui una bona notícia.
+  \item \textbf{(Raonament)} Tria un fenomen del teu entorn (àmbit social, casa,
+        institut) i descriu-ne l'evolució amb el vocabulari d'avui: digues si creix,
+        decreix, si té algun màxim o si s'acosta a algun límit. No cal cap número.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item (a) Té un \textbf{màxim} (puja i després baixa). \quad
+        (b) \textbf{Decreix}. \quad (c) \textbf{Creix}.
+  \item Resposta gràfica oberta. (a) Recta creixent que parteix de l'origen (cost
+        proporcional als infants). (b) Corba \emph{decreixent} fins a zero (el dipòsit
+        es buida). Es valora la forma coherent, no els números.
+  \item (a) Recta creixent. \quad (b) Corba amb màxim. \quad
+        (c) Decreixent cap a un límit (s'acosta a zero).
+  \item Resposta oberta segons lectura: hi ha trams de pujada (creix) i de baixada
+        (decreix) alternats; n'hi ha prou d'assenyalar-ne un de cada amb coherència.
+  \item Resposta oberta. Exemple vàlid: la gràfica del nombre de persones sense llar
+        ateses que encara no tenen habitatge \emph{decreix} si el servei funciona; o el
+        temps d'espera d'una llista que baixa. Decréixer no és, en si mateix, dolent.
+  \item Resposta oberta. Es valora l'ús correcte del vocabulari (creix/decreix/màxim/límit)
+        i la coherència amb el fenomen triat.
+\end{sollist}
+\end{solucions}
