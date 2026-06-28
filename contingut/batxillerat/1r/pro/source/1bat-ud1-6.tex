@@ -1,0 +1,120 @@
+% =====================================================================
+%  1bat-ud1-6.tex  —  HORA 6: El parany del signe negatiu (resoldre inequacions)
+% =====================================================================
+\horatitol{Sessió 6 — El parany del signe negatiu: com es resolen les inequacions}%
+{Per què, en dividir o multiplicar per un nombre negatiu, la desigualtat gira de sentit.}
+
+\subsection{Idea clau}
+
+Resoldre una inequació s'assembla molt a resoldre una equació: aïllem la $x$. Però
+hi ha \textbf{un parany}: quan multipliquem o dividim els dos costats per un nombre
+\textbf{negatiu}, el sentit de la desigualtat \textbf{gira}. Aquesta és la regla que
+més errors causa, i avui la descobrirem amb un experiment.
+
+\begin{idea}
+\textbf{Les tres regles per transformar una inequació} (sense canviar-ne la solució):
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Sumar o restar} el mateix a tots dos costats: el sentit
+        \textbf{es manté}.
+  \item \textbf{Multiplicar o dividir} per un nombre \textbf{positiu}: el sentit
+        \textbf{es manté}.
+  \item \textbf{Multiplicar o dividir} per un nombre \textbf{negatiu}: el sentit
+        \textbf{gira} ($<$ passa a $>$, $\le$ passa a $\ge$, i al revés).
+\end{enumerate}
+\textbf{Per què gira?} Sabem que $2<5$. Si multipliquem per $-1$: $-2$ i $-5$. Però
+$-2>-5$! La desigualtat s'ha girat: per això, en operar amb negatius, cal capgirar
+el símbol.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[l'experiment del conflicte]
+Resolem $-2x+10\le 4$. Aïllem el terme amb $x$ restant $10$:
+\[
+-2x\le 4-10 \;\Rightarrow\; -2x\le -6.
+\]
+Ara dividim per $-2$. Com que és \textbf{negatiu}, \textbf{girem} el símbol:
+\[
+x\ge \frac{-6}{-2} \;\Rightarrow\; x\ge 3.
+\]
+\textbf{Comprovació:} provem $x=5$ (que compleix $x\ge 3$) a l'original:
+$-2\cdot 5+10=0\le 4$, cert. Si \emph{no} haguéssim girat el símbol, hauríem escrit
+$x\le 3$, i $x=0$ donaria $10\le 4$, fals. Per tant, girar és imprescindible.
+\end{exemple}
+
+\begin{exemple}[amb parèntesis]
+Resolem $3(x-2)-5x\le 4x+6$. Primer desfem el parèntesi i agrupem:
+\[
+3x-6-5x\le 4x+6 \;\Rightarrow\; -2x-6\le 4x+6.
+\]
+Passem les $x$ a un costat i els números a l'altre:
+\[
+-2x-4x\le 6+6 \;\Rightarrow\; -6x\le 12.
+\]
+Dividim per $-6$ (negatiu) i \textbf{girem}:
+\[
+x\ge \frac{12}{-6} \;\Rightarrow\; x\ge -2.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[sense canvi de signe]
+Resol $2x+3>11$ i escriu la solució en forma d'interval.
+\solucio
+\[
+2x>11-3 \;\Rightarrow\; 2x>8 \;\Rightarrow\; x>\frac{8}{2} \;\Rightarrow\; x>4.
+\]
+Dividim per $2$ (positiu): el símbol \emph{no} gira. Solució: $x>4$, interval
+$(4,+\infty)$.
+\resposta{$x>4$, és a dir $(4,+\infty)$.}
+\end{exresolt}
+
+\begin{exresolt}[amb canvi de signe i comprovació]
+Resol $5-3x\le 2$, escriu la solució en interval i comprova-la.
+\solucio
+\[
+-3x\le 2-5 \;\Rightarrow\; -3x\le -3.
+\]
+Dividim per $-3$ (negatiu) i \textbf{girem}:
+\[
+x\ge \frac{-3}{-3} \;\Rightarrow\; x\ge 1.
+\]
+Interval $[1,+\infty)$. \textbf{Comprovació} amb $x=2$ (compleix $x\ge 1$):
+$5-3\cdot 2=-1\le 2$, cert.
+\resposta{$x\ge 1$, interval $[1,+\infty)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Per a cadascuna: resol, escriu la solució en forma d'interval i
+comprova-la amb un valor.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item $x+5>9$
+  \item $3x-2\le 10$
+  \item $-x+4\ge 1$ \quad (compte amb el signe!)
+  \item $-2x-1<5$ \quad (compte amb el signe!)
+  \item $4x+3\ge 2x+11$
+  \item \textbf{(Amb parèntesis)} $2(x-3)\le x-1$
+  \item \textbf{(Caça l'error)} Algú resol $-4x>8$ així: «$x>\dfrac{8}{-4}=-2$, per
+        tant $x>-2$». On és l'error? Resol-la correctament.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item $x>4$, interval $(4,+\infty)$.
+  \item $3x\le 12 \Rightarrow x\le 4$, interval $(-\infty,4]$.
+  \item $-x\ge -3$; dividim per $-1$ i girem: $x\le 3$, interval $(-\infty,3]$.
+  \item $-2x<6$; dividim per $-2$ i girem: $x>-3$, interval $(-3,+\infty)$.
+  \item $4x-2x\ge 11-3 \Rightarrow 2x\ge 8 \Rightarrow x\ge 4$, interval $[4,+\infty)$.
+  \item $2x-6\le x-1 \Rightarrow 2x-x\le -1+6 \Rightarrow x\le 5$, interval $(-\infty,5]$.
+  \item L'error és \textbf{no girar} el símbol en dividir per $-4$ (negatiu). El
+        correcte: $-4x>8 \Rightarrow x<\dfrac{8}{-4} \Rightarrow x<-2$, interval
+        $(-\infty,-2)$.
+\end{sollist}
+\end{solucions}

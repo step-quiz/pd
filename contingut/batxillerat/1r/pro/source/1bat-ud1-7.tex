@@ -1,0 +1,116 @@
+% =====================================================================
+%  1bat-ud1-7.tex  —  HORA 7: Gimnàstica d'inequacions (mecanització i verificació)
+% =====================================================================
+\horatitol{Sessió 7 — Gimnàstica d'inequacions: mecanització i verificació}%
+{Guanyar destresa resolent inequacions de tot tipus, escrivint la solució en interval i comprovant-la.}
+
+\subsection{Idea clau}
+
+Ja coneixem les tres regles (i el parany del signe). Avui les automatitzem amb una
+bateria d'inequacions de dificultat creixent. La rutina de cada exercici serà sempre
+la mateixa: \textbf{resoldre}, \textbf{escriure la solució en forma d'interval} i
+\textbf{comprovar-la} substituint un valor.
+
+\begin{idea}
+\textbf{Rutina de treball} per a cada inequació:
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Simplifica}: desfés parèntesis i, si hi ha fraccions, multiplica per
+        treure els denominadors.
+  \item \textbf{Agrupa}: les $x$ a un costat, els números a l'altre.
+  \item \textbf{Aïlla} la $x$, \textbf{girant} el símbol si divideixes per un negatiu.
+  \item \textbf{Escriu} la solució en interval i \textbf{comprova} amb un valor.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[amb fraccions]
+Resolem $\dfrac{x+1}{2}-1>\dfrac{x}{3}$. Multipliquem tot per $6$ (el mínim comú
+denominador) per treure les fraccions:
+\[
+6\cdot\frac{x+1}{2}-6\cdot 1>6\cdot\frac{x}{3}
+\;\Rightarrow\; 3(x+1)-6>2x.
+\]
+Desfem el parèntesi i agrupem:
+\[
+3x+3-6>2x \;\Rightarrow\; 3x-3>2x \;\Rightarrow\; 3x-2x>3 \;\Rightarrow\; x>3.
+\]
+Solució: $(3,+\infty)$.
+\end{exemple}
+
+\begin{exemple}[el terme en $x$ queda negatiu]
+Resolem $4x-7\ge 7x+5$. Agrupem:
+\[
+4x-7x\ge 5+7 \;\Rightarrow\; -3x\ge 12.
+\]
+Dividim per $-3$ (negatiu) i \textbf{girem}:
+\[
+x\le \frac{12}{-3} \;\Rightarrow\; x\le -4.
+\]
+Solució: $(-\infty,-4]$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[doble parèntesi amb signe negatiu]
+Resol $-2(x-4)\le 3x-1$, dóna la solució en interval i comprova-la.
+\solucio
+Desfem el parèntesi (compte amb el signe del $-2$):
+\[
+-2x+8\le 3x-1.
+\]
+Agrupem les $x$ a la dreta i els números a l'esquerra (així el coeficient de $x$
+queda positiu i evitem girar):
+\[
+8+1\le 3x+2x \;\Rightarrow\; 9\le 5x \;\Rightarrow\; \frac{9}{5}\le x.
+\]
+És a dir $x\ge\dfrac{9}{5}=1,8$. Interval $[1,8;\,+\infty)$. \textbf{Comprovació} amb
+$x=2$: $-2(2-4)=4$ i $3\cdot 2-1=5$; $4\le 5$, cert.
+\resposta{$x\ge 1,8$, interval $[1,8;\,+\infty)$.}
+\end{exresolt}
+
+\begin{exresolt}[verificar una solució proposada]
+Per a la inequació $2x+3>11$, digues si $x=3$ és una solució vàlida i comprova-ho.
+\solucio
+Resolent: $2x>8 \Rightarrow x>4$. El valor $x=3$ \textbf{no} compleix $x>4$, així que
+\emph{no} hauria de ser solució. Comprovem substituint a l'original: $2\cdot 3+3=9$,
+i $9>11$ és \textbf{fals}. Confirmat: $x=3$ no és solució.
+\resposta{No: $x=3$ dóna $9>11$, que és fals; la solució és $x>4$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Per a cadascuna: resol, escriu la solució en interval i comprova-la
+amb un valor.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item $2x+3>11$
+  \item $5-3x\le 2$
+  \item $3(x-2)-5x\le 4x+6$
+  \item $\dfrac{x+1}{2}-1>\dfrac{x}{3}$
+  \item $-2(x-4)\le 3x-1$
+  \item $4x-7\ge 7x+5$
+  \item \textbf{(Validació)} Per a la inequació de l'exercici 3, digues si $x=0$ és
+        solució i comprova-ho substituint.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item $2x>8 \Rightarrow x>4$, interval $(4,+\infty)$.
+  \item $-3x\le -3$; girem: $x\ge 1$, interval $[1,+\infty)$.
+  \item $3x-6-5x\le 4x+6 \Rightarrow -2x-6\le 4x+6 \Rightarrow -6x\le 12$; girem:
+        $x\ge -2$, interval $[-2,+\infty)$.
+  \item (Mult.\ per $6$) $3(x+1)-6>2x \Rightarrow 3x-3>2x \Rightarrow x>3$, interval
+        $(3,+\infty)$.
+  \item $-2x+8\le 3x-1 \Rightarrow 9\le 5x \Rightarrow x\ge 1,8$, interval
+        $[1,8;\,+\infty)$.
+  \item $-3x\ge 12$; girem: $x\le -4$, interval $(-\infty,-4]$.
+  \item Solució de l'exercici 3: $x\ge -2$. El valor $x=0$ \textbf{sí} que la compleix
+        ($0\ge -2$). Comprovació a l'original: $3(0-2)-5\cdot 0=-6$ i
+        $4\cdot 0+6=6$; $-6\le 6$, cert.
+\end{sollist}
+\end{solucions}

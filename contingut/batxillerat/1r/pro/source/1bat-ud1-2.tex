@@ -1,0 +1,139 @@
+% =====================================================================
+%  1bat-ud1-2.tex  —  HORA 2: Conjunts numèrics i la recta real
+% =====================================================================
+\horatitol{Sessió 2 — Conjunts numèrics i la recta real}%
+{Ordenar nombres a la recta, conèixer els conjunts $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ i entendre el valor absolut com a distància.}
+
+\subsection{Idea clau}
+
+A la diagnosi vam ordenar nombres. Avui hi posem nom i ordre. Tots els nombres que
+fem servir es poden col·locar sobre una \textbf{recta real}, i s'agrupen en
+\textbf{conjunts} encaixats. A més, presentem el \textbf{valor absolut}, una idea que
+més endavant ens servirà per parlar de «distància a un llindar».
+
+\begin{idea}
+\textbf{Els conjunts numèrics} (cada un dins del següent):
+\[
+\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $\mathbb{N}$ \textbf{naturals}: $0,1,2,3,\dots$ (per comptar).
+  \item $\mathbb{Z}$ \textbf{enters}: els naturals i els seus negatius: $\dots,-2,-1,0,1,2,\dots$
+  \item $\mathbb{Q}$ \textbf{racionals}: els que s'escriuen com a fracció $\tfrac{a}{b}$
+        (inclou decimals exactes i periòdics).
+  \item $\mathbb{R}$ \textbf{reals}: tots els anteriors \emph{més} els
+        \textbf{irracionals} (decimals infinits no periòdics, com $\sqrt{2}$ o $\pi$).
+\end{itemize}
+\textbf{Valor absolut} $|x|$: la \textbf{distància de $x$ a zero}, sempre positiva.
+Per exemple, $|{-5}|=5$ i $|3|=3$.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[a quin conjunt pertany cada nombre]
+Classifiquem alguns nombres pel conjunt \emph{més petit} que els conté:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $7$ és natural ($\in\mathbb{N}$), i per tant també enter, racional i real.
+  \item $-4$ és enter ($\in\mathbb{Z}$), però no natural.
+  \item $\tfrac{3}{5}=0,6$ és racional ($\in\mathbb{Q}$), però no enter.
+  \item $\sqrt{2}=1,4142\ldots$ és irracional: real ($\in\mathbb{R}$) però no racional.
+\end{itemize}
+Compte: $\sqrt{9}=3$ \emph{sí} que és natural, perquè l'arrel surt exacta.
+\end{exemple}
+
+\begin{exemple}[ordenar a la recta i valor absolut]
+Situem $-3$, $-\tfrac{1}{2}$, $1$ i $\tfrac{5}{2}$ sobre la recta real:
+
+\begin{center}
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-4,0) -- (3.4,0);
+  \foreach \x in {-3,-2,-1,0,1,2,3} \draw[udgrey] (\x,0.12) -- (\x,-0.12) node[below, font=\scriptsize]{$\x$};
+  \foreach \x/\l in {-3/-3, -0.5/{-\frac{1}{2}}, 1/1, 2.5/{\frac{5}{2}}}
+    \fill[udblue] (\x,0) circle (2pt);
+  \node[above, udblue, font=\scriptsize] at (-3,0.12) {$-3$};
+  \node[above, udblue, font=\scriptsize] at (-0.5,0.12) {$-\frac{1}{2}$};
+  \node[above, udblue, font=\scriptsize] at (1,0.12) {$1$};
+  \node[above, udblue, font=\scriptsize] at (2.5,0.12) {$\frac{5}{2}$};
+\end{tikzpicture}
+\end{center}
+
+\noindent Ordenats: $-3<-\tfrac{1}{2}<1<\tfrac{5}{2}$. Pel que fa a les distàncies a
+zero: $|{-3}|=3$ i $\left|\tfrac{5}{2}\right|=\tfrac{5}{2}=2,5$, així que $-3$ està
+\emph{més lluny} de zero que $\tfrac{5}{2}$, tot i ser «més petit».
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[comparar nombres negatius]
+Quin és més gran, $-3,2$ o $-3$? Justifica-ho.
+\solucio
+A la recta, $-3,2$ queda a l'\textbf{esquerra} de $-3$ (més avall de zero). Com que
+més a la dreta vol dir més gran:
+\[
+-3,2 < -3.
+\]
+Per tant $-3$ és el més gran. (Tot i que $|{-3,2}|=3,2>3=|{-3}|$: la distància a zero
+no diu quin és «més gran».)
+\resposta{$-3$ és més gran que $-3,2$, perquè $-3,2<-3$.}
+\end{exresolt}
+
+\begin{exresolt}[valor absolut i distància]
+Calcula $|{-7}|$, $|4|$ i $|0|$. Després, troba la distància entre $-7$ i $4$ a la
+recta.
+\solucio
+El valor absolut és la distància a zero: $|{-7}|=7$, $|4|=4$, $|0|=0$.
+
+La distància entre dos punts de la recta és el valor absolut de la seva diferència:
+\[
+|4-(-7)|=|4+7|=|11|=11.
+\]
+\resposta{$|{-7}|=7$, $|4|=4$, $|0|=0$; la distància entre $-7$ i $4$ és $11$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Classifica cada nombre indicant el conjunt \emph{més petit} que el conté
+        ($\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ o $\mathbb{R}$):
+        \[
+        5,\quad -2,\quad \tfrac{7}{3},\quad \sqrt{16},\quad \sqrt{5},\quad -0,75.
+        \]
+  \item Ordena de menor a major: $\;-1,\ -\tfrac{3}{2},\ 0,8,\ -\sqrt{4},\ \tfrac{1}{4}$.
+  \item Calcula els valors absoluts: $|{-9}|$, \ $|6|$, \ $\left|-\tfrac{2}{3}\right|$,
+        \ $|{-0,5}|$.
+  \item Digues quin nombre és més gran en cada parella:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $-5$ \ o \ $-2$
+          \item $-\tfrac{1}{2}$ \ o \ $-\tfrac{1}{3}$
+          \item $-4$ \ o \ $0$
+        \end{enumerate}
+  \item Calcula la distància a la recta entre cada parella de nombres (amb el valor
+        absolut de la diferència):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item entre $2$ i $9$ \hfill \item entre $-3$ i $5$ \hfill \item entre $-6$ i $-1$
+        \end{enumerate}
+  \item \textbf{(Exit ticket)} Respon amb una frase: «quin nombre és més gran,
+        $-3,2$ o $-3$?» i «quant val $|{-8}|$?».
+  \item \textbf{(Raonament)} És cert que un nombre i el seu oposat tenen el mateix
+        valor absolut? Posa un exemple i explica-ho amb la idea de «distància a zero».
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item $5\in\mathbb{N}$; \ $-2\in\mathbb{Z}$; \ $\tfrac{7}{3}\in\mathbb{Q}$; \
+        $\sqrt{16}=4\in\mathbb{N}$; \ $\sqrt{5}\in\mathbb{R}$ (irracional); \
+        $-0,75\in\mathbb{Q}$.
+  \item $-2\,(=-\sqrt{4}) \;<\; -\tfrac{3}{2} \;<\; -1 \;<\; \tfrac{1}{4} \;<\; 0,8$.
+  \item $|{-9}|=9$; \ $|6|=6$; \ $\left|-\tfrac{2}{3}\right|=\tfrac{2}{3}$; \
+        $|{-0,5}|=0,5$.
+  \item (a) $-2$; \quad (b) $-\tfrac{1}{3}$; \quad (c) $0$.
+  \item (a) $|9-2|=7$; \quad (b) $|5-(-3)|=8$; \quad (c) $|-1-(-6)|=5$.
+  \item $-3$ és més gran que $-3,2$; \quad $|{-8}|=8$.
+  \item Sí. Un nombre $a$ i el seu oposat $-a$ estan a la \emph{mateixa distància} de
+        zero, en costats oposats; per exemple $|5|=|{-5}|=5$. Per això $|a|=|{-a}|$.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,135 @@
+% =====================================================================
+%  1bat-ud1-9.tex  —  HORA 9: Diverses condicions alhora (sistemes i interseccions)
+% =====================================================================
+\horatitol{Sessió 9 — Diverses condicions alhora: sistemes i interseccions d'intervals}%
+{Quan cal complir dues condicions a la vegada: dos límits sobre una mateixa variable, o condicions sobre variables diferents.}
+
+\subsection{Idea clau}
+
+Molts ajuts reals exigeixen complir \textbf{diverses condicions a la vegada}. Per
+exemple, l'\textbf{ajut al lloguer jove} demana estar dins d'una franja d'edat
+\emph{i} no superar un llindar de renda. Avui aprenem a combinar condicions, i a
+distingir-ne dos tipus que no s'han de confondre.
+
+\begin{idea}
+\textbf{Dos tipus de «complir dues condicions alhora»:}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{(A) Dues condicions sobre la \emph{mateixa} variable.} Per exemple,
+        l'edat ha de ser $\ge 18$ \emph{i} $\le 35$. Es resol amb la
+        \textbf{intersecció} dels dos intervals sobre una mateixa recta: la part
+        \emph{comuna}. Aquí: $18\le x\le 35$, interval $[18,35]$.
+  \item \textbf{(B) Condicions sobre variables \emph{diferents}.} Per exemple, edat
+        \emph{i} renda. Cal complir \textbf{cada} inequació pel seu compte (cadascuna
+        amb la seva recta); només si es compleixen \textbf{totes} es té dret.
+\end{itemize}
+\textbf{La paraula clau és «i»}: totes les condicions s'han de complir simultàniament.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[cas A: intersecció sobre la mateixa recta]
+L'ajut al lloguer jove és per a persones de $18$ a $35$ anys (inclosos). Si $x$ és
+l'edat: $x\ge 18$ \emph{i} $x\le 35$. La intersecció és $[18,35]$:
+
+\begin{center}
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-0.5,0) -- (7,0);
+  \draw[udblue, line width=1.4pt] (1.5,0) -- (5,0);
+  \fill[udblue] (1.5,0) circle (2.4pt);
+  \fill[udblue] (5,0) circle (2.4pt);
+  \node[below, font=\scriptsize, udgrey] at (1.5,-0.14) {$18$};
+  \node[below, font=\scriptsize, udgrey] at (5,-0.14) {$35$};
+  \node[above, udblue, font=\scriptsize] at (3.25,0.12) {$[18,35]$};
+\end{tikzpicture}
+\end{center}
+
+\noindent Només les edats de la zona \emph{comuna} (entre $18$ i $35$, tots dos
+inclosos) compleixen alhora les dues condicions.
+\end{exemple}
+
+\begin{exemple}[cas B: variables diferents]
+A més de l'edat $[18,35]$, l'ajut demana que la renda anual no superi $\num{24000}\eur$:
+$\text{renda}\le\num{24000}$. Són \textbf{dues variables diferents} (edat i renda),
+cadascuna amb la seva condició. Una persona té dret \textbf{només si} compleix
+\emph{totes dues}: estar dins de $[18,35]$ \emph{i} tenir renda $\le\num{24000}\eur$.
+Si en falla una, no hi té dret.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[intersecció de dos intervals]
+Troba els valors de $x$ que compleixen alhora $x>-1$ \emph{i} $x\le 4$. Dóna el
+resultat com a interval.
+\solucio
+Busquem la part \textbf{comuna}: $x$ ha de ser més gran que $-1$ (sense incloure'l)
+\emph{i} menor o igual que $4$ (incloent-lo). Tots dos alhora:
+\[
+-1<x\le 4,
+\]
+és a dir l'interval $(-1,4]$.
+\resposta{$(-1,4]$.}
+\end{exresolt}
+
+\begin{exresolt}[decidir un perfil amb dues variables]
+L'ajut al lloguer jove demana edat dins de $[18,35]$ \emph{i} renda $\le\num{24000}\eur$.
+La Núria té $29$ anys i una renda de $\num{22500}\eur$. Hi té dret? I en Pau, de
+$31$ anys i renda $\num{26000}\eur$?
+\solucio
+\textbf{Núria:} edat $29\in[18,35]$, compleix; renda $\num{22500}\le\num{24000}$,
+compleix. Compleix totes dues $\rightarrow$ \textbf{sí} que hi té dret.
+
+\textbf{Pau:} edat $31\in[18,35]$, compleix; però renda
+$\num{26000}>\num{24000}$, \textbf{no} compleix. Com que en falla una, \textbf{no}
+hi té dret.
+\resposta{Núria: sí (compleix totes dues). Pau: no (se'n surt per renda).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Troba l'interval que compleix alhora les dues condicions:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $x\ge 2$ \ i \ $x<7$
+          \item $x>0$ \ i \ $x\le 10$
+          \item $x\ge -3$ \ i \ $x\le 3$
+        \end{enumerate}
+  \item Representa a la recta la intersecció de $x>1$ i $x\le 5$, marcant bé els extrems.
+  \item Per a l'ajut al lloguer jove (edat $[18,35]$ \emph{i} renda $\le\num{24000}\eur$),
+        decideix si hi tenen dret:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $20$ anys, renda $\num{18000}\eur$
+          \item $36$ anys, renda $\num{15000}\eur$
+          \item $25$ anys, renda $\num{24000}\eur$
+        \end{enumerate}
+  \item Un programa demana tenir \textbf{més de} $16$ anys \emph{i} \textbf{menys de}
+        $18$. Escriu la inequació doble i l'interval, i digues com és cada extrem.
+  \item \textbf{(Distingir A i B)} Per a cada situació, digues si és del tipus A
+        (dues condicions sobre la mateixa variable) o del tipus B (variables diferents):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «tenir entre $30$ i $40$ anys»
+          \item «tenir més de $18$ anys i estar empadronat al municipi»
+        \end{enumerate}
+  \item \textbf{(Cas límit)} La Sara té exactament $35$ anys i una renda de
+        \emph{just} $\num{24000}\eur$. Té dret a l'ajut? Justifica-ho fixant-te en si
+        els llindars són $\le$ (tancats) o $<$ (oberts).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $[2,7)$; \quad (b) $(0,10]$; \quad (c) $[-3,3]$.
+  \item Punt buit a $1$, punt ple a $5$, segment ressaltat entremig: interval $(1,5]$.
+  \item (a) sí (edat i renda compleixen); \quad (b) no ($36\notin[18,35]$); \quad
+        (c) sí (edat $25$ dins i renda $\num{24000}\le\num{24000}$, just al límit).
+  \item «més de $16$» és $x>16$ (obert) i «menys de $18$» és $x<18$ (obert):
+        $16<x<18$, interval $(16,18)$, tots dos extrems oberts.
+  \item (a) tipus A (dues condicions sobre l'edat); \quad (b) tipus B (edat i
+        empadronament són coses diferents).
+  \item Sí: l'edat $[18,35]$ i la renda $\le\num{24000}$ tenen els límits
+        \textbf{tancats}, així que tant els $35$ anys exactes com els $\num{24000}\eur$
+        exactes hi entren. La Sara compleix totes dues, just al límit.
+\end{sollist}
+\end{solucions}

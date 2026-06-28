@@ -1,0 +1,125 @@
+% =====================================================================
+%  1bat-ud1-12.tex  —  HORA 12: Tocant pressupostos gegants (operacions i interpretació)
+% =====================================================================
+\horatitol{Sessió 12 — Tocant pressupostos gegants: operacions i interpretació}%
+{Operar amb notació científica sobre xifres reals i valorar si l'ordre de magnitud del resultat té sentit.}
+
+\subsection{Idea clau}
+
+Ja sabem escriure xifres grans en notació científica. Avui les fem servir per
+\textbf{operar}: multiplicar i dividir pressupostos i poblacions, i sobretot
+\textbf{interpretar} si el resultat té sentit a la vida real.
+
+\begin{idea}
+\textbf{Operar en notació científica:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Multiplicar}: es multipliquen les mantisses i se \textbf{sumen} els
+        exponents. \quad $(a\times 10^{m})\cdot(b\times 10^{n})=(a\cdot b)\times 10^{m+n}$.
+  \item \textbf{Dividir}: es divideixen les mantisses i es \textbf{resten} els
+        exponents. \quad $\dfrac{a\times 10^{m}}{b\times 10^{n}}=\dfrac{a}{b}\times 10^{m-n}$.
+  \item Si la mantissa del resultat se'n surt de $[1,10)$, es \textbf{reajusta}.
+\end{itemize}
+\textbf{Pregunta clau sempre:} «aquest resultat \emph{té sentit} a la vida real?».
+L'ordre de magnitud (l'exponent) ens ho diu de seguida.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[euros per persona]
+Repartim el pressupost $3,326\times 10^{9}\eur$ entre $1,95\times 10^{6}$ persones en
+risc. Dividim mantisses i restem exponents:
+\[
+\frac{3,326\times 10^{9}}{1,95\times 10^{6}}
+=\frac{3,326}{1,95}\times 10^{9-6}
+\approx 1,71\times 10^{3}\eur.
+\]
+És a dir, uns $\num{1710}\eur$ per persona. \textbf{Té sentit?} Sí: és una xifra de
+l'ordre dels milers d'euros, raonable per a un ajut anual.
+\end{exemple}
+
+\begin{exemple}[una multiplicació]
+Si una ajuda mensual de $4\times 10^{2}\eur$ (és a dir $400\eur$) es paga a
+$5\times 10^{4}$ persones, el cost total mensual és:
+\[
+(4\times 10^{2})\cdot(5\times 10^{4})=(4\cdot 5)\times 10^{2+4}
+=20\times 10^{6}=2\times 10^{7}\eur.
+\]
+(Hem reajustat $20\times 10^{6}$ a $2\times 10^{7}$.) Són $\num{20000000}\eur$, és a
+dir $20$ milions: un ordre de magnitud creïble per a un programa d'aquesta mida.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[dividir dues xifres grans]
+Una partida de $1,8\times 10^{8}\eur$ es reparteix entre $3\times 10^{5}$
+beneficiaris. Quants euros toquen per persona?
+\solucio
+Dividim mantisses i restem exponents:
+\[
+\frac{1,8\times 10^{8}}{3\times 10^{5}}=\frac{1,8}{3}\times 10^{8-5}
+=0,6\times 10^{3}.
+\]
+Reajustem ($0,6\times 10^{3}=6\times 10^{2}$): $600\eur$ per persona.
+\resposta{$6\times 10^{2}=600\eur$ per persona.}
+\end{exresolt}
+
+\begin{exresolt}[valorar l'ordre de magnitud]
+Algú calcula que, repartint un pressupost de $3\times 10^{9}\eur$ entre $2\times 10^{6}$
+persones, toquen $1,5\times 10^{6}\eur$ per persona. És plausible? Troba l'error.
+\solucio
+Fem la divisió correctament: $\dfrac{3\times 10^{9}}{2\times 10^{6}}=1,5\times 10^{3}$,
+és a dir $\num{1500}\eur$ per persona. El resultat d'aquella persona, $1,5\times 10^{6}$
+($\num{1500000}\eur$ per persona!), és \textbf{absurd}: ningú no rep un milió i mig.
+L'error està en l'\textbf{exponent}: va restar malament ($9-6=3$, no $6$).
+\resposta{No és plausible; el correcte és $1,5\times 10^{3}=\num{1500}\eur$ per persona.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Multiplica (i reajusta si cal):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $(2\times 10^{3})\cdot(3\times 10^{4})$
+          \item $(5\times 10^{2})\cdot(6\times 10^{5})$
+        \end{enumerate}
+  \item Divideix (i reajusta si cal):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $\dfrac{8\times 10^{7}}{4\times 10^{3}}$
+          \item $\dfrac{2,4\times 10^{6}}{6\times 10^{2}}$
+        \end{enumerate}
+  \item Un pressupost de $3,326\times 10^{9}\eur$ es reparteix entre $1,95\times 10^{6}$
+        persones. Calcula els euros per persona (com a l'exemple) i digues si l'ordre
+        de magnitud té sentit.
+  \item Una ajuda de $300\eur$ mensuals es paga a $2\times 10^{4}$ famílies. Escriu
+        $300$ en notació científica, calcula el cost mensual total i expressa'l en
+        notació científica.
+  \item \textbf{(Ampliació)} Compara dues partides: una de $4\times 10^{8}\eur$ per a
+        $5\times 10^{5}$ persones i una altra de $9\times 10^{8}\eur$ per a
+        $1,5\times 10^{6}$ persones. Quina dóna més euros per persona?
+  \item \textbf{(Sentit del resultat)} En repartir un pressupost municipal entre els
+        habitants, surten $45\eur$ per habitant. Si en repartir el pressupost de tot un
+        país (molt més gran) entre molta més gent surten $1\,200\eur$ per habitant,
+        és coherent que la xifra per habitant sigui més gran? Comenta-ho.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $6\times 10^{7}$; \quad (b) $30\times 10^{7}=3\times 10^{8}$.
+  \item (a) $2\times 10^{4}$; \quad (b) $0,4\times 10^{4}=4\times 10^{3}$.
+  \item $\dfrac{3,326}{1,95}\times 10^{3}\approx 1,71\times 10^{3}\eur\approx\num{1710}\eur$
+        per persona. Sí, té sentit (ordre dels milers d'euros).
+  \item $300=3\times 10^{2}$; cost $=(3\times 10^{2})\cdot(2\times 10^{4})=6\times 10^{6}\eur$
+        ($6$ milions).
+  \item Primera: $\dfrac{4\times 10^{8}}{5\times 10^{5}}=0,8\times 10^{3}=800\eur$/persona.
+        Segona: $\dfrac{9\times 10^{8}}{1,5\times 10^{6}}=6\times 10^{2}=600\eur$/persona.
+        La \textbf{primera} dóna més per persona ($800>600$).
+  \item No és automàtic que un pressupost més gran doni més per habitant: depèn de la
+        \emph{relació} entre pressupost i població. Aquí, $1\,200\eur$ per habitant pot
+        ser coherent si el pressupost creix més de pressa que la població; cal mirar la
+        divisió, no només la mida del pressupost.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,121 @@
+% =====================================================================
+%  1bat-ud1-11.tex  —  HORA 11: Per què la notació científica? (descoberta)
+% =====================================================================
+\horatitol{Sessió 11 — Per què necessitem la notació científica?}%
+{Descobrir-ho amb pressupostos reals: una manera còmoda d'escriure i comparar xifres molt grans.}
+
+\subsection{Idea clau}
+
+Canviem de bloc. Fins ara hem treballat llindars i edats; ara mirem
+\textbf{xifres molt grans} de l'àmbit social: pressupostos públics, poblacions. Per
+exemple, el pressupost del Departament de Drets Socials o el nombre de persones en
+risc d'exclusió. Escriure tants zeros és incòmode i fàcil d'equivocar: la
+\textbf{notació científica} ho resol.
+
+\begin{idea}
+\textbf{Notació científica:} tot nombre gran s'escriu com
+\[
+a\times 10^{n},
+\]
+on $a$ és la \textbf{mantissa} (un nombre $\ge 1$ i $<10$, és a dir, amb una sola
+xifra abans de la coma) i $n$ és l'\textbf{exponent} (enter).
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item L'exponent $n$ \textbf{conta quantes posicions} es mou la coma.
+  \item Per a nombres grans, $n$ és \textbf{positiu}: $\num{3000}=3\times 10^{3}$.
+  \item A la calculadora apareix com \texttt{3E3} o \texttt{3\,EXP\,3}.
+\end{itemize}
+\textbf{Exemple guia:} $\num{3326000000}=3,326\times 10^{9}$ (la coma s'ha mogut $9$
+llocs cap a l'esquerra).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el pressupost de Drets Socials]
+El pressupost és d'uns $\num{3326}$ milions d'euros, és a dir
+$\num{3326000000}\eur$. Comptem quants llocs hem de moure la coma fins a deixar una
+sola xifra al davant ($3,326$):
+\[
+\num{3326000000} = 3{,}326\times 10^{9}\eur.
+\]
+Molt més còmode que escriure els nou zeros, i més difícil d'equivocar.
+\end{exemple}
+
+\begin{exemple}[la població en risc d'exclusió]
+D'una població d'uns $8$ milions d'habitants, un $24,4\%$ està en risc d'exclusió.
+Primer el càlcul:
+\[
+0,244\times\num{8000000}=\num{1952000}\text{ persones}.
+\]
+En notació científica, movem la coma fins a deixar una xifra al davant ($1,952$):
+\[
+\num{1952000}\approx 1{,}95\times 10^{6}\text{ persones}.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[passar a notació científica]
+Escriu en notació científica: (a) $\num{45000}$; \ (b) $\num{2300000}$; \
+(c) $\num{870}$.
+\solucio
+Movem la coma fins a deixar una xifra (entre $1$ i $9$) al davant, i comptem els llocs:
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item $\num{45000}=4,5\times 10^{4}$ (la coma es mou $4$ llocs).
+  \item $\num{2300000}=2,3\times 10^{6}$ (6 llocs).
+  \item $\num{870}=8,7\times 10^{2}$ (2 llocs).
+\end{enumerate}
+\resposta{(a) $4,5\times 10^{4}$; (b) $2,3\times 10^{6}$; (c) $8,7\times 10^{2}$.}
+\end{exresolt}
+
+\begin{exresolt}[de notació científica a nombre normal]
+Escriu com a nombre «normal»: (a) $5\times 10^{5}$; \ (b) $1,2\times 10^{7}$.
+\solucio
+L'exponent diu quants llocs movem la coma cap a la \textbf{dreta} (afegint zeros):
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item $5\times 10^{5}=\num{500000}$ (5 zeros).
+  \item $1,2\times 10^{7}=\num{12000000}$ (la coma es mou $7$ llocs).
+\end{enumerate}
+\resposta{(a) $\num{500000}$; (b) $\num{12000000}$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu en notació científica:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $\num{6000}$ \hfill \item $\num{52000}$ \hfill \item $\num{1500000}$
+          \hfill \item $\num{340}$
+        \end{enumerate}
+  \item Escriu com a nombre normal:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $7\times 10^{4}$ \hfill \item $3,5\times 10^{6}$ \hfill
+          \item $9,1\times 10^{3}$
+        \end{enumerate}
+  \item El pressupost d'una partida social és de $\num{1280000000}\eur$. Escriu-lo en
+        notació científica.
+  \item Una ciutat té $\num{1600000}$ habitants. Escriu la xifra en notació
+        científica i digues quantes xifres té el nombre original.
+  \item \textbf{(Estimació)} Sense fer el càlcul exacte, quants zeros (aproximadament)
+        tindrà el resultat de multiplicar $2\times 10^{3}$ per $4\times 10^{5}$? (Pista:
+        suma els exponents.)
+  \item \textbf{(Context real)} El $24,4\%$ d'una població de $8$ milions està en risc
+        d'exclusió. Calcula quantes persones són i escriu el resultat en notació
+        científica (arrodonit a dues xifres a la mantissa).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $6\times 10^{3}$; \quad (b) $5,2\times 10^{4}$; \quad
+        (c) $1,5\times 10^{6}$; \quad (d) $3,4\times 10^{2}$.
+  \item (a) $\num{70000}$; \quad (b) $\num{3500000}$; \quad (c) $\num{9100}$.
+  \item $\num{1280000000}=1,28\times 10^{9}\eur$.
+  \item $\num{1600000}=1,6\times 10^{6}$ habitants; el nombre original té $7$ xifres.
+  \item Els exponents sumen $3+5=8$, i $2\times 4=8$, així que el resultat és
+        $8\times 10^{8}$: aproximadament $8$ seguit de $8$ zeros.
+  \item $0,244\times\num{8000000}=\num{1952000}\approx 1,95\times 10^{6}$ persones.
+\end{sollist}
+\end{solucions}

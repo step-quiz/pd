@@ -1,0 +1,162 @@
+% =====================================================================
+%  1bat-ud1-4.tex  —  HORA 4: Formalització d'intervals i inequacions
+% =====================================================================
+\horatitol{Sessió 4 — Formalització d'intervals i inequacions}%
+{La manera «oficial» d'escriure-ho: inequacions, intervals amb parèntesi i claudàtor, i la representació a la recta.}
+
+\subsection{Idea clau}
+
+Ahir van sortir moltes maneres d'escriure «la renda no supera $\num{12600}\eur$»:
+«fins a», «com a màxim», $\le\num{12600}$\dots Avui hi posem la notació
+\textbf{oficial}: les \textbf{inequacions} i els \textbf{intervals}.
+
+\begin{idea}
+\textbf{Inequació:} una expressió amb $<$, $>$, $\le$ o $\ge$ (en lloc de l'$=$).
+La seva solució no és un sol valor, sinó \textbf{tot un tram} de la recta.
+
+\textbf{Interval:} la manera d'escriure aquest tram.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Claudàtor} $[\,]$: l'extrem \textbf{hi entra} (inclòs, $\le$ o $\ge$).
+        A la recta es marca amb un punt \textbf{ple} $\bullet$.
+  \item \textbf{Parèntesi} $(\,)$: l'extrem \textbf{no hi entra} (exclòs, $<$ o $>$).
+        A la recta es marca amb un punt \textbf{buit} $\circ$.
+  \item L'infinit $\infty$ sempre va amb \textbf{parèntesi}: mai s'arriba a l'infinit.
+\end{itemize}
+\textbf{Exemples de traducció:}
+\[
+x\le 5 \;\Leftrightarrow\; (-\infty,\,5], \qquad
+x>2 \;\Leftrightarrow\; (2,\,+\infty), \qquad
+2\le x<7 \;\Leftrightarrow\; [2,\,7).
+\]
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[de la inequació a l'interval i a la recta]
+La condició del bo social ordinari era $\text{renda}\le\num{12600}$. Si en diem $x$ a
+la renda, $x\le\num{12600}$. En interval és $(-\infty,\,\num{12600}]$ (claudàtor,
+perquè el límit hi entra). A la recta:
+
+\begin{center}
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-4.5,0) -- (4.5,0);
+  \draw[udblue, line width=1.4pt] (-4.5,0) -- (2,0);
+  \fill[udblue] (2,0) circle (2.4pt);
+  \node[below, font=\scriptsize, udgrey] at (2,-0.12) {$\num{12600}$};
+  \node[above, udblue, font=\scriptsize] at (-1.5,0.12) {$x\le\num{12600}$};
+\end{tikzpicture}
+\end{center}
+
+\noindent El punt és \textbf{ple} perquè una renda \emph{exactament} igual a
+$\num{12600}\eur$ encara dóna dret.
+\end{exemple}
+
+\begin{exemple}[un extrem obert]
+«Per accedir cal tenir \textbf{més de} $18$ anys»: si $x$ és l'edat, $x>18$. En
+interval, $(18,\,+\infty)$ (parèntesi, perquè el $18$ \emph{no} hi entra). A la recta:
+
+\begin{center}
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-4.5,0) -- (4.5,0);
+  \draw[udblue, line width=1.4pt] (0,0) -- (4.5,0);
+  \draw[udblue, fill=white, line width=1.2pt] (0,0) circle (2.4pt);
+  \node[below, font=\scriptsize, udgrey] at (0,-0.14) {$18$};
+  \node[above, udblue, font=\scriptsize] at (2.2,0.12) {$x>18$};
+\end{tikzpicture}
+\end{center}
+
+\noindent El punt és \textbf{buit}: tenir exactament $18$ anys no compleix «més de $18$».
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[escriure interval i recta]
+Escriu en forma d'interval i representa a la recta: (a) $x\ge -1$; \ (b) $x<3$.
+\solucio
+\textbf{(a)} $x\ge -1$ inclou el $-1$: interval $[-1,\,+\infty)$, punt ple a $-1$.
+
+\textbf{(b)} $x<3$ exclou el $3$: interval $(-\infty,\,3)$, punt buit a $3$.
+
+\begin{center}
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-4,0) -- (4,0);
+  \draw[udblue, line width=1.4pt] (-1,0) -- (4,0);
+  \fill[udblue] (-1,0) circle (2.2pt);
+  \node[below, font=\scriptsize, udgrey] at (-1,-0.12) {$-1$};
+  \node[above, udblue, font=\scriptsize] at (1.4,0.12) {(a) $x\ge -1$};
+\end{tikzpicture}\\[6pt]
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-4,0) -- (4,0);
+  \draw[udblue, line width=1.4pt] (-4,0) -- (3,0);
+  \draw[udblue, fill=white, line width=1.2pt] (3,0) circle (2.2pt);
+  \node[below, font=\scriptsize, udgrey] at (3,-0.12) {$3$};
+  \node[above, udblue, font=\scriptsize] at (-0.5,0.12) {(b) $x<3$};
+\end{tikzpicture}
+\end{center}
+\resposta{(a) $[-1,+\infty)$, punt ple; (b) $(-\infty,3)$, punt buit.}
+\end{exresolt}
+
+\begin{exresolt}[dos límits alhora]
+Un programa juvenil admet persones de $16$ anys o més, però menors de $18$. Escriu la
+condició com a inequació doble i com a interval.
+\solucio
+«$16$ anys o més» és $x\ge 16$ (inclòs); «menors de $18$» és $x<18$ (exclòs). Totes
+dues alhora:
+\[
+16\le x<18.
+\]
+En interval: $[16,\,18)$ (claudàtor a $16$, parèntesi a $18$).
+\resposta{$16\le x<18$, és a dir l'interval $[16,18)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu en forma d'interval:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $x\le 4$ \hfill \item $x>-2$ \hfill \item $x\ge 0$ \hfill \item $-3\le x\le 5$
+        \end{enumerate}
+  \item Escriu com a inequació (o inequació doble) cada interval:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $(-\infty,\,7)$ \hfill \item $[2,\,+\infty)$ \hfill \item $(-1,\,4]$
+        \end{enumerate}
+  \item Representa a la recta real (punt ple o buit segons l'extrem):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $x\ge 2$ \hfill \item $x<-1$ \hfill \item $0\le x<3$
+        \end{enumerate}
+  \item Torna al cas del bo social. Escriu, ara amb \textbf{notació formal} (inequació
+        \emph{i} interval), la condició de:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item família ordinària (llindar $\num{12600}\eur$)
+          \item família nombrosa (llindar $\num{16800}\eur$)
+        \end{enumerate}
+  \item \textbf{(Parèntesi o claudàtor?)} Per a cada cas, digues si l'extrem va amb
+        parèntesi o claudàtor i per què:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «com a màxim $30$ persones»
+          \item «més de $1000\eur$»
+        \end{enumerate}
+  \item \textbf{(Raonament)} Per què l'infinit s'escriu sempre amb parèntesi i mai amb
+        claudàtor? Explica-ho amb les teves paraules.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $(-\infty,4]$; \quad (b) $(-2,+\infty)$; \quad (c) $[0,+\infty)$; \quad
+        (d) $[-3,5]$.
+  \item (a) $x<7$; \quad (b) $x\ge 2$; \quad (c) $-1<x\le 4$.
+  \item (a) punt ple a $2$, ratlla cap a la dreta; \quad (b) punt buit a $-1$, ratlla
+        cap a l'esquerra; \quad (c) punt ple a $0$, punt buit a $3$, ratlla entremig.
+  \item (a) $x\le\num{12600}$, interval $(-\infty,\,\num{12600}]$; \quad
+        (b) $x\le\num{16800}$, interval $(-\infty,\,\num{16800}]$.
+  \item (a) claudàtor: «com a màxim $30$» inclou el $30$ ($\le$); \quad
+        (b) parèntesi: «més de $1000$» exclou el $1000$ ($>$).
+  \item Perquè l'infinit no és un nombre concret al qual s'arribi: és una direcció
+        «sense final». Com que mai no s'assoleix, l'extrem no es pot incloure, i per
+        això sempre va amb parèntesi.
+\end{sollist}
+\end{solucions}

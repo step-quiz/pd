@@ -1,0 +1,127 @@
+% =====================================================================
+%  1bat-ud1-3.tex  —  HORA 3: El bo social elèctric (descoberta dels intervals)
+% =====================================================================
+\horatitol{Sessió 3 — El bo social elèctric: descoberta dels intervals}%
+{Un cas real: decidir qui té dret a un ajut a partir d'un llindar de renda, abans de cap fórmula.}
+
+\subsection{Idea clau}
+
+Avui treballem com a investigadors, en grup i a les pissarres. Tenim un cas
+\textbf{real}: el \textbf{bo social elèctric}, un descompte a la factura de la llum
+per a famílies amb pocs ingressos. El dret a l'ajut depèn d'un \textbf{llindar de
+renda} fixat a partir de l'\textbf{IPREM} (un indicador oficial que es fa servir per
+fixar molts ajuts). El repte: decidir qui hi té dret \emph{sense} que us doni cap
+fórmula. L'heu de trobar vosaltres.
+
+\begin{idea}
+\textbf{Context} (xifres simplificades per treballar; cal actualitzar-les al curs vigent):
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item L'IPREM anual de referència és, posem, $\num{8400}\eur$.
+  \item Una família \textbf{sense} circumstàncies especials té dret al bo si la seva
+        renda anual \textbf{no supera} $1,5$ vegades l'IPREM.
+  \item Una família \textbf{nombrosa} té un llindar més alt: fins a $2$ vegades l'IPREM.
+\end{itemize}
+\textbf{La pregunta del dia:} com decidiu, per a cada família, si hi té dret? I com
+ho escriuríeu \emph{amb símbols}, sense paraules com «fins a» o «com a màxim»?
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[calcular el llindar]
+Primer cal saber \emph{quin} és el llindar de cada cas. Amb un IPREM de $\num{8400}\eur$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Família ordinària: $1,5\times\num{8400}=\num{12600}\eur$. Té dret si la renda
+        \textbf{no supera} $\num{12600}\eur$.
+  \item Família nombrosa: $2\times\num{8400}=\num{16800}\eur$. Té dret si la renda no
+        supera $\num{16800}\eur$.
+\end{itemize}
+«No superar» vol dir que el límit \emph{sí} que hi entra: una renda \emph{just} igual
+al llindar encara dóna dret.
+\end{exemple}
+
+\begin{exemple}[decidir un perfil]
+La família Garcia (ordinària) té una renda anual de $\num{11200}\eur$. Com que
+$\num{11200}\le\num{12600}$, \textbf{sí} que té dret al bo social. En canvi, la
+família Soler (ordinària) amb $\num{13000}\eur$ \textbf{no} hi té dret, perquè
+$\num{13000}>\num{12600}$ (supera el llindar).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[decidir amb el llindar ordinari]
+Amb el llindar ordinari de $\num{12600}\eur$, digues si tenen dret al bo aquestes
+famílies i escriu la condició amb símbols: (a) renda $\num{9800}\eur$; (b) renda
+$\num{12600}\eur$; (c) renda $\num{14500}\eur$.
+\solucio
+La condició per tenir-hi dret és $\text{renda}\le\num{12600}$.
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item $\num{9800}\le\num{12600}$: \textbf{sí}.
+  \item $\num{12600}\le\num{12600}$: \textbf{sí} (just al límit, que hi entra).
+  \item $\num{14500}\le\num{12600}$ és fals: \textbf{no}.
+\end{enumerate}
+\resposta{(a) sí; (b) sí (el límit hi entra); (c) no.}
+\end{exresolt}
+
+\begin{exresolt}[el llindar canvia amb les circumstàncies]
+La família Mbeki és \textbf{nombrosa} i té una renda de $\num{15500}\eur$. Tindria
+dret al bo? I si \emph{no} fos nombrosa?
+\solucio
+Com a família nombrosa, el seu llindar és $2\times\num{8400}=\num{16800}\eur$. Com
+que $\num{15500}\le\num{16800}$, \textbf{sí} que hi té dret.
+
+Si \emph{no} fos nombrosa, el llindar seria $\num{12600}\eur$, i com que
+$\num{15500}>\num{12600}$, \textbf{no} hi tindria dret. La mateixa renda dóna un
+resultat diferent segons les circumstàncies: el llindar és el que canvia.
+\resposta{Com a nombrosa, sí (llindar $\num{16800}$); si no ho fos, no (llindar $\num{12600}$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballeu en grup. Useu un IPREM de $\num{8400}\eur$; llindar
+ordinari $1,5\times$IPREM, llindar de família nombrosa $2\times$IPREM.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula els dos llindars en euros: el de família ordinària ($1,5\times$IPREM)
+        i el de família nombrosa ($2\times$IPREM).
+  \item Decideix si tenen dret al bo (família ordinària, llindar $\num{12600}\eur$):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item renda $\num{8000}\eur$ \hfill \item renda $\num{12600}\eur$ \hfill
+          \item renda $\num{12601}\eur$
+        \end{enumerate}
+  \item Escriu \textbf{amb símbols} (sense paraules) la condició per tenir dret al bo
+        en cada cas:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item família ordinària
+          \item família nombrosa
+        \end{enumerate}
+  \item La família Costa té $\num{16800}\eur$ de renda. Tindria dret si fos nombrosa?
+        I si no ho fos? Justifica-ho amb una desigualtat en cada cas.
+  \item \textbf{(Frontera exacta)} Dues famílies ordinàries tenen rendes de
+        $\num{12600}\eur$ i $\num{12600,50}\eur$. Quina té dret al bo i quina no? Què
+        ens diu això sobre la importància d'on posem exactament el límit?
+  \item \textbf{(Volta de pissarres)} El teu grup ha escrit la condició d'una manera;
+        un altre grup, potser, d'una altra. Anota \textbf{dues maneres diferents}
+        d'expressar «la renda no supera $\num{12600}\eur$» que hagin sortit a classe
+        (amb paraules o amb símbols).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item Ordinària: $1,5\times\num{8400}=\num{12600}\eur$; nombrosa:
+        $2\times\num{8400}=\num{16800}\eur$.
+  \item (a) sí ($\num{8000}\le\num{12600}$); \quad (b) sí (just al límit); \quad
+        (c) no ($\num{12601}>\num{12600}$).
+  \item (a) $\text{renda}\le\num{12600}$; \quad (b) $\text{renda}\le\num{16800}$.
+  \item Com a nombrosa: $\num{16800}\le\num{16800}$, sí (just al límit). Si no ho fos:
+        $\num{16800}>\num{12600}$, no.
+  \item La de $\num{12600}\eur$ té dret ($\le$ el límit); la de $\num{12600,50}\eur$ no
+        ($>$ el límit). Per pocs cèntims es perd el dret: per això cal definir
+        \emph{exactament} el llindar i si el límit hi entra o no.
+  \item Resposta oberta. Exemples: «fins a $\num{12600}\eur$», «no més de
+        $\num{12600}\eur$», «renda $\le\num{12600}$», «$\le 1,5\times$IPREM».
+\end{sollist}
+\end{solucions}

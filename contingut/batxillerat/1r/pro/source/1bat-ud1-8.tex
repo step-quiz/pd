@@ -1,0 +1,140 @@
+% =====================================================================
+%  1bat-ud1-8.tex  —  HORA 8: Consolidació d'inequacions (casos difícils i errors típics)
+% =====================================================================
+\horatitol{Sessió 8 — Consolidació d'inequacions: casos difícils i errors típics}%
+{Reforç abans dels contextos amb diverses condicions: caçar els errors habituals i tractar els casos amb truc.}
+
+\subsection{Idea clau}
+
+Avui no hi ha matèria nova: consolidem la resolució d'inequacions caçant els
+\textbf{errors típics} i tractant els \textbf{casos amb truc}. L'objectiu és que els
+passos crítics —girar el signe, treure parèntesis, operar amb fraccions— surtin
+sense vacil·lar.
+
+\begin{idea}
+\textbf{Els errors que cacem avui:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{No girar el signe} en dividir o multiplicar per un negatiu.
+  \item \textbf{Treure malament un parèntesi} (oblidar de canviar els signes de dins).
+  \item \textbf{Perdre un denominador} en operar amb fraccions.
+\end{itemize}
+\textbf{Casos amb truc:} a vegades la $x$ \emph{desapareix} en simplificar i queda
+una afirmació sobre números. Aleshores:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Si queda \textbf{sempre certa} (com $1>-3$), la solució és \textbf{tots els
+        reals}, $\mathbb{R}$.
+  \item Si queda \textbf{mai certa} (com $0>5$), \textbf{no hi ha solució}.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: el signe]
+Algú resol $-3x<9$ així: «$x<\dfrac{9}{-3}=-3$, per tant $x<-3$». \textbf{És
+incorrecte:} en dividir per $-3$ (negatiu) calia \textbf{girar} el símbol. El correcte:
+\[
+-3x<9 \;\Rightarrow\; x>\frac{9}{-3} \;\Rightarrow\; x>-3.
+\]
+\textbf{Comprovació:} $x=0$ (que compleix $x>-3$) dóna $-3\cdot 0=0<9$, cert.
+\end{exemple}
+
+\begin{exemple}[un cas amb truc: sempre cert]
+Resolem $2x+1>2x-3$. Restem $2x$ als dos costats:
+\[
+1>-3.
+\]
+La $x$ ha desaparegut i queda $1>-3$, que és \textbf{sempre cert}, sigui quina sigui
+la $x$. Per tant, la solució és \textbf{tots els reals}: $x\in\mathbb{R}$, interval
+$(-\infty,+\infty)$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[detectar i corregir un error]
+Aquesta resolució té un error. Troba'l i corregeix-la:
+\[
+2(x-3)\ge 4x \;\Rightarrow\; 2x-3\ge 4x \;\Rightarrow\; -2x\ge 3 \;\Rightarrow\; x\ge -\tfrac{3}{2}.
+\]
+\solucio
+Hi ha \textbf{dos} errors. El primer, en treure el parèntesi: $2(x-3)=2x-6$, no
+$2x-3$. El segon, al final: en dividir per $-2$ (negatiu) cal \textbf{girar} el
+símbol. Resolució correcta:
+\[
+2(x-3)\ge 4x \;\Rightarrow\; 2x-6\ge 4x \;\Rightarrow\; -2x\ge 6 \;\Rightarrow\; x\le -3.
+\]
+Interval $(-\infty,-3]$.
+\resposta{Errors: $2(x-3)=2x-6$ i no girar el signe. Solució correcta: $x\le -3$.}
+\end{exresolt}
+
+\begin{exresolt}[cas sense solució]
+Resol $3x+5<3x-2$.
+\solucio
+Restem $3x$ als dos costats:
+\[
+5<-2.
+\]
+La $x$ desapareix i queda $5<-2$, que és \textbf{fals} sempre. Per tant, la inequació
+\textbf{no té solució}: cap valor de $x$ la compleix.
+\resposta{No té solució (queda $5<-2$, sempre fals).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari: 1–4 són la base; 5 i 6 són ampliació (fraccions i casos
+amb truc).}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} Digues si cada resolució és correcta i, si no, corregeix-la:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «$-2x<6 \Rightarrow x<-3$»
+          \item «$3(x-1)\le x \Rightarrow 3x-1\le x \Rightarrow 2x\le 1 \Rightarrow x\le \tfrac{1}{2}$»
+        \end{enumerate}
+  \item Resol i dóna l'interval: $5x-3\le 2x+9$.
+  \item Resol i dóna l'interval: $-x+7>2x-2$ \quad (compte amb el signe).
+  \item Resol i dóna l'interval: $2(x+1)-3\ge x$.
+  \item \textbf{(Fraccions)} Resol: $\dfrac{x}{2}+1\le \dfrac{x-1}{3}$.
+  \item \textbf{(Casos amb truc)} Resol i digues si la solució és «tots els reals» o
+        «cap»:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $4x+2>4x-1$
+          \item $x-5\ge x+1$
+        \end{enumerate}
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació.} Marca amb sinceritat com et trobes, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Resoldre una inequació senzilla (sense canvi de signe) & & & \\
+Girar el símbol en dividir per un negatiu & & & \\
+Treure parèntesis correctament & & & \\
+Operar amb fraccions (treure denominadors) & & & \\
+Escriure la solució en forma d'interval & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{Incorrecta}: en dividir per $-2$ cal girar; $x>-3$. \quad
+        (b) \textbf{Incorrecta}: $3(x-1)=3x-3$, no $3x-1$; correcte:
+        $3x-3\le x \Rightarrow 2x\le 3 \Rightarrow x\le\tfrac{3}{2}$.
+  \item $3x\le 12 \Rightarrow x\le 4$, interval $(-\infty,4]$.
+  \item $-x-2x>-2-7 \Rightarrow -3x>-9$; girem: $x<3$, interval $(-\infty,3)$.
+  \item $2x+2-3\ge x \Rightarrow 2x-1\ge x \Rightarrow x\ge 1$, interval $[1,+\infty)$.
+  \item (Mult.\ per $6$) $3x+6\le 2(x-1) \Rightarrow 3x+6\le 2x-2 \Rightarrow x\le -8$,
+        interval $(-\infty,-8]$.
+  \item (a) Queda $2>-1$, sempre cert: solució \textbf{tots els reals}, $\mathbb{R}$. \quad
+        (b) Queda $-5\ge 1$, sempre fals: \textbf{cap} solució.
+\end{sollist}
+\end{solucions}
