@@ -1,0 +1,129 @@
+% =====================================================================
+%  2bat-ud2-12.tex  —  SESSIÓ 12: Casos especials (solució múltiple / regió no acotada)
+% =====================================================================
+\horatitol{Sessió 12 — Casos especials: solució múltiple o regió no acotada}%
+{Dos casos que generen confusió: quan hi ha més d'una solució òptima i quan la regió s'estén indefinidament.}
+
+\subsection{Idea clau}
+
+El mètode (avaluar als vèrtexs) sempre funciona, però hi ha \textbf{dos casos
+especials} que convé reconèixer per no confondre's. Avui els descobrim a les
+pissarres.
+
+\begin{idea}
+\textbf{Cas 1 — solució múltiple.} Si la funció objectiu pren el \textbf{mateix valor
+òptim} en \textbf{dos vèrtexs} veïns, aleshores \emph{tot el segment} que els uneix és
+òptim: hi ha \textbf{infinites solucions}, totes igual de bones. Passa quan la funció
+objectiu és «paral·lela» a una vora de la regió.
+
+\textbf{Cas 2 — regió no acotada.} Si la regió factible s'estén indefinidament (no és
+tancada), pot passar que:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item El \textbf{mínim} existeix i s'assoleix en un vèrtex (típic dels problemes de
+        cost).
+  \item El \textbf{màxim} \textbf{no existeix}: la funció pot créixer sense límit.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[solució múltiple]
+Sobre la regió de vèrtexs $(0,0)$, $(6,0)$, $(3,3)$, $(0,4)$, maximitzem
+$P=2x+2y$. Avaluem:
+\[
+P(0,0)=0,\quad P(6,0)=12,\quad P(3,3)=12,\quad P(0,4)=8.
+\]
+El màxim $P=12$ s'assoleix \textbf{a la vegada} a $(6,0)$ \emph{i} a $(3,3)$. De fet,
+tot el segment que els uneix (la vora $x+y=6$) dóna $P=12$: hi ha \textbf{infinites}
+solucions òptimes.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=5cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=7, ymin=0, ymax=5, xtick={0,2,4,6}, ytick={0,2,4}]
+  \fill[udblue!16] (axis cs:0,0) -- (axis cs:6,0) -- (axis cs:3,3) -- (axis cs:0,4) -- cycle;
+  \draw[udnavy, line width=1.6pt] (axis cs:6,0) -- (axis cs:3,3);
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(6,0)(3,3)};
+  \node[font=\scriptsize, anchor=south west] at (axis cs:3,3) {$(3,3)$};
+  \node[font=\scriptsize, anchor=north] at (axis cs:6,-0.1) {$(6,0)$};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:4,1.5) {tot òptim};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La vora ressaltada (de $(6,0)$ a $(3,3)$) és tota òptima: solució múltiple.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[regió no acotada: hi ha mínim però no màxim]
+En el cas de minimitzar cost de la sessió anterior, la regió era no acotada cap amunt.
+El \textbf{mínim} de $C=40x+30y$ existia i era $C=170$ al vèrtex $(2,3)$. Però si
+intentéssim \emph{maximitzar} $C$ sobre aquesta regió, \textbf{no hi hauria màxim}:
+com que la regió s'estén indefinidament, podem agafar punts amb $x$ i $y$ tan grans
+com vulguem, i $C$ creixeria sense límit. \textbf{Per això}, en regions no acotades,
+té sentit buscar el mínim, però no sempre el màxim.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[reconèixer una solució múltiple]
+Sobre la regió de vèrtexs $(0,0)$, $(4,0)$, $(2,2)$, $(0,3)$, maximitza $P=x+y$. Què
+observes?
+\solucio
+Avaluem: $P(0,0)=0$, $P(4,0)=4$, $P(2,2)=4$, $P(0,3)=3$. El màxim $P=4$ s'assoleix
+\textbf{a $(4,0)$ i a $(2,2)$}: és una \textbf{solució múltiple}. Tot el segment entre
+aquests dos vèrtexs és òptim.
+\resposta{Solució múltiple: $P=4$ a $(4,0)$ i $(2,2)$, i a tot el segment que els uneix.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar socialment la solució múltiple]
+En el cas anterior, què vol dir, en termes reals, que hi hagi infinites solucions
+òptimes?
+\solucio
+Vol dir que hi ha \textbf{diverses maneres igualment bones} de repartir els recursos:
+totes les combinacions del segment òptim donen el mateix valor de la funció objectiu
+(per exemple, la mateixa cobertura o el mateix cost). L'entitat pot triar entre elles
+segons \emph{altres} criteris (preferències, equitat, comoditat), perquè
+matemàticament són equivalents.
+\resposta{Hi ha diverses decisions igual d'òptimes; es pot triar entre elles per altres criteris.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Sobre la regió de vèrtexs $(0,0)$, $(5,0)$, $(2,3)$, $(0,5)$, maximitza
+        $P=2x+2y$. Hi ha una o més solucions òptimes? Quines?
+  \item Sobre la mateixa regió, maximitza $P=3x+y$. Ara n'hi ha una de sola? On?
+  \item Per a una regió no acotada amb vèrtexs de baix $(0,6)$, $(3,2)$, $(7,0)$,
+        minimitza $C=2x+3y$. On és el mínim?
+  \item Sobre la regió de l'exercici 3, té sentit buscar el \textbf{màxim} de
+        $C=2x+3y$? Justifica-ho.
+  \item \textbf{(Reconèixer el cas)} Donada una regió i una funció objectiu, com pots
+        \emph{sospitar}, abans de calcular, que hi haurà solució múltiple? (Pista:
+        pensa en el pendent de la funció objectiu i el de les vores.)
+  \item \textbf{(Síntesi)} Completa la frase amb les teves paraules: «En una regió no
+        acotada, el \rule{1.5cm}{0.4pt} sempre existeix i és en un vèrtex, però el
+        \rule{1.5cm}{0.4pt} pot no existir.»
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item $P=2x+2y$: $P(0,0)=0$, $P(5,0)=10$, $P(2,3)=10$, $P(0,5)=10$. El màxim $P=10$
+        s'assoleix a \textbf{tres} vèrtexs ($(5,0)$, $(2,3)$, $(0,5)$): solució múltiple
+        (de fet, tota la vora superior).
+  \item $P=3x+y$: $P(0,0)=0$, $P(5,0)=15$, $P(2,3)=9$, $P(0,5)=5$. Màxim únic $P=15$
+        a $(5,0)$.
+  \item $C(0,6)=18$, $C(3,2)=6+6=12$, $C(7,0)=14$. Mínim $C=12$ a $(3,2)$.
+  \item No: la regió és no acotada cap amunt, així que $C=2x+3y$ pot créixer sense
+        límit; el \textbf{màxim no existeix}.
+  \item Resposta oberta. Idea: si la funció objectiu té el \emph{mateix pendent} que
+        una de les vores de la regió, serà paral·lela a aquella vora i tot el segment
+        donarà el mateix valor (solució múltiple).
+  \item «El \textbf{mínim} sempre existeix i és en un vèrtex, però el \textbf{màxim}
+        pot no existir.»
+\end{sollist}
+\end{solucions}

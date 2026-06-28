@@ -1,0 +1,155 @@
+% =====================================================================
+%  2bat-ud2-2.tex  —  SESSIÓ 2: Representar una inequació amb dues variables
+% =====================================================================
+\horatitol{Sessió 2 — Representar una inequació amb dues variables}%
+{Dibuixar la recta frontera, decidir si la vora hi entra i triar el semiplà solució.}
+
+\subsection{Idea clau}
+
+Ja sabem que una inequació amb dues variables té per solució una \textbf{zona del
+pla}. Avui aprenem a \textbf{dibuixar-la} amb un procediment fix de tres passos. La
+clau és que la recta que surt d'igualar la inequació parteix el pla en dos
+\textbf{semiplans}, i un d'ells és la solució.
+
+\begin{idea}
+\textbf{Com representar una inequació amb dues variables}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Recta frontera:} canvia la desigualtat per una \textbf{igualtat} i
+        dibuixa la recta. Per fer-ho, busca dos punts (per exemple, on talla cada eix).
+  \item \textbf{Tipus de línia:} \textbf{contínua} si la vora hi entra ($\le$ o $\ge$),
+        \textbf{discontínua} si no ($<$ o $>$).
+  \item \textbf{Semiplà solució:} tria un \textbf{punt de prova} senzill (sovint
+        l'origen $(0,0)$) i comprova si compleix la inequació. Si \emph{sí}, la solució
+        és el seu costat; si \emph{no}, l'altre. Ombreja el costat correcte.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[representar $x+y\le 6$]
+\textbf{Pas 1.} Recta frontera: $x+y=6$. Talla els eixos a $(6,0)$ i $(0,6)$.
+\textbf{Pas 2.} Com que és $\le$, la línia és \textbf{contínua} (la vora hi entra).
+\textbf{Pas 3.} Punt de prova $(0,0)$: $0+0=0\le 6$, \textbf{cert}. Per tant la solució
+és el costat de l'origen (a sota de la recta).
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=6cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=8, ymin=0, ymax=8, xtick={0,2,4,6}, ytick={0,2,4,6}]
+  \addplot[name path=r, udblue, domain=0:6, samples=2]{6-x};
+  \path[name path=ex] (0,0) -- (6,0);
+  \addplot[udblue!18] fill between[of=r and ex, soft clip={domain=0:6}];
+  \addplot[udnavy, only marks, mark=*, mark size=1.4pt] coordinates {(0,0)};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:0,0) {prova $(0,0)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{$x+y\le 6$: recta contínua i semiplà del costat de l'origen.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[representar $y>2x$ (vora exclosa)]
+\textbf{Pas 1.} Recta frontera $y=2x$, que passa per $(0,0)$ i $(2,4)$.
+\textbf{Pas 2.} Com que és $>$ (estricte), la línia és \textbf{discontínua} (la vora
+\emph{no} hi entra). \textbf{Pas 3.} L'origen és just sobre la recta, així que triem un
+altre punt de prova, per exemple $(1,3)$: $3>2\cdot 1=2$, \textbf{cert}. La solució és
+el seu costat (per damunt de la recta).
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=6cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=6, ymin=0, ymax=8, xtick={0,2,4}, ytick={0,2,4,6}]
+  \addplot[name path=r, udblue, dashed, domain=0:4, samples=2]{2*x};
+  \path[name path=top] (0,8) -- (4,8);
+  \addplot[udblue!14] fill between[of=r and top, soft clip={domain=0:4}];
+  \addplot[udnavy, only marks, mark=*, mark size=1.4pt] coordinates {(1,3)};
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:1,3) {prova $(1,3)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{$y>2x$: recta discontínua (vora exclosa) i semiplà de sobre.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[representar pas a pas]
+Representa la inequació $2x+y\le 8$.
+\solucio
+\textbf{Pas 1.} Recta frontera $2x+y=8$: si $x=0$, $y=8$, punt $(0,8)$; si $y=0$,
+$2x=8 \Rightarrow x=4$, punt $(4,0)$. \textbf{Pas 2.} És $\le$: línia
+\textbf{contínua}. \textbf{Pas 3.} Prova $(0,0)$: $2\cdot 0+0=0\le 8$, cert. Solució: el
+costat de l'origen (sota la recta).
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=5.4cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=6, ymin=0, ymax=10, xtick={0,2,4}, ytick={0,4,8}]
+  \addplot[name path=r, udblue, domain=0:4, samples=2]{8-2*x};
+  \path[name path=ex] (0,0) -- (4,0);
+  \addplot[udblue!18] fill between[of=r and ex, soft clip={domain=0:4}];
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\resposta{Recta contínua per $(0,8)$ i $(4,0)$; semiplà del costat de l'origen.}
+\end{exresolt}
+
+\begin{exresolt}[decidir el semiplà amb un punt de prova]
+Per a la inequació $x-y\ge 2$, sense dibuixar, decideix si el punt $(0,0)$ és a la
+zona solució o no.
+\solucio
+Substituïm $(0,0)$: $0-0=0\ge 2$ és \textbf{fals}. Per tant l'origen \textbf{no} és a
+la zona solució: la solució és el semiplà del costat \emph{contrari} a l'origen.
+\resposta{$(0,0)$ no compleix; la solució és el semiplà oposat a l'origen.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a cada inequació, troba els dos punts on la recta frontera talla els
+        eixos:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $x+y=10$ \hfill \item $3x+2y=12$
+        \end{enumerate}
+  \item Digues si la línia frontera ha de ser contínua o discontínua:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $x+y\le 5$ \hfill \item $y>3x$ \hfill \item $2x-y\ge 1$ \hfill
+          \item $x<4$
+        \end{enumerate}
+  \item Usa el punt de prova $(0,0)$ per decidir, en cada cas, si l'origen és a la
+        zona solució:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $x+y\le 7$ \hfill \item $2x+y\ge 6$ \hfill \item $y<x+1$
+        \end{enumerate}
+  \item Representa la inequació $x+2y\le 8$ seguint els tres passos (recta frontera,
+        tipus de línia, semiplà).
+  \item Representa la inequació $y\ge x$ (compte: l'origen és sobre la recta; tria un
+        altre punt de prova).
+  \item \textbf{(Context social)} Una entitat dedica $x$ hores a tallers i $y$ a
+        acompanyament, amb un màxim de $20$ hores: $x+y\le 20$. Representa la
+        inequació i marca tres punts de la regió que tinguin sentit (hores no
+        negatives).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $(10,0)$ i $(0,10)$; \quad (b) $(4,0)$ i $(0,6)$.
+  \item (a) contínua ($\le$); \quad (b) discontínua ($>$); \quad
+        (c) contínua ($\ge$); \quad (d) discontínua ($<$).
+  \item (a) $0\le 7$ cert: l'origen \textbf{sí}; \quad (b) $0\ge 6$ fals: \textbf{no};
+        \quad (c) $0<1$ cert: \textbf{sí}.
+  \item Recta frontera $x+2y=8$ per $(8,0)$ i $(0,4)$, contínua; prova $(0,0)$:
+        $0\le 8$ cert, semiplà de l'origen (sota la recta).
+  \item Recta $y=x$ per $(0,0)$ i $(2,2)$, contínua ($\ge$); prova $(0,2)$:
+        $2\ge 0$ cert, semiplà de sobre la recta.
+  \item Recta $x+y=20$ per $(20,0)$ i $(0,20)$, contínua; semiplà del costat de
+        l'origen. Punts vàlids (no negatius): p.\,ex.\ $(10,5)$, $(0,15)$, $(8,8)$.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,139 @@
+% =====================================================================
+%  2bat-ud2-5.tex  —  SESSIÓ 5: La regió de les decisions possibles (regió factible)
+% =====================================================================
+\horatitol{Sessió 5 — La regió de les decisions possibles}%
+{Dibuixar la regió factible d'un cas social, calcular-ne els vèrtexs i interpretar que cada punt és una decisió possible.}
+
+\subsection{Idea clau}
+
+Ja sabem trobar la zona que compleix totes les condicions. Avui li posem nom i sentit:
+la \textbf{regió factible} és el conjunt de \textbf{totes} les combinacions de
+recursos que compleixen \textbf{totes} les restriccions alhora. Cada punt de dins és
+una \textbf{decisió possible}; els \textbf{vèrtexs} (les cantonades) són les decisions
+«extremes».
+
+\begin{idea}
+\textbf{Regió factible.} És la intersecció de tots els semiplans de les restriccions,
+inclosa la no-negativitat ($x\ge 0$, $y\ge 0$).
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Cada punt} de la regió = una manera concreta de repartir els recursos
+        que \emph{es pot} fer (compleix totes les condicions).
+  \item \textbf{Els vèrtexs} = els punts on es tallen dues vores. Es calculen
+        \textbf{resolent el sistema} de les dues rectes que s'hi creuen.
+\end{itemize}
+\textbf{Per què ens importen els vèrtexs?} Perquè, com veurem més endavant, la millor
+decisió (l'\emph{òptima}) sempre es troba en un vèrtex.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la regió factible del cas de l'entitat]
+Recuperem el cas dels \textbf{tallers} ($x$) i les \textbf{sortides} ($y$), amb dues
+restriccions de recursos i la no-negativitat:
+\[
+\underbrace{x+2y\le 12}_{\text{pressupost}},\qquad
+\underbrace{x+3y\le 15}_{\text{material}},\qquad x\ge 0,\qquad y\ge 0.
+\]
+(La de pressupost surt de $100x+200y\le\num{1200}$ dividint per $100$.) La regió
+factible és el polígon comú a totes les restriccions:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9.4cm, height=6.6cm,
+    xlabel={\small tallers ($x$)}, ylabel={\small sortides ($y$)},
+    xmin=0, xmax=15, ymin=0, ymax=8, xtick={0,2,4,6,8,10,12,14}, ytick={0,2,4,6}]
+  % regió factible: (0,0),(12,0),(6,3),(0,5)
+  \fill[udblue!18] (axis cs:0,0) -- (axis cs:12,0) -- (axis cs:6,3) -- (axis cs:0,5) -- cycle;
+  \addplot[udblue, domain=0:12, samples=2]{(12-x)/2};   % pressupost
+  \addplot[udnavy, domain=0:15, samples=2]{(15-x)/3};   % material
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt]
+    coordinates {(0,0) (12,0) (6,3) (0,5)};
+  \node[font=\scriptsize, anchor=north] at (axis cs:12,-0.1) {$(12,0)$};
+  \node[font=\scriptsize, anchor=south west] at (axis cs:6,3) {$(6,3)$};
+  \node[font=\scriptsize, anchor=east] at (axis cs:0,5) {$(0,5)$};
+  \node[udblue, font=\scriptsize, anchor=south] at (axis cs:9.5,1.4) {pressupost};
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:2.4,4.3) {material};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Regió factible: vèrtexs $(0,0)$, $(12,0)$, $(6,3)$ i $(0,5)$. Cada punt és una decisió possible.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[interpretar un punt de la regió]
+El punt $(4,3)$ és dins de la regió: representa la decisió de fer \textbf{$4$ tallers
+i $3$ sortides}. Comprovem que es pot: pressupost $4+2\cdot 3=10\le 12$; material
+$4+3\cdot 3=13\le 15$. Sí, és una decisió vàlida, amb una mica de marge en tots dos
+recursos.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[calcular un vèrtex resolent el sistema]
+Troba el vèrtex on es creuen les dues rectes de recursos: $x+2y=12$ i $x+3y=15$.
+\solucio
+Resolem el sistema. Restem la primera equació de la segona per eliminar $x$:
+\[
+(x+3y)-(x+2y)=15-12 \;\Rightarrow\; y=3.
+\]
+Substituïm $y=3$ a la primera: $x+2\cdot 3=12 \Rightarrow x=6$. El vèrtex és
+$(6,3)$.
+\resposta{Les rectes es creuen a $(6,3)$.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar una decisió extrema]
+Interpreta el vèrtex $(12,0)$: quina decisió representa i quants recursos consumeix?
+\solucio
+$(12,0)$ vol dir \textbf{$12$ tallers i cap sortida}. Recursos:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item Pressupost: $12+2\cdot 0=12\le 12$ (gasta \emph{tot} el pressupost).
+  \item Material: $12+3\cdot 0=12\le 15$ (en sobra una mica).
+\end{itemize}
+És una decisió «extrema»: dedicar-ho tot a tallers, esgotant el pressupost.
+\resposta{$12$ tallers i $0$ sortides; esgota el pressupost, sobra material.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Cas de l'entitat: $x+2y\le 12$ (pressupost) i $x+3y\le 15$
+(material), amb $x\ge 0$, $y\ge 0$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Comprova si cada punt és a la regió factible (mira totes les restriccions):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $(2,3)$ \hfill \item $(8,2)$ \hfill \item $(6,3)$
+        \end{enumerate}
+  \item Interpreta, en termes de l'enunciat, què representen els punts $(5,2)$ i
+        $(0,0)$ (quantes activitats de cada tipus i si és una decisió possible).
+  \item Troba on talla la recta del pressupost $x+2y=12$ cada eix ($y=0$ i $x=0$).
+  \item Per a un sistema més senzill, $\;x+y\le 5,\;x\ge 0,\;y\ge 0$, dibuixa la regió
+        factible i llista els seus tres vèrtexs.
+  \item Calcula el vèrtex on es creuen les rectes $x+y=8$ i $x+3y=12$ (resol el sistema).
+  \item \textbf{(Interpretació)} La regió factible del cas té quatre vèrtexs:
+        $(0,0)$, $(12,0)$, $(6,3)$ i $(0,5)$. Interpreta breument cadascun: quina
+        manera de repartir tallers i sortides representa.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $2+6=8\le 12$ i $2+9=11\le 15$: \textbf{sí}. \quad
+        (b) $8+4=12\le 12$ i $8+6=14\le 15$: \textbf{sí}. \quad
+        (c) $6+6=12\le 12$ i $6+9=15\le 15$: \textbf{sí} (vèrtex, just als dos límits).
+  \item $(5,2)$: $5$ tallers i $2$ sortides; pressupost $5+4=9\le 12$, material
+        $5+6=11\le 15$: decisió possible. $(0,0)$: no fer cap activitat; possible però
+        poc útil (no es gasta res).
+  \item $x+2y=12$ amb $y=0$: $(12,0)$; amb $x=0$: $2y=12\Rightarrow y=6$, punt $(0,6)$.
+        (Nota: $(0,6)$ no és vèrtex de la regió perquè incompleix material;
+        $0+18=18>15$.)
+  \item Triangle de vèrtexs $(0,0)$, $(5,0)$ i $(0,5)$.
+  \item Restant: $(x+3y)-(x+y)=12-8\Rightarrow 2y=4\Rightarrow y=2$; $x+2=8\Rightarrow
+        x=6$. Vèrtex $(6,2)$.
+  \item $(0,0)$: no fer res. $(12,0)$: tot tallers ($12$), cap sortida. $(6,3)$:
+        combinació equilibrada que esgota els dos recursos. $(0,5)$: tot sortides
+        ($5$), cap taller.
+\end{sollist}
+\end{solucions}

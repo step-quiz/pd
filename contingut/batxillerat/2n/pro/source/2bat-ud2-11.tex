@@ -1,0 +1,135 @@
+% =====================================================================
+%  2bat-ud2-11.tex  —  SESSIÓ 11: Minimitzar el cost d'un servei (estudi de cas)
+% =====================================================================
+\horatitol{Sessió 11 — Minimitzar el cost d'un servei}%
+{Estudi de cas (Activitat 4): cobrir unes necessitats mínimes al menor cost possible; restriccions de «com a mínim» i regió no acotada.}
+
+\subsection{Idea clau}
+
+Fins ara hem \emph{maximitzat} (cobertura). Avui fem l'altra cara: \textbf{minimitzar}
+un \textbf{cost}, cobrint unes \textbf{necessitats mínimes}. Apareixen restriccions
+del tipus «com a mínim» (inequacions $\ge$) i una regió factible que sol ser
+\textbf{no acotada} per dalt. El mètode, però, és el mateix: avaluar als vèrtexs.
+
+\begin{idea}
+\textbf{El cas.} Una entitat contracta dos tipus de monitor: \textbf{tipus A} ($x$) i
+\textbf{tipus B} ($y$). Cal cobrir unes necessitats mínimes d'atenció:
+\[
+\underbrace{x+2y\ge 8}_{\text{hores mínimes}},\qquad
+\underbrace{3x+y\ge 9}_{\text{places mínimes}},\qquad x\ge 0,\ y\ge 0.
+\]
+Cada monitor A costa $40\eur$ i cada B, $30\eur$; volem \textbf{minimitzar} el cost
+\[
+C=40x+30y.
+\]
+\textbf{Restriccions de mínim ($\ge$):} el semiplà solució és el de \emph{lluny} de
+l'origen (cal \emph{superar} el llindar), i la regió queda \textbf{oberta} cap amunt.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la regió factible no acotada]
+Les restriccions $\ge$ deixen la regió per \emph{sobre} de les rectes. La regió
+factible és no acotada (s'estén cap amunt i cap a la dreta), però té vèrtexs a la part
+de baix: $(0,9)$, $(2,3)$ i $(8,0)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.6cm, height=6cm,
+    xlabel={\small monitors A ($x$)}, ylabel={\small monitors B ($y$)},
+    xmin=0, xmax=10, ymin=0, ymax=10, xtick={0,2,4,6,8}, ytick={0,2,4,6,8}]
+  % regió no acotada (per sobre): l'ombregem fins al marc
+  \fill[udblue!14] (axis cs:0,9) -- (axis cs:2,3) -- (axis cs:8,0) --
+        (axis cs:10,0) -- (axis cs:10,10) -- (axis cs:0,10) -- cycle;
+  \addplot[udblue, domain=0:8, samples=2]{(8-x)/2};   % x+2y=8
+  \addplot[udnavy, domain=0:3.2, samples=2]{9-3*x};   % 3x+y=9
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(0,9)(2,3)(8,0)};
+  \node[font=\scriptsize, anchor=west] at (axis cs:0.2,9) {$(0,9)$};
+  \node[font=\scriptsize, anchor=south west] at (axis cs:2,3) {$(2,3)$};
+  \node[font=\scriptsize, anchor=north] at (axis cs:8,-0.1) {$(8,0)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Regió no acotada (oberta cap amunt); els vèrtexs de baix són $(0,9)$, $(2,3)$ i $(8,0)$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[avaluar el cost als vèrtexs]
+Avaluem $C=40x+30y$ als vèrtexs:
+\[
+C(0,9)=270,\qquad C(2,3)=80+90=170,\qquad C(8,0)=320.
+\]
+El \textbf{mínim} és $C=170\eur$, al vèrtex $(2,3)$. Com que la regió és no acotada cap
+amunt, el cost no té màxim (es pot fer tan gran com es vulgui), però \emph{sí} mínim:
+just el que ens interessa.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[minimitzar i interpretar]
+Amb el cas anterior, interpreta la solució òptima $(2,3)$.
+\solucio
+$(2,3)$ vol dir contractar \textbf{$2$ monitors de tipus A i $3$ de tipus B}, amb un
+cost mínim de $C=170\eur$. Comprovem que cobreix les necessitats: hores
+$2+2\cdot 3=8\ge 8$ (just) i places $3\cdot 2+3=9\ge 9$ (just). És la combinació
+\textbf{més barata} que compleix tots dos mínims; just els cobreix sense malgastar.
+\resposta{$2$ monitors A i $3$ B; cost mínim $170\eur$, cobrint just les necessitats.}
+\end{exresolt}
+
+\begin{exresolt}[canviar els costos canvia l'òptim]
+Si ara cada monitor A costa $20\eur$ i cada B, $50\eur$ ($C=20x+50y$), on és el mínim?
+\solucio
+Avaluem als mateixos vèrtexs:
+\[
+C(0,9)=450,\quad C(2,3)=40+150=190,\quad C(8,0)=160.
+\]
+El mínim és $C=160\eur$, al vèrtex $(8,0)$: contractar \textbf{$8$ monitors A i cap B}.
+Ara que A és molt més barat, la solució més econòmica és prescindir de B.
+\resposta{Mínim $C=160\eur$ a $(8,0)$: $8$ monitors A i cap B.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Cas: $x+2y\ge 8$, $3x+y\ge 9$, $x\ge 0$, $y\ge 0$; vèrtexs $(0,9)$,
+$(2,3)$, $(8,0)$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Minimitza el cost $C=40x+30y$ avaluant als tres vèrtexs i digues la decisió
+        òptima.
+  \item Minimitza ara $C=30x+30y$. On és el mínim? (Pista: $C=30(x+y)$, així que
+        minimitzar $C$ equival a minimitzar $x+y$.)
+  \item Comprova que el punt $(4,2)$ compleix totes les restriccions i calcula'n el
+        cost amb $C=40x+30y$. És més barat o més car que l'òptim $(2,3)$?
+  \item Per al vèrtex òptim de l'exercici 1, digues quines necessitats queden
+        \emph{just} cobertes (igualtat) i quines amb marge.
+  \item \textbf{(Comparació)} En una frase, explica què tenen en comú i què tenen de
+        diferent un problema de \emph{maximitzar} cobertura i un de \emph{minimitzar}
+        cost (pensa en el tipus de restriccions i en què es busca als vèrtexs).
+  \item \textbf{(Justificació)} Redacta una conclusió breu per a l'entitat sobre la
+        decisió de l'exercici 1: quants monitors de cada tipus, quin cost i per què és
+        la millor opció per cobrir les necessitats.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item $C(0,9)=270$, $C(2,3)=170$, $C(8,0)=320$. Mínim $C=170\eur$ a $(2,3)$: $2$
+        monitors A i $3$ B.
+  \item $C=30(x+y)$: $C(0,9)=270$, $C(2,3)=150$, $C(8,0)=240$. Mínim $C=150\eur$ a
+        $(2,3)$ (el vèrtex amb menys monitors totals, $x+y=5$).
+  \item $(4,2)$: $x+2y=8\ge 8$ i $3x+y=14\ge 9$, $x,y\ge 0$: compleix.
+        $C=40\cdot 4+30\cdot 2=220\eur$, més \textbf{car} que l'òptim $(170\eur)$.
+  \item A $(2,3)$: hores $2+6=8=8$ (just) i places $6+3=9=9$ (just): totes dues
+        queden \emph{just} cobertes, sense marge.
+  \item Resposta oberta. Comú: el mètode (avaluar la funció objectiu als vèrtexs).
+        Diferent: maximitzar busca el valor més gran i sol tenir restriccions $\le$
+        (regió acotada); minimitzar busca el més petit i sol tenir restriccions $\ge$
+        (regió no acotada).
+  \item Resposta oberta. Ha d'indicar $2$ monitors A i $3$ B, cost $170\eur$, i
+        justificar que és la combinació més barata que cobreix les hores i les places
+        mínimes.
+\end{sollist}
+\end{solucions}

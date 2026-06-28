@@ -1,0 +1,152 @@
+% =====================================================================
+%  2bat-ud3-3.tex  —  SESSIÓ 3: Límits a l'infinit: cap a on tendeix una funció
+% =====================================================================
+\horatitol{Sessió 3 — Límits a l'infinit: cap a on tendeix una funció}%
+{Posar nom matemàtic al «sostre»: el límit quan la variable creix indefinidament, llegit des d'una taula i des d'una gràfica.}
+
+\subsection{Idea clau}
+
+A la pissarra vau descobrir que l'ocupació s'acostava a un «sostre». Aquell valor té
+un nom matemàtic: el \textbf{límit} de la funció quan la variable creix
+indefinidament. Avui el formalitzem, però de manera \textbf{intuïtiva}: ens interessa
+\emph{preveure} el comportament final, no manipular fórmules complicades.
+
+\begin{idea}
+\textbf{Límit a l'infinit.} És el valor cap al qual s'acosten els resultats d'una
+funció a mesura que $x$ es fa \textbf{molt gran}. S'escriu:
+\[
+\lim_{x\to\infty} f(x)=L,
+\]
+i es llegeix «el límit de $f(x)$ quan $x$ tendeix a infinit és $L$».
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Si els resultats s'acosten a un nombre $L$, el límit és $L$ (la funció
+        \textbf{s'estabilitza}).
+  \item Si creixen sense aturador, diem que el límit és $+\infty$ (\textbf{puja sense
+        límit}).
+  \item Si decreixen sense aturador, el límit és $-\infty$.
+\end{itemize}
+\textbf{Com es troba:} mirant una \textbf{taula} (substituint valors grans i veient cap
+a què s'acosten) o la \textbf{gràfica} (cap a quina altura es va aplanant).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[llegir un límit des d'una taula]
+Per a $f(x)=\dfrac{100}{x}$, fem una taula amb valors cada cop més grans de $x$:
+\begin{center}
+\begin{tabular}{lccccc}
+\toprule
+$x$ & $1$ & $10$ & $100$ & $\num{1000}$ & $\num{10000}$ \\
+\midrule
+$f(x)$ & $100$ & $10$ & $1$ & $0,1$ & $0,01$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Els resultats s'acosten cada cop més a \textbf{zero}. Per tant
+$\displaystyle\lim_{x\to\infty}\frac{100}{x}=0$.
+\end{exemple}
+
+\begin{exemple}[llegir un límit des d'una gràfica]
+La funció d'ocupació de la sessió 2 s'aplanava cap a les $200$ places. En llenguatge
+de límits:
+\[
+\lim_{x\to\infty} f(x)=200.
+\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=4.6cm,
+    xlabel={\small $x$}, ylabel={\small $f(x)$},
+    xmin=0, xmax=24, ymin=0, ymax=240, xtick={0,6,12,18,24}, ytick={0,100,200}]
+  \addplot[udblue, domain=0:24, samples=100]{200*(1-exp(-x/6))};
+  \addplot[udnavy, dashed, domain=0:24, samples=2]{200};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:24,200) {$L=200$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La gràfica es va aplanant cap a $L=200$: aquest és el límit a l'infinit.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[estimar un límit amb una taula]
+Estima $\displaystyle\lim_{x\to\infty}\frac{50}{x}$ fent una taula amb $x=1,10,100,1000$.
+\solucio
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+$x$ & $1$ & $10$ & $100$ & $\num{1000}$ \\
+\midrule
+$\frac{50}{x}$ & $50$ & $5$ & $0,5$ & $0,05$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Els valors s'acosten a $0$. Per tant $\displaystyle\lim_{x\to\infty}\frac{50}{x}=0$.
+\resposta{El límit és $0$.}
+\end{exresolt}
+
+\begin{exresolt}[un límit finit diferent de zero]
+Una funció d'ocupació val $f(x)=300-\dfrac{600}{x}$ (places ocupades el mes $x$).
+Estima cap a quin valor tendeix quan $x$ creix molt.
+\solucio
+Fem una taula:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+$x$ & $1$ & $10$ & $100$ & $\num{1000}$ \\
+\midrule
+$f(x)$ & $-300$ & $240$ & $294$ & $299,4$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+A mesura que $x$ creix, $\dfrac{600}{x}$ s'acosta a $0$, així que $f(x)$ s'acosta a
+$300$. Per tant $\displaystyle\lim_{x\to\infty}f(x)=300$: el servei s'estabilitza en
+$300$ places.
+\resposta{El límit és $300$ places.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Fes una taula amb $x=1,10,100,1000$ i estima
+        $\displaystyle\lim_{x\to\infty}\frac{200}{x}$.
+  \item Estima, fent una taula, $\displaystyle\lim_{x\to\infty}\left(100-\frac{400}{x}\right)$.
+        Cap a quin valor s'estabilitza?
+  \item Per a cada funció, digues si el límit a l'infinit és un nombre finit,
+        $+\infty$ o $-\infty$:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=4x$ \hfill \item $g(x)=\dfrac{7}{x}$ \hfill
+          \item $h(x)=50+\dfrac{10}{x}$ \hfill \item $k(x)=-2x$
+        \end{enumerate}
+  \item Escriu amb notació de límit ($\lim_{x\to\infty}$) cadascuna d'aquestes frases:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «L'ocupació s'estabilitza en $150$ places.»
+          \item «El cost creix sense aturador.»
+        \end{enumerate}
+  \item Una llista d'espera es modelitza amb $f(x)=500-\dfrac{1000}{x}$ (persones el mes
+        $x$). Fes una taula amb $x=10,100,1000$ i digues cap a quin valor s'estabilitza.
+  \item \textbf{(Interpretació)} Si $\displaystyle\lim_{x\to\infty}f(x)=0$ per a l'ajut
+        per persona d'un fons repartit, què vol dir això socialment? És una bona o una
+        mala notícia per a les famílies?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item $\frac{200}{1}=200$, $\frac{200}{10}=20$, $\frac{200}{100}=2$,
+        $\frac{200}{1000}=0,2$: s'acosta a $0$. Límit $=0$.
+  \item $100-\frac{400}{x}$: per $x=1$ dóna $-300$; $x=10$, $60$; $x=100$, $96$;
+        $x=1000$, $99,6$. S'estabilitza en $100$.
+  \item (a) $+\infty$; \quad (b) finit, $0$; \quad (c) finit, $50$; \quad (d) $-\infty$.
+  \item (a) $\displaystyle\lim_{x\to\infty}f(x)=150$; \quad
+        (b) $\displaystyle\lim_{x\to\infty}f(x)=+\infty$.
+  \item $f(10)=400$, $f(100)=490$, $f(1000)=499$. S'estabilitza en $500$ persones.
+  \item Vol dir que, com més famílies s'hi reparteix el fons, menys diners toquen a
+        cadascuna, fins a acostar-se a $0$. És una \textbf{mala} notícia: l'ajut es
+        dilueix i es torna insignificant si no creix el fons.
+\end{sollist}
+\end{solucions}

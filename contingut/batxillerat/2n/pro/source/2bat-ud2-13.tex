@@ -1,0 +1,136 @@
+% =====================================================================
+%  2bat-ud2-13.tex  —  SESSIÓ 13: Cas real complet amb GeoGebra
+% =====================================================================
+\horatitol{Sessió 13 — Cas real complet amb GeoGebra}%
+{Integrar tot el mètode en un estudi de cas: de l'enunciat a la recomanació justificada, amb suport de GeoGebra.}
+
+\subsection{Idea clau}
+
+Avui tanquem el cicle complet d'una decisió basada en dades: de l'enunciat real a la
+recomanació justificada. Fem \textbf{tot el procés} amb el suport de GeoGebra, que
+ens estalvia errors de dibuix i ens deixa concentrar en el \textbf{plantejament} i la
+\textbf{interpretació}.
+
+\begin{idea}
+\textbf{El cicle complet de la programació lineal}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Variables:} definir què és $x$ i què és $y$.
+  \item \textbf{Sistema:} traduir les condicions a inequacions (i la no-negativitat).
+  \item \textbf{Regió factible:} representar-la (a GeoGebra) i \textbf{localitzar els
+        vèrtexs} amb l'eina Intersecció.
+  \item \textbf{Funció objectiu:} definir què s'optimitza i \textbf{avaluar-la als
+        vèrtexs}.
+  \item \textbf{Decisió:} triar l'òptim i \textbf{justificar} la recomanació.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[un cas real, de cap a cap]
+\textbf{Enunciat.} Un ajuntament reparteix places entre dos serveis: \textbf{atenció
+domiciliària} ($x$) i \textbf{centre de dia} ($y$). El pressupost permet
+$2x+3y\le 18$ (en milers d'euros) i el personal, $x+y\le 7$ places en total. Cada
+plaça domiciliària atén $3$ persones i cada plaça de centre, $4$. Volem atendre el
+màxim de persones: $P=3x+4y$.
+
+\textbf{Regió factible i vèrtexs} (amb GeoGebra, eina Intersecció):
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.6cm, height=5.8cm,
+    xlabel={\small domiciliària ($x$)}, ylabel={\small centre ($y$)},
+    xmin=0, xmax=10, ymin=0, ymax=8, xtick={0,2,4,6,8}, ytick={0,2,4,6}]
+  \fill[udblue!18] (axis cs:0,0) -- (axis cs:7,0) -- (axis cs:3,4) -- (axis cs:0,6) -- cycle;
+  \addplot[udblue, domain=0:9, samples=2]{(18-2*x)/3};   % pressupost
+  \addplot[udnavy, domain=0:7, samples=2]{7-x};          % personal
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(0,0)(7,0)(3,4)(0,6)};
+  \node[font=\scriptsize, anchor=north] at (axis cs:7,-0.1) {$(7,0)$};
+  \node[font=\scriptsize, anchor=south west] at (axis cs:3,4) {$(3,4)$};
+  \node[font=\scriptsize, anchor=east] at (axis cs:0,6) {$(0,6)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Avaluem} $P=3x+4y$ als vèrtexs:
+\[
+P(0,0)=0,\quad P(7,0)=21,\quad P(3,4)=9+16=25,\quad P(0,6)=24.
+\]
+El màxim és $P=25$ al vèrtex $(3,4)$.
+\end{exemple}
+
+\begin{exemple}[la recomanació justificada]
+\textbf{Decisió:} obrir \textbf{$3$ places domiciliàries i $4$ de centre de dia}, que
+atenen \textbf{$25$ persones}, el màxim possible. \textbf{Justificació:} aquesta
+combinació esgota tots dos recursos (pressupost $2\cdot 3+3\cdot 4=18$ i personal
+$3+4=7$), i supera les alternatives extremes (només domiciliària, $21$; només centre,
+$24$). Equilibrar els dos serveis atén més gent que concentrar-ho en un de sol.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[verificar l'òptim a GeoGebra]
+Com comprovaries a GeoGebra que el vèrtex $(3,4)$ és correcte i que és l'òptim?
+\solucio
+A GeoGebra: (1) introdueixes les inequacions \texttt{2x+3y<=18}, \texttt{x+y<=7},
+\texttt{x>=0}, \texttt{y>=0} i veus la regió; (2) amb l'eina \emph{Intersecció} sobre
+les rectes \texttt{2x+3y=18} i \texttt{x+y=7} obtens el punt $(3,4)$; (3) calcules
+$P=3x+4y$ a cada vèrtex (pots escriure \texttt{P(3,4)} si has definit la funció) i
+comproves que $25$ és el valor més gran. La màquina confirma el càlcul fet a mà.
+\resposta{Amb Intersecció es localitza $(3,4)$ i, avaluant $P$ als vèrtexs, es confirma que és el màxim.}
+\end{exresolt}
+
+\begin{exresolt}[i si canvia un recurs?]
+Si el personal permetés $x+y\le 8$ (una plaça més), com afectaria l'òptim? (Recalcula
+el vèrtex de creuament.)
+\solucio
+La restricció de personal puja a $x+y=8$. Creuament amb $2x+3y=18$: de $y=8-x$,
+$2x+3(8-x)=18\Rightarrow -x+24=18\Rightarrow x=6$, $y=2$, vèrtex $(6,2)$. Avaluem
+$P=3x+4y$ als nous vèrtexs $(0,0)$, $(8,0)$, $(6,2)$, $(0,6)$:
+$P(8,0)=24$, $P(6,2)=18+8=26$, $P(0,6)=24$. Ara el màxim és $P=26$ a $(6,2)$: una
+plaça més de personal permet atendre una persona més.
+\resposta{Amb $x+y\le 8$, l'òptim passa a $(6,2)$ amb $P=26$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Cas: $2x+3y\le 18$, $x+y\le 7$, $x,y\ge 0$; vèrtexs $(0,0)$, $(7,0)$,
+$(3,4)$, $(0,6)$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Comprova que els quatre vèrtexs compleixen totes les restriccions (substitueix
+        a les dues inequacions).
+  \item Avalua $P=3x+4y$ als quatre vèrtexs i confirma que el màxim és a $(3,4)$.
+  \item Suposa ara que cada plaça domiciliària atén $5$ persones i cada plaça de centre
+        $4$ ($P=5x+4y$). Troba el nou òptim. Ha canviat?
+  \item Si en lloc de maximitzar persones volguéssim \textbf{minimitzar} un cost
+        $C=2x+3y$ sobre la mateixa regió, on seria el mínim? (Compte: és l'altre
+        objectiu.)
+  \item \textbf{(Recomanació)} Per a l'òptim de l'exercici 2, redacta una recomanació
+        breu i justificada per a l'ajuntament (quantes places de cada servei, quantes
+        persones ateses, quins recursos s'esgoten).
+  \item \textbf{(Pràctica GeoGebra)} Descriu els passos que faries a GeoGebra per
+        resoldre aquest cas: quines ordres escriuries i quina eina faries servir per
+        trobar els vèrtexs.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item $(0,0)$: $0\le 18$, $0\le 7$. $(7,0)$: $14\le 18$, $7\le 7$. $(3,4)$:
+        $18\le 18$, $7\le 7$. $(0,6)$: $18\le 18$, $6\le 7$. Tots compleixen.
+  \item $P(0,0)=0$, $P(7,0)=21$, $P(3,4)=25$, $P(0,6)=24$. Màxim $P=25$ a $(3,4)$.
+  \item $P=5x+4y$: $P(7,0)=35$, $P(3,4)=15+16=31$, $P(0,6)=24$. Ara el màxim és
+        $P=35$ a $(7,0)$: com que la domiciliària atén més per plaça, convé concentrar-hi
+        els recursos. L'òptim \textbf{ha canviat} a $(7,0)$.
+  \item $C=2x+3y$: $C(0,0)=0$, $C(7,0)=14$, $C(3,4)=18$, $C(0,6)=18$. Mínim $C=0$ a
+        $(0,0)$ (no obrir places); si s'exclou el trivial, el menor és $C=14$ a $(7,0)$.
+  \item Resposta oberta. Ha d'indicar $3$ places domiciliàries i $4$ de centre, $25$
+        persones ateses, i que s'esgoten pressupost ($18$) i personal ($7$).
+  \item Resposta oberta. Passos esperats: introduir \texttt{2x+3y<=18}, \texttt{x+y<=7},
+        \texttt{x>=0}, \texttt{y>=0}; usar l'eina \emph{Intersecció} sobre les rectes
+        per als vèrtexs; definir \texttt{P(x,y)=3x+4y} i avaluar-la a cada vèrtex.
+\end{sollist}
+\end{solucions}

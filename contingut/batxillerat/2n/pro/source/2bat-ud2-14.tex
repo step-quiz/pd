@@ -1,0 +1,124 @@
+% =====================================================================
+%  2bat-ud2-14.tex  —  SESSIÓ 14: Repàs global i síntesi (estacions)
+% =====================================================================
+\horatitol{Sessió 14 — Repàs global i síntesi (estacions)}%
+{Repàs actiu per quatre estacions, una per pas del mètode, i mapa final que connecta tot el procés de decisió.}
+
+\subsection{Idea clau}
+
+Repassem \textbf{tota la unitat} de manera activa, rotant per \textbf{quatre
+estacions}, una per cada pas del mètode. Al final construirem un \textbf{mapa de la
+unitat} que connecta els quatre passos: \textbf{traduir $\rightarrow$ representar
+$\rightarrow$ optimitzar $\rightarrow$ interpretar}.
+
+\begin{idea}
+\textbf{Les quatre estacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Traduir:} passar un enunciat social a un sistema d'inequacions.
+  \item \textbf{Representar:} dibuixar la regió factible d'un sistema i trobar-ne els
+        vèrtexs.
+  \item \textbf{Optimitzar:} avaluar una funció objectiu als vèrtexs i triar el màxim
+        o el mínim.
+  \item \textbf{Interpretar i casos especials:} llegir una solució òptima, o reconèixer
+        solució múltiple / regió no acotada.
+\end{enumerate}
+\end{idea}
+
+\subsection{Les estacions}
+
+\begin{exemple}[Estació 1 — traduir]
+«Una entitat fa $x$ tallers i $y$ xerrades; com a màxim $10$ activitats en total, i com
+a màxim $6$ tallers; res negatiu.» $\rightarrow$ $\;x+y\le 10,\;x\le 6,\;x\ge 0,\;y\ge 0$.
+\end{exemple}
+
+\begin{exemple}[Estació 3 — optimitzar]
+Sobre els vèrtexs $(0,0)$, $(6,0)$, $(4,3)$, $(0,5)$, per maximitzar $P=2x+3y$
+avaluem: $P(6,0)=12$, $P(4,3)=17$, $P(0,5)=15$. Màxim $P=17$ a $(4,3)$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[model de l'Estació 2: representar i trobar vèrtexs]
+Dibuixa la regió factible de $\;x+y\le 6,\;x+3y\le 12,\;x\ge 0,\;y\ge 0\;$ i dóna'n
+els vèrtexs.
+\solucio
+Vèrtexs: $(0,0)$; eix $x$ (mana $x\le 6$) $\rightarrow (6,0)$; creuament $x+y=6$ i
+$x+3y=12$ ($2y=6\Rightarrow y=3$, $x=3$) $\rightarrow (3,3)$; eix $y$ (mana $y\le 4$)
+$\rightarrow (0,4)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=4.8cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=8, ymin=0, ymax=6, xtick={0,2,4,6}, ytick={0,2,4}]
+  \fill[udblue!18] (axis cs:0,0) -- (axis cs:6,0) -- (axis cs:3,3) -- (axis cs:0,4) -- cycle;
+  \addplot[udblue, domain=0:6, samples=2]{6-x};
+  \addplot[udnavy, domain=0:8, samples=2]{(12-x)/3};
+  \addplot[udnavy, only marks, mark=*, mark size=1.4pt] coordinates {(0,0)(6,0)(3,3)(0,4)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\resposta{Vèrtexs $(0,0)$, $(6,0)$, $(3,3)$ i $(0,4)$.}
+\end{exresolt}
+
+\begin{exresolt}[model de l'Estació 4: interpretar i casos especials]
+Sobre la regió anterior, maximitza $P=2x+2y$. Què observes?
+\solucio
+$P(0,0)=0$, $P(6,0)=12$, $P(3,3)=12$, $P(0,4)=8$. El màxim $P=12$ s'assoleix a
+$(6,0)$ \emph{i} a $(3,3)$: és una \textbf{solució múltiple} (tot el segment entre
+ells és òptim). Socialment, vol dir que hi ha diverses maneres igual de bones de
+repartir els recursos.
+\resposta{Solució múltiple: $P=12$ a $(6,0)$ i $(3,3)$, i a tot el segment entremig.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Una tasca per estació. Rota i resol-les totes.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Estació 1)} Tradueix a un sistema d'inequacions: «una associació
+        reparteix $x$ lots de menjar i $y$ d'higiene; com a màxim $20$ lots en total i
+        com a màxim $12$ de menjar; res negatiu».
+  \item \textbf{(Estació 2)} Troba els vèrtexs de la regió $\;2x+y\le 8,\;x\ge 0,\;
+        y\ge 0$.
+  \item \textbf{(Estació 2)} Calcula el vèrtex on es creuen $x+y=7$ i $2x+y=10$.
+  \item \textbf{(Estació 3)} Sobre els vèrtexs $(0,0)$, $(4,0)$, $(2,4)$, $(0,5)$,
+        maximitza $P=3x+2y$.
+  \item \textbf{(Estació 4)} Una regió és no acotada cap amunt, amb vèrtexs de baix
+        $(0,5)$, $(2,2)$, $(6,0)$. Minimitza $C=3x+4y$. Té sentit buscar-ne el màxim?
+  \item \textbf{(Mapa de la unitat)} Completa el mapa del mètode amb una frase per a
+        cada pas:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.6cm} p{8.8cm}}
+        \toprule
+        \textbf{Pas} & \textbf{Què fem} \\
+        \midrule
+        1. Traduir & \rule{8cm}{0.4pt} \\
+        2. Representar & \rule{8cm}{0.4pt} \\
+        3. Optimitzar & \rule{8cm}{0.4pt} \\
+        4. Interpretar & \rule{8cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item $x+y\le 20$, \;$x\le 12$, \;$x\ge 0$, \;$y\ge 0$.
+  \item Vèrtexs $(0,0)$, $(4,0)$ i $(0,8)$. (Sobre $y=0$: $2x\le 8\Rightarrow x\le 4$;
+        sobre $x=0$: $y\le 8$.)
+  \item Restant: $(2x+y)-(x+y)=10-7\Rightarrow x=3$; $y=7-3=4$. Vèrtex $(3,4)$.
+  \item $P(0,0)=0$, $P(4,0)=12$, $P(2,4)=6+8=14$, $P(0,5)=10$. Màxim $P=14$ a $(2,4)$.
+  \item $C(0,5)=20$, $C(2,2)=6+8=14$, $C(6,0)=18$. Mínim $C=14$ a $(2,2)$. El màxim
+        \textbf{no} té sentit: la regió és no acotada i $C$ creix sense límit.
+  \item Resposta oberta. Idees: 1. traduir l'enunciat a inequacions (variables +
+        restriccions); 2. dibuixar la regió factible i trobar els vèrtexs; 3. avaluar
+        la funció objectiu als vèrtexs i triar màxim/mínim; 4. interpretar l'òptim en
+        termes reals i reconèixer casos especials.
+\end{sollist}
+\end{solucions}

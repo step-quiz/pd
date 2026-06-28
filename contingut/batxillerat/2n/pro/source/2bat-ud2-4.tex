@@ -1,0 +1,142 @@
+% =====================================================================
+%  2bat-ud2-4.tex  —  SESSIÓ 4: Sistemes d'inequacions (intersecció de semiplans)
+% =====================================================================
+\horatitol{Sessió 4 — Sistemes d'inequacions: on es creuen les condicions}%
+{Representar diverses condicions alhora i quedar-se amb la zona que les compleix totes: la intersecció dels semiplans.}
+
+\subsection{Idea clau}
+
+A la pissarra vau veure que les combinacions vàlides formen una regió. Avui la trobem
+amb mètode. Quan hi ha \textbf{diverses} condicions a la vegada (un
+\textbf{sistema d'inequacions}), representem cada inequació i ens quedem
+\emph{només} amb la zona que les compleix \textbf{totes}: la \textbf{intersecció}
+dels semiplans.
+
+\begin{idea}
+\textbf{Com representar un sistema d'inequacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item Representa \textbf{cada} inequació per separat (recta frontera + semiplà), com
+        a la sessió anterior.
+  \item La solució del sistema és la \textbf{zona comuna} a tots els semiplans (on se
+        superposen tots).
+\end{enumerate}
+\textbf{La condició implícita.} En els problemes reals, les quantitats \textbf{no
+poden ser negatives}: $x\ge 0$ i $y\ge 0$. Aquestes dues condicions confinen la regió
+al \textbf{primer quadrant} (a dalt i a la dreta de l'origen). Sovint no s'escriuen,
+però \emph{sempre} hi són.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[intersecció de dues condicions]
+Representem el sistema $\;x+y\le 6,\quad x\ge 0,\quad y\ge 0$. Les dues últimes ens
+deixen al primer quadrant; la primera, sota la recta $x+y=6$. La zona comuna és un
+\textbf{triangle}:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=6cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=8, ymin=0, ymax=8, xtick={0,2,4,6}, ytick={0,2,4,6}]
+  \addplot[name path=r, udblue, domain=0:6, samples=2]{6-x};
+  \path[name path=ex] (0,0) -- (6,0);
+  \addplot[udblue!20] fill between[of=r and ex, soft clip={domain=0:6}];
+  \node[udnavy, font=\scriptsize] at (axis cs:1.8,1.6) {zona comuna};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{$x+y\le 6$ amb $x,y\ge 0$: triangle de vèrtexs $(0,0)$, $(6,0)$ i $(0,6)$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[dues rectes que es creuen]
+Representem $\;x+y\le 6,\quad x\le 4,\quad x\ge 0,\quad y\ge 0$. Ara la recta vertical
+$x=4$ retalla una part del triangle. La zona comuna queda limitada per totes dues
+rectes alhora:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=6cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=8, ymin=0, ymax=8, xtick={0,2,4,6}, ytick={0,2,4,6}]
+  % regió: x in [0,4], y in [0, 6-x]
+  \fill[udblue!20] (axis cs:0,0) -- (axis cs:4,0) -- (axis cs:4,2) -- (axis cs:0,6) -- cycle;
+  \addplot[udblue, domain=0:6, samples=2]{6-x};
+  \draw[udblue] (axis cs:4,0) -- (axis cs:4,8);
+  \node[udnavy, font=\scriptsize, anchor=north] at (axis cs:5.4,7.6) {$x=4$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La recta $x=4$ retalla el triangle; la zona comuna compleix totes les condicions.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[trobar els vèrtexs de la zona comuna]
+Per al sistema $\;x+y\le 6,\;x\ge 0,\;y\ge 0$, troba els \textbf{vèrtexs} (cantonades)
+de la regió.
+\solucio
+La regió és un triangle limitat per tres rectes: $x=0$ (eix vertical), $y=0$ (eix
+horitzontal) i $x+y=6$. Els vèrtexs són on es tallen dues d'aquestes rectes:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item $x=0$ amb $y=0$: punt $(0,0)$.
+  \item $y=0$ amb $x+y=6$: $x=6$, punt $(6,0)$.
+  \item $x=0$ amb $x+y=6$: $y=6$, punt $(0,6)$.
+\end{itemize}
+\resposta{Vèrtexs: $(0,0)$, $(6,0)$ i $(0,6)$.}
+\end{exresolt}
+
+\begin{exresolt}[comprovar que un punt és a la regió]
+Per al sistema $\;2x+y\le 8,\;x\ge 0,\;y\ge 0$, digues si el punt $(3,1)$ és a la
+zona comuna.
+\solucio
+Comprovem totes les condicions amb $(3,1)$:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item $2\cdot 3+1=7\le 8$: d'acord.
+  \item $x=3\ge 0$: d'acord. \quad $y=1\ge 0$: d'acord.
+\end{itemize}
+Compleix \textbf{totes}, així que $(3,1)$ \textbf{sí} que és a la zona comuna.
+\resposta{Sí: compleix les tres condicions.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Representa el sistema $\;x+y\le 5,\;x\ge 0,\;y\ge 0$ i indica'n els tres
+        vèrtexs.
+  \item Per al sistema $\;x+y\le 8,\;x\ge 0,\;y\ge 0$, digues si són a la zona comuna:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $(2,3)$ \hfill \item $(5,5)$ \hfill \item $(8,0)$
+        \end{enumerate}
+  \item Troba els vèrtexs de la regió del sistema $\;x+y\le 4,\;x\ge 0,\;y\ge 0$.
+  \item Representa el sistema $\;x\le 5,\;y\le 4,\;x\ge 0,\;y\ge 0$. Quina forma té la
+        regió? Quins són els seus quatre vèrtexs?
+  \item Per al sistema $\;x+2y\le 8,\;x\ge 0,\;y\ge 0$, troba on talla la recta
+        frontera els dos eixos i dibuixa la regió.
+  \item \textbf{(Context social)} Una entitat ha de complir
+        $\;100x+200y\le\num{1200}\;$ i $\;2x+5y\le 30\;$ (amb $x,y\ge 0$), del cas de
+        la sessió 3. Comprova si els punts $(6,3)$ i $(10,2)$ són a la zona comuna
+        (mira totes les condicions).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item Triangle de vèrtexs $(0,0)$, $(5,0)$ i $(0,5)$.
+  \item (a) $2+3=5\le 8$ i $x,y\ge 0$: \textbf{sí}; \quad
+        (b) $5+5=10\le 8$ fals: \textbf{no}; \quad
+        (c) $8+0=8\le 8$ i $x,y\ge 0$: \textbf{sí} (just al límit).
+  \item Vèrtexs $(0,0)$, $(4,0)$ i $(0,4)$.
+  \item Un \textbf{rectangle}; vèrtexs $(0,0)$, $(5,0)$, $(5,4)$ i $(0,4)$.
+  \item La recta $x+2y=8$ talla els eixos a $(8,0)$ i $(0,4)$; la regió és el triangle
+        de vèrtexs $(0,0)$, $(8,0)$ i $(0,4)$.
+  \item $(6,3)$: $100\cdot 6+200\cdot 3=\num{1200}\le\num{1200}$ i
+        $2\cdot 6+5\cdot 3=27\le 30$, amb $x,y\ge 0$: \textbf{sí}.
+        $(10,2)$: cost $\num{1000}+400=\num{1400}>\num{1200}$: \textbf{no} (falla el
+        pressupost).
+\end{sollist}
+\end{solucions}

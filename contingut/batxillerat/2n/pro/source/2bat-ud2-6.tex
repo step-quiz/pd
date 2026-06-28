@@ -1,0 +1,139 @@
+% =====================================================================
+%  2bat-ud2-6.tex  —  SESSIÓ 6: GeoGebra: dibuixar regions factibles
+% =====================================================================
+\horatitol{Sessió 6 — GeoGebra: dibuixar regions factibles}%
+{Representar amb l'ordinador les regions factibles fetes a mà, comparar-les i localitzar els vèrtexs amb precisió.}
+
+\subsection{Idea clau}
+
+Avui portem a \textbf{GeoGebra} les regions factibles que hem dibuixat a mà.
+L'aplicació ombreja sola el semiplà de cada inequació i, en posar-les totes,
+mostra clarament la \textbf{regió factible}. La idea important: GeoGebra
+\textbf{no fa la feina per tu}; serveix per \textbf{comprovar} la teva i per trobar
+els \textbf{vèrtexs} amb precisió.
+
+\begin{idea}
+\textbf{Com representar un sistema a GeoGebra}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Introdueix cada inequació} a la barra d'entrada, tal com s'escriu:
+        \texttt{x+2y<=12}, \texttt{x+3y<=15}, \texttt{x>=0}, \texttt{y>=0}.
+        GeoGebra ombreja el semiplà de cada una.
+  \item \textbf{La regió factible} és la zona on se superposen \emph{tots} els
+        ombrejats (la més fosca).
+  \item \textbf{Vèrtexs:} usa l'eina \emph{Intersecció} (o l'ordre
+        \texttt{Interseca}) sobre dues vores per obtenir-ne les coordenades exactes.
+  \item \textbf{Compara} la regió de la màquina amb la que vas fer a mà: si no
+        coincideixen, revisa el teu dibuix.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[introduir un sistema i llegir-ne la regió]
+Per al cas de l'entitat, escrivim a GeoGebra:
+\[
+\texttt{x+2y<=12}, \quad \texttt{x+3y<=15}, \quad \texttt{x>=0}, \quad \texttt{y>=0}.
+\]
+La zona on coincideixen tots els ombrejats és la regió factible. Amb l'eina
+\emph{Intersecció}, en creuar \texttt{x+2y=12} amb \texttt{x+3y=15} obtenim el punt
+$(6,3)$, exactament el vèrtex que havíem calculat a mà.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.6cm, height=5.8cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=0, xmax=15, ymin=0, ymax=8, xtick={0,4,8,12}, ytick={0,2,4,6}]
+  \fill[udblue!18] (axis cs:0,0) -- (axis cs:12,0) -- (axis cs:6,3) -- (axis cs:0,5) -- cycle;
+  \addplot[udblue, domain=0:12, samples=2]{(12-x)/2};
+  \addplot[udnavy, domain=0:15, samples=2]{(15-x)/3};
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(6,3)};
+  \node[font=\scriptsize, anchor=south west] at (axis cs:6,3) {$(6,3)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La regió que mostra GeoGebra coincideix amb la feta a mà; la intersecció dóna el vèrtex $(6,3)$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[la màquina detecta un error]
+Suposem que a mà havíem dibuixat la vora del material pel costat equivocat (com si
+fos $x+3y\ge 15$). En posar-ho a GeoGebra, l'ombrejat de la màquina queda a l'altre
+costat i la regió factible \emph{no} coincideix amb la nostra. Aquesta discrepància
+ens avisa: havíem triat malament el semiplà. La comparació funciona com a
+\textbf{autocorrecció}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[interpretar el que mostra la pantalla]
+En introduir $\;x+y\le 6,\;x\ge 0,\;y\ge 0$, GeoGebra ombreja un triangle. Quins
+vèrtexs hauries d'obtenir amb l'eina Intersecció?
+\solucio
+Les vores són $x=0$, $y=0$ i $x+y=6$. Les interseccions de dues en dues donen:
+$x=0$ amb $y=0$ $\rightarrow (0,0)$; $y=0$ amb $x+y=6$ $\rightarrow (6,0)$; $x=0$ amb
+$x+y=6$ $\rightarrow (0,6)$.
+\resposta{Vèrtexs $(0,0)$, $(6,0)$ i $(0,6)$.}
+\end{exresolt}
+
+\begin{exresolt}[comparar màquina i mà]
+A mà has obtingut una regió amb vèrtexs $(0,0)$, $(12,0)$, $(6,3)$, $(0,5)$, però
+GeoGebra te'n mostra una amb vèrtex $(0,6)$ en comptes de $(0,5)$. Què ha pogut
+passar?
+\solucio
+El vèrtex superior de l'eix vertical el fixa la restricció \textbf{més exigent}. A
+$(0,6)$, el material valdria $0+3\cdot 6=18>15$: no es compleix. El vèrtex correcte
+és $(0,5)$ (on $x+3y=15$). Probablement a GeoGebra has oblidat d'introduir la
+restricció del material, o l'has escrit malament; revisa-la.
+\resposta{Falta (o està mal escrita) la restricció del material; el vèrtex bo és $(0,5)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Full de pràctica tecnològica. Per a cada sistema: escriu el que vas
+obtenir a mà, comprova-ho a GeoGebra i anota si coincideix o si has trobat un error.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Introdueix a GeoGebra $\;x+y\le 5,\;x\ge 0,\;y\ge 0\;$ i comprova els tres
+        vèrtexs amb l'eina Intersecció.
+  \item Introdueix el sistema del cas de l'entitat ($x+2y\le 12$, $x+3y\le 15$,
+        $x\ge 0$, $y\ge 0$) i comprova que els quatre vèrtexs coincideixen amb els que
+        tens a mà.
+  \item Representa $\;x\le 5,\;y\le 4,\;x\ge 0,\;y\ge 0\;$ i digues quina forma té la
+        regió i quins són els seus quatre vèrtexs.
+  \item Completa el full de validació amb tres sistemes a la teva elecció:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.6cm} p{3.4cm} p{2cm} p{2.6cm}}
+        \toprule
+        \textbf{Sistema} & \textbf{Vèrtexs a mà} & \textbf{Coincideix?} & \textbf{Error trobat} \\
+        \midrule
+         & & & \\[10pt]
+         & & & \\[10pt]
+         & & & \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Autocorrecció)} Si en algun sistema la regió de GeoGebra no coincideix
+        amb la teva, escriu en una frase quin va ser l'error (semiplà equivocat?
+        restricció oblidada? recta mal dibuixada?).
+  \item \textbf{(Coherència)} Explica per què la regió factible és sempre la zona on se
+        superposen \emph{tots} els ombrejats, i no la unió de tots ells.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item Vèrtexs $(0,0)$, $(5,0)$ i $(0,5)$; han de coincidir amb la versió manual.
+  \item Vèrtexs $(0,0)$, $(12,0)$, $(6,3)$ i $(0,5)$; tots quatre han de coincidir.
+  \item La regió és un \textbf{rectangle}; vèrtexs $(0,0)$, $(5,0)$, $(5,4)$ i $(0,4)$.
+  \item Resposta oberta (full de validació personal). Es valora la coherència entre el
+        càlcul a mà i la lectura de GeoGebra i l'anotació dels desajustos.
+  \item Resposta oberta. Es valora identificar bé el tipus d'error i corregir-lo.
+  \item Perquè cal complir \textbf{totes} les restriccions \emph{alhora}: un punt és
+        factible només si és a tots els semiplans a la vegada, és a dir, a la
+        \textbf{intersecció}. La unió inclouria punts que només compleixen una condició.
+\end{sollist}
+\end{solucions}

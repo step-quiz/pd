@@ -1,0 +1,148 @@
+% =====================================================================
+%  2bat-ud2-1.tex  —  SESSIÓ 1: Les inequacions de 1r, ara amb dues variables
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — Les inequacions de 1r, ara amb dues variables}%
+{Recuperar les inequacions d'una variable i fer el salt al pla: quan hi ha dues quantitats que varien alhora.}
+
+\subsection{Idea clau}
+
+A 1r vam treballar inequacions d'\textbf{una} variable (llindars de renda, franges
+d'edat) i les representàvem sobre la \textbf{recta}. Aquest curs sovint haurem de
+decidir sobre \textbf{dues} quantitats alhora: per exemple, com repartir uns diners
+entre \emph{dos} programes. Quan hi ha dues variables, una recta ja no n'hi ha prou:
+necessitem tot el \textbf{pla}.
+
+\begin{idea}
+\textbf{D'una variable a dues}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Amb \textbf{una} variable, una inequació com $x\le 5$ té per solució un
+        \textbf{tram de la recta}.
+  \item Amb \textbf{dues} variables ($x$ i $y$), una inequació com $x+y\le 10$ té per
+        solució tota una \textbf{zona del pla}: totes les parelles $(x,y)$ que la
+        compleixen.
+  \item Representem les parelles $(x,y)$ com a \textbf{punts} en uns eixos: $x$
+        horitzontal, $y$ vertical.
+\end{itemize}
+\textbf{Exemple social:} si una entitat reparteix diners entre el programa A ($x$) i
+el programa B ($y$) i el total no pot superar $\num{10000}\eur$, la condició és
+$x+y\le\num{10000}$. Hi ha \emph{moltes} maneres de complir-la.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[repàs: una inequació d'una variable]
+Recordem 1r. «Una entitat té un pressupost que no pot superar $\num{8000}\eur$»: si
+$x$ és la despesa, $x\le\num{8000}$, l'interval $(-\infty,\,\num{8000}]$. A la recta,
+un punt ple a $\num{8000}$ i tot el que queda a l'esquerra. \textbf{Una} sola
+quantitat, \textbf{una} recta.
+\end{exemple}
+
+\begin{exemple}[el salt al pla: dues variables]
+Ara l'entitat reparteix els diners entre \emph{dos} programes: $x\eur$ al programa A
+i $y\eur$ al programa B, amb un total que no pot superar $\num{10000}\eur$:
+\[
+x+y\le \num{10000}.
+\]
+Algunes combinacions que la compleixen: $(\num{5000},\num{4000})$ ja que
+$\num{5000}+\num{4000}=\num{9000}\le\num{10000}$; o $(\num{2000},\num{1000})$. Una que
+\emph{no} la compleix: $(\num{7000},\num{6000})$, perquè $\num{13000}>\num{10000}$.
+Cada combinació és un \textbf{punt} $(x,y)$; les que compleixen la condició formen una
+\textbf{zona} del pla:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.6cm, height=6cm,
+    xlabel={\small programa A ($x$, milers \euro)},
+    ylabel={\small programa B ($y$, milers \euro)},
+    xmin=0, xmax=12, ymin=0, ymax=12,
+    xtick={0,5,10}, ytick={0,5,10}, clip=false]
+  \addplot[name path=recta, udblue, domain=0:10, samples=2]{10-x};
+  \path[name path=eixx] (0,0) -- (10,0);
+  \addplot[udblue!18] fill between[of=recta and eixx, soft clip={domain=0:10}];
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(5,4)};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:5,4) {$(5,4)$};
+  \node[udblue, font=\scriptsize, anchor=west] at (axis cs:1.2,2) {compleixen};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Cada punt és un repartiment $(x,y)$; la zona ombrejada són els que compleixen $x+y\le 10$ (en milers).}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[comprovar si un punt compleix una condició]
+Per a la condició $x+y\le\num{10000}$ (en euros), digues si compleixen cada
+repartiment: (a) $(\num{6000},\num{3000})$; (b) $(\num{8000},\num{5000})$;
+(c) $(\num{4000},\num{6000})$.
+\solucio
+Substituïm i sumem:
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item $\num{6000}+\num{3000}=\num{9000}\le\num{10000}$: \textbf{sí}.
+  \item $\num{8000}+\num{5000}=\num{13000}\le\num{10000}$ és fals: \textbf{no}.
+  \item $\num{4000}+\num{6000}=\num{10000}\le\num{10000}$: \textbf{sí} (just al límit).
+\end{enumerate}
+\resposta{(a) sí; (b) no; (c) sí (just al límit, que hi entra).}
+\end{exresolt}
+
+\begin{exresolt}[traduir una frase a una inequació de dues variables]
+Una associació dedica $x$ hores setmanals a tallers i $y$ hores a acompanyament, i en
+total disposa com a màxim de $30$ hores. A més, totes dues han de ser no negatives.
+Escriu les condicions com a inequacions.
+\solucio
+«En total com a màxim $30$ hores»: $x+y\le 30$. «No negatives» (no es poden fer hores
+negatives): $x\ge 0$ i $y\ge 0$. Així, el conjunt de condicions és
+\[
+x+y\le 30,\qquad x\ge 0,\qquad y\ge 0.
+\]
+\resposta{$x+y\le 30$, amb $x\ge 0$ i $y\ge 0$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Resol aquestes inequacions d'\textbf{una} variable (repàs de 1r) i escriu-ne
+        l'interval:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $2x-4\le 10$ \hfill \item $5-3x>-1$
+        \end{enumerate}
+  \item Per a la condició $x+y\le 12$, digues si compleixen els punts:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $(5,4)$ \hfill \item $(8,6)$ \hfill \item $(7,5)$
+        \end{enumerate}
+  \item Tradueix cada frase a una inequació amb dues variables ($x$ i $y$):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «El cost del programa A més el del B no pot superar $\num{5000}\eur$.»
+          \item «Entre tallers ($x$) i sortides ($y$) es faran com a mínim $8$ activitats.»
+        \end{enumerate}
+  \item Una entitat reparteix $x$ places al servei de matí i $y$ a la tarda, amb un
+        total màxim de $50$ places i totes dues no negatives. Escriu les tres
+        condicions (la del total i les dues de no-negativitat).
+  \item Dóna \textbf{tres} repartiments diferents $(x,y)$ que compleixin
+        $x+y\le 20$ amb $x\ge 0$ i $y\ge 0$.
+  \item \textbf{(Reflexió)} Explica amb les teves paraules què canvia quan, en lloc
+        d'\emph{una} incògnita, en tenim \emph{dues}. Per què ja no n'hi ha prou amb
+        una recta per representar la solució?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $2x\le 14 \Rightarrow x\le 7$, interval $(-\infty,7]$; \quad
+        (b) $-3x>-6 \Rightarrow x<2$ (girant el signe), interval $(-\infty,2)$.
+  \item (a) $5+4=9\le 12$: sí; \quad (b) $8+6=14\le 12$ fals: no; \quad
+        (c) $7+5=12\le 12$: sí (just al límit).
+  \item (a) $x+y\le\num{5000}$; \quad (b) $x+y\ge 8$.
+  \item $x+y\le 50$, amb $x\ge 0$ i $y\ge 0$.
+  \item Resposta oberta. Exemples vàlids: $(10,5)$, $(0,20)$, $(8,8)$ (tots compleixen
+        $x+y\le 20$ amb $x,y\ge 0$).
+  \item Resposta oberta. Idea esperada: amb dues variables, una solució és una
+        \emph{parella} $(x,y)$, no un sol nombre; el conjunt de solucions ja no és un
+        tram de recta sinó una \textbf{zona del pla}, i per això cal representar-ho en
+        dos eixos.
+\end{sollist}
+\end{solucions}

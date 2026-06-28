@@ -1,0 +1,130 @@
+% =====================================================================
+%  2bat-ud3-2.tex  —  SESSIÓ 2: El sostre d'un servei (descoberta)
+% =====================================================================
+\horatitol{Sessió 2 — El sostre d'un servei}%
+{Un cas real: descriure cap a quin valor s'acosta l'ocupació d'un servei que creix però mai supera la seva capacitat.}
+
+\subsection{Idea clau}
+
+Avui treballem en grup, a les pissarres, com a investigadors. Us repartim la
+\textbf{gràfica muda} de l'ocupació d'un servei (per exemple, les places ocupades
+d'un centre al llarg dels mesos): creix de pressa al principi i després cada cop més
+a poc a poc, \textbf{sense superar mai la capacitat màxima}. El repte: descriure cap a
+quin valor s'acosta, sense que us doni cap nom matemàtic. L'heu de trobar vosaltres.
+
+\begin{idea}
+\textbf{El cas.} Un centre té $200$ places. L'ocupació al llarg dels mesos creix, però
+mai no pot passar de $200$. La pregunta del dia:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Què li passa a l'ocupació a mesura que passa el temps?
+  \item Cap a quin valor sembla que s'acosta? Arribarà mai a superar-lo?
+  \item Com en diríeu, d'aquest valor cap al qual tendeix però no toca?
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la gràfica de l'ocupació]
+La corba puja de pressa al principi i s'aplana a mesura que s'acosta a les $200$
+places, sense traspassar-les mai:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10cm, height=5.4cm,
+    xlabel={\small mesos}, ylabel={\small places ocupades},
+    xmin=0, xmax=24, ymin=0, ymax=240,
+    xtick={0,6,12,18,24}, ytick={0,100,200}]
+  \addplot[udblue, domain=0:24, samples=100]{200*(1-exp(-x/6))};
+  \addplot[udnavy, dashed, domain=0:24, samples=2]{200};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:24,200) {capacitat $=200$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{L'ocupació s'enfila cap a les $200$ places (el «sostre») però no les supera mai.}
+\end{center}
+
+\noindent La corba s'acosta cada cop més a la línia de les $200$ places, però no hi
+arriba del tot: aquest valor és el \textbf{sostre} del servei.
+\end{exemple}
+
+\begin{exemple}[llegir valors concrets]
+Si mirem l'ocupació mes a mes, veiem que els augments són cada cop més petits:
+\begin{center}
+\begin{tabular}{lcccccc}
+\toprule
+Mes & $3$ & $6$ & $12$ & $18$ & $24$ \\
+\midrule
+Places (aprox.) & $79$ & $126$ & $173$ & $190$ & $196$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Cada cop s'acosta més a $200$, però els salts es fan més petits: mai no la superarà.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[descriure el comportament]
+Descriu amb les teves paraules què li passa a l'ocupació del centre a mesura que
+passa el temps, i cap a quin valor tendeix.
+\solucio
+Al principi l'ocupació puja de pressa (s'omplen moltes places ràpidament). Després,
+com que cada cop queden menys places lliures, l'augment es fa més lent i la corba
+s'\textbf{aplana}. L'ocupació s'acosta cada cop més a les \textbf{$200$ places}, la
+capacitat màxima, però no la supera mai. El valor $200$ és el \textbf{sostre} cap al
+qual tendeix.
+\resposta{Creix de pressa i després cada cop més a poc a poc, acostant-se a $200$
+sense superar-les.}
+\end{exresolt}
+
+\begin{exresolt}[per què no se supera el sostre]
+Per què té sentit, en aquest context real, que la gràfica no pugui passar de $200$?
+\solucio
+Perquè $200$ és la \textbf{capacitat física} del centre: no hi caben més de $200$
+persones. Per molt que augmenti la demanda, l'ocupació no pot superar les places
+disponibles. Per això la gràfica s'acosta a $200$ però mai la traspassa: el context
+imposa aquest sostre.
+\resposta{Perquè $200$ és la capacitat màxima del centre; no hi caben més places.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballeu en grup a la pissarra, descrivint el comportament de cada
+fenomen.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a l'ocupació del centre, completa: «al principi creix \rule{2cm}{0.4pt} i
+        després cada cop més \rule{2cm}{0.4pt}, acostant-se a \rule{1.5cm}{0.4pt} sense
+        superar-les».
+  \item Un altre centre té capacitat per a $150$ places. Si la seva ocupació es comporta
+        igual (creix i s'aplana), cap a quin valor s'acostarà la gràfica?
+  \item Mirant la taula de l'exemple, quants augments de places hi ha del mes $3$ al
+        $6$, i del mes $18$ al $24$? Què observes en la mida d'aquests augments?
+  \item \textbf{(Anticipació)} Si esperéssim molts mesos més, creus que l'ocupació
+        arribaria \emph{exactament} a $200$? Justifica la teva intuïció.
+  \item \textbf{(Vocabulari)} A les pissarres han sortit paraules per anomenar aquest
+        valor cap al qual tendeix la gràfica («sostre», «topall», «màxim»\dots). Anota
+        dues maneres diferents que hagin aparegut a classe.
+  \item \textbf{(Context propi)} Pensa en un altre servei de l'àmbit social que
+        s'acosti a un sostre (per exemple, una llista d'espera limitada o una sala amb
+        aforament). Descriu-ne el comportament final.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item «al principi creix \textbf{de pressa} i després cada cop més \textbf{a poc a
+        poc}, acostant-se a \textbf{$200$ places} sense superar-les».
+  \item S'acostarà a $150$ places (la seva capacitat), sense superar-les.
+  \item Del mes $3$ al $6$: $126-79=47$ places. Del mes $18$ al $24$: $196-190=6$
+        places. Els augments es fan \textbf{cada cop més petits} a mesura que s'acosta
+        al sostre.
+  \item Resposta oberta. Idea esperada: s'hi acostaria moltíssim, gairebé fins a
+        tocar-lo, però sense arribar-hi \emph{exactament}: sempre quedaria un marge
+        diminut. (Aquesta és la idea de límit.)
+  \item Resposta oberta (p.\,ex. «sostre», «topall», «capacitat», «màxim»).
+  \item Resposta oberta.
+\end{sollist}
+\end{solucions}

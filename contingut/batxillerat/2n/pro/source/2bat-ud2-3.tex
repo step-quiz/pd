@@ -1,0 +1,131 @@
+% =====================================================================
+%  2bat-ud2-3.tex  —  SESSIÓ 3: Quantes combinacions són possibles? (descoberta)
+% =====================================================================
+\horatitol{Sessió 3 — Quantes combinacions són possibles?}%
+{Un cas real: trobar totes les combinacions d'activitats possibles amb un pressupost i unes hores limitats, abans de cap fórmula.}
+
+\subsection{Idea clau}
+
+Avui treballem en grup, a les pissarres, com a gestors d'una entitat. Tenim un
+\textbf{pressupost màxim} i un \textbf{nombre màxim d'hores} de monitoratge, i hem
+d'organitzar \textbf{dos} tipus d'activitat. El repte: trobar quines combinacions són
+possibles sense passar-nos de res. No us dono cap fórmula: l'heu de descobrir.
+
+\begin{idea}
+\textbf{El cas.} Una entitat vol organitzar \textbf{tallers} ($x$) i \textbf{sortides}
+($y$). Cada activitat consumeix diners i hores de monitoratge:
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+ & Cost (\euro) & Hores de monitoratge \\
+\midrule
+Cada taller ($x$) & $100$ & $2$ \\
+Cada sortida ($y$) & $200$ & $5$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Disposem com a màxim de \textbf{$\num{1200}\eur$} i de \textbf{$30$ hores}.
+\textbf{La pregunta del dia:} quines combinacions $(x,y)$ són possibles? N'hi ha una
+o moltes? Si les dibuixéssiu totes, quina forma tindrien?
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[provar una combinació]
+Provem $3$ tallers i $2$ sortides, és a dir $(x,y)=(3,2)$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Cost:} $100\cdot 3+200\cdot 2=300+400=700\eur\le\num{1200}$: d'acord.
+  \item \textbf{Hores:} $2\cdot 3+5\cdot 2=6+10=16\le 30$: d'acord.
+\end{itemize}
+La combinació $(3,2)$ \textbf{és possible}: compleix totes dues condicions.
+\end{exemple}
+
+\begin{exemple}[una combinació que no es pot]
+Provem $(8,4)$: $8$ tallers i $4$ sortides.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Cost:} $100\cdot 8+200\cdot 4=800+800=\num{1600}\eur$, que
+        \textbf{supera} els $\num{1200}\eur$. Ja no cal mirar les hores: \textbf{no} es pot.
+\end{itemize}
+N'hi ha prou que falli \emph{una} condició perquè la combinació quedi descartada.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[traduir les condicions a inequacions]
+Escriu les condicions del cas (pressupost i hores) com a inequacions amb dues
+variables, sense oblidar que no es poden fer activitats negatives.
+\solucio
+\textbf{Pressupost:} cada taller costa $100\eur$ i cada sortida $200\eur$, i el total
+no pot superar $\num{1200}$:
+\[
+100x+200y\le \num{1200}.
+\]
+\textbf{Hores:} cada taller són $2$ h i cada sortida $5$ h, com a màxim $30$:
+\[
+2x+5y\le 30.
+\]
+\textbf{No-negativitat:} $x\ge 0$ i $y\ge 0$ (no hi ha activitats negatives).
+\resposta{$100x+200y\le\num{1200}$, \;$2x+5y\le 30$, \;$x\ge 0$, \;$y\ge 0$.}
+\end{exresolt}
+
+\begin{exresolt}[comprovar una combinació amb totes les condicions]
+És possible la combinació $(6,3)$ ($6$ tallers i $3$ sortides)?
+\solucio
+Comprovem les dues condicions:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item Cost: $100\cdot 6+200\cdot 3=600+600=\num{1200}\le\num{1200}$: d'acord (just al límit).
+  \item Hores: $2\cdot 6+5\cdot 3=12+15=27\le 30$: d'acord.
+\end{itemize}
+Compleix totes dues (i $x,y\ge 0$): la combinació $(6,3)$ \textbf{és possible}, just al
+límit del pressupost.
+\resposta{Sí: cost $\num{1200}$ (just al límit) i $27$ hores; compleix tot.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballeu en grup. Useu el cas: cada taller $100\eur$ i $2$ h; cada
+sortida $200\eur$ i $5$ h; màxims $\num{1200}\eur$ i $30$ h.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Comprova si cada combinació $(x,y)$ és possible (mira cost \emph{i} hores):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $(4,2)$ \hfill \item $(2,5)$ \hfill \item $(10,1)$
+        \end{enumerate}
+  \item Escriu les \textbf{quatre} condicions del problema com a inequacions (les dues
+        de recursos i les dues de no-negativitat).
+  \item Troba \textbf{tres} combinacions diferents que siguin possibles i \textbf{una}
+        que no ho sigui, justificant cada cas amb els càlculs.
+  \item Si l'entitat només fes \textbf{sortides} ($x=0$), quantes en podria fer com a
+        màxim? (Mira quina condició és la més restrictiva: pressupost o hores.)
+  \item Si només fes \textbf{tallers} ($y=0$), quants en podria fer com a màxim? Quina
+        condició mana en aquest cas?
+  \item \textbf{(Descoberta)} A la pissarra, marqueu uns quants punts $(x,y)$
+        possibles i uns quants d'impossibles. Quina \textbf{forma} sembla tenir la
+        zona de les combinacions possibles? Per què creieu que les solucions no són
+        casos solts sinó tota una regió?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item (a) cost $400+400=800$, hores $8+10=18$: \textbf{possible}. \quad
+        (b) cost $200+\num{1000}=\num{1200}$, hores $4+25=29$: \textbf{possible}
+        (just al límit de cost). \quad
+        (c) cost $\num{1000}+200=\num{1200}$, hores $20+5=25$: \textbf{possible}.
+  \item $100x+200y\le\num{1200}$; \;$2x+5y\le 30$; \;$x\ge 0$; \;$y\ge 0$.
+  \item Resposta oberta. Exemples possibles: $(3,2)$, $(6,3)$, $(0,6)$; impossible:
+        $(8,4)$ (cost $\num{1600}>\num{1200}$).
+  \item Amb $x=0$: pressupost $200y\le\num{1200}\Rightarrow y\le 6$; hores
+        $5y\le 30\Rightarrow y\le 6$. Totes dues donen $6$: com a màxim \textbf{$6$
+        sortides}.
+  \item Amb $y=0$: pressupost $100x\le\num{1200}\Rightarrow x\le 12$; hores
+        $2x\le 30\Rightarrow x\le 15$. Mana la més petita: com a màxim \textbf{$12$
+        tallers} (el pressupost és la condició restrictiva).
+  \item Resposta oberta. La zona possible té forma de \textbf{polígon} (regió del
+        pla). No són casos solts perquè qualsevol punt dins de la zona compleix totes
+        les condicions: hi ha infinites combinacions vàlides.
+\end{sollist}
+\end{solucions}

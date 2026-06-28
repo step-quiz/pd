@@ -1,0 +1,135 @@
+% =====================================================================
+%  2bat-ud3-1.tex  —  SESSIÓ 1: Cap a on van els fenòmens? (connexió amb 1r)
+% =====================================================================
+\horatitol{Sessió 1 — Cap a on van els fenòmens? Connexió amb les funcions de 1r}%
+{Recuperar les gràfiques de 1r i preguntar-nos cap a on van «al final»: l'inici intuïtiu de la idea de límit.}
+
+\subsection{Idea clau}
+
+Comencem la primera unitat d'\textbf{anàlisi} del curs. Abans de res, recuperem les
+funcions que vau treballar a 1r (lineals, quadràtiques, de proporcionalitat inversa i
+a trossos) i ens fem una pregunta nova: si seguíssim una gràfica \textbf{molt cap a la
+dreta}, cap a on aniria? Aquesta pregunta —el comportament \emph{final} d'un
+fenomen— és el cor de la unitat.
+
+\begin{idea}
+\textbf{El comportament «al final» d'una gràfica.} Moltes situacions socials tenen un
+comportament a \textbf{llarg termini} que interessa preveure:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Un servei que va creixent però \textbf{s'acosta a la seva capacitat màxima}
+        (un «sostre»).
+  \item Una llista d'espera que, amb el temps, \textbf{s'estabilitza} en un valor.
+  \item Una despesa que \textbf{puja sense aturador} si no es controla.
+\end{itemize}
+Estudiar aquest comportament a llarg termini és estudiar el \textbf{límit}. Ho farem
+de manera \textbf{intuïtiva i gràfica}, sense fórmules complicades.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el fons que es reparteix: una hipèrbola de 1r]
+A 1r vau veure que repartir un fons fix de $\num{36000}\eur$ entre $x$ famílies dóna
+$f(x)=\dfrac{\num{36000}}{x}$. Cap a on va «al final»?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5cm,
+    xlabel={\small famílies ($x$)}, ylabel={\small \euro\ per família},
+    xmin=0, xmax=40, ymin=0, ymax=20000,
+    xtick={0,10,20,30}, ytick={0,5000,10000,15000},
+    yticklabel style={/pgf/number format/fixed}]
+  \addplot[udblue, domain=2:40, samples=100]{36000/x};
+  \addplot[udgrey, dashed, domain=0:40, samples=2]{0};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Com més famílies, menys diners per família: la corba s'acosta a $0$ sense arribar-hi mai.}
+\end{center}
+
+\noindent Quan $x$ creix molt, l'ajut per família s'acosta cada cop més a \textbf{zero}
+(però no hi arriba). Aquest «cap a zero» és un límit.
+\end{exemple}
+
+\begin{exemple}[tres comportaments finals diferents]
+No totes les gràfiques fan el mateix «al final»:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{S'estabilitza}: s'acosta a un valor fix (com la hipèrbola, que s'acosta
+        a $0$, o un servei que s'acosta a la seva capacitat).
+  \item \textbf{Puja sense límit}: creix indefinidament (com una recta amb pendent
+        positiu o una despesa descontrolada).
+  \item \textbf{Baixa sense límit}: decreix indefinidament.
+\end{itemize}
+Saber distingir aquests casos només mirant la gràfica és l'objectiu d'avui.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[llegir el comportament final]
+Per a $f(x)=\dfrac{\num{36000}}{x}$, calcula l'ajut per família si $x=100$, $x=1000$
+i $x=\num{10000}$. Cap a on tendeix?
+\solucio
+Calculem:
+\[
+f(100)=360\eur,\qquad f(1000)=36\eur,\qquad f(\num{10000})=3,6\eur.
+\]
+Com més gran és $x$, més petit és l'ajut: tendeix cap a \textbf{zero}, però sempre
+positiu (mai s'hi arriba del tot). Aquest és el comportament final de la hipèrbola.
+\resposta{L'ajut tendeix a $0$ a mesura que el nombre de famílies creix.}
+\end{exresolt}
+
+\begin{exresolt}[classificar comportaments finals]
+Digues si cada funció, quan $x$ creix molt, s'estabilitza, puja sense límit o baixa
+sense límit: (a) $f(x)=2x+1$; (b) $g(x)=\dfrac{10}{x}$; (c) $h(x)=-3x$.
+\solucio
+\textbf{(a)} $2x+1$ creix tant com vulguem en augmentar $x$: \textbf{puja sense límit}.
+
+\textbf{(b)} $\dfrac{10}{x}$ es fa cada cop més petita: \textbf{s'estabilitza} cap a $0$.
+
+\textbf{(c)} $-3x$ es fa cada cop més negativa: \textbf{baixa sense límit}.
+\resposta{(a) puja sense límit; (b) s'estabilitza cap a $0$; (c) baixa sense límit.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a $f(x)=\dfrac{\num{12000}}{x}$ (un fons de $\num{12000}\eur$ repartit
+        entre $x$ persones), calcula $f(10)$, $f(100)$ i $f(1000)$. Cap a on tendeix
+        l'ajut per persona?
+  \item Digues si cada funció, quan $x$ creix molt, s'estabilitza, puja sense límit o
+        baixa sense límit:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=5x$ \hfill \item $g(x)=\dfrac{8}{x}$ \hfill \item $h(x)=-x+2$
+        \end{enumerate}
+  \item Una llista d'espera es modelitza, de manera simplificada, amb una funció que
+        amb el temps s'acosta a $500$ persones sense superar-les mai. Com descriuries
+        el seu «comportament final»?
+  \item Pensa en un servei (per exemple, places d'una residència) que va creixent però
+        no pot passar d'una capacitat màxima de $200$ places. Fes un esbós a mà de com
+        seria la gràfica «al final».
+  \item \textbf{(Interpretació)} Quina diferència social hi ha entre un fenomen que
+        \emph{s'estabilitza} i un que \emph{puja sense aturador}? Posa un exemple de
+        cada un de l'àmbit dels serveis a la comunitat.
+  \item \textbf{(Reflexió)} Escriu amb les teves paraules què vol dir, per a tu, el
+        «comportament final» d'un fenomen, i un exemple propi.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item $f(10)=\num{1200}\eur$, $f(100)=120\eur$, $f(1000)=12\eur$. L'ajut tendeix cap
+        a $0$ a mesura que creix el nombre de persones.
+  \item (a) puja sense límit; \quad (b) s'estabilitza cap a $0$; \quad
+        (c) baixa sense límit.
+  \item S'estabilitza: amb el temps s'acosta cada cop més a $500$ persones, però no les
+        supera. El valor $500$ actua com un «sostre» (un límit).
+  \item Esbós: una corba creixent que es va aplanant i s'acosta a una línia horitzontal
+        a l'altura $200$ sense traspassar-la.
+  \item Resposta oberta. Idea: un fenomen que s'estabilitza arriba a un sostre
+        (capacitat d'un servei, saturació); un que puja sense aturador no té límit
+        (despesa descontrolada, demanda creixent sense recursos).
+  \item Resposta oberta.
+\end{sollist}
+\end{solucions}

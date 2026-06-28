@@ -1,0 +1,121 @@
+% =====================================================================
+%  2bat-ud2-8.tex  —  SESSIÓ 8: Els vèrtexs i la funció objectiu
+% =====================================================================
+\horatitol{Sessió 8 — Els vèrtexs i la funció objectiu}%
+{El cor de la programació lineal: mesurar allò que volem optimitzar i descobrir que l'òptim és sempre en un vèrtex.}
+
+\subsection{Idea clau}
+
+Ja sabem quines decisions són \emph{possibles} (la regió factible). Ara ve la pregunta
+clau: entre totes, quina és la \textbf{millor}? Per respondre-la necessitem una
+\textbf{funció objectiu} i un resultat sorprenent que simplifica molt la cerca.
+
+\begin{idea}
+\textbf{Funció objectiu.} És l'expressió que mesura allò que volem
+\textbf{maximitzar} (cobertura, persones ateses, beneficis) o \textbf{minimitzar}
+(cost), en funció de les dues variables. Per exemple:
+\[
+P=3x+2y \quad(\text{persones ateses}),\qquad C=4x+5y \quad(\text{cost en \euro}).
+\]
+\textbf{Resultat clau (teorema dels vèrtexs).} El valor òptim (màxim o mínim) d'una
+funció objectiu sobre una regió factible s'assoleix \textbf{sempre en un vèrtex} de
+la regió. Per tant:
+\begin{center}
+\textit{n'hi ha prou d'avaluar la funció objectiu a cada vèrtex i comparar.}
+\end{center}
+\textbf{Per què?} Els vèrtexs són les decisions «extremes», on s'esgota algun recurs.
+La funció creix sempre cap a una direcció, així que el seu millor valor dins d'un
+polígon cau en una cantonada, no al mig.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[avaluar una funció objectiu als vèrtexs]
+Sobre la regió factible coneguda, de vèrtexs $(0,0)$, $(12,0)$, $(6,3)$ i $(0,5)$,
+volem \textbf{maximitzar} les persones ateses $P=3x+2y$. Avaluem $P$ a cada vèrtex:
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+\textbf{Vèrtex} & $P=3x+2y$ & \\
+\midrule
+$(0,0)$ & $3\cdot 0+2\cdot 0=0$ & \\
+$(12,0)$ & $3\cdot 12+2\cdot 0=36$ & $\leftarrow$ màxim \\
+$(6,3)$ & $3\cdot 6+2\cdot 3=24$ & \\
+$(0,5)$ & $3\cdot 0+2\cdot 5=10$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+El màxim és $P=36$, al vèrtex $(12,0)$: la decisió que atén més persones és fer
+$12$ tallers i cap sortida.
+\end{exemple}
+
+\begin{exemple}[el mateix, però minimitzant]
+Sobre la mateixa regió, si volguéssim \textbf{minimitzar} un cost $C=x+4y$,
+avaluaríem $C$ als vèrtexs: $C(0,0)=0$, $C(12,0)=12$, $C(6,3)=18$, $C(0,5)=20$. El
+mínim (a part del trivial $(0,0)$, que vol dir no fer res) seria al vèrtex de menys
+cost útil. La idea és la mateixa: \textbf{avaluar als vèrtexs i comparar}, escollint el
+més petit si minimitzem o el més gran si maximitzem.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[maximitzar avaluant als vèrtexs]
+La regió factible té vèrtexs $(0,0)$, $(8,0)$, $(6,2)$ i $(0,5)$. Maximitza
+$P=2x+3y$.
+\solucio
+Avaluem $P$ a cada vèrtex:
+\[
+P(0,0)=0,\quad P(8,0)=16,\quad P(6,2)=12+6=18,\quad P(0,5)=15.
+\]
+El més gran és $P=18$, al vèrtex $(6,2)$.
+\resposta{Màxim $P=18$ al vèrtex $(6,2)$.}
+\end{exresolt}
+
+\begin{exresolt}[minimitzar un cost]
+Sobre la regió de vèrtexs $(2,0)$, $(6,0)$, $(0,6)$ i $(0,3)$, minimitza el cost
+$C=4x+5y$.
+\solucio
+Avaluem $C$ a cada vèrtex:
+\[
+C(2,0)=8,\quad C(6,0)=24,\quad C(0,6)=30,\quad C(0,3)=15.
+\]
+El més petit és $C=8$, al vèrtex $(2,0)$.
+\resposta{Mínim $C=8$ al vèrtex $(2,0)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Sobre la regió de vèrtexs $(0,0)$, $(10,0)$, $(4,6)$ i $(0,8)$, avalua
+        $P=x+y$ a cada vèrtex i digues on és el màxim.
+  \item Sobre la mateixa regió, avalua $P=3x+y$ a cada vèrtex i digues on és el màxim.
+  \item Sobre la regió de vèrtexs $(0,0)$, $(6,0)$, $(6,3)$ i $(0,5)$, maximitza
+        $P=2x+4y$.
+  \item Sobre la regió de vèrtexs $(1,1)$, $(5,1)$, $(5,4)$ i $(1,4)$, minimitza el
+        cost $C=2x+3y$.
+  \item Una funció objectiu val $P=5x+5y$. Sobre la regió de vèrtexs $(0,0)$, $(4,0)$,
+        $(2,2)$ i $(0,4)$, avalua-la a cada vèrtex. Què observes en dos d'ells?
+  \item \textbf{(Raonament)} Explica amb les teves paraules per què, per trobar el
+        màxim d'una funció objectiu, no cal provar tots els (infinits) punts de la
+        regió factible, sinó només els vèrtexs.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item $P(0,0)=0$, $P(10,0)=10$, $P(4,6)=10$, $P(0,8)=8$. Màxim $P=10$, assolit a
+        $(10,0)$ i a $(4,6)$ (empat).
+  \item $P(0,0)=0$, $P(10,0)=30$, $P(4,6)=18$, $P(0,8)=8$. Màxim $P=30$ a $(10,0)$.
+  \item $P(0,0)=0$, $P(6,0)=12$, $P(6,3)=24$, $P(0,5)=20$. Màxim $P=24$ a $(6,3)$.
+  \item $C(1,1)=5$, $C(5,1)=13$, $C(5,4)=22$, $C(1,4)=14$. Mínim $C=5$ a $(1,1)$.
+  \item $P(0,0)=0$, $P(4,0)=20$, $P(2,2)=20$, $P(0,4)=20$. Tres vèrtexs donen $20$:
+        la funció és constant sobre la vora que els uneix (hi ha múltiples òptims).
+  \item Resposta oberta. Idea: la funció objectiu creix de manera uniforme en una
+        direcció; sobre un polígon, el seu valor extrem s'assoleix sempre en una
+        cantonada (vèrtex). Per això n'hi ha prou d'avaluar els vèrtexs, que són un
+        nombre finit, en lloc dels infinits punts interiors.
+\end{sollist}
+\end{solucions}

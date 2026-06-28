@@ -1,0 +1,150 @@
+% =====================================================================
+%  2bat-ud2-7.tex  —  SESSIÓ 7: Consolidació: traduir i representar restriccions
+% =====================================================================
+\horatitol{Sessió 7 — Consolidació: traduir i representar restriccions}%
+{Reforç abans de l'optimització: caçar els errors típics i practicar el camí de l'enunciat a la regió factible.}
+
+\subsection{Idea clau}
+
+Avui no hi ha matèria nova: consolidem les dues habilitats que sostenen tota la
+unitat —\textbf{traduir} un enunciat a un sistema d'inequacions i \textbf{representar}
+la regió factible— caçant els errors típics. L'objectiu és que el camí «enunciat
+$\rightarrow$ variables $\rightarrow$ inequacions $\rightarrow$ regió $\rightarrow$
+vèrtexs» surti amb seguretat.
+
+\begin{idea}
+\textbf{Els errors que cacem avui:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Tipus de línia} equivocat: contínua per a $\le,\ge$; discontínua per a
+        $<,>$.
+  \item \textbf{Semiplà equivocat}: cal comprovar un punt de prova (sovint l'origen).
+  \item \textbf{Oblidar la no-negativitat}: $x\ge 0$ i $y\ge 0$ sempre hi són en
+        contextos reals.
+  \item \textbf{Vèrtex mal calculat}: cal resoldre bé el sistema de les dues vores.
+\end{itemize}
+\textbf{Rutina segura:} defineix què és $x$ i què és $y$, tradueix cada condició,
+comprova un punt per fixar el semiplà, i calcula els vèrtexs resolent sistemes.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: semiplà equivocat]
+Algú representa $x+y\le 8$ i ombreja el costat \emph{de dalt} de la recta (lluny de
+l'origen). \textbf{És incorrecte:} amb el punt de prova $(0,0)$, $0+0=0\le 8$ és
+\textbf{cert}, així que el semiplà solució és el \emph{de l'origen} (a sota de la
+recta). \textbf{Correcció:} ombrejar el costat de l'origen.
+\end{exemple}
+
+\begin{exemple}[caça l'error: oblidar la no-negativitat]
+Algú representa només $x+2y\le 10$ i dóna com a regió tot el semiplà, incloent-hi
+parts amb $x<0$ o $y<0$. \textbf{És incorrecte} en un context real: no es poden fer
+quantitats negatives. Cal afegir $x\ge 0$ i $y\ge 0$, que confinen la regió al
+\textbf{primer quadrant}. \textbf{Correcció:} la regió és només la part del primer
+quadrant.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[de l'enunciat a la regió]
+Una entitat ofereix $x$ places de matí i $y$ de tarda. Cada plaça de matí ocupa $1$
+monitor i cada plaça de tarda, $2$; hi ha com a màxim $10$ monitors. A més, en total
+no es poden oferir més de $8$ places. Tradueix, representa i dóna els vèrtexs.
+\solucio
+\textbf{Variables:} $x$ places de matí, $y$ de tarda. \textbf{Condicions:}
+\[
+x+2y\le 10 \ (\text{monitors}),\quad x+y\le 8 \ (\text{places}),\quad x\ge 0,\ y\ge 0.
+\]
+\textbf{Vèrtexs:} els eixos donen $(0,0)$. Sobre $y=0$, mana la més petita de
+$x\le 10$ i $x\le 8$: $(8,0)$. Creuament de $x+y=8$ i $x+2y=10$: restant, $y=2$,
+$x=6$, vèrtex $(6,2)$. Sobre $x=0$: mana la més petita de $y\le 5$ i $y\le 8$:
+$(0,5)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.4cm, height=5.4cm,
+    xlabel={\small matí ($x$)}, ylabel={\small tarda ($y$)},
+    xmin=0, xmax=11, ymin=0, ymax=7, xtick={0,2,4,6,8,10}, ytick={0,2,4,6}]
+  \fill[udblue!18] (axis cs:0,0) -- (axis cs:8,0) -- (axis cs:6,2) -- (axis cs:0,5) -- cycle;
+  \addplot[udblue, domain=0:8, samples=2]{8-x};
+  \addplot[udnavy, domain=0:10, samples=2]{(10-x)/2};
+  \addplot[udnavy, only marks, mark=*, mark size=1.4pt] coordinates {(0,0)(8,0)(6,2)(0,5)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\resposta{$x+2y\le 10$, $x+y\le 8$, $x,y\ge 0$; vèrtexs $(0,0)$, $(8,0)$, $(6,2)$, $(0,5)$.}
+\end{exresolt}
+
+\begin{exresolt}[corregir un vèrtex mal calculat]
+Algú diu que les rectes $x+y=8$ i $x+2y=10$ es creuen a $(4,4)$. Comprova-ho i
+corregeix si cal.
+\solucio
+A $(4,4)$: $x+y=8$ (d'acord) però $x+2y=4+8=12\neq 10$. No és el creuament. Resolem
+bé: restant les equacions, $(x+2y)-(x+y)=10-8\Rightarrow y=2$; llavors $x+2=8\Rightarrow
+x=6$. El creuament correcte és $(6,2)$.
+\resposta{És incorrecte; el creuament és $(6,2)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari: 1–3 són la base (traducció guiada); 4–6 són ampliació.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} Digues què està malament en cada cas i corregeix-ho:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Per a $x+y<5$ s'ha dibuixat la recta frontera \textbf{contínua}.
+          \item Per a $2x+y\ge 6$ s'ha ombrejat el costat de l'origen.
+        \end{enumerate}
+  \item Tradueix a un sistema d'inequacions: «una entitat fa $x$ tallers i $y$ xerrades;
+        en total com a màxim $12$ activitats, i no més de $8$ xerrades; cap quantitat
+        negativa».
+  \item Representa el sistema $\;x+y\le 6,\;y\le 4,\;x\ge 0,\;y\ge 0\;$ i dóna'n els
+        vèrtexs.
+  \item \textbf{(Ampliació)} Una associació reparteix $x$ lots de menjar i $y$ lots
+        d'higiene. Cada lot de menjar costa $2$ unitats de pressupost i cada lot
+        d'higiene, $1$; el pressupost és $10$. A més, com a màxim $4$ lots de menjar.
+        Tradueix, representa i dóna tots els vèrtexs.
+  \item \textbf{(Ampliació)} Calcula el vèrtex on es creuen $3x+y=12$ i $x+y=6$.
+  \item \textbf{(Ampliació)} Per al sistema $\;x+y\le 7,\;x+3y\le 15,\;x\ge 0,\;y\ge 0$,
+        troba els quatre vèrtexs de la regió factible.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació.} Marca amb sinceritat com et trobes, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.4cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Definir les variables a partir d'un enunciat & & & \\
+Traduir cada condició a una inequació & & & \\
+Triar el tipus de línia i el semiplà correctes & & & \\
+Recordar la no-negativitat ($x,y\ge 0$) & & & \\
+Calcular els vèrtexs resolent sistemes & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item (a) Amb $<$ (estricte) la línia ha de ser \textbf{discontínua}, no contínua. \quad
+        (b) Prova $(0,0)$: $0\ge 6$ és fals, així que el semiplà és el \emph{contrari}
+        a l'origen; estava ombrejat al revés.
+  \item $x+y\le 12$, \;$y\le 8$, \;$x\ge 0$, \;$y\ge 0$.
+  \item Vèrtexs $(0,0)$, $(6,0)$, $(2,4)$ i $(0,4)$. (Creuament de $x+y=6$ i $y=4$:
+        $x=2$.)
+  \item $2x+y\le 10$ (pressupost), $x\le 4$ (lots de menjar), $x\ge 0$, $y\ge 0$.
+        Vèrtexs: $(0,0)$, $(4,0)$, $(4,2)$ i $(0,10)$. (A $x=4$: $y\le 2$;
+        creuament amb l'eix $y$ a $(0,10)$.)
+  \item Restant: $(3x+y)-(x+y)=12-6\Rightarrow 2x=6\Rightarrow x=3$; $y=6-3=3$. Vèrtex
+        $(3,3)$.
+  \item Vèrtexs $(0,0)$, $(7,0)$, $(3,4)$ i $(0,5)$. (Creuament de $x+y=7$ i
+        $x+3y=15$: $2y=8\Rightarrow y=4$, $x=3$.)
+\end{sollist}
+\end{solucions}
