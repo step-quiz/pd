@@ -3,37 +3,64 @@
 Visualitzador d'una sola pàgina (SPA) de programacions didàctiques de Matemàtiques.
 HTML + CSS + JS vanilla, sense build. Es desplega a Cloudflare Pages.
 
+## Com s'organitzen els cursos
+
+Cada curs té **la seva pàgina HTML** a l'arrel (p. ex. `1r-bat-pro.html`,
+`2n-bat-pro.html`). Aquesta pàgina només fa una cosa abans de carregar l'app: fixar la
+ruta del curs en una variable global.
+
+```html
+<script>window.COURSE_PATH = 'contingut/batxillerat/2n/pro';</script>
+```
+
+`assets/js/course.js` llegeix `window.COURSE_PATH` i, a partir d'aquí, carrega amb
+`fetch()`:
+
+- `{COURSE_PATH}/course.json` → metadades del curs (marca, títols d'unitat, docx…)
+- `{COURSE_PATH}/Ud{N}.md` → cada unitat didàctica
+- `{COURSE_PATH}/pdfs/manifest.json` → llista de PDFs disponibles
+
+**No hi ha cap registre global de cursos:** afegir un curs vol dir crear-ne la pàgina
+HTML (amb el seu `COURSE_PATH`) i la carpeta de contingut corresponent. Cap línia de
+codi de l'app.
+
 ## Afegir un curs nou
 
-1. Afegeix una entrada a `data/courses.json`.
-2. Crea la carpeta indicada al camp `path` amb un `course.json` a dins.
-3. Hi deixes els `Ud{N}.md`, la `programacio.docx` i els PDFs a `pdfs/`.
-
-**Cap línia de codi.**
+1. Crea la carpeta del curs sota `contingut/…/` amb un `course.json` a dins.
+2. Hi deixes els `Ud{N}.md`, la programació (`programacio.docx`, o `null` si no n'hi
+   ha) i els PDFs a `pdfs/` amb el seu `manifest.json`.
+3. Crea una pàgina HTML a l'arrel (copiant-ne una d'existent) que fixi
+   `window.COURSE_PATH` a la carpeta del pas 1, i enllaça-la des de l'índex.
 
 ## Estructura
 
 ```
-index.html                      SPA shell (minimalista)
+index.html                      SPA shell / menú
+1r-bat-pro.html                 pàgina del curs 1r (fixa COURSE_PATH)
+2n-bat-pro.html                 pàgina del curs 2n (fixa COURSE_PATH)
 repartiment.html                Repartiment de continguts ESO (taula per curs/sentit)
 404.html                        pàgina d'error
 seguiment-link.txt              URL del Google Doc/Drive de Seguiment (només la URL)
 assets/
   css/  tokens · layout · components · rich · responsive · print · repartiment
-  js/   utils · md · docx · fields · collapsible · pdf-panel · sidebar · app
-        repartiment-data · repartiment · seguiment · index-menu
+  js/   utils · md · docx · fields · collapsible · pdf-panel · sidebar
+        course · repartiment-data · repartiment · seguiment · index-menu
   lib/  mammoth.browser.min.js
-data/
-  courses.json                  registre global de cursos
 contingut/
   batxillerat/1r/pro/
     course.json                 metadades del curs
     programacio.docx            programació general
     Ud1.md … Ud6.md             unitats didàctiques
-    pdfs/  *.pdf + manifest.json
+    pdfs/    *.pdf + manifest.json
     source/  fonts LaTeX (no servides; noindex)
+  batxillerat/2n/pro/           (mateixa estructura)
 _dev/                           material intern (no publicat)
 ```
+
+> Nota: la ruta del curs viu a cada pàgina HTML (`COURSE_PATH`), no en un fitxer de
+> dades central. Si en algun moment es vol un menú de cursos generat per dades,
+> caldria introduir un registre (p. ex. `data/courses.json`) i fer que l'índex el
+> llegeixi; **avui això no existeix** i el menú és estàtic.
 
 ## Continguts: Repartiment i Seguiment
 
@@ -50,9 +77,18 @@ L'índex inclou un desplegable **Continguts** amb dues opcions:
 
 ## Contractes de dades
 
-- **`data/courses.json`** — llista de cursos amb `id`, `label`, `path`, `available`.
-- **`course.json`** — `brand`, `brandSub`, `pdfPrefix`, `docx` (o `null`), `udMax`, `udTitles`.
-- **`pdfs/manifest.json`** — `{ "pdfs": ["1bat-ud2-1.pdf", …] }`.
+- **`course.json`** (per curs) — `brand`, `brandSub`, `pdfPrefix`, `docx` (o `null`),
+  `udMax`, `udTitles`.
+- **`pdfs/manifest.json`** (per curs) — `{ "pdfs": ["1bat-ud2-1.pdf", …] }`. És la
+  font de veritat que decideix si una sessió mostra el botó "Veure PDF" o la insígnia
+  "PDF en construcció".
+
+## Generació dels PDFs (LaTeX)
+
+Els PDFs de les sessions es generen a partir de fonts LaTeX a `{curs}/source/`. El
+flux, les convencions d'estil i la infraestructura de compilació (wrapper per
+curs/unitat, gràfiques TikZ/pgfplots, trampes habituals) estan documentats a
+`_dev/BRIEFING-generacio-sessions.md`.
 
 ## Desenvolupament local
 
