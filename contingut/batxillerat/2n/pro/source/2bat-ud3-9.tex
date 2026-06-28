@@ -1,0 +1,166 @@
+% =====================================================================
+%  2bat-ud3-9.tex  —  SESSIÓ 9: On fa un salt la prestació? (estudi de cas)
+% =====================================================================
+\horatitol{Sessió 9 — On fa un salt la prestació?}%
+{Estudi de cas (Activitat 3): comprovar la continuïtat d'una prestació per trams i interpretar socialment el salt (l'efecte «esglaó»).}
+
+\subsection{Idea clau}
+
+Apliquem la continuïtat a un cas real: una \textbf{prestació per trams}, com les
+funcions a trossos que vau veure a 1r. La pregunta clau: a les fronteres entre trams,
+la prestació \textbf{enllaça suaument} o fa un \textbf{salt}? La resposta té una
+lectura social directa.
+
+\begin{idea}
+\textbf{Comprovar la continuïtat a una frontera.} En el valor frontera, calculem la
+prestació \textbf{des d'un tram i des de l'altre}:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Si \textbf{coincideixen}, la funció és \textbf{contínua}: el canvi és suau.
+  \item Si \textbf{no coincideixen}, hi ha un \textbf{salt}: discontinuïtat.
+\end{itemize}
+\textbf{Lectura social del salt (l'efecte «esglaó»).} Si hi ha un salt cap avall, una
+persona que guanya \textbf{només una mica més} que el llindar pot perdre
+\textbf{bruscament} una part important de l'ajut. És la \textbf{trampa de la pobresa}:
+desincentiva millorar els ingressos. Una prestació \textbf{contínua} reparteix el
+canvi de manera \textbf{suau i justa}.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[una prestació contínua (disseny just)]
+\[
+A(x)=
+\begin{cases}
+600 & \text{si } x<800,\\[2pt]
+600-0,5\,(x-800) & \text{si } 800\le x<2000,\\[2pt]
+0 & \text{si } x\ge 2000,
+\end{cases}
+\]
+on $x$ són els ingressos mensuals. Comprovem les fronteres: a $x=800$, els dos trossos
+donen $600$; a $x=2000$, el tram del mig dóna $600-0,5\cdot 1200=0$, igual que el
+tercer. \textbf{Tot enllaça}: la prestació és \textbf{contínua}, decreix de manera
+gradual.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9.4cm, height=4.4cm,
+    xlabel={\small ingressos ($x$)}, ylabel={\small ajut (\euro)},
+    xmin=0, xmax=2600, ymin=0, ymax=750, xtick={0,800,2000}, ytick={0,300,600}]
+  \addplot[udblue, domain=0:800, samples=2]{600};
+  \addplot[udblue, domain=800:2000, samples=2]{600-0.5*(x-800)};
+  \addplot[udblue, domain=2000:2600, samples=2]{0};
+  \addplot[udnavy, only marks, mark=*, mark size=1.4pt] coordinates {(800,600)(2000,0)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Prestació contínua: l'ajut baixa de mica en mica, sense salts.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[una prestació amb salt (efecte esglaó)]
+\[
+B(x)=
+\begin{cases}
+600 & \text{si } x<\num{1000},\\[2pt]
+0 & \text{si } x\ge \num{1000}.
+\end{cases}
+\]
+A $x=\num{1000}$: pel costat esquerre val $600\eur$ i pel dret, $0\eur$. \textbf{Salt}
+de $600$ a $0$: discontinuïtat. Una persona que passa de $999\eur$ a $\num{1000}\eur$
+perd de cop \textbf{tot} l'ajut.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9.4cm, height=4.2cm,
+    xlabel={\small ingressos ($x$)}, ylabel={\small ajut (\euro)},
+    xmin=0, xmax=2000, ymin=0, ymax=750, xtick={0,1000}, ytick={0,300,600}]
+  \addplot[udblue, domain=0:1000, samples=2]{600};
+  \addplot[udblue, domain=1000:2000, samples=2]{0};
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(1000,0)};
+  \addplot[udnavy, only marks, mark=o, mark size=1.5pt] coordinates {(1000,600)};
+  \draw[udgrey, dashed] (axis cs:1000,0) -- (axis cs:1000,600);
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:1040,300) {salt $600\eur$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Prestació amb salt: per $1\eur$ més, es perd tot l'ajut (efecte «esglaó»).}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[comprovar la continuïtat a una frontera]
+Comprova si aquesta prestació és contínua a $x=\num{1000}$:
+\[
+A(x)=
+\begin{cases}
+500 & \text{si } x<\num{1000},\\[2pt]
+500-0,4\,(x-\num{1000}) & \text{si } x\ge \num{1000}.
+\end{cases}
+\]
+\solucio
+A $x=\num{1000}$: pel costat esquerre, $A=500$; pel dret,
+$500-0,4\cdot 0=500$. Tots dos donen $500$: \textbf{coincideixen}, la funció és
+\textbf{contínua} a $x=\num{1000}$ (l'ajut comença a baixar suaument a partir d'aquí,
+sense salt).
+\resposta{Contínua: tots dos trossos valen $500$ a $x=\num{1000}$.}
+\end{exresolt}
+
+\begin{exresolt}[redactar una conclusió social]
+Compara les prestacions $A$ (contínua) i $B$ (amb salt) dels exemples. Quina és més
+justa i per què?
+\solucio
+La prestació \textbf{$A$ és més justa}: l'ajut decreix de manera gradual a mesura que
+pugen els ingressos, de manera que guanyar una mica més \emph{sempre} deixa la persona
+en una situació millor o igual. La prestació \textbf{$B$ no ho és}: el salt fa que, en
+superar el llindar per $1\eur$, es perdi tot l'ajut de cop (efecte esglaó / trampa de
+la pobresa), cosa que penalitza millorar els ingressos. Un bon disseny de prestacions
+evita els salts.
+\resposta{$A$, perquè és contínua i el canvi és gradual; $B$ té un salt injust que
+penalitza superar el llindar per poc.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Comprova si cada prestació és contínua a la frontera indicada:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $A(x)=\begin{cases}400 & x<\num{1000}\\ 400-0,2(x-\num{1000}) & x\ge\num{1000}\end{cases}$ a $x=\num{1000}$
+          \item $B(x)=\begin{cases}300 & x<\num{1500}\\ 100 & x\ge\num{1500}\end{cases}$ a $x=\num{1500}$
+        \end{enumerate}
+  \item Per a la prestació (b) anterior, quina és l'altura del salt? Què hi perd qui
+        passa de $\num{1499}\eur$ a $\num{1500}\eur$?
+  \item La prestació $A(x)=\begin{cases}500 & x<600\\ 350 & 600\le x<1200\\ 0 & x\ge 1200\end{cases}$
+        és contínua? Localitza tots els salts i digues la seva altura.
+  \item Dibuixa a mà una prestació per trams que sigui \textbf{contínua} (sense salts)
+        i que vagi disminuint a mesura que pugen els ingressos.
+  \item \textbf{(Conclusió social)} Per a la prestació de l'exercici 3, redacta dues o
+        tres frases dient si et sembla justa i per què, fent servir la idea d'efecte
+        esglaó.
+  \item \textbf{(Disseny)} Proposa com modificaries la prestació $B$ de l'exercici 1
+        (la que té un salt) perquè fos contínua, mantenint que l'ajut acabi a $0$ per a
+        ingressos alts.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item (a) esquerre $400$, dret $400-0=400$: \textbf{contínua}. \quad
+        (b) esquerre $300$, dret $100$: \textbf{discontínua}, salt de $300$ a $100$.
+  \item Altura del salt: $300-100=200\eur$. Qui passa de $\num{1499}$ a $\num{1500}\eur$
+        perd $200\eur$ d'ajut de cop (per $1\eur$ més d'ingressos).
+  \item No és contínua: salt a $x=600$ (de $500$ a $350$, altura $150$) i a $x=1200$
+        (de $350$ a $0$, altura $350$).
+  \item Esbós: una funció esglaonada \emph{sense} salts, per exemple constant i després
+        un tram que baixa en línia recta fins a $0$, enganxant-se a les fronteres.
+  \item Resposta oberta. Ha d'identificar que té salts (a $600$ i $1200$) i argumentar
+        que penalitza superar els llindars per poc (efecte esglaó); un disseny gradual
+        seria més just.
+  \item Resposta oberta. Idea: substituir el salt per un tram decreixent continu, p.\,ex.
+        $B(x)=600-c\,(x-\text{llindar})$ entre el llindar i el punt on arriba a $0$,
+        triant $c$ perquè enllaci a tots dos extrems.
+\end{sollist}
+\end{solucions}

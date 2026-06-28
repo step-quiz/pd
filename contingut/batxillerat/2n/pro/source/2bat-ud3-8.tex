@@ -1,0 +1,171 @@
+% =====================================================================
+%  2bat-ud3-8.tex  —  SESSIÓ 8: Continuïtat: quan una funció no fa salts
+% =====================================================================
+\horatitol{Sessió 8 — Continuïtat: quan una funció no fa salts}%
+{La idea visual de continuïtat (dibuixar sense aixecar el llapis) i la discontinuïtat de salt, connectades amb els límits i les funcions a trossos de 1r.}
+
+\subsection{Idea clau}
+
+Canviem de bloc: de cap a on van les funcions (límits) passem a com es comporten
+\emph{pel camí}. Una idea molt visual: una funció és \textbf{contínua} en un tram si
+es pot \textbf{dibuixar sense aixecar el llapis} del paper. Allà on cal aixecar-lo,
+hi ha una \textbf{discontinuïtat} (un salt).
+
+\begin{idea}
+\textbf{Continuïtat (idea intuïtiva).} Una funció és contínua si la seva gràfica no fa
+salts ni forats: es pot recórrer sense aixecar el llapis.
+
+\textbf{Connexió amb els límits.} En un punt, una funció és contínua si, en
+acostar-nos-hi \textbf{pels dos costats}, la funció tendeix al \textbf{mateix valor},
+i aquest valor és el que efectivament \textbf{pren} en aquell punt.
+
+\textbf{Discontinuïtat de salt.} Si en acostar-nos a un punt pels dos costats la funció
+tendeix a \textbf{valors diferents}, hi ha un \textbf{salt}: la gràfica es trenca. És
+el cas típic de les \textbf{funcions a trossos} de 1r (impostos i ajuts per trams),
+on entre dos trams la funció pot enllaçar suaument o fer un salt.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[una funció a trossos contínua]
+\[
+f(x)=
+\begin{cases}
+x+1 & \text{si } x\le 2,\\[2pt]
+-x+5 & \text{si } x>2.
+\end{cases}
+\]
+A $x=2$, el primer tros arriba a $3$ (punt tancat) i el segon surt també de $3$: els
+dos trossos \textbf{s'enganxen}, la funció és \textbf{contínua}.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=4.4cm, xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-1, xmax=6, ymin=0, ymax=5, xtick={0,2,4}, ytick={0,3}]
+  \addplot[udblue, domain=-1:2, samples=2]{x+1};
+  \addplot[udblue, domain=2:5, samples=2]{-x+5};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(2,3)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Contínua: els trossos s'enganxen a $(2,3)$, sense aixecar el llapis.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[una funció a trossos amb salt]
+\[
+g(x)=
+\begin{cases}
+x+1 & \text{si } x\le 2,\\[2pt]
+x+3 & \text{si } x>2.
+\end{cases}
+\]
+A $x=2$, el primer tros acaba a $3$ (tancat) i el segon comença prop de $5$ (obert):
+els valors són \textbf{diferents}, hi ha un \textbf{salt}. Cal aixecar el llapis: és
+\textbf{discontínua} a $x=2$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=4.6cm, xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-1, xmax=6, ymin=0, ymax=9, xtick={0,2,4}, ytick={0,3,5,7}]
+  \addplot[udblue, domain=-1:2, samples=2]{x+1};
+  \addplot[udblue, domain=2:5, samples=2]{x+3};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(2,3)};
+  \addplot[udnavy, only marks, mark=o, mark size=1.6pt] coordinates {(2,5)};
+  \draw[udgrey, dashed] (axis cs:2,3) -- (axis cs:2,5);
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:2.1,4) {salt};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Discontínua: punt tancat $(2,3)$ i obert $(2,5)$; la gràfica fa un salt.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[contínua o amb salt?]
+Digues si aquesta funció és contínua a $x=1$:
+\[
+f(x)=
+\begin{cases}
+2x & \text{si } x\le 1,\\[2pt]
+x+1 & \text{si } x>1.
+\end{cases}
+\]
+\solucio
+Mirem el valor a $x=1$ pels dos costats: el primer tros dóna $2\cdot 1=2$; el segon,
+just després, $1+1=2$. Tots dos donen $2$: els trossos \textbf{s'enganxen}, la funció
+és \textbf{contínua} a $x=1$ (no cal aixecar el llapis).
+\resposta{Sí, contínua: tots dos trossos valen $2$ a $x=1$.}
+\end{exresolt}
+
+\begin{exresolt}[localitzar i interpretar un salt]
+Una prestació és $A(x)=\begin{cases}300 & \text{si } x<\num{1000}\\ 0 & \text{si } x\ge\num{1000}\end{cases}$,
+on $x$ són els ingressos. És contínua a $x=\num{1000}$? Què hi passa?
+\solucio
+A $x=\num{1000}$, pel costat esquerre la prestació val $300\eur$ i pel dret, $0\eur$:
+\textbf{valors diferents}, hi ha un \textbf{salt} de $300$ a $0$. La funció és
+\textbf{discontínua} a $x=\num{1000}$. Socialment: per $1\eur$ més d'ingressos es perd
+de cop tota la prestació.
+\resposta{Discontínua: salt de $300$ a $0$ a $x=\num{1000}$; per $1\eur$ es perd tot
+l'ajut.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Digues si cada funció és contínua a la frontera indicada (mira si els dos
+        trossos donen el mateix valor):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=\begin{cases}x+2 & x\le 1\\ 3x & x>1\end{cases}$ a $x=1$
+          \item $g(x)=\begin{cases}x & x\le 0\\ x+2 & x>0\end{cases}$ a $x=0$
+        \end{enumerate}
+  \item Per a la funció (a) de l'exercici anterior, quina és l'altura del salt, si n'hi
+        ha?
+  \item Mira la gràfica i digues si la funció és contínua o té un salt; si en té,
+        localitza on i indica el punt obert i el tancat.
+
+        \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[udaxis, width=8cm, height=4.2cm, xlabel={\small $x$}, ylabel={\small $y$},
+            xmin=-2, xmax=5, ymin=0, ymax=6, xtick={-2,0,2,4}, ytick={0,2,4}]
+          \addplot[udblue, domain=-2:1, samples=2]{0.5*x+1};
+          \addplot[udblue, domain=1:4, samples=2]{x+2};
+          \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(1,1.5)};
+          \addplot[udnavy, only marks, mark=o, mark size=1.5pt] coordinates {(1,3)};
+          \draw[udgrey, dashed] (axis cs:1,1.5) -- (axis cs:1,3);
+        \end{axis}
+        \end{tikzpicture}
+        \end{center}
+
+  \item Una prestació es defineix per trams:
+        $A(x)=\begin{cases}400 & x<600\\ 250 & 600\le x<1200\\ 0 & x\ge 1200\end{cases}$.
+        Calcula $A(500)$, $A(600)$, $A(1200)$ i digues on hi ha salts.
+  \item \textbf{(Interpretació)} En la prestació de l'exercici 4, què signifiquen
+        socialment els salts? És just que un canvi mínim d'ingressos faci perdre de cop
+        una part de l'ajut?
+  \item \textbf{(Continuïtat)} Per a $f(x)=\begin{cases}x+1 & x\le 2\\ 2x+k & x>2\end{cases}$,
+        troba el valor de $k$ perquè la funció sigui contínua a $x=2$.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item (a) esquerre $1+2=3$, dret $3\cdot 1=3$: \textbf{contínua}. \quad
+        (b) esquerre $0$, dret $0+2=2$: \textbf{discontínua} (salt de $0$ a $2$).
+  \item No hi ha salt: és contínua, l'altura del salt és $0$.
+  \item Hi ha un \textbf{salt} a $x=1$: punt tancat $(1;1,5)$ (tros esquerre) i punt
+        obert $(1,3)$ (tros dret). Discontínua.
+  \item $A(500)=400$; $A(600)=250$; $A(\num{1200})=0$. Salts a $x=600$ (de $400$ a
+        $250$) i a $x=\num{1200}$ (de $250$ a $0$).
+  \item Resposta oberta. Els salts signifiquen que un canvi mínim d'ingressos fa perdre
+        de cop una part o tot l'ajut; no és just, perquè penalitza desproporcionadament
+        qui supera el llindar per poc. Un disseny continu (l'ajut que disminueix
+        gradualment) seria més equitatiu.
+  \item A $x=2$: esquerre $2+1=3$; dret $2\cdot 2+k=4+k$. Perquè s'enganxin:
+        $4+k=3\Rightarrow k=-1$.
+\end{sollist}
+\end{solucions}

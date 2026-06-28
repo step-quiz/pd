@@ -1,0 +1,143 @@
+% =====================================================================
+%  2bat-ud3-12.tex  —  SESSIÓ 12: Llegir el comportament global d'un model
+% =====================================================================
+\horatitol{Sessió 12 — Llegir el comportament global d'un model}%
+{Deixar de mirar punts aïllats i explicar tota la «història» que conta una gràfica: creixement, estabilització, sostres i salts.}
+
+\subsection{Idea clau}
+
+Avui reforcem l'objectiu més transversal de la unitat: \textbf{llegir un model
+sencer}. Integrem tot el que hem treballat (límits, asímptotes, continuïtat) per
+explicar la \textbf{història completa} que conta una gràfica d'un fenomen social. La
+consigna: deixar de mirar punts aïllats i llegir el model \textbf{com un tot}.
+
+\begin{idea}
+\textbf{Què mirem per llegir un model globalment}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{On creix i on decreix:} en quins trams el fenomen puja o baixa.
+  \item \textbf{Cap a on tendeix a llarg termini:} té una \textbf{asímptota
+        horitzontal} (un sostre)? Puja sense límit?
+  \item \textbf{Té algun salt:} hi ha \textbf{discontinuïtats} (canvis bruscos)?
+  \item \textbf{Què significa cada tret:} traduir cada característica matemàtica al
+        \textbf{fenomen real} (estabilització = saturació; salt = canvi brusc que
+        afecta algú).
+\end{enumerate}
+Aquesta lectura global és la que necessita un tècnic per interpretar un informe amb
+gràfiques.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la història completa d'un model]
+La gràfica mostra l'evolució d'un indicador social (per exemple, persones ateses per
+un servei) al llarg dels mesos:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10.4cm, height=5cm,
+    xlabel={\small mesos}, ylabel={\small persones ateses},
+    xmin=0, xmax=30, ymin=0, ymax=420, xtick={0,6,12,18,24,30}, ytick={0,150,300}]
+  % tram 1: creix i s'estabilitza cap a 300 fins x=18
+  \addplot[udblue, domain=1:18, samples=80]{300-450/x};
+  % salt a x=18: una retallada baixa de cop a 150
+  \addplot[udblue, domain=18:30, samples=2]{150};
+  \addplot[udnavy, only marks, mark=*, mark size=1.4pt] coordinates {(18,150)};
+  \addplot[udnavy, only marks, mark=o, mark size=1.4pt] coordinates {(18,275)};
+  \addplot[udnavy, dashed, domain=0:18, samples=2]{300};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:18,300) {sostre $300$};
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:18.4,210) {salt};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{El servei creix cap a un sostre de $300$, i al mes $18$ una retallada el fa caure de cop a $150$.}
+\end{center}
+
+\noindent\textbf{La història:} el servei \textbf{creix} de pressa al principi i
+s'acosta a un \textbf{sostre} de $300$ persones (asímptota horitzontal: la seva
+capacitat). Al mes $18$ hi ha un \textbf{salt cap avall} (discontinuïtat): l'indicador
+cau bruscament a $150$, segurament per una \textbf{retallada} o un canvi de
+condicions. A partir d'aquí es manté estable en $150$.
+\end{exemple}
+
+\begin{exemple}[traduir cada tret a la realitat]
+Cada característica matemàtica té una lectura social:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Creixement inicial} $\rightarrow$ el servei es va omplint, atén cada cop
+        més gent.
+  \item \textbf{Asímptota $y=300$} $\rightarrow$ el servei s'acosta a la seva capacitat
+        màxima (no pot atendre més de $300$).
+  \item \textbf{Salt a $x=18$} $\rightarrow$ un canvi brusc (retallada) que deixa molta
+        gent sense atenció de cop.
+\end{itemize}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[llegir un model pas a pas]
+D'un model d'ocupació saps que: creix els primers mesos, s'acosta a una asímptota
+$y=200$, i no té cap salt. Explica'n la història global.
+\solucio
+El servei \textbf{creix} al principi (es va omplint) i després s'\textbf{estabilitza}
+acostant-se a $200$ places (asímptota horitzontal: la seva capacitat). Com que
+\textbf{no té cap salt}, l'evolució és \textbf{suau}: no hi ha canvis bruscos.
+Globalment, és un servei que arriba al seu sostre de manera gradual i s'hi manté.
+\resposta{Creix, s'estabilitza cap a $200$ (capacitat) i no fa salts: evolució suau cap
+al sostre.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar un salt en context]
+En el model de l'exemple, què significa, per a les persones usuàries, el salt cap avall
+de $300$ a $150$ al mes $18$?
+\solucio
+Significa que, de cop, el servei passa d'atendre $300$ persones a atendre'n només
+$150$: unes $150$ persones \textbf{perden l'atenció} bruscament. Socialment, és un
+canvi dur (una retallada) que afecta molta gent de cop, a diferència d'una reducció
+gradual que es repartiria en el temps.
+\resposta{Unes $150$ persones perden l'atenció de cop: una retallada brusca.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per al model de l'exemple, indica: (a) en quin tram creix; (b) cap a quin valor
+        tendeix abans del salt; (c) a quin mes es produeix el salt i de quina mida és.
+  \item Un model d'una llista d'espera creix i s'acosta a una asímptota $y=400$ sense
+        cap salt. Explica'n la història global en dues frases.
+  \item Una gràfica d'un ajut puja fins al mes $10$, després es manté constant, i al mes
+        $20$ fa un salt cap avall. Descriu què passa en cada tram.
+  \item Associa cada tret matemàtic amb la seva lectura social:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item asímptota horitzontal \quad (\;) un canvi brusc que afecta algú de cop
+          \item discontinuïtat de salt \quad (\;) el servei arriba a la seva capacitat
+        \end{enumerate}
+  \item Dibuixa a mà la gràfica d'un model que: creixi al principi, s'estabilitzi cap a
+        $y=250$, i tingui un salt cap avall en algun punt.
+  \item \textbf{(Interpretació global)} Escriu una interpretació breu (tres o quatre
+        frases) d'un model social que creixi, s'estabilitzi i tingui un salt, com a
+        síntesi de tot el que has après a la unitat.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item (a) creix del mes $1$ al $18$ (acostant-se al sostre); (b) tendeix a $300$;
+        (c) salt al mes $18$, de $300$ (o del valor proper que té just abans) a $150$;
+        prenent el valor previ $\approx 275$, el salt és d'unes $125$ persones (i, si es
+        pren el sostre $300$, de $150$).
+  \item Resposta oberta. Idea: la llista creix al principi i després s'estabilitza
+        acostant-se a $400$ (el seu sostre); com que no té salts, l'evolució és suau i
+        previsible.
+  \item Tram $1$ (fins al mes $10$): l'ajut \textbf{creix}. Tram $2$ (del $10$ al $20$):
+        es manté \textbf{constant}. Al mes $20$: \textbf{salt cap avall} (l'ajut cau
+        bruscament).
+  \item (a) $\rightarrow$ el servei arriba a la seva capacitat; \quad
+        (b) $\rightarrow$ un canvi brusc que afecta algú de cop.
+  \item Esbós: corba creixent que s'aplana cap a $y=250$ i, en un punt, un salt
+        vertical cap avall (punt tancat a sota, obert a dalt).
+  \item Resposta oberta. Ha d'integrar creixement, estabilització (asímptota/sostre) i
+        salt (discontinuïtat), amb la lectura social de cada tret.
+\end{sollist}
+\end{solucions}

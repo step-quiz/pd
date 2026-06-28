@@ -1,0 +1,101 @@
+% =====================================================================
+%  2bat-ud3-10.tex  —  SESSIÓ 10: Discontinuïtats en funcions a trossos (mecanització)
+% =====================================================================
+\horatitol{Sessió 10 — Discontinuïtats en funcions a trossos (mecanització)}%
+{Guanyar destresa: comprovar amb seguretat si una funció a trossos és contínua a les fronteres i calcular la mida del salt.}
+
+\subsection{Idea clau}
+
+Després de donar sentit a la continuïtat, avui hi guanyem \textbf{destresa mecànica}.
+La rutina per comprovar la continuïtat d'una funció a trossos en una frontera és
+sempre la mateixa: \textbf{avaluar cada tram} en el valor frontera i \textbf{comparar}.
+
+\begin{idea}
+\textbf{Procediment a una frontera $x=a$}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Pel costat esquerre:} substitueix $x=a$ a l'expressió del tram de
+        l'esquerra.
+  \item \textbf{Pel costat dret:} substitueix $x=a$ a l'expressió del tram de la dreta.
+  \item \textbf{Compara:} si \textbf{coincideixen}, és contínua; si no,
+        \textbf{salt} (la seva mida és la diferència entre els dos valors).
+\end{enumerate}
+\textbf{Parany recurrent:} avaluar malament un tram (compte amb els signes i la
+jerarquia d'operacions). Calcula amb cura el valor numèric de cada tram.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[continuïtat amb dos trams lineals]
+\[
+f(x)=
+\begin{cases}
+2x+1 & \text{si } x\le 3,\\[2pt]
+x+4 & \text{si } x>3.
+\end{cases}
+\]
+A $x=3$: esquerre $2\cdot 3+1=7$; dret $3+4=7$. \textbf{Coincideixen}: la funció és
+\textbf{contínua} a $x=3$.
+\end{exemple}
+
+\begin{exemple}[un salt i la seva mida]
+\[
+g(x)=
+\begin{cases}
+3x & \text{si } x\le 2,\\[2pt]
+x+5 & \text{si } x>2.
+\end{cases}
+\]
+A $x=2$: esquerre $3\cdot 2=6$; dret $2+5=7$. \textbf{No coincideixen}: hi ha un
+\textbf{salt} de mida $7-6=1$. La funció és \textbf{discontínua} a $x=2$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[comprovar continuïtat]
+És contínua a $x=1$ la funció
+$f(x)=\begin{cases}4x-1 & x\le 1\\ 2x+1 & x>1\end{cases}$?
+\solucio
+A $x=1$: esquerre $4\cdot 1-1=3$; dret $2\cdot 1+1=3$. Coincideixen: \textbf{contínua}.
+\resposta{Sí, contínua: tots dos trams valen $3$ a $x=1$.}
+\end{exresolt}
+
+\begin{exresolt}[salt amb un tram no lineal]
+Estudia la continuïtat a $x=2$ de
+$g(x)=\begin{cases}x^2 & x\le 2\\ 2x+1 & x>2\end{cases}$ i calcula el salt si n'hi ha.
+\solucio
+A $x=2$: esquerre $2^2=4$; dret $2\cdot 2+1=5$. No coincideixen: \textbf{salt} de mida
+$5-4=1$. Discontínua a $x=2$.
+\resposta{Discontínua: salt de mida $1$ a $x=2$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Bateria graduada. Per a cadascuna: avalua els dos trams a la frontera,
+digues si és contínua i, si no, la mida del salt.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Bàsic)} $f(x)=\begin{cases}x+2 & x\le 0\\ 2x+2 & x>0\end{cases}$ a $x=0$.
+  \item \textbf{(Bàsic)} $f(x)=\begin{cases}3x & x\le 1\\ x+1 & x>1\end{cases}$ a $x=1$.
+  \item \textbf{(Bàsic)} $f(x)=\begin{cases}2x-1 & x\le 2\\ x+2 & x>2\end{cases}$ a $x=2$.
+  \item \textbf{(Mitjà)} $f(x)=\begin{cases}x^2 & x\le 3\\ 6x-9 & x>3\end{cases}$ a $x=3$.
+  \item \textbf{(Avançat)} $f(x)=\begin{cases}\dfrac{12}{x} & x\le 4\\ x-1 & x>4\end{cases}$ a $x=4$.
+  \item \textbf{(Correcció creuada)} Intercanvia la teva bateria amb una altra parella i
+        corregiu-vos. Per a cada error, digues si va ser per avaluar malament un tram
+        (signe? jerarquia d'operacions?) o per comparar malament els valors.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item Esquerre $0+2=2$; dret $2\cdot 0+2=2$. Coincideixen: \textbf{contínua}.
+  \item Esquerre $3\cdot 1=3$; dret $1+1=2$. Salt de mida $|3-2|=1$: \textbf{discontínua}.
+  \item Esquerre $2\cdot 2-1=3$; dret $2+2=4$. Salt de mida $1$: \textbf{discontínua}.
+  \item Esquerre $3^2=9$; dret $6\cdot 3-9=9$. Coincideixen: \textbf{contínua}.
+  \item Esquerre $\frac{12}{4}=3$; dret $4-1=3$. Coincideixen: \textbf{contínua}.
+  \item Resposta oberta (correcció entre parelles). Es valora classificar bé l'origen
+        de cada error.
+\end{sollist}
+\end{solucions}

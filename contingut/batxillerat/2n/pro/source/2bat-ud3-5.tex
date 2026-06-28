@@ -1,0 +1,145 @@
+% =====================================================================
+%  2bat-ud3-5.tex  —  SESSIÓ 5: Asímptotes: la línia que no es traspassa
+% =====================================================================
+\horatitol{Sessió 5 — Asímptotes: la línia que no es traspassa}%
+{Posar nom a la línia a la qual s'acosta una gràfica sense tocar-la mai: asímptotes horitzontals i verticals, i la seva lectura social.}
+
+\subsection{Idea clau}
+
+El «sostre» a què tendeixen els fenòmens té un nom: \textbf{asímptota}. Una asímptota
+és la \textbf{línia recta} a la qual s'acosta la gràfica d'una funció sense arribar-hi
+mai. N'hi ha de dos tipus, i cadascun té una lectura social diferent.
+
+\begin{idea}
+\textbf{Dos tipus d'asímptotes}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Horitzontal:} una recta horitzontal $y=L$ a la qual s'acosta la gràfica
+        quan $x$ creix molt. Està lligada al \textbf{límit a l'infinit}
+        ($\lim_{x\to\infty}f(x)=L$). \emph{Lectura social:} un \textbf{sostre de
+        saturació} (la capacitat d'un servei, el valor on s'estabilitza una llista).
+  \item \textbf{Vertical:} una recta vertical $x=a$ a prop de la qual la funció
+        \textbf{es dispara} (cap a $+\infty$ o $-\infty$). Apareix en un valor que la
+        funció \textbf{no pot prendre} (per exemple, un denominador que es fa zero).
+        \emph{Lectura social:} una \textbf{situació impossible} o un punt crític.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[asímptota horitzontal: la llista que s'estabilitza]
+La llista d'espera $f(x)=800-\dfrac{700}{x}$ s'acostava a $800$. La recta $y=800$ és
+una \textbf{asímptota horitzontal}: la gràfica s'hi acosta sense tocar-la.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.6cm, height=4.4cm,
+    xlabel={\small $x$}, ylabel={\small $f(x)$},
+    xmin=0, xmax=28, ymin=0, ymax=950, xtick={0,7,14,21,28}, ytick={0,400,800}]
+  \addplot[udblue, domain=1:28, samples=100]{800-700/x};
+  \addplot[udnavy, dashed, domain=0:28, samples=2]{800};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:28,800) {asímptota $y=800$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Asímptota horitzontal $y=800$: el sostre de saturació de la llista.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[asímptota vertical: la hipèrbola del fons de 1r]
+El repartiment d'un fons $f(x)=\dfrac{\num{36000}}{x}$ té una \textbf{asímptota
+vertical} a $x=0$: si el nombre de famílies s'acostés a zero, l'ajut per família es
+dispararia cap a l'infinit. També té una \textbf{asímptota horitzontal} $y=0$ (l'ajut
+tendeix a zero amb moltes famílies).
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.6cm, height=4.6cm,
+    xlabel={\small famílies ($x$)}, ylabel={\small \euro/família},
+    xmin=0, xmax=20, ymin=0, ymax=20000, xtick={0,5,10,15,20}, ytick={0,10000},
+    yticklabel style={/pgf/number format/fixed}]
+  \addplot[udblue, domain=2:20, samples=100]{36000/x};
+  \addplot[udnavy, dashed] coordinates {(0,0) (0,20000)};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:0.2,15000) {as.\ vertical $x=0$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Asímptota vertical $x=0$: amb molt poques famílies, l'ajut es dispara.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[identificar les asímptotes]
+Per a $f(x)=200-\dfrac{500}{x}$, digues quina és l'asímptota horitzontal i raona si en
+té de vertical.
+\solucio
+\textbf{Horitzontal:} quan $x$ creix, $\dfrac{500}{x}$ s'acosta a $0$, així que $f(x)$
+s'acosta a $200$: l'asímptota horitzontal és $y=200$. \textbf{Vertical:} la funció no
+està definida a $x=0$ (no es pot dividir per zero); a prop de $x=0$ es dispara. Té
+asímptota vertical $x=0$.
+\resposta{Horitzontal $y=200$; vertical $x=0$.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar socialment una asímptota vertical]
+En el repartiment $f(x)=\dfrac{\num{36000}}{x}$, què significa, en el context real, la
+asímptota vertical a $x=0$?
+\solucio
+Vol dir que, si el nombre de famílies fos pràcticament zero, l'ajut per família es
+dispararia cap a quantitats enormes. És una situació \textbf{límit i poc realista}: el
+model perd sentit quan $x$ s'acosta a $0$, perquè no té sentit repartir un fons entre
+«cap» família. L'asímptota vertical marca aquí un \textbf{valor que la variable no pot
+prendre} ($x=0$).
+\resposta{Amb gairebé cap família l'ajut es dispararia; $x=0$ és un valor impossible
+en el context.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a cada funció, digues quina és l'asímptota horitzontal (mirant cap a quin
+        valor tendeix quan $x$ creix):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=\dfrac{10}{x}$ \hfill \item $g(x)=150-\dfrac{300}{x}$ \hfill
+          \item $h(x)=400+\dfrac{100}{x}$
+        \end{enumerate}
+  \item Quines d'aquestes funcions tenen asímptota vertical a $x=0$? Raona-ho.
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=\dfrac{5}{x}$ \hfill \item $g(x)=2x+1$ \hfill
+          \item $h(x)=10-\dfrac{3}{x}$
+        \end{enumerate}
+  \item Una funció d'ocupació té asímptota horitzontal $y=250$. Què representa aquest
+        valor en el context d'un servei?
+  \item Dibuixa a mà una gràfica que tingui asímptota horitzontal $y=100$ i que s'hi
+        acosti per sota a mesura que $x$ creix.
+  \item \textbf{(Lectura social)} Associa cada asímptota amb la seva interpretació:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item asímptota horitzontal $y=300$ \quad (\;) un valor que la variable no pot
+                prendre
+          \item asímptota vertical $x=0$ \quad (\;) un sostre de saturació del servei
+        \end{enumerate}
+  \item \textbf{(Síntesi)} Explica amb les teves paraules la diferència entre una
+        asímptota horitzontal i una de vertical, i posa un exemple social de cada una.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $y=0$; \quad (b) $y=150$; \quad (c) $y=400$.
+  \item (a) \textbf{sí} (denominador $x$ es fa zero a $x=0$); \quad (b) \textbf{no} (és
+        una recta, definida per a tot $x$); \quad (c) \textbf{sí} (té $\frac{3}{x}$,
+        que es dispara a prop de $x=0$).
+  \item Representa el \textbf{sostre de saturació}: el servei s'estabilitza en $250$
+        (per exemple, $250$ places ocupades), valor que no superarà.
+  \item Esbós: una corba creixent que s'aplana acostant-se per sota a la recta
+        horitzontal $y=100$, sense traspassar-la.
+  \item (a) $\rightarrow$ un sostre de saturació del servei; \quad
+        (b) $\rightarrow$ un valor que la variable no pot prendre.
+  \item Resposta oberta. Idea: l'horitzontal ($y=L$) és el valor cap al qual
+        s'estabilitza el fenomen quan $x$ creix (sostre); la vertical ($x=a$) és un
+        valor prohibit de la variable on la funció es dispara. Exemples: horitzontal =
+        capacitat d'un centre; vertical = repartir entre $0$ persones.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,140 @@
+% =====================================================================
+%  2bat-ud3-11.tex  —  SESSIÓ 11: Explorar amb GeoGebra (asímptotes i discontinuïtats)
+% =====================================================================
+\horatitol{Sessió 11 — Explorar amb GeoGebra}%
+{Tancar el treball tecnològic: localitzar asímptotes i discontinuïtats a la pantalla i validar gràficament les conclusions fetes a mà.}
+
+\subsection{Idea clau}
+
+Tanquem el treball amb GeoGebra ajuntant els dos grans temes de la unitat: les
+funcions \textbf{asimptòtiques} (límits) i les definides \textbf{a trossos}
+(continuïtat). L'objectiu és \textbf{validar gràficament} el que ja vam calcular a mà:
+el càlcul, la gràfica i la interpretació han de \textbf{coincidir}.
+
+\begin{idea}
+\textbf{Què validem a GeoGebra}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item En una funció asimptòtica: que el \textbf{límit a l'infinit} calculat a mà es
+        correspon amb l'\textbf{asímptota horitzontal} que es veu a la pantalla.
+  \item En una funció a trossos: que allà on havíem detectat un \textbf{salt}, GeoGebra
+        mostra efectivament una \textbf{discontinuïtat} (un trencament a la gràfica).
+\end{itemize}
+\textbf{Funcions a trossos a GeoGebra:} s'escriuen amb l'ordre \texttt{Si(...)} (o
+\texttt{If}), indicant la condició de cada tram. Per exemple:
+\texttt{f(x)=Si(x<2, x+1, x+3)}.
+\textbf{La regla d'or:} la gràfica i l'anàlisi s'han de validar \textbf{mútuament}; si
+no coincideixen, una de les dues té un error.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[validar un límit i una asímptota]
+Introduïm \texttt{f(x)=600-900/x} i la recta \texttt{y=600}. En ampliar la vista cap a
+la dreta, la gràfica s'acosta a $y=600$ sense tocar-la. Això \textbf{valida} el càlcul
+a mà: $\lim_{x\to\infty}f(x)=600$, asímptota horitzontal $y=600$.
+\end{exemple}
+
+\begin{exemple}[validar una discontinuïtat]
+Introduïm la funció a trossos
+\[
+g(x)=
+\begin{cases}
+x+1 & \text{si } x\le 2,\\[2pt]
+x+3 & \text{si } x>2,
+\end{cases}
+\qquad\text{(a GeoGebra: \texttt{g(x)=Si(x<=2, x+1, x+3)})}.
+\]
+A la pantalla es veu un \textbf{trencament} a $x=2$: la gràfica salta de $3$ a $5$.
+Això valida el que havíem trobat a mà: discontinuïtat de salt a $x=2$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=4.4cm, xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-1, xmax=6, ymin=0, ymax=9, xtick={0,2,4}, ytick={0,3,5}]
+  \addplot[udblue, domain=-1:2, samples=2]{x+1};
+  \addplot[udblue, domain=2:5, samples=2]{x+3};
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(2,3)};
+  \addplot[udnavy, only marks, mark=o, mark size=1.5pt] coordinates {(2,5)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{GeoGebra mostra el trencament a $x=2$, validant el salt calculat a mà.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[validar la coherència de les tres mirades]
+Has calculat a mà que $f(x)=300-\dfrac{600}{x}$ té asímptota horitzontal $y=300$. Com
+ho confirmaries a GeoGebra i què hauries de veure?
+\solucio
+Introdueixes \texttt{f(x)=300-600/x} i \texttt{y=300}, i amplies la vista cap a la
+dreta. Hauries de veure que la gràfica s'acosta a la recta $y=300$ sense traspassar-la.
+Les tres mirades coincideixen: \textbf{càlcul} ($\lim=300$), \textbf{gràfica} (s'acosta
+a $y=300$) i \textbf{interpretació} (el fenomen s'estabilitza en $300$).
+\resposta{La gràfica s'acosta a $y=300$; càlcul, gràfica i interpretació coincideixen.}
+\end{exresolt}
+
+\begin{exresolt}[la gràfica corregeix una conclusió]
+A mà has dit que $g(x)=\begin{cases}2x & x\le 1\\ x+1 & x>1\end{cases}$ té un salt a
+$x=1$. A GeoGebra veus la gràfica \emph{sense} trencament. Qui té raó?
+\solucio
+Comprovem el càlcul: a $x=1$, esquerre $2\cdot 1=2$; dret $1+1=2$. \textbf{Coincideixen},
+així que la funció és \textbf{contínua}: no hi ha salt. GeoGebra té raó; la conclusió
+a mà era errònia (probablement per avaluar malament un tram). La gràfica ha ajudat a
+corregir-la.
+\resposta{No hi ha salt: la funció és contínua. La conclusió a mà era errònia.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Full de pràctica tecnològica. Per a cada funció: anota el que has
+trobat a mà, comprova-ho a GeoGebra i digues si coincideix.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Introdueix \texttt{f(x)=600-900/x} i \texttt{y=600}. Amplia la vista i comprova
+        que la gràfica s'acosta a l'asímptota. Coincideix amb el teu càlcul del límit?
+  \item Introdueix \texttt{g(x)=Si(x<=2, x+1, x+3)} i localitza visualment la
+        discontinuïtat. A quin valor de $x$ es produeix el salt i de quina mida és?
+  \item Introdueix \texttt{h(x)=Si(x<=1, 2x, x+1)} i digues si la gràfica és contínua o
+        té salt. Coincideix amb la comprovació a mà (avalua els dos trams a $x=1$)?
+  \item Completa el full de validació amb tres funcions (asimptòtiques o a trossos):
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.4cm} p{4.4cm} p{2.4cm} p{1.6cm}}
+        \toprule
+        \textbf{Funció} & \textbf{Conclusió a mà} & \textbf{GeoGebra} & \textbf{Coincideix?} \\
+        \midrule
+         & & & \\[10pt]
+         & & & \\[10pt]
+         & & & \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Validació mútua)} En algun cas, la gràfica t'ha ajudat a corregir una
+        conclusió feta a mà? Explica què havia passat.
+  \item \textbf{(Síntesi)} Explica per què diem que el càlcul, la gràfica i la
+        interpretació «s'han de validar mútuament». Què vol dir que les tres mirades
+        coincideixin?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item La gràfica s'acosta a $y=600$ sense tocar-la; coincideix amb
+        $\lim_{x\to\infty}f(x)=600$.
+  \item Salt a $x=2$: el tram esquerre arriba a $3$ i el dret surt de $5$; salt de mida
+        $5-3=2$.
+  \item A $x=1$: esquerre $2\cdot 1=2$, dret $1+1=2$. Coincideixen: \textbf{contínua},
+        sense salt. GeoGebra ho confirma.
+  \item Resposta oberta (full de validació personal). Es valora la coherència entre el
+        càlcul i la visualització.
+  \item Resposta oberta. Es valora descriure bé el cas i l'error corregit.
+  \item Resposta oberta. Idea: el càlcul dóna el resultat numèric, la gràfica el mostra
+        visualment i la interpretació l'explica en context; si les tres coincideixen, la
+        conclusió és sòlida, i si no, hi ha un error en alguna que cal trobar.
+\end{sollist}
+\end{solucions}

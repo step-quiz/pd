@@ -1,0 +1,117 @@
+% =====================================================================
+%  2bat-ud3-14.tex  —  SESSIÓ 14: Repàs global i síntesi (estacions)
+% =====================================================================
+\horatitol{Sessió 14 — Repàs global i síntesi (estacions)}%
+{Repàs actiu per quatre estacions, una per bloc, i mapa final que connecta límit, asímptota i continuïtat amb la lectura d'un model.}
+
+\subsection{Idea clau}
+
+Repassem \textbf{tota la unitat} de manera activa, rotant per \textbf{quatre
+estacions}, una per cada bloc treballat. Al final construirem un \textbf{mapa de la
+unitat} que connecta els tres conceptes —\textbf{límit}, \textbf{asímptota},
+\textbf{continuïtat}— amb la \textbf{lectura global} d'un model.
+
+\begin{idea}
+\textbf{Les quatre estacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Límits a l'infinit:} estimar el límit d'una funció des d'una taula o
+        gràfica i interpretar-lo.
+  \item \textbf{Asímptotes:} identificar les asímptotes d'una gràfica i dir-ne el
+        significat social.
+  \item \textbf{Continuïtat:} comprovar si una funció a trossos és contínua o fa un
+        salt a una frontera.
+  \item \textbf{Lectura global:} descriure el comportament complet d'un model social.
+\end{enumerate}
+\end{idea}
+
+\subsection{Les estacions}
+
+\begin{exemple}[Estació 1 — límits]
+Per a $f(x)=500-\dfrac{1000}{x}$: a mesura que $x$ creix, $\dfrac{1000}{x}\to 0$, així
+que $f(x)\to 500$. Per tant $\lim_{x\to\infty}f(x)=500$: el fenomen s'estabilitza en
+$500$.
+\end{exemple}
+
+\begin{exemple}[Estació 3 — continuïtat]
+$g(x)=\begin{cases}2x+1 & x\le 2\\ x+3 & x>2\end{cases}$ a $x=2$: esquerre
+$2\cdot 2+1=5$; dret $2+3=5$. Coincideixen: \textbf{contínua}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[model de l'Estació 2: asímptotes]
+Per a $f(x)=\dfrac{20}{x}$, identifica les dues asímptotes i digues el significat de
+cadascuna si $x$ és el nombre de beneficiaris d'un fons.
+\solucio
+\textbf{Horitzontal} $y=0$: quan $x$ creix, l'ajut per beneficiari tendeix a $0$ (es
+dilueix amb molta gent). \textbf{Vertical} $x=0$: amb gairebé cap beneficiari, l'ajut
+es dispara (situació impossible en el context).
+\resposta{Horitzontal $y=0$ (l'ajut es dilueix); vertical $x=0$ (cap beneficiari, ajut
+disparat).}
+\end{exresolt}
+
+\begin{exresolt}[model de l'Estació 4: lectura global]
+Un model creix els primers mesos, s'acosta a una asímptota $y=300$ i al mes $15$ fa un
+salt cap avall fins a $200$. Descriu-ne el comportament global.
+\solucio
+El servei \textbf{creix} al principi i s'\textbf{estabilitza} acostant-se a $300$
+(asímptota: la seva capacitat). Al mes $15$ hi ha un \textbf{salt cap avall}
+(discontinuïtat) fins a $200$: un canvi brusc (per exemple, una retallada) que redueix
+de cop el servei. A partir d'aleshores es manté en $200$.
+\resposta{Creix cap a $300$, salt a $200$ al mes $15$, i s'estabilitza en $200$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Una tasca per estació. Rota i resol-les totes.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Estació 1)} Estima $\displaystyle\lim_{x\to\infty}\left(200-\frac{800}{x}\right)$
+        fent una taula amb $x=10,100,1000$, i interpreta el resultat.
+  \item \textbf{(Estació 2)} Per a $g(x)=150-\dfrac{300}{x}$, digues l'asímptota
+        horitzontal i interpreta-la com l'ocupació d'un servei.
+  \item \textbf{(Estació 3)} Comprova si
+        $f(x)=\begin{cases}3x-2 & x\le 1\\ x & x>1\end{cases}$ és contínua a $x=1$.
+  \item \textbf{(Estació 3)} Comprova si
+        $h(x)=\begin{cases}x+4 & x\le 3\\ 2x & x>3\end{cases}$ és contínua a $x=3$ i,
+        si no, digues la mida del salt.
+  \item \textbf{(Estació 4)} Un model d'una llista d'espera creix i s'acosta a $y=600$
+        sense cap salt. Descriu-ne el comportament global en dues frases.
+  \item \textbf{(Mapa de la unitat)} Completa el mapa connectant cada concepte amb la
+        seva idea:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.8cm} p{8.6cm}}
+        \toprule
+        \textbf{Concepte} & \textbf{Idea / lectura} \\
+        \midrule
+        Límit a l'infinit & \rule{7.8cm}{0.4pt} \\
+        Asímptota horitzontal & \rule{7.8cm}{0.4pt} \\
+        Asímptota vertical & \rule{7.8cm}{0.4pt} \\
+        Continuïtat / salt & \rule{7.8cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item $f(10)=120$, $f(100)=192$, $f(1000)=199,2$: s'acosta a $200$. Límit $200$; el
+        fenomen s'estabilitza en $200$.
+  \item Asímptota horitzontal $y=150$: el servei s'estabilitza en $150$ (per exemple,
+        $150$ places), la seva capacitat.
+  \item A $x=1$: esquerre $3\cdot 1-2=1$; dret $1$. Coincideixen: \textbf{contínua}.
+  \item A $x=3$: esquerre $3+4=7$; dret $2\cdot 3=6$. Salt de mida $1$:
+        \textbf{discontínua}.
+  \item Resposta oberta. Idea: la llista creix al principi i s'estabilitza acostant-se a
+        $600$ (el seu sostre); sense salts, l'evolució és suau i previsible.
+  \item Resposta oberta. Idees: límit a l'infinit = valor cap al qual tendeix la funció
+        quan $x$ creix; asímptota horitzontal = sostre de saturació ($y=L$); asímptota
+        vertical = valor prohibit on la funció es dispara; continuïtat/salt = si el
+        model canvia suaument o fa un canvi brusc.
+\end{sollist}
+\end{solucions}

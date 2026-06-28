@@ -1,0 +1,135 @@
+% =====================================================================
+%  2bat-ud3-4.tex  —  SESSIÓ 4: La llista d'espera que s'estabilitza (estudi de cas)
+% =====================================================================
+\horatitol{Sessió 4 — La llista d'espera que s'estabilitza}%
+{Estudi de cas (Activitat 2): estimar i calcular cap a quin valor s'estabilitza una llista d'espera, i usar el límit per preveure.}
+
+\subsection{Idea clau}
+
+Apliquem la idea de límit a un cas real. Tenim la gràfica de l'evolució d'una
+\textbf{llista d'espera} d'un servei social (per exemple, les persones pendents d'una
+valoració de dependència) que creix però cada cop s'estabilitza més. El que ens
+interessa: \textbf{preveure} on s'estabilitzarà a llarg termini. El límit és una eina
+de \textbf{previsió}.
+
+\begin{idea}
+\textbf{El cas.} La llista d'espera el mes $x$ es modelitza, de manera simplificada,
+amb
+\[
+f(x)=800-\frac{700}{x}\quad(\text{persones pendents}).
+\]
+\textbf{Mètode de previsió:}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Estimar} a ull, mirant la gràfica, cap a quin valor sembla que tendeix.
+  \item \textbf{Contrastar} amb el càlcul (taula de valors o el model): com que
+        $\frac{700}{x}$ s'acosta a $0$, $f(x)$ s'acosta a $800$.
+  \item \textbf{Interpretar}: la llista s'estabilitzarà en $800$ persones si les
+        condicions es mantenen. Això ajuda a \textbf{dimensionar recursos}.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la gràfica de la llista d'espera]
+La llista creix de pressa al principi i s'aplana cap a les $800$ persones:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9.4cm, height=5.2cm,
+    xlabel={\small mesos ($x$)}, ylabel={\small persones pendents},
+    xmin=0, xmax=28, ymin=0, ymax=900, xtick={0,7,14,21,28}, ytick={0,400,800}]
+  \addplot[udblue, domain=1:28, samples=100]{800-700/x};
+  \addplot[udnavy, dashed, domain=0:28, samples=2]{800};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:28,800) {$L=800$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La llista s'estabilitza cap a $800$ persones: $\lim_{x\to\infty}f(x)=800$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[contrastar l'estimació amb la taula]
+A ull diríem que s'acosta a $800$. Ho contrastem amb una taula:
+\begin{center}
+\begin{tabular}{lccccc}
+\toprule
+mes $x$ & $2$ & $7$ & $14$ & $28$ & $\num{100}$ \\
+\midrule
+$f(x)$ & $450$ & $700$ & $750$ & $775$ & $793$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Els valors s'acosten cada cop més a $800$ sense superar-lo: l'estimació es confirma.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[estimar i calcular el límit]
+Per a $f(x)=800-\dfrac{700}{x}$, calcula $f(50)$ i $f(100)$, i digues cap a quin valor
+s'estabilitza la llista.
+\solucio
+Calculem:
+\[
+f(50)=800-\frac{700}{50}=800-14=786,\qquad
+f(100)=800-\frac{700}{100}=800-7=793.
+\]
+A mesura que $x$ creix, $\dfrac{700}{x}$ s'acosta a $0$, així que $f(x)$ s'acosta a
+$800$. Per tant $\displaystyle\lim_{x\to\infty}f(x)=800$: la llista s'estabilitza en
+$800$ persones.
+\resposta{$f(50)=786$, $f(100)=793$; s'estabilitza en $800$ persones.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar per planificar]
+Què significa, per a la gestió del servei, que la llista s'estabilitzi en $800$ i no
+creixi indefinidament?
+\solucio
+Significa que, si les condicions es mantenen, la llista \textbf{no creixerà sense
+control}: tendirà a un valor previsible de $800$ persones. Això permet
+\textbf{dimensionar els recursos} (personal, places) per atendre aquest volum, en lloc
+de témer un creixement il·limitat. El límit és, doncs, una eina de
+\textbf{planificació}: anticipa l'escenari final.
+\resposta{Que la llista és previsible ($\approx 800$): es poden dimensionar els
+recursos per a aquest volum.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Model de la llista d'espera: $f(x)=800-\dfrac{700}{x}$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula $f(7)$, $f(14)$ i $f(28)$. Els resultats s'acosten al valor que has
+        estimat?
+  \item Estima, mirant la gràfica, cap a quin valor tendeix la llista, i contrasta-ho
+        amb $f(200)$.
+  \item Una altra llista es modelitza amb $g(x)=500-\dfrac{1500}{x}$. Fes una taula amb
+        $x=10,100,1000$ i digues cap a quin valor s'estabilitza.
+  \item Escriu amb notació de límit el comportament final de la llista
+        $f(x)=800-\dfrac{700}{x}$.
+  \item \textbf{(Previsió)} Si un gestor veu que la llista d'espera tendeix a $800$
+        persones, quantes places de valoració hauria de preparar com a mínim per no
+        quedar-se curt? Raona-ho.
+  \item \textbf{(Decisió)} Imagina dues llistes: una que tendeix a $800$ i una altra
+        que \emph{puja sense límit}. Quina és més preocupant per a la planificació d'un
+        servei? Per què?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item $f(7)=800-100=700$; $f(14)=800-50=750$; $f(28)=800-25=775$. S'acosten a $800$.
+  \item Estimació: $800$. $f(200)=800-\frac{700}{200}=800-3,5=796,5$: confirma que
+        s'acosta a $800$.
+  \item $g(10)=500-150=350$; $g(100)=500-15=485$; $g(1000)=500-1,5=498,5$.
+        S'estabilitza en $500$.
+  \item $\displaystyle\lim_{x\to\infty}\left(800-\frac{700}{x}\right)=800$.
+  \item Hauria de preparar prou recursos per a unes $800$ persones (el valor cap al
+        qual tendeix la llista), per cobrir l'escenari d'estabilització sense
+        quedar-se curt.
+  \item La que \textbf{puja sense límit}, perquè no té un sostre previsible: els
+        recursos necessaris creixerien indefinidament i el servei es col·lapsaria. La
+        que tendeix a $800$ és gestionable perquè és previsible.
+\end{sollist}
+\end{solucions}
