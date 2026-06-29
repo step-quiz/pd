@@ -1,0 +1,149 @@
+% =====================================================================
+%  1bat-ud4-1.tex  —  SESSIÓ 1: Per a què serveix l'estadística? Un informe per al coordinador
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — Per a què serveix l'estadística? Un informe per al coordinador}%
+{Davant d'un llistat cru de dades reals, sentim la necessitat d'ordenar-les, agrupar-les i buscar un número que representi tot el grup.}
+
+\subsection{Idea clau}
+
+Tancada la UD3, on vam aprendre a \textbf{modelitzar} relacions amb funcions, obrim
+una unitat molt professionalitzadora: l'\textbf{estadística}. Un tècnic de serveis a
+la comunitat rep contínuament \textbf{llistats de dades} (edats dels usuaris d'un
+casal, ingressos d'unes famílies, respostes d'una enquesta) i ha de transformar-los
+en informació útil. Avui, encara \emph{sense fórmules}, descobrirem què necessitem
+fer amb un munt de dades perquè ens diguin alguna cosa.
+
+\begin{idea}
+\textbf{De què va l'estadística}\\
+L'\textbf{estadística} és el conjunt d'eines per \textbf{recollir}, \textbf{ordenar},
+\textbf{resumir} i \textbf{interpretar} dades. Davant d'una llista llarga, sempre fem
+tres coses:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Ordenar i agrupar:} posar ordre i ajuntar les dades semblants (per
+        exemple, en franges d'edat).
+  \item \textbf{Resumir amb un número:} buscar \emph{un valor que representi el grup}
+        (la idea de \textbf{mitjana}, que formalitzarem demà).
+  \item \textbf{Representar:} fer un \textbf{gràfic} que ho expliqui «d'un cop d'ull».
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la llista crua d'un menjador social]
+El coordinador d'un menjador social et passa les edats de $15$ usuaris, tal com les
+ha apuntat, sense cap ordre:
+\[
+68,\ 72,\ 35,\ 70,\ 71,\ 40,\ 69,\ 73,\ 68,\ 38,\ 70,\ 72,\ 71,\ 67,\ 70.
+\]
+Així, en brut, costa dir res. Però si les \textbf{ordenem} de menor a major,
+\[
+35,\ 38,\ 40,\ 67,\ 68,\ 68,\ 69,\ 70,\ 70,\ 70,\ 71,\ 71,\ 72,\ 72,\ 73,
+\]
+de seguida es veu alguna cosa: hi ha \textbf{tres persones} més joves ($35$, $38$,
+$40$) i un \textbf{gran bloc} de gent gran (entre $67$ i $73$). L'ull ja comença a
+\emph{agrupar} sense que ningú ho hagi demanat.
+\end{exemple}
+
+\begin{exemple}[buscar «un número que els representi»]
+Si el coordinador et pregunta «\emph{i quina edat tenen, més o menys?}», no li pots
+llegir les $15$ dades. Necessites \textbf{un sol número}. Una idea natural és sumar
+totes les edats i repartir-les a parts iguals:
+\[
+\frac{35+38+40+67+\cdots+73}{15}=\frac{\num{984}}{15}\approx 65,6.
+\]
+Aquest «repartiment a parts iguals» és la \textbf{mitjana} (la formalitzarem a la
+sessió 2). Ja intuïm, però, que aquí enganya una mica: \emph{ningú} té $65$ anys; el
+gruix real està cap als $70$. Aquesta tensió («un número que representi» contra «la
+realitat del grup») serà el fil de tota la unitat.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[ordenar i descriure un grup d'usuaris]
+Un educador t'apunta les edats de $12$ infants d'un casal d'estiu:
+\[
+9,\ 6,\ 11,\ 7,\ 6,\ 10,\ 8,\ 6,\ 12,\ 7,\ 9,\ 6.
+\]
+Ordena-les i descriu el grup amb les teves paraules: entre quines edats es mou, i
+quina edat sembla la més habitual.
+\solucio
+\textbf{Ordenem} de menor a major:
+\[
+6,\ 6,\ 6,\ 6,\ 7,\ 7,\ 8,\ 9,\ 9,\ 10,\ 11,\ 12.
+\]
+Un cop ordenades, es llegeix de seguida: les edats van \textbf{de $6$ a $12$ anys};
+el valor que \textbf{més es repeteix} és $6$ (apareix $4$ vegades). El grup és, doncs,
+de \textbf{primària}, amb predomini dels més petits.
+\resposta{Edats de $6$ a $12$ anys; la més habitual és $6$ anys (es repeteix $4$ cops).}
+\end{exresolt}
+
+\begin{exresolt}[primera idea de «número representatiu»]
+D'una setmana de recollida d'aliments, una entitat anota els quilos recollits cada
+dia: $20$, $24$, $22$, $25$, $19$, $26$, $24$. Si haguessis de dir \textbf{una sola
+xifra} que resumeixi «quant es recull al dia», quina diries i com l'has trobada?
+\solucio
+La idea més natural és \textbf{repartir el total a parts iguals} entre els $7$ dies.
+Sumem tot el que s'ha recollit:
+\[
+20+24+22+25+19+26+24=\num{160}\ \text{kg}.
+\]
+I ho repartim entre els $7$ dies:
+\[
+\frac{160}{7}\approx 22,9\ \text{kg}.
+\]
+Diríem que es recullen \textbf{uns $23$ kg al dia} de mitjana. És un sol número que
+resumeix tota la setmana.
+\resposta{Uns $22,9$ kg/dia (el total $160$ kg repartit entre els $7$ dies).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Ordena de menor a major aquest llistat d'edats d'usuaris d'un centre de dia i
+        digues entre quines edats es mou el grup:
+        \[
+        82,\ 79,\ 85,\ 77,\ 90,\ 81,\ 84,\ 79,\ 88,\ 83.
+        \]
+  \item D'aquest mateix llistat, quina edat (o quines) es repeteix? Et sembla un grup
+        envellit o jove? Per què?
+  \item Una biblioteca anota els visitants de $6$ tardes: $40$, $52$, $48$, $45$,
+        $50$, $43$. Troba \textbf{un sol número} que resumeixi «quants visitants té
+        una tarda», repartint el total a parts iguals.
+  \item Agrupa les edats de l'exercici 1 en \textbf{tres franges} ($75$–$79$,
+        $80$–$84$, $85$–$90$) i digues quantes persones cauen a cada franja. Quina
+        franja és la més nombrosa?
+  \item \textbf{(Interpretació)} Un coordinador et diu: «la mitjana d'edat dels meus
+        usuaris és de $45$ anys». Què t'imagines del grup? Podria ser que \emph{cap}
+        usuari tingui exactament $45$ anys? Posa un exemple de com seria possible.
+  \item \textbf{(Raonament)} Amb les teves paraules, explica per què davant d'una
+        llista llarga de dades necessitem \textbf{ordenar-les}, \textbf{agrupar-les} i
+        \textbf{resumir-les}. Posa un exemple de l'àmbit social on un tècnic hagi de
+        fer-ho.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item Ordenades: $77,\ 79,\ 79,\ 81,\ 82,\ 83,\ 84,\ 85,\ 88,\ 90$. El grup es mou
+        \textbf{de $77$ a $90$ anys}.
+  \item Es repeteix el $79$ (dues vegades). És un grup \textbf{molt envellit}: totes
+        les edats estan per damunt dels $77$ anys (típic d'un centre de dia de gent
+        gran).
+  \item Total: $40+52+48+45+50+43=\num{278}$; repartit entre $6$ tardes:
+        $\dfrac{278}{6}\approx 46,3$ visitants per tarda.
+  \item $75$–$79$: $3$ persones ($77,79,79$); \quad $80$–$84$: $4$ persones
+        ($81,82,83,84$); \quad $85$–$90$: $3$ persones ($85,88,90$). La més nombrosa
+        és la franja \textbf{$80$–$84$}.
+  \item Resposta oberta. Idea: un grup amb gent jove i gent gran barrejada pot donar
+        mitjana $45$ sense que ningú en tingui $45$. Exemple: meitat de gent de $25$ i
+        meitat de $65$ $\rightarrow$ mitjana $45$, però cap persona en té $45$.
+  \item Resposta oberta. Idea esperada: ordenar i agrupar fa visible l'estructura del
+        grup; resumir amb un número permet comunicar-lo de pressa (en un informe, una
+        memòria…). Exemple vàlid: un tècnic que ha de descriure els usuaris d'un servei
+        en una memòria anual.
+\end{sollist}
+\end{solucions}

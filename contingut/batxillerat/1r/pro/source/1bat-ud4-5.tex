@@ -1,0 +1,193 @@
+% =====================================================================
+%  1bat-ud4-5.tex  —  SESSIÓ 5: Consolidació del càlcul de paràmetres
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 5 — Consolidació del càlcul de paràmetres}%
+{Abans d'automatitzar amb el full de càlcul, assentem el càlcul a mà caçant els errors típics de mitjana, mediana i desviació típica.}
+
+\subsection{Idea clau}
+
+Ja sabem calcular les mesures de centralització (sessió 2) i de dispersió (sessió 4).
+Abans de passar-les al \textbf{full de càlcul}, avui les consolidem \textbf{a mà},
+perquè quan la màquina ens doni un número en sàpiguem reconèixer si té sentit. No hi
+ha matèria nova: avui es tracta de fer-ho \textbf{bé}, caçant els errors de sempre.
+
+\begin{idea}
+\textbf{Els quatre errors que cacem avui}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Mediana sense ordenar:} buscar el valor del mig \emph{sense} haver
+        ordenat abans les dades.
+  \item \textbf{Dividir per un nombre equivocat} a la mitjana (per $N$ malament, o
+        oblidant les freqüències).
+  \item \textbf{Oblidar l'arrel} a la desviació típica (quedar-se a la variància).
+  \item \textbf{Confondre} la freqüència amb el valor en dades amb $f_i$.
+\end{enumerate}
+\textbf{Comprova sempre que el resultat té sentit:} la mitjana ha de caure
+\emph{entre} el mínim i el màxim; la $\sigma$ no pot ser negativa.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: mediana sense ordenar]
+Algú calcula la mediana de $7,\ 2,\ 9,\ 4,\ 5$ així: «el valor del mig de la llista és
+$9$». \textbf{És incorrecte:} no ha ordenat les dades. Cal ordenar primer:
+\[
+2,\ 4,\ \underline{5},\ 7,\ 9 \ \Rightarrow\ \text{Me}=5.
+\]
+La mediana és \textbf{el central un cop ordenades}, no el que ocupa el mig de la
+llista original. \textbf{Correcció:} $\text{Me}=5$, no $9$.
+\end{exemple}
+
+\begin{exemple}[caça l'error: oblidar l'arrel]
+Algú calcula la desviació típica de $2,\ 4,\ 6$ (mitjana $4$) i s'atura aquí:
+distàncies al quadrat $4,0,4$, de manera que
+\[
+\sigma^2=\frac{4+0+4}{3}=\frac{8}{3}\approx 2,67,
+\]
+i diu «$\sigma=2,67$». \textbf{És incorrecte:} $2,67$ és la \emph{variància}, no la
+desviació típica. Falta \textbf{l'arrel}:
+\[
+\sigma=\sqrt{2,67}\approx 1,63.
+\]
+\textbf{Correcció:} $\sigma\approx 1,63$, no $2,67$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[dades amb freqüències]
+En una enquesta, el nombre de persones per llar ha estat:
+
+\begin{center}
+\begin{tabular}{c c c c c}
+\toprule
+Persones per llar ($x_i$) & $1$ & $2$ & $3$ & $4$ \\
+\midrule
+Nombre de llars ($f_i$) & $4$ & $6$ & $8$ & $2$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Calcula la \textbf{mitjana} de persones per llar i la \textbf{moda}.
+\solucio
+Amb freqüències, la mitjana és la \textbf{suma de cada valor pel seu nombre de
+repeticions}, dividida pel \textbf{total} de llars $N=4+6+8+2=20$:
+\[
+\overline{x}=\frac{1\per 4+2\per 6+3\per 8+4\per 2}{20}
+=\frac{4+12+24+8}{20}=\frac{48}{20}=2,4.
+\]
+\textbf{Moda:} el valor amb més freqüència és $3$ (apareix a $8$ llars):
+$\text{Mo}=3$.
+
+\textbf{Comprovació de sentit:} $2,4$ cau entre $1$ i $4$: correcte.
+\resposta{$\overline{x}=2,4$ persones per llar; $\text{Mo}=3$.}
+\end{exresolt}
+
+\begin{exresolt}[el valor extrem afecta la mitjana però no la mediana]
+Les edats de $7$ usuaris d'un servei juvenil són:
+$16$, $17$, $18$, $17$, $16$, $19$, $54$. Calcula la mitjana i la mediana, i digues
+quina representa millor el grup.
+\solucio
+\textbf{Mitjana:}
+\[
+\overline{x}=\frac{16+17+18+17+16+19+54}{7}=\frac{157}{7}\approx 22,4.
+\]
+\textbf{Mediana:} ordenem: $16,16,17,\underline{17},18,19,54$. Amb $N=7$, la central
+és la $4$a: $\text{Me}=17$.
+
+El valor $54$ (probablement un educador, no un jove) \textbf{estira la mitjana} fins
+a $22,4$, però gairebé no afecta la mediana ($17$). La \textbf{mediana} representa
+molt millor un grup que, de fet, és d'adolescents.
+\resposta{$\overline{x}\approx 22,4$ però $\text{Me}=17$; la mediana descriu millor
+el grup perquè no la distorsiona el $54$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari: els exercicis 1–4 són la base; el 5 i el 6 són
+ampliació (dades amb freqüències i interpretació).}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} En cada cas, digues si el càlcul és correcte i, si no,
+        corregeix-lo:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item «La mediana de $8,\ 3,\ 5$ és $3$, perquè és el del mig.»
+      \item «La mitjana de $10,\ 20,\ 30,\ 40$ és $\dfrac{100}{3}$.»
+      \item «La desviació típica d'un conjunt amb $\sigma^2=49$ és $49$.»
+    \end{enumerate}
+  \item Calcula la \textbf{mitjana}, la \textbf{moda} i la \textbf{mediana} de:
+        $3$, $5$, $4$, $5$, $8$, $5$, $6$.
+  \item Calcula la \textbf{variància} i la \textbf{desviació típica} de:
+        $10$, $12$, $14$ (recorda: troba la mitjana, distàncies al quadrat, mitjana
+        d'aquestes, i \textbf{l'arrel}).
+  \item Per a $2$, $2$, $4$, $4$, $8$: calcula mitjana, mediana i desviació típica.
+        Comprova que la mitjana cau entre el mínim i el màxim.
+  \item \textbf{(Ampliació amb freqüències)} En un casal, el nombre d'activitats a la
+        setmana per infant ha estat:
+        \begin{center}
+        \begin{tabular}{c c c c}
+        \toprule
+        Activitats ($x_i$) & $1$ & $2$ & $3$ \\
+        \midrule
+        Infants ($f_i$) & $5$ & $10$ & $5$ \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+        Calcula la mitjana d'activitats per infant i la moda.
+  \item \textbf{(Ampliació amb interpretació)} D'un conjunt de dades, un company
+        obté mitjana $50$ i $\sigma=0$. És possible? Què vol dir exactament una
+        desviació típica de zero? Posa un exemple de conjunt que ho compleixi.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació} — marca amb sinceritat com et trobes en cada
+procediment, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.2cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Calcular la mitjana (i amb freqüències) & \rule{0.7cm}{0pt} & & \\
+Trobar la mediana (ordenant primer) & & & \\
+Trobar la moda & & & \\
+Calcular la variància i la desviació típica (amb l'arrel) & & & \\
+Comprovar que el resultat té sentit & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+\noindent\textbf{Atenció a la diversitat.} Si encara et costa, comença per
+l'\emph{itinerari mínim} (exercicis 2 i 3, amb conjunts petits de dades enteres,
+seguint el procediment pas a pas); si ja domines el càlcul, fes les
+\emph{ampliacions} (exercicis 5 i 6, amb freqüències i interpretació).
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{Incorrecta}: cal ordenar ($3,5,8$); la mediana és $5$, no $3$.
+        \quad (b) \textbf{Incorrecta}: hi ha $4$ dades, no $3$;
+        $\overline{x}=\dfrac{100}{4}=25$. \quad (c) \textbf{Incorrecta}: falta l'arrel;
+        $\sigma=\sqrt{49}=7$.
+  \item Ordenat: $3,4,5,5,5,6,8$. Mitjana
+        $\overline{x}=\dfrac{36}{7}\approx 5,14$; moda $\text{Mo}=5$ (apareix $3$
+        cops); mediana (central, 4a) $\text{Me}=5$.
+  \item Mitjana $\overline{x}=\dfrac{36}{3}=12$. Distàncies al quadrat: $4,0,4$, suma
+        $8$. $\sigma^2=\dfrac{8}{3}\approx 2,67$;
+        $\sigma=\sqrt{2,67}\approx 1,63$.
+  \item Mitjana $\overline{x}=\dfrac{2+2+4+4+8}{5}=\dfrac{20}{5}=4$. Mediana (ordenat
+        $2,2,4,4,8$, central) $\text{Me}=4$. Distàncies al quadrat: $4,4,0,0,16$, suma
+        $24$; $\sigma^2=\dfrac{24}{5}=4,8$; $\sigma=\sqrt{4,8}\approx 2,19$. La mitjana
+        $4$ cau entre $2$ i $8$: correcte.
+  \item $N=5+10+5=20$. Mitjana
+        $\overline{x}=\dfrac{1\per 5+2\per 10+3\per 5}{20}=\dfrac{5+20+15}{20}=\dfrac{40}{20}=2$.
+        Moda $\text{Mo}=2$ (la freqüència més alta, $10$ infants).
+  \item Sí, és possible. $\sigma=0$ vol dir que \textbf{no hi ha gens de dispersió}:
+        \emph{totes} les dades són iguals (i iguals a la mitjana). Exemple:
+        $50,\ 50,\ 50,\ 50$ té mitjana $50$ i $\sigma=0$.
+\end{sollist}
+\end{solucions}

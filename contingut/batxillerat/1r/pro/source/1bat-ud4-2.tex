@@ -1,0 +1,176 @@
+% =====================================================================
+%  1bat-ud4-2.tex  —  SESSIÓ 2: Mesures de centralització: mitjana, moda i mediana
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 2 — Mesures de centralització: mitjana, moda i mediana}%
+{Posem nom i mètode al «número que representa el grup»: tres mesures que el resumeixen de tres maneres diferents.}
+
+\subsection{Idea clau}
+
+A la sessió 1, davant del llistat d'edats del menjador, vam sentir la necessitat de
+trobar \textbf{un número que representés tot el grup}, i algú va proposar repartir-ho
+a parts iguals. Avui ho \textbf{formalitzem}: hi ha \textbf{tres} mesures de
+centralització, i cadascuna respon a una pregunta diferent.
+
+\begin{idea}
+\textbf{Les tres mesures de centralització}\\
+Tenim $N$ dades $x_1, x_2, \dots, x_N$ (les $x_i$), i cada valor pot aparèixer amb una
+\textbf{freqüència} $f_i$ (quantes vegades es repeteix).
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Mitjana} $\overline{x}$ — el \emph{repartiment a parts iguals}:
+        \[
+        \overline{x}=\frac{x_1+x_2+\cdots+x_N}{N}=\frac{\sum x_i}{N}.
+        \]
+  \item \textbf{Moda} (Mo) — el valor que \emph{més es repeteix} (el de freqüència més
+        alta). Pot haver-n'hi més d'una.
+  \item \textbf{Mediana} (Me) — el valor \emph{central} quan ordenem les dades de
+        menor a major. Amb $N$ senar és el del mig; amb $N$ parell és la mitjana dels
+        dos centrals.
+\end{itemize}
+\textbf{Quan convé cada una:} la \textbf{moda} per saber què predomina; la
+\textbf{mediana} per descriure el cas central sense que la distorsionin els valors
+extrems; la \textbf{mitjana} per repartir.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[les tres mesures sobre les edats del menjador]
+Recuperem les $15$ edats ordenades de la sessió 1:
+\[
+35,\ 38,\ 40,\ 67,\ 68,\ 68,\ 69,\ \underline{70},\ 70,\ 70,\ 71,\ 71,\ 72,\ 72,\ 73.
+\]
+\textbf{Mitjana:} $\overline{x}=\dfrac{\num{984}}{15}\approx 65,6$ anys.
+
+\textbf{Moda:} el valor que més es repeteix és $70$ (apareix $3$ vegades): $\text{Mo}=70$.
+
+\textbf{Mediana:} hi ha $15$ dades (senar); la central és la $8$a, és a dir la
+subratllada: $\text{Me}=70$ anys.
+
+Fixa't que la \textbf{moda i la mediana} ($70$) descriuen el grup molt millor que la
+\textbf{mitjana} ($65,6$): les tres persones joves estiren la mitjana cap avall, però
+el «cas típic» del menjador és una persona de $70$ anys.
+\end{exemple}
+
+\begin{exemple}[mediana amb un nombre parell de dades]
+Sis usuaris d'un servei d'atenció domiciliària reben, a la setmana, aquestes hores
+d'atenció (ja ordenades):
+\[
+2,\ 3,\ \underline{4},\ \underline{4},\ 6,\ 7.
+\]
+Ara $N=6$ és \textbf{parell}, de manera que no hi ha un únic valor central: agafem
+els \textbf{dos del mig} (el $3$r i el $4$t, és a dir $4$ i $4$) i en fem la mitjana:
+\[
+\text{Me}=\frac{4+4}{2}=4\ \text{hores}.
+\]
+Amb $N$ parell la mediana pot \emph{no} ser cap de les dades originals: si els dos
+centrals fossin $4$ i $6$, la mediana seria $5$, que no apareix a la llista.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[mitjana, moda i mediana d'un conjunt de dades socials]
+En un casal s'apunten les hores setmanals de voluntariat de $9$ persones:
+\[
+5,\ 3,\ 8,\ 5,\ 2,\ 5,\ 7,\ 4,\ 6.
+\]
+Calcula la mitjana, la moda i la mediana, i comenta quina descriu millor «el
+voluntari típic».
+\solucio
+\textbf{Mitjana:} sumem i dividim entre $N=9$:
+\[
+\overline{x}=\frac{5+3+8+5+2+5+7+4+6}{9}=\frac{45}{9}=5\ \text{hores}.
+\]
+\textbf{Moda:} ordenem mentalment i busquem el més repetit:
+$2,3,4,5,5,5,6,7,8$. El $5$ apareix $3$ vegades: $\text{Mo}=5$.
+
+\textbf{Mediana:} amb les dades ordenades $2,3,4,5,\underline{5},5,6,7,8$ i $N=9$
+(senar), la central és la $5$a: $\text{Me}=5$.
+
+Les tres coincideixen en $5$: és un grup \textbf{molt homogeni}, sense valors
+extrems que distorsionin. El voluntari típic fa $5$ hores.
+\resposta{$\overline{x}=5$, $\text{Mo}=5$, $\text{Me}=5$ hores; grup homogeni.}
+\end{exresolt}
+
+\begin{exresolt}[quan la mitjana i la mediana no coincideixen]
+Els sous mensuals (en €) de $7$ treballadors d'una petita entitat són:
+\[
+\num{1200},\ \num{1300},\ \num{1250},\ \num{1300},\ \num{1200},\ \num{1350},\ \num{4000}.
+\]
+Calcula la mitjana i la mediana. Quina representa millor el que cobra «un treballador
+normal» d'aquesta entitat?
+\solucio
+\textbf{Mitjana:}
+\[
+\overline{x}=\frac{\num{1200}+\num{1300}+\num{1250}+\num{1300}+\num{1200}+\num{1350}+\num{4000}}{7}
+=\frac{\num{11600}}{7}\approx \num{1657}\eur.
+\]
+\textbf{Mediana:} ordenem:
+$\num{1200},\ \num{1200},\ \num{1250},\ \underline{\num{1300}},\ \num{1300},\ \num{1350},\ \num{4000}$.
+Amb $N=7$, la central és la $4$a: $\text{Me}=\num{1300}\eur$.
+
+El sou de $\num{4000}\eur$ (segurament una direcció) \textbf{estira la mitjana} cap
+amunt: la mitjana ($\num{1657}\eur$) fa pensar que es cobra més del que cobra de
+debò la majoria. La \textbf{mediana} ($\num{1300}\eur$) representa molt millor «un
+treballador normal».
+\resposta{$\overline{x}\approx\num{1657}\eur$ però $\text{Me}=\num{1300}\eur$; la
+mediana descriu millor el cas típic perquè no la distorsiona el sou alt.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula la \textbf{mitjana} d'aquests conjunts de dades:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Infants atesos cada dia: $12$, $15$, $9$, $14$, $10$.
+      \item Donatius (€): $20$, $50$, $30$, $20$, $80$.
+    \end{enumerate}
+  \item Troba la \textbf{moda} de cada llista:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Talles de samarreta repartides: S, M, M, L, M, S, L, M.
+      \item Nombre de germans: $1$, $2$, $1$, $3$, $1$, $0$, $2$, $1$.
+    \end{enumerate}
+  \item Troba la \textbf{mediana} (recorda ordenar primer):
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $7$, $3$, $9$, $5$, $1$ (cinc dades).
+      \item $8$, $2$, $6$, $4$ (quatre dades).
+    \end{enumerate}
+  \item En un grup de suport, les edats dels $8$ participants són:
+        $19$, $22$, $20$, $45$, $21$, $23$, $19$, $20$. Calcula la mitjana, la moda i
+        la mediana. \textbf{(Compte)} amb el valor $45$: com afecta cada mesura?
+  \item \textbf{(Interpretació)} Un ajuntament diu que «la renda mitjana del barri és
+        de $\num{28000}\eur$», però la mediana és de $\num{19000}\eur$. Què et fa
+        pensar aquesta diferència sobre com estan repartides les rendes al barri?
+  \item \textbf{(Raonament)} Posa un exemple propi, de l'àmbit social, on sigui més
+        útil donar la \textbf{moda} que la mitjana, i un altre on sigui millor la
+        \textbf{mediana}. Explica per què en cada cas.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $\overline{x}=\dfrac{12+15+9+14+10}{5}=\dfrac{60}{5}=12$ infants. \quad
+        (b) $\overline{x}=\dfrac{20+50+30+20+80}{5}=\dfrac{200}{5}=40\eur$.
+  \item (a) Mo $=$ M (apareix $4$ vegades). \quad
+        (b) Mo $=1$ (apareix $4$ vegades).
+  \item (a) Ordenat $1,3,5,7,9$; central (3a): $\text{Me}=5$. \quad
+        (b) Ordenat $2,4,6,8$; dos centrals $4$ i $6$:
+        $\text{Me}=\dfrac{4+6}{2}=5$.
+  \item Ordenat: $19,19,20,20,21,22,23,45$. Mitjana:
+        $\dfrac{19+22+20+45+21+23+19+20}{8}=\dfrac{189}{8}\approx 23,6$. Moda: $19$ i
+        $20$ (totes dues apareixen $2$ cops; bimodal). Mediana ($N=8$, centrals 4t i
+        5è, $20$ i $21$): $\dfrac{20+21}{2}=20,5$. El $45$ \textbf{estira la mitjana}
+        cap amunt ($23,6$), però gairebé no afecta la mediana ($20,5$): per això la
+        mediana representa millor el grup, format sobretot per joves d'uns $20$ anys.
+  \item Que la mitjana és força més alta que la mediana indica que hi ha \textbf{unes
+        poques rendes molt altes} que estiren la mitjana cap amunt, mentre que la
+        majoria de la població cobra al voltant de $\num{19000}\eur$ o menys. És un
+        senyal de \textbf{desigualtat}.
+  \item Resposta oberta. Exemples vàlids: \emph{moda} $\rightarrow$ la talla de roba
+        més demanada en un repartiment (interessa la més freqüent per fer la comanda);
+        \emph{mediana} $\rightarrow$ la renda d'un barri amb algunes rendes molt altes
+        (la mediana no es distorsiona pels extrems).
+\end{sollist}
+\end{solucions}

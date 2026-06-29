@@ -1,0 +1,179 @@
+% =====================================================================
+%  1bat-ud4-10.tex  —  SESSIÓ 10: Radiografia d'un barri (piràmides de població)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — Radiografia d'un barri (piràmides de població)}%
+{Llegir dues piràmides reals, comparar un territori envellit amb un de jove i redactar un diagnòstic d'equipaments.}
+
+\subsection{Idea clau}
+
+A la sessió 9 vam aprendre a llegir gràfics amb mirada crítica. Ara ho apliquem al
+gràfic més útil per a un tècnic de serveis a la comunitat: la \textbf{piràmide de
+població}. Llegint-la, podem fer una \emph{radiografia} d'un territori i deduir
+\textbf{quins serveis socials necessitarà}.
+
+\begin{idea}
+\textbf{Com es llegeix una piràmide de població}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Eix vertical:} les \textbf{franges d'edat} (les més grans a dalt).
+  \item \textbf{Eix horitzontal:} el \textbf{percentatge} de població de cada franja;
+        \textbf{homes} a l'esquerra, \textbf{dones} a la dreta.
+  \item \textbf{Base ampla} $\rightarrow$ població \textbf{jove} (molts infants).
+  \item \textbf{Cim ample / base estreta} $\rightarrow$ població \textbf{envellida}.
+  \item La \textbf{moda} és la franja d'edat \emph{més nombrosa} (la barra més llarga).
+\end{itemize}
+\textbf{De la forma al servei:} la forma de la piràmide anticipa quins equipaments
+caldran.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[un municipi envellit]
+Aquesta piràmide correspon a un municipi rural amb població molt envellida. Fixa't que
+la \textbf{base és estreta} (pocs infants) i el \textbf{cim és ample} (molta gent
+gran):
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=6.4cm,
+    xbar, bar width=8pt, y=14pt,
+    xmin=-16, xmax=16,
+    xtick={-16,-12,-8,-4,0,4,8,12,16},
+    xticklabels={16,12,8,4,0,4,8,12,16},
+    xticklabel style={font=\scriptsize, color=udgrey},
+    xlabel={\small \% població \quad (homes $\leftarrow$ \ $\rightarrow$ dones)},
+    ytick={1,2,3,4,5,6},
+    yticklabels={0-14,15-29,30-44,45-64,65-79,80+},
+    yticklabel style={font=\scriptsize, color=udgrey},
+    tick style={udgrey}, axis line style={udgrey},
+    enlarge y limits=0.12,
+    legend style={font=\scriptsize, at={(0.5,-0.28)}, anchor=north, legend columns=2}]
+  \addplot[fill=udblue!55, draw=udnavy] coordinates {(-4,1) (-5,2) (-6,3) (-10,4) (-13,5) (-8,6)};
+  \addplot[fill=udblue!25, draw=udnavy] coordinates {(4,1) (5,2) (6,3) (11,4) (14,5) (12,6)};
+  \legend{homes, dones}
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Municipi envellit: la franja més nombrosa (moda) és la de $65$–$79$ anys; molt poca base.}
+\end{center}
+
+\noindent La franja \textbf{més llarga} és la de $65$–$79$ anys: és la \textbf{moda}.
+Hi ha molta gent gran i pocs infants: un municipi \textbf{envellit}.
+\end{exemple}
+
+\begin{exemple}[un barri jove amb molta immigració]
+Aquesta segona piràmide és d'un barri amb població jove. La \textbf{base és ampla}
+(molts infants i joves) i el \textbf{cim, estret}:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=6.4cm,
+    xbar, bar width=8pt, y=14pt,
+    xmin=-18, xmax=18,
+    xtick={-16,-12,-8,-4,0,4,8,12,16},
+    xticklabels={16,12,8,4,0,4,8,12,16},
+    xticklabel style={font=\scriptsize, color=udgrey},
+    xlabel={\small \% població \quad (homes $\leftarrow$ \ $\rightarrow$ dones)},
+    ytick={1,2,3,4,5,6},
+    yticklabels={0-14,15-29,30-44,45-64,65-79,80+},
+    yticklabel style={font=\scriptsize, color=udgrey},
+    tick style={udgrey}, axis line style={udgrey},
+    enlarge y limits=0.12,
+    legend style={font=\scriptsize, at={(0.5,-0.28)}, anchor=north, legend columns=2}]
+  \addplot[fill=udblue!55, draw=udnavy] coordinates {(-15,1) (-16,2) (-14,3) (-9,4) (-4,5) (-2,6)};
+  \addplot[fill=udblue!25, draw=udnavy] coordinates {(14,1) (15,2) (13,3) (9,4) (5,5) (2,6)};
+  \legend{homes, dones}
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Barri jove: la franja més nombrosa (moda) és la de $15$–$29$ anys; base molt ampla.}
+\end{center}
+
+\noindent Aquí la franja \textbf{més llarga} és la de $15$–$29$ anys, i la base
+($0$–$14$) també és molt ampla: un barri \textbf{jove}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[comparar les dues formes]
+Compara la piràmide del municipi envellit amb la del barri jove: identifica la moda de
+cadascuna i digues què anticipa cada forma sobre la població futura.
+\solucio
+\textbf{Municipi envellit:} moda a $65$–$79$ anys; base estreta. Forma de
+\emph{piràmide invertida} (ampla a dalt). Anticipa una població que \textbf{continuarà
+envellint}: cada cop hi haurà més gent gran i menys jovent que la substitueixi.
+
+\textbf{Barri jove:} moda a $15$–$29$ anys; base ampla. Forma de \emph{piràmide
+clàssica} (ampla a baix). Anticipa una població \textbf{en creixement}, amb molts
+infants que en pocs anys seran adolescents i joves.
+\resposta{Envellit: moda $65$–$79$, seguirà envellint. Jove: moda $15$–$29$, base
+ampla, població en creixement.}
+\end{exresolt}
+
+\begin{exresolt}[diagnòstic d'equipaments]
+A partir de les dues piràmides, redacta un breu diagnòstic: quins equipaments i
+serveis socials caldran a cada territori els pròxims deu anys?
+\solucio
+\textbf{Municipi envellit} (molta gent gran): caldran \textbf{casals d'avis},
+\textbf{atenció domiciliària}, serveis de \textbf{teleassistència}, places de
+\textbf{centre de dia} i \textbf{residència}, i transport adaptat. La prioritat és
+l'atenció a la dependència.
+
+\textbf{Barri jove} (molts infants i joves): caldran \textbf{llars d'infants} i
+\textbf{escoles}, \textbf{casals i activitats juvenils}, programes d'\textbf{ocupació
+juvenil} i, atesa la immigració, serveis d'\textbf{acollida i integració}. La
+prioritat és l'educació i la inserció.
+\resposta{Envellit $\rightarrow$ serveis de dependència (casals d'avis, atenció
+domiciliària). Jove $\rightarrow$ educació i ocupació (llars d'infants, ocupació
+juvenil, acollida).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Mira la piràmide del \textbf{municipi envellit}. Quina és la franja d'edat amb
+        més població (la moda)? És més ampla la base o el cim?
+  \item Mira la piràmide del \textbf{barri jove}. Quina és la moda? Quina forma té la
+        base?
+  \item En la piràmide del municipi envellit, compara la franja $0$–$14$ amb la
+        $65$–$79$. Quina té més població? Què vol dir això sobre el relleu
+        generacional?
+  \item \textbf{(Diagnòstic)} Per al \textbf{barri jove}, escriu \textbf{tres}
+        equipaments o serveis socials que prioritzaries i justifica per què, mirant la
+        piràmide.
+  \item \textbf{(Interpretació)} Un poble té una piràmide gairebé rectangular (totes
+        les franges semblants) excepte la de $80+$, que és molt ampla. Com el
+        descriuries? Quin servei hi seria especialment necessari?
+  \item \textbf{(Raonament)} Per què és tan útil, per a la planificació de serveis
+        socials, mirar la piràmide \textbf{abans} de decidir on s'inverteix? Posa un
+        exemple d'un error que es podria cometre si no es mira.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item La moda és la franja \textbf{$65$–$79$ anys} (la barra més llarga). El
+        \textbf{cim} és més ample que la base (típic d'una població envellida).
+  \item La moda és la franja \textbf{$15$–$29$ anys}. La base ($0$–$14$) és
+        \textbf{molt ampla} (molts infants).
+  \item La franja $65$–$79$ té \textbf{molta més població} que la $0$–$14$. Vol dir que
+        \textbf{no hi ha relleu generacional}: hi ha molta més gent gran que infants
+        que els substitueixin, de manera que el municipi continuarà envellint.
+  \item Resposta oberta. Exemples vàlids: llars d'infants (per la base ampla de
+        $0$–$14$), programes d'ocupació juvenil (per la moda a $15$–$29$), serveis
+        d'acollida i integració (per la immigració), casals juvenils i suport educatiu.
+  \item Seria una població \textbf{adulta i molt envellida alhora}: poca natalitat però
+        un pes enorme de la gent molt gran ($80+$). Hi serien especialment necessaris
+        els serveis d'\textbf{atenció a la dependència} (atenció domiciliària,
+        residència, teleassistència).
+  \item Resposta oberta. Idea: la piràmide diu quines necessitats té realment el
+        territori; invertir sense mirar-la pot portar a, p.\,ex., construir més llars
+        d'infants en un municipi envellit (on gairebé no hi ha nadons) en comptes de
+        places d'atenció a la gent gran, que és el que de debò es necessita.
+\end{sollist}
+\end{solucions}

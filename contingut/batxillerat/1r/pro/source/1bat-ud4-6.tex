@@ -1,0 +1,173 @@
+% =====================================================================
+%  1bat-ud4-6.tex  —  SESSIÓ 6: Del paper al full de càlcul: primer contacte
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 6 — Del paper al full de càlcul: primer contacte}%
+{Reproduir amb l'ordinador el que ja sabem fer a mà: introduir dades i calcular suma, mitjana i recompte amb les primeres fórmules.}
+
+\subsection{Idea clau}
+
+Fins ara hem calculat els paràmetres \textbf{a mà} (sessions 2 a 5). Ara fem el salt
+a l'eina que faràs servir com a tècnic: el \textbf{full de càlcul} (Excel o Google
+Sheets). Avui hi dediquem un \textbf{primer contacte} ordenat, amb una idea clau: la
+màquina ha de donar \textbf{el mateix} que el càlcul a mà; si coincideix, guanyem
+confiança i confirmem que entenem què calcula.
+
+\begin{idea}
+\textbf{Primeres passes al full de càlcul}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Una \textbf{cel·la} és cada caixa; es nomena per \textbf{columna+fila}: \texttt{A1},
+        \texttt{B3}\dots Les dades en una columna ocupen, p.\,ex., de \texttt{A2} a
+        \texttt{A11} (el \textbf{rang} \texttt{A2:A11}).
+  \item Tota \textbf{fórmula} comença amb el signe \texttt{=}.
+  \item \textbf{Suma:} \texttt{=SUMA(A2:A11)} \quad (en anglès \texttt{=SUM}).
+  \item \textbf{Mitjana:} \texttt{=MITJANA(A2:A11)} \quad (en anglès \texttt{=AVERAGE}).
+  \item \textbf{Recompte} (quantes dades hi ha): \texttt{=COMPTA(A2:A11)} \quad
+        (en anglès \texttt{=COUNT}).
+\end{itemize}
+\textbf{Comprova sempre} que el resultat de la màquina coincideix amb el teu càlcul a
+mà.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[introduir dades i sumar-les]
+Volem portar al full de càlcul les hores de voluntariat $5,\ 3,\ 8,\ 5,\ 2,\ 5,\ 7,\ 4,\ 6$
+(les de la sessió 2). Les escrivim a la columna A, de \texttt{A2} a \texttt{A10},
+amb un títol a \texttt{A1}:
+
+\begin{center}
+\begin{tabular}{c|c}
+ & \textbf{A} \\
+\hline
+1 & Hores \\
+2 & 5 \\
+3 & 3 \\
+4 & 8 \\
+\multicolumn{2}{c}{\quad$\vdots$\quad} \\
+10 & 6 \\
+\end{tabular}
+\end{center}
+
+A la cel·la \texttt{C1} escrivim \texttt{=SUMA(A2:A10)} i la màquina respon $45$.
+És \emph{exactament} la suma que faríem a mà.
+\end{exemple}
+
+\begin{exemple}[la mitjana automàtica i la comprovació]
+Amb les mateixes dades, a \texttt{C2} escrivim \texttt{=MITJANA(A2:A10)} i obtenim
+$5$. A \texttt{C3} escrivim \texttt{=COMPTA(A2:A10)} i obtenim $9$ (hi ha $9$ dades).
+
+\textbf{La comprovació clau:} a mà havíem calculat $\overline{x}=\dfrac{45}{9}=5$. El
+full de càlcul dóna el mateix. A més, la mitjana es pot reconstruir com
+\[
+\frac{\texttt{=SUMA(A2:A10)}}{\texttt{=COMPTA(A2:A10)}}=\frac{45}{9}=5,
+\]
+cosa que confirma que la funció \texttt{MITJANA} fa, internament, «suma dividida pel
+recompte».
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[escriure les fórmules correctes]
+Has introduït a la columna A, de \texttt{A2} a \texttt{A8}, els donatius diaris (€)
+d'una entitat: $20$, $24$, $22$, $25$, $19$, $26$, $24$. Escriu les fórmules per
+obtenir el total, la mitjana i el recompte, i digues quin resultat ha de donar
+cadascuna.
+\solucio
+Les dades van de \texttt{A2} a \texttt{A8} (set valors). Les fórmules:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item Total: \texttt{=SUMA(A2:A8)} $\rightarrow 160$.
+  \item Mitjana: \texttt{=MITJANA(A2:A8)} $\rightarrow \dfrac{160}{7}\approx 22,9$.
+  \item Recompte: \texttt{=COMPTA(A2:A8)} $\rightarrow 7$.
+\end{itemize}
+Coincideix amb el càlcul a mà de la sessió 1 ($22,9$ kg/dia, allà eren kg): la
+màquina confirma el resultat.
+\resposta{\texttt{=SUMA(A2:A8)}$=160$; \texttt{=MITJANA(A2:A8)}$\approx 22,9$;
+\texttt{=COMPTA(A2:A8)}$=7$.}
+\end{exresolt}
+
+\begin{exresolt}[detectar un rang mal seleccionat]
+Un company volia la mitjana de $10$ dades (a \texttt{A2:A11}), però ha escrit
+\texttt{=MITJANA(A1:A11)} i li surt un valor estrany. Què ha passat?
+\solucio
+Ha inclòs la cel·la \texttt{A1}, que conté el \textbf{títol} de la columna (un text,
+no un número), o bé una cel·la de més. En seleccionar el rang \textbf{cal començar a
+la primera dada} (\texttt{A2}), no a la capçalera. La fórmula correcta és
+\texttt{=MITJANA(A2:A11)}. \textbf{Lliçó:} sempre cal comprovar que el rang agafa
+\emph{totes} les dades i \emph{cap} cel·la de més (ni la capçalera).
+\resposta{Ha inclòs la capçalera \texttt{A1} al rang; el correcte és
+\texttt{=MITJANA(A2:A11)}.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Practica directament a l'ordinador. Per a cada exercici, anota la
+fórmula que has escrit i el resultat, i comprova'l amb el càlcul a mà.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Introdueix a la columna A els infants atesos cada dia: $12$, $15$, $9$, $14$,
+        $10$ (a \texttt{A2:A6}). Escriu les fórmules de \textbf{suma}, \textbf{mitjana}
+        i \textbf{recompte} i anota'n els resultats.
+  \item Comprova a mà la mitjana de l'exercici 1 (suma dividida pel recompte) i
+        verifica que coincideix amb la del full de càlcul.
+  \item Introdueix els visitants de $6$ tardes: $40$, $52$, $48$, $45$, $50$, $43$.
+        Quina fórmula uses per saber \textbf{quantes tardes} hi ha? I per a la
+        \textbf{mitjana} de visitants?
+  \item \textbf{(Compte amb el rang)} Si les teves dades són a \texttt{A2:A6} però
+        escrius \texttt{=SUMA(A2:A10)}, què passarà amb el resultat? I si escrius
+        \texttt{=SUMA(A1:A6)} amb un títol a \texttt{A1}?
+  \item \textbf{(Comprovació)} Introdueix les hores $4$, $6$, $8$, $6$, $6$ de la
+        sessió 4. Calcula'n la mitjana amb el full de càlcul i comprova que dóna $6$,
+        com vam obtenir a mà.
+  \item \textbf{(Raonament)} Quin avantatge té calcular la mitjana amb el full de
+        càlcul en comptes de fer-ho a mà? I quin \textbf{perill} hi ha si t'hi
+        confies sense entendre què calcula? Explica-ho amb les teves paraules.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full de validació} — per a cada conjunt que portis al full de càlcul, omple
+la fila i comprova que les dues columnes \emph{coincideixen}:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{4.6cm} c c c}
+\toprule
+\textbf{Conjunt de dades} & \textbf{A mà} & \textbf{Full de càlcul} & \textbf{Coincideix?} \\
+\midrule
+Suma & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \\
+Mitjana & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \\
+Recompte & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+\noindent\textbf{Atenció a la diversitat.} Si no tens experiència amb el full de
+càlcul, segueix la pauta amb captures dels passos bàsics (escriure una dada,
+seleccionar un rang, escriure una fórmula amb \texttt{=}); les parelles s'organitzen
+perquè qui té més soltesa digital doni suport a qui en té menys.
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item \texttt{=SUMA(A2:A6)}$=60$; \texttt{=MITJANA(A2:A6)}$=12$;
+        \texttt{=COMPTA(A2:A6)}$=5$.
+  \item A mà: $\dfrac{60}{5}=12$. Coincideix amb el full de càlcul: correcte.
+  \item Recompte: \texttt{=COMPTA(A2:A7)}$=6$ tardes. Mitjana:
+        \texttt{=MITJANA(A2:A7)}$=\dfrac{278}{6}\approx 46,3$ visitants.
+  \item Si el rang és massa gran (\texttt{A2:A10}) però només hi ha dades fins a
+        \texttt{A6}, les cel·les buides no afecten la \emph{suma} (compten com a $0$),
+        però sí poden afectar segons la funció; el més segur és ajustar el rang. Si
+        inclous \texttt{A1} amb un títol (text), la \texttt{SUMA} l'ignora però una
+        \texttt{MITJANA} o un \texttt{COMPTA} poden donar un resultat equivocat:
+        \textbf{cal seleccionar exactament el rang de dades}.
+  \item \texttt{=MITJANA(A2:A6)}$=6$. Coincideix amb el càlcul a mà de la sessió 4.
+  \item Resposta oberta. Avantatge: estalvia molta feina i, si canvies una dada, tot
+        es recalcula sol; és imprescindible amb llistes llargues. Perill: si t'hi
+        confies sense entendre què calcula, no detectaràs un \textbf{rang mal
+        seleccionat} ni un resultat absurd; per això cal saber comprovar-ho a mà.
+\end{sollist}
+\end{solucions}

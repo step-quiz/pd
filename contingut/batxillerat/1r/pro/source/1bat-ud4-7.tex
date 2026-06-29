@@ -1,0 +1,152 @@
+% =====================================================================
+%  1bat-ud4-7.tex  —  SESSIÓ 7: Automatitzar el càlcul amb el full de càlcul
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 7 — Automatitzar el càlcul amb el full de càlcul}%
+{D'una llista de 200 dades a tots els paràmetres en un instant: les funcions de mediana, moda i desviació típica, i el recàlcul automàtic.}
+
+\subsection{Idea clau}
+
+A la sessió 6 vam fer les primeres fórmules (suma, mitjana, recompte) i vam comprovar
+que coincidien amb el càlcul a mà. Avui fem el pas decisiu: davant d'una \textbf{llista
+llarga} (massa per calcular-la còmodament a mà), el full de càlcul ens dóna
+\textbf{tots} els paràmetres d'un cop, i els \textbf{recalcula sols} si canvia una
+dada. Aquesta competència és clau per al teu futur com a tècnic.
+
+\begin{idea}
+\textbf{Funcions per als paràmetres estadístics}\\
+Per a un rang de dades, p.\,ex. \texttt{A2:A201} (dues-centes dades):
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Mitjana:} \texttt{=MITJANA(A2:A201)} \quad (\texttt{=AVERAGE}).
+  \item \textbf{Mediana:} \texttt{=MEDIANA(A2:A201)} \quad (\texttt{=MEDIAN}).
+  \item \textbf{Moda:} \texttt{=MODA(A2:A201)} \quad (\texttt{=MODE}).
+  \item \textbf{Desviació típica:} \texttt{=DESVEST.P(A2:A201)} \quad (\texttt{=STDEV.P};
+        la «P» és de \emph{població}, que és la que fem servir aquí).
+\end{itemize}
+\textbf{Dues regles d'or:} (1) selecciona \textbf{bé el rang} (totes les dades, cap
+capçalera); (2) \textbf{interpreta} el que surt, no només l'obtinguis.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[tots els paràmetres d'un cop]
+Tenim les edats de $200$ usuaris d'un servei, introduïdes a \texttt{A2:A201}. En
+quatre cel·les escrivim:
+
+\begin{center}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Paràmetre} & \textbf{Fórmula} & \textbf{Resultat (exemple)} \\
+\midrule
+Mitjana & \texttt{=MITJANA(A2:A201)} & $42,3$ \\
+Mediana & \texttt{=MEDIANA(A2:A201)} & $40$ \\
+Moda & \texttt{=MODA(A2:A201)} & $38$ \\
+Desviació típica & \texttt{=DESVEST.P(A2:A201)} & $15,8$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A mà, amb $200$ dades, això seria inviable; el full de càlcul ho fa a l'instant. Ara
+toca \textbf{llegir-ho}: mitjana i mediana semblants ($42,3$ i $40$) indiquen una
+distribució força equilibrada; la $\sigma=15,8$ diu que les edats estan
+\emph{bastant escampades} (gent de força edats diferents).
+\end{exemple}
+
+\begin{exemple}[el recàlcul automàtic]
+Suposem que ens adonem que una dada estava mal introduïda: una edat de $\num{420}$
+(un error de teclat per $42$). La corregim a la seva cel·la i, \textbf{sense tocar
+res més}, \emph{totes} les fórmules es recalculen soles: la mitjana baixa, la
+desviació típica baixa molt (aquell $\num{420}$ inflava molt la dispersió)\dots
+Aquesta és la gran potència del full de càlcul: un cop muntat, \textbf{respon sol}
+a qualsevol canvi en les dades.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[triar la funció correcta]
+Tens els ingressos mensuals (€) de $50$ famílies a \texttt{B2:B51}. Escriu la fórmula
+per obtenir cada paràmetre i digues què t'informa cadascun.
+\solucio
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \texttt{=MITJANA(B2:B51)} — l'ingrés mitjà (el «repartiment a parts iguals»).
+  \item \texttt{=MEDIANA(B2:B51)} — l'ingrés de la família central; si és \emph{molt}
+        més baix que la mitjana, hi ha rendes altes que estiren la mitjana.
+  \item \texttt{=MODA(B2:B51)} — l'ingrés que més es repeteix.
+  \item \texttt{=DESVEST.P(B2:B51)} — la dispersió: si és gran, les famílies són molt
+        desiguals; si és petita, força homogènies.
+\end{itemize}
+Comparant \textbf{mitjana i mediana} ja detectem si hi ha desigualtat, i la
+\textbf{desviació típica} ho confirma.
+\resposta{Quatre fórmules, una per paràmetre; comparar mitjana i mediana revela la
+desigualtat, i la $\sigma$ la quantifica.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar un resultat automatitzat]
+Sobre $120$ temps d'espera (minuts) d'un servei, el full de càlcul dóna:
+mitjana $18,5$, mediana $12$, desviació típica $14,2$. Quina conclusió en treus sobre
+el servei?
+\solucio
+La \textbf{mediana ($12$) és força més baixa que la mitjana ($18,5$)}: vol dir que la
+majoria d'usuaris espera al voltant de $12$ minuts, però \textbf{uns quants esperen
+molt}, i això estira la mitjana cap amunt. La \textbf{desviació típica gran ($14,2$,
+gairebé tant com la mitjana)} confirma que els temps d'espera són \textbf{molt
+irregulars}. \emph{Conclusió:} el servei atén ràpid la majoria, però té un problema
+amb una minoria que espera molt; caldria mirar què passa amb aquests casos.
+\resposta{Mediana $<$ mitjana i $\sigma$ gran $\rightarrow$ esperes molt irregulars:
+la majoria espera poc, però una minoria espera molt.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballa a l'ordinador amb una llista llarga de dades (te'n donarà
+el professorat). Anota la fórmula i el resultat de cada paràmetre.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Sobre el conjunt de dades de l'aula (rang \texttt{A2:A\dots}), escriu les
+        fórmules per obtenir la \textbf{mitjana}, la \textbf{mediana}, la \textbf{moda}
+        i la \textbf{desviació típica}, i anota'n els resultats.
+  \item Canvia \textbf{una} dada del conjunt per un valor molt gran (per exemple,
+        multiplica-la per $10$). Quins paràmetres canvien més: la mitjana o la
+        mediana? I la desviació típica? Anota què observes.
+  \item Compara la \textbf{mitjana} i la \textbf{mediana} del conjunt. S'assemblen o
+        són molt diferents? Què t'indica això sobre la distribució de les dades?
+  \item \textbf{(Compte amb el rang)} Afegeix una dada nova al final de la columna i
+        comprova si les fórmules la inclouen automàticament. Si no, com hauries de
+        corregir el rang?
+  \item \textbf{(Interpretació)} A partir dels paràmetres obtinguts, escriu \textbf{dues
+        o tres frases} que descriguin el col·lectiu que representen aquestes dades, com
+        si fos per a una memòria del servei.
+  \item \textbf{(Raonament)} Per què, tot i que la màquina calcula sola, és important
+        \textbf{saber interpretar} els paràmetres? Posa un exemple en què obtenir el
+        número sense entendre'l portaria a una conclusió equivocada.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item Fórmules: \texttt{=MITJANA(rang)}, \texttt{=MEDIANA(rang)},
+        \texttt{=MODA(rang)}, \texttt{=DESVEST.P(rang)} (substituint \texttt{rang} pel
+        rang real de l'aula). Els resultats depenen del conjunt repartit.
+  \item En augmentar molt una dada, la \textbf{mitjana} i la \textbf{desviació típica}
+        \textbf{pugen molt} (són sensibles als valors extrems), mentre que la
+        \textbf{mediana} amb prou feines canvia (és \emph{robusta}). Això mostra per
+        què la mediana representa millor un grup amb valors extrems.
+  \item Resposta segons les dades. Si mitjana $\approx$ mediana, la distribució és
+        força \textbf{equilibrada}; si la mitjana és bastant més alta, hi ha
+        \textbf{valors alts} que l'estiren (possible desigualtat).
+  \item Si el rang era fix (p.\,ex. \texttt{A2:A201}) i la dada nova va a \texttt{A202},
+        \textbf{no} s'inclou: cal ampliar el rang a \texttt{A2:A202}. (Algunes opcions,
+        com seleccionar tota la columna \texttt{A:A}, eviten aquest problema, però
+        llavors cal vigilar la capçalera.)
+  \item Resposta oberta. Exemple: «El col·lectiu té una edat mitjana de $42$ anys, amb
+        una mediana de $40$; les edats estan força escampades ($\sigma\approx 16$), de
+        manera que conviuen usuaris de franges molt diferents.»
+  \item Resposta oberta. Idea: un número sense interpretar pot enganyar. Exemple:
+        veure una mitjana de $\num{1500}\eur$ i concloure que «tothom està bé», quan
+        en realitat (com a l'edifici B de la sessió 3) la majoria no ingressa res i la
+        mitjana l'inflen uns pocs valors alts.
+\end{sollist}
+\end{solucions}

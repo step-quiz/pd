@@ -1,0 +1,184 @@
+% =====================================================================
+%  1bat-ud4-4.tex  —  SESSIÓ 4: Desviació típica i variància
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 4 — Desviació típica i variància}%
+{La xifra que captura la desigualtat: com de lluny estan, de mitjana, les dades respecte del centre.}
+
+\subsection{Idea clau}
+
+A la sessió 3 vam veure que dos edificis amb la \textbf{mateixa mitjana}
+($\num{1500}\eur$) poden tenir realitats oposades. Va quedar pendent una pregunta:
+\emph{com mesurem «com d'escampades» estan les dades?} Avui la responem amb la
+\textbf{variància} i la \textbf{desviació típica}.
+
+\begin{idea}
+\textbf{Variància i desviació típica}\\
+Mesuren \textbf{com de lluny} estan les dades respecte de la mitjana $\overline{x}$.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Variància} $\sigma^2$ — la mitjana de les \emph{distàncies al quadrat}
+        a la mitjana:
+        \[
+        \sigma^2=\frac{(x_1-\overline{x})^2+\cdots+(x_N-\overline{x})^2}{N}
+        =\frac{\sum (x_i-\overline{x})^2}{N}.
+        \]
+  \item \textbf{Desviació típica} $\sigma$ — la seva \emph{arrel quadrada}, que torna
+        a les unitats originals:
+        \[
+        \sigma=\sqrt{\sigma^2}.
+        \]
+\end{itemize}
+\textbf{Com es llegeix:} $\sigma$ \textbf{petita} $\rightarrow$ dades a prop de la
+mitjana (grup \emph{homogeni}); $\sigma$ \textbf{gran} $\rightarrow$ dades molt
+escampades (grup \emph{desigual}). \textbf{No t'oblidis l'arrel} al final!
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la desviació típica de l'edifici A]
+A l'edifici A teníem (simplifiquem a cinc dades representatives per veure el
+procediment): $\num{1400},\ \num{1450},\ \num{1500},\ \num{1550},\ \num{1600}$, amb
+mitjana $\overline{x}=\num{1500}\eur$. Calculem les distàncies a la mitjana, les
+elevem al quadrat i en fem la mitjana:
+\[
+\begin{aligned}
+\sigma^2&=\frac{(-100)^2+(-50)^2+0^2+50^2+100^2}{5}
+=\frac{\num{10000}+\num{2500}+0+\num{2500}+\num{10000}}{5}\\[2pt]
+&=\frac{\num{25000}}{5}=\num{5000}.
+\end{aligned}
+\]
+I la desviació típica és l'arrel: $\sigma=\sqrt{\num{5000}}\approx 70,7\eur$. És una
+$\sigma$ \textbf{petita} comparada amb la mitjana: l'edifici A és \textbf{homogeni}.
+\end{exemple}
+
+\begin{exemple}[la desviació típica de l'edifici B]
+A l'edifici B teníem vuit zeros i dos valors de $\num{7500}\eur$, amb la mateixa
+mitjana $\overline{x}=\num{1500}\eur$. Les distàncies al quadrat:
+\[
+\sigma^2=\frac{8\cdot(0-\num{1500})^2+2\cdot(\num{7500}-\num{1500})^2}{10}
+=\frac{8\cdot\num{2250000}+2\cdot\num{36000000}}{10}.
+\]
+\[
+\sigma^2=\frac{\num{18000000}+\num{72000000}}{10}=\frac{\num{90000000}}{10}=\num{9000000}.
+\]
+\[
+\sigma=\sqrt{\num{9000000}}\approx \num{3000}\eur.
+\]
+Una $\sigma$ \textbf{enorme} ($\approx\num{3000}\eur$, el doble de la mitjana!). Tot i
+tenir la mateixa mitjana que A, la desviació típica \textbf{captura la desigualtat}
+que la mitjana amagava: l'edifici B és \textbf{extremadament desigual}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[desviació típica pas a pas]
+Cinc voluntaris han fet aquestes hores: $4$, $6$, $8$, $6$, $6$. Calcula la mitjana,
+la variància i la desviació típica.
+\solucio
+\textbf{Pas 1 — mitjana:}
+\[
+\overline{x}=\frac{4+6+8+6+6}{5}=\frac{30}{5}=6.
+\]
+\textbf{Pas 2 — distàncies al quadrat} (cada dada menys $6$, al quadrat):
+\[
+(4-6)^2=4,\quad (6-6)^2=0,\quad (8-6)^2=4,\quad (6-6)^2=0,\quad (6-6)^2=0.
+\]
+\textbf{Pas 3 — variància} (en fem la mitjana):
+\[
+\sigma^2=\frac{4+0+4+0+0}{5}=\frac{8}{5}=1,6.
+\]
+\textbf{Pas 4 — desviació típica} (arrel):
+\[
+\sigma=\sqrt{1,6}\approx 1,26\ \text{hores}.
+\]
+És petita: el grup és bastant homogeni (gairebé tots fan $6$ hores).
+\resposta{$\overline{x}=6$; $\sigma^2=1,6$; $\sigma\approx 1,26$ hores.}
+\end{exresolt}
+
+\begin{exresolt}[comparar la dispersió de dos grups]
+Dos grups d'usuaris esperen, en minuts, per ser atesos:
+\[
+\text{Grup 1: } 10,\ 12,\ 11,\ 9,\ 8 \qquad
+\text{Grup 2: } 2,\ 20,\ 1,\ 18,\ 9.
+\]
+Comprova que tenen la mateixa mitjana i digues, calculant $\sigma$, quin grup té una
+espera més \textbf{regular}.
+\solucio
+\textbf{Mitjanes:} $\overline{x}_1=\dfrac{10+12+11+9+8}{5}=\dfrac{50}{5}=10$ i
+$\overline{x}_2=\dfrac{2+20+1+18+9}{5}=\dfrac{50}{5}=10$. Iguals.
+
+\textbf{Grup 1} (distàncies al quadrat respecte de $10$): $0,4,1,1,4$, suma $10$:
+\[
+\sigma_1^2=\frac{10}{5}=2,\qquad \sigma_1=\sqrt{2}\approx 1,41\ \text{min}.
+\]
+\textbf{Grup 2} (distàncies a $10$): $(-8)^2,10^2,(-9)^2,8^2,(-1)^2=64,100,81,64,1$,
+suma $310$:
+\[
+\sigma_2^2=\frac{310}{5}=62,\qquad \sigma_2=\sqrt{62}\approx 7,87\ \text{min}.
+\]
+El \textbf{grup 1} té una espera molt més regular ($\sigma\approx 1,41$) que el grup
+2 ($\sigma\approx 7,87$), tot i la mateixa mitjana.
+\resposta{Mateixa mitjana ($10$ min); el grup 1 és més regular ($\sigma_1\approx 1,41$
+contra $\sigma_2\approx 7,87$ min).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula la \textbf{mitjana} i, després, la \textbf{variància} i la
+        \textbf{desviació típica} d'aquest conjunt: $5$, $7$, $9$, $7$, $2$.
+  \item Per al conjunt $20$, $20$, $20$, $20$ (totes les dades iguals), calcula
+        $\sigma$. Quant val? Per què té sentit aquest resultat?
+  \item Dos casals tenen aquestes inscripcions per setmana:
+        \[
+        \text{Casal P: } 30,\ 32,\ 31,\ 29,\ 28 \qquad
+        \text{Casal Q: } 10,\ 50,\ 30,\ 5,\ 55.
+        \]
+        Comprova que tenen la mateixa mitjana i calcula la $\sigma$ de cadascun. Quin
+        té les inscripcions més estables?
+  \item \textbf{(Compte amb el procés)} Un company calcula la desviació típica d'un
+        conjunt i dóna com a resposta $\sigma^2=36$. Quin pas li ha faltat? Quina és
+        la desviació típica correcta?
+  \item \textbf{(Interpretació)} Dos barris tenen la mateixa renda mitjana
+        ($\num{20000}\eur$), però el barri A té $\sigma=\num{2000}\eur$ i el barri B
+        té $\sigma=\num{12000}\eur$. Quin barri és més desigual? En quin creus que la
+        intervenció social és més urgent i per què?
+  \item \textbf{(Raonament)} Explica, amb les teves paraules, per què la desviació
+        típica «captura» la desigualtat que la mitjana amaga. Per què elevem les
+        distàncies \textbf{al quadrat} en comptes de sumar-les tal qual?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item $\overline{x}=\dfrac{5+7+9+7+2}{5}=\dfrac{30}{5}=6$. Distàncies al quadrat:
+        $1,1,9,1,16$, suma $28$. $\sigma^2=\dfrac{28}{5}=5,6$;
+        $\sigma=\sqrt{5,6}\approx 2,37$.
+  \item Totes les dades són $20$, així que la mitjana és $20$ i totes les distàncies
+        valen $0$: $\sigma^2=0$ i $\sigma=0$. Té sentit: si \textbf{no hi ha cap
+        dispersió} (totes iguals), la desviació típica és nul·la.
+  \item Mitjanes: $\overline{x}_P=\dfrac{150}{5}=30$ i $\overline{x}_Q=\dfrac{150}{5}=30$,
+        iguals. Casal P: distàncies al quadrat $0,4,1,1,4$, suma $10$;
+        $\sigma_P^2=2$, $\sigma_P\approx 1,41$. Casal Q: distàncies a $30$:
+        $400,400,0,625,625$, suma $\num{2050}$; $\sigma_Q^2=410$,
+        $\sigma_Q\approx 20,25$. El \textbf{casal P} té les inscripcions molt més
+        estables.
+  \item Li ha faltat l'\textbf{últim pas: l'arrel quadrada}. El que ha calculat ($36$)
+        és la variància $\sigma^2$, no la desviació típica. La correcta és
+        $\sigma=\sqrt{36}=6$.
+  \item El \textbf{barri B} és molt més desigual ($\sigma=\num{12000}\eur$ contra
+        $\num{2000}\eur$): tot i la mateixa renda mitjana, al barri B hi ha rendes
+        molt altes i molt baixes barrejades. La intervenció és més urgent al barri B,
+        perquè la gran dispersió indica que hi conviuen famílies en situacions molt
+        diferents (algunes probablement molt vulnerables).
+  \item Resposta oberta. Idees: la $\sigma$ mesura com de lluny estan les dades del
+        centre, així que distingeix un grup homogeni d'un de desigual encara que
+        tinguin la mateixa mitjana. Elevem al quadrat perquè, si sumàssim les
+        distàncies amb el seu signe, les positives i les negatives es
+        \textbf{cancel·larien} i sempre donaria zero; el quadrat les fa totes
+        positives (i després l'arrel torna a les unitats originals).
+\end{sollist}
+\end{solucions}

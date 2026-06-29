@@ -1,0 +1,166 @@
+% =====================================================================
+%  1bat-ud4-13.tex  —  SESSIÓ 13: Buidatge i gràfics amb el full de càlcul
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 13 — Buidatge i gràfics amb el full de càlcul}%
+{Tancar el cicle d'un projecte de dades: tabular les respostes, treure'n percentatges i generar un gràfic de sectors.}
+
+\subsection{Idea clau}
+
+A la sessió 12 vau \textbf{dissenyar} l'enquesta. Ara en fem el \textbf{buidatge}:
+portem les respostes al full de càlcul, les \textbf{tabulem}, en treiem els
+\textbf{percentatges} i generem un \textbf{gràfic}. Així tanquem el cicle complet d'un
+projecte de dades, exactament el flux que faràs als cicles formatius: dissenyar,
+recollir, tabular, calcular i presentar.
+
+\begin{idea}
+\textbf{Del full de respostes al gràfic}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Organitza} les respostes en una taula (una fila per persona, o un
+        recompte per opció).
+  \item \textbf{Compta} quantes vegades surt cada opció amb \texttt{=COMPTA.SI(rang;\,"opció")}
+        (\texttt{=COUNTIF}).
+  \item \textbf{Percentatge} de cada opció: $\dfrac{\text{recompte}}{N}\per 100$.
+  \item \textbf{Gràfic:} selecciona la taula de recomptes i insereix un \textbf{gràfic
+        de sectors} (o de barres).
+\end{enumerate}
+\textbf{Comprova} sempre que els recomptes sumen $N$ i els percentatges, $100\%$.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[tabular les respostes d'una pregunta]
+A la pregunta «Com de segur et sents a l'institut?» han respost $25$ alumnes. Amb
+\texttt{=COMPTA.SI} comptem cada opció i en traiem el percentatge:
+
+\begin{center}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Resposta} & \textbf{Recompte} & \textbf{\%} & \textbf{Graus (sector)} \\
+\midrule
+Gens & $2$ & $8\%$ & $29^\circ$ \\
+Poc & $5$ & $20\%$ & $72^\circ$ \\
+Bastant & $12$ & $48\%$ & $173^\circ$ \\
+Molt & $6$ & $24\%$ & $86^\circ$ \\
+\midrule
+\textbf{Total} & $25$ & $100\%$ & $360^\circ$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Comprovació:} els recomptes sumen $25$ i els percentatges, $100\%$.
+\end{exemple}
+
+\begin{exemple}[el gràfic de sectors automàtic]
+Amb la taula anterior, el full de càlcul genera aquest diagrama de sectors (aquí el
+reproduïm). La majoria se sent «Bastant» segura ($48\%$):
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+  % Gens 0-29
+  \fill[udgrey!55] (0,0) -- (0:1) arc (0:29:1) -- cycle;
+  % Poc 29-101
+  \fill[udblue!30] (0,0) -- (29:1) arc (29:101:1) -- cycle;
+  % Bastant 101-274
+  \fill[udblue!70] (0,0) -- (101:1) arc (101:274:1) -- cycle;
+  % Molt 274-360
+  \fill[udnavy!60] (0,0) -- (274:1) arc (274:360:1) -- cycle;
+  \draw[white, line width=0.8pt] (0,0) circle (1);
+  \node[font=\scriptsize, white] at (14:0.7) {Gens};
+  \node[font=\scriptsize, white] at (65:0.62) {Poc};
+  \node[font=\scriptsize, white] at (187:0.6) {Bastant};
+  \node[font=\scriptsize, white] at (317:0.64) {Molt};
+\end{tikzpicture}
+
+\figcap{«Com de segur et sents?»: Bastant $48\%$, Molt $24\%$, Poc $20\%$, Gens $8\%$.}
+\end{center}
+
+\noindent\textbf{Lectura:} sumant «Bastant» i «Molt», un $72\%$ se sent segur; però un
+$28\%$ ($8\%+20\%$) se sent «Gens» o «Poc» segur: és la part que la intervenció hauria
+d'atendre.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[completar el buidatge d'una pregunta]
+A la pregunta «Quantes hores dorms les nits d'escola?» han respost $20$ alumnes:
+$4$ diuen «Menys de $6$ h», $7$ «Entre $6$ i $7$», $6$ «Entre $7$ i $8$» i $3$ «Més
+de $8$». Fes la taula amb percentatges i comprova que quadra.
+\solucio
+Calculem cada percentatge com $\dfrac{\text{recompte}}{20}\per 100$:
+
+\begin{center}
+\begin{tabular}{l c c}
+\toprule
+\textbf{Hores de son} & \textbf{Recompte} & \textbf{\%} \\
+\midrule
+Menys de $6$ & $4$ & $20\%$ \\
+Entre $6$ i $7$ & $7$ & $35\%$ \\
+Entre $7$ i $8$ & $6$ & $30\%$ \\
+Més de $8$ & $3$ & $15\%$ \\
+\midrule
+\textbf{Total} & $20$ & $100\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Comprovació:} $4+7+6+3=20$ i $20+35+30+15=100\%$.
+\resposta{$20\%$, $35\%$, $30\%$, $15\%$; sumen $100\%$ i els recomptes, $20$.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar el buidatge per a una memòria]
+Amb les dades de l'exercici anterior, escriu dues o tres frases d'interpretació, com
+si fossin per a la memòria del projecte.
+\solucio
+Una redacció possible: «De $20$ alumnes enquestats, un $20\%$ dorm menys de $6$ hores
+les nits d'escola, una franja preocupant des del punt de vista del descans. La majoria
+($65\%$) dorm entre $6$ i $8$ hores, i només un $15\%$ supera les $8$ hores. Es
+recomana treballar la higiene del son, especialment amb el grup que dorm menys de $6$
+hores.»
+\resposta{Interpretació breu: destaca el $20\%$ que dorm poc, la majoria entre $6$ i
+$8$ h, i proposa una actuació.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballa a l'ordinador amb les respostes de la teva enquesta (o les
+que et doni el professorat). Anota fórmules i resultats.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Tens les respostes d'una pregunta a la columna A. Escriu la fórmula
+        \texttt{=COMPTA.SI(...)} per comptar quantes vegades surt una opció concreta.
+  \item Completa la taula de buidatge d'aquesta pregunta ($N=20$): «Sí» $8$, «No» $5$,
+        «De vegades» $7$. Calcula el percentatge de cada opció.
+  \item Comprova que els recomptes de l'exercici 2 sumen $N=20$ i que els percentatges
+        sumen $100\%$.
+  \item Calcula quants \textbf{graus} ocuparia cada opció de l'exercici 2 en un gràfic
+        de sectors.
+  \item \textbf{(Interpretació)} A partir del buidatge de l'exercici 2, escriu dues
+        frases de conclusió per a una memòria, destacant què és el més rellevant.
+  \item \textbf{(Raonament)} Per què és important \textbf{comprovar} que els
+        percentatges sumen $100\%$ després de tabular? Quin tipus d'error detectaries
+        si no sumessin exactament $100\%$?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item Per exemple, per comptar els «Sí» del rang \texttt{A2:A21}:
+        \texttt{=COMPTA.SI(A2:A21;"Sí")} (en anglès \texttt{=COUNTIF(A2:A21,"Sí")}).
+  \item «Sí»: $\dfrac{8}{20}=40\%$; «No»: $\dfrac{5}{20}=25\%$; «De vegades»:
+        $\dfrac{7}{20}=35\%$.
+  \item $8+5+7=20=N$: correcte. $40+25+35=100\%$: correcte.
+  \item Graus ($\text{rel}\per 360^\circ$): «Sí» $0,40\per 360=144^\circ$; «No»
+        $0,25\per 360=90^\circ$; «De vegades» $0,35\per 360=126^\circ$. (Comprovació:
+        $144+90+126=360^\circ$.)
+  \item Resposta oberta. Exemple: «Un $40\%$ de l'alumnat respon que sí i un $35\%$ que
+        de vegades; només un $25\%$ respon que no. La majoria, doncs, es troba en la
+        situació plantejada, almenys de manera ocasional.»
+  \item Perquè si no sumen $100\%$ hi ha un \textbf{error}: algun recompte malament,
+        una resposta no comptada, una resposta comptada dues vegades o categories que
+        se solapen. La comprovació del $100\%$ és una manera ràpida de detectar errors
+        de buidatge abans de presentar les dades.
+\end{sollist}
+\end{solucions}

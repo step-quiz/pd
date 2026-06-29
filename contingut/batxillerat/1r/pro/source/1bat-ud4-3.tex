@@ -1,0 +1,169 @@
+% =====================================================================
+%  1bat-ud4-3.tex  —  SESSIÓ 3: La trampa de la mitjana (mesures de dispersió)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 3 — La trampa de la mitjana (mesures de dispersió)}%
+{Dos edificis amb la mateixa mitjana d'ingressos i realitats socials oposades: per què la mitjana, tota sola, pot enganyar.}
+
+\subsection{Idea clau}
+
+A la sessió 2 vam veure que la mitjana pot quedar \textbf{estirada} per un valor
+extrem (recorda el sou de $\num{4000}\eur$). Avui anem al fons del problema amb un
+cas real de l'àmbit social: \textbf{dos edificis poden tenir exactament la mateixa
+mitjana d'ingressos i, alhora, una realitat social radicalment diferent}. La mitjana,
+tota sola, \textbf{no n'hi ha prou} per descriure un grup.
+
+\begin{idea}
+\textbf{El problema de la dispersió}\\
+La \textbf{mitjana} ens diu \emph{al voltant de quin valor} estan les dades, però
+\textbf{no} ens diu si estan \textbf{juntes} (grup homogeni) o \textbf{escampades}
+(grup desigual).
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Dos conjunts amb la \textbf{mateixa mitjana} poden tenir realitats molt
+        diferents.
+  \item Per descriure-ho bé ens caldrà una mesura de \textbf{dispersió}: com d'allunyades
+        estan les dades respecte de la mitjana (ho formalitzarem a la sessió 4).
+\end{itemize}
+\textbf{Per a un tècnic social:} en contextos de desigualtat, la \textbf{mediana} i la
+\textbf{moda} sovint descriuen millor la realitat que la mitjana.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[els dos edificis: la mateixa mitjana]
+A l'\textbf{edifici A}, deu famílies tenen ingressos mensuals (en €) molt semblants,
+al voltant de $\num{1500}\eur$:
+\[
+\num{1400},\ \num{1450},\ \num{1500},\ \num{1500},\ \num{1550},\ \num{1500},\ \num{1450},\ \num{1550},\ \num{1600},\ \num{1500}.
+\]
+A l'\textbf{edifici B}, \textbf{vuit} famílies no tenen \textbf{cap} ingrés i \textbf{dues}
+en cobren $\num{7500}\eur$:
+\[
+0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ \num{7500},\ \num{7500}.
+\]
+Calculem la mitjana de cada edifici:
+\[
+\overline{x}_A=\frac{\num{15000}}{10}=\num{1500}\eur,\qquad
+\overline{x}_B=\frac{0\cdot 8+\num{7500}\cdot 2}{10}=\frac{\num{15000}}{10}=\num{1500}\eur.
+\]
+\textbf{La mateixa mitjana!} I, tanmateix, l'edifici A és un bloc de famílies amb
+ingressos modestos però \emph{estables}, i l'edifici B és un bloc on \emph{vuit
+famílies de cada deu no ingressen res}. La mitjana ho amaga del tot.
+\end{exemple}
+
+\begin{exemple}[per què aquí la mediana ho explica millor]
+Mirem la \textbf{mediana} de cada edifici (ordenem i agafem el centre; $N=10$,
+parell, els dos centrals són el $5$è i el $6$è):
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Edifici A: ordenat, els centrals són $\num{1500}$ i $\num{1500}$, de manera
+        que $\text{Me}_A=\num{1500}\eur$.
+  \item Edifici B: ordenat $0,0,0,0,\underline{0},\underline{0},0,0,\num{7500},\num{7500}$,
+        els centrals són $0$ i $0$, de manera que $\text{Me}_B=0\eur$.
+\end{itemize}
+La mediana \textbf{sí} que distingeix els dos edificis: $\num{1500}\eur$ contra $0\eur$.
+Diu el que la mitjana amagava: a l'edifici B, la \emph{família central} no ingressa
+res.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[mateixa mitjana, realitats diferents]
+Dos grups de monitors han fet aquestes hores de formació aquest mes:
+\[
+\text{Grup 1: } 18,\ 20,\ 19,\ 21,\ 22 \qquad
+\text{Grup 2: } 0,\ 0,\ 40,\ 20,\ 40.
+\]
+Comprova que tenen la mateixa mitjana i explica per què, tot i això, són grups molt
+diferents.
+\solucio
+\textbf{Mitjanes:}
+\[
+\overline{x}_1=\frac{18+20+19+21+22}{5}=\frac{100}{5}=20,\qquad
+\overline{x}_2=\frac{0+0+40+20+40}{5}=\frac{100}{5}=20.
+\]
+Totes dues són $20$ hores. Però al \textbf{grup 1} tothom ha fet \emph{a prop de}
+$20$ hores (entre $18$ i $22$): és \textbf{homogeni}. Al \textbf{grup 2} hi ha gent
+que no n'ha fet \emph{cap} i gent que n'ha fet $40$: és \textbf{molt desigual}. La
+mitjana sola no distingeix aquestes dues realitats; cal una mesura de \emph{com
+d'escampades} estan les dades.
+\resposta{Les dues mitjanes són $20$ h, però el grup 1 és homogeni i el grup 2 molt
+desigual: la mitjana no ho mostra.}
+\end{exresolt}
+
+\begin{exresolt}[quina mesura informa el coordinador]
+Un coordinador ha de decidir si un ajut d'emergència va dirigit a l'edifici A o al B
+de l'exemple. Si només mira la \textbf{mitjana} ($\num{1500}\eur$ als dos), què
+decidirà? Quina mesura li convindria mirar i per què?
+\solucio
+Si només mira la mitjana, els dos edificis li semblen \textbf{iguals}
+($\num{1500}\eur$) i no veurà cap motiu per prioritzar-ne cap. Seria un error: a
+l'edifici B, vuit famílies de deu no ingressen res.
+
+Li convé mirar la \textbf{mediana} (que dóna $\num{1500}\eur$ a A però $0\eur$ a B) i,
+sobretot, \textbf{com estan repartides} les dades (la \emph{dispersió}). Aquestes
+mesures revelen que l'edifici B concentra famílies sense ingressos i és el que
+necessita l'ajut.
+\resposta{Amb la mitjana sola decidiria malament; la mediana i la dispersió mostren
+que l'edifici B és el prioritari.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Comprova que aquests dos conjunts tenen la \textbf{mateixa mitjana}:
+        \[
+        P:\ 10,\ 10,\ 10,\ 10,\ 10 \qquad Q:\ 0,\ 5,\ 10,\ 15,\ 20.
+        \]
+        Quin dels dos és homogeni i quin escampat?
+  \item Per als dos edificis de l'exemple, calcula la \textbf{moda} de cadascun.
+        Quina moda té l'edifici B i què revela sobre la majoria de famílies?
+  \item Dues entitats reben donatius (€) durant cinc dies:
+        \[
+        \text{Entitat X: } 100,\ 120,\ 110,\ 90,\ 80 \qquad
+        \text{Entitat Y: } 0,\ 0,\ 0,\ 0,\ 500.
+        \]
+        Calcula la mitjana de cada entitat. Surten iguals? Quina entitat té els
+        ingressos més \textbf{irregulars}?
+  \item \textbf{(Interpretació)} Una notícia diu: «la despesa mitjana en oci de la
+        població és de $\num{200}\eur$ al mes». Per què aquesta xifra, tota sola,
+        podria amagar situacions molt diferents? Posa un exemple.
+  \item \textbf{(Decisió justificada)} Si fossis tècnic d'un servei social i et
+        donessin només la \textbf{mitjana} d'ingressos d'un barri, quina \emph{altra}
+        informació demanaries abans de dissenyar una intervenció? Justifica-ho.
+  \item \textbf{(Raonament)} Explica amb les teves paraules la frase: «la mitjana et
+        diu el centre, però no et diu si la gent està a prop o lluny d'aquell centre».
+        Per què això és important en l'àmbit social?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item $\overline{x}_P=\dfrac{50}{5}=10$ i $\overline{x}_Q=\dfrac{0+5+10+15+20}{5}=\dfrac{50}{5}=10$:
+        mateixa mitjana. $P$ és \textbf{homogeni} (totes les dades són $10$); $Q$ és
+        \textbf{escampat} (va de $0$ a $20$).
+  \item Edifici A: la moda és $\num{1500}$ (és el valor que més es repeteix). Edifici
+        B: la moda és $0$ (vuit famílies tenen $0\eur$). La moda $0$ de l'edifici B
+        revela que \textbf{la majoria de famílies no ingressa res}, cosa que la
+        mitjana ($\num{1500}\eur$) amagava completament.
+  \item $\overline{x}_X=\dfrac{100+120+110+90+80}{5}=\dfrac{500}{5}=100\eur$;
+        $\overline{x}_Y=\dfrac{0+0+0+0+500}{5}=\dfrac{500}{5}=100\eur$. Surten
+        \textbf{iguals}. L'entitat \textbf{Y} té els ingressos molt més irregulars
+        (quatre dies a $0$ i un dia a $500$), mentre que X ingressa de manera estable.
+  \item La mitjana pot sortir de moltes maneres: tothom gastant uns $\num{200}\eur$,
+        o bé molta gent gastant gairebé res i uns pocs gastant moltíssim. Exemple:
+        nou persones que gasten $0\eur$ i una que gasta $\num{2000}\eur$ donen la
+        mateixa mitjana de $\num{200}\eur$ que deu persones gastant $\num{200}\eur$
+        cadascuna.
+  \item Resposta oberta. Idees esperades: demanaria la \textbf{mediana}, la
+        \textbf{moda}, la \textbf{dispersió} (com d'escampades estan les rendes) i com
+        es reparteixen (quantes famílies sota un llindar), perquè la mitjana sola pot
+        amagar molta desigualtat.
+  \item Resposta oberta. Idea: dos barris amb la mateixa renda mitjana poden ser molt
+        diferents (un d'homogeni i un de molt desigual); per planificar una
+        intervenció social cal saber si la gent està a prop o lluny d'aquell valor
+        central, és a dir, conèixer la \emph{desigualtat}.
+\end{sollist}
+\end{solucions}
