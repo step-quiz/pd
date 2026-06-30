@@ -1,0 +1,140 @@
+% =====================================================================
+%  1bat-ud5-4.tex  —  SESSIÓ 4: Gimnàstica de percentatges encadenats
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 4 — Gimnàstica de percentatges encadenats}%
+{Formalitzem la trampa: els canvis percentuals successius es combinen multiplicant els índexs, i això ens dóna el percentatge global equivalent.}
+
+\subsection{Idea clau}
+
+A la sessió 3 vau descobrir que pujar un $15\%$ i baixar un $10\%$ no torna a l'inici.
+Avui formalitzem \emph{per què} i, sobretot, \emph{com} es calcula de pressa: quan
+s'apliquen diversos canvis percentuals successius, els \textbf{índexs de variació es
+multipliquen}.
+
+\begin{idea}
+\textbf{Percentatges encadenats}\\
+Si un valor pateix diversos canvis successius amb índexs $I_1, I_2, \dots, I_n$, el
+valor final és:
+\[
+\text{valor final}=\text{valor inicial}\per I_1\per I_2\per\cdots\per I_n.
+\]
+El producte $I_{\text{global}}=I_1\per I_2\per\cdots\per I_n$ és l'\textbf{índex
+global}, i d'ell es llegeix el \textbf{percentatge global equivalent}.
+\smallskip
+
+\textbf{Exemple central (la llum):} pujar un $15\%$ i baixar un $10\%$ és
+\[
+1,15\per 0,90=1,035,
+\]
+és a dir, una pujada \textbf{global} del $3,5\%$ (no del $5\%$!). L'ordre dels factors
+no altera el producte: el resultat és el mateix tant si puja primer com si baixa
+primer.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[de la trampa a la fórmula]
+La factura de la llum de $\num{80}\eur$ amb una pujada del $15\%$ i una baixada del
+$10\%$. En comptes de fer dos passos, multipliquem els índexs d'un cop:
+\[
+\num{80}\per\underbrace{(1,15\per 0,90)}_{=\,1,035}=\num{80}\per 1,035=\num{82,8}\eur.
+\]
+Mateix resultat que a la sessió 3, però d'una sola tacada. I a més sabem el
+\textbf{percentatge global}: $1,035\rightarrow +3,5\%$.
+\end{exemple}
+
+\begin{exemple}[descomptes successius i el global equivalent]
+Una botiga fa un $30\%$ i després un $20\%$ addicional. L'índex global és
+\[
+0,70\per 0,80=0,56.
+\]
+Com $0,56=1-0,44$, els dos descomptes equivalen a un \textbf{únic descompte del
+$44\%$} (no del $50\%$). Sobre un article de $\num{50}\eur$:
+$\num{50}\per 0,56=\num{28}\eur$, exactament el que vam obtenir pas a pas.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[índex global i percentatge equivalent]
+Un servei puja un $10\%$ un any i un $5\%$ l'any següent. Calcula l'índex global i
+digues a quin percentatge global de pujada equival.
+\solucio
+Multipliquem els índexs:
+\[
+I_{\text{global}}=1,10\per 1,05=1,155.
+\]
+Com $1,155=1+0,155$, els dos augments equivalen a una pujada global del
+$\mathbf{15,5\%}$ (no del $15\%$ que donaria sumar-los). Sobre, per exemple,
+$\num{200}\eur$: $\num{200}\per 1,155=\num{231}\eur$.
+\resposta{$I_{\text{global}}=1,155$; pujada global del $15,5\%$.}
+\end{exresolt}
+
+\begin{exresolt}[IVA sobre un preu ja rebaixat]
+Un material té un preu base de $\num{400}\eur$. Primer s'hi aplica un descompte del
+$25\%$ i després l'IVA del $21\%$. Calcula el preu final amb l'índex global i digues
+quina variació global representa.
+\solucio
+Índex global:
+\[
+I_{\text{global}}=0,75\per 1,21=0,9075.
+\]
+Preu final: $\num{400}\per 0,9075=\num{363}\eur$. Com $0,9075=1-0,0925$, el resultat
+global és una \textbf{baixada del $9,25\%$} respecte del preu base: el descompte del
+$25\%$ pesa més que l'IVA del $21\%$.
+\resposta{$\num{363}\eur$; índex global $0,9075$, equivalent a una baixada del
+$9,25\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula l'\textbf{índex global} de cada encadenament:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item pujar un $20\%$ i després un $10\%$;
+      \item baixar un $30\%$ i després un $10\%$;
+      \item pujar un $25\%$ i després baixar un $20\%$.
+    \end{enumerate}
+  \item Per a cada índex global de l'exercici 1, digues a quin \textbf{percentatge
+        global} equival (pujada o baixada).
+  \item Una factura de $\num{150}\eur$ puja un $12\%$ i després baixa un $5\%$. Calcula
+        el preu final amb l'índex global i digues quina variació global representa.
+  \item Dos descomptes seguits del $40\%$ i del $10\%$. \textbf{(Compte)} A quin
+        descompte global \emph{únic} equivalen? (No és el $50\%$.)
+  \item \textbf{(Interpretació)} Una nòmina puja un $2\%$ cada any durant tres anys
+        seguits. Escriu l'índex global com un producte de tres factors i calcula a quin
+        percentatge global equival al cap dels tres anys. Per què és més que un $6\%$?
+  \item \textbf{(Raonament)} Per què, per combinar percentatges successius,
+        \textbf{multipliquem} els índexs en comptes de sumar els percentatges? Relaciona
+        la resposta amb la idea, de la sessió 3, que cada canvi s'aplica sobre una base
+        diferent.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $1,20\per 1,10=1,32$; \quad (b) $0,70\per 0,90=0,63$; \quad
+        (c) $1,25\per 0,80=1,00$.
+  \item (a) $1,32=1+0,32\rightarrow$ pujada global del $32\%$; \quad
+        (b) $0,63=1-0,37\rightarrow$ baixada global del $37\%$; \quad
+        (c) $1,00\rightarrow$ \textbf{cap variació} (es compensen exactament; aquest
+        cas és l'excepció en què sí es torna a l'inici, perquè $1,25\per 0,80=1$).
+  \item $I_{\text{global}}=1,12\per 0,95=1,064$. Preu final:
+        $\num{150}\per 1,064=\num{159,6}\eur$. Equival a una pujada global del $6,4\%$.
+  \item $0,60\per 0,90=0,54=1-0,46$: equivalen a un \textbf{descompte únic del $46\%$}
+        (no del $50\%$).
+  \item $I_{\text{global}}=1,02\per 1,02\per 1,02=1,02^3\approx 1,0612$. Equival a una
+        pujada global d'aproximadament el $\mathbf{6,12\%}$, una mica \textbf{més} que
+        el $6\%$ de sumar $2+2+2$, perquè cada any el $2\%$ s'aplica sobre una nòmina ja
+        una mica més alta (l'interès «sobre l'interès», idea que reapareixerà amb
+        l'interès compost).
+  \item Resposta oberta. Idea: cada canvi percentual s'aplica sobre el valor que hi ha
+        \emph{en aquell moment}, que ja inclou els canvis anteriors; per això no es
+        poden sumar els percentatges (que suposaria aplicar-los tots sobre la base
+        original). Multiplicar els índexs respecta que cada factor actua sobre el
+        resultat acumulat fins llavors.
+\end{sollist}
+\end{solucions}

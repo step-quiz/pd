@@ -1,0 +1,138 @@
+% =====================================================================
+%  1bat-ud5-2.tex  —  SESSIÓ 2: Augments i disminucions: l'índex de variació
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 2 — Augments i disminucions: l'índex de variació}%
+{Formalitzem el factor multiplicador com a índex de variació: un sol número que descriu tota una pujada o una baixada.}
+
+\subsection{Idea clau}
+
+A la sessió 1 vam descobrir que aplicar un percentatge és multiplicar per un factor.
+Avui li posem nom i mètode: aquest factor és l'\textbf{índex de variació}. Saber
+construir-lo a partir del percentatge és el que farà àgil tot el càlcul financer de la
+unitat (IVA, nòmines, descomptes, i més endavant l'interès).
+
+\begin{idea}
+\textbf{L'índex de variació}\\
+Per a una variació del $p\%$, l'índex de variació $I$ és:
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Augment} del $p\%$: \quad $I=1+\dfrac{p}{100}$ \quad (per exemple, IVA
+        del $21\%$ $\rightarrow I=1,21$).
+  \item \textbf{Disminució} del $p\%$: \quad $I=1-\dfrac{p}{100}$ \quad (per exemple,
+        descompte del $10\%$ $\rightarrow I=0,90$).
+\end{itemize}
+El \textbf{valor final} s'obté multiplicant: \quad
+$\text{valor final}=\text{valor inicial}\per I$.
+\smallskip
+
+\textbf{Com es llegeix l'índex:}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item $I>1$ $\rightarrow$ hi ha hagut una \textbf{pujada}.
+  \item $I<1$ $\rightarrow$ hi ha hagut una \textbf{baixada}.
+  \item $I=1$ $\rightarrow$ no hi ha hagut cap canvi.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[d'on surt el factor $1,21$ de l'IVA]
+Afegir l'IVA del $21\%$ a un preu vol dir quedar-se amb el $100\%$ del preu \emph{més}
+un $21\%$ extra, és a dir, el $121\%$ del preu. I el $121\%$ és $\dfrac{121}{100}=1,21$.
+Per això:
+\[
+\text{preu amb IVA}=\text{preu sense IVA}\per 1,21.
+\]
+Un material de $\num{200}\eur$ sense IVA costa $\num{200}\per 1,21=\num{242}\eur$ amb
+IVA.
+\end{exemple}
+
+\begin{exemple}[interpretar un índex donat]
+Ens diuen que el preu d'un servei s'ha multiplicat per $0,92$. Què ha passat? Com
+$I=0,92<1$, ha estat una \textbf{baixada}. De quant? Com $0,92=1-0,08$, la baixada ha
+estat del $8\%$. A l'inrevés, si ens diuen que s'ha multiplicat per $1,05$, és una
+\textbf{pujada} del $5\%$ (perquè $1,05=1+0,05$).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[construir l'índex i aplicar-lo]
+La nòmina d'un monitor és de $\num{1100}\eur$ i li apliquen una pujada del $4\%$.
+Escriu l'índex de variació i calcula la nova nòmina.
+\solucio
+Una pujada del $4\%$ té índex $I=1+\dfrac{4}{100}=1,04$. La nova nòmina:
+\[
+\num{1100}\per 1,04=\num{1144}\eur.
+\]
+\textbf{Comprovació:} el $4\%$ de $\num{1100}$ és $44$, i $\num{1100}+44=\num{1144}\eur$.
+\resposta{$I=1,04$; nova nòmina $\num{1144}\eur$.}
+\end{exresolt}
+
+\begin{exresolt}[de l'índex al percentatge]
+Una entitat veu que el preu del lloguer del seu local s'ha multiplicat per $1,075$
+respecte de l'any passat. Quin percentatge ha pujat? I si fos $0,88$, què voldria dir?
+\solucio
+Com $1,075=1+0,075$, la pujada ha estat del $7,5\%$.
+
+Si l'índex fos $0,88=1-0,12$, voldria dir una \textbf{baixada del $12\%$}.
+\resposta{$1,075\rightarrow$ pujada del $7,5\%$; \quad $0,88\rightarrow$ baixada del
+$12\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu l'\textbf{índex de variació} de cada cas:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item una pujada del $7\%$;
+      \item una baixada del $3\%$;
+      \item afegir l'IVA reduït del $10\%$;
+      \item una rebaixa del $35\%$.
+    \end{enumerate}
+  \item Aplica l'índex per trobar el valor final:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item un lloguer de $\num{650}\eur$ que puja un $3\%$;
+      \item un servei de $\num{120}\eur$ amb un descompte del $25\%$;
+      \item un material de $\num{350}\eur$ al qual s'afegeix l'IVA del $21\%$.
+    \end{enumerate}
+  \item Digues si cada índex és una pujada o una baixada i de quin percentatge:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $I=1,02$; \quad b) $I=0,75$; \quad c) $I=1,5$; \quad d) $I=0,99$.
+    \end{enumerate}
+  \item Una nòmina de $\num{1300}\eur$ té una retenció (descompte) del $15\%$ d'IRPF.
+        Escriu l'índex i calcula la nòmina neta (el que cobra de debò).
+  \item \textbf{(Interpretació)} Per què l'índex d'un augment és sempre més gran que
+        $1$ i el d'una disminució, sempre més petit? Què representaria un índex
+        exactament igual a $1$?
+  \item \textbf{(Raonament)} Un company diu: «per pujar un $20\%$ multiplico per $1,2$,
+        i per tornar enrere torno a fer el camí invers: baixo un $20\%$, és a dir
+        multiplico per $0,8$, i recupero el preu inicial». Calcula-ho amb un preu de
+        $\num{100}\eur$ i digues si té raó. (Aquesta idea la treballarem a fons la
+        sessió següent.)
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $1,07$; \quad (b) $0,97$; \quad (c) $1,10$; \quad (d) $0,65$.
+  \item (a) $\num{650}\per 1,03=\num{669,5}\eur$; \quad
+        (b) $\num{120}\per 0,75=\num{90}\eur$; \quad
+        (c) $\num{350}\per 1,21=\num{423,5}\eur$.
+  \item (a) pujada del $2\%$; \quad (b) baixada del $25\%$; \quad (c) pujada del $50\%$;
+        \quad (d) baixada de l'$1\%$.
+  \item Una retenció del $15\%$ té índex $I=1-0,15=0,85$. Nòmina neta:
+        $\num{1300}\per 0,85=\num{1105}\eur$.
+  \item Un augment afegeix una part al $100\%$ inicial, de manera que l'índex passa de
+        $1$ ($=100\%$); per això és $>1$. Una disminució treu una part del $100\%$, de
+        manera que l'índex queda per sota de $1$. Un índex \textbf{igual a $1$}
+        representaria que \emph{no hi ha cap canvi} (el valor final és igual a
+        l'inicial).
+  \item Amb $\num{100}\eur$: pujar un $20\%$ dóna $\num{100}\per 1,2=\num{120}\eur$;
+        després baixar un $20\%$ dóna $\num{120}\per 0,8=\num{96}\eur$, \textbf{no}
+        $\num{100}\eur$. El company \textbf{no té raó}: no es torna al preu inicial,
+        perquè el segon percentatge s'aplica sobre una quantitat diferent. (Aquesta és
+        precisament la trampa que estudiarem a la sessió 3.)
+\end{sollist}
+\end{solucions}

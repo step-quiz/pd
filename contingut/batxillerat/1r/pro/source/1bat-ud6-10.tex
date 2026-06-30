@@ -1,0 +1,149 @@
+% =====================================================================
+%  1bat-ud6-10.tex  —  SESSIÓ 10: La paradoxa del test mèdic (falsos positius)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — La paradoxa del test mèdic (falsos positius)}%
+{Un test «99\% fiable» dóna positiu. Quina probabilitat real hi ha d'estar malalt? La resposta, sorprenent, depèn de quanta gent té de debò la malaltia.}
+
+\subsection{Idea clau}
+
+Apliquem la probabilitat condicionada a un dels resultats més contraintuïtius i útils de
+tota la matemàtica: la \textbf{paradoxa dels falsos positius}. Un tècnic de serveis a la
+comunitat ha d'entendre-la per acompanyar persones que reben un resultat «positiu» en un
+test (de salut, de cribratge) i evitar alarmes desproporcionades. La pregunta clau:
+\emph{si un test molt fiable em dóna positiu, quina probabilitat real tinc d'estar
+malalt?}
+
+\begin{idea}
+\textbf{Per què un test molt fiable pot enganyar}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Quan una malaltia és \textbf{rara}, hi ha \emph{moltíssima} gent sana.
+  \item Encara que el test falli poc amb els sans (pocs \textbf{falsos positius} per
+        persona), com que els sans són tantíssims, el \textbf{nombre} de falsos positius
+        pot superar el de malalts detectats.
+  \item Per això $P(\text{malalt}\mid\text{positiu})$ pot ser molt \textbf{més baixa} del
+        que sembla.
+\end{itemize}
+\textbf{L'eina:} construir una \textbf{taula de contingència} amb una població concreta
+fa visible la paradoxa.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la taula de contingència]
+Imaginem $\num{10000}$ persones. La malaltia afecta l'\textbf{$1\%$} (prevalença), de
+manera que hi ha $100$ malalts i $\num{9900}$ sans. El test detecta el $99\%$ dels
+malalts (\textbf{sensibilitat}) i s'equivoca amb el $5\%$ dels sans (\textbf{falsos
+positius}). Comptem:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Test +} & \textbf{Test $-$} & \textbf{Total} \\
+\midrule
+\textbf{Malalts} & $99$ & $1$ & $100$ \\
+\textbf{Sans} & $495$ & $\num{9405}$ & $\num{9900}$ \\
+\midrule
+\textbf{Total} & $594$ & $\num{9406}$ & $\num{10000}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Dels malalts, $99$ donen positiu ($99\%$). Dels sans, el $5\%$ ($495$) dóna positiu per
+error. En total, \textbf{$594$ positius}, però \emph{només $99$ estan malalts de debò}.
+\end{exemple}
+
+\begin{exemple}[la probabilitat que sorprèn]
+Si he donat positiu, quina probabilitat tinc d'estar realment malalt? És
+$P(\text{malalt}\mid\text{positiu})$: dels $594$ positius, només $99$ ho estan:
+\[
+P(\text{malalt}\mid\text{positiu})=\frac{99}{594}\approx 0,167=16,7\%.
+\]
+\textbf{Sorprenent:} amb un test que «encerta el $99\%$», un positiu només significa un
+$16,7\%$ de probabilitat real d'estar malalt. El motiu: hi ha tantíssima gent sana que
+els falsos positius ($495$) superen de molt els malalts detectats ($99$).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[llegir la taula]
+Amb la taula de l'exemple, calcula: (a) quants falsos positius hi ha; (b) la
+probabilitat d'estar sa havent donat positiu.
+\solucio
+(a) Els \textbf{falsos positius} són sans que donen positiu: $495$.
+
+(b) $P(\text{sa}\mid\text{positiu})$: dels $594$ positius, $495$ estan sans:
+\[
+P(\text{sa}\mid\text{positiu})=\frac{495}{594}\approx 0,833=83,3\%.
+\]
+(Coherent: $16,7\%+83,3\%=100\%$, perquè o s'està malalt o sa.)
+\resposta{(a) $495$ falsos positius; (b) $83,3\%$ de probabilitat d'estar sa tot i el
+positiu.}
+\end{exresolt}
+
+\begin{exresolt}[com canvia si la malaltia és més freqüent]
+Repeteix el càlcul si la malaltia afecta el \textbf{$20\%$} de la població (no l'$1\%$),
+amb el mateix test ($99\%$ de sensibilitat, $5\%$ de falsos positius), sobre
+$\num{10000}$ persones.
+\solucio
+Ara hi ha $\num{2000}$ malalts i $\num{8000}$ sans. Positius:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item Malalts positius: $99\%$ de $\num{2000}=\num{1980}$.
+  \item Falsos positius: $5\%$ de $\num{8000}=400$.
+\end{itemize}
+Total positius: $\num{1980}+400=\num{2380}$.
+\[
+P(\text{malalt}\mid\text{positiu})=\frac{\num{1980}}{\num{2380}}\approx 0,832=83,2\%.
+\]
+Amb una malaltia \textbf{freqüent}, el mateix test és molt més fiable ($83,2\%$ contra
+$16,7\%$). \textbf{La prevalença ho canvia tot.}
+\resposta{$P(\text{malalt}\mid\text{positiu})\approx 83,2\%$; la freqüència de la
+malaltia és decisiva.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item D'una població de $\num{10000}$ persones amb una malaltia que afecta el $2\%$:
+        quants malalts i quants sans hi ha?
+  \item Amb la població de l'exercici 1 i un test que detecta el $90\%$ dels malalts i
+        dóna un $10\%$ de falsos positius, completa la taula de contingència (malalts +,
+        malalts $-$, sans +, sans $-$).
+  \item Amb la taula de l'exercici 2, calcula el total de positius i
+        $P(\text{malalt}\mid\text{positiu})$. T'esperaves un valor tan baix?
+  \item Calcula també $P(\text{sa}\mid\text{positiu})$ i comprova que, sumada amb
+        l'anterior, dóna $1$.
+  \item \textbf{(Interpretació)} Per què, en una malaltia rara, els \textbf{falsos
+        positius} poden ser molt més nombrosos que els malalts detectats, encara que el
+        test falli poc \emph{per persona}?
+  \item \textbf{(Raonament)} Com a tècnic, què li diries a una persona alarmada perquè
+        un cribratge d'una malaltia rara li ha donat positiu? Per què és important
+        \textbf{no} interpretar un positiu com una certesa i fer-ne una segona prova?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item $2\%$ de $\num{10000}=200$ malalts; $\num{9800}$ sans.
+  \item Malalts +: $90\%$ de $200=180$; malalts $-$: $20$. Sans +: $10\%$ de
+        $\num{9800}=980$; sans $-$: $\num{8820}$.
+  \item Total positius: $180+980=\num{1160}$.
+        $P(\text{malalt}\mid\text{positiu})=\dfrac{180}{\num{1160}}\approx 0,155=15,5\%$.
+        És un valor sorprenentment baix, per la mateixa raó de l'exemple (molts sans).
+  \item $P(\text{sa}\mid\text{positiu})=\dfrac{980}{\num{1160}}\approx 0,845=84,5\%$.
+        Comprovació: $15,5\%+84,5\%=100\%$.
+  \item Perquè els sans són \textbf{moltíssims} comparats amb els malalts: un percentatge
+        petit de falsos positius aplicat a una població enorme de sans dóna un
+        \textbf{nombre} gran de falsos positius, que pot superar de molt els pocs
+        malalts (que són pocs perquè la malaltia és rara).
+  \item Resposta oberta. Idea: li explicaria que un positiu en un cribratge d'una
+        malaltia rara \textbf{no} vol dir que estigui malalt; sovint la probabilitat
+        real és baixa pels falsos positius. Cal mantenir la calma i fer una \textbf{segona
+        prova} (més específica) per confirmar, perquè una sola prova positiva no és una
+        certesa.
+\end{sollist}
+\end{solucions}

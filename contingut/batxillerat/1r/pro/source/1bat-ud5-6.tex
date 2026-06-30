@@ -1,0 +1,143 @@
+% =====================================================================
+%  1bat-ud5-6.tex  —  SESSIÓ 6: Què és l'interès? El dilema del crèdit ràpid
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 6 — Què és l'interès? El dilema del crèdit ràpid}%
+{Un anunci de crèdit ràpid: 300 € a tornar en 30 dies pagant-ne 30 d'interessos. És barat o car? La pregunta obre la matemàtica financera.}
+
+\subsection{Idea clau}
+
+Amb els percentatges ben afinats (sessions 1 a 5), entrem a la part més
+professionalitzadora de la unitat: la \textbf{matemàtica financera}, l'eina per
+detectar abusos i assessorar famílies vulnerables sobre l'endeutament. Avui partim
+d'un anunci real i ben enganyós: \emph{«$\num{300}\eur$ a l'instant; torna'ls en $30$
+dies pagant només $\num{30}\eur$ d'interessos».} La pregunta del dia: \textbf{és barat
+o car?}
+
+\begin{idea}
+\textbf{Què és l'interès}\\
+L'\textbf{interès} és el preu que es paga per fer servir uns diners durant un temps.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Capital} ($C_0$): els diners prestats.
+  \item \textbf{Tipus d'interès} ($r$): el percentatge que es paga \emph{per període}
+        (expressat com a factor: un $10\%\rightarrow r=0,10$).
+  \item \textbf{Temps} ($t$): quants períodes dura.
+\end{itemize}
+\textbf{Dues maneres de comptar-lo:}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textbf{Interès simple:} els interessos es calculen \emph{sempre sobre el
+        capital inicial}.
+  \item \textbf{Interès compost:} els interessos s'acumulen al capital i
+        \emph{generen nous interessos} (ho formalitzarem la sessió següent).
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el dilema del crèdit ràpid]
+$\num{300}\eur$ a tornar en $30$ dies pagant $\num{30}\eur$ d'interessos. En un mes,
+els $\num{30}\eur$ sobre $\num{300}\eur$ són
+\[
+\frac{\num{30}}{\num{300}}=0,10=10\%.
+\]
+Un $10\%$\dots \emph{en un sol mes}. La trampa de l'anunci és que el $10\%$ sona poc,
+però \textbf{és mensual}. Si projectem la mateixa quantitat a tot un any (dotze mesos)
+amb interès simple, serien $12\per\num{30}=\num{360}\eur$ d'interessos sobre
+$\num{300}\eur$ de capital: un $120\%$ anual. I si els interessos generessin
+interessos (compost), encara molt més. \textbf{És caríssim.}
+\end{exemple}
+
+\begin{exemple}[interès simple: estalvi senzill]
+Poso $\num{1000}\eur$ en un producte que dóna un $3\%$ \textbf{simple} anual durant
+$2$ anys. Cada any genera el mateix interès, sempre sobre els $\num{1000}\eur$
+inicials:
+\[
+\text{interès anual}=0,03\per\num{1000}=\num{30}\eur,\qquad
+\text{en $2$ anys}=2\per\num{30}=\num{60}\eur.
+\]
+Capital final: $\num{1000}+\num{60}=\num{1060}\eur$. En interès \textbf{simple}, els
+interessos \emph{no} generen interessos: cada any s'afegeixen els mateixos
+$\num{30}\eur$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[interès mensual projectat a l'any]
+Un crèdit ràpid presta $\num{200}\eur$ i cobra $\num{24}\eur$ d'interessos en un mes.
+Quin percentatge mensual és? I quant en interessos, amb interès simple, si durés un
+any?
+\solucio
+\textbf{Percentatge mensual:} $\dfrac{\num{24}}{\num{200}}=0,12=12\%$ al mes.
+
+\textbf{En un any (simple):} cada mes el mateix interès, $\num{24}\eur$, durant $12$
+mesos: $12\per\num{24}=\num{288}\eur$ d'interessos sobre $\num{200}\eur$ de capital.
+Això és un $\dfrac{\num{288}}{\num{200}}=1,44=144\%$ anual. \textbf{Abusiu.}
+\resposta{$12\%$ mensual; $\num{288}\eur$ d'interessos en un any (un $144\%$ anual).}
+\end{exresolt}
+
+\begin{exresolt}[interès simple a uns quants anys]
+Una família ingressa $\num{500}\eur$ en un dipòsit al $2\%$ simple anual. Quants
+diners hi haurà al cap de $3$ anys?
+\solucio
+\textbf{Interès cada any:} $0,02\per\num{500}=\num{10}\eur$, sempre sobre els
+$\num{500}\eur$ inicials.
+
+\textbf{En $3$ anys:} $3\per\num{10}=\num{30}\eur$ d'interessos.
+
+\textbf{Capital final:} $\num{500}+\num{30}=\num{530}\eur$.
+\resposta{$\num{530}\eur$ (interès simple: $\num{10}\eur$ cada any).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Un crèdit presta $\num{400}\eur$ i cobra $\num{40}\eur$ d'interessos en un mes.
+        Quin percentatge mensual és? Quant serien els interessos, amb interès simple,
+        en un any?
+  \item Calcula l'interès \textbf{simple} i el capital final:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $\num{800}\eur$ al $4\%$ simple anual durant $2$ anys;
+      \item $\num{1500}\eur$ al $3\%$ simple anual durant $4$ anys.
+    \end{enumerate}
+  \item Un anunci diu «només un $5\%$!» però és un $5\%$ \textbf{mensual}. A quant
+        equival en interessos al cap d'un any (simple) sobre un préstec de
+        $\num{600}\eur$?
+  \item \textbf{(Comparació)} Dos productes d'estalvi per a $\num{1000}\eur$: el primer
+        dóna un $5\%$ simple durant $1$ any; el segon, un $2\%$ simple durant $3$ anys.
+        Quin dóna més interessos en total?
+  \item \textbf{(Interpretació)} Per què un anunci de crèdit ràpid presenta l'interès
+        \textbf{mensual} en comptes de l'anual? Què intenta amagar?
+  \item \textbf{(Raonament)} Explica amb les teves paraules la diferència entre interès
+        simple i interès compost. En quin dels dos creixerà més de pressa un deute que
+        no es paga, i per què?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item Percentatge mensual: $\dfrac{\num{40}}{\num{400}}=0,10=10\%$. En un any
+        (simple): $12\per\num{40}=\num{480}\eur$ d'interessos sobre $\num{400}\eur$
+        (un $120\%$ anual).
+  \item (a) Interès anual $0,04\per\num{800}=\num{32}\eur$; en $2$ anys
+        $\num{64}\eur$; capital final $\num{864}\eur$. \quad
+        (b) Interès anual $0,03\per\num{1500}=\num{45}\eur$; en $4$ anys
+        $\num{180}\eur$; capital final $\num{1680}\eur$.
+  \item Un $5\%$ mensual sobre $\num{600}\eur$ són $0,05\per\num{600}=\num{30}\eur$ al
+        mes; en $12$ mesos (simple), $12\per\num{30}=\num{360}\eur$ d'interessos sobre
+        $\num{600}\eur$ (un $60\%$ anual).
+  \item Primer: $0,05\per\num{1000}=\num{50}\eur$ en $1$ any. Segon:
+        $0,02\per\num{1000}=\num{20}\eur$ l'any, en $3$ anys $\num{60}\eur$. El
+        \textbf{segon} dóna més interessos en total ($\num{60}\eur$ contra $\num{50}\eur$).
+  \item Perquè l'interès mensual és un número \textbf{petit} ($5\%$, $10\%$) que sona
+        assumible, mentre que l'anual equivalent és enorme ($60\%$, $120\%$\dots).
+        L'anunci amaga el \textbf{cost real anual} del crèdit perquè sembli barat.
+  \item Resposta oberta. Idea: en l'interès \textbf{simple} els interessos es calculen
+        sempre sobre el capital inicial; en el \textbf{compost} s'acumulen al capital i
+        generen nous interessos. Un deute que no es paga creix més de pressa amb interès
+        \textbf{compost}, perquè cada període els interessos s'afegeixen al deute i el
+        període següent també generen interessos (l'«espiral»).
+\end{sollist}
+\end{solucions}

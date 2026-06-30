@@ -1,0 +1,165 @@
+% =====================================================================
+%  1bat-ud5-1.tex  —  SESSIÓ 1: Recordar els percentatges: la base de tot
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — Recordar els percentatges: la base de tot}%
+{Abans d'entrar a la matemàtica financera, recuperem el càlcul de percentatges i descobrim la idea que ho farà tot àgil: el percentatge com a factor multiplicador.}
+
+\subsection{Idea clau}
+
+Arrenca l'última unitat del curs, plenament professionalitzadora: aprendrem a detectar
+abusos financers, entendre el cost de la vida i quadrar el pressupost d'un projecte. I
+tot això descansa sobre una eina que ja coneixes de l'ESO però que convé tenir
+\textbf{ben afinada}: el \textbf{percentatge}. Avui el recuperem i, sobretot,
+n'aprenem la mirada que ho farà tot ràpid: veure'l com un \textbf{factor que
+multiplica}.
+
+\begin{idea}
+\textbf{Les dues cares d'un percentatge}\\
+Un percentatge es pot mirar de dues maneres:
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Com a fracció:} $20\% = \dfrac{20}{100}=0,20$. Per calcular «el $20\%$
+        de $40$» fem $0,20\per 40=8$.
+  \item \textbf{Com a factor multiplicador} (la clau de tota la unitat):
+        \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+          \item Aplicar un \textbf{descompte} del $20\%$ és multiplicar per
+                $1-0,20=0,80$.
+          \item Aplicar un \textbf{augment} del $20\%$ és multiplicar per
+                $1+0,20=1,20$.
+        \end{itemize}
+\end{itemize}
+\textbf{Per què la segona idea és or:} amb un sol producte tens el preu final, sense
+haver de calcular la part i sumar-la o restar-la a banda.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[tres maneres de fer el mateix descompte]
+Un article de $40\eur$ té un $20\%$ de descompte. Tres camins porten al mateix lloc:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Regla de tres:} si $40\eur$ és el $100\%$, el $20\%$ són
+        $\dfrac{20\per 40}{100}=8\eur$; el preu final és $40-8=32\eur$.
+  \item \textbf{Calcular la part i restar:} el $20\%$ de $40$ és $8$; $40-8=32\eur$.
+  \item \textbf{Factor multiplicador:} $40\per 0,80=32\eur$ \emph{directament}.
+\end{itemize}
+Els tres donen $32\eur$, però el tercer és el més ràpid i el que menys errors provoca.
+\end{exemple}
+
+\begin{exemple}[el factor segons l'operació]
+Fixa't com es construeix el factor a partir del percentatge:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c}
+\toprule
+\textbf{Operació} & \textbf{Factor} & \textbf{Exemple sobre $50\eur$} \\
+\midrule
+Augment del $10\%$ & $1+0,10=1,10$ & $50\per 1,10=55\eur$ \\
+Descompte del $10\%$ & $1-0,10=0,90$ & $50\per 0,90=45\eur$ \\
+Augment del $21\%$ (IVA) & $1+0,21=1,21$ & $50\per 1,21=60,5\eur$ \\
+Descompte del $25\%$ & $1-0,25=0,75$ & $50\per 0,75=37,5\eur$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[descompte amb factor]
+Una cadira de rodes costa $\num{320}\eur$ i una entitat aconsegueix un $15\%$ de
+descompte. Calcula el preu final amb el factor multiplicador.
+\solucio
+Un descompte del $15\%$ és multiplicar pel factor $1-0,15=0,85$:
+\[
+\num{320}\per 0,85=\num{272}\eur.
+\]
+\textbf{Comprovació:} el $15\%$ de $\num{320}$ és $48$, i $\num{320}-48=\num{272}\eur$.
+Coincideix.
+\resposta{$\num{272}\eur$ (factor $0,85$).}
+\end{exresolt}
+
+\begin{exresolt}[afegir l'IVA amb factor]
+Una entitat compra material per valor de $\num{150}\eur$ (sense IVA) i li han d'afegir
+el $21\%$ d'IVA. Quant pagarà en total?
+\solucio
+Afegir el $21\%$ és multiplicar pel factor $1+0,21=1,21$:
+\[
+\num{150}\per 1,21=\num{181,5}\eur.
+\]
+\textbf{Comprovació:} el $21\%$ de $\num{150}$ és $\num{31,5}$, i
+$\num{150}+\num{31,5}=\num{181,5}\eur$. Coincideix.
+\resposta{$\num{181,5}\eur$ (factor $1,21$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Resol cada percentatge amb el \textbf{factor multiplicador} i, on
+puguis, comprova el resultat calculant la part a banda.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu el \textbf{factor} que correspon a cada cas:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item un augment del $30\%$;
+      \item un descompte del $40\%$;
+      \item afegir l'IVA del $21\%$;
+      \item un descompte del $5\%$.
+    \end{enumerate}
+  \item Calcula amb el factor:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item el preu final d'un llibre de $\num{24}\eur$ amb un $10\%$ de descompte;
+      \item el preu amb IVA ($21\%$) d'un servei de $\num{200}\eur$;
+      \item una nòmina de $\num{1200}\eur$ després d'una pujada del $3\%$.
+    \end{enumerate}
+  \item Un casal rep una subvenció de $\num{4500}\eur$ i li retallen el $12\%$. Quant
+        li queda? (Usa el factor.)
+  \item Un material costa $\num{80}\eur$ amb IVA inclòs. \textbf{(Repte)} Si l'IVA és
+        del $21\%$, quant costava \emph{sense} IVA? (Pista: per desfer una
+        multiplicació per $1,21$, cal \emph{dividir} per $1,21$.)
+  \item \textbf{(Interpretació)} Explica per què aplicar un $20\%$ de descompte és el
+        mateix que «quedar-se el $80\%$» del preu. Quin factor expressa millor aquesta
+        idea?
+  \item \textbf{(Raonament)} Quina de les dues maneres de veure un percentatge
+        (fracció o factor) et sembla més còmoda i per què? Posa un exemple de la vida
+        quotidiana on el factor multiplicador et faci anar més ràpid.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Fitxa de suport} (per tenir a mà durant la unitat) — de percentatge a factor:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c c c}
+\toprule
+\textbf{Vull\dots} & \textbf{Factor} & \textbf{Per desfer-ho} \\
+\midrule
+augmentar un $p\%$ & multiplicar per $1+\frac{p}{100}$ & dividir per $1+\frac{p}{100}$ \\
+disminuir un $p\%$ & multiplicar per $1-\frac{p}{100}$ & dividir per $1-\frac{p}{100}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $1,30$; \quad (b) $0,60$; \quad (c) $1,21$; \quad (d) $0,95$.
+  \item (a) $\num{24}\per 0,90=\num{21,6}\eur$; \quad
+        (b) $\num{200}\per 1,21=\num{242}\eur$; \quad
+        (c) $\num{1200}\per 1,03=\num{1236}\eur$.
+  \item Retallar el $12\%$ és multiplicar per $0,88$:
+        $\num{4500}\per 0,88=\num{3960}\eur$.
+  \item Per desfer la multiplicació per $1,21$, dividim:
+        $\dfrac{\num{80}}{1,21}\approx \num{66,12}\eur$ sense IVA. (Comprovació:
+        $\num{66,12}\per 1,21\approx \num{80}\eur$.)
+  \item Aplicar un $20\%$ de descompte vol dir que del preu en «desapareix» el $20\%$ i
+        en \textbf{queda el $80\%$}; per això multipliquem per $0,80$, que és
+        exactament «el $80\%$ del preu». El factor $0,80$ expressa directament aquesta
+        idea.
+  \item Resposta oberta. Idea esperada: el factor sol ser més còmode perquè dóna el
+        resultat final amb una sola operació. Exemple vàlid: a la caixa d'una botiga,
+        calcular de cop el preu rebaixat de diversos articles multiplicant per $0,70$
+        (un $30\%$ de descompte) en comptes de calcular cada part i restar-la.
+\end{sollist}
+\end{solucions}

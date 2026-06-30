@@ -1,0 +1,110 @@
+% =====================================================================
+%  1bat-ud6-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 6
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 6}%
+{Prova individual: tres blocs alineats amb els criteris C1–C3. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 6 — Probabilitat i presa de decisions}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també la
+\textbf{interpretació} dins del context de la decisió i la \textbf{mirada crítica}
+davant de xifres de risc i jocs d'atzar. Mostra tots els càlculs. Pots usar calculadora.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Probabilitat bàsica \hfill \normalfont\itshape (3,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Probabilitat bàsica}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt]
+  \item En tirar un dau:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Calcula la probabilitat de treure un nombre \textbf{parell}, en
+            \textbf{fracció, decimal i percentatge}.
+      \item Calcula la probabilitat del \textbf{succés contrari}.
+    \end{enumerate}
+  \item Se sap que $P(A)=0,6$, $P(B)=0,3$ i $P(A\cap B)=0,1$. Calcula $P(A\cup B)$ i
+        explica per què cal restar la intersecció.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Probabilitat condicionada i arbres \hfill \normalfont\itshape (3,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Probabilitat condicionada i arbres}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=3]
+  \item Se sap que $P(A\cap B)=0,18$ i $P(B)=0,6$. Calcula $P(A\mid B)$ i
+        \textbf{interpreta} el resultat.
+  \item Un programa d'inserció: el $75\%$ supera la formació; d'aquests, el $80\%$ troba
+        feina; dels que no la superen, el $30\%$ en troba.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Dibuixa el \textbf{diagrama d'arbre}.
+      \item Calcula la \textbf{probabilitat global} de trobar feina.
+    \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Esperança i decisió \hfill \normalfont\itshape (3 punts)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Esperança i decisió}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=5]
+  \item En un joc, guanyes $\num{8}\eur$ amb probabilitat $0,25$ i perds $\num{3}\eur$
+        amb probabilitat $0,75$. Calcula l'\textbf{esperança matemàtica} i digues si
+        convé jugar. \textbf{Justifica-ho.}
+  \item Una malaltia afecta l'$1\%$ d'una població de $\num{10000}$ persones. Un test
+        detecta el $99\%$ dels malalts i dóna un $5\%$ de falsos positius. Si hi ha $99$
+        malalts amb test positiu i $495$ sans amb test positiu, calcula
+        $P(\text{malalt}\mid\text{positiu})$ i \textbf{interpreta} el resultat.
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD6 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item (a) Parells $\{2,4,6\}$, $3$ casos de $6$:
+        $P=\frac{3}{6}=\frac{1}{2}=0,5=50\%$. \quad
+        (b) Contrari (senar): $P(\overline{A})=1-0,5=0,5=50\%$.
+  \item $P(A\cup B)=P(A)+P(B)-P(A\cap B)=0,6+0,3-0,1=0,8$. Cal restar la intersecció
+        perquè els elements que són a \textbf{tots dos} successos es comptarien
+        \textbf{dues vegades} en sumar $P(A)+P(B)$.
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{2}
+  \item $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0,18}{0,6}=0,3=30\%$.
+        \textbf{Interpretació:} sabent que ha passat $B$, la probabilitat d'$A$ és del
+        $30\%$.
+  \item (a) Arbre amb dues etapes: \emph{supera} ($0,75$) $\rightarrow$ feina ($0,8$) /
+        no feina ($0,2$); \emph{no supera} ($0,25$) $\rightarrow$ feina ($0,3$) / no
+        feina ($0,7$). \quad
+        (b) Rutes cap a «feina»: $0,75\per 0,8=0,60$ i $0,25\per 0,3=0,075$.
+        $P(\text{feina})=0,60+0,075=0,675$ (un $67,5\%$).
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{4}
+  \item $E=8\per 0,25+(-3)\per 0,75=2-2,25=-0,25\eur$. Com que $E<0$, de mitjana es
+        perden $25$ cèntims per partida: \textbf{no convé} jugar a la llarga.
+  \item Total de positius: $99+495=594$.
+        $P(\text{malalt}\mid\text{positiu})=\dfrac{99}{594}\approx 0,167=16,7\%$.
+        \textbf{Interpretació:} tot i que el test «encerta el $99\%$», un positiu només
+        significa un $16,7\%$ de probabilitat real d'estar malalt, perquè com que la
+        malaltia és rara els \textbf{falsos positius} ($495$) superen de molt els
+        malalts detectats ($99$). No s'ha d'interpretar un positiu com una certesa.
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): el Bloc 1 i el Bloc 2
+puntuen sobre $3,5$ i el Bloc 3 sobre $3$. Dins de cada bloc es reparteix entre el
+procediment correcte, la \textbf{interpretació} dins del context de la decisió i la
+\textbf{mirada crítica} (falsos positius, esperança, condicionada). Total: $10$ punts.}

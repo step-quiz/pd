@@ -1,0 +1,153 @@
+% =====================================================================
+%  1bat-ud6-3.tex  —  SESSIÓ 3: Consolidació: probabilitats simples i les seves formes
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 3 — Consolidació: probabilitats simples i les seves formes}%
+{Abans dels successos compostos, assentem el càlcul de probabilitats simples caçant els errors típics i movent-nos amb soltesa entre fracció, decimal i percentatge.}
+
+\subsection{Idea clau}
+
+Ja sabem aplicar la regla de Laplace (sessió 2). Abans d'avançar cap als successos
+\textbf{compostos} i \textbf{condicionats} —la part difícil de la unitat—, avui
+\textbf{consolidem} el càlcul de probabilitats simples i la conversió entre les seves
+tres formes. No hi ha matèria nova: es tracta de fer-ho \textbf{bé} i de caçar els
+errors de sempre.
+
+\begin{idea}
+\textbf{Els tres errors que cacem avui}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Comptar malament els casos possibles} (oblidar-ne algun, o comptar-ne de
+        més).
+  \item \textbf{Donar una probabilitat més gran que $1$} (o negativa): senyal segur
+        d'error.
+  \item \textbf{Equivocar-se en passar de fracció a percentatge} (recorda: divideix i
+        multiplica per $100$).
+\end{enumerate}
+\textbf{Comprova sempre:} tota probabilitat ha de quedar \textbf{entre $0$ i $1$}, i la
+suma de les probabilitats de tots els resultats possibles ha de fer \textbf{$1$}.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: probabilitat més gran que 1]
+Algú calcula la probabilitat de treure un múltiple de $2$ en un dau així: «hi ha $3$
+parells, i en surten $2$ de cada cara, $\frac{6}{6}\cdot\dots$» i acaba donant
+$P=1,5$. \textbf{És impossible:} cap probabilitat pot ser més gran que $1$. El càlcul
+correcte: parells $\{2,4,6\}$, $3$ casos de $6$:
+\[
+P=\frac{3}{6}=\frac{1}{2}=0,5.
+\]
+\textbf{Correcció:} $0,5$, no $1,5$.
+\end{exemple}
+
+\begin{exemple}[caça l'error: passar a percentatge]
+Algú diu que $\frac{1}{4}$ és «el $4\%$». \textbf{És incorrecte:} per passar a
+percentatge cal dividir i multiplicar per $100$:
+\[
+\frac{1}{4}=0,25=25\%.
+\]
+\textbf{Correcció:} $\frac{1}{4}$ és el $25\%$, no el $4\%$. (Confondre el denominador
+amb el percentatge és un error molt comú.)
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[probabilitat d'un perfil i el seu contrari]
+En un grup de $40$ usuaris d'un servei, $24$ tenen estudis bàsics, $12$ estudis mitjans
+i $4$ estudis superiors. Si en triem un a l'atzar, calcula la probabilitat de cada
+perfil (en les tres formes) i comprova que sumen $1$.
+\solucio
+\[
+P(\text{bàsics})=\frac{24}{40}=\frac{3}{5}=0,6=60\%,
+\]
+\[
+P(\text{mitjans})=\frac{12}{40}=\frac{3}{10}=0,3=30\%,
+\]
+\[
+P(\text{superiors})=\frac{4}{40}=\frac{1}{10}=0,1=10\%.
+\]
+\textbf{Comprovació:} $0,6+0,3+0,1=1$ (i $60\%+30\%+10\%=100\%$): correcte.
+\resposta{$60\%$, $30\%$, $10\%$; sumen $100\%$.}
+\end{exresolt}
+
+\begin{exresolt}[del percentatge a la fracció]
+Es diu que la probabilitat que un usuari assisteixi a una activitat és del $75\%$.
+Expressa-la en decimal i en fracció, i calcula la probabilitat que \textbf{no} hi
+assisteixi.
+\solucio
+$75\%=0,75=\dfrac{75}{100}=\dfrac{3}{4}$.
+
+Probabilitat de no assistir (succés contrari):
+\[
+1-0,75=0,25=\frac{1}{4}=25\%.
+\]
+\resposta{$0,75=\frac{3}{4}$; no assistir $=0,25=\frac{1}{4}=25\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari: els exercicis 1–4 són la base; el 5 i el 6 són ampliació
+(successos contraris i grups d'usuaris).}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} En cada cas, digues si és correcte i, si no, corregeix-lo:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item «La probabilitat de treure un $4$ en un dau és $\frac{4}{6}$.»
+      \item «$\frac{1}{2}$ és el $2\%$.»
+      \item «La probabilitat d'un succés és $1,2$.»
+    \end{enumerate}
+  \item Calcula i expressa en les tres formes la probabilitat de treure, d'una baralla
+        de $40$ cartes: (a) un bastó (n'hi ha $10$); (b) una figura (sota, cavall i rei
+        de cada pal: $12$ en total).
+  \item En una bossa amb $8$ boles vermelles, $6$ de blaves i $6$ de verdes, calcula la
+        probabilitat de cada color i comprova que sumen $1$.
+  \item Passa a percentatge: (a) $\frac{2}{5}$; (b) $0,08$; (c) $\frac{7}{20}$.
+  \item \textbf{(Ampliació — contrari)} Si la probabilitat que plogui demà és del $30\%$,
+        quina és la probabilitat que \textbf{no} plogui? Expressa-la en les tres formes.
+  \item \textbf{(Ampliació — usuaris)} En un casal de $60$ infants, $45$ van a primària i
+        la resta a secundària. Calcula la probabilitat que un infant triat a l'atzar
+        vagi a secundària, en fracció, decimal i percentatge.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació} — marca amb sinceritat com et trobes, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.2cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Comptar bé casos favorables i possibles & \rule{0.7cm}{0pt} & & \\
+Aplicar la regla de Laplace & & & \\
+Passar entre fracció, decimal i percentatge & & & \\
+Calcular el succés contrari & & & \\
+Comprovar que la probabilitat és entre $0$ i $1$ & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+\noindent\textbf{Atenció a la diversitat.} Si encara et costa, comença per l'\emph{itinerari
+mínim} (exercicis amb casos fàcilment comptables i conversió guiada entre formes) i
+tingues a mà la fitxa de suport de la sessió 1; si ja domines el càlcul, fes les
+\emph{ampliacions} (exercicis 5 i 6, amb contraris i grups d'usuaris).
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{Incorrecte}: només hi ha \emph{un} $4$, de $6$ cares;
+        $P=\frac{1}{6}$. \quad (b) \textbf{Incorrecte}: $\frac{1}{2}=0,5=50\%$, no el
+        $2\%$. \quad (c) \textbf{Incorrecte}: cap probabilitat pot superar $1$.
+  \item (a) $\frac{10}{40}=\frac{1}{4}=0,25=25\%$; (b)
+        $\frac{12}{40}=\frac{3}{10}=0,3=30\%$.
+  \item Total $8+6+6=20$. Vermella $\frac{8}{20}=0,4=40\%$; blava
+        $\frac{6}{20}=0,3=30\%$; verda $\frac{6}{20}=0,3=30\%$. Sumen $100\%$.
+  \item (a) $\frac{2}{5}=0,4=40\%$; (b) $0,08=8\%$; (c) $\frac{7}{20}=0,35=35\%$.
+  \item No plogui: $1-0,30=0,70=\frac{7}{10}=70\%$.
+  \item Secundària: $60-45=15$ infants. $P=\frac{15}{60}=\frac{1}{4}=0,25=25\%$.
+\end{sollist}
+\end{solucions}

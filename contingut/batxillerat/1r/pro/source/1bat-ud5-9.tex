@@ -1,0 +1,156 @@
+% =====================================================================
+%  1bat-ud5-9.tex  —  SESSIÓ 9: Comparar ofertes financeres amb la TAE
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 9 — Comparar ofertes financeres amb la TAE}%
+{Davant de dues o tres ofertes de crèdit, decidir quina és realment més cara: el TIN i la quota enganyen; només la TAE permet una comparació justa.}
+
+\subsection{Idea clau}
+
+A la sessió 8 vam veure què és la TAE i com es calcula. Avui treballem la competència
+\textbf{més transferible} de tot el bloc financer i que aplicaràs acompanyant famílies
+endeutades: \textbf{comparar críticament} diverses ofertes de crèdit. La regla és
+senzilla però sovint ignorada: \emph{no} es comparen ofertes pel TIN ni per la quota
+mensual, sinó per la \textbf{TAE} i pel \textbf{total a retornar}.
+
+\begin{idea}
+\textbf{Com es comparen ofertes de crèdit}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Mira la TAE}, no el TIN: la TAE inclou comissions i capitalització; el
+        TIN no.
+  \item \textbf{Mira el total a retornar} (capital $+$ tots els interessos i
+        comissions), no només la quota mensual.
+  \item \textbf{Compte amb la lletra petita:} terminis curts, comissions d'obertura,
+        assegurances obligatòries.
+\end{enumerate}
+\textbf{Parany habitual:} una quota mensual baixa pot amagar molts mesos de pagament i
+un total caríssim. \textbf{Una TAE més alta vol dir un crèdit més car}, a igualtat de
+la resta.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[dues ofertes per $\num{1000}\eur$]
+Una família necessita $\num{1000}\eur$ i té dues ofertes:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c}
+\toprule
+ & \textbf{Oferta A (microcrèdit)} & \textbf{Oferta B (banc)} \\
+\midrule
+TIN anunciat & $4\%$ mensual & $9\%$ anual \\
+TAE & $60,1\%$ & $9,4\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+L'oferta A presenta un «$4\%$» que sembla petit, però és \textbf{mensual}: la seva TAE
+és $(1,04)^{12}-1\approx 0,601=60,1\%$. L'oferta B té una TAE del $9,4\%$. \textbf{La
+B és molt més barata}, encara que el seu número «$9\%$» semblés més gran que el «$4\%$»
+de l'A. Comparar pel número de cara enganya; comparar per la TAE no.
+\end{exemple}
+
+\begin{exemple}[la quota baixa que surt cara]
+Una oferta promociona «només $\num{50}\eur$ al mes!». Sona assumible, però si el
+préstec dura $36$ mesos, el total pagat és $36\per\num{50}=\num{1800}\eur$. Si el
+capital era de $\num{1200}\eur$, s'han pagat $\num{600}\eur$ d'interessos i comissions.
+La quota baixa amagava un \textbf{cost total} alt: per això cal mirar el total a
+retornar, no la quota.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[quina oferta és més cara]
+Dues ofertes per $\num{500}\eur$: l'oferta P té un TIN del $3\%$ mensual; l'oferta Q
+té una TAE del $30\%$ anual. Quina és més cara?
+\solucio
+Calculem la TAE de l'oferta P (que ve donada en mensual):
+\[
+\text{TAE}_P=(1,03)^{12}-1\approx 1,4258-1=0,4258=42,6\%.
+\]
+L'oferta Q té TAE $=30\%$. Com $42,6\%>30\%$, l'\textbf{oferta P és més cara}, tot i
+que el seu «$3\%$» semblava un número petit.
+\resposta{L'oferta P (TAE $42,6\%$) és més cara que la Q (TAE $30\%$).}
+\end{exresolt}
+
+\begin{exresolt}[comparar pel total a retornar]
+Oferta X: $\num{1000}\eur$ a tornar amb una quota de $\num{95}\eur$ durant $12$ mesos.
+Oferta Y: $\num{1000}\eur$ a tornar amb una quota de $\num{60}\eur$ durant $24$ mesos.
+Quina fa pagar més en total?
+\solucio
+\textbf{Oferta X:} $12\per\num{95}=\num{1140}\eur$ en total ($\num{140}\eur$
+d'interessos).
+
+\textbf{Oferta Y:} $24\per\num{60}=\num{1440}\eur$ en total ($\num{440}\eur$
+d'interessos).
+
+Tot i tenir una quota més baixa ($\num{60}\eur$ contra $\num{95}\eur$), l'\textbf{oferta
+Y fa pagar molt més} ($\num{1440}\eur$ contra $\num{1140}\eur$) perquè dura el doble de
+temps. La quota baixa enganya.
+\resposta{L'oferta Y ($\num{1440}\eur$) surt més cara que la X ($\num{1140}\eur$), tot
+i la quota més baixa.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Dues ofertes per $\num{800}\eur$: l'oferta A té un TIN del $2,5\%$ mensual;
+        l'oferta B, una TAE del $28\%$. Calcula la TAE de l'A i digues quina és més
+        cara.
+  \item Calcula el \textbf{total a retornar} de cada oferta i digues quina és més cara:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item quota de $\num{120}\eur$ durant $10$ mesos;
+      \item quota de $\num{80}\eur$ durant $18$ mesos.
+    \end{enumerate}
+  \item Una oferta destaca «TIN $1,5\%$ mensual». Calcula'n la TAE. Et sembla un crèdit
+        car o barat comparat amb un préstec personal de banc (TAE típica al voltant del
+        $8$–$10\%$)?
+  \item \textbf{(Decisió justificada)} Una família et porta dues ofertes: A (TAE
+        $45\%$, quota $\num{40}\eur$/mes) i B (TAE $12\%$, quota $\num{55}\eur$/mes).
+        Quina els recomanaries i per què? La quota més baixa és sempre la millor opció?
+  \item \textbf{(Interpretació)} Per què comparar dos crèdits només per la quota mensual
+        pot portar a triar el més car? Quins dos factors amaga la quota?
+  \item \textbf{(La meva llista de comprovacions)} Escriu la teva llista personal de
+        comprovacions davant d'una oferta de crèdit (almenys tres coses que miraràs
+        sempre). Pensa-la com una eina de defensa financera per a tu i per a les
+        famílies que assessoraràs.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{La meva llista de comprovacions davant d'un crèdit} (per tenir sempre a mà):
+\begin{enumerate}[leftmargin=1.6em, itemsep=1pt]
+  \item Mirar la \textbf{TAE} (no el TIN ni la quota).
+  \item Calcular el \textbf{total a retornar} (quota $\times$ nombre de mesos).
+  \item Llegir la \textbf{lletra petita}: comissions, assegurances, terminis.
+  \item \textbf{Comparar} sempre amb almenys una altra oferta abans de decidir.
+\end{enumerate}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item TAE de l'oferta A: $(1,025)^{12}-1\approx 1,3449-1=0,3449=34,5\%$. Com
+        $34,5\%>28\%$, l'\textbf{oferta A és més cara} que la B.
+  \item (a) $10\per\num{120}=\num{1200}\eur$. \quad (b) $18\per\num{80}=\num{1440}\eur$.
+        L'oferta (b) és més cara ($\num{1440}\eur$ contra $\num{1200}\eur$), tot i la
+        quota més baixa.
+  \item TAE $=(1,015)^{12}-1\approx 1,1956-1=0,1956=19,6\%$. És \textbf{car} comparat
+        amb un préstec personal de banc (TAE $8$–$10\%$): gairebé el doble, tot i que el
+        «$1,5\%$ mensual» semblés mínim.
+  \item Resposta oberta. Idea: recomanaria l'\textbf{oferta B} (TAE $12\%$), molt més
+        barata que l'A (TAE $45\%$), encara que la quota sigui una mica més alta. La
+        quota baixa de l'A no compensa: amb una TAE tan alta, el total a retornar serà
+        molt superior. \textbf{No}, la quota més baixa no és sempre la millor opció.
+  \item Comparar només per la quota amaga \textbf{el nombre de mesos} (un crèdit amb
+        quota baixa però molts mesos pot costar més en total) i \textbf{el cost real}
+        (la TAE, amb comissions incloses). Dues quotes baixes poden correspondre a
+        crèdits molt diferents.
+  \item Resposta oberta. Exemples vàlids: mirar la TAE; calcular el total a retornar;
+        llegir la lletra petita (comissions, assegurances); comparar amb una altra
+        oferta; desconfiar de la publicitat que destaca el TIN mensual o una quota molt
+        baixa.
+\end{sollist}
+\end{solucions}

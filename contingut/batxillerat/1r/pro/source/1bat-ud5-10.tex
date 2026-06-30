@@ -1,0 +1,135 @@
+% =====================================================================
+%  1bat-ud5-10.tex  —  SESSIÓ 10: Actualitzem el lloguer: IPC i índexs
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — Actualitzem el lloguer: IPC i índexs}%
+{El propietari apuja el lloguer segons l'IPC: calculem la nova quota i aprenem a llegir una taula de nombres índex i taxes de variació.}
+
+\subsection{Idea clau}
+
+Tornem als percentatges de les primeres sessions, ara en un context plenament real i
+proper a la teva feina futura. Una família usuària dels serveis socials paga un
+lloguer de $\num{650}\eur$ i el propietari l'apuja segons l'\textbf{IPC interanual}.
+Avui calculem la nova quota i, sobretot, aprenem a llegir una \textbf{taula d'IPC}:
+què és un \textbf{nombre índex} i una \textbf{taxa de variació}.
+
+\begin{idea}
+\textbf{IPC, nombres índex i taxa de variació}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{IPC} (índex de preus de consum): mesura com evolucionen, de mitjana,
+        els preus dels productes que consumeix una família.
+  \item \textbf{Nombre índex:} un valor referit a una base $=100$. Si l'IPC passa de
+        $100$ a $108$, els preus han pujat un $8\%$ respecte de la base.
+  \item \textbf{Taxa de variació interanual:} el percentatge que han pujat (o baixat)
+        els preus d'un any respecte de l'anterior.
+  \item \textbf{Actualitzar amb l'IPC:} apujar una quantitat amb l'índex de variació
+        corresponent. Pujar un $3,5\%$ és multiplicar per $1,035$.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la nova quota de lloguer]
+El lloguer és de $\num{650}\eur$ i l'IPC interanual és del $3,5\%$. La nova quota
+s'obté aplicant l'índex de variació $1,035$:
+\[
+\num{650}\per 1,035=\num{672,75}\eur.
+\]
+L'augment mensual és $\num{672,75}-\num{650}=\num{22,75}\eur$. Sembla poc, però al cap
+d'un any són $12\per\num{22,75}=\num{273}\eur$ més que la família ha de pagar només de
+lloguer. Una pujada de l'IPC no és una xifra abstracta: són \textbf{diners reals} cada
+mes.
+\end{exemple}
+
+\begin{exemple}[llegir una taula d'IPC]
+Aquesta taula mostra l'evolució d'un IPC amb base $100$ l'any $2021$:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c c c}
+\toprule
+\textbf{Any} & \textbf{Índex (base 2021)} & \textbf{Variació interanual} \\
+\midrule
+$2021$ & $100,0$ & — \\
+$2022$ & $108,4$ & $+8,4\%$ \\
+$2023$ & $114,2$ & $+5,4\%$ \\
+$2024$ & $117,9$ & $+3,2\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+La columna d'índex es llegeix respecte de la base: el $2024$, l'índex $117,9$ vol dir
+que els preus han pujat un $17,9\%$ \emph{des del $2021$}. La variació
+\textbf{interanual} compara cada any amb l'anterior: del $2023$ al $2024$, per exemple,
+$\dfrac{117,9}{114,2}\approx 1,032$, és a dir un $+3,2\%$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[actualitzar una quota amb l'IPC]
+Un lloguer de $\num{800}\eur$ s'actualitza amb un IPC del $2,8\%$. Calcula la nova
+quota i l'augment anual que suposa.
+\solucio
+Índex de variació: $1+0,028=1,028$. Nova quota:
+\[
+\num{800}\per 1,028=\num{822,4}\eur.
+\]
+Augment mensual: $\num{822,4}-\num{800}=\num{22,4}\eur$; augment anual:
+$12\per\num{22,4}=\num{268,8}\eur$.
+\resposta{Nova quota $\num{822,4}\eur$; $\num{268,8}\eur$ més a l'any.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar nombres índex]
+Si l'IPC d'alimentació passa de $100$ (base) a $112$ en dos anys, quant han pujat els
+preus dels aliments? I si un producte costava $\num{4}\eur$ a la base, quant costa
+ara, de mitjana?
+\solucio
+L'índex $112$ sobre base $100$ vol dir que els preus han pujat un
+$\dfrac{112-100}{100}=12\%$.
+
+Un producte de $\num{4}\eur$ a la base costa ara, de mitjana,
+$\num{4}\per 1,12=\num{4,48}\eur$.
+\resposta{Pujada del $12\%$; el producte de $\num{4}\eur$ passa a $\num{4,48}\eur$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Un lloguer de $\num{700}\eur$ s'actualitza amb un IPC del $4\%$. Calcula la
+        nova quota i l'augment anual.
+  \item Un IPC passa de $100$ (base) a $106,5$. Quant han pujat els preus respecte de
+        la base? Un producte de $\num{20}\eur$ a la base, quant costa ara?
+  \item De la taula d'IPC de l'exemple, calcula la variació interanual del $2021$ al
+        $2022$ a partir dels índexs ($100$ i $108,4$) i comprova que dóna el $+8,4\%$
+        indicat.
+  \item Una pensió de $\num{1100}\eur$ s'actualitza amb un IPC del $3\%$. Quant cobrarà
+        la persona després de l'actualització?
+  \item \textbf{(Interpretació)} L'IPC d'un any és del $0\%$ (els preus no han pujat de
+        mitjana). Què vol dir per a una família? I si l'IPC fos \emph{negatiu}?
+  \item \textbf{(Raonament)} Per què és important, per a un tècnic de serveis a la
+        comunitat, saber interpretar l'IPC i les taxes de variació? Posa un exemple de
+        com aquesta informació pot ajudar a defensar els drets d'una família. (La
+        sessió següent veurem què passa quan el lloguer puja però l'ajut no.)
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item Nova quota: $\num{700}\per 1,04=\num{728}\eur$. Augment mensual $\num{28}\eur$;
+        augment anual $12\per\num{28}=\num{336}\eur$.
+  \item Pujada del $6,5\%$ (índex $106,5$ sobre base $100$). El producte de
+        $\num{20}\eur$ costa ara $\num{20}\per 1,065=\num{21,3}\eur$.
+  \item $\dfrac{108,4}{100}=1,084$, és a dir un $+8,4\%$. Coincideix amb la taula.
+  \item $\num{1100}\per 1,03=\num{1133}\eur$.
+  \item Un IPC del $0\%$ vol dir que, de mitjana, els preus \textbf{no han pujat}
+        respecte de l'any anterior: el poder de compra es manté. Un IPC
+        \textbf{negatiu} (deflació) voldria dir que els preus han \textbf{baixat} de
+        mitjana, de manera que amb els mateixos diners es podria comprar una mica més.
+  \item Resposta oberta. Idea: entendre l'IPC permet comprovar si una actualització de
+        lloguer és correcta, si una pensió o un ajut manté el poder de compra, o si una
+        família està perdent capacitat de pagament. Exemple: detectar que el lloguer
+        d'una família s'ha apujat \emph{per sobre} de l'IPC permetria reclamar-ho i
+        defensar-ne els drets.
+\end{sollist}
+\end{solucions}

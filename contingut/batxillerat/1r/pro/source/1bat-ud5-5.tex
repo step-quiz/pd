@@ -1,0 +1,164 @@
+% =====================================================================
+%  1bat-ud5-5.tex  —  SESSIÓ 5: Consolidació del càlcul percentual
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 5 — Consolidació del càlcul percentual}%
+{Abans d'entrar a la matemàtica financera, assentem el càlcul percentual caçant els errors típics i deixant clar que els índexs es multipliquen.}
+
+\subsection{Idea clau}
+
+Ja sabem construir índexs de variació (sessió 2) i encadenar-los multiplicant
+(sessió 4). Abans de fer el salt a l'interès i als crèdits, avui \textbf{consolidem}
+tot el càlcul percentual, perquè és la base de tota la unitat i una de les mancances
+més habituals de l'ESO. No hi ha matèria nova: es tracta de fer-ho \textbf{bé} i de
+caçar els errors de sempre.
+
+\begin{idea}
+\textbf{Els quatre errors que cacem avui}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Sumar els percentatges encadenats} en comptes de multiplicar els
+        índexs ($+15\%$ i $-10\%$ \emph{no} és $+5\%$).
+  \item \textbf{Confondre el factor:} usar $1,2$ per a un descompte del $20\%$ (és
+        $0,8$) o $0,8$ per a un augment.
+  \item \textbf{Aplicar el segon percentatge sobre la base original} en comptes de
+        sobre el preu ja modificat.
+  \item \textbf{Voler desfer un augment restant el mateix percentatge} (per desfer
+        $\per 1,21$ cal \emph{dividir}, no restar un $21\%$).
+\end{enumerate}
+\textbf{Comprova que el resultat té sentit:} un descompte ha de \emph{baixar} el preu;
+un augment, pujar-lo.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: sumar percentatges]
+Algú calcula així una pujada del $20\%$ seguida d'una del $10\%$ sobre $\num{100}\eur$:
+«$20\%+10\%=30\%$, per tant $\num{100}\per 1,30=\num{130}\eur$». \textbf{És
+incorrecte:} els índexs es multipliquen, no se sumen. El correcte és
+\[
+\num{100}\per 1,20\per 1,10=\num{100}\per 1,32=\num{132}\eur.
+\]
+\textbf{Correcció:} $\num{132}\eur$ (pujada global del $32\%$), no $\num{130}\eur$.
+\end{exemple}
+
+\begin{exemple}[caça l'error: confondre el factor]
+Algú vol aplicar un descompte del $30\%$ a $\num{50}\eur$ i escriu
+$\num{50}\per 1,30=\num{65}\eur$. \textbf{És incorrecte:} ha usat el factor d'un
+\emph{augment}. Un descompte del $30\%$ és multiplicar per $1-0,30=0,70$:
+\[
+\num{50}\per 0,70=\num{35}\eur.
+\]
+\textbf{Pista de sentit:} un descompte ha de \emph{baixar} el preu; $\num{65}\eur$ era
+més car que $\num{50}\eur$, senyal d'error.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[desfer un augment]
+Un servei costa $\num{121}\eur$ amb l'IVA del $21\%$ ja inclòs. Quant costava sense
+IVA?
+\solucio
+Afegir l'IVA va ser multiplicar per $1,21$; per \textbf{desfer-ho}, dividim:
+\[
+\frac{\num{121}}{1,21}=\num{100}\eur.
+\]
+\textbf{Comprovació:} $\num{100}\per 1,21=\num{121}\eur$. (Restar un $21\%$ a
+$\num{121}$ donaria $\num{95,59}\eur$, que és \emph{incorrecte}.)
+\resposta{$\num{100}\eur$ sense IVA (dividint per $1,21$, no restant un $21\%$).}
+\end{exresolt}
+
+\begin{exresolt}[percentatge global d'un encadenament]
+Una prestació social puja un $5\%$ i, l'any següent, un $4\%$. A quin percentatge
+global de pujada equival al cap dels dos anys?
+\solucio
+Multipliquem els índexs:
+\[
+I_{\text{global}}=1,05\per 1,04=1,092.
+\]
+Com $1,092=1+0,092$, la pujada global és del $\mathbf{9,2\%}$ (no del $9\%$ de sumar
+$5+4$). Sobre, per exemple, una prestació de $\num{600}\eur$:
+$\num{600}\per 1,092=\num{655,2}\eur$.
+\resposta{Pujada global del $9,2\%$ ($I_{\text{global}}=1,092$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari: els exercicis 1–4 són la base; el 5 i el 6 són ampliació
+(desfer canvis i percentatge global).}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} En cada cas, digues si és correcte i, si no,
+        corregeix-lo:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item «Un $25\%$ de descompte sobre $\num{80}\eur$: $\num{80}\per 1,25=\num{100}\eur$.»
+      \item «Pujar un $10\%$ i després un $10\%$ és pujar un $20\%$.»
+      \item «Per treure l'IVA del $21\%$ a $\num{242}\eur$, resto el $21\%$:
+            $\num{242}\per 0,79=\num{191,18}\eur$.»
+    \end{enumerate}
+  \item Calcula el preu final amb el factor:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $\num{45}\eur$ amb un descompte del $20\%$;
+      \item $\num{300}\eur$ amb una pujada del $8\%$;
+      \item $\num{90}\eur$ amb l'IVA del $21\%$.
+    \end{enumerate}
+  \item Una factura de $\num{200}\eur$ puja un $10\%$ i després baixa un $15\%$.
+        Calcula el preu final multiplicant els índexs.
+  \item Dos descomptes seguits del $20\%$ i del $25\%$ sobre $\num{160}\eur$. Calcula
+        el preu final i digues a quin descompte global únic equivalen.
+  \item \textbf{(Ampliació — desfer)} Una nòmina, després d'una pujada del $4\%$, és de
+        $\num{1300}\eur$. Quant era \emph{abans} de la pujada? (Pista: divideix.)
+  \item \textbf{(Ampliació — global)} Una nòmina puja un $3\%$ cada any durant dos anys.
+        Escriu l'índex global i digues a quin percentatge global equival. Per què és una
+        mica més que un $6\%$?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació} — marca amb sinceritat com et trobes, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.2cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Construir el factor d'un augment o una disminució & \rule{0.7cm}{0pt} & & \\
+Aplicar un percentatge multiplicant pel factor & & & \\
+Encadenar percentatges multiplicant els índexs & & & \\
+Trobar el percentatge global equivalent & & & \\
+Desfer un canvi (dividint pel factor) & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+\noindent\textbf{Atenció a la diversitat.} Si encara et costa, comença per
+l'\emph{itinerari mínim} (exercicis 1 i 2, amb un sol canvi percentual cada cop) i
+tingues a mà la fitxa «de percentatge a factor i a la inversa»; si ja domines el
+càlcul, fes les \emph{ampliacions} (exercicis 5 i 6, amb encadenaments i desfer canvis).
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{Incorrecte}: un descompte usa el factor $0,75$, no $1,25$;
+        $\num{80}\per 0,75=\num{60}\eur$. \quad
+        (b) \textbf{Incorrecte}: $1,10\per 1,10=1,21$, és a dir una pujada del $21\%$,
+        no del $20\%$. \quad
+        (c) \textbf{Incorrecte}: per treure l'IVA cal \emph{dividir} per $1,21$;
+        $\dfrac{\num{242}}{1,21}=\num{200}\eur$ (no $\num{191,18}\eur$).
+  \item (a) $\num{45}\per 0,80=\num{36}\eur$; \quad
+        (b) $\num{300}\per 1,08=\num{324}\eur$; \quad
+        (c) $\num{90}\per 1,21=\num{108,9}\eur$.
+  \item $\num{200}\per 1,10\per 0,85=\num{200}\per 0,935=\num{187}\eur$.
+  \item $\num{160}\per 0,80\per 0,75=\num{160}\per 0,60=\num{96}\eur$. Com
+        $0,60=1-0,40$, equivalen a un \textbf{descompte global del $40\%$}.
+  \item Per desfer la pujada del $4\%$ ($\per 1,04$), dividim:
+        $\dfrac{\num{1300}}{1,04}=\num{1250}\eur$ abans de la pujada.
+  \item $I_{\text{global}}=1,03\per 1,03=1,03^2=1,0609$, és a dir una pujada global del
+        $\mathbf{6,09\%}$. És una mica més que el $6\%$ de sumar $3+3$ perquè el segon
+        $3\%$ s'aplica sobre una nòmina ja apujada (l'efecte «percentatge sobre
+        percentatge»).
+\end{sollist}
+\end{solucions}

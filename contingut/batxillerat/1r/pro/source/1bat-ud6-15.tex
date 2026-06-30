@@ -1,0 +1,119 @@
+% =====================================================================
+%  1bat-ud6-15.tex  —  SESSIÓ 15: Taller de preparació de la prova
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 15 — Taller de preparació de la prova}%
+{Conèixer l'estructura de la prova i la rúbrica, assajar un simulacre per blocs i fer un pla d'estudi personal.}
+
+\subsection{Idea clau}
+
+Demà tindrem el repàs ben fresc; avui ens hi preparem \textbf{sense sorpreses}. La prova
+de la sessió següent té \textbf{tres blocs}, un per cada criteri que hem treballat (C1,
+C2 i C3). Saber \emph{exactament} què es demana i com es corregeix fa que l'examen deixi
+de ser imprevisible. Després assajarem amb un \textbf{simulacre}.
+
+\begin{idea}
+\textbf{Estructura de la prova} (un bloc per criteri):
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Bloc 1 (C1) — Probabilitat bàsica:} regla de Laplace, succés contrari,
+        les tres formes, unió i intersecció.
+  \item \textbf{Bloc 2 (C2) — Probabilitat condicionada i arbres:} $P(A\mid B)$,
+        diagrames d'arbre i probabilitat total; falsos positius.
+  \item \textbf{Bloc 3 (C3) — Esperança i decisió:} esperança matemàtica i argumentació
+        d'una decisió.
+\end{enumerate}
+\textbf{Es valora}, a més del resultat: la \textbf{interpretació} dins del context
+social i la \textbf{mirada crítica} davant de xifres de risc i jocs d'atzar.
+\end{idea}
+
+\subsection{Rúbrica simplificada}
+
+\noindent Així es corregeix cada bloc (nivells d'assoliment):
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{2.4cm} p{10.2cm}}
+\toprule
+\textbf{Nivell} & \textbf{Què demostra} \\
+\midrule
+\textbf{AE} (excel·lent) & Calcula sense errors i \textbf{interpreta} el resultat dins
+del context de la decisió. \\
+\textbf{AN} (notable) & Calcula correctament amb algun error menor; la interpretació és
+essencialment bona. \\
+\textbf{AS} (suficient) & Fa el procediment bàsic amb alguns errors; la interpretació
+és incompleta. \\
+\textbf{NA} (no assolit) & No identifica el procediment o comet errors que
+n'invaliden el resultat. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Simulacre — un ítem de cada bloc}
+
+\begin{exemple}[com es resol un ítem ben fet, de cap a cap]
+\textbf{Ítem tipus (Bloc 2):} se sap que $P(A\cap B)=0,15$ i $P(B)=0,5$. Un ítem
+\textbf{complet} respon: càlcul \emph{i} interpretació.
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item $P(A\mid B)=\dfrac{0,15}{0,5}=0,3$.
+  \item \textbf{Interpretació:} sabent que ha passat $B$, la probabilitat d'$A$ és del
+        $30\%$. \emph{Aquesta frase d'interpretació és la que distingeix un AE d'un AS.}
+\end{itemize}
+\end{exemple}
+
+\begin{exercicis}
+\textbf{Resol el simulacre amb temps controlat. Un ítem per bloc:}
+\begin{exlist}
+  \item \textbf{(Bloc 1 — C1)} En una baralla de $40$ cartes, calcula (en les tres
+        formes) la probabilitat de treure un as (n'hi ha $4$) i la del seu contrari.
+  \item \textbf{(Bloc 2 — C2)} Un programa: el $70\%$ supera la formació; d'aquests, el
+        $80\%$ troba feina; dels que no la superen, el $40\%$. Dibuixa l'arbre i calcula
+        la probabilitat global de trobar feina.
+  \item \textbf{(Bloc 3 — C3)} En un joc pagues per jugar; guanyes $\num{5}\eur$ (net)
+        amb probabilitat $0,2$ i perds $\num{2}\eur$ amb probabilitat $0,8$. Calcula
+        l'esperança i digues si convé jugar.
+\end{exlist}
+\end{exercicis}
+
+\subsection{Formulari-resum (suport)}
+
+\begin{idea}
+\textbf{Tingues-ho a mà mentre prepares la prova:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Laplace:} $P(A)=\dfrac{\text{favorables}}{\text{possibles}}$ (casos
+        equiprobables).
+  \item \textbf{Contrari:} $P(\overline{A})=1-P(A)$.
+  \item \textbf{Unió:} $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
+  \item \textbf{Condicionada:} $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$.
+  \item \textbf{Arbre:} multiplica al llarg d'una ruta; suma les rutes al mateix
+        resultat.
+  \item \textbf{Esperança:} $E=\sum x_i\, p_i$ (guanys amb el seu signe).
+\end{itemize}
+\end{idea}
+
+\noindent\textbf{Pla d'estudi personal.} A partir de la teva graella d'autoavaluació
+(sessió 3) i de com t'ha anat el simulacre, anota els \textbf{dos o tres tipus
+d'exercici} que has de repassar amb més atenció abans de la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c p{10.5cm}}
+\toprule
+\textbf{\#} & \textbf{Què he de repassar (i com)} \\
+\midrule
+1 & \rule{9.8cm}{0.4pt} \\
+2 & \rule{9.8cm}{0.4pt} \\
+3 & \rule{9.8cm}{0.4pt} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 15 — simulacre}
+\begin{solucions}
+\begin{sollist}
+  \item \textbf{(Bloc 1)} $P(\text{as})=\dfrac{4}{40}=\dfrac{1}{10}=0,1=10\%$. Contrari:
+        $P(\overline{\text{as}})=1-0,1=0,9=90\%$.
+  \item \textbf{(Bloc 2)} Rutes cap a «feina»: $0,7\per 0,8=0,56$ i $0,3\per 0,4=0,12$.
+        $P(\text{feina})=0,56+0,12=0,68$ ($68\%$).
+  \item \textbf{(Bloc 3)} $E=5\per 0,2+(-2)\per 0,8=1-1,6=-0,6\eur$. \textbf{No} convé
+        jugar: de mitjana es perden $60$ cèntims per partida.
+\end{sollist}
+\end{solucions}

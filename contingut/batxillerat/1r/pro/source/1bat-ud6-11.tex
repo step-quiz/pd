@@ -1,0 +1,137 @@
+% =====================================================================
+%  1bat-ud6-11.tex  —  SESSIÓ 11: L'esperança matemàtica: jocs justos i loteries
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 11 — L'esperança matemàtica: jocs justos i loteries}%
+{Quan repetim moltes vegades un joc d'atzar amb premis, quant guanyem o perdem de mitjana per partida? L'esperança matemàtica hi respon.}
+
+\subsection{Idea clau}
+
+Tanquem la part de càlcul de la unitat amb una eina que connecta la probabilitat amb la
+\textbf{presa de decisions econòmiques}: l'\textbf{esperança matemàtica}. Respon a una
+pregunta molt pràctica: si un joc (o una loteria, o una aposta) es repetís moltíssimes
+vegades, \emph{quant guanyaríem o perdríem de mitjana} cada vegada? És la matemàtica que
+hi ha darrere de per què «la banca sempre guanya».
+
+\begin{idea}
+\textbf{L'esperança matemàtica}\\
+Si un experiment té resultats amb \textbf{guany} (o pèrdua) $x_1, x_2, \dots, x_n$ i
+probabilitats $p_1, p_2, \dots, p_n$, l'esperança és:
+\[
+E = x_1 p_1 + x_2 p_2 + \cdots + x_n p_n = \sum x_i\, p_i.
+\]
+\textbf{Com es llegeix:} és el guany \textbf{mitjà per partida} a la llarga.
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item $E>0$ — el joc, de mitjana, ens \textbf{afavoreix}.
+  \item $E<0$ — de mitjana, hi \textbf{perdem} (és el cas de loteries i casinos).
+  \item $E=0$ — \textbf{joc just} (ni guanyem ni perdem a la llarga).
+\end{itemize}
+\textbf{Compte:} els guanys es posen amb el seu \textbf{signe} (positiu si guanyem,
+negatiu si paguem o perdem).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[un joc amb un dau]
+Paguem $\num{1}\eur$ per tirar un dau. Si surt un $6$, ens en donen $\num{6}\eur$; si
+no, no ens en donen res. El \textbf{guany net} és: $+\num{5}\eur$ si surt $6$ (cobrem
+$6$ però havíem pagat $1$) i $-\num{1}\eur$ si no (perdem el que vam pagar). Amb
+$P(6)=\frac{1}{6}$ i $P(\text{no }6)=\frac{5}{6}$:
+\[
+E = (+5)\per\frac{1}{6} + (-1)\per\frac{5}{6} = \frac{5}{6}-\frac{5}{6}=0.
+\]
+$E=0$: és un \textbf{joc just}. A la llarga, ni guanyem ni perdem.
+\end{exemple}
+
+\begin{exemple}[per què la loteria no compensa]
+Un bitllet costa $\num{1}\eur$. Hi ha un premi de $\num{1000}\eur$ amb probabilitat
+$\frac{1}{\num{2000}}$ (i res en cas contrari). El guany net és $+\num{999}\eur$ si toca
+($\num{1000}$ menys $\num{1}$ del bitllet) i $-\num{1}\eur$ si no:
+\[
+E = (+999)\per\frac{1}{\num{2000}} + (-1)\per\frac{\num{1999}}{\num{2000}}
+= \frac{999-\num{1999}}{\num{2000}}=\frac{-\num{1000}}{\num{2000}}=-0,5.
+\]
+$E=-0,5\eur$: de mitjana, \textbf{perdem $\num{0,5}\eur$ per bitllet}. Per això la
+loteria és un mal negoci a la llarga (l'organitzador es queda, de mitjana, la meitat del
+preu).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[decidir si un joc convé]
+En un joc paguem $\num{2}\eur$. Traiem una carta d'una baralla de $40$; si és figura
+($12$ cartes), ens en donen $\num{5}\eur$; si no, res. Calcula l'esperança i digues si
+convé jugar.
+\solucio
+\textbf{Guany net:} $+\num{3}\eur$ si surt figura ($5$ menys els $2$ pagats);
+$-\num{2}\eur$ si no. Probabilitats: $P(\text{figura})=\frac{12}{40}=0,3$;
+$P(\text{no})=0,7$.
+\[
+E = (+3)\per 0,3 + (-2)\per 0,7 = 0,9 - 1,4 = -0,5.
+\]
+$E=-\num{0,5}\eur$: de mitjana es perd mig euro per partida. \textbf{No convé} jugar a
+la llarga.
+\resposta{$E=-\num{0,5}\eur$; no convé jugar.}
+\end{exresolt}
+
+\begin{exresolt}[esperança d'una rifa solidària]
+Una entitat ven $\num{500}$ números a $\num{2}\eur$ cadascun per a una rifa amb un únic
+premi de $\num{300}\eur$. Quina és l'esperança per a qui compra un número? Té sentit
+comprar-lo igualment?
+\solucio
+\textbf{Guany net:} $+\num{298}\eur$ si toca ($300$ menys els $2$); $-\num{2}\eur$ si no.
+$P(\text{toca})=\frac{1}{500}$; $P(\text{no})=\frac{499}{500}$.
+\[
+E = 298\per\frac{1}{500} + (-2)\per\frac{499}{500}
+= \frac{298-998}{500}=\frac{-700}{500}=-1,4.
+\]
+$E=-\num{1,4}\eur$: de mitjana es «perd» $\num{1,4}\eur$. Tot i així \textbf{pot tenir
+sentit} comprar-lo: la diferència és un \textbf{donatiu} a l'entitat (la rifa és
+solidària), de manera que la decisió no es pren només per l'esperança econòmica.
+\resposta{$E=-\num{1,4}\eur$; econòmicament és desfavorable, però pot tenir sentit com a
+donatiu solidari.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item En un joc, guanyes $\num{10}\eur$ amb probabilitat $0,2$ i perds $\num{3}\eur$
+        amb probabilitat $0,8$. Calcula l'esperança. És favorable?
+  \item Paguem $\num{1}\eur$ per tirar una moneda: si surt cara, ens en donen
+        $\num{2}\eur$; si creu, res. Calcula el guany net de cada cas i l'esperança. És
+        un joc just?
+  \item Una loteria ven bitllets a $\num{3}\eur$ amb un premi de $\num{1500}\eur$ i
+        probabilitat $\frac{1}{1000}$. Calcula l'esperança per bitllet.
+  \item Un joc té tres resultats: guanyar $\num{5}\eur$ ($p=0,3$), guanyar $\num{1}\eur$
+        ($p=0,2$) i perdre $\num{4}\eur$ ($p=0,5$). Calcula l'esperança.
+  \item \textbf{(Interpretació)} Si un joc té $E=0$, vol dir que en una partida concreta
+        no guanyaràs ni perdràs res? Què vol dir exactament «$E=0$»?
+  \item \textbf{(Raonament)} Per què les empreses de loteria i els casinos dissenyen els
+        seus jocs perquè l'esperança del jugador sigui \textbf{negativa}? Com es
+        relaciona això amb la frase «la banca sempre guanya»?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item $E = 10\per 0,2 + (-3)\per 0,8 = 2 - 2,4 = -0,4\eur$. \textbf{No} és favorable
+        (de mitjana es perden $\num{0,4}\eur$).
+  \item Guany net: $+\num{1}\eur$ si cara ($2$ menys $1$), $-\num{1}\eur$ si creu.
+        $E = (+1)\per 0,5 + (-1)\per 0,5 = 0$. És un \textbf{joc just}.
+  \item Guany net: $+\num{1497}\eur$ si toca; $-\num{3}\eur$ si no.
+        $E = 1497\per\frac{1}{1000} + (-3)\per\frac{999}{1000}=\frac{1497-2997}{1000}
+        =\frac{-1500}{1000}=-1,5\eur$.
+  \item $E = 5\per 0,3 + 1\per 0,2 + (-4)\per 0,5 = 1,5 + 0,2 - 2 = -0,3\eur$.
+  \item No: en una partida concreta sí que pots guanyar o perdre. «$E=0$» vol dir que
+        \textbf{a la llarga}, repetint moltíssimes partides, el guany mitjà per partida
+        tendeix a zero (els guanys i les pèrdues es compensen).
+  \item Perquè amb una esperança negativa per al jugador, \textbf{a la llarga}
+        l'empresa guanya de mitjana la diferència en cada jugada; com més partides es
+        juguen, més s'apropa el resultat real a aquesta mitjana favorable a la banca.
+        Per això «la banca sempre guanya»: no en cada jugada, però sí en el conjunt de
+        moltíssimes.
+\end{sollist}
+\end{solucions}

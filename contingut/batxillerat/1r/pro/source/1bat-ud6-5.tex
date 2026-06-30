@@ -1,0 +1,133 @@
+% =====================================================================
+%  1bat-ud6-5.tex  —  SESSIÓ 5: Probabilitat condicionada: quan una cosa depèn d'una altra
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 5 — Probabilitat condicionada: quan una cosa depèn d'una altra}%
+{Una probabilitat pot canviar quan ja sabem alguna cosa: introduïm la probabilitat condicionada i la distinció entre successos dependents i independents.}
+
+\subsection{Idea clau}
+
+Arribem al concepte més delicat de la unitat (per això la programació la situa al
+tercer trimestre): la \textbf{probabilitat condicionada}. La idea és intuïtiva: saber
+una cosa pot \textbf{canviar} la probabilitat d'una altra. Per exemple, la probabilitat
+que un usuari trobi feina canvia si sabem que ha completat un programa de formació.
+
+\begin{idea}
+\textbf{Probabilitat condicionada}\\
+$P(A\mid B)$ es llegeix «probabilitat d'$A$ \textbf{sabent que} ja ha passat $B$». La
+fórmula:
+\[
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}.
+\]
+\textbf{Dependents o independents:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Dependents:} saber $B$ \emph{canvia} la probabilitat d'$A$ (és a dir,
+        $P(A\mid B)\neq P(A)$).
+  \item \textbf{Independents:} saber $B$ \emph{no} canvia res ($P(A\mid B)=P(A)$). En
+        aquest cas, $P(A\cap B)=P(A)\per P(B)$.
+\end{itemize}
+\textbf{El més difícil no és el càlcul, sinó llegir bé l'enunciat:} identificar quina
+informació es dóna com a \emph{ja coneguda}.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la probabilitat que canvia amb la informació]
+En un programa, de cada $100$ joves, $70$ completen la formació i $30$ l'abandonen.
+\textbf{Dels que completen la formació}, $56$ troben feina; \textbf{dels que
+abandonen}, només $9$. La probabilitat de trobar feina canvia segons el que sabem:
+\[
+P(\text{feina}\mid\text{completa})=\frac{56}{70}=0,8=80\%,\qquad
+P(\text{feina}\mid\text{abandona})=\frac{9}{30}=0,3=30\%.
+\]
+Saber si ha completat la formació \textbf{canvia molt} la probabilitat de trobar feina
+($80\%$ contra $30\%$): els dos successos són \textbf{dependents}.
+\end{exemple}
+
+\begin{exemple}[dependents contra independents]
+\textbf{Dependents:} treure dues cartes d'una baralla \emph{sense tornar la primera}.
+La probabilitat de la segona depèn de quina va sortir primer (queden menys cartes).
+
+\textbf{Independents:} tirar una moneda i després un dau. Que surti cara \textbf{no}
+afecta gens el que farà el dau: $P(\text{6}\mid\text{cara})=P(\text{6})=\frac{1}{6}$.
+Quan dos successos no s'afecten, són independents.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[calcular una condicionada amb la fórmula]
+Se sap que $P(A\cap B)=0,2$ i $P(B)=0,5$. Calcula $P(A\mid B)$.
+\solucio
+Apliquem la fórmula:
+\[
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{0,2}{0,5}=0,4=40\%.
+\]
+Sabent que ha passat $B$, la probabilitat d'$A$ és del $40\%$.
+\resposta{$P(A\mid B)=0,4=40\%$.}
+\end{exresolt}
+
+\begin{exresolt}[llegir l'enunciat: quina és la condició]
+En un casal, $P(\text{fa esport})=0,5$ i $P(\text{fa esport i música})=0,15$. Quina és
+la probabilitat que una persona faci esport \textbf{sabent que} fa música, si
+$P(\text{música})=0,3$?
+\solucio
+Ens demanen $P(\text{esport}\mid\text{música})$. La condició («sabent que») és
+\textbf{música}, de manera que va al denominador:
+\[
+P(\text{esport}\mid\text{música})=\frac{P(\text{esport i música})}{P(\text{música})}
+=\frac{0,15}{0,3}=0,5=50\%.
+\]
+En aquest cas $P(\text{esport}\mid\text{música})=0,5=P(\text{esport})$: saber que fa
+música \emph{no} canvia la probabilitat de fer esport, de manera que són
+\textbf{independents}.
+\resposta{$0,5$; a més, esport i música són independents.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Amb $P(A\cap B)=0,12$ i $P(B)=0,4$, calcula $P(A\mid B)$.
+  \item Amb $P(A\cap B)=0,3$ i $P(A)=0,6$, calcula $P(B\mid A)$. (Compte: ara la
+        condició és $A$.)
+  \item En un grup, $P(\text{treballa})=0,6$ i $P(\text{treballa i estudia})=0,18$.
+        Calcula $P(\text{estudia}\mid\text{treballa})$.
+  \item Digues si cada parella de successos és \textbf{dependent} o \textbf{independent}
+        i justifica-ho:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item tirar dos daus diferents;
+      \item treure dues boles d'una bossa sense tornar la primera;
+      \item que plogui i que una persona porti paraigua.
+    \end{enumerate}
+  \item \textbf{(Interpretació)} $P(A\mid B)$ i $P(B\mid A)$ són sempre iguals? Posa un
+        exemple de l'àmbit social on \emph{no} ho siguin (pensa: «probabilitat de ser
+        usuari del servei sabent que és menor» contra «probabilitat de ser menor sabent
+        que és usuari»).
+  \item \textbf{(Raonament)} Per què, en un problema de probabilitat condicionada, la
+        part més difícil sol ser \textbf{llegir l'enunciat} i no fer el càlcul? Quina
+        paraula de l'enunciat sol indicar la condició?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item $P(A\mid B)=\dfrac{0,12}{0,4}=0,3=30\%$.
+  \item $P(B\mid A)=\dfrac{P(A\cap B)}{P(A)}=\dfrac{0,3}{0,6}=0,5=50\%$.
+  \item $P(\text{estudia}\mid\text{treballa})=\dfrac{0,18}{0,6}=0,3=30\%$.
+  \item (a) \textbf{Independents}: el resultat d'un dau no afecta l'altre. \quad
+        (b) \textbf{Dependents}: en no tornar la primera bola, canvien els casos
+        possibles per a la segona. \quad (c) \textbf{Dependents}: si plou, és més
+        probable que porti paraigua; saber una cosa canvia la probabilitat de l'altra.
+  \item \textbf{No}, en general $P(A\mid B)\neq P(B\mid A)$. Exemple: la probabilitat de
+        ser usuari del servei \emph{sabent que} és menor pot ser baixa (pocs menors el
+        fan servir), mentre que la probabilitat de ser menor \emph{sabent que} és
+        usuari pot ser alta (si el servei és sobretot per a joves). Són preguntes
+        diferents.
+  \item Resposta oberta. Idea: el càlcul és una simple divisió; la dificultat és
+        identificar \textbf{quina informació es dóna com a coneguda} (la condició, que
+        va al denominador) i quina és la que es pregunta. La paraula que sol indicar la
+        condició és «\textbf{sabent que}» (o «si», «donat que», «entre els que\dots»).
+\end{sollist}
+\end{solucions}

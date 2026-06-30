@@ -1,0 +1,113 @@
+% =====================================================================
+%  1bat-ud6-6.tex  —  SESSIÓ 6: Gimnàstica de conjunts: probabilitats condicionades
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 6 — Gimnàstica de conjunts: probabilitats condicionades}%
+{Mecanitzem la fórmula de la condicionada: calcular-la en tots dos sentits i comprovar si dos successos són independents.}
+
+\subsection{Idea clau}
+
+Completem l'Activitat 3 amb la \textbf{mecanització} de les probabilitats
+condicionades, ja introduïdes de manera intuïtiva a la sessió 5. Avui, amb exercicis
+breus i simbòlics, automatitzem la fórmula i una comprovació clau: si dos successos són
+\textbf{independents}.
+
+\begin{idea}
+\textbf{Condicionada en tots dos sentits i independència}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{La fórmula, en els dos sentits:}
+        \[
+        P(A\mid B)=\frac{P(A\cap B)}{P(B)},\qquad
+        P(B\mid A)=\frac{P(A\cap B)}{P(A)}.
+        \]
+        \textbf{Compte:} no és el mateix $P(A\mid B)$ que $P(B\mid A)$; canvia el
+        denominador.
+  \item \textbf{Test d'independència:} $A$ i $B$ són independents si
+        \[
+        P(A\cap B)=P(A)\per P(B).
+        \]
+        Si es compleix, saber-ne un no canvia la probabilitat de l'altre.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la mateixa intersecció, dues condicionades]
+Se sap que $P(A)=0,6$, $P(B)=0,5$ i $P(A\cap B)=0,2$. Les dues condicionades:
+\[
+P(A\mid B)=\frac{0,2}{0,5}=0,4,\qquad
+P(B\mid A)=\frac{0,2}{0,6}\approx 0,33.
+\]
+Surten \textbf{diferents} perquè el denominador (la condició) és diferent. La pregunta
+«$A$ sabent $B$» no és la mateixa que «$B$ sabent $A$».
+\end{exemple}
+
+\begin{exemple}[comprovar la independència]
+Amb $P(A)=0,5$, $P(B)=0,4$ i $P(A\cap B)=0,2$, són independents? Apliquem el test:
+\[
+P(A)\per P(B)=0,5\per 0,4=0,2=P(A\cap B).
+\]
+Com que coincideixen, $A$ i $B$ \textbf{són independents}: saber-ne un no canvia la
+probabilitat de l'altre (de fet, $P(A\mid B)=\frac{0,2}{0,4}=0,5=P(A)$).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[les dues condicionades i el test]
+Se sap que $P(A)=0,4$, $P(B)=0,5$ i $P(A\cap B)=0,1$. Calcula $P(A\mid B)$ i
+$P(B\mid A)$, i digues si $A$ i $B$ són independents.
+\solucio
+\[
+P(A\mid B)=\frac{0,1}{0,5}=0,2,\qquad P(B\mid A)=\frac{0,1}{0,4}=0,25.
+\]
+\textbf{Test d'independència:} $P(A)\per P(B)=0,4\per 0,5=0,2$, però $P(A\cap B)=0,1$.
+Com que $0,2\neq 0,1$, \textbf{no} són independents (són \textbf{dependents}).
+\resposta{$P(A\mid B)=0,2$; $P(B\mid A)=0,25$; són dependents.}
+\end{exresolt}
+
+\begin{exresolt}[de la condicionada a la intersecció]
+Se sap que $P(B)=0,4$ i $P(A\mid B)=0,3$. Calcula $P(A\cap B)$.
+\solucio
+Aïllem la intersecció de la fórmula de la condicionada
+($P(A\mid B)=\frac{P(A\cap B)}{P(B)}$), multiplicant per $P(B)$:
+\[
+P(A\cap B)=P(A\mid B)\per P(B)=0,3\per 0,4=0,12.
+\]
+\resposta{$P(A\cap B)=0,12$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Amb $P(A)=0,5$, $P(B)=0,6$ i $P(A\cap B)=0,3$, calcula $P(A\mid B)$ i
+        $P(B\mid A)$.
+  \item Amb $P(A)=0,2$, $P(B)=0,5$ i $P(A\cap B)=0,1$, comprova si $A$ i $B$ són
+        independents (test $P(A)\per P(B)$).
+  \item Amb $P(B)=0,5$ i $P(A\mid B)=0,4$, calcula $P(A\cap B)$.
+  \item Amb $P(A)=0,7$ i $P(B\mid A)=0,2$, calcula $P(A\cap B)$.
+  \item \textbf{(Compte amb l'ordre)} Se sap que $P(A\cap B)=0,15$, $P(A)=0,3$ i
+        $P(B)=0,5$. Calcula $P(A\mid B)$ i $P(B\mid A)$ i comprova que surten diferents.
+        Quin és més gran i per què?
+  \item \textbf{(Raonament)} Si dos successos són \textbf{independents}, què val
+        $P(A\mid B)$ en funció de $P(A)$? Comprova-ho amb l'exemple
+        $P(A)=0,5$, $P(B)=0,4$, $P(A\cap B)=0,2$.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item $P(A\mid B)=\dfrac{0,3}{0,6}=0,5$; $P(B\mid A)=\dfrac{0,3}{0,5}=0,6$.
+  \item $P(A)\per P(B)=0,2\per 0,5=0,1=P(A\cap B)$: coincideixen, de manera que $A$ i
+        $B$ \textbf{són independents}.
+  \item $P(A\cap B)=P(A\mid B)\per P(B)=0,4\per 0,5=0,2$.
+  \item $P(A\cap B)=P(B\mid A)\per P(A)=0,2\per 0,7=0,14$.
+  \item $P(A\mid B)=\dfrac{0,15}{0,5}=0,3$; $P(B\mid A)=\dfrac{0,15}{0,3}=0,5$. Surten
+        diferents. És més gran $P(B\mid A)=0,5$ perquè té un denominador més petit
+        ($P(A)=0,3<P(B)=0,5$): dividir per un nombre més petit dóna un resultat més gran.
+  \item Si són independents, $P(A\mid B)=P(A)$ (saber $B$ no canvia res). Comprovació:
+        $P(A\mid B)=\dfrac{0,2}{0,4}=0,5=P(A)$. Es compleix.
+\end{sollist}
+\end{solucions}

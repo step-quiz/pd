@@ -1,0 +1,120 @@
+% =====================================================================
+%  1bat-ud6-14.tex  —  SESSIÓ 14: Repàs global i síntesi (estacions)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 14 — Repàs global i síntesi (estacions)}%
+{Repàs actiu de tota la unitat per quatre estacions, una per bloc, i un mapa final que connecta cada eina amb la presa de decisions.}
+
+\subsection{Idea clau}
+
+Avui repassem \textbf{tota la unitat} de manera activa. Hi ha \textbf{quatre estacions},
+una per cada bloc treballat. Rotareu per totes amb temps controlat (uns $10$ minuts cada
+una), de manera que tornareu a tocar tots els continguts en contextos diferents. Al
+final, construirem entre tots un \textbf{mapa de la unitat}.
+
+\begin{idea}
+\textbf{Les quatre estacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Probabilitat simple:} regla de Laplace, succés contrari i les tres
+        formes (fracció, decimal, percentatge).
+  \item \textbf{Conjunts i condicionada:} unió, intersecció i $P(A\mid B)$.
+  \item \textbf{Arbres:} probabilitat total d'un procés de diverses etapes.
+  \item \textbf{Esperança:} guany mitjà d'un joc i decisió.
+\end{enumerate}
+\textbf{Consell:} a cada estació, abans de calcular, pregunta't \emph{quina} decisió
+ajuda a prendre el resultat.
+\end{idea}
+
+\subsection{Les estacions}
+
+\begin{exemple}[Estació 1 — probabilitat simple]
+En una baralla de $40$ cartes, calcula la probabilitat de treure un rei (n'hi ha $4$) i
+la de \textbf{no} treure'n, en les tres formes.
+\end{exemple}
+
+\begin{exemple}[Estació 3 — arbre]
+Un procés: el $60\%$ supera la fase 1; d'aquests, el $70\%$ continua; dels que no la
+superen, el $20\%$ continua. Calcula la probabilitat de continuar.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[model de l'Estació 1]
+Probabilitat de treure rei i de no treure'n, d'una baralla de $40$.
+\solucio
+$P(\text{rei})=\dfrac{4}{40}=\dfrac{1}{10}=0,1=10\%$. Contrari:
+$P(\overline{\text{rei}})=1-0,1=0,9=90\%$.
+\resposta{$P(\text{rei})=\frac{1}{10}=0,1=10\%$; no rei $=0,9=90\%$.}
+\end{exresolt}
+
+\begin{exresolt}[model de l'Estació 3]
+Per a l'arbre de l'Estació 3, calcula la probabilitat de continuar.
+\solucio
+Dues rutes cap a «continua»: $0,6\per 0,7=0,42$ i $0,4\per 0,2=0,08$.
+\[
+P(\text{continua})=0,42+0,08=0,5.
+\]
+\resposta{$P(\text{continua})=0,5$ ($50\%$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Una tasca per estació. Rota i resol-les totes.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Estació 1 — probabilitat simple)} En tirar un dau, calcula (en les tres
+        formes) la probabilitat de treure un múltiple de $3$ i la del seu contrari.
+  \item \textbf{(Estació 2 — conjunts i condicionada)} Amb $P(A)=0,5$, $P(B)=0,4$ i
+        $P(A\cap B)=0,2$, calcula $P(A\cup B)$ i $P(A\mid B)$.
+  \item \textbf{(Estació 3 — arbre)} Un programa: el $80\%$ acaba la formació; d'aquests,
+        el $60\%$ troba feina; dels que no l'acaben, el $25\%$. Calcula la probabilitat
+        global de trobar feina.
+  \item \textbf{(Estació 4 — esperança)} Un joc: guanyes $\num{4}\eur$ amb probabilitat
+        $0,25$ i perds $\num{1}\eur$ amb probabilitat $0,75$. Calcula l'esperança. És
+        favorable?
+  \item \textbf{(Mapa de la unitat)} Completa, amb les teves paraules, la connexió de
+        cada eina amb la decisió que ajuda a prendre:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{4.8cm} p{7.8cm}}
+        \toprule
+        \textbf{Eina} & \textbf{Quina decisió ajuda a prendre} \\
+        \midrule
+        Regla de Laplace & \rule{7.2cm}{0.4pt} \\
+        Probabilitat condicionada & \rule{7.2cm}{0.4pt} \\
+        Diagrama d'arbre & \rule{7.2cm}{0.4pt} \\
+        Falsos positius & \rule{7.2cm}{0.4pt} \\
+        Esperança matemàtica & \rule{7.2cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Síntesi)} En una frase per bloc, resumeix què has après a la unitat:
+        quantificar l'atzar, encadenar probabilitats, no deixar-te enganyar pels falsos
+        positius i decidir amb l'esperança.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item Múltiples de $3$ en un dau: $\{3,6\}$, $2$ casos.
+        $P=\frac{2}{6}=\frac{1}{3}\approx 0,33=33,3\%$. Contrari:
+        $1-\frac{1}{3}=\frac{2}{3}\approx 0,67=66,7\%$.
+  \item $P(A\cup B)=0,5+0,4-0,2=0,7$. $P(A\mid B)=\dfrac{0,2}{0,4}=0,5$.
+  \item Rutes cap a «feina»: $0,8\per 0,6=0,48$ i $0,2\per 0,25=0,05$.
+        $P(\text{feina})=0,48+0,05=0,53$ ($53\%$).
+  \item $E=4\per 0,25+(-1)\per 0,75=1-0,75=0,25\eur$. És \textbf{favorable} (de mitjana
+        es guanyen $25$ cèntims per partida).
+  \item Resposta oberta. Idees: \emph{Laplace} $\rightarrow$ quantificar un risc o
+        oportunitat; \emph{condicionada} $\rightarrow$ actualitzar amb informació nova;
+        \emph{arbre} $\rightarrow$ avaluar processos de diverses etapes; \emph{falsos
+        positius} $\rightarrow$ no confondre un indici amb una certesa; \emph{esperança}
+        $\rightarrow$ decidir què surt a compte a la llarga.
+  \item Resposta oberta. Exemple: «He après a \emph{quantificar} l'atzar amb la regla de
+        Laplace, a \emph{encadenar} probabilitats amb arbres i condicionades, a \emph{no
+        deixar-me enganyar} pels falsos positius i a \emph{decidir} amb l'esperança
+        matemàtica.»
+\end{sollist}
+\end{solucions}

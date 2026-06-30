@@ -1,0 +1,124 @@
+% =====================================================================
+%  1bat-ud6-4.tex  —  SESSIÓ 4: Gimnàstica de conjunts: unió, intersecció, contrari
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 4 — Gimnàstica de conjunts: unió, intersecció, contrari}%
+{Mecanitzem el llenguatge dels conjunts aplicat a la probabilitat: que passi A o B, que passin tots dos, que no passi A.}
+
+\subsection{Idea clau}
+
+Comencem l'Activitat 3 amb la \textbf{mecànica} que evitarà errors quan els problemes
+tinguin molt de text. Avui treballem el vocabulari dels conjunts aplicat a la
+probabilitat —\textbf{unió}, \textbf{intersecció} i \textbf{contrari}— amb exercicis
+breus i simbòlics, perquè els automatismes esdevinguin sòlids.
+
+\begin{idea}
+\textbf{Operacions amb successos}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Unió} $A\cup B$ — «que passi $A$ \textbf{o} $B$» (un, l'altre o tots dos).
+        \[
+        P(A\cup B)=P(A)+P(B)-P(A\cap B).
+        \]
+  \item \textbf{Intersecció} $A\cap B$ — «que passin $A$ \textbf{i} $B$ alhora».
+  \item \textbf{Contrari} $\overline{A}$ — «que \textbf{no} passi $A$»: \quad
+        $P(\overline{A})=1-P(A)$.
+\end{itemize}
+\textbf{El detall clau de la unió:} es resta la intersecció $P(A\cap B)$ perquè, si no,
+la part comuna es comptaria \textbf{dues vegades}. Si $A$ i $B$ no poden passar alhora
+(\emph{incompatibles}, $P(A\cap B)=0$), la unió és simplement $P(A)+P(B)$.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[per què es resta la intersecció]
+En tirar un dau, sigui $A=$ «sortir parell» ($\{2,4,6\}$) i $B=$ «sortir múltiple de
+$3$» ($\{3,6\}$). El $6$ és a \textbf{tots dos}. Si sumem sense més:
+$P(A)+P(B)=\frac{3}{6}+\frac{2}{6}=\frac{5}{6}$, però hem comptat el $6$ \emph{dues
+vegades}. La intersecció és $A\cap B=\{6\}$, $P(A\cap B)=\frac{1}{6}$. Per tant:
+\[
+P(A\cup B)=\frac{3}{6}+\frac{2}{6}-\frac{1}{6}=\frac{4}{6}=\frac{2}{3}.
+\]
+(Els casos de la unió són $\{2,3,4,6\}$, efectivament $4$ de $6$.)
+\end{exemple}
+
+\begin{exemple}[unió de successos incompatibles]
+En treure una carta, $A=$ «que sigui copa» i $B=$ «que sigui espasa» \textbf{no} poden
+passar alhora (una carta no és de dos pals): són \emph{incompatibles}, $P(A\cap B)=0$.
+Aleshores la unió és la suma directa:
+\[
+P(A\cup B)=P(A)+P(B)=\frac{10}{40}+\frac{10}{40}=\frac{20}{40}=\frac{1}{2}.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[unió amb dades donades]
+Se sap que $P(A)=0,5$, $P(B)=0,4$ i $P(A\cap B)=0,2$. Calcula $P(A\cup B)$ i
+$P(\overline{A})$.
+\solucio
+\textbf{Unió:}
+\[
+P(A\cup B)=P(A)+P(B)-P(A\cap B)=0,5+0,4-0,2=0,7.
+\]
+\textbf{Contrari d'$A$:}
+\[
+P(\overline{A})=1-P(A)=1-0,5=0,5.
+\]
+\resposta{$P(A\cup B)=0,7$; $P(\overline{A})=0,5$.}
+\end{exresolt}
+
+\begin{exresolt}[traduir un enunciat a operacions]
+En un grup, $P(\text{fa esport})=0,6$, $P(\text{fa música})=0,3$ i
+$P(\text{fa totes dues})=0,1$. Quina és la probabilitat que una persona faci
+\textbf{esport o música}? I que \textbf{no} faci esport?
+\solucio
+«Esport o música» és la \textbf{unió}:
+\[
+P=0,6+0,3-0,1=0,8.
+\]
+«No fa esport» és el \textbf{contrari}:
+\[
+P=1-0,6=0,4.
+\]
+\resposta{Esport o música $=0,8$; no fa esport $=0,4$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Amb $P(A)=0,7$, $P(B)=0,5$ i $P(A\cap B)=0,3$, calcula: (a) $P(A\cup B)$;
+        (b) $P(\overline{A})$; (c) $P(\overline{B})$.
+  \item En tirar un dau, sigui $A=$ «parell» i $B=$ «més gran que $3$». Escriu els casos
+        de cada succés, de la intersecció i de la unió, i calcula $P(A\cup B)$.
+  \item Dos successos incompatibles tenen $P(A)=0,25$ i $P(B)=0,4$. Quant val
+        $P(A\cap B)$? I $P(A\cup B)$?
+  \item En un grup, $P(\text{té gos})=0,4$, $P(\text{té gat})=0,3$ i
+        $P(\text{té tots dos})=0,1$. Calcula la probabilitat que una persona tingui
+        \textbf{gos o gat}, i la que \textbf{no} tingui gos.
+  \item \textbf{(Compte)} Un company calcula $P(A\cup B)=P(A)+P(B)$ i li surt $1,1$.
+        Quin error ha comès? Per què el resultat ja avisa que està malament?
+  \item \textbf{(Raonament)} Explica, amb un exemple propi, per què en la unió cal restar
+        la intersecció. Quan \emph{no} cal restar-la?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $P(A\cup B)=0,7+0,5-0,3=0,9$; (b) $P(\overline{A})=1-0,7=0,3$; (c)
+        $P(\overline{B})=1-0,5=0,5$.
+  \item $A=\{2,4,6\}$, $B=\{4,5,6\}$, $A\cap B=\{4,6\}$, $A\cup B=\{2,4,5,6\}$.
+        $P(A\cup B)=\frac{3}{6}+\frac{3}{6}-\frac{2}{6}=\frac{4}{6}=\frac{2}{3}\approx 0,67$.
+  \item Incompatibles: $P(A\cap B)=0$. Unió: $P(A\cup B)=0,25+0,4=0,65$.
+  \item Gos o gat: $0,4+0,3-0,1=0,6$. No té gos: $1-0,4=0,6$.
+  \item Ha sumat \textbf{sense restar la intersecció} (i els successos no eren
+        incompatibles). El resultat $1,1$ avisa que està malament perquè \textbf{cap
+        probabilitat pot superar $1$}.
+  \item Resposta oberta. Idea: cal restar la intersecció perquè els elements que són a
+        \emph{tots dos} successos es comptarien dues vegades en sumar. \textbf{No} cal
+        restar-la quan els successos són \textbf{incompatibles} (no poden passar alhora),
+        perquè llavors la intersecció és buida ($P(A\cap B)=0$).
+\end{sollist}
+\end{solucions}

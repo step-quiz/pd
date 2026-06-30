@@ -1,0 +1,136 @@
+% =====================================================================
+%  1bat-ud6-12.tex  —  SESSIÓ 12: Anàlisi crítica del joc i les apostes
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 12 — Anàlisi crítica del joc i les apostes}%
+{Apliquem l'esperança matemàtica a les apostes esportives i la ruleta per entendre, amb números, per què el joc d'atzar és sempre un mal negoci per al jugador.}
+
+\subsection{Idea clau}
+
+Apliquem l'esperança matemàtica (sessió 11) a un problema social de primer ordre: el
+\textbf{joc i les apostes}, especialment entre el jovent. Un tècnic de serveis a la
+comunitat treballa en la \textbf{prevenció de la ludopatia}, i la millor eina és
+ensenyar a calcular que, darrere de qualsevol aposta, l'esperança del jugador és
+\textbf{negativa}: el sistema està dissenyat perquè, a la llarga, el jugador hi perdi.
+
+\begin{idea}
+\textbf{Per què el joc sempre perd (a la llarga)}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Tota casa d'apostes i tot casino fixen els premis perquè l'esperança del
+        jugador sigui $E<0$.
+  \item La diferència entre el que «hauria de pagar» un joc just i el que paga de debò és
+        el \textbf{benefici} de la casa (el «marge»).
+  \item Com més s'hi juga, més s'apropa el resultat real a aquesta esperança negativa:
+        \textbf{recuperar pèrdues jugant més} és, matemàticament, perdre encara més.
+\end{itemize}
+\textbf{Eina de prevenció:} saber calcular l'esperança permet veure l'engany abans de
+caure-hi.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[una aposta esportiva amb «quota»]
+Una casa ofereix una \textbf{quota} de $2,5$ a un resultat: si apostes $\num{1}\eur$ i
+encertes, te'n tornen $\num{2,5}\eur$ (guany net $+\num{1,5}\eur$); si no, perds
+l'$\num{1}\eur$. Suposem que la probabilitat real d'aquest resultat és $0,35$. L'esperança:
+\[
+E = (+1,5)\per 0,35 + (-1)\per 0,65 = 0,525 - 0,65 = -0,125.
+\]
+$E=-\num{0,125}\eur$ per cada euro apostat: de mitjana es perden uns $12,5$ cèntims per
+euro. La quota \emph{sembla} atractiva, però està calculada perquè la casa hi guanyi.
+\end{exemple}
+
+\begin{exemple}[la ruleta: el zero ho decideix tot]
+A la ruleta europea hi ha $37$ números ($0$ a $36$). Apostar a un número \textbf{ple}
+paga $35$ a $1$ (si encertes, guanyes $\num{35}\eur$ per cada $\num{1}\eur$; si no, el
+perds). La probabilitat d'encertar és $\frac{1}{37}$:
+\[
+E = (+35)\per\frac{1}{37} + (-1)\per\frac{36}{37}=\frac{35-36}{37}=\frac{-1}{37}\approx -0,027.
+\]
+$E\approx -\num{0,027}\eur$ per euro (un $-2,7\%$). Si el premi fos $36$ a $1$ (joc
+just), $E$ valdria $0$; aquell \textbf{únic número de més}, el $0$, és el que fa que la
+casa sempre guanyi.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[calcular el marge d'una aposta]
+Una aposta paga una quota de $2$ (guany net $+\num{1}\eur$ per euro si encertes). La
+probabilitat real d'encertar és $0,45$. Calcula l'esperança i digues quant perd, de
+mitjana, qui hi aposta $\num{100}\eur$ en total.
+\solucio
+\[
+E = (+1)\per 0,45 + (-1)\per 0,55 = 0,45 - 0,55 = -0,1.
+\]
+$E=-\num{0,1}\eur$ per euro apostat. Qui hi apostés $\num{100}\eur$ en total perdria, de
+mitjana, $100\per 0,1 = \num{10}\eur$.
+\resposta{$E=-\num{0,1}\eur$/euro; amb $\num{100}\eur$ apostats, perd uns $\num{10}\eur$
+de mitjana.}
+\end{exresolt}
+
+\begin{exresolt}[desmuntar la fal·làcia de «recuperar»]
+Un jugador ha perdut $\num{50}\eur$ i pensa: «si continuo jugant, recuperaré el que he
+perdut». Si l'esperança del joc és $E=-\num{0,2}\eur$ per euro, què li passarà de
+mitjana si hi aposta $\num{50}\eur$ més per «recuperar»?
+\solucio
+Cada euro apostat té esperança $-\num{0,2}\eur$. Si aposta $\num{50}\eur$ més, de
+mitjana \textbf{perdrà} encara $50\per 0,2 = \num{10}\eur$ addicionals, en comptes de
+recuperar res. Matemàticament, \textbf{jugar més per recuperar pèrdues fa perdre
+encara més}: l'esperança negativa actua en cada nova aposta.
+\resposta{De mitjana perdria $\num{10}\eur$ més; «recuperar jugant» és una fal·làcia.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Una aposta amb quota $3$ (guany net $+\num{2}\eur$ per euro si encertes) té una
+        probabilitat real d'encert de $0,3$. Calcula l'esperança per euro. És favorable
+        al jugador?
+  \item A la ruleta, apostar a «vermell» paga $1$ a $1$ i hi ha $18$ números vermells de
+        $37$. Calcula l'esperança per euro apostat.
+  \item Una aposta té $E=-\num{0,15}\eur$ per euro. Quant perd, de mitjana, qui hi
+        aposta $\num{200}\eur$ en total al llarg d'un mes?
+  \item \textbf{(Comparació)} Dues apostes: la A té $E=-\num{0,05}\eur$/euro i la B,
+        $E=-\num{0,20}\eur$/euro. Si s'hagués de triar, quina fa perdre menys a la
+        llarga? Cap de les dues és favorable; per què?
+  \item \textbf{(Interpretació)} Per què el missatge «com més jugues, més probable és que
+        recuperis» és fals? Relaciona-ho amb el signe de l'esperança.
+  \item \textbf{(Raonament — prevenció)} Com a futur tècnic, dissenya un argument breu,
+        amb números, per explicar a un grup de joves per què les apostes esportives són
+        un mal negoci. Quina xifra clau faries servir?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Conclusió de l'activitat:} en qualsevol joc d'atzar comercial, l'esperança del
+jugador és \textbf{negativa per disseny}. No és mala sort puntual: és matemàtica. La
+millor defensa contra la ludopatia és \textbf{entendre} que el sistema garanteix, a la
+llarga, que el jugador hi perdi.
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item $E = (+2)\per 0,3 + (-1)\per 0,7 = 0,6 - 0,7 = -0,1\eur$ per euro. \textbf{No}
+        és favorable: de mitjana es perden $10$ cèntims per euro.
+  \item Guany net $+\num{1}\eur$ si vermell, $-\num{1}\eur$ si no.
+        $P(\text{vermell})=\frac{18}{37}$, $P(\text{no})=\frac{19}{37}$.
+        $E = (+1)\per\frac{18}{37} + (-1)\per\frac{19}{37}=\frac{18-19}{37}=\frac{-1}{37}\approx -0,027\eur$.
+  \item $200\per 0,15 = \num{30}\eur$ de pèrdua mitjana.
+  \item La \textbf{A} fa perdre menys ($-\num{0,05}$ contra $-\num{0,20}$ per euro). Cap
+        de les dues és favorable perquè totes dues tenen $E<0$: a la llarga, totes dues
+        fan perdre diners; la A simplement ho fa més lentament.
+  \item Perquè cada aposta nova torna a tenir esperança \textbf{negativa};
+        l'acumulació de moltes apostes amb $E<0$ porta el resultat real cada cop més a
+        prop d'una pèrdua, no d'una recuperació. Jugar més no inverteix el signe de
+        l'esperança.
+  \item Resposta oberta. Idea: mostraria que, per cada euro apostat, de mitjana se'n
+        perd una fracció fixa (per exemple $-\num{0,10}\eur$/euro), de manera que apostar
+        $\num{1000}\eur$ al llarg del temps significa perdre, de mitjana, uns
+        $\num{100}\eur$. La xifra clau és l'\textbf{esperança negativa per euro}, que
+        demostra que «la casa sempre guanya».
+\end{sollist}
+\end{solucions}

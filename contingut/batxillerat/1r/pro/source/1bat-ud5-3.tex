@@ -1,0 +1,136 @@
+% =====================================================================
+%  1bat-ud5-3.tex  —  SESSIÓ 3: La trampa: pujar 15% i baixar 10% no torna a l'inici
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 3 — La trampa: pujar 15\% i baixar 10\% no torna a l'inici}%
+{Una factura que puja un 15\% i després baixa un 10\%: la intuïció diu que torna a l'inici, però el càlcul demostra que no. Per què?}
+
+\subsection{Idea clau}
+
+Ja sabem construir i aplicar un índex de variació (sessió 2). Avui posem a prova la
+intuïció amb un cas real: la factura de la llum d'una família \textbf{puja un $15\%$}
+a l'hivern i, a la primavera, el govern hi aplica un \textbf{descompte social del
+$10\%$}. La pregunta sembla innocent: \emph{la família torna a pagar el que pagava al
+principi?} Avui ho descobrireu vosaltres, sense que ningú us doni la regla.
+
+\begin{idea}
+\textbf{El repte (per pensar en grup)}\\
+Una factura puja un $15\%$ i després baixa un $10\%$.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item La intuïció diu: «$+15$ i $-10$ $\rightarrow$ queda un $+5\%$, o gairebé igual».
+  \item \textbf{La pregunta clau:} sobre quina quantitat s'aplica cada percentatge? El
+        $10\%$ de baixada, es calcula sobre el preu \emph{original} o sobre el preu
+        \emph{ja apujat}?
+\end{itemize}
+\textbf{No us avancem la resposta:} calculeu-ho amb un preu concret i compareu-lo amb
+el de partida.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el càlcul que desmunta la intuïció]
+Suposem que la factura era de $\num{80}\eur$. Apliquem els dos canvis \textbf{un
+darrere l'altre}, cadascun sobre el preu que hi ha en aquell moment:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Puja un $15\%$:} $\num{80}\per 1,15=\num{92}\eur$.
+  \item \textbf{Sobre aquests $\num{92}\eur$, baixa un $10\%$:}
+        $\num{92}\per 0,90=\num{82,8}\eur$.
+\end{itemize}
+El preu final és $\num{82,8}\eur$, \textbf{més alt} que els $\num{80}\eur$ de partida.
+\emph{No} s'ha tornat a l'inici! El motiu: el $10\%$ de baixada s'ha calculat sobre
+$\num{92}\eur$ (el preu ja apujat), no sobre els $\num{80}\eur$ originals; com que
+$\num{92}\eur$ és més que $\num{80}\eur$, el descompte «retalla» menys diners dels que
+havia afegit la pujada.
+\end{exemple}
+
+\begin{exemple}[per què sumar els percentatges falla]
+La intuïció «$+15\%$ i $-10\%$ $\rightarrow +5\%$» donaria
+$\num{80}\per 1,05=\num{84}\eur$, i la intuïció «queda igual» donaria $\num{80}\eur$.
+Cap de les dues coincideix amb el resultat real ($\num{82,8}\eur$). \textbf{Els
+percentatges encadenats no se sumen ni es resten:} cada canvi actua sobre una base
+diferent. La sessió següent veurem que la manera correcta de combinar-los és
+\textbf{multiplicar els índexs}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[pujar i baixar el mateix percentatge]
+Un preu de $\num{200}\eur$ puja un $20\%$ i, després, baixa un $20\%$. Es torna a
+$\num{200}\eur$? Calcula-ho pas a pas.
+\solucio
+\textbf{Puja un $20\%$:} $\num{200}\per 1,20=\num{240}\eur$.
+
+\textbf{Sobre $\num{240}\eur$, baixa un $20\%$:} $\num{240}\per 0,80=\num{192}\eur$.
+
+El preu final és $\num{192}\eur$, \textbf{menys} que els $\num{200}\eur$ inicials. No
+es torna a l'inici: el $20\%$ de baixada s'ha calculat sobre $\num{240}\eur$ (una base
+més gran), de manera que treu més diners dels que havia afegit la pujada.
+\resposta{No: queda $\num{192}\eur$, no $\num{200}\eur$.}
+\end{exresolt}
+
+\begin{exresolt}[dos descomptes seguits]
+Una botiga solidària fa un $30\%$ de descompte i, a la caixa, un $20\%$ addicional
+sobre el preu ja rebaixat. Sobre un article de $\num{50}\eur$, és el mateix que un
+$50\%$ de descompte directe?
+\solucio
+\textbf{Primer descompte ($30\%$):} $\num{50}\per 0,70=\num{35}\eur$.
+
+\textbf{Segon descompte ($20\%$) sobre $\num{35}\eur$:} $\num{35}\per 0,80=\num{28}\eur$.
+
+Un $50\%$ directe donaria $\num{50}\per 0,50=\num{25}\eur$. Com que $\num{28}\eur\neq
+\num{25}\eur$, \textbf{no} és el mateix: encadenar un $30\%$ i un $20\%$ \emph{no}
+equival a un $50\%$, perquè el segon descompte s'aplica sobre una quantitat ja
+reduïda.
+\resposta{No: queda $\num{28}\eur$ (no $\num{25}\eur$); dos descomptes seguits no se
+sumen.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Una factura de $\num{120}\eur$ puja un $10\%$ i després baixa un $10\%$.
+        Calcula el preu final pas a pas. Es torna a $\num{120}\eur$? Per què?
+  \item Un preu de $\num{300}\eur$ baixa un $25\%$ i després puja un $25\%$. Quin és el
+        preu final? Compara'l amb els $\num{300}\eur$ inicials.
+  \item Un material de $\num{60}\eur$ rep un descompte del $15\%$ i, sobre el preu
+        rebaixat, se li afegeix l'IVA del $21\%$. Quant es paga al final?
+  \item \textbf{(Estimació prèvia)} Abans de calcular, escriu què \emph{creus} que
+        passarà amb una pujada del $50\%$ seguida d'una baixada del $50\%$ sobre
+        $\num{100}\eur$. Després calcula-ho i compara amb la teva intuïció.
+  \item \textbf{(Interpretació)} Explica, amb les teves paraules, per què pujar i
+        després baixar el mateix percentatge \textbf{mai} no torna al preu inicial.
+        Sobre quina base s'aplica cada canvi?
+  \item \textbf{(Raonament)} La factura de la llum de l'exemple acaba a $\num{82,8}\eur$
+        després d'una pujada del $15\%$ i una baixada del $10\%$. Quants euros, en
+        total, ha augmentat respecte dels $\num{80}\eur$ inicials? A quin percentatge
+        global equival aquest augment? (La sessió següent ho formalitzarem.)
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item Puja un $10\%$: $\num{120}\per 1,10=\num{132}\eur$. Baixa un $10\%$ sobre
+        $\num{132}$: $\num{132}\per 0,90=\num{118,8}\eur$. \textbf{No} torna a
+        $\num{120}\eur$: queda $\num{118,8}\eur$, una mica per sota, perquè el $10\%$
+        de baixada s'aplica sobre $\num{132}\eur$ (base més gran que $\num{120}$).
+  \item Baixa un $25\%$: $\num{300}\per 0,75=\num{225}\eur$. Puja un $25\%$ sobre
+        $\num{225}$: $\num{225}\per 1,25=\num{281,25}\eur$. Queda \textbf{per sota} dels
+        $\num{300}\eur$ inicials.
+  \item Descompte del $15\%$: $\num{60}\per 0,85=\num{51}\eur$. IVA del $21\%$ sobre
+        $\num{51}$: $\num{51}\per 1,21=\num{61,71}\eur$. Es paga $\num{61,71}\eur$.
+  \item Estimació oberta. Càlcul: puja un $50\%$, $\num{100}\per 1,5=\num{150}\eur$;
+        baixa un $50\%$, $\num{150}\per 0,5=\num{75}\eur$. Queda $\num{75}\eur$, molt
+        per sota dels $\num{100}\eur$: la intuïció de «torna a $\num{100}$» falla
+        clarament.
+  \item Resposta oberta. Idea: la pujada s'aplica sobre el preu original, però la
+        baixada (o la segona pujada) s'aplica sobre un preu \emph{ja modificat}, que és
+        una base diferent. Com que les bases no són iguals, els dos canvis no es
+        compensen i el resultat no coincideix amb el de partida.
+  \item Ha augmentat $\num{82,8}-\num{80}=\num{2,8}\eur$. Respecte dels $\num{80}\eur$
+        inicials, això és $\dfrac{\num{2,8}}{\num{80}}=0,035=3,5\%$. L'augment global
+        equival, doncs, a un $\mathbf{+3,5\%}$ (ni $+5\%$ ni $0\%$).
+\end{sollist}
+\end{solucions}

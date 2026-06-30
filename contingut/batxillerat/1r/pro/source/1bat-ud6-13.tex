@@ -1,0 +1,140 @@
+% =====================================================================
+%  1bat-ud6-13.tex  —  SESSIÓ 13: El judici probabilístic: decidir amb incertesa
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 13 — El judici probabilístic: decidir amb incertesa}%
+{Juntem tota la unitat en una activitat de rol: usar la probabilitat per decidir amb justícia quan no tenim certeses, i detectar com s'enganya amb les xifres.}
+
+\subsection{Idea clau}
+
+Tanquem la part d'aplicacions amb una activitat que integra \emph{tot} el que hem après
+i el connecta amb l'\textbf{ètica de la decisió}. En grups, fareu un \textbf{joc de rol}:
+heu d'aconsellar sobre un cas (un programa que cal aprovar, una prova que cal
+interpretar, una alarma que cal valorar) usant la probabilitat com a eina per
+\textbf{decidir amb justícia quan no hi ha certeses}.
+
+\begin{idea}
+\textbf{La probabilitat al servei de la decisió}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Poques decisions socials es prenen amb certesa absoluta: gairebé sempre es
+        decideix \textbf{sota incertesa}.
+  \item Les eines de la unitat ajuden a decidir bé: la \textbf{probabilitat total}
+        (quina opció té més èxit), la \textbf{condicionada} (què sabem ja), els
+        \textbf{falsos positius} (no confondre un indici amb una certesa) i
+        l'\textbf{esperança} (què surt a compte a la llarga).
+  \item \textbf{Decidir bé} no és encertar sempre, sinó triar l'opció amb \emph{millors}
+        probabilitats amb la informació disponible.
+\end{itemize}
+\textbf{Ètica:} qui sap usar les probabilitats també pot \emph{manipular-les}; un bon
+tècnic les fa servir per ser \textbf{just}, no per enganyar.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[decidir entre dos programes amb dades]
+Cal triar quin de dos programes finançar. El programa A té una probabilitat global
+d'èxit del $0,65$; el B, del $0,72$, però costa el doble. La probabilitat sola diu que
+el B és més eficaç, però la \textbf{decisió justa} ha de pesar també el cost: amb el
+pressupost del B es podrien finançar \emph{dos} programes A (èxit acumulat més gran).
+La probabilitat informa la decisió, però no la substitueix: cal posar-la \textbf{en
+context}.
+\end{exemple}
+
+\begin{exemple}[no confondre un indici amb una certesa]
+Una alarma d'un sistema de protecció s'activa. Sabem (com a la sessió 10) que, per a un
+fet rar, molts «positius» són \textbf{falsos positius}. La decisió justa \textbf{no} és
+actuar com si el fet fos segur, sinó \textbf{verificar} abans de prendre mesures que
+podrien perjudicar algú injustament. La probabilitat condicionada ens recorda que un
+indici \emph{augmenta} la sospita, però poques vegades la converteix en certesa.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[triar amb probabilitat i context]
+Dos plans de prevenció: el pla X redueix les recaigudes amb probabilitat $0,6$ i costa
+$\num{10000}\eur$; el pla Y, amb probabilitat $0,5$ i costa $\num{4000}\eur$. Amb un
+pressupost de $\num{12000}\eur$, quina combinació maximitza l'efecte? Raona-ho.
+\solucio
+Amb $\num{12000}\eur$ podem fer: \emph{un} pla X ($\num{10000}\eur$, efecte $0,6$) o bé
+\emph{tres} plans Y ($3\per\num{4000}=\num{12000}\eur$). Si cada pla Y actua sobre un
+grup diferent, tres plans Y arriben a més grups amb una eficàcia de $0,5$ cadascun. Amb
+un sol grup, el pla X és més eficaç ($0,6>0,5$); si l'objectiu és \textbf{cobrir més
+gent}, tres plans Y poden tenir més impacte total. La decisió depèn de l'\textbf{objectiu}
+(eficàcia per grup contra cobertura), no només de la probabilitat més alta.
+\resposta{Depèn de l'objectiu: el pla X és més eficaç per grup; tres plans Y donen més
+cobertura amb el mateix pressupost.}
+\end{exresolt}
+
+\begin{exresolt}[detectar una xifra manipulada]
+En un debat, algú afirma: «el $80\%$ dels qui van cometre una infracció havien passat
+pel programa, així que el programa els empeny a delinquir». Què hi falla, des de la
+probabilitat?
+\solucio
+Confon dues condicionades diferents (com a la sessió 5):
+$P(\text{ha passat pel programa}\mid\text{infracció})$ \textbf{no} és el mateix que
+$P(\text{infracció}\mid\text{ha passat pel programa})$. Que el $80\%$ dels infractors
+hagin passat pel programa pot voler dir simplement que \textbf{gairebé tothom} del
+col·lectiu hi passa; no diu res sobre si el programa \emph{augmenta} o \emph{redueix} les
+infraccions. Per saber-ho caldria comparar la probabilitat d'infracció \emph{amb}
+programa i \emph{sense}. L'afirmació manipula invertint la condició.
+\resposta{Confon $P(A\mid B)$ amb $P(B\mid A)$; la dada no demostra que el programa
+causi infraccions.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Dos programes: A té probabilitat d'èxit $0,7$ i costa $\num{8000}\eur$; B té
+        $0,55$ i costa $\num{4000}\eur$. Amb $\num{8000}\eur$, quantes unitats de cada
+        pots finançar? Quina opció arriba a més grups?
+  \item Una prova de cribratge d'un fet rar dóna positiu. Abans d'actuar, quina decisió
+        justa prendries i per què (pensa en els falsos positius de la sessió 10)?
+  \item Un joc d'atzar té esperança $-\num{0,3}\eur$ per euro. Un company diu que «val la
+        pena perquè de vegades es guanya». Què li respondries amb el concepte
+        d'esperança?
+  \item \textbf{(Detectar l'engany)} «El $90\%$ dels accidents de cotxe passen a menys de
+        $\num{10}$ km de casa, així que conduir lluny és més segur.» Quin error de
+        raonament probabilístic hi ha? (Pensa: on es condueix la major part del temps?)
+  \item \textbf{(Decisió ètica)} Per què un tècnic que sap probabilitat té una
+        \textbf{responsabilitat} a l'hora de presentar xifres de risc al públic? Posa un
+        exemple de presentació honesta i una de manipulada de la mateixa dada.
+  \item \textbf{(Síntesi de la unitat)} En una frase per eina, resumeix com cada concepte
+        de la unitat ajuda a \textbf{decidir millor sota incertesa}: probabilitat simple,
+        condicionada, arbres, falsos positius i esperança.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item Amb $\num{8000}\eur$: \emph{un} programa A ($\num{8000}\eur$) o \emph{dos}
+        programes B ($2\per\num{4000}=\num{8000}\eur$). Dos programes B arriben a
+        \textbf{més grups}; el programa A és més eficaç per grup ($0,7>0,55$). La tria
+        depèn de si es prioritza l'eficàcia per grup o la cobertura.
+  \item Resposta oberta. Idea: \textbf{no} actuar com si el fet fos segur; fer una
+        \textbf{segona prova} o verificació abans de prendre mesures, perquè en un fet
+        rar molts positius són falsos i actuar precipitadament podria perjudicar algú
+        injustament.
+  \item Que «de vegades es guanya» és cert, però l'\textbf{esperança} ($-\num{0,3}\eur$
+        per euro) diu que \textbf{a la llarga} es perd de mitjana $30$ cèntims per euro:
+        com més s'hi juga, més segura és la pèrdua acumulada. Els guanys puntuals no
+        canvien el signe negatiu de l'esperança.
+  \item Confon freqüència amb risc: la major part dels trajectes (i del temps de
+        conducció) es fan \textbf{a prop de casa}, de manera que és normal que hi passin
+        més accidents \emph{en nombre}, sense que això vulgui dir que conduir a prop sigui
+        més \emph{perillós per quilòmetre}. És el mateix tipus d'error que confondre
+        nombre amb probabilitat.
+  \item Resposta oberta. Idea: perquè la manera de presentar una xifra (percentatge sense
+        base, condicionada invertida, nombre absolut contra taxa) pot induir decisions
+        equivocades o pors injustificades. Exemple honest: «de cada $\num{1000}$ persones,
+        $5$ es veuen afectades». Exemple manipulat de la mateixa dada: «el risc s'ha
+        \emph{duplicat}!» (sense dir que passa de $0,25\%$ a $0,5\%$).
+  \item Resposta oberta. Idees: \emph{probabilitat simple} $\rightarrow$ quantificar un
+        risc o una oportunitat; \emph{condicionada} $\rightarrow$ actualitzar el que sabem
+        amb informació nova; \emph{arbres} $\rightarrow$ ordenar processos de diverses
+        etapes; \emph{falsos positius} $\rightarrow$ no confondre un indici amb una
+        certesa; \emph{esperança} $\rightarrow$ valorar què surt a compte a la llarga.
+\end{sollist}
+\end{solucions}

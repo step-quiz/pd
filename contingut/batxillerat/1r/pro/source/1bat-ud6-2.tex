@@ -1,0 +1,130 @@
+% =====================================================================
+%  1bat-ud6-2.tex  —  SESSIÓ 2: La regla de Laplace i les propietats bàsiques
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 2 — La regla de Laplace i les propietats bàsiques}%
+{Posem nom i fórmula a la intuïció d'ahir: la regla de Laplace, les propietats de la probabilitat i el succés contrari.}
+
+\subsection{Idea clau}
+
+A la sessió 1 vam intuir que la probabilitat és «casos favorables sobre casos
+possibles». Avui ho \textbf{formalitzem} amb la \textbf{regla de Laplace} i fixem les
+\textbf{propietats bàsiques} que farem servir tota la unitat, treballant sempre les
+tres formes (fracció, decimal i percentatge) que demana el criteri d'avaluació.
+
+\begin{idea}
+\textbf{Regla de Laplace i propietats}\\
+Si tots els resultats són \textbf{equiprobables} (tenen la mateixa possibilitat):
+\[
+P(A)=\frac{\text{nombre de casos favorables a }A}{\text{nombre de casos possibles}}.
+\]
+\textbf{Propietats bàsiques:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $0\le P(A)\le 1$ sempre (cap probabilitat surt d'aquest interval).
+  \item $P(\text{succés segur})=1$ \quad i \quad $P(\text{succés impossible})=0$.
+  \item \textbf{Succés contrari} ($\overline{A}$, «que \emph{no} passi $A$»):
+        \[
+        P(\overline{A})=1-P(A).
+        \]
+\end{itemize}
+\textbf{Recorda:} $\frac{1}{4}=0,25=25\%$ són la mateixa probabilitat.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[Laplace amb una baralla]
+En una baralla espanyola de $40$ cartes, quina és la probabilitat de treure un rei?
+Casos possibles: $40$. Casos favorables: $4$ (hi ha $4$ reis). Per la regla de Laplace:
+\[
+P(\text{rei})=\frac{4}{40}=\frac{1}{10}=0,1=10\%.
+\]
+I la probabilitat de \textbf{no} treure rei (succés contrari)?
+\[
+P(\overline{\text{rei}})=1-0,1=0,9=90\%.
+\]
+\end{exemple}
+
+\begin{exemple}[el succés contrari estalvia feina]
+En tirar dos daus, calcular la probabilitat de treure \emph{almenys} un $6$ comptant
+tots els casos és llarg. És molt més curt el \textbf{contrari}: «\emph{cap} $6$». La
+probabilitat de no treure $6$ en un dau és $\frac{5}{6}$; en dos daus,
+$\frac{5}{6}\per\frac{5}{6}=\frac{25}{36}$. Per tant:
+\[
+P(\text{almenys un 6})=1-\frac{25}{36}=\frac{11}{36}\approx 0,31=31\%.
+\]
+Quan un enunciat diu «almenys», sovint convé passar pel succés contrari.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[probabilitat i contrari sobre un grup d'usuaris]
+En un casal hi ha $25$ usuaris: $15$ són dones i $10$, homes. Si en triem un a l'atzar,
+quina és la probabilitat que sigui dona? I que sigui home? Expressa-les en les tres
+formes.
+\solucio
+\textbf{Dona:} casos favorables $15$, possibles $25$:
+\[
+P(\text{dona})=\frac{15}{25}=\frac{3}{5}=0,6=60\%.
+\]
+\textbf{Home} (succés contrari de dona):
+\[
+P(\text{home})=1-0,6=0,4=40\% \quad\Big(\text{o bé }\tfrac{10}{25}=\tfrac{2}{5}\Big).
+\]
+\resposta{$P(\text{dona})=\frac{3}{5}=0,6=60\%$; $P(\text{home})=\frac{2}{5}=0,4=40\%$.}
+\end{exresolt}
+
+\begin{exresolt}[comprovar amb les propietats]
+En una bossa hi ha boles numerades de l'$1$ al $20$. Calcula la probabilitat de treure
+un múltiple de $5$ i comprova que el resultat és coherent amb les propietats.
+\solucio
+Múltiples de $5$ entre $1$ i $20$: el $5$, el $10$, el $15$ i el $20$ ($4$ casos
+favorables). Casos possibles: $20$.
+\[
+P(\text{múltiple de 5})=\frac{4}{20}=\frac{1}{5}=0,2=20\%.
+\]
+\textbf{Comprovació:} $0,2$ està entre $0$ i $1$ (correcte). El contrari («no múltiple de
+$5$») és $1-0,2=0,8=80\%$, que també és un valor vàlid.
+\resposta{$\frac{1}{5}=0,2=20\%$; coherent (entre $0$ i $1$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item En una baralla de $40$ cartes, calcula (en fracció, decimal i percentatge) la
+        probabilitat de treure: (a) una copa (n'hi ha $10$); (b) un as (n'hi ha $4$);
+        (c) una carta que \textbf{no} sigui copa.
+  \item En tirar un dau, calcula la probabilitat de cada succés i la del seu contrari:
+        (a) treure un $5$; (b) treure un nombre parell.
+  \item En una bossa amb boles numerades de l'$1$ al $30$, calcula la probabilitat de
+        treure un múltiple de $3$. Expressa-la en les tres formes.
+  \item En un grup de $50$ persones, $35$ tenen el carnet de la biblioteca. Quina és la
+        probabilitat que una persona triada a l'atzar el tingui? I que no el tingui?
+  \item \textbf{(Almenys)} En tirar dues monedes, calcula la probabilitat de treure
+        \textbf{almenys} una cara (pista: passa pel contrari, «cap cara»).
+  \item \textbf{(Raonament)} Per què la regla de Laplace només val quan els casos són
+        \textbf{equiprobables}? Posa un exemple de situació on \emph{no} ho siguin i, per
+        tant, no es pugui aplicar directament.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $\frac{10}{40}=\frac{1}{4}=0,25=25\%$; (b) $\frac{4}{40}=\frac{1}{10}=0,1=10\%$;
+        (c) no copa: $1-0,25=0,75=75\%$.
+  \item (a) $P(5)=\frac{1}{6}\approx 0,17$; contrari $\frac{5}{6}\approx 0,83$. \quad
+        (b) $P(\text{parell})=\frac{3}{6}=\frac{1}{2}=0,5$; contrari $0,5$.
+  \item Múltiples de $3$ fins a $30$: $3,6,9,\dots,30$, en total $10$.
+        $P=\frac{10}{30}=\frac{1}{3}\approx 0,33=33,3\%$.
+  \item $P(\text{té carnet})=\frac{35}{50}=\frac{7}{10}=0,7=70\%$; no el té:
+        $1-0,7=0,3=30\%$.
+  \item Contrari «cap cara» (les dues creus): $\frac{1}{2}\per\frac{1}{2}=\frac{1}{4}$.
+        Per tant $P(\text{almenys una cara})=1-\frac{1}{4}=\frac{3}{4}=0,75=75\%$.
+  \item Perquè Laplace reparteix la probabilitat \textbf{a parts iguals} entre tots els
+        casos; si uns són més probables que altres, dividir favorables entre possibles
+        dóna un resultat fals. Exemple: una xinxeta que cau de punta o de cap \emph{no}
+        té $\frac{1}{2}$ de cada (una posició és més probable); o una ruleta trucada.
+\end{sollist}
+\end{solucions}

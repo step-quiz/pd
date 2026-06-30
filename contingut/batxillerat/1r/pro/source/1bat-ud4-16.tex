@@ -1,0 +1,139 @@
+% =====================================================================
+%  1bat-ud4-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 4
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 4}%
+{Prova individual: tres blocs alineats amb els criteris C1–C3. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 4 — Estadística i dades socioeconòmiques}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també la
+\textbf{interpretació} dins del context social, la \textbf{mirada crítica} davant de
+les dades i la \textbf{neutralitat} de les preguntes redactades. Mostra tots els
+càlculs. Pots usar calculadora.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Paràmetres estadístics \hfill \normalfont\itshape (3,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Paràmetres estadístics}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt]
+  \item Les edats de $6$ usuaris d'un servei juvenil són: $20$, $21$, $22$, $23$, $24$,
+        $60$.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Calcula la \textbf{mitjana} i la \textbf{mediana}.
+      \item Quina de les dues representa \textbf{millor} el grup? \textbf{Justifica-ho}
+            (pensa en el valor $60$).
+    \end{enumerate}
+  \item Per a les hores de voluntariat $4$, $6$, $8$, $6$, $6$, calcula la
+        \textbf{variància} i la \textbf{desviació típica}. Què indica, sobre el grup, una
+        desviació típica petita?
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Lectura i lectura crítica de gràfics \hfill \normalfont\itshape (3,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Lectura i lectura crítica de gràfics}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=3]
+  \item La taula mostra els ingressos mensuals de $40$ famílies d'un barri:
+    \begin{center}
+    \begin{tabular}{c c c}
+    \toprule
+    \textbf{Ingressos (\euro)} & $f_i$ & \textbf{\%} \\
+    \midrule
+    $[500,1000)$ & $4$ & ? \\
+    $[1000,1500)$ & $10$ & ? \\
+    $[1500,2000)$ & $12$ & ? \\
+    $[2000,2500)$ & $8$ & ? \\
+    $[2500,3000)$ & $6$ & ? \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    Completa la columna de \textbf{percentatges} i digues quina és la franja
+    \textbf{majoritària}.
+  \item Un titular diu: «al barri A hi ha hagut $50$ incidències i al barri B només
+        $20$: el barri A és molt més conflictiu». El barri A té $\num{10000}$ habitants
+        i el B en té $\num{2500}$.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Calcula la \textbf{taxa per cada $\num{1000}$ habitants} de cada barri.
+      \item El titular és correcte? \textbf{Justifica} la teva resposta.
+    \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Enquestes \hfill \normalfont\itshape (3 punts)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Enquestes}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=5]
+  \item Per a una enquesta sobre convivència a l'institut:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Indica si aquesta pregunta és \textbf{neutra} o \textbf{esbiaixada} i, si
+            cal, \textbf{reescriu-la}: «No trobes que el pati hauria de ser més gran?».
+      \item Tabula aquestes $12$ respostes a una pregunta de tres opcions, calculant
+            el \textbf{percentatge} de cadascuna:\\
+            Sí, No, De vegades, Sí, Sí, No, De vegades, Sí, Sí, De vegades, Sí, No.
+    \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD4 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item (a) Mitjana: $\overline{x}=\dfrac{20+21+22+23+24+60}{6}=\dfrac{170}{6}\approx 28,3$.
+        Mediana: ordenat $20,21,\underline{22},\underline{23},24,60$; amb $N=6$
+        (parell), els dos centrals són $22$ i $23$, de manera que
+        $\text{Me}=\dfrac{22+23}{2}=22,5$. \quad
+        (b) La \textbf{mediana ($22,5$) representa millor} el grup: el valor $60$
+        (segurament un educador) estira la mitjana fins a $28,3$, però la majoria són
+        joves d'uns $20$ anys, cosa que la mediana reflecteix bé.
+  \item Mitjana: $\overline{x}=\dfrac{4+6+8+6+6}{5}=\dfrac{30}{5}=6$. Distàncies al
+        quadrat: $(4-6)^2=4$, $0$, $(8-6)^2=4$, $0$, $0$, suma $8$. Variància:
+        $\sigma^2=\dfrac{8}{5}=1,6$. Desviació típica: $\sigma=\sqrt{1,6}\approx 1,26$
+        hores. Una desviació típica \textbf{petita} indica que el grup és
+        \textbf{homogeni} (gairebé tothom fa unes $6$ hores).
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{2}
+  \item Percentatges ($f_i/40\per 100$): $[500,1000)$: $\dfrac{4}{40}=10\%$;
+        $[1000,1500)$: $\dfrac{10}{40}=25\%$; $[1500,2000)$: $\dfrac{12}{40}=30\%$;
+        $[2000,2500)$: $\dfrac{8}{40}=20\%$; $[2500,3000)$: $\dfrac{6}{40}=15\%$.
+        (Comprovació: $10+25+30+20+15=100\%$.) La franja \textbf{majoritària} és
+        $[1500,2000)\eur$, amb un $30\%$ ($12$ famílies).
+  \item (a) Taxa A: $\dfrac{50}{\num{10000}}\per\num{1000}=5$ per mil. Taxa B:
+        $\dfrac{20}{\num{2500}}\per\num{1000}=8$ per mil. \quad
+        (b) El titular \textbf{no és correcte}: en números absoluts A en té més ($50$
+        contra $20$), però \textbf{en proporció a la població} el barri B en té més
+        ($8$ contra $5$ per cada mil habitants). Cal comparar \textbf{taxes}, no
+        recomptes bruts, quan els grups tenen mides diferents.
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{4}
+  \item (a) La pregunta és \textbf{esbiaixada}: «No trobes que\dots» indueix la
+        resposta «sí». Una versió \textbf{neutra}: «Com valores la mida del pati?»
+        (Insuficient / Adequada / Excessiva), o bé «Creus que el pati hauria de ser més
+        gran, igual o més petit?». \quad
+        (b) Recompte de les $12$ respostes: \textbf{Sí $=6$}, \textbf{No $=3$},
+        \textbf{De vegades $=3$}. Percentatges: Sí $\dfrac{6}{12}=50\%$; No
+        $\dfrac{3}{12}=25\%$; De vegades $\dfrac{3}{12}=25\%$. (Comprovació:
+        $50+25+25=100\%$ i els recomptes sumen $12$.)
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): el Bloc 1 i el Bloc 2
+puntuen sobre $3,5$ i el Bloc 3 sobre $3$. Dins de cada bloc es reparteix entre el
+procediment correcte, la \textbf{interpretació} dins del context social, la
+\textbf{mirada crítica} (taxes, escales, base dels percentatges) i la
+\textbf{neutralitat} de les preguntes redactades. Total: $10$ punts.}

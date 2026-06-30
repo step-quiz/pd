@@ -1,0 +1,150 @@
+% =====================================================================
+%  1bat-ud5-13.tex  —  SESSIÓ 13: Quadrar el pressupost amb el full de càlcul
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 13 — Quadrar el pressupost amb el full de càlcul}%
+{De l'estructura a les fórmules automàtiques: subtotals, IVA, IRPF i una cel·la de balanç que es recalcula sola fins que el projecte quadra.}
+
+\subsection{Idea clau}
+
+Ahir vau \textbf{estructurar} el pressupost del casal; avui el \textbf{quadrem} amb
+fórmules perquè tot es recalculi sol. És la competència que aplicaràs als cicles
+formatius quan hagis de justificar econòmicament un projecte d'intervenció. El repte:
+aconseguir que el \textbf{balanç final} (ingressos menys despeses) quedi \textbf{per
+sobre de zero}; i, si no, ajustar partides i veure com el full recalcula a l'instant.
+
+\begin{idea}
+\textbf{Fórmules clau del pressupost}\\
+Suposant els imports a la columna B:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Subtotal d'un bloc:} \texttt{=SUMA(B2:B5)} (\texttt{=SUM}).
+  \item \textbf{Afegir IVA al material:} \texttt{=B6*1,21} (multiplicar pel factor).
+  \item \textbf{Net després d'IRPF:} \texttt{=B8*0,85} (retenció del $15\%$).
+  \item \textbf{Balanç final:} \texttt{=Total\_ingressos\,$-$\,Total\_despeses}, és a
+        dir \texttt{=B20-B12}.
+\end{itemize}
+\textbf{La potència:} si canvies una dada (la quota, una partida), \emph{totes} les
+fórmules i el balanç es \textbf{recalculen sols}. Pots provar escenaris fins que
+quadri.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el balanç que es recalcula sol]
+El pressupost del casal tenia $\num{2300}\eur$ d'ingressos i $\num{2023,5}\eur$ de
+despeses. La cel·la de balanç conté \texttt{=B\_ingressos$-$B\_despeses}:
+\[
+\num{2300}-\num{2023,5}=\num{276,5}\eur.
+\]
+El balanç és \textbf{positiu}: el projecte quadra amb un marge de $\num{276,5}\eur$.
+Si ara apugem una partida de despesa, la cel·la de balanç baixa \emph{sola}; si baixa
+de zero, el projecte no quadra i cal ajustar.
+\end{exemple}
+
+\begin{exemple}[provar un escenari]
+Imagina que el material puja i el balanç cau a $\num{-150}\eur$ (negatiu: el projecte
+\emph{no} quadra). Tenim dues palanques:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textbf{Reduir una despesa:} buscar una partida que es pugui retallar
+        $\num{150}\eur$.
+  \item \textbf{Apujar un ingrés:} per exemple, pujar la quota per infant. Amb $20$
+        infants, pujar la quota $\num{8}\eur$ aporta $20\per\num{8}=\num{160}\eur$
+        més, i el balanç torna a ser positiu.
+\end{itemize}
+En escriure el nou valor, el full recalcula el balanç \textbf{a l'instant}: aquesta és
+la potència del full de càlcul com a eina de gestió.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[escriure la fórmula del balanç]
+Al teu full, el total d'ingressos és a la cel·la \texttt{B20} i el total de despeses a
+\texttt{B12}. Escriu la fórmula del balanç i digues què ha de passar perquè el projecte
+quadri.
+\solucio
+La fórmula del balanç és:
+\[
+\texttt{=B20-B12}
+\]
+(total d'ingressos menys total de despeses). Perquè el projecte \textbf{quadri},
+aquesta cel·la ha de donar un valor \textbf{positiu} (per sobre de zero): vol dir que
+els ingressos cobreixen totes les despeses, idealment amb un petit marge.
+\resposta{\texttt{=B20-B12}; el projecte quadra si el resultat és positiu.}
+\end{exresolt}
+
+\begin{exresolt}[ajustar per fer quadrar]
+Un pressupost té $\num{1800}\eur$ d'ingressos i $\num{1980}\eur$ de despeses. El balanç
+és negatiu. Si pots apujar la quota de cadascun dels $15$ infants, quant hauries de
+pujar-la (com a mínim) perquè el projecte quadri?
+\solucio
+\textbf{Balanç actual:} $\num{1800}-\num{1980}=\num{-180}\eur$ (falten $\num{180}\eur$).
+
+Cal aconseguir $\num{180}\eur$ més d'ingressos amb $15$ infants. Per infant:
+\[
+\frac{\num{180}}{15}=\num{12}\eur.
+\]
+Pujant la quota \textbf{com a mínim $\num{12}\eur$} per infant, els ingressos pugen
+$15\per\num{12}=\num{180}\eur$ i el balanç arriba a zero (per tenir marge, una mica
+més).
+\resposta{Cal pujar la quota almenys $\num{12}\eur$ per infant.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballa en parelles amb el full de càlcul. Escriu les fórmules i
+comprova que el balanç es recalcula quan canvies una dada.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu la fórmula per: (a) afegir l'IVA del $21\%$ a un material que és a la
+        cel·la \texttt{B7}; (b) calcular el net després d'una retenció d'IRPF del
+        $15\%$ d'un brut que és a \texttt{B9}.
+  \item El total d'ingressos és a \texttt{C10} i el de despeses a \texttt{C18}. Escriu
+        la fórmula del balanç.
+  \item Un pressupost té $\num{2400}\eur$ d'ingressos i $\num{2150}\eur$ de despeses.
+        Calcula el balanç. El projecte quadra?
+  \item Un pressupost té $\num{2000}\eur$ d'ingressos i $\num{2120}\eur$ de despeses,
+        amb $20$ infants. Quant hauries de pujar la quota per infant perquè quadri?
+  \item \textbf{(Escenari)} Si en un pressupost equilibrat augmentes una partida de
+        despesa de $\num{100}\eur$, què li passa al balanç? Què hauries de fer per
+        tornar a quadrar-lo?
+  \item \textbf{(Raonament)} Per què és tan útil que el full de càlcul recalculi el
+        balanç automàticament quan canvies una dada? Com t'ajuda això a «provar
+        escenaris» abans de presentar el pressupost definitiu?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Comprovació final del pressupost:}
+\begin{enumerate}[leftmargin=1.6em, itemsep=1pt]
+  \item Cada partida té la fórmula correcta (IVA al material, IRPF al personal).
+  \item Els subtotals sumen el rang correcte (cap partida fora, cap de més).
+  \item La cel·la de \textbf{balanç} és \texttt{=ingressos$-$despeses} i dóna un valor
+        \textbf{positiu}.
+  \item En canviar una dada, el balanç es \textbf{recalcula sol}.
+\end{enumerate}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \texttt{=B7*1,21}; \quad (b) \texttt{=B9*0,85}.
+  \item \texttt{=C10-C18}.
+  \item Balanç: $\num{2400}-\num{2150}=\num{250}\eur$. És positiu: el projecte
+        \textbf{quadra} (amb marge de $\num{250}\eur$).
+  \item Falten $\num{2120}-\num{2000}=\num{120}\eur$. Amb $20$ infants:
+        $\dfrac{\num{120}}{20}=\num{6}\eur$ per infant (com a mínim, per quadrar a zero;
+        una mica més per tenir marge).
+  \item El balanç \textbf{baixa $\num{100}\eur$}. Per tornar a quadrar-lo cal o bé
+        \textbf{reduir} una altra despesa en $\num{100}\eur$, o bé \textbf{augmentar}
+        els ingressos en $\num{100}\eur$ (per exemple, pujant les quotes o buscant un
+        donatiu).
+  \item Resposta oberta. Idea: el recàlcul automàtic permet veure l'efecte de qualsevol
+        canvi a l'instant, sense refer els càlculs a mà; així pots \textbf{provar
+        diferents escenaris} (pujar quotes, retallar partides, afegir una subvenció) i
+        triar el que deixa el pressupost equilibrat abans de presentar-lo, guanyant
+        temps i evitant errors.
+\end{sollist}
+\end{solucions}

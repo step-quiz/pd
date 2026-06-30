@@ -1,0 +1,117 @@
+% =====================================================================
+%  1bat-ud5-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 5
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 5}%
+{Prova individual: tres blocs alineats amb els criteris C1–C3. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 5 — Aritmètica aplicada i economia social}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també la
+\textbf{interpretació} dins del context econòmic i social i la \textbf{mirada crítica}
+davant d'ofertes i dades. Mostra tots els càlculs. Pots usar calculadora.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Càlcul percentual i variacions \hfill \normalfont\itshape (3,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Càlcul percentual i variacions}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt]
+  \item Una factura de subministraments és de $\num{120}\eur$. A l'hivern puja un
+        $15\%$ i, després, s'hi aplica un descompte social del $10\%$.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Calcula el preu final \textbf{multiplicant els índexs}.
+      \item A quina variació global equival? \textbf{Justifica} per què no és un $+5\%$.
+    \end{enumerate}
+  \item Un material costa $\num{363}\eur$ amb l'IVA del $21\%$ ja inclòs. Calcula quant
+        costava \textbf{sense} IVA. (Pista: per desfer una multiplicació per $1,21$, cal
+        dividir.)
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Matemàtica financera \hfill \normalfont\itshape (3,5 punts)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Matemàtica financera}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=3]
+  \item Una família ingressa $\num{1000}\eur$ en un dipòsit al $3\%$ \textbf{compost}
+        anual. Quants diners hi haurà al cap de $4$ anys? (Usa $C_f=C_0(1+r)^t$.)
+  \item Un microcrèdit anuncia un TIN del $4\%$ \textbf{mensual}.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Calcula'n la \textbf{TAE}.
+      \item Una persona hi demana $\num{300}\eur$ i no els torna en $6$ mesos. Quant
+            deurà? Comenta si el crèdit és car o barat.
+    \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Economia aplicada \hfill \normalfont\itshape (3 punts)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Economia aplicada}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=8pt, start=5]
+  \item Una família paga $\num{700}\eur$ de lloguer i rep un ajut de $\num{900}\eur$. El
+        lloguer s'actualitza amb un IPC del $4\%$, però l'ajut \textbf{es congela}.
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item Calcula la nova quota de lloguer.
+      \item Quant li quedava abans per a la resta de despeses i quant li queda ara?
+            \textbf{Interpreta} el resultat.
+    \end{enumerate}
+  \item Un projecte té una subvenció de $\num{1500}\eur$ i $20$ quotes de $\num{30}\eur$;
+        les despeses sumen $\num{1850}\eur$. Calcula el \textbf{total d'ingressos} i el
+        \textbf{balanç}. El projecte quadra?
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD5 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item (a) $\num{120}\per 1,15\per 0,90=\num{120}\per 1,035=\num{124,2}\eur$. \quad
+        (b) L'índex global és $1,035$, és a dir una \textbf{pujada global del $3,5\%$}.
+        No és un $+5\%$ (de restar $15-10$) perquè el descompte del $10\%$ s'aplica
+        sobre el preu \emph{ja apujat} ($\num{138}\eur$), una base més gran que els
+        $\num{120}\eur$ inicials: els índexs es multipliquen, no se sumen ni es resten.
+  \item Per desfer la multiplicació per $1,21$, dividim:
+        $\dfrac{\num{363}}{1,21}=\num{300}\eur$ sense IVA. (Comprovació:
+        $\num{300}\per 1,21=\num{363}\eur$. Restar un $21\%$ donaria $\num{286,77}\eur$,
+        que és \emph{incorrecte}.)
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{2}
+  \item $C_f=\num{1000}\per (1,03)^4=\num{1000}\per 1,12550881\approx\num{1125,51}\eur$.
+        (Els interessos generats són uns $\num{125,51}\eur$, més que els $\num{120}\eur$
+        de l'interès simple, gràcies a l'efecte compost.)
+  \item (a) TAE $=(1,04)^{12}-1\approx 1,601-1=0,601=60,1\%$. \quad
+        (b) $\num{300}\per (1,04)^6\approx\num{300}\per 1,265319=\num{379,60}\eur$. És un
+        crèdit \textbf{molt car}: el «$4\%$» mensual amaga una TAE del $60,1\%$, i en
+        només $6$ mesos el deute de $\num{300}\eur$ ja puja a gairebé $\num{380}\eur$.
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{4}
+  \item (a) Nova quota: $\num{700}\per 1,04=\num{728}\eur$. \quad
+        (b) Abans li quedaven $\num{900}-\num{700}=\num{200}\eur$; ara li queden
+        $\num{900}-\num{728}=\num{172}\eur$. Ha \textbf{perdut $\num{28}\eur$ al mes}
+        (uns $\num{336}\eur$ l'any) per a la resta de despeses, tot i que l'ajut «no ha
+        baixat»: en temps d'inflació, mantenir una xifra congelada equival a perdre
+        poder adquisitiu.
+  \item Total d'ingressos: $\num{1500}+20\per\num{30}=\num{1500}+\num{600}=\num{2100}\eur$.
+        Balanç: $\num{2100}-\num{1850}=\num{250}\eur$. És positiu: el projecte
+        \textbf{quadra} (amb un marge de $\num{250}\eur$).
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): el Bloc 1 i el Bloc 2
+puntuen sobre $3,5$ i el Bloc 3 sobre $3$. Dins de cada bloc es reparteix entre el
+procediment correcte, la \textbf{interpretació} dins del context econòmic i social i la
+\textbf{mirada crítica} (encadenar índexs, TAE, poder adquisitiu). Total: $10$ punts.}
