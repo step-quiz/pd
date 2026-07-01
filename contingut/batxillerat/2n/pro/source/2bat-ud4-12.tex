@@ -1,0 +1,136 @@
+% =====================================================================
+%  2bat-ud4-12.tex  —  SESSIÓ 12: Optimització amb GeoGebra
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 12 — Optimització amb GeoGebra}%
+{Treball tecnològic: visualitzar les funcions d'optimització, localitzar l'òptim a la pantalla i validar que coincideix amb el càlcul fet a mà.}
+
+\subsection{Idea clau}
+
+Portem unes quantes sessions resolent problemes d'optimització \textbf{a mà}: muntem la
+funció, la derivem i en trobem el màxim o el mínim. Avui ho \textbf{validem amb
+GeoGebra}: dibuixem la funció, localitzem l'extrem a la pantalla i comprovem que el
+punt que veiem coincideix amb el que havíem calculat. El càlcul, la gràfica i la
+interpretació han de \textbf{dir el mateix}.
+
+\begin{idea}
+\textbf{Què validem a GeoGebra}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Que el \textbf{punt crític} calculat a mà ($f'(x)=0$) és, a la pantalla, el
+        \textbf{punt més alt (màxim) o més baix (mínim)} de la corba.
+  \item Que el \textbf{valor òptim} $f(x)$ coincideix amb l'altura de l'extrem.
+\end{itemize}
+\textbf{Ordres útils:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Escriure la funció: \texttt{f(x)=-2x\^{}2+40x}.
+  \item Veure la derivada: \texttt{f'(x)} (o \texttt{Derivada(f)}).
+  \item Localitzar l'extrem directament: \texttt{Extrem(f)} (o \texttt{Extremum}).
+  \item Marcar un punt concret: \texttt{A=(10, f(10))}.
+\end{itemize}
+\textbf{La regla d'or:} la gràfica i l'anàlisi s'han de validar \textbf{mútuament}; si
+no coincideixen, una de les dues té un error.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[validar el màxim del problema del hort]
+Al problema del hort (sessió 9), l'àrea era $A(x)=40x-2x^2$ i el màxim sortia a $x=10$,
+amb $A(10)=200$. Ho validem: introduïm \texttt{A(x)=40x-2x\^{}2} i \texttt{Extrem(A)}.
+GeoGebra marca el punt $(10,200)$ al cim de la paràbola. \textbf{Coincideix} amb el
+càlcul: el punt crític és, efectivament, el punt més alt.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.4cm, height=4.4cm, xlabel={\small $x$}, ylabel={\small $A$},
+    xmin=0, xmax=20, ymin=0, ymax=240, xtick={0,5,10,15,20}, ytick={100,200}]
+  \addplot[udblue, domain=0:20, samples=80]{40*x-2*x^2};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(10,200)};
+  \node[udnavy, font=\scriptsize] at (axis cs:10,222){màxim $(10,200)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{GeoGebra confirma el màxim a $(10,200)$: el punt crític calculat a mà és el cim de la corba.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[descartar la solució sense sentit, amb la pantalla]
+A la caixa de cartolina (sessió 10), el volum era $V(x)=4x^3-48x^2+144x$ i
+\texttt{Extrem(V)} dóna \textbf{dos} punts: $(2,128)$ i $(6,0)$. A la pantalla es veu
+clarament que $x=6$ correspon a un volum \textbf{zero} (la caixa desapareix), mentre que
+$x=2$ és el màxim real. La gràfica ajuda a \textbf{justificar} per què descartem $x=6$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[validar un mínim de cost]
+Has calculat que el cost mitjà $f(x)=x^2-6x+13$ té un mínim a $(3,4)$. Com ho
+confirmaries a GeoGebra i què hauries de veure?
+\solucio
+Introdueixes \texttt{f(x)=x\^{}2-6x+13} i \texttt{Extrem(f)}. GeoGebra hauria de marcar
+el punt $(3,4)$ al \textbf{fons} de la paràbola (el punt més baix). També pots escriure
+\texttt{f'(x)} i comprovar que talla l'eix $X$ a $x=3$ (és a dir, $f'(3)=0$). Les tres
+mirades coincideixen: càlcul, gràfica i interpretació (cost mínim de $4\eur$ amb $300$
+usuaris).
+\resposta{GeoGebra marca el mínim a $(3,4)$; \texttt{f'(x)} talla l'eix $X$ a $x=3$.}
+\end{exresolt}
+
+\begin{exresolt}[la pantalla detecta un error de càlcul]
+A mà has dit que $f(x)=-x^2+6x$ té el màxim a $x=6$. A GeoGebra, \texttt{Extrem(f)}
+marca el punt a $x=3$. Qui té raó?
+\solucio
+Revisem el càlcul: $f'(x)=-2x+6=0\Rightarrow x=3$, no $x=6$ (segurament s'ha confós el
+terme). GeoGebra té raó: el màxim és a $(3,9)$. La gràfica ha ajudat a \textbf{detectar
+i corregir} l'error.
+\resposta{El màxim és a $x=3$ (no $x=6$); el càlcul a mà tenia un error.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Full de pràctica tecnològica. Per a cada funció: anota l'òptim que has
+trobat a mà, comprova'l a GeoGebra i digues si coincideix.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Introdueix \texttt{I(x)=-2x\^{}2+80x} i \texttt{Extrem(I)}. Quin punt marca?
+        Coincideix amb el preu òptim i l'ingrés màxim que vas calcular?
+  \item Introdueix \texttt{C(x)=x\^{}2-40x+500} i localitza el mínim amb
+        \texttt{Extrem(C)}. A quin $x$ és? Quin és el cost mínim?
+  \item Introdueix \texttt{V(x)=4x\^{}3-48x\^{}2+144x} (la caixa) i \texttt{Extrem(V)}.
+        Quins \textbf{dos} punts marca? Quin descartes i per què?
+  \item Dibuixa \texttt{f(x)=x\^{}2-6x+13} i la seva derivada \texttt{f'(x)}. Comprova
+        que el punt on \texttt{f'(x)} talla l'eix $X$ és justament l'$x$ del mínim de
+        \texttt{f}.
+  \item Completa el full de validació amb tres problemes d'optimització:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.4cm} p{4.4cm} p{2.4cm} p{1.6cm}}
+        \toprule
+        \textbf{Funció} & \textbf{Òptim a mà $(x,f(x))$} & \textbf{GeoGebra} & \textbf{Coincideix?} \\
+        \midrule
+         & & & \\[10pt]
+         & & & \\[10pt]
+         & & & \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Validació mútua)} En algun cas la gràfica t'ha ajudat a corregir un
+        error de càlcul o a descartar una solució sense sentit? Explica què havia passat.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item \texttt{Extrem(I)} marca $(20,800)$: preu òptim $20\eur$, ingrés màxim $800\eur$.
+        Coincideix amb el càlcul a mà.
+  \item Mínim a $x=20$; cost mínim $C(20)=400-800+500=100$ centenars d'euros. GeoGebra el
+        marca al fons de la paràbola.
+  \item Marca $(2,128)$ i $(6,0)$. Es descarta $x=6$ perquè dóna volum zero (el costat de
+        la base $12-2\cdot 6=0$): la caixa no existeix. L'òptim real és $x=2$.
+  \item \texttt{f'(x)=2x-6} talla l'eix $X$ a $x=3$, que és exactament l'$x$ del mínim de
+        \texttt{f} ($(3,4)$). Coincideix.
+  \item Resposta oberta (full de validació personal). Es valora la coherència entre el
+        càlcul i la visualització.
+  \item Resposta oberta. Es valora descriure bé el cas i l'error o la solució descartada.
+\end{sollist}
+\end{solucions}

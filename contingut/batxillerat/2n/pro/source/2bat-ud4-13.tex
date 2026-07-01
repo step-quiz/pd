@@ -1,0 +1,133 @@
+% =====================================================================
+%  2bat-ud4-13.tex  —  SESSIÓ 13: Cas integrador: un projecte social complet
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 13 — Cas integrador: un projecte social complet}%
+{Integrar tota la unitat en un únic projecte: ritme de canvi, creixement, màxim i mínim, optimització i un informe d'interpretació.}
+
+\subsection{Idea clau}
+
+Tanquem la unitat aplicant-ho \textbf{tot} a un sol cas realista. Tenim un projecte
+social i dues funcions que el descriuen: l'\textbf{impacte} que genera i el \textbf{cost
+mitjà} de funcionament. Sobre aquestes funcions farem el cicle complet d'anàlisi:
+estudiar com canvien (\textbf{derivada}), on creixen i decreixen, on tenen el
+\textbf{màxim} o el \textbf{mínim}, i resoldre un problema d'\textbf{optimització}.
+Acabarem amb un breu \textbf{informe}, com els que es fan als cicles formatius.
+
+\begin{idea}
+\textbf{El cas.} Una entitat avalua un projecte de menjador social al llarg dels mesos
+$x$ de funcionament:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Impacte social} (en una escala interna de 0 a 100):
+        $\;V(x)=-x^3+12x^2-36x+50$, per a $0\le x\le 8$.
+  \item \textbf{Cost mitjà} per àpat (en euros) segons els centenars d'àpats diaris $x$:
+        $\;C(x)=x^2-8x+25$.
+\end{itemize}
+\textbf{Anàlisi completa:} (1) ritme de canvi de l'impacte; (2) on creix i on decreix;
+(3) màxim i mínim de l'impacte; (4) cost mitjà mínim; (5) informe d'interpretació.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la gràfica de l'impacte]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10.4cm, height=5.2cm,
+    xlabel={\small mesos ($x$)}, ylabel={\small impacte $V(x)$},
+    xmin=0, xmax=8.4, ymin=0, ymax=58, xtick={0,2,4,6,8}, ytick={18,50}]
+  \addplot[udblue, domain=0:8, samples=120]{-x^3+12*x^2-36*x+50};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(2,18)(6,50)};
+  \node[udnavy, font=\scriptsize] at (axis cs:2,11){mín $(2,18)$};
+  \node[udnavy, font=\scriptsize] at (axis cs:6,55){màx $(6,50)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{L'impacte baixa al principi fins a un mínim al mes 2, després creix fins a un màxim al mes 6 i torna a baixar.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[l'anàlisi pas a pas]
+\textbf{(1) Ritme de canvi:} $V'(x)=-3x^2+24x-36=-3(x-2)(x-6)$.
+
+\noindent\textbf{(2) Creixement:} $V'(x)=0$ a $x=2$ i $x=6$. Amb valors de prova:
+$V'(0)=-36<0$ (decreix), $V'(4)=12>0$ (creix), $V'(8)=-36<0$ (decreix). Així, l'impacte
+\textbf{decreix} els primers 2 mesos, \textbf{creix} del mes 2 al 6 i \textbf{decreix}
+a partir del mes 6.
+
+\noindent\textbf{(3) Extrems:} en $x=2$, $V'$ passa de $-$ a $+$ $\Rightarrow$
+\textbf{mínim} $(2,18)$ (el moment més fluix del projecte). En $x=6$, de $+$ a $-$
+$\Rightarrow$ \textbf{màxim} $(6,50)$ (el moment de més impacte).
+
+\noindent\textbf{(4) Cost mínim:} $C'(x)=2x-8=0\Rightarrow x=4$ (passa de $-$ a $+$:
+mínim). El cost mitjà mínim és $C(4)=16-32+25=9\eur$ per àpat, amb $400$ àpats diaris.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[el moment de més impacte]
+A partir de l'estudi de $V(x)$, digues en quin mes el projecte té el màxim impacte i
+quin valor assoleix. Justifica-ho amb la derivada.
+\solucio
+$V'(x)=-3(x-2)(x-6)$ s'anul·la a $x=2$ i $x=6$. En $x=6$, la derivada passa de positiva
+($V'(4)=12$) a negativa ($V'(8)=-36$): és un \textbf{màxim}. El valor és
+$V(6)=-216+432-216+50=50$. El màxim impacte (50 sobre 100) s'assoleix al \textbf{mes 6}.
+\resposta{Màxim impacte al mes 6, amb $V(6)=50$.}
+\end{exresolt}
+
+\begin{exresolt}[la mida òptima del servei]
+Quants àpats diaris fan mínim el cost mitjà per àpat? Quin és aquest cost?
+\solucio
+$C(x)=x^2-8x+25$; $C'(x)=2x-8=0\Rightarrow x=4$. La derivada passa de $-$ ($C'(3)=-2$) a
+$+$ ($C'(5)=2$): és un \textbf{mínim}. El cost mínim és $C(4)=9\eur$ per àpat, amb
+$x=4$ centenars, és a dir $400$ àpats diaris. Per sota o per sobre d'aquesta xifra, el
+cost per àpat puja.
+\resposta{$400$ àpats diaris; cost mitjà mínim $9\eur$ per àpat.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballeu el cas complet. Els exercicis 1--4 fan l'anàlisi; el 5 i el 6
+demanen l'informe i la interpretació.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula $V'(x)$ i comprova que s'anul·la a $x=2$ i $x=6$. Quin és el ritme de
+        canvi de l'impacte al mes 4 ($V'(4)$)? És creixent o decreixent en aquell mes?
+  \item Fes la taula de signes de $V'(x)$ als trams $(0,2)$, $(2,6)$ i $(6,8)$ i indica
+        on l'impacte creix i on decreix.
+  \item Classifica els dos punts crítics de $V(x)$ (màxim o mínim) i calcula el valor de
+        $V$ en cadascun.
+  \item Estudia el cost mitjà $C(x)=x^2-8x+25$: troba el nombre d'àpats que el fa mínim
+        i el cost mínim.
+  \item \textbf{(Informe)} Redacta un breu informe (4--6 línies) per a l'entitat amb les
+        conclusions: quan el projecte té menys i més impacte, i quina és la mida més
+        eficient del servei. Inclou una recomanació.
+  \item \textbf{(Interpretació)} L'impacte té un \emph{mínim} al mes 2 abans de
+        recuperar-se. Quina explicació social podria tenir aquesta davallada inicial
+        seguida d'una millora? Com ho tindries en compte en valorar el projecte si només
+        n'haguessis vist els 2 primers mesos?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item $V'(x)=-3x^2+24x-36=-3(x-2)(x-6)$, s'anul·la a $x=2$ i $x=6$.
+        $V'(4)=-48+96-36=12>0$: al mes 4 l'impacte és \textbf{creixent}.
+  \item Signes: $(0,2)$ $V'(0)=-36<0$ decreix; $(2,6)$ $V'(4)=12>0$ creix; $(6,8)$
+        $V'(8)=-36<0$ decreix.
+  \item En $x=2$: $V'$ de $-$ a $+$ $\Rightarrow$ \textbf{mínim} $(2,18)$. En $x=6$: $V'$
+        de $+$ a $-$ $\Rightarrow$ \textbf{màxim} $(6,50)$.
+  \item $C'(x)=2x-8=0\Rightarrow x=4$ (mínim). Cost mínim $C(4)=9\eur$ per àpat, amb
+        $400$ àpats diaris.
+  \item Resposta oberta. Ha d'incloure: mínim impacte al mes 2, màxim al mes 6, mida
+        òptima de $400$ àpats/dia ($9\eur$/àpat), i una recomanació coherent (per exemple,
+        sostenir el projecte més enllà del mes 2 perquè l'impacte es recupera, i
+        dimensionar el servei a l'entorn dels 400 àpats).
+  \item Resposta oberta. Idea: la davallada inicial pot reflectir el rodatge del projecte
+        (ajustos, poca difusió, confiança que es construeix); jutjar-lo només pels 2
+        primers mesos donaria una imatge injustament negativa, perquè just després
+        comença la recuperació cap al màxim.
+\end{sollist}
+\end{solucions}

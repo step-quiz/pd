@@ -1,0 +1,135 @@
+% =====================================================================
+%  2bat-ud4-10.tex  —  SESSIÓ 10: Optimització: casos socials
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — Optimització: casos socials}%
+{Continuació de l'Activitat 3: més problemes d'optimització, amb plantejaments una mica més exigents i contextos variats.}
+
+\subsection{Idea clau}
+
+A la sessió 9 vau aprendre el \textbf{mètode dels 5 passos} per optimitzar. Avui el
+\textbf{posem en pràctica} amb casos més rics: problemes on construir la funció demana
+una mica més de feina (una condició que cal aïllar, un volum, una superfície dividida).
+El procediment és el mateix; el que millorem és la \textbf{traducció} de l'enunciat.
+
+\begin{idea}
+\textbf{Recordatori del mètode (5 passos)}
+\begin{enumerate}[leftmargin=1.6em, itemsep=1pt]
+  \item Identifica l'\textbf{objectiu} (què es fa màxim o mínim) i la \textbf{variable}.
+  \item Escriu la \textbf{funció}; si hi ha una condició, fes-la servir per quedar-te amb
+        una sola variable.
+  \item \textbf{Deriva} i resol $f'(x)=0$.
+  \item \textbf{Classifica} el punt crític (signe de $f'$).
+  \item \textbf{Interpreta} i comprova que la solució tingui sentit en el context.
+\end{enumerate}
+\textbf{Consell:} sempre que puguis, escriu primer la \emph{condició} (el total, el
+perímetre, el material disponible) i aïlla-hi una variable abans de muntar la funció.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la satisfacció d'un casal segons la participació]
+La satisfacció mitjana en una activitat de casal (en una escala interna) segons el
+nombre de participants $x$ (en desenes) es modelitza amb $S(x)=-\tfrac{1}{2}x^2+30x$.
+Quina participació la fa màxima?
+\[
+S'(x)=-x+30=0 \Rightarrow x=30.
+\]
+$S'$ passa de $+$ ($S'(29)=1$) a $-$ ($S'(31)=-1$): és un \textbf{màxim}. La satisfacció
+és màxima amb $x=30$ desenes, és a dir $300$ participants, amb
+$S(30)=-450+900=450$. Més enllà d'aquesta xifra, la massificació en fa baixar la
+qualitat.
+\end{exemple}
+
+\begin{exemple}[una caixa oberta de cartolina]
+A partir d'una cartolina quadrada de $12$ cm de costat es fa una caixa \textbf{sense
+tapa} retallant un quadrat de costat $x$ a cada cantonada i aixecant les vores. Quin
+retall dóna el \textbf{volum màxim}?
+
+\medskip
+\noindent\textbf{Funció:} la base de la caixa és un quadrat de costat $12-2x$ i l'altura
+és $x$, així que
+\[
+V(x)=x\,(12-2x)^2=4x^3-48x^2+144x.
+\]
+\noindent\textbf{Derivem:} $V'(x)=12x^2-96x+144=12(x-2)(x-6)$, que s'anul·la a $x=2$ i
+$x=6$. Com que el costat de la base ha de ser positiu ($12-2x>0\Rightarrow x<6$), només
+té sentit $x=2$. Allà $V'$ passa de $+$ a $-$: \textbf{màxim}. El retall òptim és $x=2$
+cm i el volum màxim $V(2)=2\cdot 8^2=128\ \text{cm}^3$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[una tanca amb divisió interior]
+Una entitat vol tancar un recinte rectangular i, a més, dividir-lo en dues parcel·les
+iguals amb una tanca interior \textbf{paral·lela} a un dels costats. Disposa de $120$ m
+de tanca en total. Quines mides donen la màxima superfície?
+\solucio
+\textbf{Variable i condició:} diem $x$ al costat perpendicular a la divisió i $y$ a
+l'altre. La tanca interior fa que hi hagi \textbf{tres} segments de longitud $x$ i
+\textbf{dos} de longitud $y$:
+\[
+3x+2y=120 \ \Rightarrow\ y=\frac{120-2x}{3}.
+\]
+\textbf{Funció (àrea):}
+\[
+A(x)=x\cdot y=x\cdot\frac{120-2x}{3}=\frac{120x-2x^2}{3}.
+\]
+\textbf{Derivem:} $A'(x)=\dfrac{120-4x}{3}=0 \Rightarrow x=30$. $A'$ passa de $+$ a $-$:
+\textbf{màxim}. Aleshores $y=\dfrac{120-60}{3}=20$. La superfície màxima és
+$A(30)=30\cdot 20=600\ \text{m}^2$.
+\resposta{$x=30$ m, $y=20$ m; superfície màxima $600\ \text{m}^2$.}
+\end{exresolt}
+
+\begin{exresolt}[cost mínim per unitat]
+El cost per unitat de servei (en euros) segons el nombre de centenars d'unitats $x$ és
+$C(x)=x^2-24x+200$. Quantes unitats fan el cost mínim?
+\solucio
+$C'(x)=2x-24=0\Rightarrow x=12$. $C'$ passa de $-$ a $+$: \textbf{mínim}. Amb $x=12$
+($1\,200$ unitats), el cost mínim per unitat és $C(12)=144-288+200=56\eur$.
+\resposta{$x=12$ (1\,200 unitats); cost mínim $56\eur$ per unitat.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Els ingressos d'una fira solidària (en euros) segons el preu d'entrada $x$ són
+        $I(x)=-x^2+40x$. Troba el preu òptim i l'ingrés màxim.
+  \item El cost d'un programa (en centenars d'euros) segons els mesos $x$ és
+        $C(x)=x^2-50x+700$. Troba els mesos que el fan mínim i el cost mínim.
+  \item Reparteix $18$ recursos en dues partides perquè el producte sigui màxim.
+  \item Un hort rectangular ha de tenir un perímetre de $80$ m. Escriu l'àrea en funció
+        d'un costat $x$, deriva i troba les mides de màxima superfície.
+  \item \textbf{(Plantejament)} A partir d'una cartolina quadrada de $18$ cm de costat
+        es fa una caixa sense tapa retallant quadrats de costat $x$. Escriu $V(x)$,
+        deriva i troba el retall que dóna el volum màxim (descarta la solució sense
+        sentit). \emph{(Pista: $V'(x)=12(x-3)(x-9)$.)}
+  \item \textbf{(Interpretació)} En l'exemple de la satisfacció del casal, què vol dir,
+        socialment, que passat el punt òptim la satisfacció baixi tot i tenir més
+        participants? Com ho tindries en compte en planificar l'aforament?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item $I'(x)=-2x+40=0\Rightarrow x=20$ (màxim). Preu òptim $20\eur$; ingrés màxim
+        $I(20)=-400+800=400\eur$.
+  \item $C'(x)=2x-50=0\Rightarrow x=25$ (mínim). Cost mínim $C(25)=625-1250+700=75$
+        centenars d'euros ($7\,500\eur$).
+  \item $P(x)=x(18-x)$; $P'(x)=18-2x=0\Rightarrow x=9$ (màxim). Partides $9$ i $9$;
+        producte $81$.
+  \item Perímetre $2x+2y=80\Rightarrow y=40-x$; $A(x)=x(40-x)$;
+        $A'(x)=40-2x=0\Rightarrow x=20$ (màxim). Costats $20\times 20$ m (quadrat); àrea
+        $400\ \text{m}^2$.
+  \item Base $18-2x$, altura $x$: $V(x)=x(18-2x)^2=4x^3-72x^2+324x$;
+        $V'(x)=12x^2-144x+324=12(x-3)(x-9)$. Com que $x<9$, la solució vàlida és $x=3$
+        (màxim). Volum màxim $V(3)=3\cdot 12^2=432\ \text{cm}^3$.
+  \item Resposta oberta. Idea: passat l'òptim, afegir més participants \emph{empitjora}
+        l'experiència (massificació, menys atenció per persona), de manera que «com més,
+        millor» deixa de ser cert; en planificar l'aforament caldria fixar-lo a l'entorn
+        del punt òptim, no al màxim físic possible.
+\end{sollist}
+\end{solucions}

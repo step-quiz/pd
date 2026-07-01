@@ -1,0 +1,128 @@
+% =====================================================================
+%  2bat-ud5-9.tex  —  SESSIÓ 9: La distribució normal
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 9 — La distribució normal}%
+{Presentar la corba normal, els seus paràmetres (mitjana i desviació) i la idea que la probabilitat es llegeix com a àrea sota la corba.}
+
+\subsection{Idea clau}
+
+Ja hem vist que la binomial, amb moltes repeticions, dibuixa una \textbf{campana}. Avui
+presentem el model continu que la descriu: la \textbf{distribució normal}. És la corba
+més important de l'estadística perquè moltíssimes magnituds reals s'hi ajusten.
+
+\begin{idea}
+\textbf{La corba normal.} És una corba en forma de campana, \textbf{simètrica},
+determinada per dos paràmetres:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item La \textbf{mitjana} $\mu$: marca el \textbf{centre} de la campana (on és el
+        màxim).
+  \item La \textbf{desviació típica} $\sigma$: mesura com d'\textbf{ampla} és la campana
+        (com de repartides estan les dades). Poca $\sigma$ $\to$ campana estreta i alta;
+        molta $\sigma$ $\to$ campana ampla i baixa.
+\end{itemize}
+S'escriu $X\sim N(\mu,\sigma)$. \textbf{Idea central:} la \textbf{probabilitat} d'un
+interval és l'\textbf{àrea} sota la corba en aquell interval; l'àrea total val $1$
+($100\%$).
+\end{idea}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=11cm, height=5cm,
+    xlabel={\small $x$}, ylabel={}, ytick=\empty,
+    xmin=-4, xmax=4, ymin=0, ymax=0.45,
+    xtick={-3,-2,-1,0,1,2,3}, xticklabels={$\mu\!-\!3\sigma$,$\mu\!-\!2\sigma$,$\mu\!-\!\sigma$,$\mu$,$\mu\!+\!\sigma$,$\mu\!+\!2\sigma$,$\mu\!+\!3\sigma$}]
+  \addplot[udblue, thick, domain=-4:4, samples=140]{0.3989*exp(-x^2/2)};
+  \addplot[udblue!18, domain=-1:1, samples=80] {0.3989*exp(-x^2/2)} \closedcycle;
+  \node[udnavy, font=\scriptsize] at (axis cs:0,0.16){$\approx 68\%$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La corba normal, centrada a $\mu$. L'àrea entre $\mu-\sigma$ i $\mu+\sigma$ és aproximadament el $68\%$ del total.}
+\end{center}
+
+\subsection{Exemples}
+
+\begin{exemple}[llegir els paràmetres]
+Les puntuacions d'una prova d'aptitud es reparteixen segons $N(50,10)$: la mitjana és
+$\mu=50$ (el centre de la campana) i la desviació típica és $\sigma=10$ (l'amplada). La
+majoria de puntuacions cauran a prop de $50$, i com més ens allunyem del centre, menys
+freqüents són.
+\end{exemple}
+
+\begin{exemple}[la regla del 68 -- 95 -- 99{,}7]
+En qualsevol distribució normal, sempre passa el mateix repartiment al voltant de la
+mitjana:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Entre $\mu-\sigma$ i $\mu+\sigma$ hi ha aproximadament el \textbf{68\%} de les
+        dades.
+  \item Entre $\mu-2\sigma$ i $\mu+2\sigma$, aproximadament el \textbf{95\%}.
+  \item Entre $\mu-3\sigma$ i $\mu+3\sigma$, aproximadament el \textbf{99,7\%}.
+\end{itemize}
+Amb $N(50,10)$: el $68\%$ de les puntuacions estan entre $40$ i $60$; el $95\%$, entre
+$30$ i $70$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[aplicar la regla del 68]
+L'alçada d'un grup segueix $N(170,8)$ (en cm). Entre quins valors hi ha aproximadament el
+$68\%$ de les persones?
+\solucio
+El $68\%$ central està entre $\mu-\sigma$ i $\mu+\sigma$:
+\[
+170-8=162 \quad\text{i}\quad 170+8=178.
+\]
+Aproximadament el $68\%$ de les persones fan entre $162$ i $178$ cm.
+\resposta{Entre $162$ i $178$ cm.}
+\end{exresolt}
+
+\begin{exresolt}[l'efecte de la desviació]
+Dues proves tenen mitjana $\mu=50$, però una té $\sigma=5$ i l'altra $\sigma=15$. Quina
+campana és més estreta? Què vol dir en termes de les dades?
+\solucio
+La de $\sigma=5$ és més \textbf{estreta i alta}: les dades estan més concentrades a prop
+de $50$. La de $\sigma=15$ és més \textbf{ampla i baixa}: les dades estan més disperses.
+Menys desviació vol dir més homogeneïtat.
+\resposta{La de $\sigma=5$; indica dades més concentrades al voltant de la mitjana.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item En una $N(60,12)$, digues quant valen la mitjana i la desviació típica, i entre
+        quins valors hi ha el $68\%$ central.
+  \item En una $N(100,15)$, entre quins valors hi ha aproximadament el $95\%$ de les
+        dades?
+  \item Dues distribucions normals tenen la mateixa mitjana però desviacions $\sigma=4$ i
+        $\sigma=10$. Quina és més ampla? Quina té les dades més disperses?
+  \item L'àrea total sota una corba normal, quant val? Com es relaciona amb la
+        probabilitat?
+  \item \textbf{(Aplicació)} El temps d'atenció (en minuts) a un servei segueix
+        $N(20,4)$. Entre quins valors espera estar el $68\%$ de les atencions? I el
+        $95\%$?
+  \item \textbf{(Interpretació)} Per què diem que la distribució normal és tan important?
+        Posa dos exemples de magnituds reals que s'hi ajustin.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item $\mu=60$, $\sigma=12$. El $68\%$ central: entre $60-12=48$ i $60+12=72$.
+  \item El $95\%$ està entre $\mu-2\sigma$ i $\mu+2\sigma$: $100-30=70$ i $100+30=130$.
+        Entre $70$ i $130$.
+  \item La de $\sigma=10$ és més ampla i té les dades més disperses; la de $\sigma=4$ és
+        més estreta (dades més concentrades).
+  \item L'àrea total val $1$ ($100\%$). La probabilitat d'un interval és l'àrea sota la
+        corba en aquell interval, per això l'àrea de tot el conjunt és la probabilitat
+        total, $1$.
+  \item El $68\%$: entre $20-4=16$ i $20+4=24$ minuts. El $95\%$: entre $20-8=12$ i
+        $20+8=28$ minuts.
+  \item Resposta oberta. Idea: és important perquè moltíssimes magnituds reals s'hi
+        ajusten i perquè permet calcular probabilitats de manera estàndard. Exemples:
+        alçades, pesos, puntuacions de proves, errors de mesura, temps d'atenció\ldots
+\end{sollist}
+\end{solucions}

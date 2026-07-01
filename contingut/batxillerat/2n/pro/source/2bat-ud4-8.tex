@@ -1,0 +1,136 @@
+% =====================================================================
+%  2bat-ud4-8.tex  —  SESSIÓ 8: Màxims i mínims
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 8 — Màxims i mínims}%
+{La sessió central: trobar els punts òptims d'una funció amb el criteri de la primera derivada, i classificar-los en màxims i mínims.}
+
+\subsection{Idea clau}
+
+Tornem a la pregunta que va obrir la unitat (sessió 1): \textbf{com trobem el punt
+òptim de qualsevol funció}, no només d'una paràbola? Ara ja en tenim totes les eines. A
+la sessió 6 vau veure que on $f'(x)=0$ hi pot haver un canvi de tendència. Avui hi posem
+nom: són els \textbf{màxims} i \textbf{mínims}, els punts òptims que buscàvem.
+
+\begin{idea}
+\textbf{Criteri de la primera derivada.} Els candidats a màxim o mínim són els punts on
+$f'(x)=0$ (els \textbf{punts crítics}). Per classificar-los, mirem com canvia el signe
+de $f'$ en passar pel punt:
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item Si $f'$ passa de \textbf{positiu a negatiu} ($+\to-$): la funció puja i després
+        baixa $\Rightarrow$ \textbf{màxim}.
+  \item Si $f'$ passa de \textbf{negatiu a positiu} ($-\to+$): la funció baixa i després
+        puja $\Rightarrow$ \textbf{mínim}.
+\end{itemize}
+\textbf{El vèrtex de 1r era un cas particular d'això:} en una paràbola hi ha un únic
+punt crític, que és el vèrtex.
+\end{idea}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=12cm, height=5cm,
+    xlabel={\small $x$}, ylabel={\small $f(x)$},
+    xmin=-0.4, xmax=4.4, ymin=0, ymax=6.5, xtick=\empty, ytick=\empty]
+  % f(x)=x^3-6x^2+9x+1 : max a (1,5), min a (3,1)
+  \addplot[udblue, domain=-0.1:4.1, samples=120]{x^3-6*x^2+9*x+1};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(1,5)(3,1)};
+  \node[udnavy, font=\scriptsize] at (axis cs:1,5.8){màxim};
+  \node[udnavy, font=\scriptsize] at (axis cs:3,0.4){mínim};
+  \node[udgreen, font=\scriptsize] at (axis cs:0.25,2.4){$f'>0$};
+  \node[udgrey, font=\scriptsize]   at (axis cs:2,2.0){$f'<0$};
+  \node[udgreen, font=\scriptsize] at (axis cs:3.75,3.0){$f'>0$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Al màxim, $f'$ passa de $+$ a $-$; al mínim, de $-$ a $+$. Entremig, on $f'<0$, la funció decreix.}
+\end{center}
+
+\subsection{Exemples}
+
+\begin{exemple}[el cost mitjà per usuari: un mínim]
+El cost mitjà per usuari d'un servei (en euros) segons el nombre de centenars d'usuaris
+$x$ és $f(x)=x^2-6x+13$. Busquem el punt òptim:
+\[
+f'(x)=2x-6=0 \ \Rightarrow\ x=3.
+\]
+A l'esquerra de $3$, $f'<0$ (per exemple $f'(2)=-2$); a la dreta, $f'>0$ ($f'(4)=2$).
+Passa de $-$ a $+$: és un \textbf{mínim}. El cost mínim és $f(3)=9-18+13=4\eur$ per
+usuari, amb $300$ usuaris. És el punt més eficient del servei.
+\end{exemple}
+
+\begin{exemple}[una funció amb màxim i mínim]
+Per a $f(x)=x^3-6x^2+9x+1$, la derivada és $f'(x)=3x^2-12x+9=3(x-1)(x-3)$, que
+s'anul·la a $x=1$ i $x=3$.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item En $x=1$: $f'$ passa de $+$ ($f'(0)=9$) a $-$ ($f'(2)=-3$) $\Rightarrow$
+        \textbf{màxim}, amb $f(1)=5$.
+  \item En $x=3$: $f'$ passa de $-$ a $+$ ($f'(4)=9$) $\Rightarrow$ \textbf{mínim}, amb
+        $f(3)=1$.
+\end{itemize}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[trobar i classificar un màxim]
+El benefici d'una activitat (en centenars d'euros) segons el preu $x$ és
+$f(x)=-x^2+12x-11$. Troba el preu òptim i el benefici màxim.
+\solucio
+$f'(x)=-2x+12=0 \Rightarrow x=6$. A l'esquerra $f'>0$ ($f'(5)=2$); a la dreta $f'<0$
+($f'(7)=-2$): passa de $+$ a $-$, és un \textbf{màxim}. El benefici màxim és
+$f(6)=-36+72-11=25$, és a dir $2\,500\eur$, amb preu $6\eur$.
+\resposta{Preu òptim $6\eur$; benefici màxim $25$ centenars d'euros ($2\,500\eur$).}
+\end{exresolt}
+
+\begin{exresolt}[classificar dos punts crítics]
+Troba i classifica els punts crítics de $f(x)=x^3-3x^2-9x+5$.
+\solucio
+$f'(x)=3x^2-6x-9=3(x-3)(x+1)$, s'anul·la a $x=-1$ i $x=3$.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $x=-1$: $f'$ passa de $+$ ($f'(-2)=15$) a $-$ ($f'(0)=-9$) $\Rightarrow$
+        \textbf{màxim}, $f(-1)=10$.
+  \item $x=3$: $f'$ passa de $-$ a $+$ ($f'(4)=15$) $\Rightarrow$ \textbf{mínim},
+        $f(3)=-22$.
+\end{itemize}
+\resposta{Màxim a $(-1,10)$; mínim a $(3,-22)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Troba el punt crític de $f(x)=x^2-8x+20$ i classifica'l (màxim o mínim).
+        Quin és el valor òptim?
+  \item Troba el punt crític de $f(x)=-x^2+6x$ i classifica'l. Relaciona'l amb el
+        vèrtex de la paràbola de 1r.
+  \item Troba i classifica els punts crítics de $f(x)=x^3-3x^2-9x$.
+  \item Troba i classifica els punts crítics de $f(x)=x^3-12x+4$.
+  \item \textbf{(Interpretació)} El cost mitjà per usuari d'un servei és
+        $f(x)=x^2-6x+13$ (en euros, amb $x$ centenars d'usuaris). Quants usuaris fan el
+        cost mínim? Per què, passat aquest punt, tornar a tenir més usuaris fa pujar el
+        cost mitjà?
+  \item \textbf{(Ampliació)} Troba i classifica els punts crítics de
+        $f(x)=x^3-6x^2+5$, i digues el valor de $f$ en cadascun.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item $f'(x)=2x-8=0\Rightarrow x=4$. Passa de $-$ ($f'(3)=-2$) a $+$ ($f'(5)=2$):
+        \textbf{mínim}. Valor òptim $f(4)=16-32+20=4$.
+  \item $f'(x)=-2x+6=0\Rightarrow x=3$. Passa de $+$ a $-$: \textbf{màxim}, $f(3)=9$. És
+        exactament el vèrtex de la paràbola $-x^2+6x$ (a 1r es trobava amb
+        $x_v=\frac{-b}{2a}=\frac{-6}{-2}=3$).
+  \item $f'(x)=3(x-3)(x+1)$, crítics a $x=-1$ i $x=3$. Màxim a $(-1,5)$
+        ($f'$ de $+$ a $-$); mínim a $(3,-27)$ ($f'$ de $-$ a $+$).
+  \item $f'(x)=3x^2-12=3(x-2)(x+2)$, crítics a $x=-2$ i $x=2$. Màxim a $(-2,20)$;
+        mínim a $(2,-12)$.
+  \item El cost mínim és a $x=3$, és a dir $300$ usuaris ($f(3)=4\eur$). Passat aquest
+        punt, $f'>0$: el cost mitjà torna a pujar (per exemple per saturació o necessitat
+        de més recursos), de manera que créixer més enllà de l'òptim deixa de ser
+        eficient.
+  \item $f'(x)=3x^2-12x=3x(x-4)$, crítics a $x=0$ i $x=4$. Màxim a $(0,5)$; mínim a
+        $(4,-27)$.
+\end{sollist}
+\end{solucions}

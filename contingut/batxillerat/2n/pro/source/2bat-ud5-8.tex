@@ -1,0 +1,127 @@
+% =====================================================================
+%  2bat-ud5-8.tex  —  SESSIÓ 8: De la binomial a la campana
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 8 — De la binomial a la campana}%
+{Observar que, en augmentar el nombre de repeticions, les barres de la binomial dibuixen una campana: la porta d'entrada a la distribució normal.}
+
+\subsection{Idea clau}
+
+A la sessió 7 vau representar la binomial amb barres i va aparèixer una forma de
+\textbf{campana}. Avui la mirem amb atenció: en \textbf{augmentar el nombre de
+repeticions}, les barres de la binomial s'assemblen cada cop més a una \textbf{corba
+suau i simètrica}. Aquesta corba és la \textbf{distribució normal}, que ocuparà la resta
+de la unitat.
+
+\begin{idea}
+\textbf{De les barres discretes a la corba contínua.}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item La binomial és \textbf{discreta}: compta èxits ($0,1,2,\dots$), i es dibuixa amb
+        \textbf{barres}.
+  \item Quan $n$ és \textbf{gran}, el perfil de les barres s'aproxima a una \textbf{corba
+        de campana}: pujada suau fins a un màxim central i baixada simètrica.
+  \item El \textbf{centre} de la campana és el valor esperat $\mu=n\cdot p$.
+\end{itemize}
+\textbf{Per què importa:} moltes magnituds socials (alçades, puntuacions, temps
+d'atenció\ldots) es reparteixen \emph{de manera natural} amb aquesta forma de campana. La
+\textbf{distribució normal} és el model que la descriu.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[amb poques repeticions: barres marcades]
+Amb $n=4$ i $p=0,5$, la binomial té poques barres i el perfil és angulós, però ja se'n
+veu la simetria al voltant del centre $\mu=2$:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8cm, height=3.8cm, ybar, bar width=10pt,
+    xlabel={\small $k$ èxits}, ylabel={\small $P(k)$},
+    xmin=-0.6, xmax=4.6, ymin=0, ymax=0.45, xtick={0,1,2,3,4}, ytick={0.2,0.4},
+    enlarge x limits=0.12]
+  \addplot[fill=udblue!55, draw=udnavy] coordinates {(0,0.0625)(1,0.25)(2,0.375)(3,0.25)(4,0.0625)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{$B(4;0,5)$: poques barres, però ja simètriques al voltant de $k=2$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[amb més repeticions: apareix la campana]
+Amb $n=10$ i $p=0,5$, les barres ja dibuixen clarament una campana centrada a $\mu=5$:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10.4cm, height=4.2cm, ybar, bar width=7pt,
+    xlabel={\small $k$ èxits}, ylabel={\small $P(k)$},
+    xmin=-0.6, xmax=10.6, ymin=0, ymax=0.30, xtick={0,2,4,6,8,10}, ytick={0.1,0.2},
+    enlarge x limits=0.06]
+  \addplot[fill=udblue!55, draw=udnavy] coordinates
+    {(0,0.001)(1,0.010)(2,0.044)(3,0.117)(4,0.205)(5,0.246)(6,0.205)(7,0.117)(8,0.044)(9,0.010)(10,0.001)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{$B(10;0,5)$: el perfil de les barres ja s'assembla a una corba de campana, amb el màxim al centre $\mu=5$.}
+\end{center}
+Amb $n$ encara més gran, el perfil es torna una corba suau: la \textbf{normal}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[on és el centre de la campana]
+Una binomial té $n=20$ i $p=0,5$. Sense dibuixar-la, on estarà el punt més alt (el centre
+de la campana)?
+\solucio
+El centre és el valor esperat $\mu=n\cdot p=20\cdot 0,5=10$. La campana serà simètrica al
+voltant de $k=10$.
+\resposta{Al centre $\mu=10$.}
+\end{exresolt}
+
+\begin{exresolt}[simetria de la campana]
+En una binomial amb $p=0,5$, per què la campana surt \textbf{simètrica}?
+\solucio
+Perquè amb $p=0,5$ l'èxit i el fracàs són igual de probables, de manera que $P(k)$ i
+$P(n-k)$ valen el mateix (per exemple, $P(3)=P(7)$ quan $n=10$). Això fa que les barres
+siguin iguals a banda i banda del centre, i la campana surti simètrica. Amb $p\neq 0,5$
+la campana es desplaça i s'inclina lleugerament.
+\resposta{Perquè $P(k)=P(n-k)$ quan $p=0,5$: èxit i fracàs són igual de probables.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a una binomial amb $n=30$ i $p=0,5$, on estarà el centre de la campana?
+  \item Per a una binomial amb $n=50$ i $p=0,4$, calcula el centre $\mu=n\cdot p$. La
+        campana estarà centrada al mig del recorregut o desplaçada?
+  \item Dibuixa (o descriu) com canvia el perfil de les barres en passar de $n=4$ a
+        $n=10$ amb $p=0,5$: què s'assembla més a una corba suau?
+  \item Explica amb les teves paraules la diferència entre una distribució
+        \textbf{discreta} (barres) i una de \textbf{contínua} (corba).
+  \item \textbf{(Interpretació)} Digues tres magnituds de l'àmbit social o quotidià que
+        creus que es reparteixen «en forma de campana» (moltes al centre, poques als
+        extrems).
+  \item \textbf{(Raonament)} Si una binomial té $p=0,8$ (èxit molt probable), creus que
+        la campana sortirà centrada o desplaçada cap a la dreta? Per què?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item $\mu=30\cdot 0,5=15$: centre a $k=15$.
+  \item $\mu=50\cdot 0,4=20$. Com que $p\neq 0,5$, la campana està \textbf{desplaçada}
+        (centrada a $20$, no a $25$, que seria el mig del recorregut $0$--$50$).
+  \item Resposta oberta. Amb $n=4$ el perfil és angulós (poques barres); amb $n=10$ ja
+        s'assembla molt més a una corba suau de campana. Com més gran és $n$, més suau i
+        més «corba» es veu.
+  \item Resposta oberta. Idea: una distribució discreta pren valors separats
+        ($0,1,2,\dots$) i es representa amb barres; una de contínua pot prendre qualsevol
+        valor d'un interval i es representa amb una corba, on la probabilitat es llegeix
+        com a àrea sota la corba.
+  \item Resposta oberta. Exemples habituals: alçades de les persones, puntuacions d'una
+        prova, temps d'espera, pes, temperatura diària\ldots
+  \item Desplaçada cap a la \textbf{dreta}: amb $p=0,8$ el nombre esperat d'èxits és alt
+        ($\mu=n\cdot 0,8$), de manera que el màxim de la campana cau cap als valors grans
+        de $k$.
+\end{sollist}
+\end{solucions}

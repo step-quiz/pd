@@ -1,0 +1,132 @@
+% =====================================================================
+%  2bat-ud5-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 5
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 5}%
+{Prova individual: quatre blocs alineats amb els criteris C1–C4. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 5 — Probabilitat i distribucions}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també triar la
+\textbf{base correcta} en una condicionada, reconèixer si una situació és
+\textbf{binomial}, \textbf{tipificar} bé i \textbf{interpretar} dins del context social.
+Es dona la taula $Z$. Calculadora permesa. Mostra tots els càlculs.\\[4pt]
+\footnotesize Valors de la taula $Z$: $P(Z<0,5)=0,6915$; $P(Z<1)=0,8413$;
+$P(Z<1,5)=0,9332$; $P(Z<2)=0,9772$; $P(Z<-1)=0,1587$; $P(Z<-2)=0,0228$.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Probabilitat condicionada \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Probabilitat condicionada}
+
+\noindent Un servei ha atès $160$ persones. La taula creua si han rebut \textbf{suport}
+amb si han aconseguit la \textbf{inserció laboral}:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Inserció: sí} & \textbf{Inserció: no} & \textbf{Total} \\
+\midrule
+\textbf{Amb suport}  & 72  & 18 & 90 \\
+\textbf{Sense suport} & 28 & 42 & 70 \\
+\midrule
+\textbf{Total}       & 100 & 60 & 160 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt]
+  \item Calcula $P(\text{inserció}\,|\,\text{amb suport})$ i
+        $P(\text{inserció}\,|\,\text{sense suport})$. Interpreta la diferència sense
+        estigmatitzar.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Distribució binomial \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Binomial}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=2]
+  \item Cada usuari té una probabilitat $p=0,5$ de superar una prova. En un grup de
+        $n=12$ usuaris:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt, itemsep=2pt]
+          \item Calcula el nombre esperat d'usuaris que la superaran.
+          \item Calcula la probabilitat que en superin \textbf{exactament 6}.
+                (Dada: $\binom{12}{6}=924$.)
+        \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Normal: tipificar \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Normal: tipificar}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=3]
+  \item Les puntuacions d'una prova segueixen $N(80,12)$. Tipifica el valor $x=92$ i
+        calcula $P(X<92)$. Interpreta què significa el resultat.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 4 (C4) — Normal: intervals i decisió \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 4 (C4) — Normal: intervals i decisió}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=4]
+  \item El temps d'atenció a un servei segueix $N(30,6)$ minuts.
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt, itemsep=2pt]
+          \item Calcula la probabilitat que una atenció duri \textbf{entre 24 i 36}
+                minuts. Amb quina regla coneguda coincideix?
+          \item El servei considera «atenció molt llarga» si supera els $42$ minuts.
+                Quina proporció d'atencions ho són? Interpreta si convé actuar.
+        \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD5 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item $P(\text{inserció}\,|\,\text{amb suport})=\dfrac{72}{90}=\dfrac{4}{5}=0,8=80\%$;
+        $P(\text{inserció}\,|\,\text{sense suport})=\dfrac{28}{70}=\dfrac{2}{5}=0,4=40\%$.
+        \textbf{Interpretació:} la inserció és molt més alta amb suport ($80\%$ enfront de
+        $40\%$), cosa que indica que el suport és efectiu i que caldria estendre'l a qui
+        encara no en rep; s'ha de llegir com una orientació de recursos, no com un judici
+        sobre les persones.
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{1}
+  \item \textbf{a)} $\mu=n\cdot p=12\cdot 0,5=6$ usuaris. \quad
+        \textbf{b)} $P(6)=\binom{12}{6}(0,5)^6(0,5)^6=924\cdot(0,5)^{12}=
+        924\cdot 0,000244\approx 0,2256=22,6\%$.
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{2}
+  \item $Z=\dfrac{92-80}{12}=1$; $P(X<92)=P(Z<1)=0,8413=84,13\%$. \textbf{Interpretació:}
+        el $84,13\%$ de les puntuacions són inferiors a $92$ (equivalentment, treure més
+        de $92$ és relativament poc freqüent, un $\approx 16\%$).
+\end{sollist}
+
+\noindent\textbf{Bloc 4 (C4)}
+\begin{sollist}\setcounter{enumi}{3}
+  \item \textbf{a)} $z_{24}=\dfrac{24-30}{6}=-1$, $z_{36}=\dfrac{36-30}{6}=1$;
+        $P(24<X<36)=P(Z<1)-P(Z<-1)=0,8413-0,1587=0,6826\approx 68,3\%$. Coincideix amb la
+        regla del $68\%$ ($\mu\pm\sigma$).
+        \textbf{b)} $z_{42}=\dfrac{42-30}{6}=2$; $P(X>42)=1-P(Z<2)=1-0,9772=0,0228=2,28\%$.
+        Només un $\approx 2,3\%$ de les atencions són molt llargues: el servei pot
+        considerar-ho acceptable, tot i que pot fixar-ho com a indicador a vigilar.
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): Bloc 1 $\sim 25\%$,
+Bloc 2 $\sim 25\%$, Bloc 3 $\sim 25\%$, Bloc 4 $\sim 25\%$. A cada bloc es valora el
+procediment correcte (base de la condicionada, fórmula binomial, tipificació), i sobretot
+la \textbf{interpretació} dins del context social. Llindar de superació: $4,0/10$; en cas
+contrari, recuperació trimestral.}

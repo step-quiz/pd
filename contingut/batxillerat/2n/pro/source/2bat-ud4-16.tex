@@ -1,0 +1,127 @@
+% =====================================================================
+%  2bat-ud4-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 4
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 4}%
+{Prova individual: quatre blocs alineats amb els criteris C1–C4. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 4 — Derivades i optimització}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també el
+\textbf{plantejament} correcte de la funció, la \textbf{classificació justificada} dels
+extrems (amb el signe de $f'$) i la \textbf{interpretació} dins del context social.
+Calculadora i regle permesos. Mostra tots els càlculs.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Càlcul de derivades \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Càlcul de derivades}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt]
+  \item Deriva el polinomi $f(x)=x^3-6x^2+4x-9$ i calcula $f'(1)$. Digues si, en
+        $x=1$, la funció \textbf{creix} o \textbf{decreix}.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Creixement i decreixement \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Creixement}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=2]
+  \item Estudia on \textbf{creix} i on \textbf{decreix} la funció
+        $f(x)=x^3-3x^2-24x$. Presenta la \textbf{taula de signes} de $f'$ amb un valor
+        de prova a cada tram.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Màxims i mínims \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Màxims i mínims}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=3]
+  \item Troba i \textbf{classifica} (màxim o mínim) els punts crítics de
+        $f(x)=x^3-3x+4$. Justifica la classificació amb el \textbf{canvi de signe} de
+        $f'$ i indica el valor de $f$ en cada extrem.
+  \item El cost mitjà per usuari d'un servei (en euros) és $C(x)=x^2-20x+150$, on $x$
+        és el nombre de centenars d'usuaris. Troba el nombre d'usuaris que fa el cost
+        \textbf{mínim} i quin és aquest cost.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 4 (C4) — Optimització \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 4 (C4) — Optimització}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=5]
+  \item Una entitat vol tancar un hort \textbf{rectangular} aprofitant una paret com un
+        dels costats, amb $48$ m de tanca per als altres tres costats. Si els dos
+        costats perpendiculars a la paret fan $x$:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt, itemsep=2pt]
+          \item Escriu la funció de l'\textbf{àrea} $A(x)$ en termes de $x$.
+          \item Deriva, troba el punt crític i \textbf{classifica'l}.
+          \item Dóna les \textbf{mides} de màxima superfície i la \textbf{superfície
+                màxima}, i interpreta el resultat.
+        \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD4 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item $f'(x)=3x^2-12x+4$. $f'(1)=3-12+4=-5<0$. Com que $f'(1)<0$, en $x=1$ la funció
+        \textbf{decreix}.
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{1}
+  \item $f'(x)=3x^2-6x-24=3(x-4)(x+2)$, s'anul·la a $x=-2$ i $x=4$.
+        \begin{center}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{l c c c}
+        \toprule
+        \textbf{Tram} & $(-\infty,-2)$ & $(-2,4)$ & $(4,\infty)$ \\
+        \midrule
+        $f'(x)$ & $+$ ($f'(-3)=15$) & $-$ ($f'(0)=-24$) & $+$ ($f'(5)=21$) \\
+        & creix & decreix & creix \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+        Creix a $(-\infty,-2)$ i $(4,\infty)$; decreix a $(-2,4)$.
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{2}
+  \item $f'(x)=3x^2-3=3(x-1)(x+1)$, crítics a $x=-1$ i $x=1$. En $x=-1$, $f'$ passa de
+        $+$ ($f'(-2)=9$) a $-$ ($f'(0)=-3$): \textbf{màxim} a $(-1,6)$. En $x=1$, de $-$
+        a $+$ ($f'(2)=9$): \textbf{mínim} a $(1,2)$.
+  \item $C'(x)=2x-20=0\Rightarrow x=10$. $C'$ passa de $-$ a $+$: \textbf{mínim}. Cost
+        mínim $C(10)=100-200+150=50\eur$, amb $x=10$ centenars, és a dir $\num{1000}$
+        usuaris.
+\end{sollist}
+
+\noindent\textbf{Bloc 4 (C4)}
+\begin{sollist}\setcounter{enumi}{4}
+  \item \textbf{a)} El costat paral·lel a la paret fa $48-2x$, així que
+        $A(x)=x(48-2x)=48x-2x^2$.
+        \textbf{b)} $A'(x)=48-4x=0\Rightarrow x=12$; $A'$ passa de $+$ ($A'(11)=4$) a $-$
+        ($A'(13)=-4$): \textbf{màxim}.
+        \textbf{c)} Els dos costats perpendiculars fan $12$ m i el costat paral·lel
+        $48-24=24$ m; superfície màxima $A(12)=12\cdot 24=288\ \text{m}^2$.
+        \textbf{Interpretació:} amb la tanca disponible, l'hort més gran possible fa
+        $12\times 24$ m.
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): Bloc 1 $\sim 25\%$,
+Bloc 2 $\sim 25\%$, Bloc 3 $\sim 25\%$, Bloc 4 $\sim 25\%$. A cada bloc es valora el
+procediment correcte (derivada i taula de signes), la classificació justificada dels
+extrems amb el canvi de signe de $f'$ i, sobretot, el plantejament i la interpretació
+dins del context social. Llindar de superació: $4,0/10$; en cas contrari, recuperació
+trimestral.}

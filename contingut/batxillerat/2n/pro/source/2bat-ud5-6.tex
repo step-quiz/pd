@@ -1,0 +1,114 @@
+% =====================================================================
+%  2bat-ud5-6.tex  —  SESSIÓ 6: Quants superaran el programa?
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 6 — Quants superaran el programa?}%
+{Activitat 2: modelitzar un grup real amb la binomial i traduir les probabilitats en decisions de planificació del servei.}
+
+\subsection{Idea clau}
+
+Apliquem la distribució binomial a un cas real (Activitat 2): sabem, per l'experiència
+d'edicions anteriors, la probabilitat que un usuari superi un programa formatiu, i volem
+\textbf{preveure el comportament del grup} per planificar el servei. Calcularem
+probabilitats d'interès i, sobretot, les \textbf{traduirem en decisions}.
+
+\begin{idea}
+\textbf{Preguntes útils per a la planificació.} Amb $n$ usuaris i probabilitat d'èxit
+$p$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Nombre esperat:} $\mu=n\cdot p$ (quants superaran, de mitjana).
+  \item \textbf{Exactament $k$:} $P(k)=\binom{n}{k}p^{k}(1-p)^{n-k}$.
+  \item \textbf{Com a mínim $k$:} se sumen les probabilitats de $k$, $k+1$, \dots, $n$.
+  \item \textbf{Com a màxim $k$:} se sumen les de $0$, $1$, \dots, $k$.
+\end{itemize}
+Cada probabilitat s'ha de traduir en una \textbf{conseqüència pràctica} (recursos,
+places, continuïtat del programa).
+\end{idea}
+
+\noindent\textbf{El cas.} En edicions anteriors, la probabilitat que un usuari superi el
+programa és $p=0,65$. Aquesta edició té un grup de $n=12$ usuaris.
+
+\subsection{Exemples}
+
+\begin{exemple}[nombre esperat i probabilitat exacta]
+Amb $n=12$ i $p=0,65$, el nombre esperat d'usuaris que superaran el programa és
+\[
+\mu=12\cdot 0,65=7,8\approx 8.
+\]
+La probabilitat que en superin \textbf{exactament 8} és
+\[
+P(8)=\binom{12}{8}(0,65)^{8}(0,35)^{4}\approx 0,237=23,7\%.
+\]
+\end{exemple}
+
+\begin{exemple}[com a mínim, per a la planificació]
+Si el servei vol assegurar la fase següent només si superen el programa \textbf{com a
+mínim 8} usuaris, cal la probabilitat $P(k\ge 8)$, que se suma de $8$ fins a $12$:
+\[
+P(k\ge 8)\approx 0,583=58,3\%.
+\]
+És a dir, hi ha una mica més d'un $50\%$ de possibilitats d'arribar al llindar: el servei
+faria bé de preveure un pla alternatiu.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[exactament un nombre d'èxits]
+En un grup de $10$ usuaris amb $p=0,8$ de completar un taller, quina és la probabilitat
+que \textbf{exactament 9} el completin?
+\solucio
+$n=10$, $p=0,8$, $k=9$:
+\[
+P(9)=\binom{10}{9}(0,8)^{9}(0,2)^{1}=10\cdot 0,1342\cdot 0,2\approx 0,268=26,8\%.
+\]
+\resposta{$P(9)\approx 26,8\%$.}
+\end{exresolt}
+
+\begin{exresolt}[com a mínim un llindar]
+Amb el mateix grup ($n=10$, $p=0,8$), quina és la probabilitat que en completin
+\textbf{com a mínim 9} (és a dir, $9$ o $10$)?
+\solucio
+Se sumen $P(9)$ i $P(10)$:
+\[
+P(k\ge 9)=P(9)+P(10)\approx 0,268+0,107=0,376=37,6\%.
+\]
+\resposta{$P(k\ge 9)\approx 37,6\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Amb $n=15$ i $p=0,6$, calcula el nombre esperat d'usuaris que superaran el
+        programa.
+  \item Amb $n=6$ i $p=0,5$, calcula la probabilitat que en superin \textbf{exactament
+        4}. (Pista: $\binom{6}{4}=15$.)
+  \item Amb $n=8$ i $p=0,75$, calcula la probabilitat que \textbf{tots 8} completin el
+        curs. (Pista: $k=8$.)
+  \item Amb $n=20$ i $p=0,7$, calcula el nombre esperat d'èxits. Si el servei necessita
+        almenys $14$ èxits, el valor esperat hi arriba?
+  \item Amb $n=5$ i $p=0,4$, calcula la probabilitat que en tingui èxit \textbf{com a
+        mínim 1}. (Pista: és més fàcil fer $1-P(0)$.)
+  \item \textbf{(Interpretació)} Al cas del grup de $12$ amb $p=0,65$, s'esperen uns $8$
+        èxits. Si cada usuari que supera passa a una fase següent que costa recursos,
+        quants llocs caldria reservar per a aquesta fase? Per què convé preveure amb el
+        valor esperat i no amb el màxim possible?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item $\mu=15\cdot 0,6=9$ usuaris.
+  \item $P(4)=\binom{6}{4}(0,5)^4(0,5)^2=15\cdot 0,0625\cdot 0,25\approx 0,234=23,4\%$.
+  \item $P(8)=\binom{8}{8}(0,75)^8(0,25)^0=(0,75)^8\approx 0,100=10,0\%$.
+  \item $\mu=20\cdot 0,7=14$ èxits esperats. Sí: $14\ge 14$, arriba justament al llindar
+        (tot i que, per ser el valor mitjà, convé tenir un marge).
+  \item $P(k\ge 1)=1-P(0)=1-\binom{5}{0}(0,4)^0(0,6)^5=1-0,0778\approx 0,922=92,2\%$.
+  \item Resposta oberta. Idea: es reservarien uns $8$ llocs (el nombre esperat). Preveure
+        amb el valor esperat evita infra- o sobredimensionar el servei; planificar per al
+        màxim possible ($12$) malbarataria recursos, i per al mínim en deixaria molts
+        sense atenció. El valor esperat és l'estimació més raonable.
+\end{sollist}
+\end{solucions}

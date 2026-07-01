@@ -1,0 +1,135 @@
+% =====================================================================
+%  2bat-ud4-9.tex  —  SESSIÓ 9: Optimització: plantejar i resoldre
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 9 — Optimització: plantejar i resoldre}%
+{Activitat 3: el pas difícil és traduir un enunciat social a una funció. Després, derivar i trobar l'òptim és el que ja sabem fer.}
+
+\subsection{Idea clau}
+
+A la sessió 8 vau aprendre a trobar màxims i mínims \emph{quan ja teníeu la funció}.
+Però en un problema real la funció \textbf{no ve donada}: cal \textbf{construir-la} a
+partir de l'enunciat. Aquest és el pas que costa més, i el que treballarem avui amb
+problemes de context social (Activitat 3). Un cop tenim la funció, trobar l'òptim és el
+mateix procediment de sempre.
+
+\begin{idea}
+\textbf{Mètode per resoldre un problema d'optimització (5 passos)}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Identifica} què es vol fer màxim o mínim (l'\emph{objectiu}) i quina és
+        la \textbf{variable} ($x$).
+  \item \textbf{Escriu la funció} de l'objectiu en termes de $x$. Si hi ha una
+        \emph{condició} (un total, un perímetre\ldots), fes-la servir per deixar-ho tot
+        amb una sola variable.
+  \item \textbf{Deriva} la funció i resol $f'(x)=0$.
+  \item \textbf{Classifica} el punt crític (màxim o mínim) amb el signe de $f'$.
+  \item \textbf{Interpreta} la resposta en el context i comprova que tingui sentit
+        (per exemple, que $x$ no sigui negatiu).
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[un hort comunitari contra una paret]
+Una entitat vol tancar un hort \textbf{rectangular} aprofitant una paret com un dels
+costats. Disposa de $40$ m de tanca per als \textbf{altres tres} costats. Quines mides
+donen la \textbf{màxima superfície}?
+
+\medskip
+\noindent\textbf{1) Objectiu i variable:} volem maximitzar l'\textbf{àrea}. Diem $x$ a
+la longitud de cadascun dels dos costats perpendiculars a la paret.
+
+\noindent\textbf{2) Funció:} si dos costats fan $x$ cadascun, al costat paral·lel a la
+paret li queden $40-2x$ metres de tanca. L'àrea és
+\[
+A(x)=x\,(40-2x)=40x-2x^2.
+\]
+\noindent\textbf{3) Derivem:} $A'(x)=40-4x=0 \Rightarrow x=10$.
+
+\noindent\textbf{4) Classifiquem:} $A'$ passa de $+$ ($A'(9)=4$) a $-$ ($A'(11)=-4$):
+és un \textbf{màxim}.
+
+\noindent\textbf{5) Interpretem:} els dos costats fan $10$ m i el costat paral·lel a la
+paret fa $40-20=20$ m. La superfície màxima és $A(10)=200\ \text{m}^2$.
+\end{exemple}
+
+\begin{exemple}[minimitzar un cost]
+El cost de funcionament d'un servei (en centenars d'euros) segons el nombre de torns
+$x$ és $C(x)=x^2-40x+500$. Quants torns el fan mínim?
+\[
+C'(x)=2x-40=0 \Rightarrow x=20.
+\]
+$C'$ passa de $-$ a $+$: és un \textbf{mínim}. Amb $x=20$ torns, el cost mínim és
+$C(20)=400-800+500=100$ centenars d'euros ($10\,000\eur$).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[el producte més gran]
+Reparteix $20$ recursos en dues partides de manera que el seu \textbf{producte} sigui
+màxim. (Pista: si una partida és $x$, l'altra és $20-x$.)
+\solucio
+\textbf{Funció:} $P(x)=x\,(20-x)=20x-x^2$. \quad \textbf{Derivem:}
+$P'(x)=20-2x=0\Rightarrow x=10$. $P'$ passa de $+$ a $-$: \textbf{màxim}. Les dues
+partides són $10$ i $10$, amb producte $P(10)=100$.
+\resposta{Partides de $10$ i $10$; producte màxim $100$.}
+\end{exresolt}
+
+\begin{exresolt}[un jardí rectangular amb 60 m de tanca]
+Un jardí rectangular ha de tenir un \textbf{perímetre} de $60$ m. Quines mides donen la
+màxima àrea?
+\solucio
+\textbf{Variable i condició:} si un costat és $x$, com que el perímetre és
+$2x+2y=60$, l'altre costat és $y=30-x$.
+\textbf{Funció:} $A(x)=x\,(30-x)=30x-x^2$. \quad \textbf{Derivem:}
+$A'(x)=30-2x=0\Rightarrow x=15$. $A'$ passa de $+$ a $-$: \textbf{màxim}. Els dos costats
+fan $15$ m (un quadrat), amb àrea $A(15)=225\ \text{m}^2$.
+\resposta{Quadrat de $15\times 15$ m; àrea màxima $225\ \text{m}^2$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Recorda els 5 passos: identifica, escriu la funció, deriva, classifica,
+interpreta.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Reparteix $16$ en dues parts de manera que el seu producte sigui màxim. Quines
+        són les parts i quin és el producte?
+  \item Una entitat tanca un recinte rectangular contra una paret amb $24$ m de tanca
+        (tres costats). Si els dos costats perpendiculars a la paret fan $x$, escriu
+        l'àrea $A(x)$, deriva i troba les mides de màxima superfície.
+  \item El cost d'un programa (en centenars d'euros) segons els mesos $x$ és
+        $C(x)=x^2-30x+400$. Quants mesos el fan mínim? Quin és el cost mínim?
+  \item Els ingressos d'una activitat (en euros) segons el preu $x$ són
+        $I(x)=-2x^2+80x$. Troba el preu que els fa màxims i l'ingrés màxim.
+  \item \textbf{(Interpretació)} Al problema del hort de l'exemple, per què la solució
+        no és fer els dos costats $x$ tan grans com es pugui? Què passa amb l'àrea si
+        $x=15$ (compara amb $x=10$)?
+  \item \textbf{(Raonament)} En el problema del jardí amb perímetre fix, la màxima àrea
+        s'obté amb un \textbf{quadrat}. Comprova-ho amb un perímetre de $40$ m: quin és
+        el costat òptim i l'àrea? Què observes?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item $P(x)=x(16-x)=16x-x^2$; $P'(x)=16-2x=0\Rightarrow x=8$ (màxim). Parts $8$ i $8$;
+        producte $64$.
+  \item $A(x)=x(24-2x)=24x-2x^2$; $A'(x)=24-4x=0\Rightarrow x=6$ (màxim). Costats
+        perpendiculars $6$ m, costat paral·lel $24-12=12$ m; àrea $A(6)=72\ \text{m}^2$.
+  \item $C'(x)=2x-30=0\Rightarrow x=15$ (mínim). Cost mínim $C(15)=225-450+400=175$
+        centenars d'euros ($17\,500\eur$).
+  \item $I'(x)=-4x+80=0\Rightarrow x=20$ (màxim). Preu òptim $20\eur$; ingrés màxim
+        $I(20)=-800+1600=800\eur$.
+  \item Si $x$ és massa gran, queda poca tanca per al tercer costat i l'àrea torna a
+        baixar: amb $x=15$, l'àrea és $A(15)=15\cdot(40-30)=150\ \text{m}^2$, menys que
+        els $200\ \text{m}^2$ de $x=10$. L'òptim és un equilibri, no un extrem.
+  \item Amb perímetre $40$: $y=20-x$, $A(x)=x(20-x)$, $A'(x)=20-2x=0\Rightarrow x=10$.
+        Costat òptim $10$ m, àrea $A(10)=100\ \text{m}^2$: torna a ser un
+        \textbf{quadrat} ($10\times 10$). S'observa que, amb perímetre fix, el rectangle
+        de màxima àrea sempre és un quadrat.
+\end{sollist}
+\end{solucions}

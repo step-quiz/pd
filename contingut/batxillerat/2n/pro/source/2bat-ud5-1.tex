@@ -1,0 +1,123 @@
+% =====================================================================
+%  2bat-ud5-1.tex  —  SESSIÓ 1: La probabilitat de 1r, ara cap a les lleis
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — La probabilitat de 1r, ara cap a les lleis}%
+{Recuperar la probabilitat de 1r (regla de Laplace, condicionada) i obrir la pregunta de la unitat: com preveiem el comportament de tot un col·lectiu?}
+
+\subsection{Idea clau}
+
+Obrim la penúltima unitat del curs, dedicada a la \textbf{probabilitat} i les
+\textbf{distribucions}. Connectem amb el que ja sabeu de la UD6 de 1r: calcular la
+probabilitat d'un \textbf{cas} concret amb la \textbf{regla de Laplace}. Avui la
+recuperem i ens fem la pregunta que mou tota la unitat: \textbf{i si volem preveure el
+comportament de tot un col·lectiu, no només d'un cas?}
+
+\begin{idea}
+\textbf{La probabilitat, com a 1r.} La probabilitat d'un succés mesura com de possible
+és, amb un valor \textbf{entre 0 i 1}:
+\[
+P(\text{succés})=\frac{\text{casos favorables}}{\text{casos possibles}}\qquad
+(\text{regla de Laplace}).
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item El resultat es pot expressar de \textbf{tres maneres} equivalents: en
+        \textbf{fracció}, en \textbf{decimal} i en \textbf{percentatge}.
+  \item Una probabilitat sempre compleix $0\le P\le 1$ (0\% a 100\%).
+\end{itemize}
+\textbf{La pregunta nova:} fins ara calculàvem la probabilitat d'\emph{un} cas. Però si
+cada usuari té un $70\%$ de probabilitat de superar un programa, \textbf{quants en
+superaran d'un grup de 25?} Respondre això demana passar del cas concret a una
+\textbf{llei} que descrigui tot el col·lectiu: una \textbf{distribució}.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la probabilitat d'un cas, en tres formes]
+En un servei hi ha $40$ usuaris: $24$ són dones i $30$ han superat un curs de formació.
+La probabilitat que una persona triada a l'atzar sigui \textbf{dona} és
+\[
+P(\text{dona})=\frac{24}{40}=\frac{3}{5}=0,6=60\%.
+\]
+La probabilitat que hagi \textbf{superat} el curs és
+$P(\text{superat})=\dfrac{30}{40}=\dfrac{3}{4}=0,75=75\%$. El mateix valor, escrit de
+tres maneres.
+\end{exemple}
+
+\begin{exemple}[del cas al col·lectiu]
+Si sabem que cada usuari té un $70\%$ de probabilitat de superar un programa, no ens
+interessa només \emph{un} usuari: volem saber \textbf{quants} d'un grup en superaran. De
+mitjana, esperaríem el $70\%$ de $25$, és a dir $0,7\cdot 25=17,5$ usuaris. Però quina
+és la probabilitat que en superin \emph{exactament} $20$? O \emph{com a mínim} $15$? Per
+respondre-ho necessitem una \textbf{llei del col·lectiu}, que construirem al llarg de la
+unitat.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[regla de Laplace i tres formes]
+En una caixa hi ha $40$ fitxes numerades de l'1 al 40. Es treu una a l'atzar. Calcula la
+probabilitat que sigui múltiple de $10$ i expressa-la en fracció, decimal i percentatge.
+\solucio
+Els múltiples de $10$ entre 1 i 40 són $10,20,30,40$: hi ha \textbf{4} casos favorables
+de \textbf{40} possibles.
+\[
+P=\frac{4}{40}=\frac{1}{10}=0,1=10\%.
+\]
+Comprovem que $0\le 0,1\le 1$: correcte.
+\resposta{$P=\dfrac{1}{10}=0,1=10\%$.}
+\end{exresolt}
+
+\begin{exresolt}[probabilitat sobre un col·lectiu real]
+En un grup de $50$ persones ateses, $35$ han trobat feina en un any. Quina és la
+probabilitat que una persona triada a l'atzar hagi trobat feina? Expressa-la en les tres
+formes.
+\solucio
+$35$ casos favorables de $50$:
+\[
+P(\text{feina})=\frac{35}{50}=\frac{7}{10}=0,7=70\%.
+\]
+\resposta{$P=\dfrac{7}{10}=0,7=70\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item En un grup de $30$ usuaris, $18$ són dones. Calcula la probabilitat que una
+        persona triada a l'atzar sigui dona i expressa-la en fracció, decimal i
+        percentatge.
+  \item Es llança un dau. Calcula la probabilitat de treure un nombre parell i expressa
+        el resultat en les tres formes.
+  \item D'una baralla de $40$ cartes se'n treu una. Quina és la probabilitat que sigui
+        d'oros? Dóna-la en fracció, decimal i percentatge.
+  \item En un servei, $28$ de $80$ usuaris tenen més de 65 anys. Calcula la probabilitat
+        que un usuari triat a l'atzar sigui més gran de 65 anys.
+  \item \textbf{(Del cas a la llei)} Si cada usuari té un $80\%$ de probabilitat de
+        completar un taller, quants s'espera que el completin d'un grup de $20$? Només
+        amb aquesta mitjana, pots dir amb certesa quants el completaran exactament?
+        Raona-ho.
+  \item \textbf{(Reflexió)} Escriu amb les teves paraules la diferència entre
+        \emph{calcular la probabilitat d'un cas} i \emph{preveure el comportament de tot
+        un grup}. Posa un exemple propi de l'àmbit social.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item $P(\text{dona})=\dfrac{18}{30}=\dfrac{3}{5}=0,6=60\%$.
+  \item Parells: $2,4,6$ (3 casos de 6). $P=\dfrac{3}{6}=\dfrac{1}{2}=0,5=50\%$.
+  \item Oros: $10$ cartes de $40$. $P=\dfrac{10}{40}=\dfrac{1}{4}=0,25=25\%$.
+  \item $P=\dfrac{28}{80}=\dfrac{7}{20}=0,35=35\%$.
+  \item S'espera que en completin el $80\%$ de $20$, és a dir $0,8\cdot 20=16$. Amb la
+        mitjana \textbf{no} es pot dir amb certesa quants exactament: $16$ és el valor
+        \emph{esperat}, però el nombre real pot variar (podrien ser 14, 15, 17\ldots);
+        per saber la probabilitat de cada resultat cal una distribució.
+  \item Resposta oberta. Idea: la probabilitat d'un cas es refereix a una sola persona o
+        prova; preveure el comportament d'un grup vol dir descriure quants casos
+        s'esperen del col·lectiu sencer i amb quina probabilitat, cosa que necessita un
+        model (una distribució).
+\end{sollist}
+\end{solucions}

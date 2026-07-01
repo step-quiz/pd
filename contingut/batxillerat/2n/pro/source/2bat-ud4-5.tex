@@ -1,0 +1,149 @@
+% =====================================================================
+%  2bat-ud4-5.tex  —  SESSIÓ 5: Consolidació del càlcul de derivades
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 5 — Consolidació del càlcul de derivades}%
+{Assentar el càlcul de derivades amb una caça de l'error i una bateria graduada, abans d'estudiar-ne el signe.}
+
+\subsection{Idea clau}
+
+A la sessió 4 vau aprendre a derivar polinomis. Abans de fer servir la derivada per
+estudiar el creixement i trobar punts òptims, val la pena deixar-la \textbf{ben
+sòlida}: derivar és un procediment \textbf{mecànic} que ha de sortir sense pensar, per
+poder concentrar l'atenció en la interpretació. Avui ho consolidem amb una
+\textbf{caça de l'error} i una \textbf{bateria graduada}.
+
+\begin{idea}
+\textbf{Rutina i errors a evitar en derivar un polinomi}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Baixa l'exponent i resta-li 1:} $x^n\to n\,x^{n-1}$.
+        \emph{Error típic:} oblidar de restar $1$ a l'exponent ($x^3\to 3x^3$ és fals;
+        és $3x^2$).
+  \item \textbf{El coeficient es multiplica, no es copia:} $a\,x^n\to a\cdot n\,x^{n-1}$.
+        \emph{Error típic:} derivar $5x^2$ com $5x$ (la correcta és $10x$).
+  \item \textbf{El terme de primer grau:} $a\,x\to a$. \emph{Error típic:} deixar la
+        $x$ ($7x\to 7$, no $7x$).
+  \item \textbf{El terme independent és zero:} un nombre sol es deriva a $0$.
+        \emph{Error típic:} arrossegar-lo a la derivada.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: una potència mal derivada]
+Algú ha escrit:
+\[
+f(x)=x^3-4x^2+6 \quad\overset{?}{\Longrightarrow}\quad f'(x)=3x^3-8x+6.
+\]
+Hi ha \textbf{dos} errors: el primer terme $x^3$ s'ha de derivar baixant l'exponent i
+restant-li $1$, és a dir $3x^2$ (no $3x^3$); i el terme independent $6$ s'ha de derivar
+a $0$ (no mantenir-lo). El terme central, $-4x^2\to -8x$, sí que és correcte. La
+derivada correcta és:
+\[
+f'(x)=3x^2-8x.
+\]
+\end{exemple}
+
+\begin{exemple}[caça l'error: el coeficient i el terme lineal]
+Algú deriva així:
+\[
+g(x)=5x^2+7x-2 \quad\overset{?}{\Longrightarrow}\quad g'(x)=5x+7x.
+\]
+Dos errors: $5x^2$ s'ha de derivar com $5\cdot 2\,x=10x$ (no $5x$); i $7x$ es deriva
+com $7$ (no $7x$, la $x$ desapareix). El terme $-2$ es deriva a $0$ (aquí, ben omès).
+La derivada correcta és:
+\[
+g'(x)=10x+7.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[detectar i corregir l'error]
+Un company ha derivat $f(x)=2x^3+3x^2-5x+8$ i ha escrit
+$f'(x)=6x^2+3x-5+8$. Troba els errors i escriu la derivada correcta.
+\solucio
+Revisem terme a terme:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $2x^3\to 6x^2$ \checkmark (correcte).
+  \item $3x^2\to 6x$ — \textbf{error}: ha escrit $3x$; el coeficient $3$ s'ha de
+        multiplicar per l'exponent $2$, dóna $6x$.
+  \item $-5x\to -5$ \checkmark (correcte).
+  \item $8\to 0$ — \textbf{error}: ha arrossegat el $+8$; un terme independent es
+        deriva a $0$.
+\end{itemize}
+La derivada correcta és $f'(x)=6x^2+6x-5$.
+\resposta{$f'(x)=6x^2+6x-5$ (errors al terme $3x^2$ i al terme independent).}
+\end{exresolt}
+
+\begin{exresolt}[derivar amb ordre un polinomi complet]
+Deriva $P(x)=4x^3-2x^2+x-9$ pas a pas.
+\solucio
+Terme a terme, sense pressa:
+\begin{align*}
+4x^3 &\ \to\ 4\cdot 3\,x^2=12x^2,\\
+-2x^2 &\ \to\ -2\cdot 2\,x=-4x,\\
+x &\ \to\ 1,\\
+-9 &\ \to\ 0.
+\end{align*}
+Sumant: $P'(x)=12x^2-4x+1$.
+\resposta{$P'(x)=12x^2-4x+1$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari bàsic: exercicis 1 a 4. Ampliació: exercicis 5 i 6.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Deriva, terme a terme:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=x^2-5x$ \hfill b) $g(x)=3x^2+2$ \hfill c) $h(x)=6x-4$
+        \end{enumerate}
+  \item Deriva $f(x)=2x^2-7x+3$ i digues quins termes desapareixen o canvien de forma.
+  \item Deriva el polinomi de grau 3 $P(x)=x^3-2x^2+5x-1$.
+  \item \textbf{(Caça l'error)} Algú ha escrit
+        $f(x)=4x^2-3x+7 \Rightarrow f'(x)=8x-3+7$. Troba l'error i corregeix-lo.
+  \item \textbf{(Caça l'error)} Algú deriva $g(x)=x^3+6x^2-x$ com
+        $g'(x)=3x^3+6x-1$. Hi ha dos errors. Troba'ls i escriu la derivada correcta.
+  \item \textbf{(Ampliació)} Deriva $Q(x)=5x^3-\dfrac{1}{2}x^2+4x-10$ i després avalua
+        $Q'(2)$.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació.} Marca amb sinceritat com et trobes, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.4cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Derivar una potència $x^n$ (baixar l'exponent i restar 1) & & & \\
+Derivar un terme amb coeficient ($a\,x^n$) & & & \\
+Recordar que el terme independent es deriva a $0$ & & & \\
+Derivar un polinomi complet, terme a terme & & & \\
+Avaluar la derivada en un punt ($f'(a)$) & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $f'(x)=2x-5$; \quad (b) $g'(x)=6x$; \quad (c) $h'(x)=6$.
+  \item $f'(x)=4x-7$. El terme $-7x$ passa a $-7$ (perd la $x$) i el terme independent
+        $3$ desapareix (es deriva a $0$).
+  \item $P'(x)=3x^2-4x+5$.
+  \item L'error és haver arrossegat el terme independent: $+7$ s'ha de derivar a $0$. La
+        derivada correcta és $f'(x)=8x-3$.
+  \item Errors: $x^3\to 3x^2$ (ha escrit $3x^3$: cal restar $1$ a l'exponent) i
+        $6x^2\to 12x$ (ha escrit $6x$: el coeficient $6$ s'ha de multiplicar per
+        l'exponent $2$). El terme $-x\to -1$ és correcte. Derivada correcta:
+        $g'(x)=3x^2+12x-1$.
+  \item $Q'(x)=15x^2-x+4$; \ $Q'(2)=15\cdot 4-2+4=60-2+4=62$.
+\end{sollist}
+\end{solucions}

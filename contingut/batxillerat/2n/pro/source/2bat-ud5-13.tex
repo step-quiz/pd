@@ -1,0 +1,133 @@
+% =====================================================================
+%  2bat-ud5-13.tex  —  SESSIÓ 13: Cas integrador: del cas a la llei
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 13 — Cas integrador: del cas a la llei}%
+{Integrar tota la unitat en un projecte: probabilitat condicionada, binomial i normal aplicades a un mateix programa formatiu, amb un informe.}
+
+\subsection{Idea clau}
+
+Tanquem la unitat aplicant-ho \textbf{tot} a un sol projecte. Un programa formatiu genera
+tres tipus de preguntes, i cadascuna es respon amb una eina de la unitat: una taula de
+dades (\textbf{probabilitat condicionada}), el nombre d'èxits d'un grup
+(\textbf{binomial}) i la puntuació final dels participants (\textbf{normal}). Acabarem amb
+un \textbf{informe} d'interpretació.
+
+\begin{idea}
+\textbf{El cas.} Una entitat avalua un programa formatiu amb tres mirades:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{(Condicionada)} Una taula creua el perfil dels usuaris amb si acaben el
+        programa.
+  \item \textbf{(Binomial)} Cada usuari té una probabilitat $p=0,6$ de superar-lo; el
+        grup és de $n=15$.
+  \item \textbf{(Normal)} La puntuació final segueix $N(65,10)$.
+\end{itemize}
+L'anàlisi combina les tres eines i es tanca amb una recomanació per a l'entitat.
+\end{idea}
+
+\noindent\textbf{Les dades de la taula (condicionada).} $120$ usuaris:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Acaba: sí} & \textbf{Acaba: no} & \textbf{Total} \\
+\midrule
+\textbf{Amb experiència prèvia} & 50 & 10 & 60 \\
+\textbf{Sense experiència}      & 30 & 30 & 60 \\
+\midrule
+\textbf{Total}                  & 80 & 40 & 120 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Exemples}
+
+\begin{exemple}[la mirada condicionada]
+La probabilitat d'acabar el programa \textbf{sabent que} l'usuari té experiència prèvia és
+\[
+P(\text{acaba}\,|\,\text{experiència})=\frac{50}{60}=\frac{5}{6}\approx 83,3\%,
+\]
+mentre que sense experiència és $P(\text{acaba}\,|\,\text{sense})=\dfrac{30}{60}=50\%$. La
+diferència suggereix que qui no té experiència prèvia necessita més acompanyament.
+\end{exemple}
+
+\begin{exemple}[la mirada binomial i la normal]
+\textbf{Binomial:} amb $p=0,6$ i $n=15$, el nombre esperat d'usuaris que superen és
+$\mu=15\cdot 0,6=9$. La probabilitat que en superin \textbf{com a mínim 10} és
+$P(k\ge 10)\approx 0,403=40,3\%$.
+
+\smallskip
+\noindent\textbf{Normal:} la puntuació final segueix $N(65,10)$. La probabilitat de treure
+\textbf{més de 70} és $z=\frac{70-65}{10}=0,5$, i
+$P(X>70)=1-P(Z<0,5)=1-0,6915=0,3085\approx 30,9\%$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[combinar condicionada i interpretació]
+A partir de la taula, quin perfil d'usuari necessita més suport per acabar el programa?
+Justifica-ho amb probabilitats.
+\solucio
+$P(\text{acaba}\,|\,\text{experiència})\approx 83,3\%$ enfront de
+$P(\text{acaba}\,|\,\text{sense})=50\%$. El perfil \textbf{sense experiència prèvia} acaba
+el programa en menor proporció, així que és el que necessita més acompanyament. Cal
+llegir-ho com una orientació de recursos, no com un judici sobre les persones.
+\resposta{El perfil sense experiència prèvia ($50\%$ enfront de $83,3\%$).}
+\end{exresolt}
+
+\begin{exresolt}[binomial per a la planificació]
+Amb $p=0,6$ i $n=15$, quants usuaris s'espera que superin el programa? Quina és la
+probabilitat que en superin \textbf{exactament 9}?
+\solucio
+Nombre esperat: $\mu=15\cdot 0,6=9$. Probabilitat exacta:
+\[
+P(9)=\binom{15}{9}(0,6)^9(0,4)^6\approx 0,207=20,7\%.
+\]
+\resposta{S'esperen $9$; $P(9)\approx 20,7\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Els exercicis 1--4 fan l'anàlisi; el 5 i el 6 demanen l'informe.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Condicionada)} Calcula $P(\text{experiència}\,|\,\text{acaba})$: entre
+        els qui acaben, quina proporció tenia experiència prèvia?
+  \item \textbf{(Binomial)} Amb $p=0,6$ i $n=15$, calcula la probabilitat que en superin
+        \textbf{com a mínim 10} (dada: $P(k\ge 10)\approx 0,403$) i interpreta-la.
+  \item \textbf{(Normal)} Amb $N(65,10)$, calcula $P(55<X<75)$. Amb quina regla coneguda
+        coincideix?
+  \item \textbf{(Normal)} Amb $N(65,10)$, calcula la probabilitat de treure \textbf{menys
+        de 50}. (Pista: $z=-1,5$; $P(Z<-1,5)=0,0668$.)
+  \item \textbf{(Informe)} Redacta un informe breu (5--6 línies) per a l'entitat que
+        integri les tres mirades: quin perfil necessita més suport, quants èxits s'esperen
+        del grup i com es reparteixen les puntuacions. Inclou una recomanació.
+  \item \textbf{(Interpretació)} Per què diem que aquesta unitat va «del cas a la llei»?
+        Relaciona la probabilitat d'un cas (sessió 1) amb els models de grup (binomial i
+        normal) que has fet servir avui.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item Base: els $80$ que acaben; amb experiència en són $50$.
+        $P(\text{experiència}\,|\,\text{acaba})=\dfrac{50}{80}=\dfrac{5}{8}=0,625=62,5\%$.
+  \item $P(k\ge 10)\approx 40,3\%$: hi ha una mica menys d'un $50\%$ de possibilitats que
+        el grup superi la desena d'èxits; convé preveure un pla per si no s'hi arriba.
+  \item $z_{55}=-1$, $z_{75}=1$; $P(55<X<75)=0,8413-0,1587=0,6826\approx 68,3\%$.
+        Coincideix amb la regla del $68\%$ ($\mu\pm\sigma$).
+  \item $z=\dfrac{50-65}{10}=-1,5$; $P(X<50)=P(Z<-1,5)=0,0668=6,68\%$.
+  \item Resposta oberta. Ha d'integrar: el perfil sense experiència necessita més suport
+        ($50\%$ enfront de $83\%$); s'esperen $\approx 9$ èxits del grup de 15 (amb un
+        $40\%$ de probabilitat d'arribar a 10); les puntuacions es reparteixen al voltant
+        de $65$ amb el $68\%$ entre $55$ i $75$; i una recomanació coherent (reforçar el
+        perfil sense experiència, dimensionar la fase següent per a uns 9 usuaris).
+  \item Resposta oberta. Idea: a la sessió 1 calculàvem la probabilitat d'\emph{un} cas;
+        la unitat ha anat construint \textbf{lleis} que descriuen tot un col·lectiu (la
+        binomial per a èxits/fracassos repetits, la normal per a magnituds contínues), de
+        manera que hem passat del cas concret a la llei general.
+\end{sollist}
+\end{solucions}

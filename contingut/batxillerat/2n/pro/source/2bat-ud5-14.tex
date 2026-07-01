@@ -1,0 +1,112 @@
+% =====================================================================
+%  2bat-ud5-14.tex  —  SESSIÓ 14: Estacions de probabilitat i distribucions
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 14 — Estacions de probabilitat i distribucions}%
+{Repàs actiu per quatre estacions, una per bloc de la unitat, i mapa final que connecta condicionada, binomial i normal.}
+
+\subsection{Idea clau}
+
+Repassem \textbf{tota la unitat} de manera activa, rotant per \textbf{quatre estacions},
+una per cada bloc treballat. Al final construirem un \textbf{mapa de la unitat} que
+connecta les eines —\textbf{condicionada}, \textbf{binomial} i \textbf{normal}— amb el
+tipus de pregunta que resol cadascuna.
+
+\begin{idea}
+\textbf{Les quatre estacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Probabilitat condicionada:} llegir una taula i calcular $P(A\,|\,B)$ amb
+        la base correcta.
+  \item \textbf{Binomial:} calcular $P(k)$ i el nombre esperat $\mu=n\cdot p$.
+  \item \textbf{Normal — tipificar:} passar de $N(\mu,\sigma)$ a $Z$ i llegir la taula.
+  \item \textbf{Normal — intervals:} calcular $P(a<X<b)$ i interpretar-ho.
+\end{enumerate}
+\end{idea}
+
+\subsection{Les estacions}
+
+\begin{exemple}[Estació 2 — binomial]
+Cada usuari té un $p=0,5$ d'èxit; grup de $n=10$. La probabilitat que en tinguin
+\textbf{exactament 6} és $P(6)=\binom{10}{6}(0,5)^6(0,5)^4=210\cdot 0,000977\approx
+0,205=20,5\%$. El nombre esperat és $\mu=10\cdot 0,5=5$.
+\end{exemple}
+
+\begin{exemple}[Estació 3 — tipificar]
+En una $N(100,15)$, tipifiquem $x=130$: $Z=\dfrac{130-100}{15}=2$. A la taula,
+$P(Z<2)=0,9772$, així que $P(X<130)=97,72\%$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[model de l'Estació 1: condicionada]
+En una taula, $70$ usuaris viuen sols i, d'aquests, $40$ han trobat feina. Calcula
+$P(\text{feina}\,|\,\text{viu sol})$.
+\solucio
+La base és el grup «viu sol» ($70$); dels quals $40$ tenen feina:
+\[
+P(\text{feina}\,|\,\text{viu sol})=\frac{40}{70}=\frac{4}{7}\approx 57,1\%.
+\]
+\resposta{$\dfrac{4}{7}\approx 57,1\%$.}
+\end{exresolt}
+
+\begin{exresolt}[model de l'Estació 4: interval normal]
+En una $N(50,10)$, calcula $P(40<X<60)$.
+\solucio
+$z_{40}=\dfrac{40-50}{10}=-1$ i $z_{60}=\dfrac{60-50}{10}=1$.
+\[
+P(40<X<60)=P(Z<1)-P(Z<-1)=0,8413-0,1587=0,6826\approx 68,3\%.
+\]
+\resposta{$\approx 68,3\%$ (la regla del $68\%$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Una tasca per estació. Rota i resol-les totes.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Estació 1)} En una taula, $40$ usuaris tenen més de 65 anys i,
+        d'aquests, $25$ viuen sols. Calcula $P(\text{viu sol}\,|\,\text{més de 65})$.
+  \item \textbf{(Estació 2)} Amb $n=8$ i $p=0,5$, calcula $P(\text{exactament }4)$.
+        (Pista: $\binom{8}{4}=70$.)
+  \item \textbf{(Estació 2)} Amb $n=20$ i $p=0,7$, calcula el nombre esperat d'èxits.
+  \item \textbf{(Estació 3)} En una $N(60,10)$, tipifica $x=75$ i calcula $P(X<75)$.
+        (Pista: $P(Z<1,5)=0,9332$.)
+  \item \textbf{(Estació 4)} En una $N(20,4)$, calcula $P(16<X<24)$. Amb quina regla
+        coincideix?
+  \item \textbf{(Mapa de la unitat)} Completa el mapa connectant cada eina amb el tipus de
+        pregunta que resol:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{4.0cm} p{8.4cm}}
+        \toprule
+        \textbf{Eina} & \textbf{Quina pregunta resol} \\
+        \midrule
+        Probabilitat condicionada & \rule{7.6cm}{0.4pt} \\
+        Distribució binomial & \rule{7.6cm}{0.4pt} \\
+        Distribució normal & \rule{7.6cm}{0.4pt} \\
+        Tipificació ($Z$) & \rule{7.6cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item Base: «més de 65» ($40$); viuen sols $25$.
+        $P(\text{viu sol}\,|\,\text{més de 65})=\dfrac{25}{40}=\dfrac{5}{8}=0,625=62,5\%$.
+  \item $P(4)=\binom{8}{4}(0,5)^4(0,5)^4=70\cdot 0,003906\approx 0,273=27,3\%$.
+  \item $\mu=20\cdot 0,7=14$ èxits esperats.
+  \item $Z=\dfrac{75-60}{10}=1,5$; $P(X<75)=P(Z<1,5)=0,9332=93,32\%$.
+  \item $z_{16}=-1$, $z_{24}=1$; $P(16<X<24)=0,8413-0,1587=0,6826\approx 68,3\%$.
+        Coincideix amb la regla del $68\%$.
+  \item Resposta oberta. Idees: \textbf{condicionada} = probabilitat d'un cas sabent una
+        condició (canviant la base); \textbf{binomial} = quants èxits en repeticions
+        d'èxit/fracàs; \textbf{normal} = probabilitat d'una magnitud contínua (àrea sota
+        la campana); \textbf{tipificació} = convertir qualsevol normal en $N(0,1)$ per
+        usar una única taula.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,137 @@
+% =====================================================================
+%  2bat-ud5-2.tex  —  SESSIÓ 2: Repàs amb dades reals
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 2 — Repàs amb dades reals}%
+{Activitat 1: sobre una taula de contingència real, calcular probabilitats simples i condicionades i interpretar-ne els patrons sense estigmatitzar.}
+
+\subsection{Idea clau}
+
+Recuperem tota la probabilitat de 1r en un cas real. Treballem sobre una \textbf{taula de
+contingència}: una taula de doble entrada que creua dues característiques d'un col·lectiu.
+D'aquí en traurem probabilitats \textbf{simples}, \textbf{compostes} i, sobretot,
+\textbf{condicionades}, i n'interpretarem els patrons per orientar una intervenció.
+
+\begin{idea}
+\textbf{Llegir una taula de contingència.}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Probabilitat simple} $P(A)$: casos amb la característica $A$ dividit pel
+        \textbf{total} de persones.
+  \item \textbf{Probabilitat composta} $P(A\text{ i }B)$: casos que compleixen les
+        \textbf{dues} característiques, dividit pel total.
+  \item \textbf{Probabilitat condicionada} $P(A\,|\,B)$ (probabilitat de $A$
+        \emph{sabent} $B$): es canvia la base — es divideix pel total \textbf{del grup
+        $B$}, no pel total general.
+\end{itemize}
+\textbf{El pas delicat} és la condicionada: cal dividir pel total de la fila o columna que
+fa de condició, no pel total de la taula.
+\end{idea}
+
+\noindent\textbf{Les dades.} Un servei ha atès $200$ persones. La taula creua el
+\textbf{tipus de llar} amb si han \textbf{trobat feina} en un any:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Feina: sí} & \textbf{Feina: no} & \textbf{Total} \\
+\midrule
+\textbf{Viu sola}     & 45  & 35 & 80 \\
+\textbf{Amb família}  & 90  & 30 & 120 \\
+\midrule
+\textbf{Total}        & 135 & 65 & 200 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Exemples}
+
+\begin{exemple}[probabilitat simple i composta]
+La probabilitat que una persona triada a l'atzar \textbf{visqui sola} és
+\[
+P(\text{sola})=\frac{80}{200}=\frac{2}{5}=0,4=40\%.
+\]
+La probabilitat que \textbf{visqui sola i hagi trobat feina} (les dues coses) és
+$P(\text{sola i feina})=\dfrac{45}{200}=0,225=22,5\%$ (la casella d'encreuament, dividida
+pel total).
+\end{exemple}
+
+\begin{exemple}[probabilitat condicionada: canviar la base]
+Quina és la probabilitat que una persona hagi trobat feina \textbf{sabent que viu sola}?
+Ara la base ja no és $200$, sinó les $80$ persones que viuen soles:
+\[
+P(\text{feina}\,|\,\text{sola})=\frac{45}{80}=\frac{9}{16}=0,5625\approx 56,3\%.
+\]
+En canvi, entre les que viuen amb família,
+$P(\text{feina}\,|\,\text{família})=\dfrac{90}{120}=\dfrac{3}{4}=0,75=75\%$. La
+diferència ($56\%$ enfront de $75\%$) és un \textbf{patró}: qui viu sol té, en aquest
+col·lectiu, menys inserció laboral.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[condicionada amb la base canviada]
+Calcula la probabilitat que una persona \textbf{visqui sola sabent que ha trobat feina}.
+\solucio
+La condició és «ha trobat feina»: la base són les $135$ persones amb feina. D'aquestes,
+$45$ viuen soles:
+\[
+P(\text{sola}\,|\,\text{feina})=\frac{45}{135}=\frac{1}{3}\approx 0,333=33,3\%.
+\]
+Fixa't que $P(\text{sola}\,|\,\text{feina})=33,3\%$ \textbf{no} és igual a
+$P(\text{feina}\,|\,\text{sola})=56,3\%$: condicionar en un sentit o en l'altre canvia la
+base i el resultat.
+\resposta{$P(\text{sola}\,|\,\text{feina})=\dfrac{1}{3}\approx 33,3\%$.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar un patró sense estigmatitzar]
+A partir de les dades, quin grup té més necessitat de suport per a la inserció laboral?
+Com ho diries sense estigmatitzar?
+\solucio
+La inserció és més baixa entre qui viu sol ($56\%$) que entre qui viu amb família
+($75\%$). Això indica que el grup que \textbf{viu sol} podria necessitar més
+acompanyament en la cerca de feina. \textbf{Sense estigmatitzar:} no és que aquestes
+persones «fallin», sinó que probablement disposen de menys xarxa de suport; la dada
+serveix per \emph{orientar recursos} cap a qui més els necessita, no per etiquetar
+ningú.
+\resposta{El grup que viu sol; la lectura ha d'orientar recursos, no culpabilitzar.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Fes servir la taula de contingència de dalt.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula $P(\text{amb família})$ (probabilitat simple) i expressa-la en fracció,
+        decimal i percentatge.
+  \item Calcula $P(\text{no feina})$: quina proporció del total no ha trobat feina?
+  \item Calcula $P(\text{amb família i feina})$ (probabilitat composta).
+  \item Calcula la condicionada $P(\text{no feina}\,|\,\text{sola})$: entre qui viu sol,
+        quina proporció no ha trobat feina? \textbf{(Compte amb la base.)}
+  \item \textbf{(Comparació)} Calcula $P(\text{no feina}\,|\,\text{sola})$ i
+        $P(\text{no feina}\,|\,\text{família})$ i digues en quin grup és més alt el risc
+        de no trobar feina.
+  \item \textbf{(Interpretació)} A partir de les probabilitats condicionades que has
+        calculat, redacta dues línies sobre cap a quin perfil convindria orientar el
+        suport, tenint cura de no estigmatitzar.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item $P(\text{amb família})=\dfrac{120}{200}=\dfrac{3}{5}=0,6=60\%$.
+  \item $P(\text{no feina})=\dfrac{65}{200}=\dfrac{13}{40}=0,325=32,5\%$.
+  \item $P(\text{amb família i feina})=\dfrac{90}{200}=\dfrac{9}{20}=0,45=45\%$.
+  \item Base: les $80$ que viuen soles; no feina $=35$.
+        $P(\text{no feina}\,|\,\text{sola})=\dfrac{35}{80}=\dfrac{7}{16}=0,4375\approx 43,8\%$.
+  \item $P(\text{no feina}\,|\,\text{sola})=\dfrac{35}{80}\approx 43,8\%$;
+        $P(\text{no feina}\,|\,\text{família})=\dfrac{30}{120}=\dfrac{1}{4}=25\%$. El risc
+        de no trobar feina és més alt entre qui viu sol ($43,8\%$ enfront de $25\%$).
+  \item Resposta oberta. Idea: el suport a la inserció laboral es podria prioritzar cap a
+        les persones que viuen soles, que mostren menys inserció i més risc; s'ha de
+        formular com una orientació de recursos segons necessitat, no com un judici sobre
+        les persones.
+\end{sollist}
+\end{solucions}

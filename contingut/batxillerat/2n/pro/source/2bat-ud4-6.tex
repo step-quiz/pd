@@ -1,0 +1,145 @@
+% =====================================================================
+%  2bat-ud4-6.tex  —  SESSIÓ 6: Quan creix i quan decreix
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 6 — Quan creix i quan decreix}%
+{Activitat 2: un fenomen social que puja i baixa. Calcular la derivada, estudiar-ne el signe i interpretar els trams.}
+
+\subsection{Idea clau}
+
+Ja sabeu \textbf{llegir} el signe de la derivada en una gràfica (sessió 3) i
+\textbf{calcular} derivades de polinomis (sessions 4 i 5). Avui ho ajuntem: usarem el
+\textbf{signe de la derivada} per saber on un fenomen creix i on decreix, sense
+necessitat de dibuixar la corba. Treballem el cas de l'\textbf{Activitat 2}: una funció
+que modelitza un fenomen social amb trams de pujada i de baixada.
+
+\begin{idea}
+\textbf{El signe de la derivada diu el creixement.}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Si $f'(x)>0$ en un tram, la funció \textbf{creix} en aquell tram.
+  \item Si $f'(x)<0$ en un tram, la funció \textbf{decreix}.
+  \item On $f'(x)=0$ hi pot haver un \textbf{canvi de tendència} (de pujar a baixar o
+        a l'inrevés).
+\end{itemize}
+\textbf{Mètode (estudi del signe):} 1) deriva $f$; 2) resol $f'(x)=0$ per trobar els
+punts on pot canviar la tendència; 3) aquests punts parteixen la recta en trams: tria
+un valor de prova de cada tram i mira el signe de $f'$; 4) interpreta.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la demanda d'un servei al llarg de l'any]
+La demanda d'un servei (en desenes d'usuaris) segons el mes $x$ es modelitza, de manera
+simplificada, amb $f(x)=x^3-9x^2+24x$. Estudiem on creix i on decreix.
+
+\medskip
+\noindent\textbf{1) Derivem:} \ $f'(x)=3x^2-18x+24=3(x-2)(x-4)$.
+
+\noindent\textbf{2) On s'anul·la:} \ $f'(x)=0 \Rightarrow x=2$ i $x=4$.
+
+\noindent\textbf{3) Signe a cada tram} (valors de prova $x=0$, $x=3$, $x=5$):
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Tram} & $(0,2)$ & $(2,4)$ & $(4,\infty)$ \\
+\midrule
+Valor de prova & $x=0$ & $x=3$ & $x=5$ \\
+$f'(x)$ & $+24>0$ & $-3<0$ & $+9>0$ \\
+\textbf{Comportament} & creix & decreix & creix \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent\textbf{4) Interpretació:} la demanda \textbf{creix} els primers mesos (fins
+al mes $2$), després \textbf{decreix} (entre el mes $2$ i el $4$) i torna a
+\textbf{créixer} a partir del mes $4$. Cal reforçar recursos quan creix i es poden
+reassignar quan decreix.
+\end{exemple}
+
+\begin{exemple}[l'eficàcia d'un programa segons la durada]
+L'eficàcia d'un programa (en una escala interna) segons les setmanes $x$ es modelitza
+amb $g(x)=-x^2+6x$. La derivada és $g'(x)=-2x+6$, que s'anul·la a
+$x=3$. Per a $x<3$, $g'(x)>0$ (creix); per a $x>3$, $g'(x)<0$ (decreix). Per tant
+l'eficàcia \textbf{augmenta fins a la setmana 3} i després \textbf{disminueix}: la
+durada òptima sembla ser de $3$ setmanes.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[estudiar el creixement d'un cost]
+Estudia on creix i on decreix la funció $g(x)=x^3-3x^2$ (un indicador social segons el
+temps $x$).
+\solucio
+\textbf{Derivem:} $g'(x)=3x^2-6x=3x(x-2)$. \quad \textbf{S'anul·la a} $x=0$ i $x=2$.
+
+Estudiem el signe amb valors de prova $x=-1$, $x=1$, $x=3$:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Tram} & $(-\infty,0)$ & $(0,2)$ & $(2,\infty)$ \\
+\midrule
+$g'(x)$ & $+9>0$ & $-3<0$ & $+9>0$ \\
+\textbf{Comportament} & creix & decreix & creix \\
+\bottomrule
+\end{tabular}
+\end{center}
+\resposta{Creix a $(-\infty,0)$ i $(2,\infty)$; decreix a $(0,2)$.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar els trams en context]
+La demanda d'un casal segons el mes és $f(x)=-x^2+8x$ (en desenes). Estudia el signe de
+la derivada i digues fins a quin mes creix la demanda i quan comença a baixar.
+\solucio
+\textbf{Derivem:} $f'(x)=-2x+8$. \quad \textbf{S'anul·la a} $x=4$ (perquè
+$-2x+8=0\Rightarrow x=4$).
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Per a $x<4$: $f'(x)>0$ (per exemple $f'(0)=8$), la demanda \textbf{creix}.
+  \item Per a $x>4$: $f'(x)<0$ (per exemple $f'(6)=-4$), la demanda \textbf{decreix}.
+\end{itemize}
+La demanda creix fins al mes $4$ i a partir d'aleshores baixa.
+\resposta{Creix fins al mes $4$; després decreix.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a $f(x)=-x^2+8x$, calcula $f'(x)$, troba on s'anul·la i digues en quins
+        trams creix i decreix.
+  \item Estudia el creixement de $f(x)=x^3-6x^2+9x$: deriva, troba on $f'(x)=0$ i fes la
+        taula de signes amb valors de prova.
+  \item Una funció té $f'(x)>0$ per a $x<5$ i $f'(x)<0$ per a $x>5$. Sense conèixer
+        $f$, digues on creix, on decreix i què passa a $x=5$.
+  \item Estudia on creix i on decreix $f(x)=x^3-12x$.
+        \textbf{(Compte amb el signe)} en triar els valors de prova.
+  \item \textbf{(Interpretació)} La demanda d'un servei és $f(x)=x^3-9x^2+24x$ (mes
+        $x$). En quins mesos cal \emph{reforçar} recursos (demanda creixent) i en quins
+        es poden \emph{reassignar} (demanda decreixent)?
+  \item \textbf{(Raonament)} Si la derivada d'una funció és \emph{sempre positiva}
+        (mai s'anul·la ni es fa negativa), què podem dir del seu creixement? Posa un
+        exemple senzill.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item $f'(x)=-2x+8$, s'anul·la a $x=4$. Creix a $(-\infty,4)$, decreix a
+        $(4,\infty)$.
+  \item $f'(x)=3x^2-12x+9=3(x-1)(x-3)$, s'anul·la a $x=1$ i $x=3$. Signes: $(-\infty,1)$
+        creix ($f'(0)=9>0$); $(1,3)$ decreix ($f'(2)=-3<0$); $(3,\infty)$ creix
+        ($f'(4)=9>0$).
+  \item Creix per a $x<5$ ($f'>0$) i decreix per a $x>5$ ($f'<0$). A $x=5$ la derivada
+        s'anul·la: hi ha un canvi de tendència (de pujar a baixar), és a dir un màxim.
+  \item $f'(x)=3x^2-12=3(x-2)(x+2)$, s'anul·la a $x=-2$ i $x=2$. Signes: $(-\infty,-2)$
+        creix ($f'(-3)=15>0$); $(-2,2)$ decreix ($f'(0)=-12<0$); $(2,\infty)$ creix
+        ($f'(3)=15>0$).
+  \item Cal \textbf{reforçar} on la demanda creix: mesos $0$ a $2$ i a partir del mes
+        $4$. Es pot \textbf{reassignar} on decreix: entre el mes $2$ i el $4$.
+  \item Si $f'(x)>0$ sempre, la funció \textbf{creix sempre} (és estrictament
+        creixent), sense trams de baixada. Exemple: $f(x)=x^3+x$, amb
+        $f'(x)=3x^2+1$, que és sempre positiva.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,113 @@
+% =====================================================================
+%  2bat-ud5-11.tex  —  SESSIÓ 11: Probabilitats amb la normal
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 11 — Probabilitats amb la normal}%
+{Activitat 3: calcular probabilitats d'intervals amb la normal i traduir-les en decisions sobre un servei.}
+
+\subsection{Idea clau}
+
+Ja sabem tipificar i llegir $P(Z<z)$ a la taula. Avui ho apliquem a un cas real
+(Activitat 3): calcular la probabilitat que una magnitud caigui \textbf{dins d'un
+interval} i traduir-ho en decisions de servei (dimensionar recursos, fixar llindars).
+
+\begin{idea}
+\textbf{Probabilitat d'un interval $P(a<X<b)$.} Es tipifiquen els dos extrems i es resta:
+\[
+P(a<X<b)=P(Z<z_b)-P(Z<z_a),\qquad z_a=\frac{a-\mu}{\sigma},\ \ z_b=\frac{b-\mu}{\sigma}.
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{A l'esquerra} ($X<b$): directament $P(Z<z_b)$.
+  \item \textbf{A la dreta} ($X>a$): el complementari, $1-P(Z<z_a)$.
+  \item \textbf{Entre dos valors}: es resten les dues àrees a l'esquerra.
+\end{itemize}
+Un cop tens la probabilitat, la \textbf{tradueixes}: quantes persones de $N$, quin
+percentatge, si cal reforçar un recurs, etc.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[probabilitat entre dos valors]
+El temps d'atenció a un servei segueix $N(20,4)$ minuts. Quina és la probabilitat que una
+atenció duri \textbf{entre 16 i 28} minuts?
+\[
+z_{16}=\frac{16-20}{4}=-1,\qquad z_{28}=\frac{28-20}{4}=2.
+\]
+\[
+P(16<X<28)=P(Z<2)-P(Z<-1)=0,9772-0,1587=0,8185\approx 81,9\%.
+\]
+Aproximadament el $82\%$ de les atencions duren entre $16$ i $28$ minuts.
+\end{exemple}
+
+\begin{exemple}[traduir en nombre de persones]
+Les puntuacions d'una prova segueixen $N(50,10)$. En un grup de $200$ persones, quantes
+s'espera que tinguin \textbf{menys de 55}? Tipifiquem: $z=\frac{55-50}{10}=0,5$, i
+$P(Z<0,5)=0,6915$. En un grup de $200$:
+\[
+0,6915\cdot 200\approx 138 \text{ persones}.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[interval simètric i regla del 68]
+Les alçades segueixen $N(170,8)$ cm. Quina és la probabilitat que una persona faci
+\textbf{entre 162 i 178} cm?
+\solucio
+$z_{162}=\dfrac{162-170}{8}=-1$ i $z_{178}=\dfrac{178-170}{8}=1$.
+\[
+P(162<X<178)=P(Z<1)-P(Z<-1)=0,8413-0,1587=0,6826\approx 68,3\%.
+\]
+Com era d'esperar, l'interval $\mu\pm\sigma$ conté el $\approx 68\%$ de les dades.
+\resposta{$\approx 68,3\%$.}
+\end{exresolt}
+
+\begin{exresolt}[decisió a partir d'una probabilitat]
+El temps d'espera segueix $N(20,4)$ minuts. El servei considera «espera llarga» si supera
+els $28$ minuts. Quina proporció d'usuaris tenen una espera llarga?
+\solucio
+$z_{28}=\dfrac{28-20}{4}=2$. L'espera llarga és $X>28$, la cua dreta:
+\[
+P(X>28)=1-P(Z<2)=1-0,9772=0,0228=2,28\%.
+\]
+Poc més del $2\%$ dels usuaris tenen espera llarga: el servei pot considerar-ho acceptable
+o reforçar segons el seu criteri.
+\resposta{$\approx 2,3\%$ dels usuaris.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Fes servir: $P(Z<0,5)=0,6915$; $P(Z<1)=0,8413$; $P(Z<1,5)=0,9332$;
+$P(Z<2)=0,9772$; $P(Z<-1)=0,1587$; $P(Z<-2)=0,0228$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item En una $N(60,12)$, calcula $P(48<X<72)$. Amb quina regla coneguda coincideix?
+  \item En una $N(50,10)$, calcula $P(X<65)$. (Pista: $z=1,5$.)
+  \item En una $N(50,10)$, calcula $P(X>60)$ amb el complementari.
+  \item En una $N(170,8)$, calcula $P(154<X<186)$. Amb quin percentatge conegut
+        coincideix?
+  \item En una $N(50,10)$, en un grup de $400$ persones, quantes s'espera que tinguin
+        menys de $55$? (Pista: $P(Z<0,5)=0,6915$.)
+  \item \textbf{(Decisió)} El temps d'atenció segueix $N(20,4)$. Si el servei vol que
+        \emph{com a molt} el $2,3\%$ tingui espera llarga, a partir de quants minuts
+        hauria de fixar el llindar d'«espera llarga»? (Pista: busca el valor amb
+        $z=2$.)
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item $z_{48}=-1$, $z_{72}=1$; $P=0,8413-0,1587=0,6826\approx 68,3\%$. Coincideix amb
+        la regla del $68\%$ ($\mu\pm\sigma$).
+  \item $z=1,5$; $P(X<65)=P(Z<1,5)=0,9332=93,32\%$.
+  \item $z=1$; $P(X>60)=1-P(Z<1)=1-0,8413=0,1587=15,87\%$.
+  \item $z_{154}=-2$, $z_{186}=2$; $P=0,9772-0,0228=0,9544\approx 95,4\%$. Coincideix amb
+        la regla del $95\%$ ($\mu\pm 2\sigma$).
+  \item $P(Z<0,5)=0,6915$; $0,6915\cdot 400\approx 277$ persones.
+  \item Amb $z=2$: $x=\mu+2\sigma=20+2\cdot 4=28$ minuts. El llindar s'hauria de fixar a
+        $28$ minuts (a partir d'aquí, només el $\approx 2,3\%$ el supera).
+\end{sollist}
+\end{solucions}

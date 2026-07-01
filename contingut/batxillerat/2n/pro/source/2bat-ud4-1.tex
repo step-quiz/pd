@@ -1,0 +1,132 @@
+% =====================================================================
+%  2bat-ud4-1.tex  —  SESSIÓ 1: El ritme de canvi i el vèrtex de 1r (connexió)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — El ritme de canvi i el vèrtex de 1r}%
+{Recuperar el vèrtex de les paràboles de 1r per trobar un punt òptim i obrir la pregunta de la unitat: i si la funció no és una paràbola?}
+
+\subsection{Idea clau}
+
+Obrim la darrera unitat d'\textbf{anàlisi} del curs. Connectem amb una cosa que ja
+sabeu fer: a 1r, amb les paràboles, trobàveu el \textbf{vèrtex} per localitzar un punt
+òptim (per exemple, el preu que maximitzava el benefici en una venda solidària). Avui
+recuperem aquella idea i ens fem la pregunta que mou tota la unitat: \textbf{i si la
+funció no és una paràbola? Com trobaríem el punt òptim de qualsevol funció?}
+
+\begin{idea}
+\textbf{Del vèrtex concret a la idea de ritme de canvi.} En el punt més alt (màxim) o
+més baix (mínim) d'una corba, la gràfica \textbf{deixa de pujar i comença a baixar}
+(o a l'inrevés). Just en aquell punt, per un instant, \textbf{no creix ni decreix}.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Estudiar \emph{com creix o decreix} una funció a cada punt és estudiar el seu
+        \textbf{ritme de canvi}.
+  \item L'eina que mesura aquest ritme de canvi es diu \textbf{derivada}, i serà la
+        protagonista de la unitat.
+  \item El vèrtex de 1r serà, més endavant, només un \textbf{cas particular} d'un
+        mètode general que servirà per a qualsevol funció.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el vèrtex que ja sabíeu trobar: la venda solidària]
+A 1r, el benefici d'una venda de samarretes solidàries segons el preu $x$ (en euros)
+es modelitzava amb una paràbola, per exemple $B(x)=-2x^2+24x-40$. El benefici màxim
+era al \textbf{vèrtex}, que es trobava amb la fórmula $x_v=\dfrac{-b}{2a}$:
+\[
+x_v=\frac{-24}{2\cdot(-2)}=\frac{-24}{-4}=6.
+\]
+El preu òptim era $6\eur$, i el benefici màxim $B(6)=-2\cdot 36+144-40=32\eur$. Aquell
+vèrtex era el \textbf{punt òptim} del problema.
+\end{exemple}
+
+\begin{exemple}[i si no és una paràbola?]
+La fórmula $x_v=\dfrac{-b}{2a}$ \textbf{només} funciona amb paràboles. Però molts
+fenòmens socials no ho són:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item el cost per usuari d'un servei que primer baixa i després puja;
+  \item els ingressos d'una activitat que pugen, arriben a un sostre i baixen;
+  \item l'eficàcia d'un programa segons la seva durada.
+\end{itemize}
+Per a aquests casos necessitem una eina \textbf{general}: una que, mirant el
+\textbf{ritme de canvi} a cada punt, ens digui on la funció deixa de créixer i comença
+a decréixer. Aquesta eina és la \textbf{derivada}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[recuperar el vèrtex d'una paràbola]
+Una activitat solidària té un benefici $B(x)=-x^2+10x-9$ (en euros) segons el preu
+d'entrada $x$ (en euros). Troba el preu que dóna el benefici màxim i quin és aquest
+benefici.
+\solucio
+És una paràbola amb $a=-1$ i $b=10$. El vèrtex (màxim, perquè $a<0$) és a
+\[
+x_v=\frac{-b}{2a}=\frac{-10}{2\cdot(-1)}=\frac{-10}{-2}=5.
+\]
+El benefici màxim és $B(5)=-25+50-9=16\eur$. En el punt òptim, la gràfica deixa de
+pujar i comença a baixar: el seu \textbf{ritme de canvi} és nul.
+\resposta{Preu òptim $5\eur$; benefici màxim $16\eur$.}
+\end{exresolt}
+
+\begin{exresolt}[descriure el ritme de canvi amb paraules]
+Una despesa acumulada d'un projecte social va, mes a mes, així: al principi puja
+\emph{de pressa}, després puja \emph{a poc a poc}, i els últims mesos \emph{s'atura}
+(no canvia). Descriu el ritme de canvi en cada tram i digues on és més gran.
+\solucio
+El \textbf{ritme de canvi} és la velocitat amb què canvia la despesa:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Al principi, puja de pressa: el ritme de canvi és \textbf{gran i positiu}.
+  \item Després, puja a poc a poc: el ritme és \textbf{positiu però petit}.
+  \item Al final, s'atura: el ritme de canvi és \textbf{prop de zero}.
+\end{itemize}
+El ritme és més gran al principi, quan la despesa creix més de pressa.
+\resposta{Ritme gran al principi (puja de pressa), petit després, gairebé nul al final
+(s'atura).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Una venda benèfica té un benefici $B(x)=-x^2+8x-7$ (en euros) segons el preu
+        $x$. Troba el preu que el fa màxim i el benefici màxim, amb la fórmula del
+        vèrtex de 1r.
+  \item Per a la paràbola $f(x)=-2x^2+12x$, troba el vèrtex i digues si és un màxim o
+        un mínim. (Pista: mira el signe de $a$.)
+  \item Una despesa puja molt de pressa els primers dies, després cada cop més a poc a
+        poc i finalment s'estabilitza. Ordena aquests tres moments de \emph{més} a
+        \emph{menys} ritme de canvi.
+  \item \textbf{(Interpretació)} Què vol dir, socialment, que l'atur d'un municipi
+        «creixi cada cop més de pressa»? I què voldria dir que «creixés cada cop més a
+        poc a poc»?
+  \item \textbf{(Raonament)} Per què la fórmula $x_v=\dfrac{-b}{2a}$ no ens serveix per
+        trobar el punt òptim d'una funció que no sigui una paràbola? Quina informació
+        ens caldria, en general, per saber on una corba deixa de pujar?
+  \item \textbf{(Reflexió)} Escriu amb les teves paraules què vol dir «ritme de canvi»
+        i posa un exemple propi de l'àmbit social on interessi trobar un \emph{punt
+        òptim} (un cost mínim, un benefici màxim, un aforament ideal\ldots).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item $a=-1$, $b=8$: $x_v=\dfrac{-8}{2\cdot(-1)}=4$. Benefici màxim
+        $B(4)=-16+32-7=9\eur$. Preu òptim $4\eur$.
+  \item $a=-2$, $b=12$: $x_v=\dfrac{-12}{2\cdot(-2)}=3$; $f(3)=-18+36=18$. Vèrtex
+        $(3,18)$; com que $a<0$, és un \textbf{màxim}.
+  \item De més a menys ritme: (1) els primers dies (puja molt de pressa), (2) després
+        (puja més a poc a poc), (3) al final (s'estabilitza, ritme gairebé nul).
+  \item Resposta oberta. Idea: «creix cada cop més de pressa» vol dir que el ritme de
+        canvi (la velocitat de creixement) augmenta —cada mes s'hi afegeix més atur que
+        l'anterior—; «cada cop més a poc a poc» vol dir que el ritme disminueix, encara
+        que l'atur encara pugi.
+  \item Resposta oberta. Idea: la fórmula del vèrtex està deduïda específicament per a
+        paràboles ($ax^2+bx+c$); per a una corba qualsevol no hi ha aquesta simetria.
+        En general ens cal una eina que mesuri el ritme de canvi a cada punt i ens digui
+        on s'anul·la (on la corba deixa de pujar): aquesta eina és la derivada.
+  \item Resposta oberta.
+\end{sollist}
+\end{solucions}
