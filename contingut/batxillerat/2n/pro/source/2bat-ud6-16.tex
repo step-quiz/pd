@@ -1,0 +1,127 @@
+% =====================================================================
+%  2bat-ud6-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 6
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 6}%
+{Prova individual que tanca el curs i l'etapa: quatre blocs alineats amb els criteris C1–C4. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 6 — Inferència estadística}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. En aquesta unitat es valora sobretot la \textbf{correcció de les
+interpretacions}, la detecció de \textbf{biaixos i paranys} i l'expressió de conclusions
+\textbf{amb prudència}, més que no pas el càlcul. Calculadora permesa. Justifica cada
+resposta.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Mostreig i representativitat \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Mostreig}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt]
+  \item Un ajuntament vol conèixer l'opinió de \textbf{tota la població adulta} sobre un nou
+        servei, i fa l'enquesta \textbf{en línia}, difonent-la per les seves xarxes socials.
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt, itemsep=2pt]
+          \item Identifica la població i la mostra.
+          \item Valora si la mostra és representativa i identifica el biaix principal,
+                indicant qui en queda fora.
+        \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Intervals de confiança \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Intervals}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=2]
+  \item Una enquesta conclou que «el $57\%$ de les persones ateses recomanaria el servei,
+        amb un marge d'error de $\pm 3\%$ (confiança del $95\%$)».
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt, itemsep=2pt]
+          \item Construeix l'interval de confiança.
+          \item Escriu què afirma \emph{correctament} l'enquesta, i indica un error
+                d'interpretació que \emph{no} s'hauria de cometre.
+        \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Significació \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Significació}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=3]
+  \item Dues intervencions socials donen una taxa d'èxit del $61\%\pm 4\%$ i del
+        $65\%\pm 4\%$. Construeix els dos intervals, digues si se superposen i valora si es
+        pot afirmar que la segona intervenció és millor que la primera.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 4 (C4) — Lectura crítica \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 4 (C4) — Lectura crítica}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=4]
+  \item Un titular afirma: «\emph{Els joves que participen en activitats del casal
+        delinqueixen menys: el casal redueix la delinqüència}». L'estudi només ha observat
+        que els participants tenen menys incidents registrats, amb una mostra petita d'un
+        sol barri.
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt, itemsep=2pt]
+          \item Detecta \textbf{dos} paranys o limitacions del titular.
+          \item Reescriu el titular de manera fidel a les dades.
+        \end{enumerate}
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD6 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item \textbf{a)} Població: tota la població adulta del municipi. Mostra: les persones que
+        han respost l'enquesta en línia difosa per xarxes.
+        \textbf{b)} No és representativa: hi ha \textbf{biaix de cobertura i de selecció}.
+        En queden fora qui no té accés o competència digital i qui no segueix les xarxes de
+        l'ajuntament (sovint persones grans o vulnerables); a més, responen sobretot els
+        seguidors ja interessats. El resultat no es pot generalitzar a tota la població
+        adulta.
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{1}
+  \item \textbf{a)} Interval: $57\%\pm 3\%=[54\%,\,60\%]$.
+        \textbf{b)} Afirma correctament: amb un $95\%$ de confiança, la proporció real de
+        \emph{totes} les persones ateses que recomanaria el servei està entre el $54\%$ i el
+        $60\%$. \textbf{Error a evitar:} dir que és exactament el $57\%$ (ignorar el marge),
+        o interpretar el «$95\%$» com que «el $95\%$ de la gent» recomana el servei (confon
+        el nivell de confiança amb un percentatge de persones).
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{2}
+  \item Intervals: $[57\%,65\%]$ i $[61\%,69\%]$. \textbf{Se superposen} (del $61\%$ al
+        $65\%$) i la diferència és de només $4$ punts. \textbf{No} es pot afirmar que la
+        segona intervenció sigui millor: la diferència pot ser fruit de l'atzar del
+        mostreig. Caldrien mostres més grans (marges més petits) per poder concloure-ho.
+\end{sollist}
+
+\noindent\textbf{Bloc 4 (C4)}
+\begin{sollist}\setcounter{enumi}{3}
+  \item \textbf{a)} Paranys/limitacions (dos qualssevol): (1) \textbf{correlació presentada
+        com a causa} —que participin i tinguin menys incidents no vol dir que el casal ho
+        \emph{causi}; podria ser al revés o haver-hi una tercera causa; (2) \textbf{mostra
+        petita i d'un sol barri} —no generalitzable; (3) manca de \textbf{grup de
+        comparació} i de marge d'error.
+        \textbf{b)} Reescriptura fidel (exemple): «\emph{Els joves que participen al casal
+        presenten menys incidents registrats; caldrien més dades per saber si el casal
+        n'és la causa}».
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): Bloc 1 $\sim 25\%$,
+Bloc 2 $\sim 25\%$, Bloc 3 $\sim 25\%$, Bloc 4 $\sim 25\%$. A cada bloc es valora sobretot la
+correcció de la interpretació, la detecció de biaixos i paranys, i l'expressió de
+conclusions amb prudència, més que no pas el càlcul. Llindar de superació: $4,0/10$; en cas
+contrari, recuperació trimestral o convocatòria extraordinària.}
