@@ -1,0 +1,15 @@
+{
+  "brand": "Matemàtiques Aplicades I",
+  "brandSub": "1r Batxillerat PRO · Serveis a la Comunitat",
+  "pdfPrefix": "1bat",
+  "docx": "programacio.docx",
+  "udMax": 6,
+  "udTitles": {
+    "1": "Nombres reals, inequacions i intervals",
+    "2": "Llenguatge algebraic i polinomis",
+    "3": "Funcions i modelització social",
+    "4": "Estadística i dades socioeconòmiques",
+    "5": "Aritmètica aplicada i economia social",
+    "6": "Probabilitat i presa de decisions"
+  }
+}
