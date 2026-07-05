@@ -1,0 +1,126 @@
+% =====================================================================
+%  2bat-ud4-4.tex  —  SESSIÓ 4: Calcular derivades de polinomis
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 4 — Calcular derivades de polinomis}%
+{De llegir el pendent en una gràfica a calcular-lo amb precisió: les regles de derivació dels polinomis, de manera operativa.}
+
+\subsection{Idea clau}
+
+A la sessió 3 vau aprendre a \textbf{llegir} el pendent (la derivada) sobre una
+gràfica. Avui aprendreu a \textbf{calcular-lo} amb una fórmula, sense necessitat de
+dibuixar res. Ho farem només amb \textbf{polinomis} i de manera \textbf{mecànica}: no
+ens cal la definició formal amb límits, només unes poques regles que cal automatitzar.
+
+\begin{idea}
+\textbf{Regles de derivació dels polinomis.} La derivada de $f(x)$ s'escriu
+$f'(x)$. Per a polinomis n'hi ha prou amb aquestes regles:
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Potència:} la derivada de $x^n$ és $n\,x^{n-1}$
+        (baixa l'exponent davant i resta-li $1$).
+  \item \textbf{Coeficient:} la derivada de $a\,x^n$ és $a\cdot n\,x^{n-1}$
+        (el nombre del davant es manté i multiplica).
+  \item \textbf{Constant:} la derivada d'un nombre sol (un terme sense $x$) és
+        \textbf{zero}.
+  \item \textbf{Suma:} es deriva \textbf{terme a terme}.
+\end{itemize}
+Casos útils: la derivada de $x$ és $1$ (perquè $x=x^1$ i $1\cdot x^0=1$), i la d'un
+terme com $5x$ és $5$.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[derivar terme a terme]
+Derivem $f(x)=3x^2+5x-7$ aplicant les regles a cada terme:
+\begin{align*}
+3x^2 &\ \to\ 3\cdot 2\,x^{2-1}=6x,\\
+5x   &\ \to\ 5,\\
+-7   &\ \to\ 0.
+\end{align*}
+Sumant els resultats: $f'(x)=6x+5$. Fixa't que el terme independent ($-7$)
+\textbf{desapareix} en derivar.
+\end{exemple}
+
+\begin{exemple}[un grau més: el cost d'un programa]
+El cost d'un programa social (en milers d'euros) segons els mesos $x$ es modelitza amb
+$C(x)=x^3-6x^2+9x+4$. La seva derivada (el ritme de despesa) és:
+\[
+C'(x)=3x^2-12x+9.
+\]
+Terme a terme: $x^3\to 3x^2$; \ $-6x^2\to -12x$; \ $9x\to 9$; \ $4\to 0$. Aquesta
+$C'(x)$ ens dirà, més endavant, quan la despesa creix i quan decreix.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[derivar i avaluar en un punt]
+Donada $f(x)=2x^2-8x+1$, calcula $f'(x)$ i després $f'(1)$. Interpreta el signe de
+$f'(1)$.
+\solucio
+Derivem terme a terme:
+\[
+f'(x)=2\cdot 2\,x-8=4x-8.
+\]
+Ara avaluem en $x=1$ (substituïm $x$ per $1$):
+\[
+f'(1)=4\cdot 1-8=-4.
+\]
+Com que $f'(1)=-4<0$, la derivada és \textbf{negativa} en $x=1$: en aquell punt el
+fenomen \textbf{decreix}.
+\resposta{$f'(x)=4x-8$; \ $f'(1)=-4<0$: en $x=1$ la funció decreix.}
+\end{exresolt}
+
+\begin{exresolt}[derivada d'un polinomi de grau 3 i signe en un punt]
+El nombre d'usuaris d'un servei (en desenes) es modelitza amb
+$U(x)=x^3-3x^2+2$ segons els mesos $x$. Calcula $U'(x)$ i $U'(3)$, i digues si en el
+mes $3$ el servei creix o decreix.
+\solucio
+Derivem:
+\[
+U'(x)=3x^2-6x.
+\]
+Avaluem en $x=3$:
+\[
+U'(3)=3\cdot 3^2-6\cdot 3=27-18=9.
+\]
+Com que $U'(3)=9>0$, la derivada és \textbf{positiva}: en el mes $3$ el servei
+\textbf{creix}.
+\resposta{$U'(x)=3x^2-6x$; \ $U'(3)=9>0$: en el mes $3$ el servei creix.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula la derivada de cada funció:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=4x^2$ \hfill b) $g(x)=x^2-3x$ \hfill c) $h(x)=7$
+        \end{enumerate}
+  \item Deriva $f(x)=5x^2-2x+9$ i comprova que el terme independent desapareix.
+  \item Deriva el polinomi de grau 3 $P(x)=2x^3-4x^2+x-6$.
+        \textbf{(Compte amb la jerarquia)}: deriva terme a terme, amb ordre.
+  \item Per a $f(x)=x^2-6x+5$, calcula $f'(x)$ i després $f'(2)$. El fenomen, en $x=2$,
+        creix o decreix?
+  \item Per a $C(x)=x^3-9x^2+15x$ (el cost d'un servei en milers d'euros segons els
+        mesos $x$), calcula $C'(x)$ i $C'(1)$. \textbf{(Interpretació)} Què vol dir el
+        signe de $C'(1)$ per a la despesa en el primer mes?
+  \item \textbf{(Caça l'error)} Algú ha derivat $f(x)=3x^2+4x-2$ així:
+        $f'(x)=6x+4-2$. On és l'error? Escriu la derivada correcta.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $f'(x)=8x$; \quad (b) $g'(x)=2x-3$; \quad (c) $h'(x)=0$.
+  \item $f'(x)=10x-2$. El terme independent $9$ es deriva a $0$ i desapareix.
+  \item $P'(x)=6x^2-8x+1$.
+  \item $f'(x)=2x-6$; \ $f'(2)=2\cdot 2-6=-2<0$: en $x=2$ la funció \textbf{decreix}.
+  \item $C'(x)=3x^2-18x+15$; \ $C'(1)=3-18+15=0$. La derivada és \textbf{zero} en el
+        primer mes: la despesa, en aquell instant, ni creix ni decreix (és un punt on
+        pot canviar la tendència).
+  \item L'error és no haver derivat el terme independent: $-2$ s'ha de derivar a $0$, no
+        mantenir-lo. La derivada correcta és $f'(x)=6x+4$.
+\end{sollist}
+\end{solucions}

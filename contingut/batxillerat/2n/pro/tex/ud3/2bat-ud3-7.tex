@@ -1,0 +1,144 @@
+% =====================================================================
+%  2bat-ud3-7.tex  —  SESSIÓ 7: Consolidació del càlcul de límits
+% =====================================================================
+\horatitol{Sessió 7 — Consolidació del càlcul de límits}%
+{Assentar la lectura i el càlcul intuïtiu de límits abans de la continuïtat: caçar els errors típics i practicar amb casos graduats.}
+
+\subsection{Idea clau}
+
+Abans d'entrar en la continuïtat, consolidem la lectura i el càlcul de límits caçant
+els \textbf{errors típics}. L'objectiu és que llegir un límit des d'una taula, una
+gràfica o una expressió surti amb seguretat, sempre interpretant-lo en context.
+
+\begin{idea}
+\textbf{Els errors que cacem avui:}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Confondre cap a on tendeix} la funció (per exemple, dir que tendeix a
+        $0$ quan en realitat puja sense límit).
+  \item \textbf{Llegir malament una asímptota} (confondre l'horitzontal amb la
+        vertical, o el valor on és).
+  \item \textbf{Dir que la funció «arriba»} al límit, quan només s'hi
+        \textbf{acosta} sense tocar-lo.
+\end{itemize}
+\textbf{Recordatori:} el límit és el valor cap al qual s'\emph{acosten} els resultats;
+una asímptota horitzontal $y=L$ correspon a $\lim_{x\to\infty}f(x)=L$.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: «arriba» o «s'acosta»]
+Algú diu: «la funció $f(x)=\dfrac{100}{x}$ \emph{arriba} a $0$ quan $x$ és prou gran».
+\textbf{És incorrecte:} per molt gran que sigui $x$, $\dfrac{100}{x}$ sempre és un
+nombre positiu, mai \emph{exactament} $0$. El correcte és que \textbf{s'acosta} a $0$
+tant com vulguem, però no hi arriba: $\lim_{x\to\infty}\frac{100}{x}=0$.
+\end{exemple}
+
+\begin{exemple}[caça l'error: confondre cap a on tendeix]
+Algú afirma: «$f(x)=2x$ s'estabilitza en un valor quan $x$ creix». \textbf{És
+incorrecte:} $2x$ es fa cada cop més gran sense límit, no s'estabilitza. El seu límit
+a l'infinit és $+\infty$ (puja sense aturador): no té asímptota horitzontal.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[estimar límit i asímptota des d'una taula]
+A partir de la taula, estima $\lim_{x\to\infty}f(x)$ i digues l'asímptota horitzontal:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+$x$ & $1$ & $10$ & $100$ & $\num{1000}$ \\
+\midrule
+$f(x)$ & $250$ & $610$ & $691$ & $699,1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\solucio
+Els valors s'acosten cada cop més a $700$ (sense superar-lo). Per tant
+$\lim_{x\to\infty}f(x)=700$ i l'asímptota horitzontal és $y=700$.
+\resposta{Límit $700$; asímptota horitzontal $y=700$.}
+\end{exresolt}
+
+\begin{exresolt}[detectar i corregir un error]
+Aquesta interpretació té un error. Troba'l i corregeix-la: «La funció
+$g(x)=400+\dfrac{200}{x}$ té asímptota horitzontal $y=600$, perquè a $x=1$ val
+$600$.»
+\solucio
+L'error és fixar-se en \emph{un} valor (el de $x=1$) en lloc del comportament quan $x$
+creix. Quan $x$ es fa gran, $\dfrac{200}{x}$ s'acosta a $0$, així que $g(x)$ s'acosta a
+\textbf{$400$}. L'asímptota horitzontal és $y=400$, no $y=600$.
+\resposta{L'asímptota correcta és $y=400$ (no $y=600$): cal mirar el comportament a
+l'infinit, no un valor concret.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari: 1–3 són la base (lectura directa); 4–6 són ampliació
+(taules i expressions).}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Caça l'error)} Digues si cada afirmació és correcta i, si no, corregeix-la:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «$f(x)=\dfrac{5}{x}$ arriba a $0$ quan $x=1000$.»
+          \item «$g(x)=3x$ té asímptota horitzontal $y=0$.»
+        \end{enumerate}
+  \item Per a cada funció, digues l'asímptota horitzontal (cap a quin valor tendeix):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $f(x)=\dfrac{20}{x}$ \hfill \item $g(x)=300-\dfrac{600}{x}$
+        \end{enumerate}
+  \item Una gràfica s'aplana cap a $y=120$ quan $x$ creix. Escriu-ho amb notació de
+        límit i digues què representa si és l'ocupació d'un servei.
+  \item \textbf{(Ampliació)} A partir de la taula, estima el límit i l'asímptota:
+        \begin{center}
+        \begin{tabular}{lcccc}
+        \toprule
+        $x$ & $1$ & $10$ & $100$ & $\num{1000}$ \\
+        \midrule
+        $f(x)$ & $50$ & $455$ & $495,5$ & $499,55$ \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Ampliació)} Per a $f(x)=1000-\dfrac{2000}{x}$, fes una taula amb
+        $x=10,100,1000$ i digues cap a quin valor s'estabilitza.
+  \item \textbf{(Ampliació)} Per a $g(x)=\dfrac{50}{x}$, digues les dues asímptotes
+        (horitzontal i vertical) i interpreta-les si $x$ és el nombre de beneficiaris
+        d'un fons.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació.} Marca amb sinceritat com et trobes, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.4cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Estimar un límit a l'infinit des d'una taula & & & \\
+Llegir un límit des d'una gràfica & & & \\
+Identificar l'asímptota horitzontal & & & \\
+Identificar l'asímptota vertical & & & \\
+Interpretar el límit en context social & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{Incorrecta}: a $x=1000$, $\frac{5}{1000}=0,005$, no $0$; només
+        s'\emph{acosta} a $0$. \quad (b) \textbf{Incorrecta}: $3x$ puja sense límit
+        ($+\infty$), no té asímptota horitzontal.
+  \item (a) $y=0$; \quad (b) $y=300$.
+  \item $\lim_{x\to\infty}f(x)=120$; representa que el servei s'estabilitza en $120$
+        (per exemple, $120$ places ocupades): el seu sostre de saturació.
+  \item Els valors s'acosten a $500$: límit $500$, asímptota horitzontal $y=500$.
+  \item $f(10)=800$, $f(100)=980$, $f(1000)=998$. S'estabilitza en $1000$.
+  \item Asímptota horitzontal $y=0$ (amb molts beneficiaris l'ajut tendeix a $0$) i
+        vertical $x=0$ (amb gairebé cap beneficiari l'ajut es dispara, situació
+        impossible en el context).
+\end{sollist}
+\end{solucions}

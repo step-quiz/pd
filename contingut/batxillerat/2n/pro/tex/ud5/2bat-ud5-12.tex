@@ -1,0 +1,114 @@
+% =====================================================================
+%  2bat-ud5-12.tex  —  SESSIÓ 12: La normal amb el full de càlcul
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 12 — La normal amb el full de càlcul}%
+{Treball tecnològic: calcular probabilitats normals amb el full de càlcul, sense tipificar a mà, i validar que coincideixen amb la taula.}
+
+\subsection{Idea clau}
+
+A la sessió 11 vau calcular probabilitats normals \textbf{tipificant a mà} i consultant la
+taula $Z$. Avui deixem que el \textbf{full de càlcul} ho faci directament: dona la
+probabilitat sense necessitat de tipificar. Ho farem per \textbf{validar} els càlculs de
+la taula i per treballar més de pressa amb casos reals.
+
+\begin{idea}
+\textbf{La funció normal al full de càlcul.} La funció \texttt{DISTR.NORM.N} (o
+\texttt{NORM.DIST}) dona directament $P(X<x)$ per a qualsevol $N(\mu,\sigma)$:
+\[
+\texttt{=DISTR.NORM.N(x;\ }\mu\texttt{;\ }\sigma\texttt{;\ CERT)}
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \texttt{x}: el valor; $\mu$: mitjana; $\sigma$: desviació típica.
+  \item \texttt{CERT}: dona l'\textbf{acumulada} $P(X<x)$ (àrea a l'esquerra). No cal
+        tipificar: el full ja ho fa internament.
+  \item \textbf{A la dreta:} $P(X>x)=1-\texttt{DISTR.NORM.N}(\dots)$.
+  \item \textbf{Entre dos:} $P(a<X<b)=\texttt{DISTR.NORM.N}(b\dots)-\texttt{DISTR.NORM.N}(a\dots)$.
+\end{itemize}
+\textbf{La regla d'or:} l'eina i la taula han de coincidir; si no, revisa què has entrat.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[validar un càlcul de la taula]
+A la sessió 10, per a $N(50,10)$, vam obtenir $P(X<65)=0,9332$ (tipificant a $z=1,5$). Al
+full de càlcul, sense tipificar:
+\[
+\texttt{=DISTR.NORM.N(65;\ 50;\ 10;\ CERT)}\ \to\ 0,9332.
+\]
+\textbf{Coincideix} amb la taula: guanyem confiança i estalviem el pas de tipificar.
+\end{exemple}
+
+\begin{exemple}[probabilitat d'un interval amb dues crides]
+Per a $N(20,4)$, la probabilitat $P(16<X<28)$ es calcula amb dues crides i una resta:
+\[
+\texttt{=DISTR.NORM.N(28;20;4;CERT)}-\texttt{DISTR.NORM.N(16;20;4;CERT)}
+\]
+\[
+=0,9772-0,1587=0,8185\approx 81,9\%,
+\]
+el mateix resultat que vam obtenir a mà a la sessió 11.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[triar bé l'esquerra o la dreta]
+Per a $N(50,10)$, vols $P(X>70)$. Quina fórmula escrius?
+\solucio
+El full dona l'àrea a l'\textbf{esquerra}, així que per a la dreta cal el complementari:
+\[
+P(X>70)=1-\texttt{DISTR.NORM.N(70;\ 50;\ 10;\ CERT)}=1-0,9772=0,0228=2,28\%.
+\]
+\resposta{$1-\texttt{DISTR.NORM.N(70;50;10;CERT)}\approx 2,28\%$.}
+\end{exresolt}
+
+\begin{exresolt}[traduir a nombre de persones]
+Les puntuacions segueixen $N(60,12)$. En un grup de $300$ persones, quantes s'espera que
+tinguin menys de $72$? Escriu la fórmula i interpreta.
+\solucio
+$\texttt{=DISTR.NORM.N(72;\ 60;\ 12;\ CERT)}\to 0,8413$. En un grup de $300$:
+\[
+0,8413\cdot 300\approx 252 \text{ persones}.
+\]
+\resposta{$\approx 252$ persones.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Full de pràctica tecnològica. Anota la fórmula i el resultat de cada
+cas, i comprova que coincideix amb la taula.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu la fórmula per calcular $P(X<55)$ en una $N(50,10)$ i anota el resultat.
+  \item Reprodueix el cas de la sessió 11: $N(170,8)$, $P(162<X<178)$, amb dues crides i
+        una resta. Coincideix amb el $68\%$?
+  \item Per a $N(60,12)$, calcula $P(X>78)$ amb el complementari.
+  \item Per a $N(20,4)$, calcula $P(X<12)$ i digues quina proporció d'atencions dura menys
+        de $12$ minuts.
+  \item \textbf{(Nombre de persones)} Per a $N(50,10)$ i un grup de $500$ persones,
+        quantes s'espera que tinguin \textbf{més de 60}? (Pista: complementari, i després
+        multiplica.)
+  \item \textbf{(Validació)} Tria un cas qualsevol i calcula la probabilitat de dues
+        maneres: tipificant a mà amb la taula i amb \texttt{DISTR.NORM.N}. Coincideixen?
+        Explica per què han de coincidir.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item \texttt{=DISTR.NORM.N(55;50;10;CERT)} $\to 0,6915=69,15\%$.
+  \item \texttt{=DISTR.NORM.N(178;170;8;CERT)}$-$\texttt{DISTR.NORM.N(162;170;8;CERT)}
+        $=0,8413-0,1587=0,6826\approx 68,3\%$. Coincideix amb la regla del $68\%$.
+  \item $\texttt{=1-DISTR.NORM.N(78;60;12;CERT)}=1-0,9332=0,0668=6,68\%$.
+  \item $\texttt{=DISTR.NORM.N(12;20;4;CERT)}=0,0228=2,28\%$: el $2,28\%$ de les atencions
+        duren menys de $12$ minuts.
+  \item $P(X>60)=1-\texttt{DISTR.NORM.N(60;50;10;CERT)}=1-0,8413=0,1587$;
+        $0,1587\cdot 500\approx 79$ persones.
+  \item Resposta oberta. Coincideixen perquè \texttt{DISTR.NORM.N} tipifica internament i
+        consulta la mateixa corba normal que la taula $Z$: són dues maneres de calcular la
+        mateixa àrea sota la corba.
+\end{sollist}
+\end{solucions}

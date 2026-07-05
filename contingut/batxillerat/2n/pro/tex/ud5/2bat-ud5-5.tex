@@ -1,0 +1,111 @@
+% =====================================================================
+%  2bat-ud5-5.tex  —  SESSIÓ 5: La distribució binomial: la llei
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 5 — La distribució binomial: la llei}%
+{Formalitzar el model que descriu quants èxits s'esperen en repeticions independents, i reconèixer quan una situació és binomial.}
+
+\subsection{Idea clau}
+
+A la sessió 4 vau veure que comptar cas a cas es fa impossible i que calia una
+\textbf{llei}. Avui la presentem: la \textbf{distribució binomial}, el model que descriu
+quants \textbf{èxits} s'esperen en un nombre fix de repeticions independents, cadascuna
+amb la mateixa probabilitat d'èxit.
+
+\begin{idea}
+\textbf{La distribució binomial.} Quan es repeteix $n$ vegades una prova d'«èxit o
+fracàs», amb probabilitat d'èxit $p$ constant i repeticions independents, la probabilitat
+d'obtenir \textbf{exactament $k$ èxits} és
+\[
+P(k)=\binom{n}{k}\,p^{k}\,(1-p)^{\,n-k},
+\]
+on $\binom{n}{k}$ és el nombre de maneres de triar quins $k$ dels $n$ tenen èxit.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $p^{k}$: probabilitat que $k$ tinguin èxit; $(1-p)^{n-k}$: que la resta fracassin.
+  \item El \textbf{nombre d'èxits esperat} (valor mitjà) és $\mu=n\cdot p$.
+\end{itemize}
+\textbf{Quan és binomial} (les 4 condicions): nombre de repeticions \textbf{fix}; només
+\textbf{èxit o fracàs}; \textbf{mateixa} probabilitat cada cop; repeticions
+\textbf{independents}.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[calcular una probabilitat binomial]
+Cada usuari té un $p=0,6$ de superar una prova. En un grup de $n=5$, la probabilitat que
+en superin \textbf{exactament 3} és
+\[
+P(3)=\binom{5}{3}\,(0,6)^{3}\,(0,4)^{2}=10\cdot 0,216\cdot 0,16=0,3456\approx 34,6\%.
+\]
+El nombre esperat és $\mu=5\cdot 0,6=3$: coherent que $P(3)$ sigui el més probable.
+\end{exemple}
+
+\begin{exemple}[reconèixer si és binomial]
+«Llancem $10$ vegades una moneda i comptem quantes cares surten»: \textbf{és binomial}
+($n=10$ fix, cara/creu, $p=0,5$ constant, tirades independents). «Traiem $3$ cartes
+seguides d'una baralla sense tornar-les i comptem quants oros»: \textbf{no és binomial},
+perquè en no tornar les cartes la probabilitat \emph{canvia} a cada extracció (no és
+constant ni independent).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[probabilitat exacta amb la fórmula]
+Cada participant té un $25\%$ de probabilitat d'obtenir una beca. En un grup de $4$, quina
+és la probabilitat que \textbf{exactament 1} l'obtingui?
+\solucio
+Aquí $n=4$, $p=0,25$, $k=1$:
+\[
+P(1)=\binom{4}{1}\,(0,25)^{1}\,(0,75)^{3}=4\cdot 0,25\cdot 0,4219\approx 0,4219=42,2\%.
+\]
+\resposta{$P(1)\approx 42,2\%$.}
+\end{exresolt}
+
+\begin{exresolt}[nombre esperat i lectura]
+Cada usuari té un $70\%$ de completar un programa. En un grup de $10$, quants s'espera que
+el completin?
+\solucio
+El nombre esperat és $\mu=n\cdot p=10\cdot 0,7=7$. S'espera que aproximadament $7$ usuaris
+completin el programa; és el valor central de la distribució.
+\resposta{$\mu=7$ usuaris.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Digues si cada situació és binomial i per què:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Preguntar a $20$ usuaris independents si han trobat feina (sí/no), amb la
+                mateixa probabilitat cadascun.
+          \item Treure boles d'una urna sense tornar-les i mirar el color.
+        \end{enumerate}
+  \item Cada usuari té un $50\%$ d'èxit. En un grup de $6$, calcula la probabilitat que
+        en tinguin \textbf{exactament 3}. (Pista: $\binom{6}{3}=20$.)
+  \item Cada participant té un $70\%$ de completar un curs. En un grup de $8$, calcula la
+        probabilitat que \textbf{exactament 6} el completin. (Pista: $\binom{8}{6}=28$.)
+  \item Cada usuari té un $20\%$ de recaure. En un grup de $5$, quina és la probabilitat
+        que \textbf{cap} recaigui? (Pista: $k=0$.)
+  \item Cada usuari té un $80\%$ d'èxit. Quants s'espera que tinguin èxit d'un grup de
+        $30$?
+  \item \textbf{(Interpretació)} En un programa amb $p=0,6$ d'èxit i un grup de $20$,
+        quants èxits s'esperen? Si el servei necessita almenys $10$ èxits per continuar,
+        el nombre esperat hi arriba?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{Binomial}: $n=20$ fix, èxit/fracàs, mateixa probabilitat,
+        independents. (b) \textbf{No}: en no tornar les boles, la probabilitat canvia a
+        cada extracció (no constant ni independent).
+  \item $P(3)=\binom{6}{3}(0,5)^3(0,5)^3=20\cdot 0,125\cdot 0,125=0,3125=31,25\%$.
+  \item $P(6)=\binom{8}{6}(0,7)^6(0,3)^2=28\cdot 0,1176\cdot 0,09\approx 0,2965=29,6\%$.
+  \item $P(0)=\binom{5}{0}(0,2)^0(0,8)^5=1\cdot 1\cdot 0,3277\approx 0,3277=32,8\%$.
+  \item $\mu=30\cdot 0,8=24$ usuaris.
+  \item $\mu=20\cdot 0,6=12$ èxits esperats. Com que $12\ge 10$, el nombre esperat
+        \textbf{sí} arriba al llindar necessari.
+\end{sollist}
+\end{solucions}

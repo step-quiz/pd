@@ -1,0 +1,151 @@
+% =====================================================================
+%  2bat-ud4-2.tex  —  SESSIÓ 2: A quina velocitat creix? (descoberta)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 2 — A quina velocitat creix?}%
+{Aules pensants: a partir de dades reals d'un indicador social, descobrir que el «ritme» de creixement no és constant.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vam recuperar el vèrtex de 1r i va aparèixer una idea nova: el
+\textbf{ritme de canvi} d'un fenomen. Avui la treballem a les \textbf{pissarres
+verticals}, en grup, amb dades reals. La consigna no és només dir si un indicador
+\emph{puja o baixa}, sinó descriure \textbf{a quina velocitat} ho fa.
+
+\begin{idea}
+\textbf{La variació entre dos períodes.} Per mesurar el ritme de creixement d'una
+taula de dades, mirem \textbf{quant canvia} l'indicador d'un període al següent:
+\[
+\text{variació} = \text{valor final} - \text{valor inicial}.
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Si la variació és \textbf{gran i positiva}, el fenomen creix \emph{de pressa}.
+  \item Si és \textbf{petita}, creix \emph{a poc a poc}.
+  \item Si és \textbf{zero}, l'indicador \emph{no canvia} en aquell tram.
+  \item Si és \textbf{negativa}, l'indicador \emph{decreix}.
+\end{itemize}
+El que descobrirem és que aquest ritme \textbf{no acostuma a ser constant}: hi ha
+trams on l'indicador es dispara i trams on amb prou feines es mou.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[l'atur, mes a mes: el ritme no és constant]
+Un municipi registra el nombre de persones a l'atur al final de cada mes:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l c c c c c}
+\toprule
+\textbf{Mes} & gen & feb & mar & abr & mai \\
+\midrule
+\textbf{Persones a l'atur} & \num{1200} & \num{1260} & \num{1380} & \num{1410} & \num{1410} \\
+\bottomrule
+\end{tabular}
+\end{center}
+Calculem la \textbf{variació} d'un mes al següent:
+\[
++60,\qquad +120,\qquad +30,\qquad 0.
+\]
+L'atur creix \emph{de pressa} de febrer a març ($+120$), \emph{a poc a poc} de gener a
+febrer ($+60$) i d'abril a maig \emph{s'atura} ($0$). Mateix sentit (puja), però
+\textbf{ritmes ben diferents}.
+\end{exemple}
+
+\begin{exemple}[la despesa acumulada d'un projecte]
+La despesa acumulada d'un projecte social, en milers d'euros, va així:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Setmana} & 1 & 2 & 3 & 4 \\
+\midrule
+\textbf{Despesa (milers \euro)} & 10 & 25 & 33 & 36 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Variacions: $+15$, $+8$, $+3$. El projecte gasta \textbf{molt al principi} i cada
+setmana \textbf{frena} el ritme de despesa. Socialment, això vol dir que el gros de la
+inversió es fa a l'inici i després s'estabilitza.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[on creix més de pressa?]
+Les sol·licituds rebudes per un servei d'ajuts, mes a mes, són: $80$, $110$, $200$,
+$215$. Calcula la variació de cada tram i digues en quin tram el ritme de creixement
+és més gran.
+\solucio
+Calculem les variacions consecutives:
+\[
+110-80=+30,\qquad 200-110=+90,\qquad 215-200=+15.
+\]
+El ritme de creixement més gran és al \textbf{segon tram} ($+90$): és quan les
+sol·licituds es disparen. Al tercer tram amb prou feines creixen ($+15$).
+\resposta{Variacions $+30$, $+90$, $+15$; el ritme més gran és al segon tram ($+90$).}
+\end{exresolt}
+
+\begin{exresolt}[quan s'atura i quan decreix]
+L'ocupació d'un casal (persones/dia) al llarg de cinc dies és: $40$, $55$, $55$, $48$,
+$60$. Descriu el ritme de canvi de cada tram i identifica on \emph{no canvia} i on
+\emph{decreix}.
+\solucio
+Variacions consecutives:
+\[
++15,\qquad 0,\qquad -7,\qquad +12.
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Tram 1: $+15$, creix de pressa.
+  \item Tram 2: $0$, l'ocupació \textbf{no canvia}.
+  \item Tram 3: $-7$, l'ocupació \textbf{decreix}.
+  \item Tram 4: $+12$, torna a créixer.
+\end{itemize}
+\resposta{No canvia al tram 2 ($0$); decreix al tram 3 ($-7$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballeu en grup a la pissarra: descriviu el ritme, no només si puja
+o baixa.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item El nombre d'usuaris d'un menjador social, mes a mes, és: $120$, $150$, $156$,
+        $156$, $140$. Calcula la variació de cada tram i digues, per a cadascun, si
+        creix de pressa, creix a poc a poc, no canvia o decreix.
+  \item Una llista d'espera evoluciona així: $300$, $340$, $410$, $500$. En quin tram
+        creix més de pressa? Justifica-ho amb les variacions.
+  \item La despesa acumulada (milers \euro) d'un programa és $8$, $20$, $26$, $29$,
+        $30$. Què observes en el ritme de despesa a mesura que avancen les setmanes?
+  \item Dues entitats reben donatius acumulats (en \euro): l'entitat A fa
+        $100, 200, 300, 400$ i la B fa $100, 130, 200, 400$. Totes dues acaben a
+        $400\eur$. Tenen el \textbf{mateix} ritme de creixement? Raona-ho amb les
+        variacions de cada tram.
+  \item \textbf{(Interpretació)} Si l'atur d'un municipi té variacions $+50$, $+80$,
+        $+120$ tres mesos seguits, què està passant amb la \emph{velocitat} de
+        creixement de l'atur? Què caldria preveure des dels serveis socials?
+  \item \textbf{(Raonament)} Pot un indicador estar \emph{pujant} i, a la vegada, tenir
+        un ritme de creixement \emph{cada cop més petit}? Posa un exemple amb una taula
+        de quatre valors i explica-ho.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 2}
+\begin{solucions}
+\begin{sollist}
+  \item Variacions: $+30$ (creix de pressa), $+6$ (creix a poc a poc), $0$ (no canvia),
+        $-16$ (decreix).
+  \item Variacions $+40$, $+70$, $+90$: creix més de pressa al \textbf{tercer tram}
+        ($+90$); el ritme augmenta cada tram.
+  \item Variacions $+12$, $+6$, $+3$, $+1$: la despesa puja, però cada cop \emph{més a
+        poc a poc} (el ritme de despesa va frenant; el gros es gasta al principi).
+  \item No tenen el mateix ritme. A: $+100, +100, +100$ (ritme \textbf{constant}). B:
+        $+30, +70, +200$ (ritme \textbf{creixent}, es dispara al final). Acaben igual
+        però amb evolucions molt diferents.
+  \item La velocitat de creixement de l'atur \textbf{augmenta} (cada mes s'hi afegeix
+        més atur que l'anterior: $+50<+80<+120$). Caldria reforçar recursos amb
+        antelació, perquè la tendència s'accelera.
+  \item Sí. Exemple: $10, 20, 26, 29$ → variacions $+10, +6, +3$: puja sempre, però amb
+        ritme cada cop més petit (s'està estabilitzant).
+\end{sollist}
+\end{solucions}

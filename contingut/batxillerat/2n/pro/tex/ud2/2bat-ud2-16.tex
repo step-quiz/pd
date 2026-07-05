@@ -1,0 +1,97 @@
+% =====================================================================
+%  2bat-ud2-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 2
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 2}%
+{Prova individual: quatre blocs alineats amb els criteris C1–C4. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 2 — Programació lineal: decidir amb recursos limitats}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també la
+\textbf{traducció acurada} de les condicions, el \textbf{dibuix net} de la regió, la
+\textbf{correcció} en el càlcul dels vèrtexs i en l'avaluació de la funció objectiu, i
+la \textbf{interpretació} de la solució dins del context. Calculadora i regle
+permesos. Mostra tots els càlculs.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Problema principal — optimització completa \hfill \normalfont\itshape (Blocs 1--4, C1--C4)}
+\addcontentsline{toc}{subsection}{Problema principal — optimització completa}
+
+\noindent Una entitat social reparteix recursos entre dos tipus de lot d'ajuda:
+\textbf{lots A} ($x$) i \textbf{lots B} ($y$). Disposa, com a màxim, d'un pressupost
+que obliga a $2x+y\le 12$ i d'un personal que obliga a $x+y\le 8$ (i, és clar, cap
+quantitat negativa). Cada lot A atén $30$ persones i cada lot B, $50$.
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt]
+  \item \textbf{(C1)} Escriu el \textbf{sistema d'inequacions} complet, incloent-hi la
+        no-negativitat.
+  \item \textbf{(C2)} Representa la \textbf{regió factible} i calcula les coordenades de
+        \textbf{tots els vèrtexs} (resolent els sistemes corresponents).
+  \item \textbf{(C3)} Defineix la \textbf{funció objectiu} que mesura les persones
+        ateses i troba la combinació que les \textbf{maximitza}, avaluant-la a cada
+        vèrtex.
+  \item \textbf{(C4)} \textbf{Interpreta} la solució òptima: quants lots de cada tipus,
+        quantes persones ateses i quins recursos s'esgoten.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Ítems curts \hfill \normalfont\itshape (representació i casos especials)}
+\addcontentsline{toc}{subsection}{Ítems curts}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=5]
+  \item \textbf{(C2)} Representa la inequació $\;2x+3y\le 12\;$ (recta frontera, tipus
+        de línia i semiplà, amb el punt de prova).
+  \item \textbf{(C3--C4)} Sobre una regió de vèrtexs $(0,0)$, $(4,0)$, $(2,2)$, $(0,4)$,
+        maximitza $P=2x+2y$. Què observes en el resultat? Com s'interpreta?
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD2 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Problema principal}
+\begin{sollist}
+  \item \textbf{(C1)} $2x+y\le 12$ (pressupost), $x+y\le 8$ (personal), $x\ge 0$,
+        $y\ge 0$.
+  \item \textbf{(C2)} Vèrtexs: $(0,0)$; sobre $y=0$ mana la més petita de $x\le 6$ i
+        $x\le 8$ $\rightarrow (6,0)$; creuament $2x+y=12$ i $x+y=8$ (restant, $x=4$,
+        $y=4$) $\rightarrow (4,4)$; sobre $x=0$ mana la més petita de $y\le 12$ i
+        $y\le 8$ $\rightarrow (0,8)$. Regió: quadrilàter $(0,0)$, $(6,0)$, $(4,4)$,
+        $(0,8)$.
+  \item \textbf{(C3)} Funció objectiu $P=30x+50y$. Avaluem:
+        $P(0,0)=0$, $P(6,0)=180$, $P(4,4)=120+200=320$, $P(0,8)=400$. Màxim
+        $P=400$ al vèrtex $(0,8)$.
+  \item \textbf{(C4)} L'òptim $(0,8)$ vol dir repartir \textbf{$8$ lots B i cap lot A},
+        atenent \textbf{$400$ persones} (el màxim). S'esgota el personal ($x+y=8$) i
+        sobra pressupost ($2\cdot 0+8=8\le 12$). Com que els lots B atenen molta més
+        gent per unitat, convé concentrar-hi tot el personal.
+\end{sollist}
+
+\noindent\textbf{Ítems curts}
+\begin{sollist}\setcounter{enumi}{4}
+  \item \textbf{(C2)} Recta frontera $2x+3y=12$ per $(6,0)$ i $(0,4)$;
+        \textbf{contínua} ($\le$). Punt de prova $(0,0)$: $0\le 12$ cert $\Rightarrow$
+        semiplà del costat de l'origen (sota la recta).
+  \item \textbf{(C3--C4)} $P=2x+2y$: $P(0,0)=0$, $P(4,0)=8$, $P(2,2)=8$, $P(0,4)=8$.
+        El màxim $P=8$ s'assoleix a \textbf{tres} vèrtexs ($(4,0)$, $(2,2)$, $(0,4)$):
+        és una \textbf{solució múltiple}. S'interpreta com que hi ha diverses maneres
+        igual de bones de repartir els recursos; l'entitat pot triar-ne una per altres
+        criteris.
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): el problema principal
+val la major part de la nota, repartida entre els quatre criteris (C1 traducció, C2
+regió i vèrtexs, C3 optimització, C4 interpretació); els ítems curts completen C2 i
+C3--C4. A cada apartat es valora el procediment, la representació acurada i la
+interpretació. Llindar de superació: $4,0/10$; en cas contrari, recuperació
+trimestral.}

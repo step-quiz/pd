@@ -1,0 +1,158 @@
+% =====================================================================
+%  2bat-ud4-7.tex  —  SESSIÓ 7: El signe de la derivada (mecanització)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 7 — El signe de la derivada}%
+{Mecanitzar l'estudi del signe amb una bateria graduada i correcció creuada en parelles, abans d'introduir màxims i mínims.}
+
+\subsection{Idea clau}
+
+A la sessió 6 vau aprendre el \textbf{mètode} per estudiar on una funció creix i
+decreix. Avui el \textbf{mecanitzem}: amb una bateria graduada i una dinàmica de
+\textbf{correcció creuada} (cadascú resol i després revisa el full d'un company), de
+manera que el procediment surti net i ràpid. Així, a la sessió següent ens podrem
+centrar en la idea nova (els màxims i mínims) sense entrebancar-nos amb el càlcul.
+
+\begin{idea}
+\textbf{Els quatre passos, sempre iguals.}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Deriva} $f$ i, si pots, \textbf{factoritza} $f'(x)$.
+  \item \textbf{Resol} $f'(x)=0$: són els punts on pot canviar la tendència.
+  \item Aquests punts parteixen la recta en \textbf{trams}; tria un \textbf{valor de
+        prova} de cada tram i mira el \textbf{signe} de $f'$.
+  \item \textbf{Conclou}: $f'>0\Rightarrow$ creix; \ $f'<0\Rightarrow$ decreix.
+\end{enumerate}
+\textbf{Consell de correcció creuada:} en revisar el full d'un company, comproveu
+primer que la \emph{derivada} estigui bé; un error de derivada arrossega tota la taula
+de signes.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[un cas de nivell 2, pas a pas]
+Estudiem $f(x)=x^3-3x^2-9x$.
+\[
+f'(x)=3x^2-6x-9=3(x-3)(x+1)\ \Rightarrow\ f'(x)=0 \text{ a } x=-1 \text{ i } x=3.
+\]
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Tram} & $(-\infty,-1)$ & $(-1,3)$ & $(3,\infty)$ \\
+\midrule
+Valor de prova & $x=-2$ & $x=1$ & $x=4$ \\
+$f'(x)$ & $+15>0$ & $-12<0$ & $+15>0$ \\
+\textbf{Comportament} & creix & decreix & creix \\
+\bottomrule
+\end{tabular}
+\end{center}
+Creix a $(-\infty,-1)$ i $(3,\infty)$; decreix a $(-1,3)$.
+\end{exemple}
+
+\begin{exemple}[compte amb el coeficient negatiu]
+Per a $f(x)=-x^3+3x^2+9x$, la derivada és $f'(x)=-3x^2+6x+9=-3(x-3)(x+1)$, que
+s'anul·la a $x=-1$ i $x=3$. Atenció: com que el coeficient principal de $f'$ és
+\textbf{negatiu}, el patró de signes s'inverteix respecte de l'exemple anterior:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Tram} & $(-\infty,-1)$ & $(-1,3)$ & $(3,\infty)$ \\
+\midrule
+$f'(x)$ & $-15<0$ & $+12>0$ & $-15<0$ \\
+\textbf{Comportament} & decreix & creix & decreix \\
+\bottomrule
+\end{tabular}
+\end{center}
+Per això sempre cal \textbf{calcular el signe} amb un valor de prova: no n'hi ha prou de
+veure on s'anul·la.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[nivell 1: una quadràtica]
+Estudia on creix i on decreix $f(x)=-x^2+10x$.
+\solucio
+$f'(x)=-2x+10$, que s'anul·la a $x=5$. Per a $x<5$, $f'>0$ (per exemple $f'(4)=2$):
+creix. Per a $x>5$, $f'<0$ (per exemple $f'(6)=-2$): decreix.
+\resposta{Creix a $(-\infty,5)$, decreix a $(5,\infty)$.}
+\end{exresolt}
+
+\begin{exresolt}[nivell 2: una cúbica]
+Estudia on creix i on decreix $f(x)=x^3-12x+5$.
+\solucio
+$f'(x)=3x^2-12=3(x-2)(x+2)$, s'anul·la a $x=-2$ i $x=2$.
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Tram} & $(-\infty,-2)$ & $(-2,2)$ & $(2,\infty)$ \\
+\midrule
+$f'(x)$ & $+15>0$ & $-12<0$ & $+15>0$ \\
+\textbf{Comportament} & creix & decreix & creix \\
+\bottomrule
+\end{tabular}
+\end{center}
+\resposta{Creix a $(-\infty,-2)$ i $(2,\infty)$; decreix a $(-2,2)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Resoleu i, en acabar, intercanvieu el full amb un company per a la
+correcció creuada. Nivell 1: ex. 1--2. Nivell 2: ex. 3--4. Nivell 3 i ampliació:
+ex. 5--6.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Nivell 1)} Estudia el creixement de $f(x)=x^2-4x$.
+  \item \textbf{(Nivell 1)} Estudia el creixement de $f(x)=-x^2+10x$ i digues on té el
+        punt més alt.
+  \item \textbf{(Nivell 2)} Estudia on creix i on decreix $f(x)=x^3-3x^2-9x$, amb taula
+        de signes.
+  \item \textbf{(Nivell 2)} Estudia on creix i on decreix $f(x)=x^3-12x+5$.
+  \item \textbf{(Nivell 3)} Estudia el creixement de $f(x)=x^3-6x^2$ i indica els dos
+        punts on $f'$ s'anul·la.
+  \item \textbf{(Ampliació)} Estudia $f(x)=-x^3+3x^2+9x$. \textbf{(Compte)} amb el
+        coeficient negatiu en interpretar els signes.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació.} Després de la correcció creuada, marca com et trobes:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.4cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Derivar i factoritzar $f'(x)$ & & & \\
+Resoldre $f'(x)=0$ per trobar els punts de tall & & & \\
+Triar un valor de prova de cada tram & & & \\
+Determinar el signe de $f'$ a cada tram & & & \\
+Concloure on creix i on decreix la funció & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item $f'(x)=2x-4$, s'anul·la a $x=2$. Decreix a $(-\infty,2)$ ($f'(1)=-2<0$), creix
+        a $(2,\infty)$ ($f'(3)=2>0$).
+  \item $f'(x)=-2x+10$, s'anul·la a $x=5$. Creix a $(-\infty,5)$, decreix a
+        $(5,\infty)$; el punt més alt és a $x=5$.
+  \item $f'(x)=3x^2-6x-9=3(x-3)(x+1)$, s'anul·la a $x=-1$ i $x=3$. Creix a
+        $(-\infty,-1)$ ($f'(-2)=15$) i $(3,\infty)$ ($f'(4)=15$); decreix a $(-1,3)$
+        ($f'(1)=-12$).
+  \item $f'(x)=3x^2-12=3(x-2)(x+2)$, s'anul·la a $x=-2$ i $x=2$. Creix a $(-\infty,-2)$
+        i $(2,\infty)$; decreix a $(-2,2)$.
+  \item $f'(x)=3x^2-12x=3x(x-4)$, s'anul·la a $x=0$ i $x=4$. Creix a $(-\infty,0)$
+        ($f'(-1)=15$) i $(4,\infty)$ ($f'(5)=15$); decreix a $(0,4)$ ($f'(2)=-12$).
+  \item $f'(x)=-3x^2+6x+9=-3(x-3)(x+1)$, s'anul·la a $x=-1$ i $x=3$. Pel coeficient
+        negatiu: decreix a $(-\infty,-1)$ ($f'(-2)=-15$) i $(3,\infty)$ ($f'(4)=-15$);
+        creix a $(-1,3)$ ($f'(1)=12$).
+\end{sollist}
+\end{solucions}

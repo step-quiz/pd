@@ -1,0 +1,175 @@
+% =====================================================================
+%  2bat-ud1-3.tex  —  SESSIÓ 3: Llegir una matriu: dimensions i elements
+%  (sense preàmbul: s'inclou des de main.tex)
+%  Criteris: C1 (construir i llegir) i C4 (interpretar una taula com a matriu).
+% =====================================================================
+\horatitol{Sessió 3 — Llegir una matriu: dimensions i elements}%
+{Consolidar la lectura d'una matriu: dimensió, posició d'un element i lectura per files i per columnes.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vam construir quadres de comandament. Ara els donem nom
+matemàtic i n'aprenem a \textbf{llegir} la informació amb precisió. Una matriu no
+és només una taula bonica: cada nombre ocupa una \textbf{posició} concreta, i
+saber-la indicar ens permet parlar de les dades sense embolics.
+
+La clau és llegir en els \emph{dos sentits}: una \textbf{fila} ens explica una
+mateixa cosa al llarg del temps o dels conceptes (per exemple, un servei mes a
+mes), i una \textbf{columna} ens compara totes les coses en un mateix moment (per
+exemple, tots els serveis en un mes concret).
+
+\begin{idea}
+\textbf{Vocabulari bàsic}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Matriu:} taula de nombres ordenats en \textbf{files} (horitzontals)
+        i \textbf{columnes} (verticals). Sovint l'anomenem amb una lletra
+        majúscula: $A$, $B$, $H$\dots
+  \item \textbf{Dimensió:} s'escriu \emph{files $\times$ columnes}. Una matriu amb
+        $3$ files i $4$ columnes té dimensió $3\times 4$ i, per tant, $12$ elements.
+  \item \textbf{Element:} cada nombre de la matriu. Es localitza dient la
+        \textbf{fila} i la \textbf{columna} on és (sempre fila primer, columna després).
+  \item \textbf{Matrius especials:} si té una sola fila és una \textbf{matriu fila};
+        si té una sola columna, una \textbf{matriu columna}; si té tantes files
+        com columnes ($n\times n$), una \textbf{matriu quadrada}.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[llegir per files i per columnes]
+Un centre obert anota els infants atesos en tres serveis (reforç, lleure i menjador)
+durant tres mesos:
+\[
+A=\begin{pmatrix} 24 & 26 & 30 \\ 18 & 20 & 22 \\ 40 & 38 & 45 \end{pmatrix}.
+\]
+És una matriu de dimensió $3\times 3$ (i, per tant, quadrada). La \textbf{fila 1}
+($24,\;26,\;30$) és el reforç al llarg dels tres mesos. La \textbf{columna 3}
+($30,\;22,\;45$) són tots els serveis del tercer mes. L'element de la
+\textbf{fila 2, columna 1} és $18$: el lleure el primer mes.
+\end{exemple}
+
+\begin{exemple}[matrius fila i columna]
+Les places d'un únic servei durant quatre setmanes formen una \textbf{matriu fila}
+de dimensió $1\times 4$:
+\[
+F=\begin{pmatrix} 12 & 15 & 14 & 18 \end{pmatrix}.
+\]
+Si en canvi anotem les hores de quatre professionals en un sol servei, tenim una
+\textbf{matriu columna} de dimensió $4\times 1$:
+\[
+C=\begin{pmatrix} 10 \\ 8 \\ 12 \\ 6 \end{pmatrix}.
+\]
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[dimensió, element i lectura]
+Una associació recull les persones ateses en dos punts d'acollida durant quatre
+mesos:
+\[
+P=\begin{pmatrix} 50 & 55 & 60 & 58 \\ 30 & 28 & 35 & 40 \end{pmatrix}.
+\]
+La fila indica el punt d'acollida (Punt 1 i Punt 2) i la columna, el mes
+(de gener a abril).
+\begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+  \item Quina dimensió té? És quadrada?
+  \item Quin és l'element de la fila 1, columna 3? Què significa?
+  \item Quantes persones va atendre el Punt 2 al mes d'abril?
+\end{enumerate}
+\solucio
+a) Té $2$ files i $4$ columnes: dimensió $2\times 4$. No és quadrada (el nombre de
+files i de columnes no coincideix).
+
+b) La fila 1, columna 3 és $60$: les persones ateses al Punt 1 el mes de març.
+
+c) El Punt 2 és la fila 2 i l'abril és la columna 4: l'element és $40$.
+\resposta{Dimensió $2\times 4$ (no quadrada); \;fila 1, columna 3 $=60$ (Punt 1, març); \;Punt 2 a l'abril: $40$ persones.}
+\end{exresolt}
+
+\begin{exresolt}[treure conclusions d'una matriu]
+Les hores setmanals de tres professionals (educadora, treballadora social i
+monitora) en dos serveis són
+\[
+H=\begin{pmatrix} 14 & 6 \\ 9 & 11 \\ 5 & 13 \end{pmatrix}.
+\]
+La fila indica el professional (en aquest ordre) i la columna, el servei
+(Servei 1 i Servei 2).
+\begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+  \item Indica'n la dimensió.
+  \item Quantes hores fa en total la treballadora social?
+  \item Quin servei concentra més hores en conjunt?
+\end{enumerate}
+\solucio
+a) Té $3$ files i $2$ columnes: dimensió $3\times 2$.
+
+b) La treballadora social és la fila 2: $9 + 11 = 20$ hores.
+
+c) Sumem cada columna. Servei 1: $14 + 9 + 5 = 28$ hores. Servei 2:
+$6 + 11 + 13 = 30$ hores. El Servei 2 concentra més hores ($30$ contra $28$).
+\resposta{Dimensió $3\times 2$; \;treballadora social: $20$ hores; \;el Servei 2 concentra més hores ($30$ contra $28$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Considera la matriu
+        \[ B=\begin{pmatrix} 8 & 5 & 3 \\ 6 & 9 & 7 \end{pmatrix}. \]
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Quina dimensió té? És quadrada?
+          \item Quin és l'element de la fila 2, columna 1?
+          \item Quin és l'element de la fila 1, columna 3?
+        \end{enumerate}
+  \item Un casal anota els infants inscrits en quatre tallers durant un trimestre:
+        \[ T=\begin{pmatrix} 20 & 18 & 22 & 19 \end{pmatrix}. \]
+        Quina dimensió té? Com s'anomena aquest tipus de matriu? Quants tallers hi
+        ha en total?
+  \item Una matriu recull les places ocupades de tres centres (files) en dos
+        trimestres (columnes):
+        \[ Q=\begin{pmatrix} 90 & 100 \\ 70 & 65 \\ 110 & 120 \end{pmatrix}. \]
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Indica'n la dimensió.
+          \item Quin centre té més ocupació el segon trimestre?
+          \item En quin trimestre, en conjunt, hi ha hagut més places ocupades?
+        \end{enumerate}
+  \item Una matriu té dimensió $5\times 3$. Quantes files té? Quantes columnes?
+        Quants elements té en total? Podria ser quadrada?
+  \item Escriu \emph{tu mateix\slash a} una matriu columna de dimensió $3\times 1$
+        que representi les hores de voluntariat de tres persones en una setmana, i
+        explica què vol dir cada element.
+  \item Indica la dimensió de cadascuna d'aquestes matrius i digues de quin tipus
+        és (fila, columna, quadrada o cap d'aquests):
+        \[ M=\begin{pmatrix} 4 & 7 \\ 2 & 5 \end{pmatrix},\quad
+           N=\begin{pmatrix} 3 \\ 9 \\ 1 \end{pmatrix},\quad
+           R=\begin{pmatrix} 6 & 8 & 2 \end{pmatrix},\quad
+           S=\begin{pmatrix} 1 & 0 & 5 \\ 4 & 3 & 2 \end{pmatrix}. \]
+  \item \textbf{(Raonament)} La matriu
+        \[ D=\begin{pmatrix} 35 & 40 & 38 \\ 50 & 48 & 55 \end{pmatrix} \]
+        recull els àpats servits en dos menjadors socials (files) durant tres dies
+        (columnes). Sense calcular-ho tot, explica com decidiries quin menjador ha
+        servit més àpats en total i quin dia, en conjunt, se n'han servit més.
+        Després comprova-ho amb els nombres.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item (a) dimensió $2\times 3$, no és quadrada \quad (b) $6$ \quad (c) $3$
+  \item Dimensió $1\times 4$; és una \textbf{matriu fila}; hi ha $4$ tallers.
+  \item (a) dimensió $3\times 2$ \quad (b) el tercer centre, amb $120$ \quad
+        (c) el segon trimestre: $100+65+120=285$ contra $90+70+110=270$ del primer.
+  \item $5$ files, $3$ columnes, $15$ elements. No pot ser quadrada (files i
+        columnes són diferents).
+  \item Resposta oberta. Exemple vàlid:
+        $\begin{pmatrix} 4 \\ 6 \\ 3 \end{pmatrix}$, on cada element són les hores
+        setmanals de voluntariat d'una persona.
+  \item $M$: $2\times 2$, quadrada. \;$N$: $3\times 1$, matriu columna. \;
+        $R$: $1\times 3$, matriu fila. \;$S$: $2\times 3$, cap d'aquests tipus.
+  \item Per saber quin menjador ha servit més àpats se sumen les files
+        ($35+40+38=113$ i $50+48+55=153$): el segon menjador, amb $153$. Per saber
+        el dia amb més àpats se sumen les columnes ($85$, $88$ i $93$): el tercer
+        dia, amb $93$.
+\end{sollist}
+\end{solucions}

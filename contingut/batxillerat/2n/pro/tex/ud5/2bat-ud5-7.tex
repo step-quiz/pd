@@ -1,0 +1,123 @@
+% =====================================================================
+%  2bat-ud5-7.tex  —  SESSIÓ 7: La binomial amb el full de càlcul
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 7 — La binomial amb el full de càlcul}%
+{Treball tecnològic: calcular probabilitats binomials amb el full de càlcul, reproduir els casos fets a mà i representar la distribució en un gràfic de barres.}
+
+\subsection{Idea clau}
+
+Portem dues sessions calculant probabilitats binomials \textbf{a mà}. Avui deixem que el
+\textbf{full de càlcul} faci el càlcul repetitiu, per centrar-nos a interpretar. Farem
+dues coses: \textbf{reproduir} els casos ja resolts (per guanyar confiança) i, sobretot,
+\textbf{representar} la distribució sencera en un gràfic de barres, que prepara el pas cap
+a la corba normal.
+
+\begin{idea}
+\textbf{La funció binomial al full de càlcul.} La majoria de fulls de càlcul tenen una
+funció del tipus \texttt{DISTR.BINOM.N} (o \texttt{BINOM.DIST}):
+\[
+\texttt{=DISTR.BINOM.N(k;\ n;\ p;\ acumulat)}
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \texttt{k}: nombre d'èxits; \texttt{n}: repeticions; \texttt{p}: probabilitat
+        d'èxit.
+  \item \texttt{acumulat = FALS}: dona $P(\text{exactament }k)$.
+  \item \texttt{acumulat = CERT}: dona $P(\text{com a màxim }k)$ (probabilitat acumulada).
+\end{itemize}
+\textbf{La regla d'or:} la màquina estalvia el càlcul, però cal saber \textbf{interpretar}
+el que surt i comprovar que coincideix amb el fet a mà.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[reproduir un cas fet a mà]
+A la sessió 5 vam calcular, per a $n=5$ i $p=0,6$, que $P(3)\approx 0,3456$. Al full de
+càlcul escrivim
+\[
+\texttt{=DISTR.BINOM.N(3;\ 5;\ 0,6;\ FALS)}
+\]
+i obtenim $0,3456$: \textbf{coincideix}. Guanyem confiança que l'eina i el càlcul a mà
+diuen el mateix.
+\end{exemple}
+
+\begin{exemple}[representar la distribució]
+Per veure la distribució sencera de $B(5;0,6)$, posem els valors de $k$ ($0,1,2,3,4,5$)
+en una columna i, al costat, \texttt{=DISTR.BINOM.N(k;\ 5;\ 0,6;\ FALS)}:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c c c c c c c}
+\toprule
+$k$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+\midrule
+$P(k)$ & 0,010 & 0,077 & 0,230 & 0,346 & 0,259 & 0,078 \\
+\bottomrule
+\end{tabular}
+\end{center}
+En fer-ne un gràfic de barres es veu que el màxim és a $k=3$ (el valor esperat) i que les
+barres cauen a banda i banda: una forma que, amb més repeticions, s'assemblarà a una
+\textbf{campana}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[triar bé l'argument «acumulat»]
+Vols la probabilitat que en un grup de $8$ ($p=0,7$) en superin \textbf{exactament 6}.
+Quina fórmula escrius i per què?
+\solucio
+Com que és \textbf{exactament} 6, l'argument acumulat ha de ser \texttt{FALS}:
+\[
+\texttt{=DISTR.BINOM.N(6;\ 8;\ 0,7;\ FALS)}\ \to\ 0,2965\approx 29,6\%.
+\]
+Si hi posessis \texttt{CERT}, obtindries $P(\text{com a màxim }6)$, una altra pregunta.
+\resposta{\texttt{=DISTR.BINOM.N(6;8;0,7;FALS)} $\approx 29,6\%$.}
+\end{exresolt}
+
+\begin{exresolt}[usar l'acumulada]
+Amb $n=10$ i $p=0,5$, com calcularies $P(\text{com a màxim }4)$ amb una sola fórmula?
+\solucio
+L'acumulada amb \texttt{CERT} dona directament $P(\text{com a màxim }k)$:
+\[
+\texttt{=DISTR.BINOM.N(4;\ 10;\ 0,5;\ CERT)}\ \to\ 0,377\approx 37,7\%.
+\]
+\resposta{\texttt{=DISTR.BINOM.N(4;10;0,5;CERT)} $\approx 37,7\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Full de pràctica tecnològica. Anota la fórmula i el resultat de cada
+cas.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu la fórmula per calcular $P(\text{exactament }5)$ amb $n=10$ i $p=0,5$, i
+        anota el resultat.
+  \item Reprodueix al full de càlcul el cas de la sessió 6: $n=12$, $p=0,65$,
+        $P(\text{exactament }8)$. Coincideix amb el $23,7\%$ calculat a mà?
+  \item Amb $n=8$ i $p=0,7$, calcula $P(\text{com a màxim }5)$ amb \texttt{acumulat=CERT}.
+  \item Construeix la taula de $B(6;0,5)$ per a $k=0,\dots,6$ i digues en quin $k$ és més
+        alta la probabilitat.
+  \item \textbf{(Com a mínim)} Com calcularies $P(\text{com a mínim }7)$ amb $n=10$,
+        $p=0,7$, fent servir l'acumulada? (Pista: $P(k\ge 7)=1-P(\text{com a màxim }6)$.)
+  \item \textbf{(Interpretació)} En representar $B(20;0,5)$ en un gràfic de barres, quina
+        forma esperes veure? On estarà el punt més alt? Com es relaciona amb el valor
+        esperat $\mu=n\cdot p$?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item \texttt{=DISTR.BINOM.N(5;10;0,5;FALS)} $\to 0,2461\approx 24,6\%$.
+  \item \texttt{=DISTR.BINOM.N(8;12;0,65;FALS)} $\to 0,2367\approx 23,7\%$. Coincideix
+        amb el càlcul a mà.
+  \item \texttt{=DISTR.BINOM.N(5;8;0,7;CERT)} $\to 0,4482\approx 44,8\%$.
+  \item Taula de $B(6;0,5)$: $P(0)=0,016$, $P(1)=0,094$, $P(2)=0,234$, $P(3)=0,313$,
+        $P(4)=0,234$, $P(5)=0,094$, $P(6)=0,016$. El màxim és a $k=3$ (el valor esperat
+        $\mu=6\cdot 0,5=3$).
+  \item $P(k\ge 7)=1-\texttt{DISTR.BINOM.N(6;10;0,7;CERT)}=1-0,3504\approx 0,6496=65,0\%$.
+  \item Una forma de \textbf{campana} simètrica, amb el punt més alt a $k=10$, que és
+        justament el valor esperat $\mu=20\cdot 0,5=10$.
+\end{sollist}
+\end{solucions}

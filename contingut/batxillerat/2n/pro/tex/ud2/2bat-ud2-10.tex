@@ -1,0 +1,115 @@
+% =====================================================================
+%  2bat-ud2-10.tex  —  SESSIÓ 10: Avaluar als vèrtexs (mecanització)
+% =====================================================================
+\horatitol{Sessió 10 — Avaluar als vèrtexs (mecanització)}%
+{Guanyar destresa: trobar els vèrtexs resolent sistemes i avaluar-hi la funció objectiu, sense errors.}
+
+\subsection{Idea clau}
+
+Després de donar sentit a l'optimització, avui hi guanyem \textbf{destresa mecànica},
+perquè els automatismes no fallin a la prova. La rutina és sempre la mateixa:
+\textbf{trobar els vèrtexs}, \textbf{avaluar} la funció objectiu a cadascun i
+\textbf{triar} el màxim o el mínim segons demani el problema.
+
+\begin{idea}
+\textbf{Procediment d'optimització}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Vèrtexs:} cada vèrtex és el creuament de dues vores. Es troba
+        \textbf{resolent el sistema} de les dues rectes (o llegint els talls amb els
+        eixos).
+  \item \textbf{Avaluar:} substitueix cada vèrtex a la funció objectiu.
+  \item \textbf{Triar:} el valor \textbf{més gran} si maximitzes; el \textbf{més petit}
+        si minimitzes.
+\end{enumerate}
+\textbf{Paranys recurrents:} resoldre malament el sistema d'un vèrtex, confondre si es
+busca màxim o mínim, i oblidar d'avaluar \emph{algun} vèrtex.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[trobar un vèrtex resolent el sistema]
+Les vores $2x+y=10$ i $x+y=7$ es creuen en un vèrtex. Restem per eliminar $y$:
+\[
+(2x+y)-(x+y)=10-7 \;\Rightarrow\; x=3.
+\]
+Substituïm a $x+y=7$: $y=4$. El vèrtex és $(3,4)$.
+\end{exemple}
+
+\begin{exemple}[avaluar i triar]
+Sobre els vèrtexs $(0,0)$, $(5,0)$, $(3,4)$, $(0,6)$, maximitzem $P=4x+3y$:
+\[
+P(0,0)=0,\ \ P(5,0)=20,\ \ P(3,4)=12+12=24,\ \ P(0,6)=18.
+\]
+El màxim és $P=24$, al vèrtex $(3,4)$. (Si haguéssim de \emph{minimitzar}, triaríem el
+més petit, $P=0$ a l'origen.)
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[optimització completa]
+Regió de vèrtexs $(0,0)$, $(6,0)$, $(4,3)$, $(0,4)$. Maximitza $P=5x+4y$ i, a part,
+digues on seria el mínim.
+\solucio
+Avaluem $P=5x+4y$:
+\[
+P(0,0)=0,\quad P(6,0)=30,\quad P(4,3)=20+12=32,\quad P(0,4)=16.
+\]
+El \textbf{màxim} és $P=32$ a $(4,3)$. El \textbf{mínim} (a part del trivial) seria el
+valor més petit: $P=0$ a $(0,0)$.
+\resposta{Màxim $P=32$ a $(4,3)$; mínim $P=0$ a $(0,0)$.}
+\end{exresolt}
+
+\begin{exresolt}[trobar els vèrtexs d'un sistema i optimitzar]
+Per al sistema $\;x+y\le 8,\;2x+y\le 10,\;x\ge 0,\;y\ge 0$, troba els vèrtexs i
+maximitza $P=3x+2y$.
+\solucio
+\textbf{Vèrtexs:} eixos $\rightarrow (0,0)$. Sobre $y=0$ mana la més petita de $x\le 8$
+i $x\le 5$: $(5,0)$. Creuament $x+y=8$ i $2x+y=10$: restant, $x=2$, $y=6$, vèrtex
+$(2,6)$. Sobre $x=0$ mana la més petita de $y\le 8$ i $y\le 10$: $(0,8)$.
+
+\textbf{Avaluem} $P=3x+2y$: $P(0,0)=0$, $P(5,0)=15$, $P(2,6)=6+12=18$, $P(0,8)=16$.
+El màxim és $P=18$ a $(2,6)$.
+\resposta{Vèrtexs $(0,0)$, $(5,0)$, $(2,6)$, $(0,8)$; màxim $P=18$ a $(2,6)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Bateria graduada. En els primers es dona la regió; en els últims cal
+trobar els vèrtexs a partir del sistema.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Bàsic)} Regió de vèrtexs $(0,0)$, $(4,0)$, $(0,3)$. Maximitza
+        $P=2x+5y$.
+  \item \textbf{(Bàsic)} Regió de vèrtexs $(0,0)$, $(6,0)$, $(3,3)$, $(0,4)$.
+        Maximitza $P=x+2y$.
+  \item \textbf{(Mitjà)} Mateixa regió que l'exercici 2. Ara \textbf{minimitza}
+        $C=2x+y$ (atenció: és un mínim).
+  \item \textbf{(Mitjà)} Troba el vèrtex on es creuen $x+2y=10$ i $3x+y=15$ (resol el
+        sistema).
+  \item \textbf{(Avançat)} Per al sistema $\;x+y\le 6,\;x+3y\le 12,\;x\ge 0,\;y\ge 0$,
+        troba els vèrtexs i maximitza $P=4x+5y$.
+  \item \textbf{(Correcció creuada)} Intercanvia la teva bateria amb la d'una altra
+        parella i corregiu-vos. Per a cada error, classifica'l: sistema mal resolt?
+        confondre màxim i mínim? vèrtex oblidat?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item $P(0,0)=0$, $P(4,0)=8$, $P(0,3)=15$. Màxim $P=15$ a $(0,3)$.
+  \item $P(0,0)=0$, $P(6,0)=6$, $P(3,3)=9$, $P(0,4)=8$. Màxim $P=9$ a $(3,3)$.
+  \item $C(0,0)=0$, $C(6,0)=12$, $C(3,3)=9$, $C(0,4)=4$. Mínim $C=0$ a $(0,0)$; si
+        s'exclou el trivial, el menor útil és $C=4$ a $(0,4)$.
+  \item De $3x+y=15$ aïllem $y=15-3x$ i substituïm a $x+2y=10$:
+        $x+2(15-3x)=10\Rightarrow x+30-6x=10\Rightarrow -5x=-20\Rightarrow x=4$;
+        llavors $y=15-12=3$. Vèrtex $(4,3)$.
+  \item Vèrtexs: $(0,0)$, $(6,0)$, creuament $x+y=6$ i $x+3y=12$ ($2y=6\Rightarrow y=3$,
+        $x=3$) $\rightarrow (3,3)$, i $(0,4)$. $P=4x+5y$: $P(0,0)=0$, $P(6,0)=24$,
+        $P(3,3)=12+15=27$, $P(0,4)=20$. Màxim $P=27$ a $(3,3)$.
+  \item Resposta oberta (correcció entre parelles). Es valora classificar bé cada
+        error (sistema, màxim/mínim, vèrtex oblidat).
+\end{sollist}
+\end{solucions}

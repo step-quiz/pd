@@ -1,0 +1,131 @@
+% =====================================================================
+%  2bat-ud2-9.tex  —  SESSIÓ 9: Maximitzar la cobertura social (estudi de cas)
+% =====================================================================
+\horatitol{Sessió 9 — Maximitzar la cobertura social}%
+{Estudi de cas (Activitat 3): trobar la combinació d'activitats que atén el màxim de persones i justificar per què és la millor decisió.}
+
+\subsection{Idea clau}
+
+Apliquem el mètode complet a un cas real. Sobre la regió factible que ja coneixem,
+definim una \textbf{funció objectiu} que mesura la \textbf{cobertura social} (les
+persones ateses) i busquem la combinació que la \textbf{maximitza}. El més important
+no és només el càlcul: és \textbf{justificar} per què aquella és la millor decisió
+possible amb els recursos disponibles.
+
+\begin{idea}
+\textbf{El cas.} L'entitat fa \textbf{tallers} ($x$) i \textbf{sortides} ($y$), amb la
+regió factible coneguda (vèrtexs $(0,0)$, $(12,0)$, $(6,3)$, $(0,5)$). Cada
+\textbf{taller} atén $20$ persones i cada \textbf{sortida}, $30$. La cobertura total és
+\[
+P=20x+30y \quad(\text{persones ateses}).
+\]
+\textbf{Mètode:} (1) avaluar $P$ a cada vèrtex; (2) triar el valor més gran; (3)
+interpretar i \textbf{justificar} la decisió (quantes activitats, quantes persones,
+quins recursos s'esgoten).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[avaluar la cobertura als vèrtexs]
+Avaluem $P=20x+30y$ a cada vèrtex de la regió factible:
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+\textbf{Vèrtex} & $P=20x+30y$ & \\
+\midrule
+$(0,0)$ & $0$ & \\
+$(12,0)$ & $20\cdot 12+30\cdot 0=240$ & \\
+$(6,3)$ & $20\cdot 6+30\cdot 3=120+90=210$ & \\
+$(0,5)$ & $20\cdot 0+30\cdot 5=150$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+El màxim és $P=240$, al vèrtex $(12,0)$.
+\end{exemple}
+
+\begin{exemple}[interpretar i justificar]
+L'òptim $(12,0)$ vol dir \textbf{fer $12$ tallers i cap sortida}, que atén
+\textbf{$240$ persones}. \textbf{Justificació:} amb el pressupost disponible, els
+tallers «rendeixen» més cobertura per euro que les sortides (un taller és més barat i
+atén prou gent), de manera que concentrar els recursos en tallers maximitza les
+persones ateses. En aquesta decisió s'esgota el pressupost ($12$ tallers el consumeixen
+tot). És la millor combinació \emph{possible}, perquè qualsevol altra de la regió atén
+menys persones.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[maximitzar i interpretar]
+Sobre la mateixa regió ($(0,0)$, $(12,0)$, $(6,3)$, $(0,5)$), suposa ara que cada
+\textbf{taller} atén $15$ persones i cada \textbf{sortida}, $40$. Quina és la decisió
+òptima?
+\solucio
+Funció objectiu $P=15x+40y$. Avaluem als vèrtexs:
+\[
+P(0,0)=0,\quad P(12,0)=180,\quad P(6,3)=90+120=210,\quad P(0,5)=200.
+\]
+El màxim és $P=210$, al vèrtex $(6,3)$: fer \textbf{$6$ tallers i $3$ sortides}, que
+atén $210$ persones. Ara, com que les sortides atenen molta més gent, la millor
+decisió ja no és tot tallers, sinó una combinació.
+\resposta{Òptim $(6,3)$: $6$ tallers i $3$ sortides, $210$ persones ateses.}
+\end{exresolt}
+
+\begin{exresolt}[justificar el canvi d'òptim]
+Per què, en canviar les persones ateses per activitat, l'òptim s'ha desplaçat de
+$(12,0)$ a $(6,3)$?
+\solucio
+La funció objectiu mesura la cobertura, i el seu pendent depèn de quanta gent atén
+cada tipus d'activitat. Quan les sortides passen a atendre molta més gent ($40$ contra
+$30$), «val la pena» dedicar-hi recursos, i el vèrtex que combina tallers i sortides
+$(6,3)$ supera el de només tallers. L'òptim és sensible als valors de la funció
+objectiu: el mètode (avaluar als vèrtexs) és el mateix, però el guanyador canvia.
+\resposta{Perquè el pes de cada variable a la funció objectiu ha canviat, i això
+desplaça el vèrtex òptim.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Regió factible del cas: vèrtexs $(0,0)$, $(12,0)$, $(6,3)$, $(0,5)$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Cada taller atén $20$ persones i cada sortida $30$ ($P=20x+30y$). Avalua $P$
+        a cada vèrtex i digues quina és la decisió òptima i quantes persones atén.
+  \item Ara cada taller atén $10$ persones i cada sortida $50$ ($P=10x+50y$). Troba
+        l'òptim i interpreta'l.
+  \item Amb $P=25x+25y$ (totes dues activitats atenen igual), avalua als vèrtexs. Què
+        observes? Hi ha un únic òptim?
+  \item Per a l'òptim que has trobat a l'exercici 1, digues quins recursos s'esgoten
+        (pressupost $x+2y\le 12$, material $x+3y\le 15$) i quins sobren.
+  \item \textbf{(Justificació)} Tria l'òptim de l'exercici 2 i redacta, en dues o tres
+        frases, una conclusió justificada com si fos la proposta de l'entitat: quantes
+        activitats de cada tipus, quantes persones ateses i per què és la millor opció.
+  \item \textbf{(Decisió amb criteri)} Si l'entitat valorés també arribar a col·lectius
+        diferents (i no només el nombre total de persones), creus que l'òptim purament
+        matemàtic sempre seria la millor decisió \emph{real}? Comenta-ho breument.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item $P(0,0)=0$, $P(12,0)=240$, $P(6,3)=210$, $P(0,5)=150$. Òptim $(12,0)$: $12$
+        tallers i cap sortida, $240$ persones.
+  \item $P=10x+50y$: $P(0,0)=0$, $P(12,0)=120$, $P(6,3)=60+150=210$, $P(0,5)=250$.
+        Òptim $(0,5)$: $5$ sortides i cap taller, $250$ persones (ara les sortides
+        atenen molta més gent).
+  \item $P=25x+25y$: $P(0,0)=0$, $P(12,0)=300$, $P(6,3)=225$, $P(0,5)=125$. Òptim
+        $(12,0)$ amb $P=300$; com que $P=25(x+y)$, maximitzar $P$ equival a maximitzar
+        $x+y$, i el vèrtex amb més activitats totals és $(12,0)$.
+  \item A $(12,0)$: pressupost $12+0=12$ (s'esgota), material $12+0=12\le 15$ (en
+        sobren $3$).
+  \item Resposta oberta. Ha d'indicar $5$ sortides, $0$ tallers, $250$ persones, i
+        justificar que amb aquests valors de cobertura les sortides són les que més
+        gent atenen.
+  \item Resposta oberta. Idea esperada: l'òptim matemàtic maximitza una mesura
+        concreta (persones totals); si hi ha altres criteris (equitat, arribar a
+        col·lectius vulnerables), la millor decisió real pot diferir, i cal afegir
+        aquests criteris al model o ponderar-los.
+\end{sollist}
+\end{solucions}

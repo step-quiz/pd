@@ -1,0 +1,112 @@
+% =====================================================================
+%  2bat-ud5-4.tex  —  SESSIÓ 4: Situacions d'èxit o fracàs repetides (descoberta)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 4 — Situacions d'èxit o fracàs repetides}%
+{Aules pensants: estimar quants casos esperem en una repetició i descobrir que comptar cas a cas es fa inabordable. Cal un model.}
+
+\subsection{Idea clau}
+
+Treballem a les \textbf{pissarres verticals}, en grups. Se us planteja una situació de
+\textbf{repetició}: cada usuari d'un grup té una certa probabilitat d'\textbf{èxit} en
+una prova, i volem saber quants del grup s'espera que la superin, i amb quina
+probabilitat en superaran exactament un nombre concret. Descobrireu que, a mesura que el
+grup creix, comptar cas a cas es fa \textbf{impossible}: hi ha massa combinacions.
+
+\begin{idea}
+\textbf{Una situació d'«èxit o fracàs» repetida.} Es repeteix una mateixa prova diverses
+vegades, i a cada repetició només hi ha dos resultats: \textbf{èxit} o \textbf{fracàs}.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item El nombre d'èxits \textbf{esperat} (de mitjana) és intuïtiu: si cada usuari té un
+        $60\%$ d'èxit, d'un grup de $5$ n'esperem $0,6\cdot 5=3$.
+  \item Però la probabilitat d'un nombre \textbf{exacte} d'èxits demana comptar
+        \textbf{de quantes maneres} pot passar, i això es dispara amb el grup.
+\end{itemize}
+\textbf{La descoberta:} necessitem una \textbf{llei} que descrigui aquest tipus de
+situació sense haver de llistar tots els casos.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[comptar «de quantes maneres»]
+Cada usuari té un $60\%$ de superar una prova. En un grup de $5$, de quantes maneres
+poden superar-la \textbf{exactament 3}? No n'hi ha prou de dir «3 de 5»: cal comptar
+quins 3 dels 5 la superen. Les combinacions possibles són $10$ (els grups de 3 que es
+poden triar entre 5). Amb grups més grans, aquest recompte creix molt de pressa: per això
+comptar a mà es fa inabordable.
+\end{exemple}
+
+\begin{exemple}[el nombre esperat, sí que és fàcil]
+Si cada usuari té un $60\%$ d'èxit, d'un grup de $5$ n'esperem $3$ (el $60\%$ de $5$);
+d'un grup de $20$, n'esperem $12$; d'un grup de $50$, n'esperem $30$. El \textbf{valor
+esperat} es calcula multiplicant. El que costa és la probabilitat \emph{exacta} de cada
+resultat, que és el que resoldrà el model de la sessió següent.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[estimar el nombre esperat]
+En un taller, cada participant té un $70\%$ de probabilitat de completar-lo. Si el grup
+és de $20$ participants, quants s'espera que el completin?
+\solucio
+El nombre esperat és el $70\%$ de $20$:
+\[
+0,7\cdot 20=14.
+\]
+S'espera que aproximadament $14$ participants completin el taller (és una mitjana, no una
+certesa).
+\resposta{Uns $14$ participants.}
+\end{exresolt}
+
+\begin{exresolt}[comptar les maneres]
+En un grup de $4$ usuaris, de quantes maneres diferents poden tenir èxit \textbf{exactament
+2}?
+\solucio
+Cal triar quins $2$ dels $4$ tenen èxit. El nombre de maneres de triar $2$ entre $4$ és
+$6$ (per exemple: 1r-2n, 1r-3r, 1r-4t, 2n-3r, 2n-4t, 3r-4t). Per tant hi ha $6$
+combinacions possibles per a «exactament 2 èxits de 4».
+\resposta{$6$ maneres.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballeu en grup a la pissarra: estimeu i debateu abans de calcular.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Cada usuari té un $50\%$ d'èxit. Quants s'espera que tinguin èxit d'un grup de
+        $10$? I d'un de $30$?
+  \item Cada participant té un $80\%$ de completar un curs. Quants s'espera que el
+        completin d'un grup de $25$?
+  \item En un grup de $5$ persones, de quantes maneres poden tenir èxit \emph{exactament
+        1}? I \emph{exactament 5}?
+  \item Per què el nombre esperat és fàcil de calcular però la probabilitat d'un nombre
+        \emph{exacte} d'èxits no ho és? Explica-ho amb les teves paraules.
+  \item \textbf{(Raonament)} Un grup té $3$ usuaris i cadascun té un $50\%$ d'èxit.
+        Llista \emph{totes} les possibilitats (èxit/fracàs de cadascun) i compta en
+        quantes n'hi ha exactament $2$ èxits. Quantes possibilitats hi ha en total?
+  \item \textbf{(Descoberta)} Imagina que el grup és de $100$ persones. Creus que podries
+        llistar totes les possibilitats a mà? Què necessitaries per calcular la
+        probabilitat d'un nombre exacte d'èxits sense llistar-les?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 4}
+\begin{solucions}
+\begin{sollist}
+  \item $50\%$ de $10=5$; $50\%$ de $30=15$.
+  \item $80\%$ de $25=0,8\cdot 25=20$ participants.
+  \item Exactament 1 de 5: $5$ maneres (qui és l'únic amb èxit). Exactament 5 de 5:
+        $1$ manera (tots).
+  \item Resposta oberta. Idea: el nombre esperat només és una multiplicació
+        (probabilitat $\times$ mida del grup), mentre que la probabilitat exacta demana
+        comptar de quantes maneres pot passar aquell nombre d'èxits i sumar-ne les
+        probabilitats, cosa que creix molt amb la mida del grup.
+  \item Amb 3 usuaris hi ha $8$ possibilitats en total ($2\times 2\times 2$). Amb
+        exactament $2$ èxits n'hi ha $3$: (È,È,F), (È,F,È), (F,È,È).
+  \item Resposta oberta. Idea: amb $100$ persones és impossible llistar-ho a mà (hi
+        hauria una quantitat enorme de possibilitats); caldria una \textbf{fórmula} o
+        \textbf{model} —la distribució binomial— que doni la probabilitat directament.
+\end{sollist}
+\end{solucions}

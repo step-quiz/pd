@@ -1,0 +1,138 @@
+% =====================================================================
+%  2bat-ud3-6.tex  —  SESSIÓ 6: GeoGebra: veure límits i asímptotes
+% =====================================================================
+\horatitol{Sessió 6 — GeoGebra: veure límits i asímptotes}%
+{Visualitzar amb l'ordinador el comportament final de les funcions fetes a mà i comprovar que el dibuix coincideix amb el càlcul.}
+
+\subsection{Idea clau}
+
+Avui portem a \textbf{GeoGebra} les funcions que hem treballat a mà (el sostre del
+servei, la llista d'espera, la proporcionalitat inversa) per \textbf{veure} el seu
+comportament final. La idea important: GeoGebra \textbf{no fa la feina per tu};
+serveix per \textbf{comprovar} que el límit i les asímptotes que has calculat es
+corresponen amb el que es veu a la pantalla.
+
+\begin{idea}
+\textbf{Com explorar límits i asímptotes a GeoGebra}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Introdueix la funció} a la barra d'entrada, p.\,ex.
+        \texttt{f(x)=800-700/x}.
+  \item \textbf{Amplia la finestra cap a la dreta} (allunya el zoom o mou la vista) per
+        veure com la gràfica \textbf{s'aplana} cap a la seva asímptota horitzontal.
+  \item \textbf{Afegeix la recta asímptota} (p.\,ex. \texttt{y=800}) i comprova que la
+        funció s'hi acosta sense traspassar-la.
+  \item \textbf{Prop d'una asímptota vertical} (p.\,ex. $x=0$ en una hipèrbola), observa
+        com la funció \textbf{es dispara}.
+  \item \textbf{Compara} amb el càlcul fet a mà: el límit a l'infinit ha de coincidir
+        amb l'alçada de l'asímptota horitzontal.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[veure l'asímptota horitzontal]
+Introduïm \texttt{f(x)=800-700/x} i la recta \texttt{y=800}. En ampliar la vista cap a
+la dreta, la gràfica s'acosta cada cop més a la recta sense tocar-la: confirma que
+$\lim_{x\to\infty}f(x)=800$, tal com havíem calculat a mà.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.6cm, height=4.4cm,
+    xlabel={\small $x$}, ylabel={\small $f(x)$},
+    xmin=0, xmax=40, ymin=0, ymax=950, xtick={0,10,20,30,40}, ytick={0,400,800}]
+  \addplot[udblue, domain=1:40, samples=120]{800-700/x};
+  \addplot[udnavy, dashed, domain=0:40, samples=2]{800};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:40,800) {$y=800$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{En ampliar la finestra, la gràfica s'acosta a $y=800$: la màquina confirma el límit.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[la màquina detecta un error]
+Suposem que a mà havíem dit que la llista $f(x)=800-\dfrac{700}{x}$ s'estabilitza en
+$700$. En posar a GeoGebra la recta \texttt{y=700}, veiem que la gràfica la
+\textbf{traspassa} i continua pujant cap amunt: alguna cosa no quadra. L'asímptota real
+és $y=800$, no $y=700$. La discrepància entre el dibuix i el nostre càlcul ens avisa de
+l'error: és una \textbf{autocorrecció}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[interpretar el que mostra la pantalla]
+En introduir \texttt{f(x)=36000/x} a GeoGebra i ampliar la vista, què hauries de veure
+pel que fa a les asímptotes?
+\solucio
+\textbf{Cap a la dreta:} la gràfica baixa i s'acosta a l'eix horitzontal $y=0$
+(asímptota horitzontal): l'ajut per família tendeix a $0$. \textbf{A prop de $x=0$:}
+la gràfica es dispara cap amunt (asímptota vertical $x=0$): amb molt poques famílies
+l'ajut creix sense límit. Totes dues coincideixen amb el càlcul a mà de la sessió 5.
+\resposta{Asímptota horitzontal $y=0$ i vertical $x=0$, tal com s'havia calculat.}
+\end{exresolt}
+
+\begin{exresolt}[comparar màquina i mà]
+A mà has trobat que $g(x)=200-\dfrac{500}{x}$ té asímptota horitzontal $y=200$, però a
+GeoGebra t'has equivocat i has dibuixat la recta \texttt{y=500}. Què veuràs i com ho
+corregiràs?
+\solucio
+Veuràs que la gràfica \textbf{no} s'acosta a $y=500$ (queda molt per sota i s'aplana
+abans): la recta no encaixa. La gràfica s'acosta a $y=200$. L'error és la recta mal
+escrita; la corregeixes posant \texttt{y=200}, que sí que coincideix amb el
+comportament de la corba.
+\resposta{La recta $y=500$ no encaixa; l'asímptota correcta és $y=200$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Full de pràctica tecnològica. Per a cada funció: escriu el límit i les
+asímptotes que has calculat a mà, comprova-ho a GeoGebra i anota si coincideix.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Introdueix \texttt{f(x)=800-700/x} i la recta \texttt{y=800}. Amplia la vista
+        cap a la dreta i comprova que la gràfica s'hi acosta. Coincideix amb el teu
+        càlcul?
+  \item Introdueix \texttt{g(x)=36000/x}. Identifica a la pantalla l'asímptota
+        horitzontal i la vertical, i anota-les.
+  \item Introdueix \texttt{h(x)=150-300/x} i estima, ampliant la vista, cap a quin valor
+        s'estabilitza. Afegeix la recta asímptota corresponent.
+  \item Completa el full de validació amb tres funcions a la teva elecció:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.2cm} p{2.6cm} p{2.6cm} p{2.4cm}}
+        \toprule
+        \textbf{Funció} & \textbf{As.\ horitz.\ (mà)} & \textbf{As.\ vert.\ (mà)} & \textbf{Coincideix?} \\
+        \midrule
+         & & & \\[10pt]
+         & & & \\[10pt]
+         & & & \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Autocorrecció)} Si en alguna funció la recta asímptota que has posat no
+        encaixa amb la gràfica, escriu en una frase quin era l'error i com l'has
+        corregit.
+  \item \textbf{(Coherència)} Explica per què, en una funció amb asímptota horitzontal
+        $y=L$, ha de complir-se necessàriament que $\lim_{x\to\infty}f(x)=L$.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item La gràfica s'acosta a $y=800$ sense tocar-la; coincideix amb
+        $\lim_{x\to\infty}f(x)=800$.
+  \item Asímptota horitzontal $y=0$ i asímptota vertical $x=0$.
+  \item S'estabilitza en $150$; l'asímptota horitzontal és $y=150$ (la recta a afegir).
+  \item Resposta oberta (full de validació personal). Es valora la coherència entre el
+        càlcul a mà i la visualització.
+  \item Resposta oberta. Es valora identificar bé l'error (recta mal situada, límit mal
+        calculat) i corregir-lo.
+  \item Perquè l'asímptota horitzontal és, per definició, la recta a la qual s'acosta la
+        gràfica quan $x$ creix; i això és exactament el que diu el límit a l'infinit: el
+        valor cap al qual tendeix $f(x)$. Per tant, l'alçada de l'asímptota ($L$) i el
+        límit coincideixen.
+\end{sollist}
+\end{solucions}

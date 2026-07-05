@@ -1,0 +1,109 @@
+% =====================================================================
+%  2bat-ud4-14.tex  —  SESSIÓ 14: Estacions d'optimització
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 14 — Estacions d'optimització}%
+{Repàs actiu per quatre estacions, una per bloc de la unitat, i mapa final que connecta derivada, creixement, extrems i optimització.}
+
+\subsection{Idea clau}
+
+Repassem \textbf{tota la unitat} de manera activa, rotant per \textbf{quatre
+estacions}, una per cada bloc treballat. Al final construirem un \textbf{mapa de la
+unitat} que connecta les quatre idees —\textbf{derivada}, \textbf{creixement},
+\textbf{màxims i mínims}, \textbf{optimització}— amb la lectura d'un model.
+
+\begin{idea}
+\textbf{Les quatre estacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Càlcul de derivades:} derivar polinomis i avaluar la derivada en un punt.
+  \item \textbf{Creixement i signe:} estudiar on una funció creix i decreix amb el signe
+        de $f'$.
+  \item \textbf{Màxims i mínims:} trobar i classificar els punts crítics.
+  \item \textbf{Optimització:} plantejar i resoldre un problema de context social.
+\end{enumerate}
+\end{idea}
+
+\subsection{Les estacions}
+
+\begin{exemple}[Estació 1 — càlcul de derivades]
+Per a $f(x)=x^3-4x^2+x-7$, la derivada és $f'(x)=3x^2-8x+1$ (terme a terme; el $-7$ es
+deriva a $0$). Avaluant en $x=2$: $f'(2)=12-16+1=-3$.
+\end{exemple}
+
+\begin{exemple}[Estació 3 — màxims i mínims]
+Per a $f(x)=x^3-12x+1$, $f'(x)=3x^2-12=3(x-2)(x+2)$, que s'anul·la a $x=-2$ i $x=2$. En
+$x=-2$, $f'$ passa de $+$ a $-$: \textbf{màxim} $(-2,17)$. En $x=2$, de $-$ a $+$:
+\textbf{mínim} $(2,-15)$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[model de l'Estació 2: creixement i signe]
+Estudia on creix i on decreix $f(x)=x^3-3x^2-9x$.
+\solucio
+$f'(x)=3x^2-6x-9=3(x-3)(x+1)$, s'anul·la a $x=-1$ i $x=3$. Signes: $(-\infty,-1)$
+$f'(-2)=15>0$ creix; $(-1,3)$ $f'(0)=-9<0$ decreix; $(3,\infty)$ $f'(4)=15>0$ creix.
+\resposta{Creix a $(-\infty,-1)$ i $(3,\infty)$; decreix a $(-1,3)$.}
+\end{exresolt}
+
+\begin{exresolt}[model de l'Estació 4: optimització]
+Una entitat tanca un recinte rectangular contra una paret amb $20$ m de tanca (tres
+costats). Si els costats perpendiculars a la paret fan $x$, troba les mides de màxima
+superfície.
+\solucio
+El costat paral·lel a la paret fa $20-2x$, així que l'àrea és $A(x)=x(20-2x)=20x-2x^2$.
+$A'(x)=20-4x=0\Rightarrow x=5$ (passa de $+$ a $-$: màxim). Mides: $5$ m i
+$20-10=10$ m; superfície màxima $A(5)=50\ \text{m}^2$.
+\resposta{$x=5$ m i $10$ m; superfície màxima $50\ \text{m}^2$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Una tasca per estació. Rota i resol-les totes.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Estació 1)} Deriva $f(x)=2x^3-x$ i avalua $f'(1)$.
+  \item \textbf{(Estació 1)} Deriva $g(x)=3x^2-5x+2$ i troba on $g'(x)=0$.
+  \item \textbf{(Estació 2)} Estudia on creix i on decreix $f(x)=-x^2+10x$ i digues on
+        té el punt més alt.
+  \item \textbf{(Estació 3)} Troba i classifica els punts crítics de $f(x)=x^3-27x$.
+  \item \textbf{(Estació 4)} Els ingressos d'una activitat (en euros) segons el preu $x$
+        són $I(x)=-x^2+30x$. Troba el preu òptim i l'ingrés màxim.
+  \item \textbf{(Mapa de la unitat)} Completa el mapa connectant cada concepte amb la
+        seva idea:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{3.8cm} p{8.6cm}}
+        \toprule
+        \textbf{Concepte} & \textbf{Idea / lectura} \\
+        \midrule
+        Derivada $f'(x)$ & \rule{7.8cm}{0.4pt} \\
+        Signe de $f'$ & \rule{7.8cm}{0.4pt} \\
+        $f'(x)=0$ (punt crític) & \rule{7.8cm}{0.4pt} \\
+        Optimització & \rule{7.8cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item $f'(x)=6x^2-1$; $f'(1)=6-1=5$.
+  \item $g'(x)=6x-5$; $g'(x)=0\Rightarrow x=\dfrac{5}{6}$.
+  \item $f'(x)=-2x+10=0\Rightarrow x=5$. Creix a $(-\infty,5)$, decreix a $(5,\infty)$;
+        punt més alt a $x=5$ ($f(5)=25$).
+  \item $f'(x)=3x^2-27=3(x-3)(x+3)$, crítics $x=-3$ i $x=3$. Màxim a $(-3,54)$ ($f'$ de
+        $+$ a $-$); mínim a $(3,-54)$ ($f'$ de $-$ a $+$).
+  \item $I'(x)=-2x+30=0\Rightarrow x=15$ (màxim). Preu òptim $15\eur$; ingrés màxim
+        $I(15)=-225+450=225\eur$.
+  \item Resposta oberta. Idees: \textbf{derivada} = ritme de canvi / pendent a cada punt;
+        \textbf{signe de $f'$} = si la funció creix ($+$) o decreix ($-$); \textbf{punt
+        crític} ($f'=0$) = candidat a màxim o mínim (canvi de tendència);
+        \textbf{optimització} = construir una funció i trobar-ne l'extrem per resoldre un
+        problema real.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,157 @@
+% =====================================================================
+%  2bat-ud5-3.tex  —  SESSIÓ 3: Consolidació de la probabilitat condicionada
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 3 — Consolidació de la probabilitat condicionada}%
+{Assentar la probabilitat condicionada amb una caça de l'error i una bateria graduada, abans d'introduir les distribucions.}
+
+\subsection{Idea clau}
+
+A la sessió 2 vau treballar la probabilitat condicionada sobre una taula real. Com que és
+el punt que més costa (ja ho era a 1r), avui la \textbf{consolidem} amb una \textbf{caça
+de l'error} i una \textbf{bateria graduada}, perquè arribeu a les distribucions amb la
+base ben sòlida.
+
+\begin{idea}
+\textbf{Errors típics a evitar en probabilitat condicionada}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Confondre condicionada amb composta:} $P(A\,|\,B)$ divideix pel total
+        \textbf{del grup $B$}; $P(A\text{ i }B)$ divideix pel \textbf{total general}.
+  \item \textbf{Equivocar-se de base:} en $P(A\,|\,B)$ la base és $B$; canviar l'ordre
+        ($P(B\,|\,A)$) canvia la base i el resultat.
+  \item \textbf{Donar una probabilitat més gran que 1:} tota probabilitat compleix
+        $0\le P\le 1$; si surt més d'1, hi ha un error.
+\end{itemize}
+\end{idea}
+
+\noindent\textbf{Les dades.} Un programa juvenil ha atès $150$ joves. La taula creua
+l'\textbf{edat} amb si han \textbf{completat} el programa:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Completat: sí} & \textbf{Completat: no} & \textbf{Total} \\
+\midrule
+\textbf{16--20 anys} & 60  & 30 & 90 \\
+\textbf{21--25 anys} & 40  & 20 & 60 \\
+\midrule
+\textbf{Total}       & 100 & 50 & 150 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Exemples}
+
+\begin{exemple}[caça l'error: condicionada confosa amb composta]
+Algú calcula la probabilitat de completar \textbf{sabent que} el jove té 16--20 anys així:
+\[
+P(\text{completat}\,|\,\text{16--20}) \overset{?}{=} \frac{60}{150}=0,4.
+\]
+\textbf{Error:} ha dividit pel total general ($150$) en lloc de fer-ho per la base
+correcta, els $90$ joves de 16--20 anys. El càlcul correcte és
+\[
+P(\text{completat}\,|\,\text{16--20})=\frac{60}{90}=\frac{2}{3}\approx 66,7\%.
+\]
+El valor $\dfrac{60}{150}$ és, en realitat, la probabilitat \textbf{composta}
+$P(\text{completat i 16--20})$, una altra cosa.
+\end{exemple}
+
+\begin{exemple}[caça l'error: una probabilitat més gran que 1]
+Algú escriu $P(\text{completat}\,|\,\text{21--25})=\dfrac{40}{20}=2$. \textbf{Error
+evident:} cap probabilitat pot valer $2$. Ha invertit la fracció: la base són els $60$
+joves de 21--25 anys, dels quals $40$ han completat, així que
+\[
+P(\text{completat}\,|\,\text{21--25})=\frac{40}{60}=\frac{2}{3}\approx 66,7\%,
+\]
+que sí compleix $0\le P\le 1$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[detectar i corregir l'error de base]
+Un company ha calculat $P(\text{16--20}\,|\,\text{completat})=\dfrac{60}{90}$. És
+correcte? Si no, corregeix-lo.
+\solucio
+\textbf{No} és correcte. La condició és «ha completat», així que la base són els $100$
+joves que han completat, no els $90$ de 16--20 anys. El càlcul correcte és
+\[
+P(\text{16--20}\,|\,\text{completat})=\frac{60}{100}=\frac{3}{5}=0,6=60\%.
+\]
+S'ha equivocat de base (ha usat $90$ en lloc de $100$).
+\resposta{Incorrecte; el correcte és $\dfrac{60}{100}=0,6=60\%$.}
+\end{exresolt}
+
+\begin{exresolt}[condicionada i comprovació]
+Calcula $P(\text{no completat}\,|\,\text{21--25})$ i comprova que el resultat té sentit.
+\solucio
+Base: els $60$ joves de 21--25 anys; d'aquests, $20$ no han completat.
+\[
+P(\text{no completat}\,|\,\text{21--25})=\frac{20}{60}=\frac{1}{3}\approx 33,3\%.
+\]
+Comprovació: $0\le 0,333\le 1$, correcte. A més, entre els de 21--25,
+$P(\text{completat})+P(\text{no completat})=\frac{40}{60}+\frac{20}{60}=1$, com ha de ser.
+\resposta{$\dfrac{1}{3}\approx 33,3\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Itinerari bàsic: exercicis 1--3 (simples i lectura directa). Ampliació:
+exercicis 4--6 (condicionades).}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Bàsic)} Calcula $P(\text{21--25})$ i $P(\text{no completat})$ (simples),
+        en fracció, decimal i percentatge.
+  \item \textbf{(Bàsic)} Calcula la probabilitat composta $P(\text{16--20 i completat})$.
+  \item \textbf{(Bàsic)} Comprova que $P(\text{completat})+P(\text{no completat})=1$.
+  \item \textbf{(Ampliació)} Calcula $P(\text{completat}\,|\,\text{16--20})$ i
+        $P(\text{completat}\,|\,\text{21--25})$: en quin grup d'edat es completa més el
+        programa?
+  \item \textbf{(Caça l'error)} Algú diu que
+        $P(\text{no completat}\,|\,\text{16--20})=\dfrac{30}{50}$. Troba l'error i
+        corregeix-lo.
+  \item \textbf{(Caça l'error)} Algú calcula
+        $P(\text{21--25}\,|\,\text{no completat})=\dfrac{50}{20}$. Sense fer cap més
+        càlcul, com saps de seguida que està malament? Escriu el resultat correcte.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Full d'autoavaluació.} Marca amb sinceritat com et trobes, de cara a la prova:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{8.4cm} c c c}
+\toprule
+\textbf{Sé fer\dots} & \textbf{Sol} & \textbf{Amb ajuda} & \textbf{Encara no} \\
+\midrule
+Calcular una probabilitat simple des d'una taula & & & \\
+Distingir probabilitat composta de condicionada & & & \\
+Triar la base correcta en una condicionada & & & \\
+Comprovar que el resultat queda entre 0 i 1 & & & \\
+Expressar el resultat en fracció, decimal i \% & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item $P(\text{21--25})=\dfrac{60}{150}=\dfrac{2}{5}=0,4=40\%$;
+        $P(\text{no completat})=\dfrac{50}{150}=\dfrac{1}{3}\approx 0,333=33,3\%$.
+  \item $P(\text{16--20 i completat})=\dfrac{60}{150}=\dfrac{2}{5}=0,4=40\%$.
+  \item $P(\text{completat})=\dfrac{100}{150}=\dfrac{2}{3}$;
+        $P(\text{no completat})=\dfrac{50}{150}=\dfrac{1}{3}$; suma
+        $\dfrac{2}{3}+\dfrac{1}{3}=1$. \checkmark
+  \item $P(\text{completat}\,|\,\text{16--20})=\dfrac{60}{90}=\dfrac{2}{3}\approx 66,7\%$;
+        $P(\text{completat}\,|\,\text{21--25})=\dfrac{40}{60}=\dfrac{2}{3}\approx 66,7\%$.
+        Es completa en la \textbf{mateixa} proporció en tots dos grups ($66,7\%$).
+  \item La base ha de ser el grup «16--20» ($90$ joves), no $50$. El correcte és
+        $P(\text{no completat}\,|\,\text{16--20})=\dfrac{30}{90}=\dfrac{1}{3}\approx 33,3\%$.
+  \item Perquè $\dfrac{50}{20}=2,5>1$ i cap probabilitat pot ser més gran que 1. La base
+        és «no completat» ($50$ joves), dels quals $20$ són de 21--25:
+        $P(\text{21--25}\,|\,\text{no completat})=\dfrac{20}{50}=\dfrac{2}{5}=0,4=40\%$.
+\end{sollist}
+\end{solucions}

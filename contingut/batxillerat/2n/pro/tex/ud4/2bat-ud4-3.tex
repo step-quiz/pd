@@ -1,0 +1,154 @@
+% =====================================================================
+%  2bat-ud4-3.tex  —  SESSIÓ 3: La derivada com a pendent
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 3 — La derivada com a pendent}%
+{Posar nom a la «velocitat de canvi» de la sessió 2: la derivada és el pendent de la corba a cada punt. Llegir-ne el signe i la magnitud.}
+
+\subsection{Idea clau}
+
+A la sessió 2 vau descobrir, a les pissarres, que un indicador pot pujar \emph{de
+pressa} o \emph{a poc a poc}: té un \textbf{ritme de canvi} que no és constant. Avui
+li posem nom. Aquest ritme de canvi en un punt concret és la \textbf{derivada}, i
+gràficament es correspon amb el \textbf{pendent} de la corba en aquell punt.
+
+\begin{idea}
+\textbf{La derivada és el pendent de la corba.} En cada punt d'una gràfica, la
+derivada mesura com d'inclinada està la corba:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item On la gràfica \textbf{puja amb molt de pendent}, la derivada és
+        \textbf{gran i positiva} (el fenomen creix de pressa).
+  \item On la gràfica és \textbf{gairebé plana}, la derivada és \textbf{prop de zero}
+        (a penes canvia).
+  \item On la gràfica \textbf{baixa}, la derivada és \textbf{negativa} (decreix).
+\end{itemize}
+\textbf{Regla de lectura:} el \emph{signe} de la derivada diu si creix ($+$) o decreix
+($-$); la seva \emph{magnitud} diu si ho fa de pressa (gran) o a poc a poc (petita).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[el signe del pendent: pujar, aplanar-se, baixar]
+La gràfica següent mostra l'ocupació d'un servei al llarg del temps. Llegim el pendent
+(la derivada) en tres moments:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10cm, height=5cm,
+    xlabel={\small temps}, ylabel={\small ocupació},
+    xmin=0, xmax=10, ymin=0, ymax=10,
+    xtick=\empty, ytick=\empty]
+  \addplot[udblue, domain=0.5:9.5, samples=100]{8*exp(-((x-5)^2)/8)+0.6};
+  % punt A: pujant (pendent positiu gran)
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(3,4.55)};
+  \node[udnavy, font=\scriptsize] at (axis cs:2.55,5.7){$A$};
+  % punt B: dalt (pendent ~0)
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(5,8.6)};
+  \node[udnavy, font=\scriptsize] at (axis cs:5,9.4){$B$};
+  % punt C: baixant (pendent negatiu)
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(7,4.55)};
+  \node[udnavy, font=\scriptsize] at (axis cs:7.5,5.7){$C$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{A: la corba puja (derivada positiva). B: a dalt, plana (derivada $\approx 0$). C: baixa (derivada negativa).}
+\end{center}
+A $A$ el servei creix; a $B$ ha arribat al màxim i, per un instant, ni puja ni baixa;
+a $C$ decreix. El \textbf{signe} de la derivada ens ho diu sense necessitat de cap
+fórmula.
+\end{exemple}
+
+\begin{exemple}[la magnitud: de pressa o a poc a poc]
+Dues despeses creixen totes dues, però amb pendents diferents:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=4.6cm,
+    xlabel={\small temps}, ylabel={\small despesa},
+    xmin=0, xmax=6, ymin=0, ymax=12, xtick=\empty, ytick=\empty]
+  \addplot[udblue, domain=0:5.5, samples=2]{1.8*x};
+  \addplot[udgreen, domain=0:5.5, samples=2]{0.6*x+0.5};
+  \node[udblue, font=\scriptsize] at (axis cs:4.4,10.2){molt pendent};
+  \node[udgreen, font=\scriptsize] at (axis cs:4.6,2.4){poc pendent};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Totes dues pugen (derivada positiva), però la blava té la derivada més gran: creix més de pressa.}
+\end{center}
+Mateix signe (positiu, totes dues creixen), però \textbf{magnitud} diferent: la recta
+blava té un pendent més gran, així que la seva despesa creix més de pressa.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[llegir el signe en diversos punts]
+En una gràfica d'un fenomen social, el pendent als punts $P$, $Q$ i $R$ és,
+respectivament: clarament cap amunt a $P$, pla a $Q$ i cap avall a $R$. Digues el
+signe de la derivada a cada punt i interpreta-ho si la gràfica és la demanda d'un
+servei.
+\solucio
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $P$: pendent cap amunt → derivada \textbf{positiva} → la demanda \emph{creix}.
+  \item $Q$: pendent pla → derivada \textbf{nul·la} → la demanda \emph{s'estabilitza}
+        (ni puja ni baixa).
+  \item $R$: pendent cap avall → derivada \textbf{negativa} → la demanda \emph{decreix}.
+\end{itemize}
+\resposta{$P>0$ (creix), $Q=0$ (s'estabilitza), $R<0$ (decreix).}
+\end{exresolt}
+
+\begin{exresolt}[comparar magnituds]
+A la gràfica d'un atur, al punt $A$ el pendent és molt inclinat cap amunt i al punt $B$
+és poc inclinat cap amunt. En quin punt la derivada és més gran? Què vol dir
+socialment?
+\solucio
+Tots dos pendents són positius (a $A$ i a $B$ l'atur creix), però el de $A$ és
+\textbf{més inclinat}, així que la derivada a $A$ és \textbf{més gran} que a $B$.
+Socialment: a $A$ l'atur creix més de pressa que a $B$; és el moment més preocupant,
+on cal actuar amb més urgència.
+\resposta{La derivada és més gran a $A$: l'atur hi creix més de pressa.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a cada situació, digues si la derivada és positiva, negativa o nul·la:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item una llista d'espera que puja \hfill
+          \item una ocupació que es manté igual \hfill
+          \item una despesa que baixa
+        \end{enumerate}
+  \item En una corba, el pendent a $P$ és cap amunt i molt inclinat, i a $Q$ és cap
+        amunt però gairebé pla. On és més gran la derivada? Quin punt creix més de
+        pressa?
+  \item Mira la gràfica de l'ocupació d'un servei: puja fins a un màxim i després
+        baixa. Digues el signe de la derivada \emph{abans} del màxim, \emph{al} màxim i
+        \emph{després} del màxim.
+  \item Una recta té molt de pendent positiu i una altra té poc pendent positiu.
+        Totes dues creixen: en què es diferencia el seu ritme de creixement?
+  \item \textbf{(Interpretació)} Si la derivada de la corba de l'atur és positiva però
+        cada cop \emph{més petita}, què vol dir? L'atur encara puja? Com ho explicaries
+        als serveis socials?
+  \item \textbf{(Raonament)} En el punt més alt d'una corba (un màxim), per què diem que
+        la derivada val \textbf{zero}? Relaciona-ho amb la idea de la sessió 1: en aquell
+        punt, què passa amb el creixement?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item (a) positiva (puja); \quad (b) nul·la (es manté); \quad (c) negativa (baixa).
+  \item La derivada és més gran a $P$ (pendent més inclinat): $P$ creix més de pressa
+        que $Q$.
+  \item Abans del màxim: derivada \textbf{positiva} (puja). Al màxim: derivada
+        \textbf{nul·la} (ni puja ni baixa). Després: derivada \textbf{negativa} (baixa).
+  \item Totes dues creixen (derivada positiva), però la de més pendent ho fa més de
+        pressa: té una derivada més gran (ritme de creixement més alt).
+  \item Resposta oberta. Idea: la derivada positiva vol dir que l'atur encara puja, però
+        si cada cop és més petita, puja \emph{cada cop més a poc a poc} (s'està frenant);
+        és un senyal que la tendència es comença a estabilitzar.
+  \item Resposta oberta. Idea: al màxim, la corba deixa de pujar i comença a baixar; per
+        un instant ni creix ni decreix, així que el ritme de canvi (la derivada) és $0$,
+        i el pendent és pla (horitzontal).
+\end{sollist}
+\end{solucions}

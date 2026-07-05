@@ -1,0 +1,130 @@
+% =====================================================================
+%  2bat-ud3-13.tex  —  SESSIÓ 13: Cas integrador: un model social complet
+% =====================================================================
+\horatitol{Sessió 13 — Cas integrador: un model social complet}%
+{Integrar tota la unitat en un estudi de cas: límit, asímptota i continuïtat d'un model real, i un informe d'interpretació.}
+
+\subsection{Idea clau}
+
+Tanquem el cicle complet d'anàlisi d'un model. En un únic cas integrem \textbf{tot} el
+que hem treballat: cap a on tendeix a llarg termini (\textbf{límit} i
+\textbf{asímptota}), si és continu o fa un \textbf{salt} (\textbf{continuïtat} d'una
+funció a trossos) i què significa tot plegat en el \textbf{fenomen real}. Acabarem amb
+un breu \textbf{informe}, com els que es fan als cicles formatius.
+
+\begin{idea}
+\textbf{El cas.} L'ocupació d'un servei (places ocupades el mes $x$) es modelitza així:
+\[
+f(x)=
+\begin{cases}
+400-\dfrac{600}{x} & \text{si } 1\le x\le 12,\\[8pt]
+250 & \text{si } x>12.
+\end{cases}
+\]
+El primer tram descriu el creixement inicial cap a una capacitat; al mes $12$, un
+\textbf{canvi normatiu} fixa una nova capacitat de $250$ places.
+
+\textbf{Anàlisi completa:} (1) comportament del primer tram (cap a on tendiria);
+(2) continuïtat a la frontera $x=12$; (3) comportament a llarg termini; (4)
+interpretació social.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[la gràfica del model]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10.4cm, height=5cm,
+    xlabel={\small mesos ($x$)}, ylabel={\small places ocupades},
+    xmin=0, xmax=28, ymin=0, ymax=440, xtick={0,6,12,18,24}, ytick={0,250,400}]
+  \addplot[udblue, domain=1:12, samples=80]{400-600/x};
+  \addplot[udblue, domain=12:28, samples=2]{250};
+  \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(12,250)};
+  \addplot[udnavy, only marks, mark=o, mark size=1.5pt] coordinates {(12,350)};
+  \draw[udgrey, dashed] (axis cs:12,250) -- (axis cs:12,350);
+  \addplot[udnavy, dashed, domain=0:12, samples=2]{400};
+  \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:12,400) {sostre $400$};
+  \node[udnavy, font=\scriptsize, anchor=west] at (axis cs:12.4,300) {salt};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Creixement cap a $400$, salt al mes $12$ (canvi normatiu) i estabilització en $250$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[l'anàlisi pas a pas]
+\textbf{(1) Primer tram:} $400-\dfrac{600}{x}$ creix i, si continués, s'acostaria a
+$400$ (la capacitat «original»). \textbf{(2) Frontera $x=12$:} pel costat esquerre,
+$f(12)=400-\dfrac{600}{12}=350$; pel dret, $250$. \textbf{No coincideixen}:
+\textbf{salt} de $350$ a $250$ (mida $100$). \textbf{(3) Llarg termini:} a partir del
+mes $12$ la funció és constant $250$, així que $\lim_{x\to\infty}f(x)=250$ (asímptota
+horitzontal $y=250$). \textbf{(4) Interpretació:} el servei creixia cap a $400$, però
+un canvi normatiu el va retallar de cop a $250$ places, on s'ha estabilitzat.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[comprovar la continuïtat del cas]
+Comprova si el model és continu a $x=12$ i digues la mida del salt si n'hi ha.
+\solucio
+Pel costat esquerre: $f(12)=400-\dfrac{600}{12}=400-50=350$. Pel costat dret: $250$.
+Com que $350\neq 250$, hi ha un \textbf{salt} de mida $350-250=100$: el model és
+\textbf{discontinu} a $x=12$.
+\resposta{Discontinu: salt de mida $100$ (de $350$ a $250$) a $x=12$.}
+\end{exresolt}
+
+\begin{exresolt}[redactar un informe breu]
+Redacta un informe de tres o quatre frases que descrigui el comportament del model i
+què implica per a les persones.
+\solucio
+\textit{«El servei creix els primers mesos, atenent cada cop més persones, i s'acosta
+a una capacitat de $400$ places. Al mes $12$, un canvi normatiu redueix bruscament la
+capacitat a $250$ places (un salt de $100$ places), de manera que el servei perd de cop
+capacitat d'atenció. A partir d'aleshores es manté estable en $250$. Per a les persones
+usuàries, això implica que unes $100$ places desapareixen de sobte: caldria preveure
+alternatives per a qui es quedi sense plaça.»}
+\resposta{Informe: creixement cap a $400$, salt a $250$ al mes $12$ per canvi normatiu,
+estabilització en $250$; implica la pèrdua sobtada d'unes $100$ places.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Model del cas: $f(x)=400-\dfrac{600}{x}$ si $1\le x\le 12$, i
+$f(x)=250$ si $x>12$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula $f(2)$, $f(6)$ i $f(12)$ (primer tram). Cap a quin valor tendiria el
+        primer tram si continués?
+  \item Comprova la continuïtat a $x=12$ avaluant els dos trams, i digues la mida del
+        salt.
+  \item Quin és el comportament a llarg termini del model? Escriu-ho amb notació de
+        límit i digues l'asímptota horitzontal.
+  \item Indica, per al model: (a) on creix; (b) on és constant; (c) on té el salt.
+  \item \textbf{(GeoGebra)} Descriu com introduiries aquest model a GeoGebra (amb
+        l'ordre \texttt{Si(...)}) per validar el salt i l'estabilització.
+  \item \textbf{(Informe)} Redacta el teu propi informe breu (tres o quatre frases)
+        interpretant el model i què implica per a la gestió del servei i per a les
+        persones afectades.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item $f(2)=400-300=100$; $f(6)=400-100=300$; $f(12)=400-50=350$. El primer tram
+        tendiria a $400$ si continués (asímptota $y=400$).
+  \item Esquerre $f(12)=350$; dret $250$. Salt de mida $350-250=100$: discontinu a
+        $x=12$.
+  \item A partir del mes $12$ és constant $250$, així que
+        $\displaystyle\lim_{x\to\infty}f(x)=250$; asímptota horitzontal $y=250$.
+  \item (a) creix de $x=1$ a $x=12$; (b) constant ($250$) per a $x>12$; (c) salt a
+        $x=12$.
+  \item \texttt{f(x)=Si(x<=12, 400-600/x, 250)}; ampliant la vista es valida
+        l'estabilització en $250$ i, a $x=12$, es veu el trencament (salt).
+  \item Resposta oberta. Ha d'integrar: creixement cap a $400$, salt a $250$ al mes
+        $12$ (canvi normatiu), estabilització en $250$, i la implicació social (pèrdua
+        sobtada d'unes $100$ places).
+\end{sollist}
+\end{solucions}

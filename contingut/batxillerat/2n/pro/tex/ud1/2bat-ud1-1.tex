@@ -1,0 +1,147 @@
+% =====================================================================
+%  2bat-ud1-1.tex  —  SESSIÓ 1: Del quadre de dades a la matriu
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — Del quadre de dades a la matriu}%
+{Organitzar informació real en forma de taula i llegir-la com una matriu.}
+
+\subsection{Idea clau}
+
+Quan tenim moltes dades que depenen de \emph{dues} característiques alhora
+(per exemple, diversos serveis al llarg de diversos mesos), la manera més clara
+d'organitzar-les és una taula de files i columnes. En matemàtiques, aquesta taula
+de nombres s'anomena \textbf{matriu}.
+
+\begin{idea}
+\textbf{Vocabulari bàsic}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Una \textbf{matriu} és una taula de nombres ordenats en \textbf{files}
+        (horitzontals) i \textbf{columnes} (verticals).
+  \item La seva \textbf{dimensió} s'escriu \emph{files $\times$ columnes}.
+        Una matriu amb $3$ files i $2$ columnes és de dimensió $3\times 2$.
+  \item Cada nombre de la matriu és un \textbf{element}. Es localitza dient
+        en quina fila i en quina columna és.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[d'una taula a una matriu]
+Un centre social anota les places ocupades de dos serveis (menjador i acollida)
+durant tres mesos:
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+ & Gener & Febrer & Març \\
+\midrule
+Menjador & 40 & 45 & 50 \\
+Acollida & 22 & 20 & 25 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Aquesta taula es pot escriure com una matriu de dimensió $2\times 3$
+(2 serveis, 3 mesos):
+\[
+A=\begin{pmatrix} 40 & 45 & 50 \\ 22 & 20 & 25 \end{pmatrix}.
+\]
+La primera fila és el menjador; la segona, l'acollida. Cada columna és un mes.
+\end{exemple}
+
+\begin{exemple}[localitzar un element]
+A la matriu $A$ anterior, l'element de la \textbf{fila 1, columna 3} és $50$:
+les places de menjador del mes de març. L'element de la \textbf{fila 2, columna 1}
+és $22$: les places d'acollida del gener.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[construir i llegir una matriu]
+Una entitat ofereix tallers a dos casals. Al casal Nord hi van $30$ infants
+al matí i $18$ a la tarda; al casal Sud, $25$ al matí i $20$ a la tarda.
+\begin{enumerate}[label=\alph*), leftmargin=1.6em]
+  \item Organitza les dades en una matriu (files: casals; columnes: matí i tarda).
+  \item Indica'n la dimensió.
+  \item Quants infants van al casal Sud a la tarda?
+\end{enumerate}
+\solucio
+a) Posem un casal a cada fila i cada franja a una columna:
+\[
+M=\begin{pmatrix} 30 & 18 \\ 25 & 20 \end{pmatrix}.
+\]
+b) Té $2$ files i $2$ columnes: dimensió $2\times 2$.
+
+c) És l'element de la fila 2 (Sud), columna 2 (tarda): $20$ infants.
+\resposta{$M=\begin{pmatrix} 30 & 18 \\ 25 & 20 \end{pmatrix}$, \;dimensió $2\times 2$; \;Sud a la tarda: $20$ infants.}
+\end{exresolt}
+
+\begin{exresolt}[interpretar files i columnes]
+Una matriu recull les hores setmanals de tres professionals (educador,
+treballador social i monitor) en dos serveis:
+\[
+H=\begin{pmatrix} 12 & 8 \\ 6 & 10 \\ 15 & 4 \end{pmatrix}.
+\]
+La fila indica el professional (en aquest ordre) i la columna, el servei
+(Servei 1 i Servei 2). Quina dimensió té? Què representa l'element de la
+fila 3, columna 1? Quantes hores fa el treballador social en total?
+\solucio
+La matriu té $3$ files i $2$ columnes: dimensió $3\times 2$.
+
+L'element de la fila 3, columna 1 és $15$: les hores del monitor al Servei 1.
+
+El treballador social és la fila 2: $6 + 10 = 16$ hores en total.
+\resposta{Dimensió $3\times 2$; \;fila 3, columna 1 $=15$ (monitor, Servei 1); \;treballador social: $16$ hores.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Un menjador social anota els àpats servits en dos torns durant
+        tres dies: dilluns ($60$ migdia, $40$ vespre), dimarts ($55$ migdia,
+        $38$ vespre) i dimecres ($62$ migdia, $45$ vespre). Organitza les
+        dades en una matriu (files: dies; columnes: torns) i indica'n la dimensió.
+  \item Considera la matriu
+        \[ B=\begin{pmatrix} 7 & 3 & 5 \\ 2 & 9 & 4 \end{pmatrix}. \]
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Quina dimensió té?
+          \item Quin és l'element de la fila 1, columna 2?
+          \item Quin és l'element de la fila 2, columna 3?
+        \end{enumerate}
+  \item Una associació té dos centres. Al centre A hi treballen $5$ voluntaris
+        i $3$ professionals; al centre B, $8$ voluntaris i $2$ professionals.
+        Escriu la matriu (files: centres; columnes: voluntaris i professionals)
+        i digues quants voluntaris hi ha al centre B.
+  \item Una matriu de dimensió $4\times 2$ recull dades de quatre barris i dos
+        indicadors. Quantes files té? Quantes columnes? Quants elements té
+        en total?
+  \item Escriu \emph{amb les teves paraules} què vol dir que una matriu tingui
+        dimensió $3\times 5$, i posa un exemple propi, de l'àmbit social, de
+        dades que es podrien organitzar així.
+  \item \textbf{(Lectura)} A la matriu
+        \[ C=\begin{pmatrix} 100 & 120 \\ 90 & 110 \\ 80 & 95 \end{pmatrix} \]
+        cada fila és un centre i cada columna és un trimestre (les places
+        ocupades). Quin centre té més ocupació el segon trimestre? En quin
+        trimestre, en conjunt, hi ha hagut més places ocupades?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item $\begin{pmatrix} 60 & 40 \\ 55 & 38 \\ 62 & 45 \end{pmatrix}$,
+        \;dimensió $3\times 2$.
+  \item (a) dimensió $2\times 3$ \quad (b) $3$ \quad (c) $4$
+  \item $\begin{pmatrix} 5 & 3 \\ 8 & 2 \end{pmatrix}$;
+        \;al centre B hi ha $8$ voluntaris.
+  \item $4$ files, $2$ columnes, $8$ elements en total.
+  \item Resposta oberta. Dimensió $3\times 5$ vol dir $3$ files i $5$ columnes
+        (15 elements). Exemple vàlid: $3$ serveis al llarg de $5$ mesos.
+  \item El segon trimestre (columna 2) el centre amb més ocupació és el primer,
+        amb $120$. \;En conjunt, el segon trimestre ($120+110+95=325$) supera
+        el primer ($100+90+80=270$): hi ha hagut més places ocupades el
+        segon trimestre.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,146 @@
+% =====================================================================
+%  2bat-ud4-11.tex  —  SESSIÓ 11: Estudi complet d'una funció
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 11 — Estudi complet d'una funció}%
+{Síntesi: ajuntar talls, signe de la derivada i extrems per traçar la gràfica aproximada d'un polinomi.}
+
+\subsection{Idea clau}
+
+Fins ara hem treballat les eines per separat: els talls amb els eixos (de cursos
+anteriors), el càlcul de derivades, l'estudi del signe i la cerca de màxims i mínims.
+Avui les \textbf{ajuntem} en un únic procediment: l'\textbf{estudi complet} d'una
+funció. El resultat serà un \textbf{traçat aproximat} de la gràfica fet només amb
+càlcul, sense necessitat d'una taula de molts valors.
+
+\begin{idea}
+\textbf{Passos de l'estudi complet d'un polinomi}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Talls amb els eixos:} amb l'eix $Y$, calcula $f(0)$; amb l'eix $X$,
+        resol $f(x)=0$.
+  \item \textbf{Derivada i punts crítics:} deriva $f$ i resol $f'(x)=0$.
+  \item \textbf{Creixement:} estudia el signe de $f'$ a cada tram (creix / decreix).
+  \item \textbf{Màxims i mínims:} classifica cada punt crític amb el canvi de signe i
+        calcula'n el valor de $f$.
+  \item \textbf{Traçat:} marca els talls i els extrems en uns eixos i uneix-los seguint
+        el creixement.
+\end{enumerate}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[estudi complet de $f(x)=x^3-3x^2$]
+\textbf{1) Talls:} amb l'eix $Y$, $f(0)=0$. Amb l'eix $X$:
+$x^3-3x^2=x^2(x-3)=0\Rightarrow x=0$ i $x=3$.
+
+\noindent\textbf{2) Derivada:} $f'(x)=3x^2-6x=3x(x-2)$, que s'anul·la a $x=0$ i $x=2$.
+
+\noindent\textbf{3) Creixement:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Tram} & $(-\infty,0)$ & $(0,2)$ & $(2,\infty)$ \\
+\midrule
+$f'(x)$ & $+9>0$ & $-3<0$ & $+9>0$ \\
+\textbf{Comportament} & creix & decreix & creix \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent\textbf{4) Extrems:} en $x=0$, $f'$ passa de $+$ a $-$ $\Rightarrow$
+\textbf{màxim} a $(0,0)$. En $x=2$, de $-$ a $+$ $\Rightarrow$ \textbf{mínim} a $(2,-4)$.
+
+\noindent\textbf{5) Traçat:}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.4cm,
+    xlabel={\small $x$}, ylabel={\small $f(x)$},
+    xmin=-1.4, xmax=3.8, ymin=-5, ymax=4,
+    xtick={-1,1,2,3}, ytick={-4,-2,2}]
+  \addplot[udblue, domain=-1.2:3.6, samples=120]{x^3-3*x^2};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(0,0)(2,-4)(3,0)};
+  \node[udnavy, font=\scriptsize] at (axis cs:0.05,0.7){màx $(0,0)$};
+  \node[udnavy, font=\scriptsize] at (axis cs:2,-4.6){mín $(2,-4)$};
+  \node[udgrey, font=\scriptsize] at (axis cs:3.25,0.7){tall $(3,0)$};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{La gràfica passa pels talls $(0,0)$ i $(3,0)$, amb un màxim a $(0,0)$ i un mínim a $(2,-4)$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[una paràbola, estudi ràpid]
+Per a $f(x)=-x^2+4x$: talls amb $X$ a $x=0$ i $x=4$ (perquè $-x^2+4x=-x(x-4)$);
+$f(0)=0$. Derivada $f'(x)=-2x+4=0\Rightarrow x=2$, que és un \textbf{màxim} ($f'$ de $+$
+a $-$) amb $f(2)=4$. La gràfica és una paràbola oberta cap avall amb vèrtex $(2,4)$ que
+talla l'eix $X$ a $0$ i $4$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[estudi complet d'una paràbola]
+Fes l'estudi complet de $f(x)=x^2-2x-3$ i descriu la gràfica.
+\solucio
+\textbf{Talls:} $f(0)=-3$ (eix $Y$); $x^2-2x-3=(x-3)(x+1)=0\Rightarrow x=-1$ i $x=3$
+(eix $X$). \textbf{Derivada:} $f'(x)=2x-2=0\Rightarrow x=1$. $f'$ passa de $-$ a $+$:
+\textbf{mínim} a $(1,-4)$. La gràfica és una paràbola oberta cap amunt, amb vèrtex
+$(1,-4)$, que talla l'eix $X$ a $-1$ i $3$ i l'eix $Y$ a $-3$.
+\resposta{Talls: $(-1,0)$, $(3,0)$, $(0,-3)$. Mínim a $(1,-4)$.}
+\end{exresolt}
+
+\begin{exresolt}[estudi complet d'una cúbica]
+Fes l'estudi complet de $f(x)=x^3-3x+2$.
+\solucio
+\textbf{Talls:} $f(0)=2$ (eix $Y$); $x^3-3x+2=(x-1)^2(x+2)=0\Rightarrow x=1$ i $x=-2$
+(eix $X$). \textbf{Derivada:} $f'(x)=3x^2-3=3(x-1)(x+1)=0\Rightarrow x=-1$ i $x=1$.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $x=-1$: $f'$ de $+$ a $-$ $\Rightarrow$ \textbf{màxim} a $(-1,4)$.
+  \item $x=1$: $f'$ de $-$ a $+$ $\Rightarrow$ \textbf{mínim} a $(1,0)$.
+\end{itemize}
+La gràfica creix fins a $(-1,4)$, baixa fins a $(1,0)$ (on toca l'eix $X$) i torna a
+pujar.
+\resposta{Talls: $(-2,0)$, $(1,0)$, $(0,2)$. Màxim a $(-1,4)$; mínim a $(1,0)$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Fes l'estudi complet de $f(x)=x^2-2x-3$: talls, derivada, creixement i extrem.
+        Descriu la gràfica.
+  \item Fes l'estudi complet de $f(x)=-x^2+6x-5$ (talls, vèrtex/extrem) i digues si la
+        paràbola s'obre cap amunt o cap avall.
+  \item Fes l'estudi complet de $f(x)=x^3-3x^2$: talls, punts crítics, taula de signes i
+        extrems. Fes-ne un esbós.
+  \item Fes l'estudi complet de $f(x)=x^3-12x+16$. \emph{(Pista: $f(x)=(x-2)^2(x+4)$.)}
+        Troba els talls i classifica els extrems.
+  \item \textbf{(Interpretació)} La gràfica de $f(x)=x^3-3x^2$ representa un indicador
+        social al llarg del temps $x$ (en mesos). En quin mes és més baix l'indicador?
+        En quins trams millora i en quins empitjora?
+  \item \textbf{(Raonament)} Si en l'estudi d'una funció trobes un punt crític on $f'$
+        \emph{no} canvia de signe (per exemple, passa de $+$ a $+$), és un màxim o un
+        mínim? Què deu passar a la gràfica en aquell punt?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item Talls: $(0,-3)$, $(-1,0)$, $(3,0)$. $f'(x)=2x-2$, crític $x=1$ (mínim),
+        $f(1)=-4$. Paràbola oberta cap amunt amb vèrtex $(1,-4)$.
+  \item Talls: $f(0)=-5$; $-x^2+6x-5=-(x-1)(x-5)\Rightarrow x=1,5$. $f'(x)=-2x+6$,
+        crític $x=3$ (màxim), $f(3)=4$. Paràbola oberta \textbf{cap avall} (coeficient de
+        $x^2$ negatiu), vèrtex $(3,4)$.
+  \item Talls: $(0,0)$ i $(3,0)$. $f'(x)=3x(x-2)$, crítics $x=0,2$. Creix a $(-\infty,0)$
+        i $(2,\infty)$, decreix a $(0,2)$. Màxim $(0,0)$; mínim $(2,-4)$.
+  \item Talls: $f(0)=16$; $(x-2)^2(x+4)=0\Rightarrow x=2$ i $x=-4$. $f'(x)=3x^2-12$,
+        crítics $x=-2,2$. Màxim a $(-2,32)$; mínim a $(2,0)$ (on toca l'eix $X$).
+  \item L'indicador és més baix al mes $x=2$ (mínim, valor $-4$). Millora (creix) abans
+        del mes $0$ i a partir del mes $2$; empitjora (decreix) entre els mesos $0$ i
+        $2$.
+  \item Si $f'$ no canvia de signe, \textbf{no} és ni màxim ni mínim: és un punt
+        d'inflexió amb tangent horitzontal (la gràfica s'aplana un instant però continua
+        en el mateix sentit). Exemple: $f(x)=x^3$ a $x=0$.
+\end{sollist}
+\end{solucions}

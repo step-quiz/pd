@@ -1,0 +1,109 @@
+% =====================================================================
+%  2bat-ud5-10.tex  —  SESSIÓ 10: Tipificació i taula de la normal
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — Tipificació i taula de la normal}%
+{Convertir qualsevol normal en la normal estàndard (tipificar) i llegir probabilitats amb la taula $Z$.}
+
+\subsection{Idea clau}
+
+Cada distribució normal té la seva $\mu$ i la seva $\sigma$, i seria impossible tenir una
+taula per a cadascuna. La solució és \textbf{tipificar}: convertir qualsevol
+$N(\mu,\sigma)$ en \textbf{una sola} normal de referència, la \textbf{normal estàndard}
+$N(0,1)$, i llegir-ne les probabilitats en una única taula.
+
+\begin{idea}
+\textbf{Tipificar: la puntuació $Z$.} Per a un valor $x$ d'una $N(\mu,\sigma)$, la seva
+\textbf{puntuació tipificada} és
+\[
+Z=\frac{x-\mu}{\sigma}.
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $Z$ diu \textbf{a quantes desviacions típiques} està $x$ del centre $\mu$.
+  \item $Z>0$: $x$ està per sobre de la mitjana; $Z<0$: per sota; $Z=0$: just a la
+        mitjana.
+  \item La normal estàndard $N(0,1)$ té mitjana $0$ i desviació $1$.
+\end{itemize}
+\textbf{La taula $Z$} dona $P(Z<z)$: la probabilitat (àrea) a l'\textbf{esquerra} d'un
+valor $z$. A partir d'aquí es calcula qualsevol interval.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[tipificar un valor]
+En una $N(50,10)$, tipifiquem $x=60$:
+\[
+Z=\frac{60-50}{10}=\frac{10}{10}=1.
+\]
+El valor $60$ està \textbf{una desviació típica per sobre} de la mitjana. A la taula,
+$P(Z<1)=0,8413$: el $84,13\%$ de les dades són menors que $60$.
+\end{exemple}
+
+\begin{exemple}[un valor per sota de la mitjana]
+En la mateixa $N(50,10)$, tipifiquem $x=35$:
+\[
+Z=\frac{35-50}{10}=\frac{-15}{10}=-1,5.
+\]
+Està $1,5$ desviacions \textbf{per sota} del centre. A la taula, $P(Z<-1,5)=0,0668$:
+només el $6,68\%$ de les dades són menors que $35$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[probabilitat a l'esquerra]
+Les puntuacions segueixen $N(50,10)$. Quina és la probabilitat que una puntuació triada a
+l'atzar sigui \textbf{menor que 65}?
+\solucio
+Tipifiquem $x=65$:
+\[
+Z=\frac{65-50}{10}=1,5.
+\]
+A la taula, $P(Z<1,5)=0,9332$. Per tant $P(X<65)=93,32\%$.
+\resposta{$P(X<65)\approx 93,3\%$.}
+\end{exresolt}
+
+\begin{exresolt}[probabilitat a la dreta]
+Amb la mateixa $N(50,10)$, quina és la probabilitat que una puntuació sigui \textbf{més
+gran que 70}?
+\solucio
+Tipifiquem: $Z=\dfrac{70-50}{10}=2$. La taula dona l'àrea a l'\textbf{esquerra},
+$P(Z<2)=0,9772$; la de la \textbf{dreta} és el complementari:
+\[
+P(X>70)=1-P(Z<2)=1-0,9772=0,0228=2,28\%.
+\]
+\resposta{$P(X>70)\approx 2,28\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Fes servir que $P(Z<1)=0,8413$; $P(Z<1,5)=0,9332$; $P(Z<2)=0,9772$;
+$P(Z<0,5)=0,6915$; $P(Z<-1)=0,1587$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item En una $N(60,12)$, tipifica el valor $x=72$. A quantes desviacions de la mitjana
+        està?
+  \item En una $N(60,12)$, tipifica $x=48$. Està per sobre o per sota de la mitjana?
+  \item Les alçades segueixen $N(170,8)$. Tipifica $x=178$ i digues quina proporció de
+        persones fa menys de $178$ cm. (Pista: $P(Z<1)$.)
+  \item En una $N(50,10)$, calcula $P(X<55)$. (Pista: $Z=0,5$.)
+  \item En una $N(20,4)$ (temps d'atenció en minuts), calcula la probabilitat que una
+        atenció duri \textbf{menys de 26} minuts. (Pista: $Z=1,5$.)
+  \item \textbf{(Dreta)} En una $N(50,10)$, calcula $P(X>60)$ usant el complementari.
+        (Pista: $P(Z<1)=0,8413$.)
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item $Z=\dfrac{72-60}{12}=1$: està $1$ desviació típica per sobre de la mitjana.
+  \item $Z=\dfrac{48-60}{12}=-1$: està $1$ desviació \textbf{per sota} de la mitjana.
+  \item $Z=\dfrac{178-170}{8}=1$; $P(Z<1)=0,8413$: el $84,13\%$ de les persones fan menys
+        de $178$ cm.
+  \item $Z=\dfrac{55-50}{10}=0,5$; $P(X<55)=P(Z<0,5)=0,6915=69,15\%$.
+  \item $Z=\dfrac{26-20}{4}=1,5$; $P(X<26)=P(Z<1,5)=0,9332=93,32\%$.
+  \item $Z=\dfrac{60-50}{10}=1$; $P(X>60)=1-P(Z<1)=1-0,8413=0,1587=15,87\%$.
+\end{sollist}
+\end{solucions}

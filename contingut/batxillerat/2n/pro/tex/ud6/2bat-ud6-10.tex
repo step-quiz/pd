@@ -1,0 +1,126 @@
+% =====================================================================
+%  2bat-ud6-10.tex  —  SESSIÓ 10: Llegir una fitxa tècnica d'enquesta
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — Llegir una fitxa tècnica d'enquesta}%
+{Aprendre a llegir la fitxa tècnica d'una enquesta: quins elements té i quina informació cal mirar sempre per valorar-ne la fiabilitat.}
+
+\subsection{Idea clau}
+
+Ensenyem a llegir la \textbf{fitxa tècnica} d'una enquesta: el document, sovint amagat al
+final dels estudis, que conté la informació clau per valorar-ne la fiabilitat. Aprendre a
+buscar-la i interpretar-la és una rutina de lectura crítica essencial.
+
+\begin{idea}
+\textbf{Anatomia d'una fitxa tècnica.} Els elements que cal mirar sempre:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Població estudiada:} a qui es vol conèixer (el col·lectiu de referència).
+  \item \textbf{Mida de la mostra:} quantes persones s'han enquestat.
+  \item \textbf{Mètode de selecció:} com s'ha triat la mostra (a l'atzar? per quotes? qui
+        podia respondre?).
+  \item \textbf{Dates del treball de camp:} quan s'ha fet (un resultat pot quedar desfasat).
+  \item \textbf{Marge d'error} i \textbf{nivell de confiança:} la precisió i la fiabilitat
+        de l'estimació.
+\end{itemize}
+\textbf{La rutina de lectura crítica:} abans de fer cas d'una enquesta, comprova qui ha
+respost, quants, com s'han triat i quin marge d'error té.
+\end{idea}
+
+\noindent\textbf{Exemple de fitxa tècnica.}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l l}
+\toprule
+\textbf{Element} & \textbf{Valor} \\
+\midrule
+Població & Persones majors de 18 anys d'un municipi \\
+Mida de la mostra & $800$ persones \\
+Selecció & Aleatòria, per telèfon (fix i mòbil) \\
+Treball de camp & Març de 2027 \\
+Marge d'error & $\pm 3,5\%$ \\
+Nivell de confiança & $95\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Exemples}
+
+\begin{exemple}[llegir la fitxa element a element]
+De la fitxa anterior en llegim: l'estudi vol conèixer els \textbf{majors de 18 anys} del
+municipi (població); ha enquestat \textbf{800} persones (mostra) triades \textbf{a l'atzar}
+per telèfon (mètode raonable, arriba a fix i mòbil); el treball de camp és de \textbf{març
+de 2027} (cal comprovar que no hagi quedat desfasat); i té un \textbf{marge de $\pm 3,5\%$}
+amb \textbf{confiança del $95\%$}. En conjunt, sembla una enquesta \textbf{fiable}.
+\end{exemple}
+
+\begin{exemple}[una fitxa que aixeca sospites]
+Una altra fitxa diu: mostra de \textbf{80} persones, selecció «\textbf{voluntària per web}»,
+sense marge d'error. Aquí hi ha diverses \textbf{alertes}: mostra petita, selecció
+\textbf{autoseleccionada} (biaix), i cap marge d'error (no expressa la incertesa). Els seus
+resultats s'han de prendre amb molta cautela.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[valorar la fiabilitat d'una fitxa]
+Una fitxa indica: població «usuaris d'un servei», mostra $500$, selecció aleatòria, marge
+$\pm 4\%$, confiança $95\%$. Valora'n la fiabilitat.
+\solucio
+Sembla \textbf{fiable}: la selecció és \textbf{aleatòria} (evita biaix), la mostra és
+raonable ($500$) i expressa la incertesa amb un marge ($\pm 4\%$) i un nivell de confiança
+($95\%$). Caldria conèixer les dates del treball de camp per assegurar que no està
+desfasada.
+\resposta{Fiable; convindria comprovar-ne les dates.}
+\end{exresolt}
+
+\begin{exresolt}[detectar la feblesa]
+Una fitxa diu: mostra de $120$ persones recollida «\textbf{a la sortida d'un acte del
+servei}». Quina feblesa hi detectes?
+\solucio
+La selecció no és aleatòria: s'enquesta només qui assisteix a un acte del servei (perfil ja
+implicat i satisfet). És un \textbf{biaix de selecció} que sobreestimaria la valoració
+positiva. A més, la mostra és petita. Els resultats no es poden generalitzar a tots els
+usuaris.
+\resposta{Biaix de selecció (només assistents) i mostra petita.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Enumera els cinc elements que cal mirar sempre en una fitxa tècnica.
+  \item Una fitxa indica mostra $1\,000$, selecció aleatòria, marge $\pm 3\%$, confiança
+        $95\%$, treball de camp fa tres setmanes. Sembla fiable? Per què?
+  \item Una fitxa no indica el marge d'error ni el mètode de selecció. Quina actitud has de
+        tenir davant dels seus resultats?
+  \item Per què les dates del treball de camp són importants? Posa un exemple de resultat
+        que pugui quedar desfasat.
+  \item \textbf{(Comparació)} Dues enquestes mesuren el mateix: una amb $n=1\,200$
+        aleatòria i marge $\pm 3\%$; l'altra amb $n=150$ voluntària i sense marge. De
+        quina et fies més i per què?
+  \item \textbf{(Llista de comprovacions)} Escriu la teva pròpia llista de comprovacions
+        (les preguntes que faràs sempre) abans de fer cas d'una enquesta.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item Població estudiada; mida de la mostra; mètode de selecció; dates del treball de
+        camp; marge d'error i nivell de confiança.
+  \item Sí, sembla fiable: mostra gran ($1\,000$), selecció aleatòria, marge petit
+        ($\pm 3\%$), confiança $95\%$ i dades recents. Compleix tots els criteris clau.
+  \item Molta cautela: sense marge d'error no expressa la incertesa i sense el mètode de
+        selecció no es pot saber si la mostra és representativa; els resultats no són
+        fiables tal com es presenten.
+  \item Resposta oberta. Idea: una enquesta reflecteix la situació del moment en què es va
+        fer; per exemple, una enquesta d'opinió sobre un servei feta abans d'un canvi
+        important pot no reflectir l'opinió actual.
+  \item De la de $n=1\,200$ aleatòria: mostra gran, selecció a l'atzar i marge conegut. La
+        de $150$ voluntària té biaix d'autoselecció i no expressa la incertesa.
+  \item Resposta oberta. Ha d'incloure preguntes com: qui és la població?, quants han
+        respost?, com s'han triat (a l'atzar?)?, quin marge d'error i confiança té?, quan
+        es va fer?
+\end{sollist}
+\end{solucions}

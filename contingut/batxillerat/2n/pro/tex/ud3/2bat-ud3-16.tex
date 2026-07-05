@@ -1,0 +1,125 @@
+% =====================================================================
+%  2bat-ud3-16.tex  —  SESSIÓ 16: Prova escrita de la Unitat 3
+%  Estructura: enunciat de la prova + \newpage + solucionari per al docent.
+% =====================================================================
+\horatitol{Sessió 16 — Prova escrita de la Unitat 3}%
+{Prova individual: quatre blocs alineats amb els criteris C1–C4. El solucionari per al professorat és a la pàgina següent, separat.}
+
+% --- Capçalera de la prova (dades de l'alumne) -----------------------
+\begin{tcolorbox}[colback=white, colframe=udnavy, boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Prova · Unitat 3 — Límits i continuïtat: tendències i llindars}\\[4pt]
+Nom i cognoms: \rule{6.5cm}{0.4pt} \quad Grup: \rule{1.6cm}{0.4pt} \quad Data: \rule{2.2cm}{0.4pt}\\[6pt]
+\small Temps: $50$ minuts. Es valora el \textbf{resultat}, però també la
+\textbf{interpretació} dins del context social, la \textbf{lectura gràfica}, la
+\textbf{comprovació acurada} de la continuïtat i la coherència de la \textbf{lectura
+global} d'un model. Calculadora i regle permesos. Mostra tots els càlculs.
+\end{tcolorbox}
+
+\vspace{0.4em}
+
+% =====================================================================
+\subsection*{Bloc 1 (C1) — Límit a l'infinit \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 1 (C1) — Límit a l'infinit}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt]
+  \item L'ocupació d'un servei (places el mes $x$) és $f(x)=600-\dfrac{900}{x}$.
+        Fes una taula amb $x=10,100,1000$, estima $\displaystyle\lim_{x\to\infty}f(x)$
+        i \textbf{interpreta} el resultat.
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 2 (C2) — Asímptotes \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 2 (C2) — Asímptotes}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=2]
+  \item Per a $f(x)=\dfrac{40}{x}$ (ajut per beneficiari d'un fons, segons el nombre de
+        beneficiaris $x$), digues l'asímptota \textbf{horitzontal} i la \textbf{vertical}
+        i \textbf{interpreta} cadascuna en el context.
+  \item Una funció d'ocupació té asímptota horitzontal $y=350$. Què representa aquest
+        valor per al servei?
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 3 (C3) — Continuïtat d'una prestació \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 3 (C3) — Continuïtat}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=4]
+  \item Una prestació segons els ingressos $x$ és
+        \[
+        A(x)=
+        \begin{cases}
+        400 & \text{si } x<\num{1000},\\[2pt]
+        400-0,4\,(x-\num{1000}) & \text{si } x\ge \num{1000}.
+        \end{cases}
+        \]
+        Comprova si és \textbf{contínua} a $x=\num{1000}$ i \textbf{interpreta} què
+        significa, per a les persones, que ho sigui (o que no ho sigui).
+  \item Una altra prestació és
+        $B(x)=\begin{cases}300 & x<\num{1500}\\ 0 & x\ge\num{1500}\end{cases}$.
+        És contínua a $x=\num{1500}$? Quina és la mida del salt i què hi perd qui passa
+        de $\num{1499}\eur$ a $\num{1500}\eur$?
+\end{enumerate}
+
+% =====================================================================
+\subsection*{Bloc 4 (C4) — Lectura global d'un model \hfill \normalfont\itshape ($\sim 25\%$)}
+\addcontentsline{toc}{subsection}{Bloc 4 (C4) — Lectura global}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em, itemsep=7pt, start=6]
+  \item Un model d'ocupació creix els primers mesos, s'acosta a una asímptota $y=300$ i
+        al mes $12$ fa un \textbf{salt cap avall} fins a $180$. Descriu el
+        \textbf{comportament global} del model (on creix, cap a on tendeix, on té el
+        salt) i \textbf{interpreta} socialment què passa al mes $12$.
+\end{enumerate}
+
+% =====================================================================
+\newpage
+% =====================================================================
+\fullsolucions{Prova UD3 — per al professorat}
+\begin{solucions}
+
+\noindent\textbf{Bloc 1 (C1)}
+\begin{sollist}
+  \item $f(10)=510$, $f(100)=591$, $f(1000)=599,1$: s'acosta a $600$. Per tant
+        $\lim_{x\to\infty}f(x)=600$. \textbf{Interpretació:} el servei s'estabilitza en
+        $600$ places (la seva capacitat); l'ocupació creix cap a aquest sostre sense
+        superar-lo.
+\end{sollist}
+
+\noindent\textbf{Bloc 2 (C2)}
+\begin{sollist}\setcounter{enumi}{1}
+  \item Asímptota \textbf{horitzontal} $y=0$: amb molts beneficiaris l'ajut per
+        beneficiari tendeix a $0$ (es dilueix). Asímptota \textbf{vertical} $x=0$: amb
+        gairebé cap beneficiari l'ajut es dispara, situació impossible en el context.
+  \item Representa el \textbf{sostre de saturació}: el servei s'estabilitza en $350$
+        (la seva capacitat), valor que no superarà.
+\end{sollist}
+
+\noindent\textbf{Bloc 3 (C3)}
+\begin{sollist}\setcounter{enumi}{3}
+  \item A $x=\num{1000}$: esquerre $400$; dret $400-0,4\cdot 0=400$. \textbf{Coincideixen}:
+        la prestació és \textbf{contínua}. \textbf{Interpretació:} l'ajut comença a
+        baixar de manera \emph{gradual} a partir de $\num{1000}\eur$, sense salts; és un
+        disseny just, perquè guanyar una mica més no fa perdre l'ajut de cop.
+  \item A $x=\num{1500}$: esquerre $300$; dret $0$. \textbf{No coincideixen}:
+        \textbf{discontínua}, salt de mida $300$. Qui passa de $\num{1499}$ a
+        $\num{1500}\eur$ perd \textbf{tot} l'ajut ($300\eur$) de cop (efecte esglaó).
+\end{sollist}
+
+\noindent\textbf{Bloc 4 (C4)}
+\begin{sollist}\setcounter{enumi}{5}
+  \item El model \textbf{creix} els primers mesos i s'\textbf{estabilitza} acostant-se a
+        $300$ (asímptota horitzontal: la capacitat del servei). Al mes $12$ hi ha un
+        \textbf{salt cap avall} (discontinuïtat) fins a $180$, i a partir d'aleshores es
+        manté en $180$. \textbf{Interpretació social:} al mes $12$ el servei perd de cop
+        unes $120$ places (per exemple, per una retallada o un canvi normatiu), de
+        manera que molta gent es queda sense atenció bruscament.
+\end{sollist}
+
+\end{solucions}
+
+\noindent\small\textit{Orientació de qualificació (rúbrica): Bloc 1 $\sim 25\%$,
+Bloc 2 $\sim 25\%$, Bloc 3 $\sim 25\%$, Bloc 4 $\sim 25\%$. A cada bloc es valora el
+procediment o la lectura correcta, la comprovació acurada (continuïtat) i, sobretot, la
+interpretació dins del context social. Llindar de superació: $4,0/10$; en cas contrari,
+recuperació trimestral.}
