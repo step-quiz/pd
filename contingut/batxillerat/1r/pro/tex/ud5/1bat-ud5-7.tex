@@ -1,0 +1,148 @@
+% =====================================================================
+%  1bat-ud5-7.tex  —  SESSIÓ 7: La fórmula de l'interès compost
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 7 — La fórmula de l'interès compost}%
+{De l'índex de variació a la potència: si cada període el capital es multiplica per (1+r), aplicar-lo t períodes és elevar el factor a t.}
+
+\subsection{Idea clau}
+
+A la sessió 6 vam distingir interès simple i compost. Avui formalitzem el
+\textbf{compost}, el que de debò mou els estalvis i els deutes, connectant-lo amb una
+idea que ja coneixem: l'\textbf{índex de variació}. Si cada any el capital es
+multiplica per $(1+r)$, aplicar-ho diversos anys vol dir \textbf{elevar} aquest factor
+a una potència.
+
+\begin{idea}
+\textbf{La fórmula de l'interès compost}
+\[
+\boxed{\,C_f = C_0\per (1+r)^{t}\,}
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $C_0$ — \textbf{capital inicial} (els diners de partida).
+  \item $r$ — \textbf{tipus d'interès per període}, com a factor ($5\%\rightarrow r=0,05$).
+  \item $t$ — \textbf{nombre de períodes} (l'exponent).
+  \item $C_f$ — \textbf{capital final}.
+\end{itemize}
+\textbf{La idea clau:} cada període multipliquem per $(1+r)$; fer-ho $t$ vegades és
+$(1+r)^t$. Per això l'efecte \textbf{es dispara} com més gran és $t$: és la potència
+treballant a favor (estalvi) o en contra (deute).
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[l'estalvi que creix]
+Ingressem $\num{1000}\eur$ al $3\%$ compost anual. Cada any es multiplica per $1,03$:
+\[
+\begin{aligned}
+\text{any 1: } &\num{1000}\per 1,03=\num{1030}\eur,\\
+\text{any 2: } &\num{1030}\per 1,03=\num{1060,9}\eur \;=\;\num{1000}\per 1,03^2,\\
+\text{any 3: } &\num{1000}\per 1,03^3\approx\num{1092,73}\eur.
+\end{aligned}
+\]
+Fixa't: al $2$n any l'interès ja no és $\num{30}\eur$ sinó $\num{30,9}\eur$, perquè
+els $\num{30}\eur$ del primer any \textbf{també generen interès}. Amb interès simple
+tindríem només $\num{1090}\eur$ als $3$ anys; amb compost, $\num{1092,73}\eur$.
+\end{exemple}
+
+\begin{exemple}[el deute que s'infla]
+El mateix mecanisme, en contra. Un deute de $\num{300}\eur$ a un crèdit ràpid del
+$10\%$ \textbf{mensual} compost, si no es paga:
+\[
+\begin{aligned}
+\text{mes 3: } &\num{300}\per 1,10^3\approx\num{399,3}\eur,\\
+\text{mes 6: } &\num{300}\per 1,10^6\approx\num{531,47}\eur,\\
+\text{mes 12: } &\num{300}\per 1,10^{12}\approx\num{941,53}\eur.
+\end{aligned}
+\]
+En un any, el deute s'ha \textbf{triplicat} llarg (de $\num{300}$ a gairebé
+$\num{942}\eur$). Aquesta és \textbf{l'espiral} del crèdit abusiu: la mateixa potència
+que fa créixer un estalvi modest fa créixer un deute fins a fer-lo impagable.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[capital final amb interès compost]
+Quant hi haurà al cap de $4$ anys si ingressem $\num{2000}\eur$ al $5\%$ compost anual?
+\solucio
+Apliquem la fórmula amb $C_0=\num{2000}$, $r=0,05$, $t=4$:
+\[
+C_f=\num{2000}\per (1,05)^4=\num{2000}\per 1,21550625\approx\num{2431,01}\eur.
+\]
+\textbf{Interpretació:} els interessos generats han estat uns $\num{431}\eur$, més que
+els $\num{400}\eur$ que donaria l'interès simple ($4\per 0,05\per\num{2000}$), gràcies
+a l'efecte compost.
+\resposta{$C_f\approx\num{2431,01}\eur$.}
+\end{exresolt}
+
+\begin{exresolt}[comparar simple i compost]
+Una família deu $\num{1000}\eur$ al $4\%$ anual durant $3$ anys. Quant deurà amb
+interès \textbf{simple} i quant amb \textbf{compost}?
+\solucio
+\textbf{Simple:} interès anual $0,04\per\num{1000}=\num{40}\eur$; en $3$ anys
+$\num{120}\eur$; deute final $\num{1120}\eur$.
+
+\textbf{Compost:} $C_f=\num{1000}\per (1,04)^3=\num{1000}\per 1,124864\approx\num{1124,86}\eur$.
+
+La diferència ($\num{1124,86}-\num{1120}=\num{4,86}\eur$) encara és petita en $3$ anys,
+però creix molt de pressa com més llarg és el termini i més alt el tipus.
+\resposta{Simple: $\num{1120}\eur$. Compost: $\approx\num{1124,86}\eur$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Usa la fórmula $C_f=C_0\per (1+r)^t$. Pots usar la calculadora per a
+les potències.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula el capital final amb interès compost:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $\num{500}\eur$ al $2\%$ anual durant $3$ anys;
+      \item $\num{1500}\eur$ al $3\%$ anual durant $5$ anys.
+    \end{enumerate}
+  \item Un estalvi de $\num{1000}\eur$ al $4\%$ compost anual. Quant hi haurà al cap de
+        $1$, $2$ i $10$ anys? Observa com creix la diferència.
+  \item Un deute de $\num{500}\eur$ al $8\%$ compost anual que no es paga. Quant es
+        deurà al cap de $5$ anys?
+  \item \textbf{(Comparació)} Sobre $\num{1000}\eur$ al $5\%$ durant $3$ anys, calcula
+        el capital final amb interès \textbf{simple} i amb \textbf{compost}. Quina és
+        la diferència?
+  \item \textbf{(Interpretació)} En la fórmula $C_f=C_0(1+r)^t$, què passa amb el
+        capital final si dupliquem el temps $t$? I si dupliquem el tipus $r$? Per què el
+        temps té un efecte tan fort (pensa que és l'exponent)?
+  \item \textbf{(Raonament)} Una persona et diu: «el banc m'ofereix un $2\%$ pels meus
+        estalvis, però el crèdit ràpid em cobra un $10\%$ mensual; total, són
+        percentatges petits». Explica-li, amb el que saps de l'interès compost, per què
+        aquesta comparació és molt enganyosa.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 7}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $\num{500}\per (1,02)^3\approx\num{500}\per 1,061208=\num{530,60}\eur$.
+        \quad (b) $\num{1500}\per (1,03)^5\approx\num{1500}\per 1,159274=\num{1738,91}\eur$.
+  \item Any $1$: $\num{1000}\per 1,04=\num{1040}\eur$. Any $2$:
+        $\num{1000}\per 1,04^2=\num{1081,6}\eur$. Any $10$:
+        $\num{1000}\per 1,04^{10}\approx\num{1480,24}\eur$. La diferència respecte de
+        l'interès simple ($\num{1400}\eur$ als $10$ anys) ja és notable: uns
+        $\num{80}\eur$ més pel compost.
+  \item $\num{500}\per (1,08)^5\approx\num{500}\per 1,469328=\num{734,66}\eur$.
+  \item Simple: $\num{1000}+3\per 0,05\per\num{1000}=\num{1150}\eur$. Compost:
+        $\num{1000}\per (1,05)^3\approx\num{1157,63}\eur$. Diferència:
+        $\num{1157,63}-\num{1150}=\num{7,63}\eur$.
+  \item Si dupliquem $t$, el capital final \emph{no} es duplica: es multiplica per
+        $(1+r)^t$ \textbf{una altra vegada}, és a dir, l'efecte és molt més que el
+        doble (creixement exponencial). Si dupliquem $r$, l'efecte també creix, però el
+        temps, com que és l'\textbf{exponent}, fa créixer el capital molt més de pressa
+        que un canvi equivalent en el tipus: per això el termini llarg és tan
+        determinant.
+  \item Resposta oberta. Idea: el $2\%$ del banc és \textbf{anual}, però el $10\%$ del
+        crèdit és \textbf{mensual} i, a més, \textbf{compost}: en un any el deute es
+        multiplica per $1,10^{12}\approx 3,14$, és a dir, creix més d'un $200\%$, mentre
+        que l'estalvi creix només un $2\%$. Comparar «$2\%$» amb «$10\%$» com si fossin
+        del mateix tipus amaga que un és anual i petit i l'altre, mensual i devastador.
+\end{sollist}
+\end{solucions}

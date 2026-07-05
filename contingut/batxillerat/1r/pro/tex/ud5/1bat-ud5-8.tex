@@ -1,0 +1,132 @@
+% =====================================================================
+%  1bat-ud5-8.tex  —  SESSIÓ 8: La trampa del microcrèdit (TIN, TAE i l'espiral)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 8 — La trampa del microcrèdit (TIN, TAE i l'espiral)}%
+{Un fullet real ofereix 500 € per a una despesa imprevista. Apliquem l'interès compost i veiem l'espiral; després, què és la TAE i per què la llei obliga a mostrar-la.}
+
+\subsection{Idea clau}
+
+Amb la fórmula de l'interès compost a la mà (sessió 7), avui l'apliquem a un cas que
+un tècnic de serveis a la comunitat trobarà sovint: una família vulnerable recorre a
+un \textbf{microcrèdit ràpid} (per exemple, $\num{500}\eur$ per a una despesa
+imprevista) amb una \textbf{TAE altíssima} amagada en la lletra petita. Calcularem
+l'espiral del deute i entendrem per què la \textbf{TAE} és l'única xifra que diu el
+cost real.
+
+\begin{idea}
+\textbf{TIN i TAE}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{TIN} (tipus d'interès nominal): el percentatge «de cara», sovint
+        presentat per període (mensual) perquè sembli petit. \emph{No} inclou
+        comissions ni la freqüència amb què es capitalitza.
+  \item \textbf{TAE} (taxa anual equivalent): el cost \textbf{real anual} del crèdit,
+        que \textbf{sí} recull la capitalització i les comissions. És l'indicador que
+        permet comparar ofertes de manera justa.
+\end{itemize}
+\textbf{Per què la llei obliga a mostrar la TAE:} perquè un TIN mensual petit pot
+amagar una TAE devastadora. La TAE és l'única xifra honesta.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[l'espiral del microcrèdit]
+Un fullet ofereix $\num{500}\eur$ amb un TIN del $10\%$ \textbf{mensual} (compost). Si
+la família no pot pagar, el deute creix segons $C_f=\num{500}\per (1,10)^{t}$:
+\[
+\begin{aligned}
+\text{6 mesos: } &\num{500}\per 1,10^{6}\approx\num{885,78}\eur \;(\text{ja deu }\num{385,78}\eur\text{ d'interessos}),\\
+\text{12 mesos: } &\num{500}\per 1,10^{12}\approx\num{1569,21}\eur \;(\text{més de }\num{1069}\eur\text{ d'interessos}).
+\end{aligned}
+\]
+En un any, el deute s'ha \textbf{més que triplicat}. Aquesta és l'espiral: per
+$\num{500}\eur$ demanats, se'n deuen més de $\num{1569}\eur$.
+\end{exemple}
+
+\begin{exemple}[del TIN mensual a la TAE]
+Aquell $10\%$ mensual sembla poc al fullet, però quina és la \textbf{TAE}? Com que el
+deute es multiplica per $1,10$ cada mes, en un any es multiplica per $1,10^{12}$:
+\[
+\text{TAE}=(1,10)^{12}-1\approx 2,138=213,8\%.
+\]
+És a dir, un TIN del «$10\%$» (mensual) equival a una \textbf{TAE del $213,8\%$}
+anual. Per això mirar el TIN mensual enganya i cal mirar \emph{sempre} la TAE.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[calcular l'espiral d'un deute]
+Una persona demana $\num{300}\eur$ a un crèdit ràpid amb un TIN del $8\%$ mensual
+compost. Quant deurà al cap de $6$ mesos si no paga?
+\solucio
+Apliquem l'interès compost amb $C_0=\num{300}$, $r=0,08$, $t=6$:
+\[
+C_f=\num{300}\per (1,08)^{6}\approx\num{300}\per 1,586874=\num{476,06}\eur.
+\]
+Deurà uns $\num{476}\eur$: en mig any, gairebé $\num{176}\eur$ d'interessos sobre
+$\num{300}\eur$ demanats.
+\resposta{$\approx\num{476,06}\eur$ al cap de $6$ mesos.}
+\end{exresolt}
+
+\begin{exresolt}[del TIN mensual a la TAE]
+Un microcrèdit anuncia un TIN del $5\%$ mensual. Calcula'n la TAE i comenta-la.
+\solucio
+Si cada mes es multiplica per $1,05$, en $12$ mesos es multiplica per $1,05^{12}$:
+\[
+\text{TAE}=(1,05)^{12}-1\approx 1,7959-1=0,7959=79,6\%.
+\]
+Un «$5\%$» mensual és en realitat una \textbf{TAE del $79,6\%$}: el fullet presenta el
+número petit (mensual) per amagar el cost real anual, que és altíssim.
+\resposta{TAE $\approx 79,6\%$ (un TIN del $5\%$ mensual amaga aquest cost anual).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Un microcrèdit presta $\num{400}\eur$ amb un TIN del $9\%$ mensual compost.
+        Quant es deurà al cap de $6$ mesos? I al cap d'$1$ any?
+  \item Calcula la \textbf{TAE} corresponent a cada TIN mensual:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $3\%$ mensual;
+      \item $6\%$ mensual.
+    \end{enumerate}
+  \item Una família deu $\num{600}\eur$ al $7\%$ mensual compost i no pot pagar durant
+        $8$ mesos. Quant deurà? Quants interessos són sobre el capital demanat?
+  \item \textbf{(Comparació)} Una oferta diu «TIN $2\%$ mensual» i una altra «TAE
+        $25\%$ anual». Calcula la TAE de la primera i digues quina és més cara.
+  \item \textbf{(Interpretació)} Per què els fullets de crèdit ràpid acostumen a
+        destacar el TIN \textbf{mensual} en lletra gran i la TAE en lletra petita? Què
+        intenten que no calculis?
+  \item \textbf{(Raonament)} Com a futur tècnic de serveis a la comunitat, com
+        explicaries a una família que un crèdit amb un «$10\%$ mensual» és perillós?
+        Quines xifres concretes faries servir per fer-los-ho veure?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item $6$ mesos: $\num{400}\per (1,09)^{6}\approx\num{400}\per 1,677100=\num{670,84}\eur$.
+        $1$ any: $\num{400}\per (1,09)^{12}\approx\num{400}\per 2,812665=\num{1125,07}\eur$
+        (es deu gairebé el triple del demanat).
+  \item (a) $(1,03)^{12}-1\approx 1,4258-1=0,4258=42,6\%$ de TAE. \quad
+        (b) $(1,06)^{12}-1\approx 2,0122-1=1,0122=101,2\%$ de TAE.
+  \item $\num{600}\per (1,07)^{8}\approx\num{600}\per 1,718186=\num{1030,91}\eur$. Són
+        uns $\num{430,91}\eur$ d'interessos sobre els $\num{600}\eur$ demanats (un
+        $72\%$ del capital, en $8$ mesos).
+  \item Primera oferta: TAE $=(1,02)^{12}-1\approx 1,2682-1=0,2682=26,8\%$. La segona
+        té TAE $25\%$. La \textbf{primera} (TAE $26,8\%$) és una mica \textbf{més cara}
+        que la segona (TAE $25\%$), tot i que el seu TIN «$2\%$» semblava petit.
+  \item Resposta oberta. Idea: destaquen el TIN mensual perquè és un número petit i
+        atractiu, i amaguen la TAE perquè revela el cost real anual (sovint per damunt
+        del $100\%$). El que intenten és que no \textbf{anualitzis} el cost ni el
+        comparis amb altres ofertes per la TAE.
+  \item Resposta oberta. Idea esperada: faria veure que un $10\%$ mensual compost
+        significa multiplicar el deute per $1,10$ cada mes, és a dir una TAE
+        $=(1,10)^{12}-1\approx 213,8\%$; i mostraria amb números que $\num{500}\eur$ es
+        converteixen en més de $\num{1569}\eur$ en un any. Les xifres concretes (TAE i
+        total a retornar) són les que fan visible el perill.
+\end{sollist}
+\end{solucions}

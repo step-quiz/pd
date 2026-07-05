@@ -1,0 +1,167 @@
+% =====================================================================
+%  1bat-ud4-14.tex  —  SESSIÓ 14: Repàs global i síntesi (estacions)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 14 — Repàs global i síntesi (estacions)}%
+{Repàs actiu de tota la unitat per quatre estacions, una per bloc, i un mapa final que connecta cada eina amb la realitat social que descriu.}
+
+\subsection{Idea clau}
+
+Avui repassem \textbf{tota la unitat} de manera activa. Hi ha \textbf{quatre
+estacions}, una per cada bloc que hem treballat. Rotareu per totes amb temps
+controlat (uns $10$ minuts cada una), de manera que tornareu a tocar tots els
+continguts en contextos una mica diferents. Al final, construirem entre tots un
+\textbf{mapa de la unitat}.
+
+\begin{idea}
+\textbf{Les quatre estacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Paràmetres:} calcular mitjana, mediana i desviació típica d'un conjunt
+        i interpretar-ne la dispersió.
+  \item \textbf{Lectura de gràfics:} llegir una piràmide de població o un histograma i
+        treure'n una conclusió.
+  \item \textbf{Lectura crítica:} detectar el parany d'un titular o un gràfic
+        enganyós.
+  \item \textbf{Enquestes:} revisar o redactar una pregunta neutra i tabular un petit
+        conjunt de respostes.
+\end{enumerate}
+\textbf{Consell:} a cada estació, abans de calcular, pregunta't \emph{què} t'està
+demanant el bloc i \emph{quina} realitat social hi ha al darrere.
+\end{idea}
+
+\subsection{Les estacions}
+
+\begin{exemple}[Estació 1 — paràmetres]
+Un conjunt d'edats d'usuaris: $20$, $22$, $21$, $19$, $48$. Calcula la mitjana i la
+mediana, i digues quina representa millor el grup i per què.
+\end{exemple}
+
+\begin{exemple}[Estació 2 — lectura d'una piràmide]
+Mira aquesta piràmide de població. Identifica la franja més nombrosa (moda) i digues
+si el territori és jove o envellit.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10cm, height=5cm,
+    xbar, bar width=7pt, y=12pt,
+    xmin=-18, xmax=18,
+    xtick={-16,-8,0,8,16}, xticklabels={16,8,0,8,16},
+    xticklabel style={font=\scriptsize, color=udgrey},
+    xlabel={\small \% població \quad (homes $\leftarrow$ \ $\rightarrow$ dones)},
+    ytick={1,2,3,4,5,6},
+    yticklabels={0-14,15-29,30-44,45-64,65-79,80+},
+    yticklabel style={font=\scriptsize, color=udgrey},
+    tick style={udgrey}, axis line style={udgrey},
+    enlarge y limits=0.12,
+    legend style={font=\scriptsize, at={(0.5,-0.32)}, anchor=north, legend columns=2}]
+  \addplot[fill=udblue!55, draw=udnavy] coordinates {(-14,1) (-15,2) (-13,3) (-9,4) (-5,5) (-2,6)};
+  \addplot[fill=udblue!25, draw=udnavy] coordinates {(13,1) (14,2) (13,3) (9,4) (6,5) (3,6)};
+  \legend{homes, dones}
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Estació 2: una piràmide per llegir. Quina és la moda? Jove o envellida?}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[model de l'Estació 1: paràmetres]
+Per a les edats $20$, $22$, $21$, $19$, $48$, calcula la mitjana i la mediana i digues
+quina representa millor el grup.
+\solucio
+\textbf{Mitjana:}
+\[
+\overline{x}=\frac{20+22+21+19+48}{5}=\frac{130}{5}=26.
+\]
+\textbf{Mediana:} ordenem $19,20,\underline{21},22,48$; la central ($N=5$) és
+$\text{Me}=21$.
+
+El valor $48$ (segurament un educador) \textbf{estira la mitjana} fins a $26$, però la
+mediana ($21$) reflecteix molt millor un grup que és, de fet, de joves d'uns $20$
+anys.
+\resposta{$\overline{x}=26$, $\text{Me}=21$; la mediana representa millor el grup (el
+$48$ distorsiona la mitjana).}
+\end{exresolt}
+
+\begin{exresolt}[model de l'Estació 3: lectura crítica]
+Un titular diu: «la participació al casal ha crescut un $100\%$!». Quina pregunta
+clau faries abans de celebrar-ho?
+\solucio
+La pregunta clau és «\textbf{$100\%$ de què?}», és a dir, quina era la \textbf{base}.
+Un $100\%$ d'augment vol dir que s'ha \emph{doblat}: si abans hi havia $4$ infants,
+ara n'hi ha $8$ (un canvi petit en termes absoluts); si abans n'hi havia $200$, ara
+$400$ (un canvi enorme). Sense la base, el percentatge sol no diu la magnitud real.
+\resposta{Cal preguntar la base: «$100\%$ de què?». Doblar de $4$ a $8$ no és el
+mateix que de $200$ a $400$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Una tasca per estació. Rota i resol-les totes.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Estació 1)} Per a les hores de voluntariat $3$, $5$, $4$, $5$, $3$:
+        calcula la mitjana, la moda, la mediana i la desviació típica.
+  \item \textbf{(Estació 2)} De la piràmide de l'exemple de l'Estació 2: quina és la
+        franja moda? És un territori jove o envellit? Quins serveis hi prioritzaries?
+  \item \textbf{(Estació 3)} «El barri A té $40$ casos i el B, $20$: el A és el doble
+        de problemàtic.» Si A té $\num{8000}$ habitants i B en té $\num{2000}$, calcula
+        la taxa per mil de cadascun. Qui en té més, proporcionalment?
+  \item \textbf{(Estació 4)} Revisa aquesta pregunta i, si cal, fes-la neutra: «No
+        trobes que el casal hauria d'obrir més hores?». Després, tabula aquestes $10$
+        respostes a una pregunta de Sí/No: Sí, Sí, No, Sí, No, Sí, Sí, No, Sí, Sí.
+  \item \textbf{(Mapa de la unitat)} Completa, amb les teves paraules, la connexió de
+        cada eina amb la realitat social que descriu:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{4.8cm} p{7.8cm}}
+        \toprule
+        \textbf{Eina} & \textbf{Quina realitat social descriu / per a què serveix} \\
+        \midrule
+        Mitjana, mediana, moda & \rule{7.2cm}{0.4pt} \\
+        Desviació típica & \rule{7.2cm}{0.4pt} \\
+        Piràmide / histograma & \rule{7.2cm}{0.4pt} \\
+        Lectura crítica & \rule{7.2cm}{0.4pt} \\
+        Enquesta i buidatge & \rule{7.2cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item \textbf{(Síntesi)} En una frase per bloc, resumeix què has après a la unitat:
+        descriure dades, visualitzar-les, llegir-les críticament i recollir-ne de
+        pròpies.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item Ordenat: $3,3,4,5,5$. Mitjana $\overline{x}=\dfrac{20}{5}=4$; moda bimodal
+        ($3$ i $5$); mediana (central) $\text{Me}=4$. Distàncies al quadrat respecte de
+        $4$: $1,1,0,1,1$, suma $4$; $\sigma^2=\dfrac{4}{5}=0,8$;
+        $\sigma=\sqrt{0,8}\approx 0,89$.
+  \item La moda és la franja \textbf{$15$–$29$ anys} i la base ($0$–$14$) és ampla: és
+        un territori \textbf{jove}. Hi prioritzaria llars d'infants i escoles, casals i
+        ocupació juvenil.
+  \item Taxa A: $\dfrac{40}{\num{8000}}\per\num{1000}=5$ per mil. Taxa B:
+        $\dfrac{20}{\num{2000}}\per\num{1000}=10$ per mil. \textbf{El barri B} en té
+        més, proporcionalment ($10$ contra $5$ per mil), al contrari del que deia el
+        titular.
+  \item La pregunta original és \textbf{esbiaixada} («No trobes que\dots»); neutra:
+        «Quantes hores creus que hauria d'obrir el casal?» o «Com valores l'horari
+        actual del casal?» (Insuficient / Adequat / Excessiu). Tabulació de les $10$
+        respostes: \textbf{Sí $=7$} ($70\%$), \textbf{No $=3$} ($30\%$).
+  \item Resposta oberta. Idees esperades: \emph{centralització} $\rightarrow$ resumir
+        un grup amb un valor representatiu; \emph{desviació típica} $\rightarrow$
+        mesurar la desigualtat/dispersió; \emph{piràmide/histograma} $\rightarrow$
+        veure la forma d'una població o distribució; \emph{lectura crítica}
+        $\rightarrow$ no deixar-se enganyar per dades mal presentades; \emph{enquesta i
+        buidatge} $\rightarrow$ recollir dades pròpies i convertir-les en informació.
+  \item Resposta oberta. Exemple: «He après a \emph{descriure} un grup amb paràmetres,
+        a \emph{visualitzar-lo} amb gràfics, a \emph{llegir} dades amb mirada crítica i
+        a \emph{recollir-ne} de pròpies amb una enquesta i el full de càlcul.»
+\end{sollist}
+\end{solucions}

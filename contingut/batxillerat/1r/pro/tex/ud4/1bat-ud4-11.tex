@@ -1,0 +1,150 @@
+% =====================================================================
+%  1bat-ud4-11.tex  —  SESSIÓ 11: Lectura crítica: la trampa dels percentatges
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 11 — Lectura crítica: la trampa dels percentatges}%
+{Caçar els paranys habituals dels titulars i gràfics: percentatges sense base, escales tramposes i comparacions injustes.}
+
+\subsection{Idea clau}
+
+A la sessió 9 vam aprendre a llegir un gràfic; a la 10, a interpretar-ne un de real.
+Avui afinem la \textbf{mirada crítica}: molts titulars i gràfics de premsa estan fets
+(a propòsit o no) per fer-nos pensar una cosa que les dades \emph{no} diuen. Un tècnic
+ha de saber detectar-ho abans de citar una xifra en una memòria.
+
+\begin{idea}
+\textbf{Els paranys més habituals}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Percentatge sense base:} «un $50\%$ més»\dots de què? Sobre quina
+        quantitat de partida?
+  \item \textbf{Eix que no comença a zero:} exagera una diferència petita (sessió 9).
+  \item \textbf{Comparar grups de mida molt diferent:} «$10$ casos aquí i $10$ allà»
+        no és igual si un grup és de $100$ i l'altre de $\num{10000}$.
+  \item \textbf{Sectors que no sumen $100\%$:} o categories que se solapen.
+  \item \textbf{Confondre correlació amb causa:} que dues coses pugin alhora no vol dir
+        que una causi l'altra.
+\end{enumerate}
+\textbf{La pregunta de sempre:} «percentatge \emph{de què}? comparat \emph{amb què}?»
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[«un 50\% més» sense base]
+Un titular diu: «\emph{les ajudes a entitats pugen un $50\%$}». Sona molt. Però
+$50\%$ \textbf{de què}? Si l'any passat una entitat va rebre $200\eur$ i ara en rep
+$300\eur$, sí, és un $50\%$ més\dots però són només $100\eur$ més. En canvi, «$50\%$»
+fa pensar en una pujada enorme. \textbf{Sense la base} (els $200\eur$ de partida), el
+percentatge sol no informa de la magnitud real.
+\end{exemple}
+
+\begin{exemple}[comparar grups de mida diferent]
+Un altre titular: «\emph{al barri A hi ha hagut $20$ casos i al barri B, només $10$:
+el barri A és el doble de perillós}». Però mirem la població: el barri A té
+$\num{10000}$ habitants i el B, només $\num{1000}$. Calculem la \textbf{taxa} (casos
+per cada $\num{1000}$ habitants):
+\[
+\text{Barri A: } \frac{20}{\num{10000}}\per\num{1000}=2 \ \text{casos per mil};\qquad
+\text{Barri B: } \frac{10}{\num{1000}}\per\num{1000}=10 \ \text{casos per mil}.
+\]
+En \textbf{proporció a la població}, el barri B en té \textbf{cinc vegades més}. El
+titular, que només mirava els números absoluts, enganyava: cal comparar
+\textbf{taxes}, no recomptes bruts, quan els grups tenen mides diferents.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[trobar la base que falta]
+Un cartell diu: «aquest casal ha reduït les llistes d'espera un $40\%$!». Quina
+informació necessites per saber si això és gaire o poc? Posa dos escenaris diferents.
+\solucio
+Necessites la \textbf{base}: \emph{quantes} persones hi havia a la llista d'espera
+abans.
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textbf{Escenari 1:} si hi havia $10$ persones, un $40\%$ són $4$ persones
+        menys (queden $6$). Una millora modesta.
+  \item \textbf{Escenari 2:} si hi havia $500$ persones, un $40\%$ són $200$ persones
+        menys (en queden $300$). Una millora important.
+\end{itemize}
+El mateix $40\%$ significa coses molt diferents segons la base.
+\resposta{Cal saber quantes persones hi havia abans; un $40\%$ poden ser $4$ persones
+o $200$ segons la base.}
+\end{exresolt}
+
+\begin{exresolt}[detectar la comparació injusta]
+«El programa X té un $90\%$ d'èxit i el programa Y, només un $70\%$: el X és millor.»
+Et diuen que el X s'ha provat amb $10$ persones i el Y amb $\num{2000}$. Què hi tens a
+dir?
+\solucio
+El percentatge d'èxit del programa X ($90\%$) surt de \textbf{només $10$ persones}: una
+o dues persones amunt o avall ja canvien molt el resultat (és poc fiable). El del
+programa Y ($70\%$) surt de \textbf{$\num{2000}$ persones}: és molt més \textbf{sòlid}.
+Comparar un $90\%$ sobre $10$ casos amb un $70\%$ sobre $\num{2000}$ \textbf{no és
+just}: amb tan poques dades, el $90\%$ del programa X pot ser casualitat.
+\resposta{No es poden comparar directament: el $90\%$ es basa en només $10$ casos
+(poc fiable) i el $70\%$ en $\num{2000}$ (molt més sòlid).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Un titular diu «les donacions han crescut un $25\%$». Si l'any passat es van
+        recollir $\num{8000}\eur$, quants euros són aquest $25\%$? Quant s'ha recollit
+        aquest any?
+  \item Al poble A hi ha hagut $30$ incidències amb $\num{6000}$ habitants; al poble B,
+        $12$ incidències amb $\num{1500}$ habitants. Calcula la \textbf{taxa per cada
+        $\num{1000}$ habitants} de cada poble. Quin en té, proporcionalment, més?
+  \item \textbf{(Caça l'error)} Un diagrama de sectors reparteix les respostes d'una
+        enquesta així: «Sí $60\%$, No $30\%$, No ho sé $20\%$». Què hi falla?
+  \item \textbf{(Interpretació)} «Des que el casal va obrir la sala d'estudi, han
+        baixat els suspensos al barri.» Per què no es pot afirmar que la sala
+        \emph{causa} la baixada? Quines altres explicacions hi podria haver?
+  \item \textbf{(Lectura crítica)} Un gràfic de barres compara dues entitats amb un
+        eix vertical que comença a $90$ (no a $0$): l'entitat A arriba a $95$ i la B a
+        $98$. Visualment, la barra de B sembla el doble. És certa aquesta sensació?
+        Per què?
+  \item \textbf{(Raonament)} Escriu la teva \textbf{llista personal de comprovacions}:
+        tres o quatre coses que miraràs sempre davant d'un percentatge o un gràfic
+        abans de creure-te'l.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{La meva llista de comprovacions} (per tenir sempre a mà):
+\begin{enumerate}[leftmargin=1.6em, itemsep=1pt]
+  \item Mirar la \textbf{font} i la \textbf{data} de les dades.
+  \item Mirar si l'\textbf{eix comença a zero}.
+  \item Preguntar «\textbf{percentatge de què}?» (buscar la base).
+  \item Comprovar si es \textbf{comparen grups de la mateixa mida} (taxes, no
+        recomptes bruts).
+\end{enumerate}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 11}
+\begin{solucions}
+\begin{sollist}
+  \item $25\%$ de $\num{8000}\eur$: $0,25\per\num{8000}=\num{2000}\eur$. Aquest any
+        s'han recollit $\num{8000}+\num{2000}=\num{10000}\eur$.
+  \item Poble A: $\dfrac{30}{\num{6000}}\per\num{1000}=5$ per mil. Poble B:
+        $\dfrac{12}{\num{1500}}\per\num{1000}=8$ per mil. \textbf{Proporcionalment, el
+        poble B en té més} ($8$ contra $5$ per cada mil habitants), tot i tenir menys
+        incidències en números absoluts.
+  \item Els percentatges \textbf{sumen $60+30+20=110\%$}, més de $100\%$: és
+        impossible en un repartiment de respostes úniques. Hi ha un error (o les
+        categories se solapen, o un número està malament).
+  \item Que dues coses passin \textbf{alhora} (obrir la sala i baixar els suspensos) no
+        vol dir que una \textbf{causi} l'altra: és \emph{correlació}, no
+        necessàriament \emph{causa}. Altres explicacions: un canvi de professorat, un
+        altre programa de reforç, una promoció d'alumnes diferent, etc. Caldria un
+        estudi més acurat per afirmar la causa.
+  \item \textbf{No}, la sensació és falsa. Amb l'eix començant a $90$, la diferència
+        real ($95$ contra $98$, només $3$ punts) ocupa molta alçada i sembla enorme. Si
+        l'eix comencés a $0$, les dues barres serien gairebé iguals. La diferència real
+        és petita.
+  \item Resposta oberta. Idees: font i data; si l'eix comença a zero; «percentatge de
+        què» (la base); si es comparen grups de la mateixa mida; si els sectors sumen
+        $100\%$; si es confon correlació amb causa.
+\end{sollist}
+\end{solucions}

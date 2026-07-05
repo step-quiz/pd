@@ -1,0 +1,121 @@
+% =====================================================================
+%  1bat-ud1-13.tex  —  HORA 13: Notació científica: ampliació i ordre de magnitud
+% =====================================================================
+\horatitol{Sessió 13 — Notació científica: ampliació i ordre de magnitud}%
+{Consolidar les operacions, comparar ordres de magnitud i detectar xifres mal dimensionades a titulars reals.}
+
+\subsection{Idea clau}
+
+Avui consolidem la notació científica i hi afegim una habilitat de \textbf{pensament
+crític}: saber, només mirant l'\textbf{exponent}, quina xifra és més gran, i detectar
+quan una xifra d'un titular \emph{no} té sentit. L'exponent governa l'\textbf{ordre
+de magnitud}.
+
+\begin{idea}
+\textbf{L'exponent mana.} Per comparar dues xifres en notació científica:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Primer es mira l'\textbf{exponent}: com més gran, més gran és el nombre.
+        $7\times 10^{5}$ és més gran que $9\times 10^{4}$, encara que $9>7$, perquè
+        $10^{5}>10^{4}$.
+  \item Només si els exponents són \textbf{iguals} es comparen les mantisses.
+\end{itemize}
+\textbf{Ordre de magnitud:} la potència de $10$ d'una xifra. Ens diu, d'un cop d'ull,
+de quina «mida» és (milers, milions, milers de milions\dots). És l'eina per detectar
+xifres absurdes en notícies i dades.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[qui és més gran?]
+Comparem $3\times 10^{6}$ i $\num{8000000}$. Escrivim la segona en notació
+científica: $\num{8000000}=8\times 10^{6}$. Tenen el \textbf{mateix exponent}
+($10^{6}$), així que comparem mantisses: $8>3$. Per tant $\num{8000000}$ és més gran.
+
+En canvi, $5\times 10^{7}$ és més gran que $9\times 10^{6}$ \emph{sense} mirar les
+mantisses: l'exponent $7>6$ ja ho decideix.
+\end{exemple}
+
+\begin{exemple}[detectar un titular sospitós]
+Un titular diu: «L'ajuntament destina $5\times 10^{9}\eur$ a beques de menjador».
+Per a un \emph{ajuntament}, $5\times 10^{9}=\num{5000000000}\eur$ (cinc mil milions)
+és un ordre de magnitud \textbf{sospitós}: és més que el pressupost de molts
+departaments sencers. Probablement la xifra real seria de l'ordre de
+$5\times 10^{6}\eur$ (cinc milions). L'exponent equivocat delata l'error.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[comparar per l'exponent]
+Ordena de menor a major: $4\times 10^{5}$, \ $9\times 10^{4}$, \ $2\times 10^{6}$.
+\solucio
+Mirem primer els exponents: $10^{4}<10^{5}<10^{6}$. Això ja ordena dos dels tres
+($9\times 10^{4}$ és el més petit, $2\times 10^{6}$ el més gran). El del mig és
+$4\times 10^{5}$. Per tant:
+\[
+9\times 10^{4} \;<\; 4\times 10^{5} \;<\; 2\times 10^{6}.
+\]
+\resposta{$9\times 10^{4} < 4\times 10^{5} < 2\times 10^{6}$.}
+\end{exresolt}
+
+\begin{exresolt}[despesa per habitant i sentit]
+Un municipi de $5\times 10^{4}$ habitants té un pressupost social de
+$2\times 10^{7}\eur$. Calcula la despesa per habitant i digues si té sentit.
+\solucio
+Dividim:
+\[
+\frac{2\times 10^{7}}{5\times 10^{4}}=\frac{2}{5}\times 10^{7-4}=0,4\times 10^{3}
+=4\times 10^{2}=400\eur.
+\]
+Són $400\eur$ per habitant: un ordre de magnitud \textbf{raonable} per a la despesa
+social anual d'un municipi.
+\resposta{$400\eur$ per habitant; sí, té sentit (ordre dels centenars).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Qui és més gran?)} Sense fer el càlcul exacte, digues quina xifra de
+        cada parella és més gran:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item $6\times 10^{5}$ \ o \ $9\times 10^{4}$
+          \item $3\times 10^{6}$ \ o \ $\num{2500000}$
+          \item $7\times 10^{3}$ \ o \ $7\times 10^{4}$
+        \end{enumerate}
+  \item Ordena de menor a major: $5\times 10^{3}$, \ $8\times 10^{2}$, \ $1\times 10^{4}$.
+  \item Un pressupost de $3\times 10^{8}\eur$ es reparteix entre $6\times 10^{5}$
+        persones. Calcula els euros per persona i digues si té sentit.
+  \item Una despesa de $250\eur$ per usuari es paga a $4\times 10^{4}$ usuaris. Escriu
+        $250$ en notació científica i calcula la despesa total.
+  \item \textbf{(Operacions encadenades)} Calcula
+        $\dfrac{(4\times 10^{6})\cdot(3\times 10^{2})}{6\times 10^{3}}$, reajustant el
+        resultat.
+  \item \textbf{(Pensament crític)} Per a cada titular, digues si la xifra és plausible
+        i justifica-ho amb una estimació ràpida de l'ordre de magnitud:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «Una família estalvia $3\times 10^{6}\eur$ l'any amb el bo social.»
+          \item «El país inverteix $4\times 10^{9}\eur$ en polítiques socials.»
+        \end{enumerate}
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $6\times 10^{5}$ (exponent més gran); \quad
+        (b) $3\times 10^{6}$ ($=\num{3000000}>\num{2500000}$); \quad
+        (c) $7\times 10^{4}$ (mateixa mantissa, exponent més gran).
+  \item $8\times 10^{2} < 5\times 10^{3} < 1\times 10^{4}$.
+  \item $\dfrac{3\times 10^{8}}{6\times 10^{5}}=0,5\times 10^{3}=5\times 10^{2}=500\eur$
+        per persona. Sí, té sentit (centenars d'euros).
+  \item $250=2,5\times 10^{2}$; total $=(2,5\times 10^{2})\cdot(4\times 10^{4})
+        =10\times 10^{6}=1\times 10^{7}\eur$ ($10$ milions).
+  \item Numerador: $(4\cdot 3)\times 10^{6+2}=12\times 10^{8}=1,2\times 10^{9}$.
+        Dividint: $\dfrac{1,2\times 10^{9}}{6\times 10^{3}}=0,2\times 10^{6}=2\times 10^{5}$.
+  \item (a) \textbf{No plausible}: $3\times 10^{6}=\num{3000000}\eur$ d'estalvi anual
+        per a una família és absurd (el bo social estalvia desenes o centenars d'euros).
+        (b) \textbf{Plausible}: $4\times 10^{9}\eur$ ($4$ mil milions) és un ordre de
+        magnitud creïble per a la inversió social d'un país.
+\end{sollist}
+\end{solucions}

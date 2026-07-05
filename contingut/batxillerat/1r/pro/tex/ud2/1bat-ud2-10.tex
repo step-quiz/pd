@@ -1,0 +1,158 @@
+% =====================================================================
+%  1bat-ud2-10.tex  —  HORA 10: Igualar a zero: equacions de primer grau
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 10 — Igualar a zero: equacions de primer grau}%
+{Resoldre equacions de primer grau i descobrir-hi una idea nova: l'arrel d'un polinomi.}
+
+\subsection{Idea clau}
+
+A les sessions anteriors hem après a operar amb polinomis (sumar-los, restar-los,
+multiplicar-los). Avui fem un pas més: ens preguntem per a quin valor de $x$ un
+polinomi val exactament $0$. Aquest valor especial s'anomena \textbf{arrel} del
+polinomi, i trobar-la és, en molts contextos socials, trobar el \textbf{llindar}
+a partir del qual una prestació, un ajut o un cost s'exhaureix.
+
+\begin{idea}
+\textbf{Arrel d'un polinomi de primer grau.}
+Donat $P(x)=ax+b$ (amb $a\neq 0$), l'arrel és el valor de $x$ que fa $P(x)=0$.
+Per trobar-la, \textbf{igualem el polinomi a zero i aïllem la $x$}:
+\[
+ax+b=0 \;\Longrightarrow\; ax=-b \;\Longrightarrow\; x=-\frac{b}{a}.
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Tot terme que canvia de costat del signe «$=$» canvia de signe.
+  \item En molts contextos socials, l'arrel és el \textbf{llindar d'exclusió}:
+        el punt a partir del qual una prestació deixa d'existir.
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[recordatori — equació de primer grau]
+Resolem l'equació $5x-7=2x+8$, aïllant la incògnita pas a pas:
+\begin{align*}
+5x-7&=2x+8\\
+5x-2x&=8+7 &&\text{(canviem de costat, canviant el signe)}\\
+3x&=15\\
+x&=5.
+\end{align*}
+Comprovació: $5\per 5-7=18$ i $2\per 5+8=18$. Coincideixen: la solució és correcta.
+\end{exemple}
+
+\begin{exemple}[el llindar d'exclusió d'una prestació]
+Una prestació es modelitza amb el polinomi $B(x)=-20x+600$, on $x$ són els
+ingressos mensuals de la persona, en milers d'euros. Volem saber per a quins
+ingressos la prestació val exactament $0$: igualem el polinomi a zero i resolem.
+\[
+-20x+600=0 \;\Longrightarrow\; -20x=-600 \;\Longrightarrow\; x=\frac{-600}{-20}=30.
+\]
+L'\textbf{arrel} és $x=30$ (milers d'euros). És el \textbf{llindar d'exclusió}:
+per sota d'aquests ingressos encara es té dret a la prestació; a partir
+d'aquest valor, la fórmula dona $0$ (o un valor negatiu, que cal interpretar
+com a «sense dret a prestació»).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[el punt d'equilibri d'una sortida]
+Una entitat organitza una sortida amb un cost fix de $240\eur$ (transport i
+entrades). Cada participant hi contribueix amb una quota de $8\eur$. El balanç
+net de la sortida es modelitza amb $N(x)=8x-240$, on $x$ és el nombre de
+participants. Troba per a quants participants el balanç s'anul·la (el «punt
+d'equilibri»: ni guany ni pèrdua).
+\solucio
+Igualem el polinomi a zero i aïllem $x$:
+\begin{align*}
+8x-240&=0\\
+8x&=240 &&\text{(passem el $-240$ a l'altre costat, canviant el signe)}\\
+x&=\frac{240}{8}=30.
+\end{align*}
+\resposta{Amb $30$ participants el balanç és exactament $0\eur$: la sortida es
+paga ella mateixa.}
+\end{exresolt}
+
+\begin{exresolt}[simplificar abans de trobar l'arrel]
+El tresorer d'una associació expressa el romanent (el que sobra o falta) d'un
+casal de joves amb $R(x)=2(3x-50)-(x-40)$, on $x$ és el nombre de socis.
+Simplifica primer el polinomi i, després, troba per a quants socis el romanent
+s'anul·la.
+\solucio
+Primer apliquem la distributiva i agrupem termes semblants (com a les
+sessions 6-9):
+\begin{align*}
+R(x)&=2(3x-50)-(x-40)\\
+&=6x-100-x+40 &&\text{(distributiva i canvi de signe del segon parèntesi)}\\
+&=5x-60.
+\end{align*}
+Ara igualem a zero i aïllem $x$:
+\begin{align*}
+5x-60&=0\\
+5x&=60\\
+x&=12.
+\end{align*}
+\resposta{Amb $12$ socis, el romanent és exactament $0\eur$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Troba l'arrel (resol $P(x)=0$) de cada polinomi:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $P(x)=6x-18$
+      \item $Q(x)=-5x+45$
+      \item $R(x)=7x-49$
+    \end{enumerate}
+
+  \item Simplifica primer el polinomi (agrupant termes semblants) i després
+        troba l'arrel:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $3x+4x-21=0$
+      \item $(5x-8)-(2x+7)=0$
+    \end{enumerate}
+
+  \item Un ajut per a activitats extraescolars es calcula amb
+        $A(x)=-8x+240$, on $x$ és la renda familiar mensual, en centenars
+        d'euros. Troba el llindar d'ingressos a partir del qual la família
+        ja no té dret a l'ajut.
+
+  \item Un servei de suport escolar té un cost net (cost menys subvenció)
+        de $D(x)=12x-360$, on $x$ és el nombre d'hores de servei
+        contractades. Troba per a quantes hores el cost net s'anul·la, i
+        interpreta què passa per sota i per sobre d'aquest valor.
+
+  \item \textbf{(Compte amb el signe)} Troba l'arrel del polinomi
+        $N(x)=-2(x-9)+3x$. Vés amb compte en expandir el parèntesi: el
+        signe «$-$» del davant afecta els \emph{dos} termes de dins.
+
+  \item \textbf{(Interpretació)} Dues entitats ofereixen ajuts decreixents
+        als seus socis en funció dels ingressos $x$ (en centenars d'euros):
+        l'entitat A amb $A(x)=-10x+300$ i l'entitat B amb
+        $B(x)=-15x+300$. Calcula el llindar d'exclusió de cada ajut i
+        explica, en una frase, quina entitat continua donant suport a
+        famílies amb ingressos més alts.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $x=3$ \quad (b) $x=9$ \quad (c) $x=7$
+  \item (a) $7x-21=0 \Rightarrow x=3$ \quad
+        (b) $3x-15=0 \Rightarrow x=5$
+  \item $A(x)=0$ per a $x=30$ (centenars d'euros), és a dir, $3.000\eur$
+        mensuals: a partir d'aquesta renda, la família ja no té dret a
+        l'ajut.
+  \item $D(x)=0$ per a $x=30$ hores: per sota de $30$ hores la subvenció
+        cobreix més que el cost (sobra import); per sobre, cal aportar la
+        diferència entre el cost i la subvenció.
+  \item $N(x)=-2x+18+3x=x+18$; l'arrel és $x=-18$ (cal distribuir bé el
+        signe: $-2(x-9)=-2x+18$).
+  \item Llindar de l'entitat A: $x=30$ ($3.000\eur$). Llindar de
+        l'entitat B: $x=20$ ($2.000\eur$). L'entitat A continua donant
+        suport fins a ingressos més alts, perquè el seu ajut decreix més
+        lentament.
+\end{sollist}
+\end{solucions}

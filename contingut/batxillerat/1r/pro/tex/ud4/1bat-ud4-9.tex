@@ -1,0 +1,166 @@
+% =====================================================================
+%  1bat-ud4-9.tex  —  SESSIÓ 9: Interpretar gràfics estadístics reals
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 9 — Interpretar gràfics estadístics reals}%
+{Llegir un gràfic amb mirada de tècnic: identificar eixos, escala, llegenda i font, i distingir què diu i què no diu.}
+
+\subsection{Idea clau}
+
+A la sessió 8 vam \emph{fabricar} gràfics a partir de dades. Ara aprenem a
+\textbf{llegir-los} críticament, abans d'enfrontar-nos a les piràmides de població de
+l'estudi de cas. Un tècnic de serveis a la comunitat llegeix contínuament gràfics en
+informes; ha de saber extreure'n la informació \textbf{i} adonar-se del que el gràfic
+\emph{no} explica.
+
+\begin{idea}
+\textbf{Anatomia d'un gràfic} — abans de treure'n cap conclusió, mira:
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Eixos:} què representa cada eix i en quines unitats.
+  \item \textbf{Escala:} \emph{comença a zero?} Si no, una diferència pot semblar més
+        gran del que és.
+  \item \textbf{Llegenda:} què vol dir cada color o categoria.
+  \item \textbf{Font i data:} d'on surten les dades i de quan són.
+\end{enumerate}
+\textbf{La pregunta clau:} «aquest gràfic em fa pensar una cosa; les dades realment ho
+diuen?»
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[llegir un diagrama de barres de despesa social]
+Un ajuntament reparteix la despesa social per àrees. El diagrama de barres mostra el
+percentatge de cada àrea:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10cm, height=5.6cm,
+    ybar, bar width=16pt,
+    ymajorgrids=true, axis lines=left,
+    enlarge x limits=0.18,
+    ylabel={\small \% de la despesa}, 
+    xlabel={\small àrea},
+    symbolic x coords={Gent gran, Infància, Habitatge, Altres},
+    xtick=data, xticklabel style={font=\scriptsize},
+    ymin=0, ymax=50, ytick={0,10,20,30,40,50},
+    nodes near coords, nodes near coords style={font=\scriptsize, color=udnavy},
+    every axis plot/.append style={fill=udblue!35, draw=udnavy, line width=0.6pt}]
+  \addplot coordinates {(Gent gran,45) (Infància,30) (Habitatge,15) (Altres,10)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Despesa social per àrea (\%). L'àrea de gent gran és la majoritària ($45\%$).}
+\end{center}
+
+\noindent\textbf{Què diu:} l'àrea més finançada és la de gent gran ($45\%$), seguida
+d'infància ($30\%$). \textbf{Què NO diu:} no diu \emph{quants euros} són (és un
+percentatge), ni si aquest repartiment és el més just; només com es reparteix el
+total.
+\end{exemple}
+
+\begin{exemple}[el parany de l'escala que no comença a zero]
+Aquest gràfic mostra l'evolució d'una taxa d'atur juvenil (\%). Fixa't que l'eix
+vertical \textbf{no comença a zero}, sinó a $28$:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10cm, height=5cm,
+    axis lines=left,
+    xlabel={\small any}, ylabel={\small taxa d'atur juvenil (\%)},
+    xmin=2020.5, xmax=2025.5, ymin=28, ymax=40,
+    xtick={2021,2022,2023,2024,2025}, ytick={28,30,32,34,36,38,40},
+    xticklabel style={font=\scriptsize, /pgf/number format/1000 sep={}},
+    yticklabel style={font=\scriptsize}]
+  \addplot[udblue, mark=*, mark size=1.6pt] coordinates {(2021,38) (2022,36) (2023,33) (2024,31) (2025,30)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Atur juvenil (\%). L'eix vertical comença a $28$: el descens sembla
+espectacular, però va de $38\%$ a $30\%$.}
+\end{center}
+
+\noindent Com que l'eix comença a $28$ i no a $0$, la baixada sembla \textbf{molt més
+dramàtica} del que és. La caiguda real és de $38\%$ a $30\%$ (vuit punts en quatre
+anys): important, però no «un desplomament». \textbf{Sempre mira on comença l'eix.}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[què diu i què no diu un sector]
+Un informe presenta un diagrama de sectors on el $60\%$ correspon a «dones» i el
+$40\%$ a «homes» entre les persones ateses per un servei. Algú conclou: «aquest servei
+discrimina els homes». Què en pots dir, com a tècnic?
+\solucio
+El gràfic \textbf{només diu} la \emph{proporció} de persones ateses per sexe: un
+$60\%$ de dones i un $40\%$ d'homes. \textbf{No diu} per què: pot ser que la
+necessitat sigui més alta entre les dones, que la població de referència ja sigui
+majoritàriament femenina, etc. Concloure que «discrimina» és anar \emph{molt} més
+enllà del que mostren les dades.
+\resposta{El sector mostra la proporció per sexe, però no n'explica la causa; no se'n
+pot deduir cap discriminació sense més informació.}
+\end{exresolt}
+
+\begin{exresolt}[comparar amb l'escala correcta]
+Del gràfic d'atur juvenil de l'exemple, respon: quina és la dada del $2021$ i la del
+$2025$? Quants punts ha baixat la taxa? Per què deies que el gràfic «exagera» la
+caiguda?
+\solucio
+\textbf{Dades:} el $2021$ la taxa era del $38\%$ i el $2025$, del $30\%$.
+
+\textbf{Baixada:} $38-30=8$ punts percentuals en quatre anys.
+
+\textbf{Per què exagera:} l'eix vertical comença a $28$ (no a $0$), de manera que la
+distància dibuixada entre $38$ i $30$ ocupa gairebé tota l'alçada del gràfic i
+\emph{sembla} una caiguda enorme. Si l'eix comencés a $0$, la mateixa baixada es
+veuria molt més moderada.
+\resposta{Del $38\%$ ($2021$) al $30\%$ ($2025$): $8$ punts. L'eix comença a $28$, i
+això fa que la caiguda sembli més gran del que és.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Mira el diagrama de barres de despesa social de l'exemple i respon: quina és
+        l'àrea \textbf{majoritària}? Quin percentatge representa? Quines dues àrees
+        sumades igualen la de gent gran?
+  \item Del mateix gràfic, si la despesa total fos d'$\num{1000000}\eur$, quants
+        euros correspondrien a l'àrea d'infància ($30\%$)?
+  \item Del gràfic d'atur juvenil, llegeix la taxa de cada any i digues si la
+        tendència és creixent o decreixent.
+  \item \textbf{(Interpretació)} En el gràfic d'atur, si l'eix vertical comencés a
+        $0$ en comptes de a $28$, com canviaria la \emph{sensació} que fa la mateixa
+        línia? Les dades serien diferents?
+  \item \textbf{(Lectura crítica)} Un titular diu: «la despesa en gent gran TRIPLICA
+        la d'habitatge». Mirant el gràfic de barres ($45\%$ contra $15\%$), és cert el
+        \emph{càlcul}? Però, què li falta a aquesta frase per ser justa (quants euros,
+        quanta població, etc.)?
+  \item \textbf{(Raonament)} Fes una llista de \textbf{tres preguntes} que sempre
+        faries davant d'un gràfic abans de creure-te'l (pensa en eixos, escala, font).
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 9}
+\begin{solucions}
+\begin{sollist}
+  \item L'àrea majoritària és \textbf{gent gran}, amb un $45\%$. Les àrees d'infància
+        ($30\%$) i habitatge ($15\%$) sumades fan $30+15=45\%$, igual que gent gran.
+  \item $30\%$ de $\num{1000000}\eur$: $0,30\per\num{1000000}=\num{300000}\eur$.
+  \item $2021$: $38\%$; $2022$: $36\%$; $2023$: $33\%$; $2024$: $31\%$; $2025$: $30\%$.
+        La tendència és \textbf{decreixent} (la taxa baixa any rere any).
+  \item Amb l'eix començant a $0$, la mateixa línia es veuria molt més \textbf{plana}
+        (la caiguda semblaria suau), perquè els $8$ punts ocuparien una part petita de
+        l'alçada. Les \textbf{dades serien exactament les mateixes}: només canvia la
+        \emph{sensació visual}, no els números.
+  \item El \textbf{càlcul} és correcte: $45$ és tres vegades $15$, per tant sí que la
+        «triplica» en percentatge. Però a la frase li falta context: són
+        \textbf{percentatges}, no euros; no diu quanta \textbf{població} hi ha a cada
+        àrea ni quines \textbf{necessitats}. «Triplicar» en proporció no vol dir que el
+        repartiment sigui injust.
+  \item Resposta oberta. Exemples: «L'eix vertical comença a zero?»; «D'on surten les
+        dades i de quan són?»; «Què representen exactament els eixos i en quines
+        unitats?» (també valen: «percentatge de què?», «es comparen grups de la mateixa
+        mida?»).
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,148 @@
+% =====================================================================
+%  1bat-ud6-1.tex  —  SESSIÓ 1: Què és la probabilitat? Atzar, certesa i risc
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 1 — Què és la probabilitat? Atzar, certesa i risc}%
+{Ordenem situacions quotidianes de la impossible a la segura i descobrim que la probabilitat és un número entre 0 i 1 que mesura la incertesa.}
+
+\subsection{Idea clau}
+
+Arrenca l'última unitat del curs, dedicada a una eina que fem servir cada dia sense
+adonar-nos: la \textbf{probabilitat}. Un tècnic de serveis a la comunitat ha de valorar
+\textbf{riscos} i \textbf{oportunitats} (quina probabilitat té un programa de funcionar,
+quin perfil està més exposat a una situació) i, sobretot, ha de llegir críticament les
+xifres de risc que circulen pertot. Avui, sense fórmules, fem emergir la idea: la
+probabilitat és una \textbf{mesura de la incertesa}.
+
+\begin{idea}
+\textbf{La probabilitat com a mesura de la incertesa}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Tota situació d'atzar es pot col·locar en una línia que va de la
+        \textbf{impossible} a la \textbf{segura}.
+  \item Hi assignem un \textbf{número entre $0$ i $1$}: \quad $0$ = impossible, \quad
+        $1$ = segur, \quad $0,5$ = tant sí com no.
+  \item En casos senzills i equiprobables, aquest número és
+        \[
+        \frac{\text{casos favorables}}{\text{casos possibles}}.
+        \]
+\end{itemize}
+\textbf{Tres llenguatges per al mateix número:} una probabilitat es pot dir en
+\textbf{fracció} ($\frac{1}{4}$), en \textbf{decimal} ($0,25$) i en \textbf{percentatge}
+($25\%$). Són la mateixa cosa.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[ordenar de la impossible a la segura]
+Col·loquem aquestes situacions a la línia de la probabilitat:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item «Que un dau tregui un nombre menor que $7$»: \textbf{segura} ($P=1$): sempre
+        passa.
+  \item «Que surti cara en llançar una moneda»: \textbf{tant sí com no} ($P=0,5$).
+  \item «Que un dau tregui un $6$»: \textbf{poc probable} ($P=\frac{1}{6}\approx 0,17$).
+  \item «Que un dau tregui un $7$»: \textbf{impossible} ($P=0$): mai no passa.
+\end{itemize}
+Ordenades de menys a més probable: el $7$ ($0$), el $6$ ($0,17$), la cara ($0,5$) i el
+«menor que $7$» ($1$). Tota la incertesa cap en el segment de $0$ a $1$.
+\end{exemple}
+
+\begin{exemple}[casos favorables sobre casos possibles]
+En llançar un dau, quina és la probabilitat que surti un nombre \textbf{parell}? Els
+casos \textbf{possibles} són $6$ (les cares $1,2,3,4,5,6$); els \textbf{favorables} (que
+siguin parells) són $3$ (el $2$, el $4$ i el $6$). Per tant:
+\[
+P(\text{parell})=\frac{3}{6}=\frac{1}{2}=0,5=50\%.
+\]
+La mateixa probabilitat, dita de tres maneres: $\frac{1}{2}$, $0,5$ i $50\%$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[situar i quantificar a ull]
+Ordena de menys a més probable i assigna a cadascuna un valor aproximat entre $0$ i $1$:
+(a) que en treure una carta d'una baralla de $48$ surti d'oros; (b) que demà el sol
+surti per l'est; (c) que en tirar un dau surti un nombre més gran que $4$.
+\solucio
+(b) És \textbf{segura}: $P=1$ (sempre passa).
+
+(c) «Més gran que $4$» són el $5$ i el $6$: $2$ casos de $6$, $P=\frac{2}{6}\approx 0,33$.
+
+(a) En una baralla de $48$ cartes hi ha $12$ d'oros (un pal de cada quatre): $P=\frac{12}{48}=\frac{1}{4}=0,25$.
+
+Ordenades de menys a més probable: (a) $0,25$, (c) $0,33$, (b) $1$.
+\resposta{(a) $0,25$; (c) $\approx 0,33$; (b) $1$. Ordre: a, c, b.}
+\end{exresolt}
+
+\begin{exresolt}[les tres formes d'una probabilitat]
+En una bossa hi ha $20$ boles: $5$ de vermelles i la resta de blanques. Quina és la
+probabilitat de treure'n una de vermella? Expressa-la en fracció, decimal i percentatge.
+\solucio
+Casos favorables: $5$ (les vermelles); casos possibles: $20$ (totes les boles).
+\[
+P(\text{vermella})=\frac{5}{20}=\frac{1}{4}=0,25=25\%.
+\]
+\resposta{$\frac{1}{4}=0,25=25\%$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Digues si cada situació és \textbf{impossible} ($P=0$), \textbf{segura} ($P=1$)
+        o \textbf{possible} (entre $0$ i $1$):
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item que en tirar un dau surti un $8$;
+      \item que en tirar un dau surti un nombre de l'$1$ al $6$;
+      \item que en treure una carta surti una figura.
+    \end{enumerate}
+  \item En tirar un dau, calcula la probabilitat (en fracció, decimal i percentatge) que
+        surti: (a) un $3$; (b) un nombre senar; (c) un nombre més gran que $2$.
+  \item En una bossa hi ha $10$ boles: $3$ de verdes, $2$ de grogues i $5$ de blaves.
+        Calcula la probabilitat de treure'n una de cada color i expressa-les en
+        percentatge.
+  \item Ordena de menys a més probable, assignant un valor aproximat: «que toqui la
+        grossa de Nadal amb un número», «que surti creu en una moneda», «que en tirar un
+        dau surti parell».
+  \item \textbf{(Interpretació)} Una probabilitat pot valer $1,3$? I $-0,2$? Explica per
+        què una probabilitat ha d'estar sempre entre $0$ i $1$.
+  \item \textbf{(Raonament)} Per què a un tècnic de serveis a la comunitat li és útil
+        pensar en termes de probabilitat? Posa un exemple de l'àmbit social on calgui
+        valorar «com de probable» és alguna cosa.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\begin{idea}
+\textbf{Fitxa de suport} (per tenir a mà durant la unitat):
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textbf{Cas possible:} cadascun dels resultats que poden passar.
+  \item \textbf{Cas favorable:} el resultat (o resultats) que ens interessa que passi.
+  \item \textbf{Probabilitat} (casos equiprobables) $=\dfrac{\text{favorables}}{\text{possibles}}$.
+  \item \textbf{De fracció a decimal:} divideix. \quad \textbf{De decimal a percentatge:}
+        multiplica per $100$.
+\end{itemize}
+\end{idea}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 1}
+\begin{solucions}
+\begin{sollist}
+  \item (a) \textbf{impossible} ($P=0$); (b) \textbf{segura} ($P=1$); (c)
+        \textbf{possible} (hi ha figures, però no totes les cartes ho són).
+  \item (a) $\frac{1}{6}\approx 0,17=16,7\%$; (b) senars $1,3,5$: $\frac{3}{6}=\frac{1}{2}=0,5=50\%$;
+        (c) més grans que $2$ són $3,4,5,6$: $\frac{4}{6}=\frac{2}{3}\approx 0,67=66,7\%$.
+  \item Verda $\frac{3}{10}=30\%$; groga $\frac{2}{10}=20\%$; blava $\frac{5}{10}=50\%$
+        (sumen $100\%$).
+  \item De menys a més probable: «que toqui la grossa» (probabilitat baixíssima,
+        gairebé $0$), «creu en una moneda» ($0,5$) i «parell en un dau» ($0,5$). Les
+        dues últimes són igual de probables ($0,5$ cadascuna).
+  \item No, una probabilitat \textbf{no} pot valer $1,3$ ni $-0,2$. Ha d'estar sempre
+        entre $0$ i $1$: $0$ vol dir que el succés és impossible i $1$ que és segur; no
+        té sentit «més segur que segur» (per damunt d'$1$) ni «menys que impossible»
+        (per sota de $0$).
+  \item Resposta oberta. Idea: pensar en probabilitats ajuda a valorar riscos i
+        oportunitats amb dades en comptes d'intuïcions. Exemple vàlid: estimar la
+        probabilitat que un usuari recaigui sense seguiment, o que un programa de
+        prevenció funcioni, per decidir on posar els recursos.
+\end{sollist}
+\end{solucions}

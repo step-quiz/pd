@@ -1,0 +1,167 @@
+% =====================================================================
+%  1bat-ud3-14.tex  —  HORA 14: Repàs global i síntesi (estacions)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 14 — Repàs global i síntesi (estacions)}%
+{Repàs actiu de tota la unitat per quatre estacions, una per bloc, i mapa final que connecta cada tipus de funció amb la realitat social que modelitza.}
+
+\subsection{Idea clau}
+
+Avui repassem \textbf{tota la unitat} de manera activa. Hi ha \textbf{quatre
+estacions}, una per cada bloc que hem treballat. Rotareu per totes amb temps
+controlat (uns $10$ minuts cada una), de manera que tornareu a tocar tots els
+continguts en contextos una mica diferents. Al final, construirem entre tots un
+\textbf{mapa de la unitat}.
+
+\begin{idea}
+\textbf{Les quatre estacions}
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Lectura de gràfiques:} domini, recorregut i punts de tall d'una
+        funció donada gràficament.
+  \item \textbf{Lineals i quadràtiques:} representar una recta o una paràbola i
+        localitzar-ne el vèrtex.
+  \item \textbf{Proporcionalitat inversa:} interpretar una hipèrbola d'un repartiment
+        de recursos i la seva asímptota.
+  \item \textbf{Funcions a trossos:} representar un tram fiscal o d'ajuts marcant els
+        punts oberts i tancats.
+\end{enumerate}
+\textbf{Consell:} a cada estació, abans de calcular, pregunta't \emph{quin tipus de
+funció} és i \emph{quina realitat} modelitza.
+\end{idea}
+
+\subsection{Les estacions}
+
+\begin{exemple}[Estació 1 — lectura de gràfiques]
+Mira la gràfica i determina: domini, recorregut, tall amb l'eix $Y$ i talls amb
+l'eix $X$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.4cm, height=4.6cm,
+    xlabel={\small $x$}, ylabel={\small $y$},
+    xmin=-1, xmax=7, ymin=-3, ymax=5,
+    xtick={0,2,4,6}, ytick={-2,0,2,4}]
+  \addplot[udblue, domain=0:6, samples=2]{-x+4};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(0,4) (4,0)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Estació 1: una recta definida entre $x=0$ i $x=6$.}
+\end{center}
+\end{exemple}
+
+\begin{exemple}[Estació 3 — proporcionalitat inversa]
+Un fons de $\num{60000}\eur$ es reparteix entre $x$ entitats: $f(x)=\dfrac{\num{60000}}{x}$.
+Interpreta la gràfica i digues cap a quin valor s'acosta quan $x$ creix molt.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=8.8cm, height=4.6cm,
+    xlabel={\small entitats ($x$)}, ylabel={\small \euro\ per entitat (milers)},
+    xmin=0, xmax=12, ymin=0, ymax=35,
+    xtick={0,2,4,6,8,10}, ytick={0,10,20,30}]
+  \addplot[udblue, domain=1.8:12, samples=100]{60/x};
+  \addplot[udgrey, dashed, domain=0:12, samples=2]{0};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Estació 3: hipèrbola d'un repartiment; s'acosta a l'asímptota $y=0$.}
+\end{center}
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[model de l'Estació 2: paràbola]
+Representa mentalment $f(x)=x^2-4x+3$ i troba: el tall amb $Y$, els talls amb $X$ i
+el vèrtex.
+\solucio
+\textbf{Tall amb $Y$} ($x=0$): $f(0)=3$, punt $(0,3)$.
+
+\textbf{Talls amb $X$} ($f(x)=0$): $x^2-4x+3=0 \Rightarrow (x-1)(x-3)=0
+\Rightarrow x=1,\ x=3$. Punts $(1,0)$ i $(3,0)$.
+
+\textbf{Vèrtex:} $x_V=\dfrac{-(-4)}{2\cdot 1}=2$, $f(2)=4-8+3=-1$. Vèrtex $(2,-1)$,
+mínim (s'obre cap amunt).
+\resposta{Tall $Y$: $(0,3)$; talls $X$: $(1,0)$ i $(3,0)$; vèrtex $(2,-1)$, mínim.}
+\end{exresolt}
+
+\begin{exresolt}[model de l'Estació 4: funció a trossos]
+Representa i interpreta un ajut definit a trossos:
+\[
+A(x)=
+\begin{cases}
+400 & \text{si } 0\le x<600,\\[2pt]
+250 & \text{si } 600\le x<1200,\\[2pt]
+0 & \text{si } x\ge 1200,
+\end{cases}
+\]
+on $x$ són els ingressos. Calcula $A(500)$, $A(600)$ i $A(1300)$, i digues on hi ha
+salts.
+\solucio
+Triem el tros segons on cau cada $x$:
+\[
+A(500)=400,\qquad A(600)=250,\qquad A(1300)=0.
+\]
+Hi ha \textbf{salts} a $x=600$ (de $400$ a $250$) i a $x=\num{1200}$ (de $250$ a $0$).
+A cada frontera, el punt de l'esquerra és obert i el de la dreta, tancat (segons les
+desigualtats).
+\resposta{$A(500)=400\eur$, $A(600)=250\eur$, $A(1300)=0\eur$; salts a $600$ i $\num{1200}$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Una tasca per estació. Rota i resol-les totes.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item \textbf{(Estació 1)} De la recta de l'exemple de l'Estació 1, escriu: domini
+        (recorda que està definida entre $x=0$ i $x=6$), recorregut, tall amb $Y$ i
+        tall amb $X$.
+  \item \textbf{(Estació 2)} Per a $f(x)=-x^2+2x+3$: tall amb $Y$, talls amb $X$ i
+        vèrtex. És màxim o mínim?
+  \item \textbf{(Estació 2)} Per a la recta $g(x)=2x-4$: pendent, terme independent i
+        els dos talls amb els eixos.
+  \item \textbf{(Estació 3)} Amb el fons $f(x)=\dfrac{\num{60000}}{x}$, calcula què rep
+        cada entitat si n'hi ha $4$, $10$ i $50$. Cap a quin valor tendeix l'ajut quan
+        el nombre d'entitats creix molt? Com es diu aquesta recta?
+  \item \textbf{(Estació 4)} Per a l'ajut $A(x)$ de l'exercici resolt, calcula
+        $A(1200)$ i $A(0)$, i digues si la funció és contínua o té salts.
+  \item \textbf{(Mapa de la unitat)} Completa, amb les teves paraules, la connexió de
+        cada tipus de funció amb la realitat que modelitza:
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{p{4.4cm} p{8.2cm}}
+        \toprule
+        \textbf{Tipus de funció} & \textbf{Quina realitat social modelitza} \\
+        \midrule
+        Lineal ($y=mx+n$) & \rule{7.6cm}{0.4pt} \\
+        Quadràtica (paràbola) & \rule{7.6cm}{0.4pt} \\
+        Prop. inversa (hipèrbola) & \rule{7.6cm}{0.4pt} \\
+        A trossos & \rule{7.6cm}{0.4pt} \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item Domini $[0,6]$ (la recta està definida en aquest interval); recorregut
+        $[-2,4]$ (de $f(6)=-2$ a $f(0)=4$); tall $Y$: $(0,4)$; tall $X$: $(4,0)$.
+  \item Tall $Y$: $(0,3)$. Talls $X$: $-x^2+2x+3=0 \Rightarrow x^2-2x-3=0
+        \Rightarrow (x-3)(x+1)=0 \Rightarrow x=3,\ x=-1$, punts $(3,0)$ i $(-1,0)$.
+        Vèrtex: $x_V=\dfrac{-2}{-2}=1$, $f(1)=-1+2+3=4$, vèrtex $(1,4)$, \textbf{màxim}.
+  \item Pendent $m=2$, terme independent $n=-4$; tall $Y$: $(0,-4)$; tall $X$: $(2,0)$.
+  \item $f(4)=\num{15000}\eur$, $f(10)=\num{6000}\eur$, $f(50)=\num{1200}\eur$.
+        L'ajut tendeix a $0$ (l'asímptota horitzontal $y=0$) quan creixen les entitats.
+  \item $A(\num{1200})=0$ (tros $x\ge\num{1200}$); $A(0)=400$ (tros $0\le x<600$). La
+        funció \textbf{té salts} (a $600$ i a $\num{1200}$): no és contínua.
+  \item Resposta oberta. Idees esperades: \emph{lineal} $\rightarrow$ tarifes amb quota
+        fixa i preu per unitat; \emph{quadràtica} $\rightarrow$ benefici amb un preu
+        òptim (vèrtex); \emph{prop. inversa} $\rightarrow$ repartiment d'un fons fix
+        entre més o menys persones; \emph{a trossos} $\rightarrow$ impostos o ajuts per
+        trams (i la qüestió de la continuïtat/justícia).
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,159 @@
+% =====================================================================
+%  1bat-ud2-6.tex  —  HORA 6: Sumar i restar pressupostos
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 6 — Sumar i restar pressupostos}%
+{Identificar termes semblants i operar amb polinomis: suma i resta, controlant
+el signe en cada pas.}
+
+\subsection{Idea clau}
+
+A la sessió anterior vam calcular valors numèrics. Avui combinem dos pressupostos
+expressats com a polinomis per obtenir-ne un de sol. La clau és que
+\textbf{només es poden ajuntar els termes del mateix tipus}: els termes en $x^2$
+amb els de $x^2$, els de $x$ amb els de $x$, i els nombres sols amb els nombres
+sols. Quan restem, el parany és oblidar de canviar \emph{tots} els signes del
+segon polinomi.
+
+\begin{idea}
+\textbf{Termes semblants:} dos termes són semblants si tenen la mateixa part
+literal (la mateixa lletra elevada al mateix grau).
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item $3x^2$ i $-5x^2$ són semblants; $3x^2$ i $3x$ \emph{no} ho són.
+\end{itemize}
+\textbf{Suma de polinomis:} s'agrupen i s'operen els termes semblants:
+\[
+(ax^2 + bx + c) + (dx^2 + ex + f) = (a+d)x^2 + (b+e)x + (c+f).
+\]
+\textbf{Resta de polinomis:} es canvien \emph{tots} els signes del segon polinomi
+i després es suma:
+\[
+(ax^2+bx+c)-(dx^2+ex+f) = ax^2+bx+c \mathbf{-}dx^2 \mathbf{-}ex \mathbf{-}f.
+\]
+\textbf{Compte amb el signe!} En la resta, el signe «$-$» davant del parèntesi
+afecta tots els termes de dins, no només el primer.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[combinar dos pressupostos parcials d'un servei]
+Un projecte d'atenció domiciliària té dos pressupostos en funció del nombre de
+persones ateses~$x$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Cost de personal: $P(x) = 20x + 800$ (en euros)
+  \item Cost de materials: $M(x) = 5x + 150$ (en euros)
+\end{itemize}
+El pressupost total és:
+\begin{align*}
+T(x) &= P(x) + M(x) \\
+     &= (20x + 800) + (5x + 150) \\
+     &= (20+5)x + (800+150) \\
+     &= 25x + 950.
+\end{align*}
+Interpretació: cada persona atesa costa $25\eur$ (sumant personal i materials)
+i hi ha un cost fix de $950\eur$.
+\end{exemple}
+
+\begin{exemple}[restar per trobar el cost addicional d'un nou servei]
+Una entitat ja gestiona un servei social amb cost $A(x) = 3x^2 + 50x + 400$ i
+n'obre un de nou amb cost $B(x) = x^2 + 30x + 200$. Quant costa \emph{més}
+el primer que el segon?
+\begin{align*}
+A(x) - B(x) &= (3x^2 + 50x + 400) - (x^2 + 30x + 200) \\
+             &= 3x^2 + 50x + 400 - x^2 - 30x - 200 \\
+             &= (3-1)x^2 + (50-30)x + (400-200) \\
+             &= 2x^2 + 20x + 200.
+\end{align*}
+Observació: en treure el parèntesi negatiu, \textbf{tots} els signes canvien:
+$-x^2$, $-30x$, $-200$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[pressupost total d'un programa social]
+Un programa de serveis comunitaris té un cost de coordinació
+$C(x) = 2x^2 + 100x + 500$ i un cost d'execució $E(x) = x^2 + 60x + 300$,
+on $x$ és el nombre de participants. Calcula el pressupost total $T(x) = C(x) + E(x)$.
+\solucio
+\begin{align*}
+T(x) &= (2x^2 + 100x + 500) + (x^2 + 60x + 300) \\
+     &= 2x^2 + x^2 + 100x + 60x + 500 + 300
+       &&\text{(agrupo per tipus)} \\
+     &= 3x^2 + 160x + 800.
+       &&\text{(sumo semblants)}
+\end{align*}
+\resposta{$T(x) = 3x^2 + 160x + 800\eur$}
+\end{exresolt}
+
+\begin{exresolt}[reducció de pressupost per retallada]
+Un casal de barri tenia un pressupost $P(x) = 4x^2 + 80x + \num{1200}$ i,
+a causa d'una retallada, el nou pressupost és $Q(x) = x^2 + 30x + 400$.
+Calcula la reducció $R(x) = P(x) - Q(x)$.
+\solucio
+\begin{align*}
+R(x) &= (4x^2 + 80x + \num{1200}) - (x^2 + 30x + 400) \\
+     &= 4x^2 + 80x + \num{1200} - x^2 - 30x - 400
+       &&\text{(canvio tots els signes del segon)} \\
+     &= (4-1)x^2 + (80-30)x + (\num{1200}-400) \\
+     &= 3x^2 + 50x + 800.
+\end{align*}
+\resposta{La reducció és $R(x) = 3x^2 + 50x + 800\eur$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula les sumes de polinomis següents:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $(3x + 7) + (5x + 2)$
+      \item $(x^2 + 4x - 1) + (2x^2 - x + 6)$
+    \end{enumerate}
+
+  \item Calcula les restes de polinomis següents:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $(8x + 15) - (3x + 9)$
+      \item $(4x^2 + 7x + 10) - (x^2 + 7x + 3)$
+    \end{enumerate}
+
+  \item Un ajuntament finança dos serveis d'atenció a persones grans:
+    \begin{itemize}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+      \item Teleassistència: $T(x) = 8x + 600$
+      \item Servei d'àpats: $S(x) = 12x + 400$
+    \end{itemize}
+    on $x$ és el nombre d'usuaris. Calcula el cost total $T(x)+S(x)$ i
+    interpreta el coeficient de $x$ i el terme independent del resultat.
+
+  \item Una entitat rep una subvenció de $G(x) = 2x^2 + 50x + \num{1000}$
+        i té uns costos de $D(x) = x^2 + 30x + 600$, on $x$ és el nombre
+        d'activitats. Calcula el romanent $G(x) - D(x)$ (el que sobra un cop
+        pagats els costos).
+
+  \item \textbf{(Compte amb el signe)} Calcula $(5x^2 - 3x + 8) - (5x^2 + 2x - 1)$.
+        Abans de resoldre-ho, encercla el signe de cadascun dels tres termes
+        del segon polinomi que \emph{canviaran} de signe en treure el parèntesi.
+
+  \item \textbf{(Raonament)} Dues entitats gestionen conjuntament un projecte.
+        La primera té el pressupost $A(x) = 3x^2 + 40x + 700$ i la segona
+        $B(x) = 3x^2 + 40x + 700$ (exactament el mateix). Sense fer cap càlcul,
+        digues quin és el resultat de $A(x) - B(x)$ i explica, en el context
+        dels pressupostos, \emph{per què} té sentit aquest resultat.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 6}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $8x+9$ \quad (b) $3x^2+3x+5$
+  \item (a) $5x+6$ \quad (b) $3x^2+7$
+  \item $T(x)+S(x) = 20x+\num{1000}$. El coeficient $20$ és el cost per usuari
+        addicional (suma de $8+12$); el terme $\num{1000}$ és el cost fix total
+        dels dos serveis.
+  \item $G(x)-D(x) = x^2+20x+400$
+  \item $(5x^2-3x+8)-(5x^2+2x-1) = 5x^2-3x+8-5x^2-2x+1 = -5x+9$
+  \item $A(x)-B(x)=0$. Dos pressupostos idèntics es cancel·len completament:
+        la diferència entre les despeses de les dues entitats és zero, cosa que
+        indica que contribueixen exactament el mateix al projecte.
+\end{sollist}
+\end{solucions}

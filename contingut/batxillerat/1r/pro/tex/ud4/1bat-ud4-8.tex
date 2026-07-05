@@ -1,0 +1,205 @@
+% =====================================================================
+%  1bat-ud4-8.tex  —  SESSIÓ 8: Agrupar dades en intervals i fer gràfics
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 8 — Agrupar dades en intervals i fer gràfics}%
+{De la llista a la taula de freqüències i al gràfic: agrupar en intervals, comptar i representar la forma de la distribució.}
+
+\subsection{Idea clau}
+
+A la sessió 1 ja vam sentir la necessitat d'\textbf{agrupar} dades quan n'hi ha
+moltes. Ara li posem mètode: convertim una llista llarga en una \textbf{taula de
+freqüències} per intervals i, a partir d'ella, fem un \textbf{histograma} o un
+\textbf{diagrama de sectors} que mostren «d'un cop d'ull» la forma de la distribució.
+
+\begin{idea}
+\textbf{De la llista al gràfic}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Intervals (o classes):} trams de la mateixa amplada (p.\,ex. de
+        $500$ en $500$). Ni massa pocs ni massa.
+  \item \textbf{Freqüència absoluta} $f_i$: quantes dades cauen a cada interval.
+  \item \textbf{Freqüència relativa:} $\dfrac{f_i}{N}$. El \textbf{percentatge} és
+        aquesta relativa $\per 100$.
+  \item \textbf{Histograma:} barres \emph{enganxades} (l'eix horitzontal és una
+        magnitud contínua: edat, ingressos\dots).
+  \item \textbf{Diagrama de sectors:} un cercle repartit; cada categoria ocupa
+        $\dfrac{f_i}{N}\per 360^\circ$.
+\end{itemize}
+\textbf{Les decisions són teves:} quants intervals i de quina amplada; i això
+\emph{canvia} com es llegeix el gràfic.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[de la llista a la taula de freqüències]
+Tenim els ingressos mensuals (€) de $40$ famílies d'un barri. Els agrupem en
+intervals de $500\eur$ i comptem quantes famílies cauen a cada tram:
+
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+\textbf{Ingressos (\euro)} & \textbf{Famílies} $f_i$ & \textbf{Relativa} $f_i/N$ & \textbf{\%} \\
+\midrule
+$[500,\ 1000)$ & $4$ & $0,10$ & $10\%$ \\
+$[1000,\ 1500)$ & $10$ & $0,25$ & $25\%$ \\
+$[1500,\ 2000)$ & $14$ & $0,35$ & $35\%$ \\
+$[2000,\ 2500)$ & $8$ & $0,20$ & $20\%$ \\
+$[2500,\ 3000)$ & $4$ & $0,10$ & $10\%$ \\
+\midrule
+\textbf{Total} & $40$ & $1,00$ & $100\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Comprovació:} les freqüències sumen $N=40$ i els percentatges sumen $100\%$.
+\end{exemple}
+
+\begin{exemple}[l'histograma de la taula]
+Amb la taula anterior dibuixem l'\textbf{histograma}: una barra per interval, amb
+l'alçada igual a la freqüència. Les barres van \emph{enganxades} perquè els
+ingressos són una magnitud contínua.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=10cm, height=6cm,
+    ybar interval, ymajorgrids=true, xmajorgrids=false,
+    xlabel={\small ingressos (\euro)}, ylabel={\small nombre de famílies},
+    xmin=500, xmax=3000, ymin=0, ymax=16,
+    xtick={500,1000,1500,2000,2500,3000},
+    ytick={0,4,8,12,16},
+    xticklabel style={font=\scriptsize, /pgf/number format/1000 sep={.}},
+    every axis plot/.append style={fill=udblue!30, draw=udnavy, line width=0.6pt}]
+  \addplot+[mark=none] coordinates {(500,4) (1000,10) (1500,14) (2000,8) (2500,4) (3000,0)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Histograma dels ingressos: la franja $[1500,2000)$ és la més nombrosa ($14$ famílies).}
+\end{center}
+
+\noindent La \textbf{forma} ens diu molt: les dades s'acumulen al centre (cap a
+$\num{1500}$–$\num{2000}\eur$) i baixen cap als extrems. És una distribució força
+\textbf{simètrica}.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[completar una taula de freqüències]
+En un casal s'ha anotat l'edat de $30$ usuaris, agrupada per franges. Completa les
+columnes que falten:
+
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+\textbf{Edat} & $f_i$ & \textbf{Relativa} & \textbf{\%} \\
+\midrule
+$[0,\ 12)$ & $12$ & ? & ? \\
+$[12,\ 18)$ & $9$ & ? & ? \\
+$[18,\ 65)$ & $6$ & ? & ? \\
+$[65,\ 100)$ & $3$ & ? & ? \\
+\bottomrule
+\end{tabular}
+\end{center}
+\solucio
+El total és $N=12+9+6+3=30$. La freqüència relativa és $f_i/30$ i el percentatge,
+$\times 100$:
+\[
+\frac{12}{30}=0,40\ (40\%),\quad
+\frac{9}{30}=0,30\ (30\%),\quad
+\frac{6}{30}=0,20\ (20\%),\quad
+\frac{3}{30}=0,10\ (10\%).
+\]
+\textbf{Comprovació:} $40+30+20+10=100\%$.
+\resposta{Relatives $0,40$; $0,30$; $0,20$; $0,10$ \quad ($40\%$, $30\%$, $20\%$, $10\%$).}
+\end{exresolt}
+
+\begin{exresolt}[de la taula al diagrama de sectors]
+Amb la taula anterior, fes el \textbf{diagrama de sectors} dels usuaris del casal per
+franja d'edat. Quants graus ocupa cada franja?
+\solucio
+Cada sector ocupa $\dfrac{f_i}{N}\per 360^\circ$:
+\[
+\text{infants } 40\%\to 144^\circ,\quad
+\text{joves } 30\%\to 108^\circ,\quad
+\text{adults } 20\%\to 72^\circ,\quad
+\text{gent gran } 10\%\to 36^\circ.
+\]
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+  % Infants 0-144
+  \fill[udblue!70] (0,0) -- (0:1) arc (0:144:1) -- cycle;
+  % Joves 144-252
+  \fill[udblue!45] (0,0) -- (144:1) arc (144:252:1) -- cycle;
+  % Adults 252-324
+  \fill[udnavy!55] (0,0) -- (252:1) arc (252:324:1) -- cycle;
+  % Gent gran 324-360
+  \fill[udgrey!60] (0,0) -- (324:1) arc (324:360:1) -- cycle;
+  \draw[white, line width=0.8pt] (0,0) circle (1);
+  \node[font=\scriptsize, white] at (72:0.6) {Infants};
+  \node[font=\scriptsize, white] at (198:0.62) {Joves};
+  \node[font=\scriptsize, white] at (288:0.66) {Adults};
+  \node[font=\scriptsize, white] at (342:0.72) {G.\,gran};
+\end{tikzpicture}
+
+\figcap{Sectors per franja d'edat: infants $40\%$, joves $30\%$, adults $20\%$, gent gran $10\%$.}
+\end{center}
+\resposta{Infants $144^\circ$, joves $108^\circ$, adults $72^\circ$, gent gran $36^\circ$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Completa la taula de freqüències d'aquestes hores de voluntariat ($N=20$):
+        \begin{center}
+        \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Hores} & $f_i$ & \textbf{Relativa} & \textbf{\%} \\
+        \midrule
+        $[0,\ 2)$ & $5$ & ? & ? \\
+        $[2,\ 4)$ & $8$ & ? & ? \\
+        $[4,\ 6)$ & $4$ & ? & ? \\
+        $[6,\ 8)$ & $3$ & ? & ? \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+  \item Comprova que les freqüències de l'exercici 1 sumen $N=20$ i que els
+        percentatges sumen $100\%$.
+  \item Calcula quants \textbf{graus} ocuparia cada franja de l'exercici 1 en un
+        diagrama de sectors.
+  \item Mira l'histograma dels ingressos de l'exemple. \textbf{(Interpretació)} On
+        s'acumulen les dades? Hi ha algun tram amb molt poques famílies? Descriu la
+        forma de la distribució amb una frase.
+  \item \textbf{(Decisió justificada)} Si en comptes d'intervals de $500\eur$
+        n'haguéssim fet de $\num{1000}\eur$ (és a dir, la meitat d'intervals, però
+        més amples), com creus que canviaria l'aspecte de l'histograma? Es veuria
+        millor o pitjor el detall?
+  \item \textbf{(Raonament)} Per què en un histograma les barres van \textbf{enganxades}
+        i en un diagrama de barres de categories (p.\,ex. tipus d'ajut) van
+        \textbf{separades}? Quina diferència hi ha entre les dades dels dos casos?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 8}
+\begin{solucions}
+\begin{sollist}
+  \item Relatives: $\dfrac{5}{20}=0,25$; $\dfrac{8}{20}=0,40$; $\dfrac{4}{20}=0,20$;
+        $\dfrac{3}{20}=0,15$. Percentatges: $25\%$, $40\%$, $20\%$, $15\%$.
+  \item $5+8+4+3=20=N$: correcte. $25+40+20+15=100\%$: correcte.
+  \item Graus ($\text{rel}\per 360^\circ$): $0,25\per 360=90^\circ$;
+        $0,40\per 360=144^\circ$; $0,20\per 360=72^\circ$; $0,15\per 360=54^\circ$.
+        (Comprovació: $90+144+72+54=360^\circ$.)
+  \item Les dades s'acumulen al centre, a la franja $[1500,2000)\eur$ ($14$ famílies);
+        els extrems ($[500,1000)$ i $[2500,3000)$) tenen poques famílies ($4$ cada un).
+        La distribució té forma força \textbf{simètrica}, amb un màxim al centre.
+  \item Amb intervals més amples (de $\num{1000}\eur$) hi hauria menys barres i es
+        veuria la \textbf{tendència general}, però es \textbf{perdria detall}: dos
+        trams que ara es distingeixen quedarien fosos en un de sol. Més intervals donen
+        més detall; menys intervals, una visió més global.
+  \item En un \textbf{histograma} les dades de l'eix horitzontal són \textbf{contínues}
+        (edats, ingressos: entre dos valors sempre n'hi ha d'intermedis), per això les
+        barres s'enganxen. En un diagrama de \textbf{categories} (tipus d'ajut, sexe,
+        talla) les dades són \textbf{separades} (no hi ha res «entremig» de dues
+        categories), per això les barres van separades.
+\end{sollist}
+\end{solucions}

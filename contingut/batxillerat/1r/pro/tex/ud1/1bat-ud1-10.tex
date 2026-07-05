@@ -1,0 +1,127 @@
+% =====================================================================
+%  1bat-ud1-10.tex  —  HORA 10: Cas real complet (resolem una convocatòria sencera)
+% =====================================================================
+\horatitol{Sessió 10 — Cas real complet: resolem una convocatòria sencera}%
+{Som la finestreta: llegir unes bases d'ajut senceres, traduir cada requisit a una condició i resoldre expedients.}
+
+\subsection{Idea clau}
+
+Avui simulem la feina real d'un tècnic dels serveis a la comunitat: no extreure
+\emph{una} condició aïllada, sinó llegir unes \textbf{bases senceres}, identificar
+\textbf{totes} les condicions i decidir, expedient per expedient, qui té dret a
+l'ajut. Som \textbf{la finestreta} que resol les sol·licituds.
+
+\begin{idea}
+\textbf{Bases (simplificades) de l'ajut al lloguer jove} — cal complir-les
+\textbf{totes alhora}:
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+  \item \textbf{Edat:} tenir entre $18$ i $35$ anys, tots dos inclosos $\rightarrow$
+        $18\le \text{edat}\le 35$.
+  \item \textbf{Renda:} renda anual no superior a $\num{24000}\eur$ $\rightarrow$
+        $\text{renda}\le\num{24000}$.
+  \item \textbf{Empadronament:} estar empadronat al municipi (condició de sí/no).
+  \item \textbf{Lloguer:} el lloguer mensual no pot superar $\num{900}\eur$
+        $\rightarrow$ $\text{lloguer}\le 900$.
+\end{enumerate}
+\textbf{Mètode de la finestreta:} per a cada perfil, (1) tradueix cada requisit a una
+condició, (2) comprova-les una per una, (3) conclou: només té dret qui les compleix
+\textbf{totes}.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[resoldre un expedient pas a pas]
+\textbf{Perfil — Aina:} $27$ anys, renda $\num{19000}\eur$, empadronada al municipi,
+lloguer $750\eur$/mes. Comprovem requisit per requisit:
+\begin{center}
+\begin{tabular}{l l c}
+\toprule
+\textbf{Requisit} & \textbf{Dada de l'Aina} & \textbf{Compleix?} \\
+\midrule
+Edat $\in[18,35]$ & $27$ anys & sí \\
+Renda $\le\num{24000}$ & $\num{19000}\eur$ & sí \\
+Empadronament & sí & sí \\
+Lloguer $\le 900$ & $750\eur$ & sí \\
+\bottomrule
+\end{tabular}
+\end{center}
+Compleix \textbf{totes}: l'Aina \textbf{té dret} a l'ajut.
+\end{exemple}
+
+\begin{exemple}[un sol requisit pot tombar l'expedient]
+\textbf{Perfil — Marc:} $30$ anys, renda $\num{21000}\eur$, empadronat, lloguer
+$\num{950}\eur$/mes. Edat, renda i empadronament: tot correcte. Però el lloguer
+$\num{950}>900$: \textbf{no} compleix l'últim requisit. Com que cal complir-les
+\emph{totes}, en Marc \textbf{no té dret}. N'hi ha prou que en falli una.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[expedient amb cas límit de renda]
+\textbf{Perfil — Júlia:} $34$ anys, renda \emph{exactament} $\num{24000}\eur$,
+empadronada, lloguer $880\eur$. Té dret a l'ajut?
+\solucio
+Comprovem: edat $34\in[18,35]$, sí. Renda $\num{24000}\le\num{24000}$: \textbf{sí},
+perquè el llindar és $\le$ (el límit hi entra). Empadronament: sí. Lloguer
+$880\le 900$: sí. Compleix \textbf{totes} $\rightarrow$ té dret. El cas límit de renda
+es resol a favor seu \emph{perquè} la condició és «no superior» ($\le$) i no «inferior» ($<$).
+\resposta{Sí: compleix totes; la renda just al límit hi entra perquè és $\le$.}
+\end{exresolt}
+
+\begin{exresolt}[redactar una resolució justificada]
+\textbf{Perfil — Omar:} $36$ anys, renda $\num{17000}\eur$, empadronat, lloguer
+$600\eur$. Redacta una breu resolució justificada.
+\solucio
+\textit{«Vista la sol·licitud d'Omar, es comprova que compleix els requisits de
+renda ($\num{17000}\le\num{24000}\eur$), empadronament i lloguer ($600\le 900\eur$).
+No obstant això, \textbf{no} compleix el requisit d'edat, ja que té $36$ anys i el
+límit és $35$ ($36\notin[18,35]$). Atès que cal complir totes les condicions,
+es \textbf{denega} l'ajut.»}
+\resposta{Denegat: compleix tot menys l'edat ($36>35$).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Actua com la finestreta. Bases: edat $[18,35]$, renda
+$\le\num{24000}\eur$, empadronament (sí/no), lloguer $\le 900\eur$.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Tradueix cada requisit de les bases a una inequació o condició (els quatre).
+  \item \textbf{Perfil A — Berta:} $22$ anys, renda $\num{12000}\eur$, empadronada,
+        lloguer $700\eur$. Comprova els quatre requisits i conclou si té dret.
+  \item \textbf{Perfil B — Iker:} $40$ anys, renda $\num{10000}\eur$, empadronat,
+        lloguer $500\eur$. Té dret? Quin requisit falla?
+  \item \textbf{Perfil C — Lina:} $19$ anys, renda $\num{25500}\eur$, empadronada,
+        lloguer $650\eur$. Té dret? Quin requisit falla?
+  \item \textbf{Perfil D — Dani:} $33$ anys, renda $\num{23900}\eur$, \emph{no}
+        empadronat, lloguer $890\eur$. Té dret? Justifica-ho.
+  \item \textbf{(Cas límit)} \textbf{Perfil E — Vera:} $35$ anys exactes, renda
+        $\num{24000}\eur$ exactes, empadronada, lloguer $\num{900}\eur$ exactes. Té
+        dret? Fixa't bé en els tres valors que cauen \emph{just} al límit.
+  \item \textbf{(Resolució escrita)} Tria un dels perfils anteriors i redacta'n una
+        breu «resolució» justificada (dues o tres frases), com faries en un informe.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 10}
+\begin{solucions}
+\begin{sollist}
+  \item Edat: $18\le x\le 35$ ($[18,35]$); renda: $\le\num{24000}$; empadronament:
+        sí/no; lloguer: $\le 900$.
+  \item Edat $22$ sí, renda $\num{12000}$ sí, empadronament sí, lloguer $700$ sí:
+        compleix totes $\rightarrow$ \textbf{té dret}.
+  \item Edat $40\notin[18,35]$: falla l'\textbf{edat}. La resta compleix, però no
+        n'hi ha prou: \textbf{no té dret}.
+  \item Renda $\num{25500}>\num{24000}$: falla la \textbf{renda}. \textbf{No té dret}
+        (tot i complir edat, empadronament i lloguer).
+  \item No està empadronat: falla l'\textbf{empadronament}. \textbf{No té dret},
+        encara que la resta (edat $33$, renda $\num{23900}$, lloguer $890$) compleixi.
+  \item Tots els límits són tancats ($\le$ i interval $[\,]$): edat $35$, renda
+        $\num{24000}$ i lloguer $900$ \textbf{hi entren} tots. Amb empadronament, la
+        Vera compleix \textbf{totes} $\rightarrow$ \textbf{té dret}.
+  \item Resposta oberta. Ha d'indicar quins requisits compleix, quin (si escau) falla,
+        i la conclusió (concedit/denegat) justificada.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,152 @@
+% =====================================================================
+%  1bat-ud5-12.tex  —  SESSIÓ 12: Els números del projecte: muntar el pressupost
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 12 — Els números del projecte: muntar el pressupost}%
+{Comença l'activitat de tancament del curs: estructurar el pressupost d'un casal d'estiu en el full de càlcul, separant despeses i ingressos amb les seves variacions percentuals.}
+
+\subsection{Idea clau}
+
+Arribem a l'activitat que integra bona part del curs. En grups, simuleu que formeu part
+d'una associació que organitza un \textbf{casal d'estiu} de dues setmanes per a $20$
+infants en risc d'exclusió, i heu de crear-ne el \textbf{pressupost} en un full de
+càlcul. Avui ens dediquem a \textbf{estructurar-lo} bé; demà el quadrarem amb fórmules.
+Aquí reapareixen \emph{tots} els percentatges de la unitat (IVA, IRPF) dins d'un
+document econòmic real.
+
+\begin{idea}
+\textbf{Estructura d'un pressupost}\\
+Un pressupost separa clarament dues columnes:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Despeses} (el que costa): personal (monitors), material, alimentació,
+        transport\dots Algunes porten percentatges:
+        \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+          \item \textbf{Material:} se li afegeix l'\textbf{IVA} ($\per 1,21$).
+          \item \textbf{Personal:} se li aplica la \textbf{retenció d'IRPF} (un
+                percentatge que es reté de la nòmina).
+        \end{itemize}
+  \item \textbf{Ingressos} (el que entra): subvencions, quotes per infant, donatius\dots
+\end{itemize}
+\textbf{Regla d'or:} un pressupost ben estructurat (files i columnes clares, partides
+separades, capçaleres) és la base d'un projecte ben gestionat.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[les partides de despesa]
+Per al casal, identifiquem i calculem les despeses:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{l l r}
+\toprule
+\textbf{Partida} & \textbf{Detall} & \textbf{Import} \\
+\midrule
+Monitors & $4$ monitors $\times$ $10$ sessions $\times$ $\num{15}\eur$ & $\num{600}\eur$ \\
+Material & $\num{350}\eur$ $+$ IVA $21\%$ ($\num{350}\per 1,21$) & $\num{423,5}\eur$ \\
+Alimentació & $20$ infants $\times$ $10$ dies $\times$ $\num{5}\eur$ & $\num{1000}\eur$ \\
+\midrule
+\textbf{Total despeses} & & $\num{2023,5}\eur$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Fixa't que el material ja porta l'IVA incorporat: el preu base de $\num{350}\eur$ es
+multiplica per $1,21$.
+\end{exemple}
+
+\begin{exemple}[les partides d'ingrés]
+Ara els ingressos:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{l l r}
+\toprule
+\textbf{Partida} & \textbf{Detall} & \textbf{Import} \\
+\midrule
+Subvenció & Ajuntament & $\num{1500}\eur$ \\
+Quotes & $20$ infants $\times$ $\num{40}\eur$ & $\num{800}\eur$ \\
+\midrule
+\textbf{Total ingressos} & & $\num{2300}\eur$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Amb $\num{2300}\eur$ d'ingressos i $\num{2023,5}\eur$ de despeses, el projecte sembla
+viable; demà ho quadrarem amb fórmules i comprovarem el balanç.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[calcular una partida amb IVA]
+Una partida de material esportiu té un preu base de $\num{500}\eur$. Quant costarà al
+pressupost amb l'IVA del $21\%$ inclòs?
+\solucio
+Afegir l'IVA és multiplicar per $1,21$:
+\[
+\num{500}\per 1,21=\num{605}\eur.
+\]
+Al pressupost, la partida de material esportiu s'hi inscriu per $\num{605}\eur$ (amb
+IVA), no per $\num{500}\eur$.
+\resposta{$\num{605}\eur$ amb IVA.}
+\end{exresolt}
+
+\begin{exresolt}[el cost del personal amb retenció d'IRPF]
+Un monitor cobra $\num{800}\eur$ bruts. Se li reté un $15\%$ d'IRPF. Quant cobra
+\emph{net} el monitor, i quant li costa a l'associació el seu sou brut?
+\solucio
+\textbf{Net del monitor} (el que rep): se li reté el $15\%$, és a dir multiplica per
+$0,85$:
+\[
+\num{800}\per 0,85=\num{680}\eur \text{ nets}.
+\]
+\textbf{Cost per a l'associació:} el sou \textbf{brut}, $\num{800}\eur$ (l'associació
+paga $\num{680}\eur$ al monitor i ingressa $\num{120}\eur$ a Hisenda en concepte de
+retenció). Al pressupost, la partida de personal es comptabilitza pel brut:
+$\num{800}\eur$.
+\resposta{El monitor cobra $\num{680}\eur$ nets; al pressupost consta el brut,
+$\num{800}\eur$.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Treballa en grup amb el full de càlcul. Estructura el pressupost en
+dues columnes (despeses i ingressos) abans d'entrar a les fórmules.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Calcula l'import (amb IVA del $21\%$) de cada partida de material:
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item material fungible, base $\num{200}\eur$;
+      \item joc i esport, base $\num{150}\eur$.
+    \end{enumerate}
+  \item Una partida de monitors són $3$ monitors $\times$ $8$ sessions $\times$
+        $\num{20}\eur$ bruts. Quant suma la partida de personal (en brut) al pressupost?
+  \item Calcula el \textbf{total d'ingressos} d'un projecte amb una subvenció de
+        $\num{2000}\eur$ i $25$ quotes de $\num{30}\eur$ cadascuna.
+  \item Amb les despeses de $\num{2600}\eur$ i els ingressos de l'exercici 3, calcula el
+        \textbf{balanç} (ingressos menys despeses). El projecte quadra (queda per sobre
+        de zero)?
+  \item \textbf{(Estructura)} Organitza en dues columnes (despeses / ingressos) aquestes
+        partides d'un projecte: subvenció, monitors, material, quotes, alimentació,
+        donatiu d'una empresa. Quines van a cada columna?
+  \item \textbf{(Raonament)} Per què és important separar bé despeses i ingressos i
+        deixar les partides clares \emph{abans} de posar-hi fórmules? Què podria passar
+        en un pressupost mal estructurat?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 12}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $\num{200}\per 1,21=\num{242}\eur$; \quad (b) $\num{150}\per 1,21=\num{181,5}\eur$.
+  \item $3\per 8\per\num{20}=\num{480}\eur$ bruts.
+  \item Subvenció $\num{2000}\eur$ $+$ quotes $25\per\num{30}=\num{750}\eur$; total
+        d'ingressos $\num{2750}\eur$.
+  \item Balanç: $\num{2750}-\num{2600}=\num{150}\eur$. És positiu: el projecte
+        \textbf{quadra} (queda per sobre de zero).
+  \item \textbf{Despeses:} monitors, material, alimentació. \textbf{Ingressos:}
+        subvenció, quotes, donatiu d'una empresa.
+  \item Resposta oberta. Idea: una estructura clara evita comptar dues vegades una
+        partida, barrejar ingressos i despeses o oblidar-ne alguna; si el pressupost
+        està mal organitzat, les fórmules donaran resultats erronis i el balanç no serà
+        fiable, cosa que pot fer fracassar la justificació econòmica del projecte.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,138 @@
+% =====================================================================
+%  1bat-ud1-5.tex  —  HORA 5: La frontera dels 18: extrems oberts i tancats
+% =====================================================================
+\horatitol{Sessió 5 — La frontera dels 18: extrems oberts i tancats}%
+{Un cas amb límits exactes: la majoria d'edat com a frontera, i un primer contacte amb dues condicions alhora.}
+
+\subsection{Idea clau}
+
+Hi ha ajuts i proteccions que depenen d'una \textbf{edat exacta}. El cas més clar és
+la \textbf{majoria d'edat}: la protecció de menors arriba \emph{fins} als $18$ anys,
+i s'extingeix en complir-los. Avui afinem la diferència entre un extrem
+\textbf{obert} i un de \textbf{tancat}, perquè en aquests casos un sol dia pot
+canviar-ho tot.
+
+\begin{idea}
+\textbf{La frontera dels 18 anys.} La condició «ser menor d'edat» és $x<18$, és a
+dir l'interval $[0,\,18)$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item El $0$ va amb \textbf{claudàtor} (es pot tenir $0$ anys: hi entra).
+  \item El $18$ va amb \textbf{parèntesi}: en complir $18$ anys, ja \emph{no} s'és
+        menor. El $18$ \textbf{no} hi entra.
+\end{itemize}
+\textbf{Dues condicions alhora.} A vegades cal estar \emph{entre} dos límits:
+«de $16$ a menys de $18$» és $16\le x<18$, l'interval $[16,\,18)$. Cal complir
+\textbf{totes dues} condicions: ser $\ge 16$ \emph{i} ser $<18$.
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[l'interval de la minoria d'edat]
+La protecció de menors cobreix l'interval $[0,18)$:
+
+\begin{center}
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-1,0) -- (5,0);
+  \draw[udblue, line width=1.4pt] (0,0) -- (4,0);
+  \fill[udblue] (0,0) circle (2.4pt);
+  \draw[udblue, fill=white, line width=1.2pt] (4,0) circle (2.4pt);
+  \node[below, font=\scriptsize, udgrey] at (0,-0.14) {$0$};
+  \node[below, font=\scriptsize, udgrey] at (4,-0.14) {$18$};
+  \node[above, udblue, font=\scriptsize] at (2,0.12) {$[0,18)$};
+\end{tikzpicture}
+\end{center}
+
+\noindent El punt ple a $0$ i el buit a $18$: un jove és menor el dia que fa $17$
+anys i $364$ dies, però \emph{deixa} de ser-ho el dia exacte que fa $18$.
+\end{exemple}
+
+\begin{exemple}[entre dos límits]
+Un programa juvenil admet joves «de $16$ anys fins a menys de $18$»: $16\le x<18$,
+interval $[16,18)$.
+
+\begin{center}
+\begin{tikzpicture}[>={Stealth[length=2mm]}]
+  \draw[->, udgrey] (-1,0) -- (5,0);
+  \draw[udblue, line width=1.4pt] (2,0) -- (4,0);
+  \fill[udblue] (2,0) circle (2.4pt);
+  \draw[udblue, fill=white, line width=1.2pt] (4,0) circle (2.4pt);
+  \node[below, font=\scriptsize, udgrey] at (2,-0.14) {$16$};
+  \node[below, font=\scriptsize, udgrey] at (4,-0.14) {$18$};
+  \node[above, udblue, font=\scriptsize] at (3,0.12) {$[16,18)$};
+\end{tikzpicture}
+\end{center}
+
+\noindent Un jove de $16$ anys \textbf{sí} que hi entra (claudàtor); un de $18$,
+\textbf{no} (parèntesi).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[què significa el parèntesi]
+A l'interval $[0,18)$ de la protecció de menors, què significa exactament el
+parèntesi del $18$? Quin és l'últim moment en què un jove encara hi és dins?
+\solucio
+El parèntesi vol dir que el $18$ \textbf{queda fora} de l'interval: en complir
+exactament $18$ anys, el jove ja \emph{no} està protegit. L'últim moment en què hi és
+dins és \textbf{just abans} de complir-los (el dia anterior al 18è aniversari). Per
+això es diu que la protecció «s'extingeix en complir la majoria d'edat».
+\resposta{El $18$ no hi entra; l'últim moment dins és just abans de fer els $18$.}
+\end{exresolt}
+
+\begin{exresolt}[escriure un interval anàleg]
+Una prestació per fill a càrrec es manté \emph{fins} que el fill compleix $23$ anys.
+Escriu l'interval d'edats en què es cobra i digues com és l'extrem dels $23$.
+\solucio
+Es cobra mentre l'edat sigui menor de $23$: $0\le x<23$, interval $[0,23)$. L'extrem
+dels $23$ és \textbf{obert} (parèntesi): en complir $23$ anys, la prestació s'extingeix.
+\resposta{Interval $[0,23)$; el $23$ és extrem obert (no hi entra).}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Escriu l'interval i digues com és cada extrem (obert/tancat):
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item «ser menor de $18$ anys»
+          \item «tenir $18$ anys o més»
+          \item «tenir entre $12$ i $16$ anys, tots dos inclosos»
+        \end{enumerate}
+  \item Representa a la recta l'interval $[16,18)$ del programa juvenil i marca-hi bé
+        el punt ple i el buit.
+  \item Per a cada persona, digues si pot accedir a un programa per a joves de
+        $[16,18)$:
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item algú que acaba de fer $16$ anys
+          \item algú de $17$ anys
+          \item algú que fa $18$ anys avui
+        \end{enumerate}
+  \item Un casal d'avis admet persones \textbf{de $65$ anys o més}. Escriu la condició
+        com a inequació i com a interval, i digues com és l'extrem dels $65$.
+  \item \textbf{(Debat)} Un jove tutelat fa $18$ anys i, l'endemà mateix, perd la
+        protecció. Quin extrem de l'interval representa aquest fet? Et sembla just que
+        la frontera sigui tan abrupta? (Resposta oberta, però relaciona-la amb el tipus
+        d'extrem.)
+  \item \textbf{(Mini-repte)} Una ajuda d'emancipació és per a joves «de més de $18$ i
+        fins a $25$ anys, inclosos». Escriu la inequació doble i l'interval
+        corresponent.
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 5}
+\begin{solucions}
+\begin{sollist}
+  \item (a) $[0,18)$: el $0$ tancat, el $18$ obert. \quad
+        (b) $[18,+\infty)$: el $18$ tancat. \quad
+        (c) $[12,16]$: tots dos extrems tancats.
+  \item Punt ple a $16$, punt buit a $18$, segment ressaltat entremig.
+  \item (a) sí ($16$ hi entra); \quad (b) sí; \quad (c) no ($18$ queda fora).
+  \item $x\ge 65$, interval $[65,+\infty)$; l'extrem dels $65$ és tancat (hi entra).
+  \item És l'extrem \textbf{obert} dels $18$ (l'interval $[0,18)$): el $18$ queda fora,
+        i la protecció s'acaba just en complir-los. Valoració oberta sobre si la
+        frontera abrupta és justa.
+  \item «més de $18$» és $x>18$ (obert) i «fins a $25$ inclosos» és $x\le 25$ (tancat):
+        $18<x\le 25$, interval $(18,25]$.
+\end{sollist}
+\end{solucions}

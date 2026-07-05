@@ -1,0 +1,177 @@
+% =====================================================================
+%  1bat-ud2-13.tex  —  HORA 13: Veure les arrels amb GeoGebra
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 13 — Veure les arrels amb GeoGebra}%
+{Comprovar amb una eina gràfica que les arrels calculades a mà coincideixen amb el tall a l'eix horitzontal.}
+
+\subsection{Idea clau}
+
+A les sessions 10, 11 i 12 hem trobat arrels \textbf{algebraicament} (aïllant
+la $x$ o aplicant la fórmula general) i les hem interpretat com el llindar
+d'exclusió d'un ajut. Avui canviem d'eina: amb \textbf{GeoGebra}
+representarem gràficament aquests mateixos polinomis i comprovarem, amb els
+ulls, que l'arrel calculada coincideix exactament amb el punt on la gràfica
+\textbf{talla l'eix horitzontal}.
+
+\begin{idea}
+\textbf{L'arrel, vista a la gràfica.}
+Si $P(x)$ és un polinomi i el representem com una corba $y=P(x)$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Una \textbf{arrel} de $P(x)$ és un valor de $x$ on la corba
+        \textbf{talla l'eix horitzontal} (és a dir, $y=0$).
+  \item A l'esquerra del tall, si la corba és per sobre de l'eix
+        ($y>0$), l'ajut \textbf{encara existeix}.
+  \item A la dreta del tall, si la corba passa per sota de l'eix
+        ($y<0$), l'ajut ja \textbf{s'ha exhaurit} (recordeu, de la sessió
+        12, que aquest valor negatiu no té sentit real: s'interpreta com
+        a $0\eur$).
+\end{itemize}
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[introduir un polinomi a GeoGebra]
+Obrim la vista gràfica de GeoGebra i, a la barra d'entrada, escrivim
+directament l'ajut de les sessions 10 i 12:
+\[
+B(x) = -20x + 600
+\]
+GeoGebra dibuixa a l'instant una recta. Activant la icona d'\emph{intersecció
+amb els eixos} (o escrivint \texttt{Arrel(B)} a la barra d'entrada),
+l'eina marca el punt exacte on la recta talla l'eix horitzontal i en
+mostra les coordenades. Hauríeu de veure el punt $(30, 0)$: exactament
+l'arrel que vam calcular a mà a la sessió 10.
+\end{exemple}
+
+\begin{exemple}[un polinomi de segon grau: dues arrels]
+Introduïm ara el cost net del casal de joves de la sessió 11:
+\[
+M(x) = x^2 - 14x + 40
+\]
+La gràfica ja no és una recta sinó una \textbf{paràbola}. Amb
+\texttt{Arrel(M)}, GeoGebra marca \textbf{dos} punts de tall:
+$(4, 0)$ i $(10, 0)$, coincidint amb les arrels $x_1=4$ i $x_2=10$
+calculades amb la fórmula general. Es pot comprovar visualment allò que
+ja sabíem algebraicament: \textbf{entre} els dos talls, la paràbola passa
+per sota de l'eix (cost net negatiu, és a dir, superàvit), i per fora
+dels dos talls, per sobre (cal aportar la diferència).
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[ajustar la finestra de visualització]
+En introduir $C(x)=\num{0,05}x^2-10x+500$ (el copagament de la sessió 4)
+a GeoGebra amb la finestra per defecte, no es veu cap tall amb l'eix
+horitzontal. Per què, i què cal fer?
+\solucio
+La finestra per defecte de GeoGebra sol mostrar $x$ i $y$ entre,
+aproximadament, $-10$ i $10$. Sabem, de la sessió 11, que l'arrel
+d'aquest polinomi és $x=100$ (arrel doble, $\Delta=0$), un valor molt
+fora d'aquest rang. A més, $C(0)=500$, un valor de $y$ també molt gran.
+Cal \textbf{ajustar la finestra de visualització} (per exemple, $x$ entre
+$0$ i $200$, $y$ entre $0$ i $600$) perquè el punt de tall hi sigui
+visible. Un cop ajustada, la paràbola es veu \textbf{tangent} a l'eix
+horitzontal exactament a $x=100$: toca l'eix en un sol punt sense
+travessar-lo, la imatge gràfica d'una arrel doble.
+\resposta{Cal ampliar la finestra de visualització (els valors de la
+recerca de l'arrel, $x=100$, queden fora del rang per defecte); un cop
+ajustada, la paràbola és tangent a l'eix a $x=100$.}
+\end{exresolt}
+
+\begin{exresolt}[comprovar un cas sense arrels reals]
+Introduïu a GeoGebra el polinomi $D(x)=2x^2-4x+10$ de la sessió 11
+(per al qual vam calcular $\Delta=-64<0$). Què hauríeu d'esperar veure
+a la gràfica, i com ho interpreteu en el context del servei que
+modelitza?
+\solucio
+Com que $\Delta<0$, l'equació $D(x)=0$ no té cap solució real. A la
+gràfica, això es tradueix en una paràbola que \textbf{no talla mai}
+l'eix horitzontal: per molt que s'ampliï o es desplaci la finestra de
+visualització, la corba sempre queda per sobre de l'eix ($a=2>0$).
+En GeoGebra, en demanar \texttt{Arrel(D)}, l'eina no retorna cap punt.
+En el context del servei, això confirma que el seu cost net mai
+s'anul·la: és sempre positiu, per a qualsevol nombre d'usuaris.
+\resposta{La paràbola no talla mai l'eix horitzontal (sempre per sobre);
+GeoGebra no troba cap arrel real, coherent amb $\Delta=-64<0$: el cost
+net del servei no s'anul·la mai.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\noindent\textit{Tasques de comprovació visual: introduïu cada polinomi a
+GeoGebra i contrasteu el que veieu amb el càlcul algebraic ja fet a les
+sessions anteriors.}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Introdueix a GeoGebra el polinomi $B(x)=-20x+600$ (sessions 10 i
+        12). Localitza el punt de tall amb l'eix horitzontal. Coincideix
+        amb l'arrel $x=30$ calculada a la sessió 10?
+
+  \item Introdueix el polinomi de segon grau $x^2-7x+10$ (treballat a la
+        sessió 11). Observa quants punts de tall té la paràbola amb
+        l'eix horitzontal. Coincideixen amb les arrels que vau calcular
+        aleshores?
+
+  \item Introdueix el copagament $C(x)=\num{0,05}x^2-10x+500$ (sessions 4
+        i 11). Ajusta la finestra de visualització fins que es vegi
+        clarament el punt on la paràbola toca l'eix. Anota les
+        coordenades d'aquest punt: coincideixen amb l'arrel doble
+        $x=100$?
+
+  \item El servei de teleassistència de la sessió 11 es modelitza amb
+        $T(x)=\num{0,05}x^2-8x+320$. Introdueix-lo a GeoGebra i localitza
+        el seu tall (o talls) amb l'eix horitzontal. Compara el resultat
+        gràfic amb el càlcul algebraic que vau fer aleshores.
+
+  \item \textbf{(Compte amb la finestra)} Introdueix el polinomi
+        $M(x)=-25x+750$ (sessió 12, servei de menjador social). Si en
+        ampliar GeoGebra per defecte no veus cap tall amb l'eix, no
+        donis per fet que no n'hi ha: comprova primer si el punt
+        simplement queda fora de la finestra visible, com va passar amb
+        el copagament de l'exercici resolt 13.1.
+
+  \item \textbf{(Interpretació)} Introdueix el polinomi
+        $D(x)=2x^2-4x+10$ (sessió 11, sense arrels reals) i confirma a
+        GeoGebra que la paràbola no talla mai l'eix horitzontal. Explica,
+        en context, què significaria per a un servei que la seva gràfica
+        de cost net tallés l'eix horitzontal en algun punt, i
+        què significa que no ho faci mai.
+\end{exlist}
+\end{exercicis}
+
+\noindent\textbf{Atenció a la diversitat:} si és la primera vegada que useu
+GeoGebra, teniu a la pissarra digital la pauta amb captures dels passos
+bàsics (introduir una expressió a la barra d'entrada, activar la icona
+d'intersecció amb els eixos o escriure \texttt{Arrel(...)}, ajustar la
+finestra de visualització amb la lupa o arrossegant el pla). Les parelles
+estan formades perquè qui tingui més soltesa digital pugui acompanyar qui
+en tingui menys; l'objectiu central segueix sent matemàtic (relacionar
+arrel i tall a l'eix), no la destresa amb l'eina.
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 13}
+\begin{solucions}
+\begin{sollist}
+  \item Sí: el punt de tall és $(30, 0)$, coincidint amb l'arrel $x=30$
+        calculada algebraicament a la sessió 10.
+  \item Dos punts de tall, $(2, 0)$ i $(5, 0)$, coincidint amb les arrels
+        $x_1=5$, $x_2=2$ calculades amb la fórmula general a la sessió 11.
+  \item El punt és $(100, 0)$; la paràbola és tangent a l'eix en aquest
+        punt (el toca sense travessar-lo), coherent amb l'arrel doble
+        ($\Delta=0$) calculada a la sessió 11.
+  \item Un únic punt de tall, $(80, 0)$ (arrel doble, $\Delta=0$),
+        coincidint amb el càlcul algebraic de la sessió 11.
+  \item El tall amb l'eix és a $(30, 0)$; cal ampliar la finestra de
+        visualització (per exemple $x$ entre $0$ i $40$) perquè s'hi
+        vegi, ja que amb la finestra per defecte queda fora del rang
+        visible.
+  \item La paràbola no talla mai l'eix horitzontal (sempre per sobre,
+        coherent amb $\Delta=-64<0$). Si la gràfica tallés l'eix,
+        voldria dir que existeix algun nombre d'usuaris pel qual el
+        cost net del servei és exactament zero (un llindar real); que
+        no el talli mai significa que el cost net és sempre positiu,
+        per a qualsevol nombre d'usuaris.
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,120 @@
+% =====================================================================
+%  1bat-ud2-14.tex  —  HORA 14: Repàs global i síntesi (estacions)
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 14 — Repàs global i síntesi (estacions)}%
+{Repassem tota la unitat rotant per quatre estacions: llenguatge, valor numèric, operacions i arrels.}
+
+\subsection{Idea clau}
+
+A la sessió 13 vam tancar el bloc d'arrels comprovant-les gràficament amb
+GeoGebra. Avui no apareix cap contingut nou: la sessió és un \textbf{repàs
+actiu} de tot el recorregut de la unitat, organitzat en quatre estacions
+que roten cada $\approx$\,10 minuts. Cada estació posa a prova un dels
+quatre blocs treballats.
+
+\begin{idea}
+\textbf{El mapa de la unitat, en quatre passos.}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Llenguatge} (sessions 1–3, criteri C1): traduir una
+        situació real a una expressió algebraica o un polinomi.
+  \item \textbf{Valor numèric} (sessions 4–5, criteri C2): substituir
+        valors concrets i calcular, respectant la jerarquia
+        d'operacions.
+  \item \textbf{Operacions} (sessions 6–9, criteri C3): sumar, restar i
+        multiplicar polinomis per combinar o ampliar pressupostos.
+  \item \textbf{Arrels} (sessions 10–13, criteri C4): igualar a zero i
+        trobar el llindar on una prestació s'exhaureix.
+\end{itemize}
+Del llenguatge a la fórmula, de la fórmula al valor numèric i a les
+operacions, i finalment a les arrels i el seu significat: aquest és el
+fil que connecta tota la unitat.
+\end{idea}
+
+\subsection*{Estació A — Llenguatge algebraic}
+
+\begin{exercicis}[Tasca de l'estació A]
+\begin{exlist}
+  \item Un servei de suport escolar cobra $8\eur$ per sessió més una
+        matrícula fixa de $25\eur$. Tradueix a una expressió algebraica
+        el cost total per a $x$ sessions.
+
+  \item L'expressió $12x^2-5x+40$ modelitza el cost d'un programa de
+        lleure per a $x$ participants. Indica'n el grau, el coeficient
+        del terme de primer grau i el terme independent.
+\end{exlist}
+\end{exercicis}
+
+\subsection*{Estació B — Valor numèric}
+
+\begin{exercicis}[Tasca de l'estació B]
+\begin{exlist}[start=3]
+  \item \textbf{(Compte amb la jerarquia)} El copagament d'un servei
+        d'atenció domiciliària es calcula amb
+        $C(x)=\num{0,05}x^2-10x+500$, on $x$ és la renda mensual en
+        euros. Calcula $C(60)$ i interpreta el resultat.
+
+  \item Un programa de suport calcula un índex de vulnerabilitat amb
+        $V(x,n)=300n-x$, on $x$ són els ingressos mensuals de la
+        família (en euros) i $n$ el nombre de membres. Calcula
+        $V(900,4)$.
+\end{exlist}
+\end{exercicis}
+
+\subsection*{Estació C — Operacions amb polinomis}
+
+\begin{exercicis}[Tasca de l'estació C]
+\begin{exlist}[start=5]
+  \item Dos casals comparteixen una activitat conjunta. El cost d'un és
+        $A(x)=2x^2+5x+20$ i el de l'altre $B(x)=x^2-3x+15$, on $x$ és el
+        nombre d'infants inscrits. Calcula el cost conjunt $A(x)+B(x)$.
+
+  \item El cost net d'un torn de «Tallers d'estiu» del casal de joves
+        és $M(x)=50x^2+300x$ (com a la sessió 7), on $x$ és el nombre de
+        joves atesos. Calcula i simplifica el cost de tres torns
+        idèntics, $3\per M(x)$.
+\end{exlist}
+\end{exercicis}
+
+\subsection*{Estació D — Arrels}
+
+\begin{exercicis}[Tasca de l'estació D]
+\begin{exlist}[start=7]
+  \item Una prestació es modelitza amb $P(x)=-15x+450$, on $x$ són els
+        ingressos en centenars d'euros. Troba el llindar d'exclusió
+        (l'arrel) i interpreta'l.
+
+  \item \textbf{(Interpretació)} Un servei calcula el seu cost net amb
+        $D(x)=x^2-10x+21$. Troba les arrels amb la fórmula general i
+        digues quants llindars té aquest servei.
+\end{exlist}
+\end{exercicis}
+
+\bigskip
+\noindent Un cop completada la rotació, posem en comú alguna resposta de
+cada estació i construïm entre tots un petit mapa de la unitat com el de
+la idea clau d'avui, anotant quins blocs generen més dubtes: aquests
+seran precisament els que reforçarem a la sessió 15, el taller de
+preparació de la prova.
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 14}
+\begin{solucions}
+\begin{sollist}
+  \item $8x+25$ (en euros, per a $x$ sessions).
+  \item Grau $2$; coeficient del terme de primer grau: $-5$; terme
+        independent: $40$.
+  \item $C(60)=\num{0,05}\per3600-10\per60+500=180-600+500=80$: el
+        copagament és $80\eur$.
+  \item $V(900,4)=300\per4-900=1200-900=300$.
+  \item $A(x)+B(x)=3x^2+2x+35$.
+  \item $3\per M(x)=150x^2+900x$.
+  \item $-15x+450=0 \Rightarrow x=30$ (centenars d'euros, és a dir
+        $3.000\eur$): a partir d'aquest nivell d'ingressos ja no hi ha
+        dret a la prestació.
+  \item $\Delta=(-10)^2-4\per1\per21=100-84=16$, $\sqrt{\Delta}=4$;
+        $x=\dfrac{10\pm4}{2} \Rightarrow x_1=7$, $x_2=3$. El servei té
+        \textbf{dos} llindars (el cost net s'anul·la amb $3$ i amb $7$
+        unitats).
+\end{sollist}
+\end{solucions}

@@ -1,0 +1,176 @@
+% =====================================================================
+%  1bat-ud3-3.tex  —  HORA 3: Domini, recorregut i punts de tall
+%  (sense preàmbul: s'inclou des de main.tex)
+% =====================================================================
+\horatitol{Sessió 3 — Domini, recorregut i punts de tall}%
+{Posar nom matemàtic al vocabulari de les pissarres: domini, recorregut i talls amb els eixos, restringits al context real.}
+
+\subsection{Idea clau}
+
+A la sessió anterior, davant de les gràfiques mudes, van sortir paraules com
+\emph{creix}, \emph{decreix} o «\emph{s'acosta a zero}». Avui els posem el nom
+matemàtic. De cada funció ens preguntarem tres coses: quins valors pot prendre la
+\textbf{variable de la qual depenem} (el \textbf{domini}), quins valors n'obtenim
+(el \textbf{recorregut}) i per on \textbf{talla els eixos}. I, sobretot, ajustarem
+aquests valors al \textbf{sentit comú} del problema.
+
+\begin{idea}
+\textbf{Tres preguntes per a tota funció} $y=f(x)$:
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Domini} ($\mathrm{Dom}\,f$): tots els valors de $x$ que es poden
+        posar (l'\emph{entrada} permesa).
+  \item \textbf{Recorregut} ($\mathrm{Rec}\,f$): tots els valors de $y$ que en
+        surten (la \emph{sortida} possible).
+  \item \textbf{Punts de tall amb els eixos:}
+        \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+          \item Tall amb l'eix $Y$ (vertical): es fa $x=0$ i es calcula $f(0)$.
+          \item Talls amb l'eix $X$ (horitzontal): es fa $y=0$ i es resol $f(x)=0$.
+        \end{itemize}
+\end{itemize}
+\textbf{Restricció amb sentit comú:} una població, un pressupost o un nombre de
+persones \emph{no poden ser negatius}; un nombre de famílies ha de ser un
+\textbf{enter positiu}. El domini «real» pot ser més petit que el «matemàtic».
+\end{idea}
+
+\subsection{Exemples}
+
+\begin{exemple}[llegir-ho tot en una gràfica]
+La gràfica següent modelitza el saldo d'un petit fons de solidaritat durant uns
+mesos. Hi marquem els talls amb els eixos.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[udaxis, width=9cm, height=5.6cm,
+    xlabel={\small mesos}, ylabel={\small saldo (\euro)},
+    xmin=-0.5, xmax=9, ymin=-3, ymax=8,
+    xtick={0,2,4,6,8}, ytick={-2,0,2,4,6},
+    yticklabel style={/pgf/number format/assume math mode=true}]
+  \addplot[udblue, domain=0:8, samples=2]{6-x};
+  \addplot[udnavy, only marks, mark=*, mark size=1.6pt] coordinates {(0,6) (6,0)};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:0,6) {(0,\,6)};
+  \node[udnavy, font=\scriptsize, anchor=south west] at (axis cs:6,0) {(6,\,0)};
+\end{axis}
+\end{tikzpicture}
+
+\figcap{Saldo d'un fons: comença a $6\eur$ i s'esgota al sisè mes.}
+\end{center}
+
+\noindent El tall amb l'eix vertical, $(0,6)$, diu que al principi (mes $0$) hi
+havia $6\eur$. El tall amb l'eix horitzontal, $(6,0)$, diu que al sisè mes el fons
+\textbf{s'esgota}. Té sentit considerar el domini $0\le x\le 6$ (a partir d'aquí no
+queden diners) i el recorregut $0\le y\le 6$.
+\end{exemple}
+
+\begin{exemple}[domini matemàtic contra domini real]
+Una funció de cost és $C(x)=4x$, on $x$ és el nombre d'infants d'un casal.
+Matemàticament, a $4x$ hi podríem posar qualsevol nombre (fins i tot negatiu o amb
+decimals). Però en el \emph{context}, $x$ ha de ser un \textbf{nombre enter no
+negatiu} ($0,1,2,3,\dots$): no hi ha «mig infant» ni «$-3$ infants». El tall amb els
+dos eixos coincideix a l'origen $(0,0)$: amb $0$ infants, el cost és $0\eur$.
+\end{exemple}
+
+\subsection{Exercicis resolts}
+
+\begin{exresolt}[talls amb els eixos d'una recta]
+Una prestació es modelitza amb $B(x)=-20x+600$, on $x$ són els ingressos en milers
+d'euros i $B$ l'ajut en euros. Troba els punts de tall amb els dos eixos i
+interpreta'ls.
+\solucio
+\textbf{Tall amb l'eix $Y$} (fem $x=0$):
+\[
+B(0)=-20\per 0+600=600.
+\]
+És el punt $(0,600)$: amb $0$ d'ingressos, l'ajut és de $600\eur$ (l'ajut màxim).
+
+\textbf{Tall amb l'eix $X$} (fem $B(x)=0$):
+\[
+-20x+600=0 \;\Rightarrow\; 20x=600 \;\Rightarrow\; x=\frac{600}{20}=30.
+\]
+És el punt $(30,0)$: amb $30$ (és a dir, $\num{30000}\eur$ d'ingressos), l'ajut
+arriba a $0$. A partir d'aquí ja no es percep res.
+\resposta{Tall amb $Y$: $(0,600)$. \quad Tall amb $X$: $(30,0)$. El domini amb sentit és $0\le x\le 30$.}
+\end{exresolt}
+
+\begin{exresolt}[domini i recorregut amb sentit comú]
+Un fons de $\num{1200}\eur$ es reparteix entre $x$ famílies: $D(x)=\dfrac{\num{1200}}{x}$.
+Indica el domini real i descriu el recorregut.
+\solucio
+La divisió $\dfrac{\num{1200}}{x}$ \textbf{no es pot fer si} $x=0$ (no es pot
+repartir entre zero famílies). A més, el nombre de famílies ha de ser un
+\textbf{enter positiu}. Per tant:
+\[
+\mathrm{Dom}\,D=\{1,2,3,4,\dots\}.
+\]
+Quant al recorregut: si hi ha $1$ família rep $\num{1200}\eur$ (el màxim); a mesura
+que augmenten les famílies, cadascuna rep menys, acostant-se a $0$ sense arribar-hi.
+Així, els valors de sortida són positius i com a molt $\num{1200}\eur$.
+\resposta{$\mathrm{Dom}\,D=\{1,2,3,\dots\}$; el recorregut són valors positius
+$\le \num{1200}\eur$, que s'acosten a $0$ però no l'assoleixen.}
+\end{exresolt}
+
+\subsection{Exercicis per fer}
+
+\begin{exercicis}
+\begin{exlist}
+  \item Per a cada recta, troba el tall amb l'eix $Y$ (fes $x=0$) i el tall amb
+        l'eix $X$ (fes $y=0$):
+    \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+      \item $f(x)=2x-8$
+      \item $f(x)=-x+5$
+      \item $f(x)=3x$
+    \end{enumerate}
+  \item Una entitat rep una subvenció que es va gastant: $S(x)=-50x+1000$, on $x$
+        són les setmanes i $S$ els euros que queden. Troba els dos talls i digues en
+        quina setmana s'esgota la subvenció.
+  \item Observa la gràfica i indica, llegint-la directament: el tall amb l'eix
+        vertical, el tall amb l'eix horitzontal, i si la funció creix o decreix.
+
+        \begin{center}
+        \begin{tikzpicture}
+        \begin{axis}[udaxis, width=8.4cm, height=4.8cm,
+            xlabel={\small $x$}, ylabel={\small $y$},
+            xmin=-0.5, xmax=9, ymin=-1, ymax=7,
+            xtick={0,2,4,6,8}, ytick={0,2,4,6}]
+          \addplot[udblue, domain=0:8, samples=2]{0.75*x+1};
+          \addplot[udnavy, only marks, mark=*, mark size=1.5pt] coordinates {(0,1)};
+          \node[udnavy, font=\scriptsize, anchor=south east] at (axis cs:0,1) {(0,\,1)};
+        \end{axis}
+        \end{tikzpicture}
+
+        \figcap{Llegeix els talls directament de la gràfica.}
+        \end{center}
+
+  \item Un servei té un cost mensual $C(x)=20x+50$, on $x$ és el nombre d'usuaris.
+        \begin{enumerate}[label=\alph*), leftmargin=1.6em, topsep=2pt]
+          \item Quin és el cost amb $0$ usuaris? (tall amb l'eix vertical)
+          \item Quin hauria de ser el domini real de $x$? Per què no pot ser negatiu
+                ni tenir decimals?
+        \end{enumerate}
+  \item \textbf{(Compte amb el signe)} Troba el tall amb l'eix horitzontal de
+        $f(x)=-4x+12$. Vés amb compte: en passar el $12$ a l'altre costat i en
+        dividir, controla bé els signes.
+  \item \textbf{(Interpretació)} La gràfica del nombre de places lliures d'un alberg
+        social talla l'eix horitzontal en un cert punt. Què significa, en aquest
+        context, que la funció valgui $0$? I què voldria dir que fos negativa? Té
+        sentit?
+\end{exlist}
+\end{exercicis}
+
+% ---------------------------------------------------------------------
+\fullsolucions{Sessió 3}
+\begin{solucions}
+\begin{sollist}
+  \item (a) Tall $Y$: $(0,-8)$; tall $X$: $(4,0)$. \quad
+        (b) Tall $Y$: $(0,5)$; tall $X$: $(5,0)$. \quad
+        (c) Tall $Y$: $(0,0)$; tall $X$: $(0,0)$ (passa per l'origen).
+  \item Tall $Y$: $(0,1000)$; tall $X$: $(20,0)$. S'esgota a la setmana $20$.
+  \item Tall vertical: $(0,1)$; tall horitzontal: no es veu dins la gràfica (seria a
+        l'esquerra de $0$); la funció \textbf{creix}.
+  \item (a) $C(0)=50\eur$. \quad (b) $\mathrm{Dom}=\{0,1,2,3,\dots\}$: el nombre
+        d'usuaris és un enter no negatiu (no hi ha usuaris negatius ni fraccionaris).
+  \item $-4x+12=0 \Rightarrow 4x=12 \Rightarrow x=3$. Tall: $(3,0)$.
+  \item Que valgui $0$ vol dir que no queda cap plaça lliure (alberg ple). Un valor
+        negatiu no tindria sentit real: no es poden tenir menys de zero places lliures;
+        el domini s'ha de restringir perquè la funció no baixi de $0$.
+\end{sollist}
+\end{solucions}
