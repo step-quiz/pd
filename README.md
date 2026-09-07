@@ -106,3 +106,12 @@ python3 -m http.server 8000
 | PDFs de sessions | `{prefix}-ud{U}-{S}.pdf` | `1bat-ud2-3.pdf` |
 | Programació DOCX | `programacio.docx` | (el nom real va a `course.json`) |
 | Fonts LaTeX | `{prefix}-ud{U}-{S}.tex` | `1bat-ud2-3.tex` |
+
+<!-- atribucio-centre:inici -->
+
+---
+
+Material desenvolupat per **David Arso Civil** per al Departament de Matemàtiques de l'INS Miquel Tarradell.
+Contingut sota CC BY-NC-SA 4.0, codi sota llicència MIT. Vegeu [`LLICENCIA.md`](LLICENCIA.md).
+
+<!-- atribucio-centre:final -->
