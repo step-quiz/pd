@@ -9,9 +9,6 @@
   Cache-Control: public, max-age=86400
 
 # Canvia sovint → sense caché
-/seguiment-link.txt
-  Cache-Control: no-store
-
 /contingut/*/pdfs/manifest.json
   Cache-Control: no-store
 
@@ -23,5 +20,5 @@
   Cache-Control: public, max-age=3600
 
 # Fonts LaTeX: al repo però no indexables
-/contingut/*/source/*
+/contingut/*/tex/*
   X-Robots-Tag: noindex

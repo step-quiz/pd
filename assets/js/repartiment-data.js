@@ -1,5 +1,5 @@
 /* repartiment-data.js — Repartiment de continguts matemàtics ESO 2025-26
- * Compartit entre repartiment.html i seguiment.html.
+ * El fa servir repartiment.html.
  * No modifiqueu els noms de les constants (SENTITS, CLASSES, REPARTIMENT).
  */
 

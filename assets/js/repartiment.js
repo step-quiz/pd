@@ -472,7 +472,7 @@ function downloadData() {
   const date = new Date().toLocaleDateString('ca-ES', {day:'2-digit',month:'2-digit',year:'numeric'});
   const js = [
     `/* repartiment-data.js — Repartiment de continguts matemàtics ESO 2025-26`,
-    ` * Compartit entre repartiment.html i seguiment.html.`,
+    ` * El fa servir repartiment.html.`,
     ` * No modifiqueu els noms de les constants (SENTITS, CLASSES, REPARTIMENT).`,
     ` * Generat per l'editor integrat de repartiment.html el ${date}.`,
     ` */`,

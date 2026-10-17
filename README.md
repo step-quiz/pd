@@ -44,7 +44,7 @@ _headers, _redirects            capçaleres de memòria cau i redirecció de /in
 assets/
   css/  tokens · layout · components · rich · responsive · print · repartiment · index
   js/   utils · md · docx · fields · collapsible · pdf-panel · sidebar
-        course · repartiment-data · repartiment · seguiment · index-menu
+        course · repartiment-data · repartiment · index-menu
   lib/  mammoth.browser.min.js
 contingut/
   batxillerat/1r/pro/
@@ -56,28 +56,23 @@ contingut/
   batxillerat/2n/pro/           (mateixa estructura)
 ```
 
-`seguiment-link.txt` (vegeu més avall) **no és al repositori**, de manera que ara mateix
-l'enllaç «Seguiment» no porta enlloc. La regla `noindex` de `_headers` apunta a
-`/contingut/*/source/*`, una carpeta que ja no existeix (les fonts són a `tex/`).
+La regla `noindex` de `_headers` impedeix que els cercadors indexin les fonts LaTeX
+(`/contingut/*/tex/*`).
 
 > Nota: la ruta del curs viu a cada pàgina HTML (`COURSE_PATH`), no en un fitxer de
 > dades central. Si en algun moment es vol un menú de cursos generat per dades,
 > caldria introduir un registre (p. ex. `data/courses.json`) i fer que l'índex el
 > llegeixi; **avui això no existeix** i el menú és estàtic.
 
-## Continguts: Repartiment i Seguiment
+## Continguts: Repartiment
 
-L'índex inclou un desplegable **Continguts** amb dues opcions:
+L'índex inclou un desplegable **Continguts** amb el **Repartiment** (`repartiment.html`):
+la taula del repartiment de continguts d'ESO per curs i sentit matemàtic, amb mode edició
+integrat que permet reordenar, afegir o suprimir temes i continguts i descarregar un
+`repartiment-data.js` actualitzat. Les dades viuen a `assets/js/repartiment-data.js`.
 
-- **Repartiment** (`repartiment.html`) — taula del repartiment de continguts
-  d'ESO per curs i sentit matemàtic, amb mode edició integrat que permet
-  reordenar, afegir o suprimir temes i continguts i descarregar un
-  `repartiment-data.js` actualitzat. Les dades viuen a
-  `assets/js/repartiment-data.js`.
-- **Seguiment** — enllaç a un Google Doc/Drive. L'adreça es llegeix de
-  `seguiment-link.txt`, a l'arrel (un fitxer de text pla amb només la URL). Per
-  canviar-la, edita només aquell fitxer; cap línia de codi. **Aquest fitxer ara
-  no existeix**: cal crear-lo perquè l'enllaç funcioni.
+(Hi havia també un enllaç «Seguiment» a una carpeta de Google Drive, llegit de
+`seguiment-link.txt`; es va treure el 17/10/2026, després d'esborrar aquell fitxer.)
 
 ## Contractes de dades
 
