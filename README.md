@@ -40,9 +40,9 @@ index.html                      SPA shell / menú
 2n-bat-pro.html                 pàgina del curs 2n (fixa COURSE_PATH)
 repartiment.html                Repartiment de continguts ESO (taula per curs/sentit)
 404.html                        pàgina d'error
-seguiment-link.txt              URL del Google Doc/Drive de Seguiment (només la URL)
+_headers, _redirects            capçaleres de memòria cau i redirecció de /index.html (Cloudflare Pages)
 assets/
-  css/  tokens · layout · components · rich · responsive · print · repartiment
+  css/  tokens · layout · components · rich · responsive · print · repartiment · index
   js/   utils · md · docx · fields · collapsible · pdf-panel · sidebar
         course · repartiment-data · repartiment · seguiment · index-menu
   lib/  mammoth.browser.min.js
@@ -52,10 +52,13 @@ contingut/
     programacio.docx            programació general
     Ud1.md … Ud6.md             unitats didàctiques
     pdfs/    *.pdf + manifest.json
-    source/  fonts LaTeX (no servides; noindex)
+    tex/     fonts LaTeX: main.tex, defs.tex i ud1/ … ud6/ amb un .tex per sessió
   batxillerat/2n/pro/           (mateixa estructura)
-_dev/                           material intern (no publicat)
 ```
+
+`seguiment-link.txt` (vegeu més avall) **no és al repositori**, de manera que ara mateix
+l'enllaç «Seguiment» no porta enlloc. La regla `noindex` de `_headers` apunta a
+`/contingut/*/source/*`, una carpeta que ja no existeix (les fonts són a `tex/`).
 
 > Nota: la ruta del curs viu a cada pàgina HTML (`COURSE_PATH`), no en un fitxer de
 > dades central. Si en algun moment es vol un menú de cursos generat per dades,
@@ -72,8 +75,9 @@ L'índex inclou un desplegable **Continguts** amb dues opcions:
   `repartiment-data.js` actualitzat. Les dades viuen a
   `assets/js/repartiment-data.js`.
 - **Seguiment** — enllaç a un Google Doc/Drive. L'adreça es llegeix de
-  `seguiment-link.txt` (un fitxer de text pla amb només la URL). Per
-  canviar-la, edita només aquell fitxer; cap línia de codi.
+  `seguiment-link.txt`, a l'arrel (un fitxer de text pla amb només la URL). Per
+  canviar-la, edita només aquell fitxer; cap línia de codi. **Aquest fitxer ara
+  no existeix**: cal crear-lo perquè l'enllaç funcioni.
 
 ## Contractes de dades
 
@@ -85,10 +89,11 @@ L'índex inclou un desplegable **Continguts** amb dues opcions:
 
 ## Generació dels PDFs (LaTeX)
 
-Els PDFs de les sessions es generen a partir de fonts LaTeX a `{curs}/source/`. El
-flux, les convencions d'estil i la infraestructura de compilació (wrapper per
-curs/unitat, gràfiques TikZ/pgfplots, trampes habituals) estan documentats a
-`_dev/BRIEFING-generacio-sessions.md`.
+Els PDFs de les sessions es generen a partir de les fonts LaTeX de `{curs}/tex/`:
+`main.tex` carrega el preàmbul i `defs.tex` una sola vegada i inclou amb `\input` les
+sessions (`tex/ud{U}/{prefix}-ud{U}-{S}.tex`, sense preàmbul propi). Es compila amb
+pdfLaTeX (per exemple, a Overleaf). La guia detallada que s'esmentava abans
+(`_dev/BRIEFING-generacio-sessions.md`) no és al repositori.
 
 ## Desenvolupament local
 
